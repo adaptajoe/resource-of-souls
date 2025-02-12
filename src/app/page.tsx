@@ -25,7 +25,7 @@ export default function Home() {
               <span className="text-red-600">W</span>elcome to BLEACH - Resource of Souls; the definitive unofficial Wiki for Bleach - Rebirth of Souls.
             </h1>
             <div className="border-r-8 border-teal-400 pr-4 space-y-4">
-              <p>Learn about the characters in the game, plan tournaments, view frame data and movelists, research game terms and view the game's changelog.</p>
+              <p>Learn about the characters in the game, plan tournaments, view frame data and movelists, research game terms and view the game&apos;s changelog.</p>
               <p>
                 Awaken the blade within you and reverse your fate in BLEACH Rebirth of Souls! Engage in thrilling battles with powerful sword abilities and characters from this legendary anime
                 franchise.
@@ -60,7 +60,7 @@ export default function Home() {
             <div className="border-r-8 border-teal-400 pr-4 space-y-4">
               <p>
                 BLEACH - Rebirth of Souls is a fighting game developed by Tamsoft, and published by Bandai Namco, and is releasing on March 21st 2025. The game focuses on 1v1 combat, and is unique for
-                its' dramatic comeback victories. The game is available on PS4, PS5, Xbox and Steam.
+                its&apos; dramatic comeback victories. The game is available on PS4, PS5, Xbox and Steam.
               </p>
               <p>
                 Engage in thrilling community tournaments, challenge presets, and challenge yourself to rank on the community leaderboads! Gain exclusive, permanent clout awards for all to see, and
@@ -77,8 +77,8 @@ export default function Home() {
             </h1>
             <div className="border-r-8 border-teal-400 pr-4 space-y-4">
               <p>
-                Don't fancy all of that 'online' malarkey? No need to fear. Resource of Souls has you covered! Discover guides for the Story Mode, Mission Mode and find out what unlockables you may
-                want to strive for!
+                Don&apos;t fancy all of that &apos;online&apos; malarkey? No need to fear. Resource of Souls has you covered! Discover guides for the Story Mode, Mission Mode and find out what
+                unlockables you may want to strive for!
               </p>
               <p>Similarly, for esports and tournament hosts, find easy-to-refer-to sheets for each character, term and archetype in the game!</p>
             </div>
@@ -100,8 +100,8 @@ export default function Home() {
               <span className="text-red-600">A</span>d free. <span className="text-teal-400 underline">Forever</span>.
             </p>
             <p>
-              BLEACH - Resource of Souls is a passion-project from dedicated long-time BLEACH fans; we'll <span className="text-red-600">never</span> paywall content, add advertisements, or ask for
-              donations, and promise to open-source all of our code <span className="text-teal-400 underline">forever</span>.
+              BLEACH - Resource of Souls is a passion-project from dedicated long-time BLEACH fans; we&apos;ll <span className="text-red-600">never</span> paywall content, add advertisements, or ask
+              for donations, and promise to open-source all of our code <span className="text-teal-400 underline">forever</span>.
             </p>
             <p className="text-amber-400 font-black mt-4">- @jojicus</p>
           </div>

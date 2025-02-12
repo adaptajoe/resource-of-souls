@@ -72,8 +72,7 @@ function getCharacterAnimations(characterSlug: string) {
     const files = fs.readdirSync(animationsDir);
     return files.filter((file) => file.endsWith(".gif")).map((file) => file.replace(".gif", ""));
   } catch (error) {
-    console.warn(`No animations found for character: ${characterSlug}`);
-    return [];
+    return "error";
   }
 }
 
@@ -206,7 +205,7 @@ export default async function CharacterPage({ params }: Props) {
           </div>
         </div>
         <div className="mb-4">
-          <blockquote className="italic text-lg text-gray-400 my-8 mr-8 border-l-4 border-l-gray-400 pl-4 py-6">"{character.quote}"</blockquote>
+          <blockquote className="italic text-lg text-gray-400 my-8 mr-8 border-l-4 border-l-gray-400 pl-4 py-6">`&quot;`{character.quote}`&quot;`</blockquote>
         </div>
         <div className="mb-8 mr-8">
           <div>{parseGameTerms(character.description)}</div>

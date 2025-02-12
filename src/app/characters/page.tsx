@@ -52,7 +52,7 @@ export default function Characters() {
   const filteredAndSortedCharacters = useMemo(() => {
     const searchTermLower = searchTerm.toLowerCase();
 
-    let filtered = Object.entries(characters).filter(([_, character]) => {
+    const filtered = Object.entries(characters).filter(([key, character]) => {
       // Apply search filter
       const matchesSearch =
         character.name.toLowerCase().includes(searchTermLower) ||
@@ -204,7 +204,7 @@ export default function Characters() {
                     <div className="font-bold text-xl my-2">
                       #{character.characterNumber}: {character.name}
                     </div>
-                    <p className="text-gray-400 text-sm mb-2 italic">"{character.quote}"</p>
+                    <p className="text-gray-400 text-sm mb-2 italic">&quot;{character.quote}&quot;</p>
                   </div>
                 </Link>
                 <div className="px-4 pb-4">

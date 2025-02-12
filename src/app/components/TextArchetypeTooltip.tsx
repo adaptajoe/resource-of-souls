@@ -11,10 +11,9 @@ interface ArchetypeData {
 interface ArchetypeTooltipProps {
   archetype: ArchetypeData;
   display?: string;
-  highlighted?: boolean;
 }
 
-export default function TextArchetypeTooltip({ archetype, display, highlighted = false }: ArchetypeTooltipProps) {
+export default function TextArchetypeTooltip({ archetype, display }: ArchetypeTooltipProps) {
   const url = `/terminology?highlight=${archetype.name
     .replace(/([A-Z])/g, "-$1")
     .toLowerCase()

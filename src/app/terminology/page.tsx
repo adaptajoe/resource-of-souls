@@ -184,8 +184,8 @@ export default function Terminology() {
           <div className="px-4">
             <div className="mb-6 pt-4">
               <p>
-                Bleach is a franchise filled with terms that may be confusing to newcomers. Learn about the game's terms and their equivalents in the Fighting Game scene here. To boil the game's
-                sytems down to their most basic state...
+                Bleach is a franchise filled with terms that may be confusing to newcomers. Learn about the game&apos;s terms and their equivalents in the Fighting Game scene here. To boil the
+                game&apos;s sytems down to their most basic state...
               </p>
               <ul className="list-disc mt-4 pl-4">
                 <li>The Reishi Gauge is your HP.</li>
@@ -200,7 +200,7 @@ export default function Terminology() {
                 <li>Quick Attacks are Light Attacks that build the Reiatsu Gauge (Special Bar).</li>
                 <li>Flash Attacks are Heavy Attacks that damages Guards.</li>
                 <li>Breakers are Grabs that break Guards.</li>
-                <li>Guards are... Well, Guards. They're broken by Breakers and Flash Attacks.</li>
+                <li>Guards are... Well, Guards. They&apos;re broken by Breakers and Flash Attacks.</li>
                 <li>The Guard Gauge is a resource showing how much more you can Guard.</li>
               </ul>
             </div>

@@ -1,6 +1,5 @@
 "use client";
-import Link from "next/link";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 
 interface Character {
   id: string;
@@ -75,7 +74,7 @@ export default function VersusGenerator() {
           outfits.push(`base-outfit-${i}`);
         }
       } catch (error) {
-        console.log(`No base outfit ${i} found for ${characterId}`);
+        ("error");
       }
     }
 
@@ -88,7 +87,7 @@ export default function VersusGenerator() {
         outfits.push("dlc-outfit-1");
       }
     } catch (error) {
-      console.log(`No DLC outfit found for ${characterId}`);
+      ("error");
     }
 
     return outfits;
@@ -112,30 +111,7 @@ export default function VersusGenerator() {
     }
   }, [characters]);
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    // Set fixed dimensions
-    canvas.width = 3840;
-    canvas.height = 2160;
-
-    drawCanvas();
-  }, []);
-
-  // Set up high DPI canvas
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    // Set fixed dimensions
-    canvas.width = 3840;
-    canvas.height = 2160;
-
-    drawCanvas();
-  }, []);
-
-  const drawCanvas = async () => {
+  const drawCanvas = useCallback(async () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -335,7 +311,19 @@ export default function VersusGenerator() {
     } catch (error) {
       console.error("Error loading images:", error);
     }
-  };
+  }, [player1, player2, mirrorPlayer1, mirrorPlayer2, whiteVS, player1Silhouette, player2Silhouette]);
+
+  // Set up high DPI canvas
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    // Set fixed dimensions
+    canvas.width = 3840;
+    canvas.height = 2160;
+
+    drawCanvas();
+  }, [drawCanvas]);
 
   const exportImage = async () => {
     const canvas = canvasRef.current;
@@ -349,11 +337,6 @@ export default function VersusGenerator() {
     link.click();
     document.body.removeChild(link);
   };
-
-  // Redraw canvas when any relevant state changes
-  useEffect(() => {
-    drawCanvas();
-  }, [player1, player2, mirrorPlayer1, mirrorPlayer2, whiteVS, player1Silhouette, player2Silhouette]);
 
   if (isLoading) {
     return <div>Loading...</div>;

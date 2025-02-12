@@ -10,7 +10,7 @@ export default function Community() {
           <Link href={"#"} className="flex flex-col">
             <div className="text-sm md:text-xl lg:text-2xl xl:text-3xl font-black max-w-[500px]">
               <p className="text-black bg-red-600 p-4 border-red-600 border-b-2">NEW TOURNAMENT ANNOUNCEMENT</p>
-              <p className="p-4">The "Warfare of Souls" Tournament will begin on 29/03/2025!</p>
+              <p className="p-4">The &quot;Warfare of Souls&quot; Tournament will begin on 29/03/2025!</p>
             </div>
             <p className="text-white text-xs md:text-sm xl:text-lg p-4">
               Register <span className="text-teal-400 hover:underline">here</span>!

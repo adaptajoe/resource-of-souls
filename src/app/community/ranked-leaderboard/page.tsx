@@ -438,8 +438,8 @@ export default function RankedLeaderboard() {
           <h1 className="text-3xl font-bold mb-6">Community Ranked Leaderboard</h1>
           <div className="mr-6 text-xl">
             <p className="mb-4">
-              Badges represent marks of mastery, earned exclusively by participating in Tournaments. See a Badge that you'd like against your name? Challenge the Badge owner via Discord, and duel for
-              it! Elevate the stakes by wagering your own Badges against your opponents - The winner takes all wagered Badges!
+              Badges represent marks of mastery, earned exclusively by participating in Tournaments. See a Badge that you&apos;d like against your name? Challenge the Badge owner via Discord, and duel
+              for it! Elevate the stakes by wagering your own Badges against your opponents - The winner takes all wagered Badges!
             </p>
             <p className="mb-4">You alone shall stand at the top. Claim that intolerable vaccuum, and stand upon the heavens!</p>
             <p className="mb-4 text-gray-400 italic">(Badges expire after 6 months with no Challenges - See one that should be expired? Message @jojicus on Discord!)</p>

@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 interface AnimatedHeroProps {
   src: string;
   alt: string;

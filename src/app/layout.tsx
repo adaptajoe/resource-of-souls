@@ -65,8 +65,8 @@ export default function RootLayout({
               <p>
                 All original characters, artwork, and story elements are owned by ©[ SHUEISHA ( 株式会社集英社 ) ], ©[ VIZ Media ( VIZ Media, LLC. )], ©[ Bandai Namco (
                 株式会社バンダイナムコエンターテインメント ) ], ©[ Tamsoft Corporation ( 株式会社タムソフト ) ] and ©[ Tite Kubo ( 久保 帯人 ) ]. All other characters, assets, game screenshots,
-                animations, settings, game data, videos, elements, name "BLEACH - Resource of Souls" and edited "BLEACH - Resource of Souls" Logo belong to their respective copyright holders. This
-                work is not intended for commercial use, does not - and will not - run advertising or donation programs, and is considered fair use under copyright law.
+                animations, settings, game data, videos, elements, name &quot;BLEACH - Resource of Souls&quot; and edited &quot;BLEACH - Resource of Souls&quot; Logo belong to their respective
+                copyright holders. This work is not intended for commercial use, does not - and will not - run advertising or donation programs, and is considered fair use under copyright law.
               </p>
             </div>
           </div>

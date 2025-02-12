@@ -1,4 +1,4 @@
-import { MoveCategories, MoveInput } from "@/types/character";
+import { MoveCategoryContainer, MoveInput } from "@/types/character";
 import React, { JSX } from "react";
 import {
   TbCircleArrowUpRightFilled,
@@ -17,13 +17,10 @@ import {
   TbCircleArrowDown,
   TbCircleArrowRight,
   TbCircleArrowLeft,
-  TbCircleLetterRFilled,
-  TbCircleLetterQFilled,
-  TbCircleLetterFFilled,
 } from "react-icons/tb";
 
 interface CharacterMovesProps {
-  moves: MoveCategories[];
+  moves: MoveCategoryContainer[];
 }
 
 const formatMoveTag = (tag: string): string => {
