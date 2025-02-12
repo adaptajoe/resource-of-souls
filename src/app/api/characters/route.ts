@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
 
+export const dynamic = "force-static"; // Ensure the route is configured for static export
+
 export async function GET() {
   try {
     const fullbodyPath = path.join(process.cwd(), "public/assets/character-fullbody");
