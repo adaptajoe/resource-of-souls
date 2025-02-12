@@ -54,8 +54,12 @@ function formatTagName(tag: string): string {
 
 const characterData = characterDataRaw as CharacterData;
 
+type PageParams = {
+  slug: string;
+};
+
 type Props = {
-  params: { slug: string };
+  params: PageParams;
   searchParams?: { [key: string]: string | string[] | undefined };
 };
 
