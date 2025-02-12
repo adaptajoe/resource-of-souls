@@ -9,6 +9,7 @@ import YouTubeEmbed from "@/app/components/EmbedYoutubeVideo";
 import CharacterMoves from "@/app/components/CharacterMoves";
 import CharacterSidebar from "@/app/components/CharacterSidebar";
 import fs from "fs";
+import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import path from "path";
 import { parseGameTerms } from "@/utils/termParser";
 import CharacterAnimations from "@/app/components/CharacterAnimations";
@@ -55,9 +56,8 @@ function formatTagName(tag: string): string {
 const characterData = characterDataRaw as CharacterData;
 
 interface Props {
-  params: {
-    slug: string;
-  };
+  params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
 interface Props {
