@@ -52,8 +52,7 @@ export default function Characters() {
   const filteredAndSortedCharacters = useMemo(() => {
     const searchTermLower = searchTerm.toLowerCase();
 
-    const filtered = Object.entries(characters).filter(([key, character]) => {
-      // Apply search filter
+    const filtered = Object.entries(characters).filter(([, character]) => {
       const matchesSearch =
         character.name.toLowerCase().includes(searchTermLower) ||
         character.tags.characteristics.some((char) => char.toLowerCase().includes(searchTermLower)) ||

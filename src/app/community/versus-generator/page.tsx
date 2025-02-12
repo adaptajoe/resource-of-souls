@@ -73,8 +73,9 @@ export default function VersusGenerator() {
           console.log(`Found base outfit ${i} for ${characterId}`);
           outfits.push(`base-outfit-${i}`);
         }
-      } catch (error) {
-        ("error");
+      } catch {
+        // Silently handle the error
+        console.log(`No base outfit ${i} found for ${characterId}`);
       }
     }
 
@@ -86,8 +87,9 @@ export default function VersusGenerator() {
         console.log(`Found DLC outfit for ${characterId}`);
         outfits.push("dlc-outfit-1");
       }
-    } catch (error) {
-      ("error");
+    } catch {
+      // Silently handle the error
+      console.log(`No DLC outfit found for ${characterId}`);
     }
 
     return outfits;

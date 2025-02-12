@@ -66,13 +66,13 @@ interface Props {
   };
 }
 
-function getCharacterAnimations(characterSlug: string) {
+function getCharacterAnimations(characterSlug: string): string[] {
   const animationsDir = path.join(process.cwd(), "public", "assets", "character-animations", characterSlug);
   try {
     const files = fs.readdirSync(animationsDir);
     return files.filter((file) => file.endsWith(".gif")).map((file) => file.replace(".gif", ""));
-  } catch (error) {
-    return "error";
+  } catch {
+    return [];
   }
 }
 
@@ -84,6 +84,8 @@ export default async function CharacterPage({ params }: Props) {
   if (!character) {
     notFound();
   }
+
+  const hasAnimations = Array.isArray(animations) && animations.length > 0;
 
   return (
     <div className="flex flex-col items-center lg:items-start lg:flex-row lg:justify-between">
@@ -258,7 +260,14 @@ export default async function CharacterPage({ params }: Props) {
               </div>
 
               <div id="animations">
-                <CharacterAnimations animations={animations} slug={params.slug} />
+                {hasAnimations ? (
+                  <CharacterAnimations animations={animations} slug={params.slug} />
+                ) : (
+                  <div className="border border-white rounded-xl w-full p-4">
+                    <h2 className="text-xl font-semibold mb-2">Animations</h2>
+                    <p className="text-gray-400">No animations available for this character.</p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
