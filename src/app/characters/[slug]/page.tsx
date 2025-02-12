@@ -54,10 +54,10 @@ function formatTagName(tag: string): string {
 
 const characterData = characterDataRaw as CharacterData;
 
-interface Props {
+type Props = {
   params: { slug: string };
   searchParams?: { [key: string]: string | string[] | undefined };
-}
+};
 
 function getCharacterAnimations(characterSlug: string): string[] {
   const animationsDir = path.join(process.cwd(), "public", "assets", "character-animations", characterSlug);
