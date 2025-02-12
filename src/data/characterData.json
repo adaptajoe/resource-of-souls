@@ -1,0 +1,1714 @@
+{
+  "rukia-kuchiki": {
+    "name": "Rukia Kuchiki",
+    "id": "rukia-kuchiki",
+    "race": "shinigami",
+    "quote": "I know the loneliness of being a prisoner. I know the joy you feel when your friends come to rescue you and the fear of them being injured and defeated.",
+    "description": "An unseated Shinigami belonging to Squad 13; under the tutelage of Jushiro Ukitake and Kaien Shiba, she established herself as a permanent member of her Squad. One day, a fateful encounter with a certain orange-haired boy changes her life forever... Rukia is a Balanced character that excels in both Short Range Melee combat and Kidō-based attacks. Her versatile moveset allows her to adapt to various situations while maintaining consistent pressure. With balanced stats across Power, Speed, Range, and Technique - but slightly lower Defense - Rukia is well-rounded but must be careful not to take too many direct hits.",
+    "tags": {
+      "affiliations": ["soulSociety", "shinigami", "squad13"],
+      "relationships": ["friend"],
+      "abilities": ["awakening", "shikai"],
+      "characteristics": ["female", "unseatedOfficer", "gotei13"]
+    },
+    "characterEaseOfUse": 5,
+    "characterArchetype": ["shortRange", "melee", "kidō", "balanced"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=pq-ECx9dnhg&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=38",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=JHod25mzWgY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=34",
+    "characterNumber": 1,
+    "characterOutfits": ["1", "2"],
+    "abilities": [
+      {
+        "abilityName": "Sode No Shiraiyuki",
+        "abilityQuote": "Dance",
+        "abilityQuoteTemplate": "{quote}, {ability}!"
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 3,
+        "speed": 3,
+        "range": 3,
+        "defense": 2,
+        "technique": 3
+      }
+    ]
+  },
+  "ichigo-kurosaki": {
+    "name": "Ichigo Kurosaki",
+    "id": "ichigo-kurosaki",
+    "race": "human",
+    "quote": "...If fate is a millstone, then we are the grist. There is nothing we can do. So I wish for strength. If I cannot protect them from the wheel, then give me a strong blade, and enough strength... to shatter fate.",
+    "description": "A young man from Karakura Town; a fateful encounter changes his life forever, placing him on the arduous path of a Substitute Shinigami - His desire to protect his friends is absolute, and unbreakable. Ichigo is a Short Range fighter who excels in Melee combat with a Rushdown playstyle. His aggressive approach and powerful strikes make him an intimidating opponent at close range. With exceptional Power and Defense, but lower Speed and Range, Ichigo must close the distance to be effective. His moderate Technique and Charge attacks allow for some tactical flexibility in combat.",
+    "tags": {
+      "affiliations": ["worldOfTheLiving", "human", "shinigami", "hollow"],
+      "relationships": ["protagonist"],
+      "abilities": ["awakening", "shikai", "hollowfication"],
+      "characteristics": ["male", "karakuraResident", "charge", "balanced"]
+    },
+    "characterEaseOfUse": 5,
+    "characterArchetype": ["shortRange", "melee", "rushdown", "charge"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=uO7EPxsy0Ds&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=37",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=mJ1xji2ihQ8&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=31",
+    "characterNumber": 2,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Zangetsu",
+        "abilityQuote": "Retreat and you will age. Be afraid and you will die. Now shout my name..!",
+        "abilityQuoteTemplate": "{quote} {ability}!"
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 4,
+        "speed": 2,
+        "range": 2,
+        "defense": 4,
+        "technique": 3
+      }
+    ]
+  },
+  "uryu-ishida": {
+    "name": "Uryū Ishida",
+    "id": "uryu-ishida",
+    "race": "quincy",
+    "quote": "The man's name was Sôken Ishida. He was my teacher... And my Grandfather. I'm glad Orihime isn't here. I wouldn't want her to see this... On my honor as a Quincy... I'm going... To kill you. ",
+    "description": "A young man from Karakura Town that claims to be 'The Last Quincy'. He encounters Ichigo Kurosaki after taunting him into a Hollow-slaying contest that quickly escalates. The echoes of his race's past linger in his mind, and forces Uryū to face extreme adversity. Uryū is a Long Range character that makes use of a wide variety of Ranged attacks. He has a Balanced playstyle, and is one of few characters in the game who has a Reawakening. Be wary of Uryū's miniscular Defense, Speed and Power - It's best to avoid attacks and to pick at opponents from a range, making use of Uryū's various techniques to overpower your enemies.",
+    "tags": {
+      "affiliations": ["worldOfTheLiving", "quincy"],
+      "relationships": ["friend"],
+      "abilities": ["awakening", "reawakening"],
+      "characteristics": ["male", "karakuraResident"]
+    },
+    "characterEaseOfUse": 3,
+    "characterArchetype": ["longRange", "ranged", "balanced", "reawakener"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=jqTot703GpM&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=39",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=Ze2_7Aa1Uks&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=30",
+    "characterNumber": 3,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "And the victor of this battle is me",
+        "abilityQuote": "The right to choose life or death lies with the victor ",
+        "abilityQuoteTemplate": "{quote}... {ability}."
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 1,
+        "speed": 1,
+        "range": 5,
+        "defense": 1,
+        "technique": 4
+      }
+    ]
+  },
+  "byakuya-kuchiki": {
+    "name": "Byakuya Kuchiki",
+    "id": "byakuya-kuchiki",
+    "race": "shinigami",
+    "quote": "I have discarded my feelings long ago. The Kuchiki clan head cannot display emotions.",
+    "description": "The 28th head of the noble Kuchiki clan and Captain of Squad 6. Known for his cold demeanor and unwavering dedication to law and order, Byakuya struggles between his duties as a noble and his personal feelings. Byakuya is a Hybrid Range fighter who combines Melee combat with Ranged attacks and Kidō to dominate his foes. His Balanced playstyle allows him to control space effectively while maintaining offensive pressure. With exceptional Range and Technique, moderate Defense, but lower Power and Speed, Byakuya excels at keeping opponents at bay while setting up devastating combos and unexpected snipe attacks.",
+    "tags": {
+      "affiliations": ["soulSociety", "shinigami", "squad6"],
+      "relationships": ["neutral"],
+      "abilities": ["awakening", "shikai", "bankai"],
+      "characteristics": ["male", "captain", "gotei13"]
+    },
+    "characterEaseOfUse": 3,
+    "characterArchetype": ["hybridRange", "melee", "ranged", "kidō", "balanced"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=HBH0F3QBqeA&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=36",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=pzBelDvJt4c&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=29",
+    "characterNumber": 4,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Senbonzakura",
+        "abilityQuote": "Scatter",
+        "abilityQuoteTemplate": "...{quote}. {ability}..."
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 2,
+        "speed": 2,
+        "range": 5,
+        "defense": 3,
+        "technique": 4
+      }
+    ]
+  },
+  "yoruichi-shihoin": {
+    "name": "Yoruichi Shihōin",
+    "id": "yoruichi-shihoin",
+    "race": "shinigami",
+    "quote": "Were you afraid? That's your problem. You're focusing too much on what's to come.",
+    "description": "Former Captain of Squad 2 and ex-commander of the Stealth Force, Yoruichi is known as the 'Flash Goddess' for her unmatched speed. Despite her noble heritage, she chose exile to help her childhood friend, Kisuke Urahara. Yoruichi is a Short Range fighter specializing in Fast Melee combat and Kidō techniques. Her Rushdown playstyle makes her a relentless and swift attacker who can quickly overwhelm opponents with her light but rapid strikes. Boasting extreme Speed and high Technique, with decent Range, but lower Power and Defense, Yoruichi excels at poking tactics and creating offensive pressure through dominating combos that leave little room to breathe or escape.",
+    "tags": {
+      "affiliations": ["worldOfTheLiving", "soulSociety", "shinigami", "squad2"],
+      "relationships": ["friend"],
+      "abilities": ["awakening"],
+      "characteristics": ["female", "captain", "exile", "gotei13"]
+    },
+    "characterEaseOfUse": 3,
+    "characterArchetype": ["shortRange", "melee", "kidō", "fast", "rushdown"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=gMd_2nwWnik&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=35",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=MUKNiK5g-RM&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=28",
+    "characterNumber": 5,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Shunko",
+        "abilityQuote": "This is",
+        "abilityQuoteTemplate": "{quote}... {ability}!!"
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 1,
+        "speed": 5,
+        "range": 3,
+        "defense": 2,
+        "technique": 4
+      }
+    ]
+  },
+  "yasutora-chad-sado": {
+    "name": "Yasutora 'Chad' Sado",
+    "id": "yasutora-chad-sado",
+    "race": "human",
+    "quote": "I can't even imagine Chad losing.",
+    "description": "A gentle giant of Mexican-Japanese descent and one of Ichigo's closest friends. Chad's tremendous physical strength is matched only by his loyalty, following a promise made to his Abuelo to use his power to protect others rather than for personal gain. Chad is a Short Range fighter who excels in Melee combat with a Slow but powerful Berserker playstyle. His Charge attacks allow him to power through enemy defenses with explosive force while maintaining offensive pressure. With outstanding Power and Defense, decent Speed, but low Range and Technique, Chad is a tank who can take hits while dealing massive damage up close. I can't imagine him losing.",
+    "tags": {
+      "affiliations": ["worldOfTheLiving", "human"],
+      "relationships": ["friend"],
+      "abilities": ["awakening"],
+      "characteristics": ["male", "karakuraResident"]
+    },
+    "characterEaseOfUse": 5,
+    "characterArchetype": ["shortRange", "melee", "charge", "slow", "berserker"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=FJWkFHuVeq4&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=34",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=Xb6G9l1ADzs&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=27",
+    "characterNumber": 6,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Brazo Derecha de Gigante",
+        "abilityQuote": "Hmph",
+        "abilityQuoteTemplate": "{quote}... {ability}!!"
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 4,
+        "speed": 3,
+        "range": 2,
+        "defense": 5,
+        "technique": 1
+      }
+    ]
+  },
+  "kisuke-urahara": {
+    "name": "Kisuke Urahara",
+    "id": "kisuke-urahara",
+    "race": "shinigami",
+    "quote": "There is nothing but fear reflected in your sword. When you dodge, you're afraid of getting killed. When you attack, you're afraid of killing someone.",
+    "description": "Former Captain of Squad 12 and founder of the Department of Research and Development, Urahara is a brilliant scientist and skilled strategist; since his exile, he spends his time running a small shop in the World of the Living. Kisuke is a Short Range fighter who utilizes Melee combat with a Trickster playstyle. His Balanced approach allows him to adapt to various situations through clever use of his tactical abilities. With well-rounded stats across Power, Speed, Range, Defense, and Technique, Kisuke can plan for all situations effectively while setting up elaborate combinations to garuntee victory.",
+    "tags": {
+      "affiliations": ["worldOfTheLiving", "soulSociety", "shinigami", "squad12"],
+      "relationships": ["friend"],
+      "abilities": ["awakening", "shikai"],
+      "characteristics": ["male", "captain", "exile", "gotei13"]
+    },
+    "characterEaseOfUse": 3,
+    "characterArchetype": ["shortRange", "melee", "trickster", "balanced"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=Pglr-98uFBY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=26",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=GaS4ybi0xwA&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=33",
+    "characterNumber": 7,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Benihime",
+        "abilityQuote": "Scream",
+        "abilityQuoteTemplate": "{quote}, {ability}!"
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 3,
+        "speed": 3,
+        "range": 4,
+        "defense": 4,
+        "technique": 3
+      }
+    ]
+  },
+  "gin-ichimaru": {
+    "name": "Gin Ichimaru",
+    "id": "gin-ichimaru",
+    "race": "shinigami",
+    "quote": "Feelings, eh? Nah, 'fraid not. Don't got none o' them. Didn't I tell ya, back when we first met? I'm a snake. Cold of flesh and devoid of heart. My tongue flicks back and forth, ever in search of new prey, and if I like what I find, I swallow 'em whole.",
+    "description": "The former Captain of Squad 3, known for his fox-like smile and mysterious nature. Behind his unsettling demeanor lies a centuries-long plot, making him one of Soul Society's most enigmatic figures. Gin is a Hybrid Range fighter combining Fast Melee attacks with devastating Charge moves. His Rushdown playstyle allows him to pressure opponents with quick, precise strikes and sudden extended-range attacks that can catch opponents by surprise. With excellent Speed and Range, moderate Technique, but lower Power and Defense, Gin excels at swift attacks while maintaining a safe distance with his unique Zanpakutō.",
+    "tags": {
+      "affiliations": ["soulSociety", "huecoMundo", "shinigami", "squad3"],
+      "relationships": ["enemy"],
+      "abilities": ["awakening", "shikai", "bankai"],
+      "characteristics": ["male", "captain", "traitor", "gotei13"]
+    },
+    "characterEaseOfUse": 4,
+    "characterArchetype": ["melee", "fast", "charge", "rushdown", "longRange"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=_ag8qb0Zy6M&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=25",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=UjeF_Byhntk&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=32",
+    "characterNumber": 8,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Shinsō",
+        "abilityQuote": "Shoot to Kill",
+        "abilityQuoteTemplate": "{quote}... {ability}."
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 2,
+        "speed": 4,
+        "range": 5,
+        "defense": 2,
+        "technique": 3
+      }
+    ]
+  },
+  "rangiku-matsumoto": {
+    "name": "Rangiku Matsumoto",
+    "id": "rangiku-matsumoto",
+    "race": "shinigami",
+    "quote": "Don't apologize. You had your reasons, I'm sure. I don't really care about what they were. I just wish you would've had a little more faith in me.",
+    "description": "Lieutenant of Squad 10, serving under Captain Hitsugaya. Despite her carefree attitude and love of alcohol, Rangiku is a capable officer who hides deep emotional scars beneath her cheerful exterior. Rangiku is a Hybrid Range fighter who combines Melee combat with Ranged attacks and Kidō. Her Zoner playstyle allows her to control space and keep opponents where she wants them with her unique ash-based vortex abilities. With high Speed and Range, moderate Power, but lower Defense and Technique, Rangiku excels at maintaining distance while harassing opponents with her versatile moveset.",
+    "tags": {
+      "affiliations": ["soulSociety", "shinigami", "squad10"],
+      "relationships": ["neutral"],
+      "abilities": ["awakening", "shikai"],
+      "characteristics": ["female", "lieutenant", "gotei13"]
+    },
+    "characterEaseOfUse": 3,
+    "characterArchetype": ["hybridRange", "melee", "ranged", "kidō", "zoner"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=LDQIPXcVgYU&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=24",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=hq63eNoSvi4&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=31",
+    "characterNumber": 9,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Haineko",
+        "abilityQuote": "Growl",
+        "abilityQuoteTemplate": "{quote}, {ability}!"
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 3,
+        "speed": 4,
+        "range": 4,
+        "defense": 2,
+        "technique": 2
+      }
+    ]
+  },
+  "toshiro-hitsugaya": {
+    "name": "Tōshirō Hitsugaya",
+    "id": "toshiro-hitsugaya",
+    "race": "shinigami",
+    "quote": "We are not gods. We're just Shinigami. The moment you started thinking you were a God was the moment you stopped improving.",
+    "description": "The young prodigy Captain of Squad 10, wielding the strongest ice-type Zanpakutō. Despite his age, Tōshirō's tactical brilliance and dedication to duty have earned him respect among the Gotei 13. Toshiro is a Hybrid Range fighter who utilizes both Melee and 'Tenso Jyurin' Gauge-based abilities. Keeping the offensive on your opponents whilst avoiding being hit by attacks allow him to make the most of his 'Tenso Jyurin' Gauge. With high Power and Range, moderate Defense and Technique, but lower Speed, Toshiro can dominate the battlefield through his Balanced playstyle and Charge attacks, using careful positioning and resource management to send his foes to an icy grave.",
+    "tags": {
+      "affiliations": ["soulSociety", "shinigami", "squad10"],
+      "relationships": ["neutral"],
+      "abilities": ["awakening", "shikai", "bankai"],
+      "characteristics": ["male", "captain", "gotei13"]
+    },
+    "characterEaseOfUse": 4,
+    "characterArchetype": ["hybridRange", "melee", "gauge", "charge", "balanced"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=0nzHXmd9Pjo&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=30",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=gaTngNoe9ek&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=23",
+    "characterNumber": 10,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Hyōrinmaru",
+        "abilityQuote": "Sit Upon the Frozen Heavens",
+        "abilityQuoteTemplate": "{quote}! {ability}!!"
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 4,
+        "speed": 2,
+        "range": 4,
+        "defense": 3,
+        "technique": 3
+      }
+    ]
+  },
+  "kenpachi-zaraki": {
+    "name": "Kenpachi Zaraki",
+    "id": "kenpachi-zaraki",
+    "race": "shinigami",
+    "quote": "The only ones who should kill are those prepared to be killed!",
+    "description": "The fearsome Captain of Squad 11 and the 11th Kenpachi, who lives solely for the thrill of battle. Zaraki gained his position by killing his predecessor, and leads the most combat-oriented division in the Gotei 13, wearing an eye patch to limit his overwhelming power to extend his fights intentionally. Zaraki is a Short Range fighter specializing in Slow but devastating Melee combat. His Berserker playstyle and Stance mechanics reflect his love of battle and self-imposed limitations. With maximum Power and Defense, decent Speed, but minimal Range and Technique, Zaraki is an unstoppable force once he gets close to his opponents, or lands a hellish Charge attack.",
+    "tags": {
+      "affiliations": ["soulSociety", "shinigami", "squad11"],
+      "relationships": ["neutral"],
+      "abilities": ["awakening"],
+      "characteristics": ["male", "captain", "gotei13"]
+    },
+    "characterEaseOfUse": 5,
+    "characterArchetype": ["shortRange", "melee", "slow", "berserker", "stance", "charge"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=So0mg7_dE64&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=29",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=LxvCinpT440&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=22",
+    "characterNumber": 11,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "FINALLY having fun",
+        "abilityQuote": "Now I'm",
+        "abilityQuoteTemplate": "{quote} {ability}..!!"
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 5,
+        "speed": 3,
+        "range": 1,
+        "defense": 5,
+        "technique": 1
+      }
+    ]
+  },
+  "ulquiorra-shifar": {
+    "name": "Ulquiorra Shifar",
+    "id": "ulquiorra-shifar",
+    "quote": "So this is the heart...",
+    "race": "arrancar",
+    "description": "The Cuatro Espada and the Aspect of Nihility; ruthless and unfeeling, Ulquiorra stands as Aizen's last bastion of Las Noches, guarding the captive Orihime Inoue. A sign of one of Ulquiorra's victims is the hole punched through his opponents' chest; a grim reflection of his own emptiness. Ulquiorra is a Hybrid Range fighter combining Fast Melee attacks with devastating Ranged abilities. His Balanced playstyle and unique Vampiric mechanics allow him to not only shed his Reishi to ehance his attacks, but also allows him to regenerate his Reishi over time. With excellent Speed and Range, moderate Power, but lower Defense and Technique, Ulquiorra excels at swift, precise strikes while maintaining pressure through his energy-based attacks; additionally, Ulquiorra is one of few characters in the game with access to a Reawakening, further exceeding his already high limits through the power of Segunda Etapa.",
+    "tags": {
+      "affiliations": ["huecoMundo", "arrancar"],
+      "relationships": ["enemy"],
+      "abilities": ["awakening", "reawakening", "resurrección", "segunda etapa"],
+      "characteristics": ["male", "ArrancarArmy", "espada"]
+    },
+    "characterEaseOfUse": 3,
+    "characterArchetype": ["hybridRange", "melee", "ranged", "fast", "vampiric", "balanced", "reawakener"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=z6Sj7GDz3JU&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=26",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=SwczZ1FYyqg&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=21",
+    "characterNumber": 12,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Murciélago",
+        "abilityQuote": "Enclose",
+        "abilityQuoteTemplate": "{quote}... {ability}..."
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 3,
+        "speed": 4,
+        "range": 5,
+        "defense": 2,
+        "technique": 2
+      }
+    ]
+  },
+  "ichigo-kurosaki-bankai": {
+    "name": "Ichigo Kurosaki (Bankai)",
+    "id": "ichigo-kurosaki-bankai",
+    "race": "human",
+    "quote": "I'm not fighting because I want to win, I'm fighting because I have to win!",
+    "description": "The evolved form of Ichigo's power, representing his mastery over his Shinigami abilities. In this state, his already formidable powers are compressed into a sleeker form, though the darkness that roars within him grows alongside his strength. As a Hybrid Range fighter, Bankai Ichigo combines Fast Melee combat with devastating Ranged attacks, utilizing both Charge moves and his unique 'Getsuga Aura' Gauge. He is also one of the few characters in the game who has access to a Reawakening. His Rushdown playstyle becomes even more aggressive, with the ability to Revive from near-death situations, leading to his Reawakening into his Full Hollowfication, where Ichigo becomes practically unstoppable. With balanced stats favoring Technique, Ichigo can adapt to any situation while maintaining constant pressure on his opponents.",
+
+    "tags": {
+      "affiliations": ["worldOfTheLiving", "human", "shinigami", "hollow"],
+      "relationships": ["protagonist"],
+      "abilities": ["awakening", "reawakening", "bankai", "hollowfication"],
+      "characteristics": ["male", "karakuraResident", "vizard"]
+    },
+    "characterEaseOfUse": 4,
+    "characterArchetype": ["hybridRange", "melee", "ranged", "fast", "reviver", "gauge", "charge", "rushdown", "reawakener"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=d0VEZq9dMcY&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=27",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=iJdteynstKg&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=20",
+    "characterNumber": 13,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Tensa Zangetsu",
+        "abilityQuote": "Bankai",
+        "abilityQuoteTemplate": "{quote}..!! {ability}."
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 2,
+        "speed": 3,
+        "range": 2,
+        "defense": 3,
+        "technique": 5
+      }
+    ]
+  },
+  "kaname-tosen": {
+    "name": "Kaname Tōsen",
+    "id": "kaname-tosen",
+    "race": "shinigami",
+    "quote": "My eyes can only see one path and that is the path with the least bloodshed.",
+    "description": "Former Captain of Squad 9 who follows Aizen despite his strong sense of justice. Blind since birth, Tōsen's pursuit of justice is paradoxically driven by a desire for revenge, leading him down a path of betrayal. As a Short Range fighter, he combines Melee combat with unique Ranged abilities, utilizing Gimmick mechanics that reflect his unique sensory abilities - After Awakening, his Bankai, 'Suzumushi Tsuishiki: Enma Korogi', activats his core Gimmick mechanic, which transports both players to a new arena and restricts the opponents' field of vision. His Trickster playstyle allows him to disorient opponents while setting up devastating combinations. With high Technique, moderate Speed and Defense, but lower Power and Range, Tōsen excels at confusing opponents before striking with precise attacks.",
+    "tags": {
+      "affiliations": ["soulSociety", "huecoMundo", "shinigami", "squad9"],
+      "relationships": ["enemy"],
+      "abilities": ["awakening", "shikai", "bankai", "hollowfication", "resurrección"],
+      "characteristics": ["male", "captain", "traitor", "gotei13"]
+    },
+    "characterEaseOfUse": 4,
+    "characterArchetype": ["shortRange", "melee", "ranged", "gimmick", "trickster"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=bPRSt29aLG8&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=24",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=B6LO391TSdY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=17",
+    "characterNumber": 14,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Suzumushi",
+        "abilityQuote": "Cry",
+        "abilityQuoteTemplate": "{quote}. {ability}."
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 2,
+        "speed": 3,
+        "range": 2,
+        "defense": 3,
+        "technique": 5
+      }
+    ]
+  },
+  "soi-fon": {
+    "name": "Soi-Fon",
+    "id": "soi-fon",
+    "race": "shinigami",
+    "quote": "If your comrade is being defeated, you should see it as an opportunity. Rather than standing in the way, you should stab the enemy in the back. And if the enemy is so far above your level that you cannot even manage that, then you should let your comrade die. That is the way of the Onmitsukidō.",
+    "description": "Captain of Squad 2 and Commander of the Stealth Force, Soi-Fon is a master of assassination and hand-to-hand combat. Her unwavering dedication to duty is matched only by her admiration for her former mentor, Yoruichi Shihōin. As a Short Range fighter, she excels in Melee combat with Kidō support, utilizing both Charge attacks and Gimmick mechanics - Specifically her Suzumebachi's special ability, 'Nigeki Kessatsu', which allows Soi-Fon to kill her opponent instantly if it hits twice. Her Rushdown playstyle is enhanced by unique Reloader and Instakill mechanics, making her especially deadly at both close and medium range. With maximum Speed, high Technique, decent Range, but low Power and Defense, Soi-Fon can quickly overwhelm opponents with rapid strikes and deadly precision.",
+    "tags": {
+      "affiliations": ["soulSociety", "shinigami", "squad2"],
+      "relationships": ["neutral"],
+      "abilities": ["awakening", "shikai", "bankai"],
+      "characteristics": ["female", "captain", "gotei13"]
+    },
+    "characterEaseOfUse": 5,
+    "characterArchetype": ["shortRange", "melee", "ranged", "kidō", "reloader", "charge", "gimmick", "instakill", "rushdown"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=Bisl7BbVK9o&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=23",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=dziYM2MU_S0",
+    "characterNumber": 15,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Suzumebachi",
+        "abilityQuote": "Sting all Enemies to Death",
+        "abilityQuoteTemplate": "{quote}... {ability}..!"
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 2,
+        "speed": 5,
+        "range": 3,
+        "defense": 1,
+        "technique": 4
+      }
+    ]
+  },
+  "renji-abarai": {
+    "name": "Renji Abarai",
+    "id": "renji-abarai",
+    "race": "shinigami",
+    "quote": "I haven't been fighting to defeat you. I've been fighting to win!",
+    "description": "Lieutenant of Squad 6 under Captain Kuchiki, Renji's fierce determination drives him to constantly improve. Childhood friends with Rukia Kuchiki, he strives to surpass his Captain while maintaining his street-smart attitude and loyalty to his friends. As a Hybrid Range fighter, he combines powerful Melee attacks with unique Ranged abilities, featuring a Giant Summon through his Awakening, that allows him to sweep massive areas of the battlefield using his Bankai, Hihio Zabimaru. His Balanced playstyle allows him to adapt to various situations while maintaining consistent pressure. With high Speed and Range, good Power and Defense, but lower Technique, Renji excels at overwhelming opponents with his small but consistent moveset and extending combos.",
+    "tags": {
+      "affiliations": ["soulSociety", "shinigami", "squad6"],
+      "relationships": ["friend"],
+      "abilities": ["awakening", "shikai", "bankai"],
+      "characteristics": ["male", "lieutenant", "gotei13"]
+    },
+    "characterEaseOfUse": 4,
+    "characterArchetype": ["hybridRange", "melee", "ranged", "giantSummon", "balanced", "kidō"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=n3diSC5oclE&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=22",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=pp7a-Dq56lk&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=16",
+    "characterNumber": 16,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Zabimaru",
+        "abilityQuote": "Roar",
+        "abilityQuoteTemplate": "{quote}! {ability}!"
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 3,
+        "speed": 4,
+        "range": 4,
+        "defense": 3,
+        "technique": 1
+      }
+    ]
+  },
+  "izuru-kira": {
+    "name": "Izuru Kira",
+    "id": "izuru-kira",
+    "race": "shinigami",
+    "quote": "The weight of the lives I've taken, the pain that I've caused... I carry it with me every day.",
+    "description": "Lieutenant of Squad 3, Kira is a deeply philosophical warrior whose Zanpakutō reflects his melancholic nature. His loyalty was tested by his Captain's betrayal, leaving him to rebuild both his division and his confidence. As a Short Range fighter, he combines Melee combat with unique Zoner abilities, letting him pull opponents towards him; utilizing Gimmick mechanics through his Zanpakutō Wabisuke's ability 'Weight Multiplication', Izuru is able to slow his opponents and cripple their defenses. His methodical playstyle focuses on gradually wearing down opponents while maintaining defensive positioning - With exceptional Technique, good Range and Defense, but low Power and Speed, Izuru excels at tactical combat that punishes aggressive opponents through careful ability usage.",
+    "tags": {
+      "affiliations": ["soulSociety", "shinigami", "squad3"],
+      "relationships": ["neutral"],
+      "abilities": ["awakening", "shikai"],
+      "characteristics": ["male", "lieutenant", "gotei13"]
+    },
+    "characterEaseOfUse": 3,
+    "characterArchetype": ["shortRange", "melee", "zoner", "gimmick"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=cuB14RLuijk&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=21",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=F3tL_rpw6HQ&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=15",
+    "characterNumber": 17,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Wabisuke",
+        "abilityQuote": "Raise Your Head",
+        "abilityQuoteTemplate": "{quote} - {ability}."
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 1,
+        "speed": 2,
+        "range": 4,
+        "defense": 3,
+        "technique": 5
+      }
+    ]
+  },
+  "neliel-tu-odelschwanck": {
+    "name": "Neliel Tu Odelschwanck",
+    "id": "neliel-tu-odelschwanck",
+    "race": "arrancar",
+    "quote": "We are not enemies. We are not friends, either. We are just two beings, passing time.",
+    "description": "Former Tercera Espada - and former Aspect of Sacrifice - who was betrayed and cast out of Las Noches by Nnoitra Gilga and Szayelaporro Granz. Despite her childlike alternate form, Neliel is a powerful warrior who believes in honor and protecting those weaker than herself. As a Hybrid Range fighter, she combines Fast Melee combat with precise Ranged attacks, with her range increasing considerably once Awakening. Utilizing a unique reliance on her Signature Move Gauge mechanics and Charge abilities. Her versatile playstyle allows her to maintain pressure through quick attacks while building resources for devastating finishing moves. With outstanding Speed, balanced offensive stats, and solid Defense and Technique, Neliel can adapt to any situation while maintaining consistent pressure on her opponents.",
+    "tags": {
+      "affiliations": ["huecoMundo", "arrancar"],
+      "relationships": ["friend"],
+      "abilities": ["awakening", "resurrección"],
+      "characteristics": ["female", "espada", "exile"]
+    },
+    "characterEaseOfUse": 4,
+    "characterArchetype": ["hybridRange", "melee", "ranged", "fast", "gauge", "charge"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=__S1reKBbdo&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=20",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=KfFGVNIWBf0&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=14",
+    "characterNumber": 18,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Gamuza",
+        "abilityQuote": "Praise",
+        "abilityQuoteTemplate": "{quote}... {ability}."
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 2,
+        "speed": 5,
+        "range": 3,
+        "defense": 3,
+        "technique": 3
+      }
+    ]
+  },
+  "grimmjow-jaegerjaquez": {
+    "name": "Grimmjow Jaegerjaquez",
+    "id": "grimmjow-jaegerjaquez",
+    "race": "arrancar",
+    "quote": "I am the king! I'll crush anyone who thinks they're above me!",
+    "description": "The Sexta Espada, and the Aspect of Destruction. His feral nature and obsession with proving his dominance make him a fearsome opponent. Grimmjow's pride as a warrior and hunger as a vicious predator king drives him to seek ever-stronger opponents. As a Short Range fighter, he excels in Fast Melee combat with a relentless Rushdown playstyle. His 'Annihilation' Stance mechanics and 'Impulse' Gauge resource abilities reflect his predatory nature, allowing him to pressure opponents with devastating close-range combinations and surprsing power buffs. With exceptional Power, Speed, and Defense, but minimal Range and moderate Technique, Grimmjow dominates in close combat through sheer aggression and overwhelming force whilst mixing up his offensive with shifting stances.",
+    "tags": {
+      "affiliations": ["huecoMundo", "arrancar"],
+      "relationships": ["enemy"],
+      "abilities": ["awakening", "resurrección"],
+      "characteristics": ["male", "espada", "ArrancarArmy"]
+    },
+    "characterEaseOfUse": 3,
+    "characterArchetype": ["shortRange", "melee", "rushdown", "gauge", "stance", "fast"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=_LJafOpYxVw&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=19",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=dmEM_2Shrjg&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=13",
+    "characterNumber": 19,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Pantera",
+        "abilityQuote": "Grind",
+        "abilityQuoteTemplate": "{quote} - {ability}...!!"
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 4,
+        "speed": 4,
+        "range": 1,
+        "defense": 4,
+        "technique": 2
+      }
+    ]
+  },
+  "mayuri-kurotsuchi": {
+    "name": "Mayuri Kurotsuchi",
+    "id": "mayuri-kurotsuchi",
+    "race": "shinigami",
+    "quote": "I am a scientist. I don't care about good or evil. Everything in this world is my research material.",
+    "description": "Captain of Squad 12 and head of the Research and Development Institute. A brilliant but amoral scientist who views everything and everyone as potential research subjects, caring little for ethics in his pursuit of knowledge. As a Hybrid Range fighter, he combines calculated Melee attacks with various Ranged abilities, utilizing both Rushdown and Zoner playstyles through his extensive arsenal of modified body parts and tools. His 'Poison' Gauge mechanic allows him to keep pressure on his opponent, granting Mayuri limited-time damage buffs. adapt his strategy mid-battle. With high Technique and Range, moderate Power, but low Defense and Speed, Mayuri excels at controlling the battlefield through careful preparation and tactical, dominant superiority.",
+    "tags": {
+      "affiliations": ["soulSociety", "shinigami", "squad12"],
+      "relationships": ["neutral"],
+      "abilities": ["awakening", "shikai", "bankai"],
+      "characteristics": ["male", "captain", "gotei13"]
+    },
+    "characterEaseOfUse": 3,
+    "characterArchetype": ["hybridRange", "gauge", "melee", "ranged", "rushdown", "zoner"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=QspGqabpIQU&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=18",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=E_H67r2cg7Y&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=12",
+    "characterNumber": 20,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Ashisogi Jizō",
+        "abilityQuote": "Claw Out",
+        "abilityQuoteTemplate": "{quote}... {ability}...!!"
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 3,
+        "speed": 2,
+        "range": 4,
+        "defense": 1,
+        "technique": 5
+      }
+    ]
+  },
+  "aizen-sosuke": {
+    "name": "Aizen Sosuke",
+    "id": "aizen-sosuke",
+    "race": "shinigami",
+    "quote": "From the very start, no one has stood upon the heavens. Not you, not I, nor even gods. However, that intolerable vacuum has come to an end. Henceforth...I shall stand upon the heavens.",
+    "description": "Former Captain of Squad 5 who orchestrated a complex and devastating betrayal of Soul Society. His immense power is matched only by his ambition and masterful manipulation of others, all in pursuit of subjugating the Hogyoku, transcending the boundaries between Shinigami and Hollow in order to form the Oken, and thus, to claim his throne atop the heavens. As a Short Range fighter, Aizen simply awaits his enemies, combining precise Melee combat with almighty defensive abilities that can negate damage. Aizen's unique Gimmick mechanic, the 'Hogyoku Fusion Level' Gauge, which fuels his Ramper playstyle - This allows him to gradually increase in power throughout the battle, evolving into different forms that grow in power. Once Awakening to his Third Form, Aizen uses his Reviver perk that allows him to use his Reawakening and transcend the natural order of the world. With the highest stat total in the game, exceptional Power, Defense, and Technique, and decent Speed and Range, Aizen excels at methodically dismantling opponents through careful ability usage, strategic planning and constant evolution.",
+    "tags": {
+      "affiliations": ["soulSociety", "huecoMundo", "shinigami", "squad5"],
+      "relationships": ["enemy"],
+      "abilities": ["awakening", "reawakening", "shikai"],
+      "characteristics": ["male", "captain", "gotei13", "traitor"]
+    },
+    "characterEaseOfUse": 2,
+    "characterArchetype": ["shortRange", "melee", "gimmick", "reviver", "gauge", "ramper", "reawakener"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=4qGGFhG-rIE&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=16",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=fZeTPMNf0bQ&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=10",
+    "characterNumber": 21,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Kyōka Suigetsu",
+        "abilityQuote": "Shatter",
+        "abilityQuoteTemplate": "{quote}. {ability}."
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 4,
+        "speed": 2,
+        "range": 3,
+        "defense": 4,
+        "technique": 5
+      }
+    ]
+  },
+  "genryusai-shigekuni-yamamoto": {
+    "name": "Genryūsai Shigekuni Yamamoto",
+    "id": "genryusai-shigekuni-yamamoto",
+    "race": "shinigami",
+    "quote": "My flames are the very flames of creation. All things in the universe are born from fire, and all things in the universe will die by fire.",
+    "description": "The founding Captain-Commander of the Gotei 13, wielding the most powerful fire-type Zanpakutō. His stern leadership and overwhelming power has drove off countless threats, and has maintained order in Soul Society for over a thousand years. As a Short Range fighter, he combines devastating Melee combat with powerful Zoner abilities through his mastery over Ryujin Jakka's flames. His unique 'Hellfire' Stance mechanics and 'Inferno' Gauge allow him to gradually increase the power of his flames, while his Charge attacks can instantly turn the tide of battle. With maximum Power and Defense, decent Range, high Technique, but minimal Speed, Yamamoto dominates through sheer destructive force and tactical positioning, burning all who dare oppose him to ash.",
+    "tags": {
+      "affiliations": ["soulSociety", "shinigami", "squad1"],
+      "relationships": ["neutral"],
+      "abilities": ["awakening", "shikai"],
+      "characteristics": ["male", "captain", "gotei13"]
+    },
+    "characterEaseOfUse": 2,
+    "characterArchetype": ["shortRange", "melee", "zoner", "stance", "gauge", "charge"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=APf68D3Ty64&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=15",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=2JYfn-o37aA&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=8",
+    "characterNumber": 22,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Ryūjin Jakka",
+        "abilityQuote": "All Things in the Universe, Turn to Ashes",
+        "abilityQuoteTemplate": "{quote}... {ability}...!"
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 5,
+        "speed": 1,
+        "range": 3,
+        "defense": 5,
+        "technique": 3
+      }
+    ]
+  },
+  "shinji-hirako": {
+    "name": "Shinji Hirako",
+    "id": "shinji-hirako",
+    "race": "shinigami",
+    "quote": "Everything is opposite. Upside down, left is right, up is down. That's the way my world works.",
+    "description": "Former Captain of Squad 5 who was exiled from Soul Society after Aizen Sosuke's betrayal, where he forcibly Hollowfied Shinji and his colleagues. His laid-back attitude masks both deep tactical intelligence and lingering bitterness, as his unique powers reflect his reversed worldview. As a Short Range fighter, he utilizes precise Melee combat with a unique Trickster playstyle. His Stance mechanics revolve around swapping between Sakanade and his sealed Zanpakuto, confusing his opponents, while his Rushdown capabilities allow him to capitalize on their confusion. With balanced stats favoring Power, Shinji excels at disorienting opponents before striking with devastating combos.",
+    "tags": {
+      "affiliations": ["worldOfTheLiving", "soulSociety", "shinigami", "squad5"],
+      "relationships": ["friend"],
+      "abilities": ["awakening", "shikai", "hollowfication"],
+      "characteristics": ["male", "captain", "exile", "gotei13"]
+    },
+    "characterEaseOfUse": 3,
+    "characterArchetype": ["shortRange", "melee", "trickster", "stance", "rushdown"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=dV2QpXlq5ds&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=12",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=dVgkWouBJGA&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=7",
+    "characterNumber": 23,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Sakanade",
+        "abilityQuote": "Collapse",
+        "abilityQuoteTemplate": "{quote}. {ability}..."
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 4,
+        "speed": 3,
+        "range": 3,
+        "defense": 3,
+        "technique": 3
+      }
+    ]
+  },
+  "szayelaporro-granz": {
+    "name": "Szayelaporro Granz",
+    "id": "szayelaporro-granz",
+    "race": "arrancar",
+    "quote": "I am a perfect being! My body, mind, and powers are all perfect!",
+    "description": "The Octava Espada and self-proclaimed 'perfect' Aspect of Madness. A twisted scientist obsessed with perfection who treats battle as an experiment, modifying his servants and opponents to be able to face any opponent while maintaining a facade of sophistication. As a Short Range fighter, he combines precise Melee combat with his unique and complex mechanics. After Awakening, Szayelaporro's Gambler playstyle comes into play as he makes full use of his 'Spiritual Pressure Understanding' Gauge, which is filled by advancing his 'Analysis Process' count through applying and retrieving 'Rokureichu' on his opponents. Each of the three stages of the 'Spiritual Pressure Understanding' Gauge supplies different buffs, with the random possibility to claim more Konpaku through his Kikon Moves, and even the possibility of activating his Reviver perk, rebirthing him with a small amount of Reishi and Konpaku. With exceptional Technique, moderate Speed and Range, but low Power and Defense, Szayelaporro excels at gradually dismantling opponents through careful analysis and tactical superiority.",
+    "tags": {
+      "affiliations": ["huecoMundo", "arrancar"],
+      "relationships": ["enemy"],
+      "abilities": ["awakening", "resurrección"],
+      "characteristics": ["male", "ArrancarArmy", "espada"]
+    },
+    "characterEaseOfUse": 2,
+    "characterArchetype": ["shortRange", "melee", "gimmick", "gauge", "gambler", "reviver"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=ARpSb6I009s&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=8",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=DAvJE24A53E&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=6",
+    "characterNumber": 24,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Fornicarás (La Lujuriosa)",
+        "abilityQuote": "Ah... Sip",
+        "abilityQuoteTemplate": "{quote}... {ability}..."
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 1,
+        "speed": 3,
+        "range": 3,
+        "defense": 2,
+        "technique": 5
+      }
+    ]
+  },
+  "shunsui-kyoraku": {
+    "name": "Shunsui Kyoraku",
+    "id": "shunsui-kyoraku",
+    "race": "shinigami",
+    "quote": "It's not good to keep forcing yourself to fight. If you keep going like this, you'll lose your life.",
+    "description": "The laid-back Captain of Squad 8 and lifetime friend of Jushiro Ukitake, whose carefree demeanor belies his tactical genius and deadly fighting style. Despite his apparent laziness, he's one of Soul Society's most powerful and experienced Captains. As a Short Range fighter, he combines Melee combat with unique Ranged abilities through his dual-wielding style. His Gimmick mechanics revolve around his various 'Childrens Games' that are started by Awakening; after Awakening, one of three 'Childrens Games' will be chosen to play, being 'Draw', 'King of the Hill' and 'Tag'. Each of them have unique rules to remember, and gives Shunsui the possibility to fall into a devastating loss or unexpected victory through his Gambler playstyle; his Charge attacks reflect his unpredictable nature, allowing him to get an edge in these games, and to throw off his opponents. With high Defense, Technique, and balanced offensive stats, Shunsui excels at controlling the flow of battle through his various games, turning simple combat into deadly form of child's play.",
+    "tags": {
+      "affiliations": ["soulSociety", "shinigami", "squad8"],
+      "relationships": ["neutral"],
+      "abilities": ["awakening", "shikai"],
+      "characteristics": ["male", "captain", "gotei13"]
+    },
+    "characterEaseOfUse": 3,
+    "characterArchetype": ["shortRange", "melee", "ranged", "gimmick", "charge", "gambler"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=PCnLPmAac-o&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=6",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=dMAmNAWY7z0&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=5",
+    "characterNumber": 25,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Katen Kyōkotsu",
+        "abilityQuote": "When the Flower Wind Rages, the Flower God Roars, When the Wind of Heaven Rages, the God of the Underworld Sneers",
+        "abilityQuoteTemplate": "...{quote}... {ability}."
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 3,
+        "speed": 3,
+        "range": 2,
+        "defense": 4,
+        "technique": 4
+      }
+    ]
+  },
+  "sajin-komamura": {
+    "name": "Sajin Komamura",
+    "id": "sajin-komamura",
+    "race": "shinigami",
+    "quote": "I have no interest in whether I should live or die. But I do have an intense interest in protecting those who have protected me.",
+    "description": "The loyal Captain of Squad 7, whose wolf-like appearance caused him to hide behind a mask. His unwavering loyalty to Yamamoto and sense of justice towards returning Kaname Tosen to his senses drive him to protect Soul Society with his immense strength. As a Hybrid Range fighter, he combines powerful Slow Melee attacks with his Stance mechanics, where he can summon `Tenken` to augment his range and power. By Awakening, Sajin unleashes his Bankai, the Giant Summon Kokujō Tengen Myō'ō. His Berserker playstyle allows him to overwhelm opponents through raw power and determination, using his Awakening to guarantee victory, with the risk of losing it all if he mistimes his colossal Bankai. With exceptional Power and Defense, decent Range, but low Speed and Technique, Sajin dominates through unstoppable force and unwavering resolve.",
+    "tags": {
+      "affiliations": ["soulSociety", "shinigami", "squad7"],
+      "relationships": ["neutral"],
+      "abilities": ["awakening", "shikai", "bankai"],
+      "characteristics": ["male", "captain", "gotei13"]
+    },
+    "characterEaseOfUse": 4,
+    "characterArchetype": ["hybridRange", "melee", "slow", "giantSummon", "stance", "berserker"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=mbnUcwCRr9I&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=4",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=LE0Cfp6zekU&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=3",
+    "characterNumber": 26,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Tenken",
+        "abilityQuote": "Roar",
+        "abilityQuoteTemplate": "{quote}! {ability}!!"
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 4,
+        "speed": 1,
+        "range": 3,
+        "defense": 5,
+        "technique": 2
+      }
+    ]
+  },
+  "shuhei-hisagi": {
+    "name": "Shuhei Hisagi",
+    "id": "shuhei-hisagi",
+    "race": "shinigami",
+    "quote": "I believe that fighting is not about being afraid or not. It's about standing up to face an enemy who you're afraid of.",
+    "description": "Lieutenant of Squad 9 and skilled journalist for the Seireitei Communication magazine. Despite his fierce appearance, Hisagi is a thoughtful warrior who fears his own power and strives to embody justice in his former Captain's place after his betrayal. As a Hybrid Range fighter, he combines precise Melee combat with Ranged attacks and Kidō abilities. His 'Fear' Gauge mechanic and Ramper playstyle allow him to gradually build momentum through his Zanpakutō Kazeshini's unique properties, growing in strength as Hisagi and his opponent both take damage, creating a devastating slope of suffering. With high Speed and Range, moderate Defense, but lower Power and Technique, Hisagi excels at maintaining pressure through careful positioning and methodical attack patterns, building his strength - and therefore his confidence - slowly but surely.",
+    "tags": {
+      "affiliations": ["soulSociety", "shinigami", "squad9"],
+      "relationships": ["neutral"],
+      "abilities": ["awakening", "shikai"],
+      "characteristics": ["male", "lieutenant", "gotei13"]
+    },
+    "characterEaseOfUse": 4,
+    "characterArchetype": ["hybridRange", "melee", "ranged", "kidō", "gauge", "ramper"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=w1y8-W4CRQI&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=3",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=1hkNH7tlj9E&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=2",
+    "characterNumber": 27,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Kazeshini",
+        "abilityQuote": "Reap",
+        "abilityQuoteTemplate": "...{quote}... {ability}."
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 2,
+        "speed": 4,
+        "range": 4,
+        "defense": 3,
+        "technique": 2
+      }
+    ]
+  },
+  "ikkaku-madarame": {
+    "name": "Ikkaku Madarame",
+    "id": "ikkaku-madarame",
+    "race": "shinigami",
+    "quote": "I want to fight, I want to become stronger. It's simple as that!",
+    "description": "3rd Seat of Squad 11 who secretly achieved Bankai. A battle-loving warrior who follows Zaraki's philosophy of seeking strong opponents, while hiding his true power to remain in his preferred position. Incredibly lucky and proudly bald. As a Short Range fighter, he combines Fast Melee combat with unique triple-Stance mechanics through his three-part Zanpakutō, Hōzukimaru. After Awakening, his 'Ryumon' Gauge builds up as he maintains offensive pressure, providing further buffs, while his Rushdown playstyle allows him to overwhelm opponents with relentless attacks. With high Power and Speed, but lower Range, Defense, and Technique, Ikkaku excels at aggressive combat that rewards luck, maintaining offensive momentum through careful stance management, and constant pressure.",
+    "tags": {
+      "affiliations": ["soulSociety", "shinigami", "squad11"],
+      "relationships": ["neutral"],
+      "abilities": ["awakening", "shikai", "bankai"],
+      "characteristics": ["male", "seatedOfficer", "gotei13"]
+    },
+    "characterEaseOfUse": 4,
+    "characterArchetype": ["shortRange", "melee", "stance", "gauge", "fast", "rushdown"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=fBEu8HjbXFM&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=1",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=pQU59aOdOOY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=1",
+    "characterNumber": 28,
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "abilities": [
+      {
+        "abilityName": "Hōzukimaru",
+        "abilityQuote": "Extend",
+        "abilityQuoteTemplate": "{quote}! {ability}..!!"
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 4,
+        "speed": 4,
+        "range": 2,
+        "defense": 2,
+        "technique": 2
+      }
+    ]
+  },
+  "nnoitra-gilga": {
+    "name": "Nnoitra Gilga",
+    "id": "nnoitra-gilga",
+    "race": "arrancar",
+    "quote": "There is not a single person in heaven or on earth that can break me. Don't forget that I am the strongest Espada.",
+    "description": "The Quinto Espada and the Aspect of Despair; Nnoitra is a ruthless, power-hungry warrior that has a terrible inferiority complex; he sees the battlefield as a man's domain, and will build a mountain of corpses to stand atop his prey. As a Short Range, Slow, Melee character, Nnoitra loves nothing more than tanking hits with his Hierro (Which works like a Stance; once used it cannot be used again until it is expired, and expires on hit or over time) and taking advantage of the new openings this durability grants him. By harnessing his Hierro, Nnoitra can obtain Super Armor for one hit, greatly reducing damage and negative knockback to allow him to use powerful Breaker moves, Charge attacks and combos. His mid-range game is limited, but can be a good Poking option.",
+    "tags": {
+      "affiliations": ["huecoMundo", "arrancar"],
+      "relationships": ["enemy"],
+      "abilities": ["awakening", "resurrección"],
+      "characteristics": ["male", "espada", "ArrancarArmy"]
+    },
+    "characterEaseOfUse": 2,
+    "characterArchetype": ["shortRange", "melee", "slow", "stance", "charge"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=qoL7R5nqAsM",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=BieqWlJgYoE",
+    "characterNumber": 29,
+    "characterOutfits": ["1"],
+    "abilities": [
+      {
+        "abilityName": "Santa Teresa",
+        "abilityQuote": "Pray",
+        "abilityQuoteTemplate": "{quote}! {ability}..!!"
+      }
+    ],
+    "moves": [
+      {
+        "neutral": [
+          {
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 5,
+        "speed": 1,
+        "range": 1,
+        "defense": 5,
+        "technique": 2
+      }
+    ]
+  }
+}

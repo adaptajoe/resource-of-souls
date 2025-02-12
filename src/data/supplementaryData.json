@@ -1,0 +1,442 @@
+{
+  "gameTerms": {
+    "reishi": {
+      "id": "reishi",
+      "name": "Reishi",
+      "engName": "Spirit Particles",
+      "shortDescription": "Health",
+      "description": "Health. HP. Life."
+    },
+    "reishi-gauge": {
+      "id": "reishi-gauge",
+      "name": "Reishi Gauge",
+      "engName": "Spirit Particle Gauge",
+      "shortDescription": "Health Gauge",
+      "description": "Characters start with their Reishi Gauge filled to 100%, and once they hit a certain threshold (Identified with a larger bar segment), they enter the 'Now or Never State'. When your Reishi Gauge reaches 0%, you lose Konpaku via 'Soul Break'. You start with your Reishi Gauge at 100%."
+    },
+    "now-or-never-state": {
+      "id": "now-or-never-state",
+      "name": "Now or Never State",
+      "engName": "",
+      "shortDescription": "< 30% Reishi (HP) state",
+      "description": "A state that is entered once your Reishi Gauge reaches a certain threshold (Identified with a larger bar segment). This state makes you stunned for a short moment, leaving you open to Kikon Moves. The 'Now or Never State' is indicated by the Reishi Gauge turning red."
+    },
+    "konpaku": {
+      "id": "konpaku",
+      "name": "Konpaku",
+      "engName": "Soul",
+      "shortDescription": "Stocks",
+      "description": "Stocks. Lives. Rounds. Characters start with 9 Konpaku, and once either their Reishi Gauge reaches 0% (Soul Break), or they are hit with a Kikon Move in the 'Now or Never State', they lose Konpaku. The amount of Konpaku lost is highlighted in orange, capped with yellow. Once a character reaches 0 Konpaku, they are 'Beat Up', and lose the Match."
+    },
+    "beat-up": {
+      "id": "beat-up",
+      "name": "Beat Up",
+      "engName": "",
+      "shortDescription": "Match Loss",
+      "description": "Bleach - Rebirth of Souls' term used for defeat. The player who is Beat Up loses the Match."
+    },
+    "match": {
+      "id": "match",
+      "name": "Match",
+      "engName": "",
+      "shortDescription": "Single fight",
+      "description": "A single fight."
+    },
+    "timer": {
+      "id": "timer",
+      "name": "Timer",
+      "engName": "",
+      "shortDescription": "Beep-beep",
+      "description": "The time limit for a single Match."
+    },
+    "time-out": {
+      "id": "time-out",
+      "name": "Time Out",
+      "engName": "",
+      "shortDescription": "Timer hits 0",
+      "description": "When the Timer hits 0, a Time Out occurs, and the player with the most Konpaku remaining wins. If both players have the same amount of Konpaku, then the player with the most Reishi wins."
+    },
+    "soul-break": {
+      "id": "soul-break",
+      "name": "Soul Break",
+      "engName": "",
+      "shortDescription": "0% Reishi (HP) state. Auto-Guaranteed-Kikon",
+      "description": "The state a player enters when their Reishi hits 0%. The opposing character automatically activates and automatically hits their Kikon Move regardless of distance, losing the hit player a set number of Konpaku."
+    },
+    "kikon-move": {
+      "id": "kikon-move",
+      "name": "Kikon Move",
+      "engName": "Destroy Move",
+      "shortDescription": "Ultimate",
+      "description": "A slow ultimate attack that can be performed at any time, but has the most potential when an enemy is in the 'Now or Never State', as enemies are stunned when they enter this state. Kikon Moves garuntee a 'Beat Up'."
+    },
+    "kikon-channel": {
+      "id": "kikon-channel",
+      "name": "Kikon Channel",
+      "engName": "Destroy Channel",
+      "shortDescription": "Unlocks stronger Kikon Moves; build Fighting Gauge when Re/Awakened",
+      "description": "By building the Fighting Spirit Gauge whilst in the Sublimation State when Awakened or Reawakened, players unlock a more powerful variant of their Kikon Move, unlocked when the Fighting Spirit Gauge enters the Sprit Drive State, that takes more Konpaku from their opponent. This process of building the Fighting Spirit Gauge whilst Awakened or Reawakened is called Kikon Channel, and the Kikon Move itself is still referred to as a Kikon Move."
+    },
+    "clash": {
+      "id": "clash",
+      "name": "Clash",
+      "engName": "",
+      "shortDescription": "Failed Kikon on enemy with > 30% Reishi (HP) state and Guarding",
+      "description": "When a Kikon Move is attempted on an enemy with a Reiatsu Gauge above 30%, and they are actively performing a Guard, a Clash is instead performed. A Clash is a special animation that blocks a Kikon Move and separates both characters."
+    },
+    "super-armor": {
+      "id": "super-armor",
+      "name": "Super Armor",
+      "engName": "",
+      "shortDescription": "Unstunnable state",
+      "description": "Characters that can utilize Super Armor can tank a hit or two without playing a secondary 'stunned' animation, and reducing damage taken. Using this to close distance and to provide unexpected openings is critical."
+    },
+    "poking": {
+      "id": "poking",
+      "name": "Poking",
+      "engName": "",
+      "shortDescription": "Tiny distant tap-hit",
+      "description": "Poking is a term often used in the Fighting Game community to refer to a move that hits a certain distance, and often does a small amount of damage. These moves are often slow and predictable, but effective for controlling distance and preventing enemy approaches."
+    },
+    "guard-gauge": {
+      "id": "guard-gauge",
+      "name": "Guard Gauge",
+      "engName": "",
+      "shortDescription": "Shows remaining Guard",
+      "description": "A resource that is global to every character that is spent on performing a Guard located underneath the Reishi Gauge after performing a Guard. Similar to Super Smash Bros.' Bubble Shield. Guard Gauge is restored passively over time, and can be further restored by successfully performing a Burst Reverse. It is reduced by being hit whilst performing a Guard. You start with a full Guard Gauge."
+    },
+    "reverse": {
+      "id": "reverse",
+      "name": "Reverse",
+      "engName": "",
+      "shortDescription": "Augment mechanic; Soul R. boosts speed + HP Restore, Chain R. extends combos, Burst R. pushes away + Guard Restore",
+      "description": "A unique move (Referred to in this page as a 'Reverse Move') that every character can perform. A Reverse can be performed at any time to gain advantages, but changes forms depending on what the player is doing at the time of the Reverse. There are three types of Reverse; 'Soul Reverse', 'Chain Reverse' and 'Burst Reverse'. Reverses consume the Reverse Gauge. The Reverse Gauge recovers slowly over time. You start with a full Reverse Gauge."
+    },
+    "reverse-gauge": {
+      "id": "reverse-gauge",
+      "name": "Reverse Gauge",
+      "engName": "",
+      "shortDescription": "Resource consumed by Reversing; restores over time",
+      "description": "The gauge associated with Reverses, located at the bottom of the screen. Performing Reverses consumes amounts of the Reverse Gauge."
+    },
+    "soul-reverse": {
+      "id": "soul-reverse",
+      "name": "Soul Reverse",
+      "engName": "",
+      "shortDescription": "White Reverse, speed up + Reishi (HP) Restoration",
+      "description": "A Reverse Move that is global for every character. Performed by standing still and activating Reverse. Soul Reverse is colored white, and increases your mobility and gives passive Reishi restoration."
+    },
+    "chain-reverse": {
+      "id": "chain-reverse",
+      "name": "Chain Reverse",
+      "engName": "",
+      "shortDescription": "Yellow Reverse, combo extender",
+      "description": "A Reverse Move that is global for every character. Performed by attacking the opponent and activating Reverse. Chain Reverse is colored yellow and extends your combos to help you push the offensive."
+    },
+    "burst-reverse": {
+      "id": "burst-reverse",
+      "name": "Burst Reverse",
+      "engName": "",
+      "shortDescription": "Blue Reverse, pushback + Guard Restoration",
+      "description": "A Reverse Move that is global for every character. Performed by being attacked by the opponent and activating Reverse. Burst Reverse is colored blue, blocks an opponent's attack and pushes them away. It also restores your Guard Gauge."
+    },
+    "reiatsu": {
+      "id": "reiatsu",
+      "name": "Reiatsu",
+      "engName": "Spiritual Pressure",
+      "shortDescription": "Special Meter Points",
+      "description": "A resource that fills the Reiatsu Gauge. Increases by landing attacks and being attacked, and decreases by performing Special Attacks and Signature Moves."
+    },
+    "reiatsu-gauge": {
+      "id": "reiatsu-gauge",
+      "name": "Reiatsu Gauge",
+      "engName": "Spiritual Pressure Gauge",
+      "shortDescription": "Special Meter",
+      "description": "A resource that is global to every character that is spent on performing Special Attacks and Signature Moves."
+    },
+    "fighting-spirit-gauge": {
+      "id": "fighting-spirit-gauge",
+      "name": "Fighting Spirit Gauge",
+      "engName": "",
+      "shortDescription": "Transformation Meter",
+      "description": "A gauge that fills by attacking, being attacked, and losing Konpaku. When the Fighting Spirit Gauge is fully charged, you can perform Awakenings, and - under certain conditions - Reawakenings. After Awakening, the Fighting Spirit Gauge enters the Sublimation State and is reset to 0%."
+    },
+    "sublimation-state": {
+      "id": "sublimation-state",
+      "name": "Sublimation State",
+      "engName": "",
+      "shortDescription": "LV1 Post-Awakening 100% Fighting Spirit buff-state",
+      "description": "The state that the Fighting Spirit Gauge enters after Awakening. The Fighting Spirit Gauge is reset to 0%, and turns red; once the Fighting Spirit Gauge - in the Sublimation State - is refilled again to 100%, the Fighting Spirit Gauge enters the Spirit Drive State."
+    },
+    "spirit-drive-state": {
+      "id": "spirit-drive-state",
+      "name": "Spirit Drive State",
+      "engName": "",
+      "shortDescription": "LV2 Post-Awakening 100% Fighting Spirit buff-state",
+      "description": "The state that the Fighting Spirit Gauge enters after being filled a second time after Awakening. The Fighting Spirit Gauge is now stuck at 100%, and turns red with a flaming effect; in this state, the Fighting Spirit Gauge enhances your abilities and stats."
+    },
+    "awakening": {
+      "id": "awakening",
+      "name": "Awakening",
+      "engName": "",
+      "shortDescription": "Transformation",
+      "description": "A transformation that is achieved by fully filling your Fighting Spirit Gauge. This transformation gives the character new abilities, moves, buffs, animations and mechanics. Each character's Awakening is unique to them."
+    },
+    "reawakening": {
+      "id": "reawakening",
+      "name": "Reawakening",
+      "engName": "",
+      "shortDescription": "Second Transformation",
+      "description": "A second-level transformation that is achieved by fully filling your Fighting Spirit Gauge a second time after Awakening first, and by fulfilling certain conditions unique to the characters that can use Reawakening. This transformation gives the character more new abilities, moves, buffs, animations and mechanics. Each character's Reawakening is unique to them."
+    },
+    "follow-up-hoho": {
+      "id": "follow-up-hoho",
+      "name": "Follow-up Hoho",
+      "engName": "Follow-up Fast Movement",
+      "shortDescription": "Launch combo catch-up teleport",
+      "description": "A global combo extender that can be used by any character that teleports the user to their target whilst the user is already in the middle of a combo; helps to prevent you losing a combo due to launching an opponent away from you."
+    },
+    "counter": {
+      "id": "counter",
+      "name": "Counter",
+      "engName": "",
+      "shortDescription": "Parry",
+      "description": "A global move that can be used by any character that teleports the user behind their target whilst the user is nearly being hit by an opponent's attack; begins a combo instantly after a successful Counter."
+    },
+    "tilting": {
+      "id": "tilting",
+      "name": "Tilting",
+      "engName": "",
+      "shortDescription": "Stick wobble to change attack types; affects Quick Attack + Flash Attack",
+      "description": "A method of augmenting a Quick Attack or Flash Attack into a different form, specifically known as Step Quick Attack and Special Flash Attack. Perforned by moving the left stick in a certain direction at the same time as performing the attack's input button."
+    },
+    "quick-attack": {
+      "id": "quick-attack",
+      "name": "Quick Attack",
+      "engName": "",
+      "shortDescription": "Light Attack",
+      "description": "Light attack. A global move that can be used by any character. A traditional fast, but weak attack."
+    },
+    "flash-attack": {
+      "id": "flash-attack",
+      "name": "Flash Attack",
+      "engName": "",
+      "shortDescription": "Heavy Attack",
+      "description": "Heavy attack. A global move that can be used by any character. A traditional slow, but powerful attack."
+    },
+    "step-quick-attack": {
+      "id": "step-quick-attack",
+      "name": "Step Quick Attack",
+      "engName": "",
+      "shortDescription": "Alternative Light Attack",
+      "description": "A variant of a Quick Attack. A global move that can be used by any character, and performed by Tilting. A traditional fast, but weak attack."
+    },
+    "special-flash-attack": {
+      "id": "special-flash-attack",
+      "name": "Special Flash Attack",
+      "engName": "",
+      "shortDescription": "Alternative Heavy Attack",
+      "description": "A variant of a Flash Attack. A global move that can be used by any character, and performed by Tilting. A traditional slow, but powerful attack. These are also usually ranged or movement-oriented."
+    },
+    "quick-attack-combo": {
+      "id": "quick-attack-combo",
+      "name": "Quick Attack Combo",
+      "engName": "",
+      "shortDescription": "Light Attack Combo",
+      "description": "A global string of moves that can be used by any character. A traditional fast, but weak combo of repeated Quick Attacks. Quick Attacks build the Reiatsu Gauge."
+    },
+    "flash-attack-combo": {
+      "id": "flash-attack-combo",
+      "name": "Flash Attack Combo",
+      "engName": "",
+      "shortDescription": "Heavy Attack Combo",
+      "description": "A global string of moves that can be used by any character. A traditional slow, but powerful combo of repeated Flash Attacks. Flash Attacks deal a lot of damage and deal high damage to Guard."
+    },
+    "mixed-attack-combo": {
+      "id": "mixed-attack-combo",
+      "name": "Mixed Attack Combo",
+      "engName": "",
+      "shortDescription": "Mixed combo of Flash + Quick (+ Step / Special) Attacks.",
+      "description": "A global string of moves that can be used by any character. A traditional mix of Quick Attacks and Flash Attacks."
+    },
+    "attack": {
+      "id": "attack",
+      "name": "Attack",
+      "engName": "",
+      "shortDescription": "Bonk",
+      "description": "Either a Quick Attack, Step Quick Attack, Flash Attack or Special Flash Attack. Easily overpowers Breakers."
+    },
+    "guard": {
+      "id": "guard",
+      "name": "Guard",
+      "engName": "",
+      "shortDescription": "'You shall not pass..!!'",
+      "description": "A global move that can be used by any character. A standard guard. Being hit whilst performing a Guard consumes the Guard Gauge. Easily overpowered by a Breaker."
+    },
+    "breaker": {
+      "id": "breaker",
+      "name": "Breaker",
+      "engName": "",
+      "shortDescription": "Grab or Grapple",
+      "description": "A global move that can be used by any character. A specialised attack similar to a grab that is built to break through a Guard. Easily overpowered by an Attack."
+    }
+  },
+  "archetypes": {
+    "rushdown": {
+      "id": "rushdown",
+      "name": "Rushdown",
+      "shortDescription": "Prefers being in your face",
+      "description": "Characters that specialise in getting up close and personal with their enemies. They prefer to make the distance between them and their opponent as small as possible whilst keeping them in this 'golden zone'. Be on your toes to win."
+    },
+    "gambler": {
+      "id": "gambler",
+      "name": "Gambler",
+      "shortDescription": "Has RNG mechanics",
+      "description": "Characters that have aspects of RNG (Random Number Generation) in their kits. This can be literal dice rolls, to a percentage chance, to a factor that is outside of their control. These characters are unpredictable - To both the opponent, and to you. Get lucky to win."
+    },
+    "berserker": {
+      "id": "berserker",
+      "name": "Berserker",
+      "shortDescription": "Unga-Bunga",
+      "description": "An evolution of the Rushdown, Berserkers only care about one thing. Dealing damage. They often have immense Power and Defense, but slow speed, allowing them to dominate when they are trapped in their wide-hitting moves and close combos. Keep at a range to win."
+    },
+    "ramper": {
+      "id": "ramper",
+      "name": "Ramper",
+      "shortDescription": "Starts weak, ends up strong",
+      "description": "Unique to 'Bleach - Rebirth of Souls', the Ramper Archetype refers to characters that start off disadvantaged, but slowly become exponentially more powerful as a match progresses; new forms, buffs and a spiralling sense of dread for the opponent is common with these characters. Put them down quickly to win."
+    },
+    "reviver": {
+      "id": "reviver",
+      "name": "Reviver",
+      "shortDescription": "Can revive themselves",
+      "description": "These characters have a unique mechanic that can bring them back from the brink of defeat if the conditions are right. These characters can cheat death, making them surprising opponents to face. Keep this in mind to defeat them."
+    },
+    "zoner": {
+      "id": "zoner",
+      "name": "Zoner",
+      "shortDescription": "Focuses on area control",
+      "description": "These characters are masters of controlling positioning - Often paired with grabs, vortex moves and other space-controlling measures, Zoners keep the pressure on their opponents by ensuring their every move is under their control. Keep a cool head to win."
+    },
+    "gauge": {
+      "id": "gauge",
+      "name": "Gauge",
+      "shortDescription": "Has a Gauge",
+      "description": "Characters with the Gauge Archetype have a unique resource that dictates their power; different Gauge chararacters have different rules, so study their buffs and weaknesses thoroughly. Use this knowledge to your advantage, either to dominate your foes, or to overcome a powerful Gauge character."
+    },
+    "stance": {
+      "id": "stance",
+      "name": "Stance",
+      "shortDescription": "Has different Stances",
+      "description": "Stance characters flip between different 'states' that grant them different moves, buffs and animations; this can quickly escalate as it confuses the opponent with fakeouts and constant Stance swapping. Keep flexible to win."
+    },
+    "trickster": {
+      "id": "trickster",
+      "name": "Trickster",
+      "shortDescription": "Tricky fakeout confuser character",
+      "description": "Tricksters are masters of fakeouts and work via controlling the opponent's options, wether it be through animation cancelling, Stance changing, vision limiting or other sorts of chicanery - These characters are often annoying to fight, but a dream to master."
+    },
+    "vampiric": {
+      "id": "vampiric",
+      "name": "Vampiric",
+      "shortDescription": "Spends Reishi, heals Reishi",
+      "description": "The Vampric Archetype allows the user to consume their Reishi in order to boost their attacking power. They also have the ability to restore their Reishi through certain moves. These characters are bastions of durability, and need to choose when to expend this resource thoughtfully."
+    },
+    "giant-summon": {
+      "id": "giant-summon",
+      "name": "Giant Summon",
+      "shortDescription": "Awakening has a Giant",
+      "description": "Characters with this Archetype have the unique ability to summon a large entity to augment their Range - Most often through Awakening, these characters trade their Speed in exchange for devastating Power and Range, making them difficult to fight; usually Giant Summon characters have a drawback tied to their Giant Summon, so exploiting this is key."
+    },
+    "reawakener": {
+      "id": "reawakener",
+      "name": "Reawakener",
+      "shortDescription": "Can use Reawakening",
+      "description": "Characters that have access to the powerful Reawakening mechanic. Every Reawakener's conditions to Reawaken is unique, so preventing them from reaching those conditions is paramount to survival."
+    },
+    "charge": {
+      "id": "charge",
+      "name": "Charge",
+      "shortDescription": "Has Charge attacks",
+      "description": "Self-explanatory. Charge characters have abilities that get stronger the more they charge them. Interrupting this charging, and understanding when your opponent is fully charged is the key to victory here."
+    },
+    "short-range": {
+      "id": "short-range",
+      "name": "Short Range",
+      "shortDescription": "Close attacker",
+      "description": "Self-explanatory. Short Range characters specialse at close-combat."
+    },
+    "hybrid-range": {
+      "id": "hybrid-range",
+      "name": "Hybrid Range",
+      "shortDescription": "Mixed-range attacker",
+      "description": "Self-explanatory. Hybrid Range characters can handle both Short Range and Long Range situations flexibly."
+    },
+    "long-range": {
+      "id": "long-range",
+      "name": "Long Range",
+      "shortDescription": "Distant attacker",
+      "description": "Self-explanatory. Long Range characters specialse at distant combat."
+    },
+    "slow": {
+      "id": "slow",
+      "name": "Slow",
+      "shortDescription": "High Power, & Defense, Low Speed & Technique",
+      "description": "Self-explanatory. Slow characters often have high Power and Defense, in exchange for Speed and Technique."
+    },
+    "balanced": {
+      "id": "balanced",
+      "name": "Balanced",
+      "shortDescription": "No extreme stats",
+      "description": "Self-explanatory. Balanced characters have a blend of Fast and Slow properites, often giving them their own unique speed."
+    },
+    "fast": {
+      "id": "fast",
+      "name": "Fast",
+      "shortDescription": "High Speed & High Technique, Low Power & Low Defense",
+      "description": "Self-explanatory. Fast characters often have high Speed and Technique, in exchange for Power and Defense."
+    },
+    "melee": {
+      "id": "melee",
+      "name": "Melee",
+      "shortDescription": "Uses either Zanjutsu (Sword) or Hakuda (Hand-to-Hand)",
+      "description": "Self-explanatory. Melee characters specialise in Zanjutsu swordplay, or hand-to-hand Hakuda combat."
+    },
+    "ranged": {
+      "id": "ranged",
+      "name": "Ranged",
+      "shortDescription": "Uses projectiles like arrows, Ceros, bullets, Kidō, etc",
+      "description": "Self-explanatory. Ranged characters specialise in projectile attacks, like Ceros, Helig Pfiel, and other bullet-like abilities."
+    },
+    "kido": {
+      "id": "kido",
+      "name": "Kidō",
+      "shortDescription": "Uses Kidō spells",
+      "description": "Self-explanatory. Kidō characters have unexpected mixup abilities that can be either close-range or long-range, and have unique properties like pulling enemies closer, stopping enemy movements, or evolving over time. Learn the different types of Kidō to stay prepared."
+    },
+    "instakill": {
+      "id": "instakill",
+      "name": "Instakill",
+      "shortDescription": "Can win a Match instantly",
+      "description": "Self-explanatory. These dangerous characters have a unique ability that allows them to instantly kill their opponent regardless of their Reishi Gauge or Konpaku. Pay close attention to these characters' triggers and animations and play defensively or aggressively to win."
+    },
+    "reloader": {
+      "id": "reloader",
+      "name": "Reloader",
+      "shortDescription": "Has expendable projectiles",
+      "description": "Self-explanatory. Reloader characters have a fixed number of a resource that gets consumed and reloaded via a secondary action; for instance, guns, throwing knives, or other such weaponry."
+    },
+    "gimmick": {
+      "id": "gimmick",
+      "name": "Gimmick",
+      "shortDescription": "Has unique mechanics",
+      "description": "Self-explanatory. These characters often have a unique mechanic that gives them a rare edge against their competition. Most Gimmick characters' kits revolve around the core Gimmick."
+    },
+    "dlc": {
+      "id": "dlc",
+      "name": "DLC",
+      "shortDescription": "Is not in the Base Roster",
+      "description": "This character is included as Downloadable Content (DLC)."
+    }
+  }
+}
