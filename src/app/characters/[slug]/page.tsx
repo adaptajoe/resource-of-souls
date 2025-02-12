@@ -1,17 +1,17 @@
+import fs from "fs";
+import path from "path";
+import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import characterDataRaw from "@/data/characterData.json";
 import { CharacterData, Character } from "@/types/character";
-import Link from "next/link";
-import Image from "next/image";
+import { parseGameTerms } from "@/utils/termParser";
+import CharacterAnimations from "@/app/components/CharacterAnimations";
+import CharacterMoves from "@/app/components/CharacterMoves";
+import CharacterSidebar from "@/app/components/CharacterSidebar";
 import RadarChartComponent from "@/app/components/RadarChartComponent";
 import StarRating from "@/app/components/StarRating";
 import YouTubeEmbed from "@/app/components/EmbedYoutubeVideo";
-import CharacterMoves from "@/app/components/CharacterMoves";
-import CharacterSidebar from "@/app/components/CharacterSidebar";
-import fs from "fs";
-import path from "path";
-import { parseGameTerms } from "@/utils/termParser";
-import CharacterAnimations from "@/app/components/CharacterAnimations";
 
 function formatTagName(tag: string): string {
   // Handle Squad numbers first
@@ -59,8 +59,8 @@ type PageParams = {
 };
 
 type Props = {
-  params: PageParams;
-  searchParams?: { [key: string]: string | string[] | undefined };
+  params: Promise<PageParams>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 function getCharacterAnimations(characterSlug: string): string[] {
@@ -73,7 +73,8 @@ function getCharacterAnimations(characterSlug: string): string[] {
   }
 }
 
-export default async function CharacterPage({ params }: Props) {
+export default async function CharacterPage(props: Props) {
+  const params = await props.params;
   const character = characterData[params.slug] as Character;
   const totalStats = character.stats[0].power + character.stats[0].speed + character.stats[0].range + character.stats[0].defense + character.stats[0].technique;
   const animations = getCharacterAnimations(params.slug);

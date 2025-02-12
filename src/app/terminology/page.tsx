@@ -2,7 +2,7 @@
 import Link from "next/link";
 import characterData from "@/data/characterData.json";
 import supplementaryData from "@/data/supplementaryData.json";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 import { TbChevronUp, TbChevronDown } from "react-icons/tb";
@@ -52,7 +52,7 @@ const getCharactersByArchetype = (archetype: string): { name: string; slug: stri
     }));
 };
 
-export default function Terminology() {
+const TerminologyPage = () => {
   const [archetypesIsOpen, setArchetypesIsOpen] = useState(false);
   const [gameTermsIsOpen, setGameTermsIsOpen] = useState(false);
   const [highlightedId, setHighlightedId] = useState<string | null>(null);
@@ -220,5 +220,13 @@ export default function Terminology() {
         </div>
       </div>
     </div>
+  );
+};
+
+export default function Terminology() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <TerminologyPage />
+    </Suspense>
   );
 }
