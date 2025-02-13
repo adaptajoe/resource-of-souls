@@ -1,10 +1,13 @@
 "use client";
+import Link from "next/link";
 import { useState, useRef, useEffect, useCallback } from "react";
 
 interface Character {
   id: string;
   name: string;
 }
+
+type Size = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
 
 export default function VersusGenerator() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -13,6 +16,11 @@ export default function VersusGenerator() {
   const [mirrorPlayer2, setMirrorPlayer2] = useState(false);
   const [player1Silhouette, setPlayer1Silhouette] = useState(false);
   const [player2Silhouette, setPlayer2Silhouette] = useState(false);
+  const [borderPlayer1, setBorderPlayer1] = useState(false);
+  const [borderPlayer2, setBorderPlayer2] = useState(false);
+  const [glowPlayer1, setGlowPlayer1] = useState(false);
+  const [glowPlayer2, setGlowPlayer2] = useState(false);
+  const [glowVS, setGlowVS] = useState(false);
 
   const [player1, setPlayer1] = useState({
     character: "",
@@ -20,6 +28,8 @@ export default function VersusGenerator() {
     name: "Player 1",
     quote: "Custom Quote",
     color: "#ffffff",
+    alignment: "left",
+    size: "md" as Size,
   });
 
   const [player2, setPlayer2] = useState({
@@ -28,6 +38,8 @@ export default function VersusGenerator() {
     name: "Player 2",
     quote: "Custom Quote",
     color: "#ff0000",
+    alignment: "right",
+    size: "md" as Size,
   });
 
   const [isLoading, setIsLoading] = useState(true);
@@ -266,44 +278,128 @@ export default function VersusGenerator() {
       }
 
       // Draw VS text
-      if (!whiteVS) {
-        // Draw V in player1's color
-        ctx.font = "bold 300px 'Bebas Neue'";
-        ctx.textAlign = "right";
-        ctx.textBaseline = "middle";
-        ctx.fillStyle = player1.color;
-        ctx.fillText("V", canvas.width / 2 - 10, canvas.height / 1.95);
-
-        // Draw S in player2's color
-        ctx.textAlign = "left";
-        ctx.fillStyle = player2.color;
-        ctx.fillText("S", canvas.width / 2 + 10, canvas.height / 1.95);
-      } else {
-        // Draw full VS in white if whiteVS is true
+      const drawVSText = (text: string, x: number, y: number, color: string, glow: boolean) => {
         ctx.font = "bold 300px 'Bebas Neue'";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.fillStyle = "#FFFFFF";
-        ctx.fillText("VS", canvas.width / 2, canvas.height / 1.95);
+        ctx.fillStyle = color;
+        if (glow) {
+          ctx.save();
+          ctx.fillStyle = "#000000";
+          ctx.strokeStyle = color;
+          ctx.lineWidth = 14;
+          ctx.strokeText(text, x, y);
+          ctx.shadowColor = color;
+          ctx.shadowBlur = 200;
+          ctx.fillText(text, x, y);
+          ctx.restore();
+        } else {
+          ctx.fillText(text, x, y);
+        }
+      };
+
+      if (!whiteVS) {
+        // Draw V in player1's color
+        drawVSText("V", canvas.width / 2 - 56, canvas.height / 1.95, player1.color, glowVS);
+
+        // Draw S in player2's color
+        drawVSText("S", canvas.width / 2 + 57, canvas.height / 1.95, player2.color, glowVS);
+      } else {
+        // Draw full VS in white if whiteVS is true
+        drawVSText("VS", canvas.width / 2, canvas.height / 1.95, "#FFFFFF", glowVS);
       }
 
       // Draw player names and quotes
-      ctx.font = "bold 200px 'Bebas Neue'";
+      const sizeMap: { [key in Size]: number } = {
+        xs: 125,
+        sm: 150,
+        md: 175,
+        lg: 200,
+        xl: 250,
+        xxl: 275,
+      };
+
+      const drawText = (text: string, x: number, y: number, textAlign: CanvasTextAlign, size: number, color: string, border: boolean, glow: boolean) => {
+        ctx.textAlign = textAlign;
+        ctx.fillStyle = color;
+        ctx.font = `bold ${size}px 'Bebas Neue'`;
+        if (border) {
+          ctx.strokeStyle = "#000000";
+          ctx.lineWidth = 8;
+          ctx.strokeText(text, x, y);
+        }
+        if (glow) {
+          ctx.save();
+          ctx.fillStyle = "#000000";
+          ctx.strokeStyle = color;
+          ctx.lineWidth = 14;
+          ctx.strokeText(text, x, y);
+          ctx.shadowColor = color;
+          ctx.shadowBlur = 200;
+          ctx.fillText(text, x, y);
+          ctx.restore();
+        } else {
+          ctx.fillText(text, x, y);
+        }
+      };
+
+      const drawPlayer1Text = (text: string, y: number, size: number, color: string, border: boolean, glow: boolean) => {
+        let x: number;
+        let textAlign: CanvasTextAlign;
+
+        switch (player1.alignment) {
+          case "left":
+            x = 350;
+            textAlign = "left";
+            break;
+          case "center":
+            x = 900;
+            textAlign = "center";
+            break;
+          case "right":
+            x = 1450;
+            textAlign = "right";
+            break;
+          default:
+            x = 350;
+            textAlign = "left";
+        }
+
+        drawText(text, x, y, textAlign, size, color, border, glow);
+      };
+
+      const drawPlayer2Text = (text: string, y: number, size: number, color: string, border: boolean, glow: boolean) => {
+        let x: number;
+        let textAlign: CanvasTextAlign;
+
+        switch (player2.alignment) {
+          case "left":
+            x = canvas.width - 1450;
+            textAlign = "left";
+            break;
+          case "center":
+            x = canvas.width - 900;
+            textAlign = "center";
+            break;
+          case "right":
+            x = canvas.width - 350;
+            textAlign = "right";
+            break;
+          default:
+            x = canvas.width - 350;
+            textAlign = "right";
+        }
+
+        drawText(text, x, y, textAlign, size, color, border, glow);
+      };
 
       // Player 1 name and quote
-      ctx.textAlign = "left";
-      ctx.fillStyle = player1.color;
-      ctx.fillText(player1.name, 350, canvas.height - 500);
-      ctx.font = "100px 'Bebas Neue'";
-      ctx.fillText(`"${player1.quote}"`, 350, canvas.height - 350);
+      drawPlayer1Text(player1.name, canvas.height - 500, sizeMap[player1.size], player1.color, borderPlayer1, glowPlayer1);
+      drawPlayer1Text(`"${player1.quote}"`, canvas.height - 350, sizeMap[player1.size] / 2, player1.color, borderPlayer1, glowPlayer1);
 
       // Player 2 name and quote
-      ctx.textAlign = "right";
-      ctx.font = "bold 200px 'Bebas Neue'";
-      ctx.fillStyle = player2.color;
-      ctx.fillText(player2.name, canvas.width - 350, canvas.height - 500);
-      ctx.font = "100px 'Bebas Neue'";
-      ctx.fillText(`"${player2.quote}"`, canvas.width - 350, canvas.height - 350);
+      drawPlayer2Text(player2.name, canvas.height - 500, sizeMap[player2.size], player2.color, borderPlayer2, glowPlayer2);
+      drawPlayer2Text(`"${player2.quote}"`, canvas.height - 350, sizeMap[player2.size] / 2, player2.color, borderPlayer2, glowPlayer2);
 
       // Source Text
       ctx.textAlign = "right";
@@ -313,7 +409,7 @@ export default function VersusGenerator() {
     } catch (error) {
       console.error("Error loading images:", error);
     }
-  }, [player1, player2, mirrorPlayer1, mirrorPlayer2, whiteVS, player1Silhouette, player2Silhouette]);
+  }, [player1, player2, mirrorPlayer1, mirrorPlayer2, whiteVS, player1Silhouette, player2Silhouette, borderPlayer1, borderPlayer2, glowPlayer1, glowPlayer2, glowVS]);
 
   // Set up high DPI canvas
   useEffect(() => {
@@ -345,166 +441,270 @@ export default function VersusGenerator() {
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="flex flex-col lg:flex-row gap-4">
-        <div className="flex-1 space-y-4">
-          <div className="grid grid-cols-2 gap-4">
-            {/* Player 1 Controls */}
-            <div className="space-y-2">
-              <h3 className="text-lg font-bold">Player 1</h3>
-              <select
-                value={player1.character}
-                onChange={(e) =>
-                  setPlayer1((prev) => ({
-                    ...prev,
-                    character: e.target.value,
-                    outfit: availableOutfits[e.target.value]?.[0] || "base-outfit-1",
-                  }))
-                }
-                className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
-              >
-                {characters.map((char) => (
-                  <option key={char.id} value={char.id}>
-                    {char.name}
-                  </option>
-                ))}
-              </select>
+    <div className="flex flex-col items-center lg:items-start lg:flex-row lg:justify-between">
+      <div className="container ml-8 w-full mt-8">
+        <nav className="flex flex-row">
+          <Link href="/" className="text-teal-400 hover:underline">
+            Home
+          </Link>
+          <p className="px-2">/</p>
+          <Link href="/community" className="text-teal-400 hover:underline">
+            Community
+          </Link>
+          <p className="px-2">/</p>
+          <Link href={`/community/versus-generator`} className="text-teal-400 hover:underline">
+            Versus Image Generator
+          </Link>
+        </nav>
 
-              <select
-                value={player1.outfit}
-                onChange={(e) => setPlayer1((prev) => ({ ...prev, outfit: e.target.value }))}
-                className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
-              >
-                {availableOutfits[player1.character]?.map((outfit) => (
-                  <option key={outfit} value={outfit}>
-                    {outfit}
-                  </option>
-                ))}
-              </select>
-              <input
-                type="text"
-                value={player1.name}
-                onChange={(e) => setPlayer1((prev) => ({ ...prev, name: e.target.value }))}
-                placeholder="Player 1 Name"
-                className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
-              />
+        <h1 className="text-3xl font-bold">Versus Image Generator</h1>
+        <div className="grid grid-cols-2">
+          <p className="mt-4 mb-6">
+            Generate versus images to build up hype for your upcoming duel! Wether it be a personal bout, Tournament match, or just for fun, simply select a character and an outfit, add your names and
+            a quote, and generate!
+          </p>
+        </div>
+        <hr />
+        <div className="grid grid-cols-4 gap-4 mt-4">
+          {/* Player 1 Controls */}
+          <div className="space-y-2">
+            <h3 className="text-lg font-bold">Player 1</h3>
+            <select
+              value={player1.character}
+              onChange={(e) =>
+                setPlayer1((prev) => ({
+                  ...prev,
+                  character: e.target.value,
+                  outfit: availableOutfits[e.target.value]?.[0] || "base-outfit-1",
+                }))
+              }
+              className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
+            >
+              {characters.map((char) => (
+                <option key={char.id} value={char.id}>
+                  {char.name}
+                </option>
+              ))}
+            </select>
 
-              <input
-                type="text"
-                value={player1.quote}
-                onChange={(e) => setPlayer1((prev) => ({ ...prev, quote: e.target.value }))}
-                placeholder="Player 1 Quote"
-                className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
-              />
+            <select
+              value={player1.outfit}
+              onChange={(e) => setPlayer1((prev) => ({ ...prev, outfit: e.target.value }))}
+              className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
+            >
+              {availableOutfits[player1.character]?.map((outfit) => (
+                <option key={outfit} value={outfit}>
+                  {outfit}
+                </option>
+              ))}
+            </select>
+            <input
+              type="text"
+              value={player1.name}
+              onChange={(e) => setPlayer1((prev) => ({ ...prev, name: e.target.value }))}
+              placeholder="Player 1 Name"
+              className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
+            />
 
-              <input
-                type="color"
-                value={player1.color}
-                onChange={(e) => setPlayer1((prev) => ({ ...prev, color: e.target.value }))}
-                className="w-full bg-black text-xs p-0.5 border border-gray-400 text-gray-400 rounded"
-              />
-            </div>
+            <input
+              type="text"
+              value={player1.quote}
+              onChange={(e) => setPlayer1((prev) => ({ ...prev, quote: e.target.value }))}
+              placeholder="Player 1 Quote"
+              className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
+            />
 
-            {/* Player 2 Controls */}
-            <div className="space-y-2">
-              <h3 className="text-lg font-bold">Player 2</h3>
-              <select
-                value={player2.character}
-                onChange={(e) =>
-                  setPlayer2((prev) => ({
-                    ...prev,
-                    character: e.target.value,
-                    outfit: availableOutfits[e.target.value]?.[0] || "base-outfit-1",
-                  }))
-                }
-                className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
-              >
-                {characters.map((char) => (
-                  <option key={char.id} value={char.id}>
-                    {char.name}
-                  </option>
-                ))}
-              </select>
+            <input
+              type="color"
+              value={player1.color}
+              onChange={(e) => setPlayer1((prev) => ({ ...prev, color: e.target.value }))}
+              className="w-full bg-black text-xs p-0.5 border border-gray-400 text-gray-400 rounded"
+            />
 
-              <select
-                value={player2.outfit}
-                onChange={(e) => setPlayer2((prev) => ({ ...prev, outfit: e.target.value }))}
-                className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
-              >
-                {availableOutfits[player2.character]?.map((outfit) => (
-                  <option key={outfit} value={outfit}>
-                    {outfit}
-                  </option>
-                ))}
-              </select>
+            <select
+              value={player1.alignment}
+              onChange={(e) => setPlayer1((prev) => ({ ...prev, alignment: e.target.value }))}
+              className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
+            >
+              <option value="left">Left</option>
+              <option value="center">Center</option>
+              <option value="right">Right</option>
+            </select>
 
-              <input
-                type="text"
-                value={player2.name}
-                onChange={(e) => setPlayer2((prev) => ({ ...prev, name: e.target.value }))}
-                placeholder="Player 2 Name"
-                className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
-              />
-
-              <input
-                type="text"
-                value={player2.quote}
-                onChange={(e) => setPlayer2((prev) => ({ ...prev, quote: e.target.value }))}
-                placeholder="Player 2 Quote"
-                className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
-              />
-
-              <input
-                type="color"
-                value={player2.color}
-                onChange={(e) => setPlayer2((prev) => ({ ...prev, color: e.target.value }))}
-                className="w-full bg-black text-xs p-0.5 border border-gray-400 text-gray-400 rounded"
-              />
-            </div>
+            <select
+              value={player1.size}
+              onChange={(e) => setPlayer1((prev) => ({ ...prev, size: e.target.value as Size }))}
+              className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
+            >
+              <option value="xs">XS</option>
+              <option value="sm">SM</option>
+              <option value="md">MD</option>
+              <option value="lg">LG</option>
+              <option value="xl">XL</option>
+              <option value="xxl">XXL</option>
+            </select>
           </div>
-          <div className="grid grid-cols-3">
-            <div className="flex items-center gap-2">
-              <input type="checkbox" checked={mirrorPlayer1} onChange={(e) => setMirrorPlayer1(e.target.checked)} id="mirror1" />
-              <label htmlFor="mirror1">Mirror Player 1</label>
-            </div>
 
-            <div className="flex items-center gap-2">
-              <input type="checkbox" checked={mirrorPlayer2} onChange={(e) => setMirrorPlayer2(e.target.checked)} id="mirror2" />
-              <label htmlFor="mirror2">Mirror Player 2</label>
-            </div>
+          {/* Player 2 Controls */}
+          <div className="space-y-2">
+            <h3 className="text-lg font-bold">Player 2</h3>
+            <select
+              value={player2.character}
+              onChange={(e) =>
+                setPlayer2((prev) => ({
+                  ...prev,
+                  character: e.target.value,
+                  outfit: availableOutfits[e.target.value]?.[0] || "base-outfit-1",
+                }))
+              }
+              className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
+            >
+              {characters.map((char) => (
+                <option key={char.id} value={char.id}>
+                  {char.name}
+                </option>
+              ))}
+            </select>
 
-            <div className="flex items-center gap-2 justify-center">
-              <input type="checkbox" checked={whiteVS} onChange={(e) => setWhiteVS(e.target.checked)} id="whiteVS" />
-              <label htmlFor="whiteVS">White VS Text</label>
-            </div>
-            <div className="flex items-center gap-2">
-              <input type="checkbox" checked={player1Silhouette} onChange={(e) => setPlayer1Silhouette(e.target.checked)} id="silhouette1" />
-              <label htmlFor="silhouette1">Player 1 Character Silhouette</label>
-            </div>
+            <select
+              value={player2.outfit}
+              onChange={(e) => setPlayer2((prev) => ({ ...prev, outfit: e.target.value }))}
+              className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
+            >
+              {availableOutfits[player2.character]?.map((outfit) => (
+                <option key={outfit} value={outfit}>
+                  {outfit}
+                </option>
+              ))}
+            </select>
+            <input
+              type="text"
+              value={player2.name}
+              onChange={(e) => setPlayer2((prev) => ({ ...prev, name: e.target.value }))}
+              placeholder="Player 2 Name"
+              className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
+            />
 
-            <div className="flex items-center gap-2">
-              <input type="checkbox" checked={player2Silhouette} onChange={(e) => setPlayer2Silhouette(e.target.checked)} id="silhouette2" />
-              <label htmlFor="silhouette2">Player 2 Character Silhouette</label>
+            <input
+              type="text"
+              value={player2.quote}
+              onChange={(e) => setPlayer2((prev) => ({ ...prev, quote: e.target.value }))}
+              placeholder="Player 2 Quote"
+              className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
+            />
+
+            <input
+              type="color"
+              value={player2.color}
+              onChange={(e) => setPlayer2((prev) => ({ ...prev, color: e.target.value }))}
+              className="w-full bg-black text-xs p-0.5 border border-gray-400 text-gray-400 rounded"
+            />
+
+            <select
+              value={player2.alignment}
+              onChange={(e) => setPlayer2((prev) => ({ ...prev, alignment: e.target.value }))}
+              className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
+            >
+              <option value="left">Left</option>
+              <option value="center">Center</option>
+              <option value="right">Right</option>
+            </select>
+
+            <select
+              value={player2.size}
+              onChange={(e) => setPlayer2((prev) => ({ ...prev, size: e.target.value as Size }))}
+              className="w-full bg-black text-xs p-2 border border-gray-400 text-gray-400 rounded"
+            >
+              <option value="xs">XS</option>
+              <option value="sm">SM</option>
+              <option value="md">MD</option>
+              <option value="lg">LG</option>
+              <option value="xl">XL</option>
+              <option value="xxl">XXL</option>
+            </select>
+          </div>
+
+          <div className="w-full col-span-2 ml-12">
+            <canvas
+              ref={canvasRef}
+              width="3840"
+              height="2160"
+              style={{
+                width: "100%",
+                height: "auto",
+                backgroundColor: "#000000",
+              }}
+            />
+            <div className="mt-4 flex justify-center">
+              <button onClick={exportImage} className="px-4 py-4 font-black rounded-xl bg-gray-800 text-gray-300 hover:bg-red-600 transition-colors">
+                Export Image
+              </button>
             </div>
           </div>
         </div>
 
-        <div className="flex-1">
-          <canvas
-            ref={canvasRef}
-            width="3840"
-            height="2160"
-            style={{
-              width: "100%",
-              height: "auto",
-              backgroundColor: "#000000",
-            }}
-          />
-          <div className="mt-4 flex justify-center">
-            <button onClick={exportImage} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Export Image
-            </button>
+        <div className="grid grid-cols-4 -mt-40">
+          <div>
+            <div>
+              <div className="flex items-center gap-2">
+                <input type="checkbox" checked={borderPlayer1} onChange={(e) => setBorderPlayer1(e.target.checked)} id="border1" />
+                <label htmlFor="border1">Border Player 1 Text</label>
+              </div>
+              <div className="flex items-center gap-2">
+                <input type="checkbox" checked={borderPlayer2} onChange={(e) => setBorderPlayer2(e.target.checked)} id="border2" />
+                <label htmlFor="border2">Border Player 2 Text</label>
+              </div>
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <input type="checkbox" checked={glowPlayer1} onChange={(e) => setGlowPlayer1(e.target.checked)} id="glow1" />
+                <label htmlFor="glow1">Glow Player 1 Text</label>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <input type="checkbox" checked={glowPlayer2} onChange={(e) => setGlowPlayer2(e.target.checked)} id="glow2" />
+                <label htmlFor="glow2">Glow Player 2 Text</label>
+              </div>
+            </div>
           </div>
+          <div>
+            <div>
+              <div className="flex items-center gap-2">
+                <input type="checkbox" checked={mirrorPlayer1} onChange={(e) => setMirrorPlayer1(e.target.checked)} id="mirror1" />
+                <label htmlFor="mirror1">Mirror Player 1</label>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <input type="checkbox" checked={mirrorPlayer2} onChange={(e) => setMirrorPlayer2(e.target.checked)} id="mirror2" />
+                <label htmlFor="mirror2">Mirror Player 2</label>
+              </div>
+            </div>
+
+            <div>
+              <div className="flex items-center gap-2">
+                <input type="checkbox" checked={whiteVS} onChange={(e) => setWhiteVS(e.target.checked)} id="whiteVS" />
+                <label htmlFor="whiteVS">White VS Text</label>
+              </div>
+              <div className="flex items-center gap-2">
+                <input type="checkbox" checked={glowVS} onChange={(e) => setGlowVS(e.target.checked)} id="glowVS" />
+                <label htmlFor="glowVS">Glow VS Text</label>
+              </div>
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <input type="checkbox" checked={player1Silhouette} onChange={(e) => setPlayer1Silhouette(e.target.checked)} id="silhouette1" />
+                <label htmlFor="silhouette1">Player 1 Character Silhouette</label>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <input type="checkbox" checked={player2Silhouette} onChange={(e) => setPlayer2Silhouette(e.target.checked)} id="silhouette2" />
+                <label htmlFor="silhouette2">Player 2 Character Silhouette</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mt-8">
+          <hr />
         </div>
       </div>
     </div>

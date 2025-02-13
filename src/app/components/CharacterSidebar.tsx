@@ -111,7 +111,7 @@ export default function CharacterSidebar({ character, slug }: CharacterSidebarPr
     <div className="container flex-col items-center w-fit md:w-[500px] border border-r-0 border-t-0 border-white justify-start h-fit rounded-bl-xl hidden lg:flex">
       <div className="flex flex-row w-full">
         <div className="py-4 border-b border-b-white text-center w-full">
-          <strong>{character.name}</strong>
+          <h2 className="text-3xl">{character.name}</h2>
           <p className="italic text-sm text-gray-400">Character #{character.characterNumber}</p>
         </div>
       </div>
@@ -172,13 +172,13 @@ export default function CharacterSidebar({ character, slug }: CharacterSidebarPr
         </div>
         <div className="flex flex-row">
           <div className="flex flex-col w-auto items-center text-center px-4 border-b border-r border-white py-2">
-            <strong>Ease of Use</strong>
+            <h2 className="text-xl">Ease of Use</h2>
             <div className="my-auto">
               <StarRating rating={character.characterEaseOfUse} />
             </div>
           </div>
           <div className="flex flex-col items-center text-center w-3/4 border-b border-white p-2">
-            <strong>Archetypes</strong>
+            <h2 className="text-xl">Archetypes</h2>
             <div className="flex flex-wrap justify-center my-1 mb-2">
               {character.characterArchetype.map((archetype) => (
                 <strong key={archetype} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1 ml-2">
@@ -189,7 +189,7 @@ export default function CharacterSidebar({ character, slug }: CharacterSidebarPr
           </div>
         </div>
         <div className="flex flex-row flex-wrap items-left w-full border-b border-white p-2 pb-4">
-          <strong className="w-full text-left mb-2 ml-2">Affiliations</strong>
+          <h2 className="w-full text-left mb-2 ml-2 text-xl">Affiliations</h2>
           <div className="w-auto flex flex-wrap flex-row">
             {character.tags.affiliations.map((affiliation) => (
               <strong key={affiliation} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1 ml-2">
@@ -199,7 +199,7 @@ export default function CharacterSidebar({ character, slug }: CharacterSidebarPr
           </div>
         </div>
         <div className="flex flex-col flex-wrap items-left w-full border-b border-white p-2 pb-4">
-          <strong className="w-fit text-center mb-2 ml-2">Relationships</strong>
+          <h2 className="w-fit text-center mb-2 ml-2 text-xl">Relationships</h2>
           <div className="w-auto flex flex-wrap flex-row">
             {character.tags.relationships.map((relationship) => (
               <strong key={relationship} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1 ml-2">
@@ -209,7 +209,7 @@ export default function CharacterSidebar({ character, slug }: CharacterSidebarPr
           </div>
         </div>
         <div className="flex flex-col flex-wrap items-left w-full border-b border-white p-2 pb-4">
-          <strong className="w-fit text-center mb-2 ml-2">Abilities</strong>
+          <h2 className="w-fit text-center mb-2 ml-2 text-xl">Abilities</h2>
           <div className="w-auto flex flex-wrap flex-row">
             {character.tags.abilities.map((ability) => (
               <strong key={ability} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1 ml-2">
@@ -219,7 +219,7 @@ export default function CharacterSidebar({ character, slug }: CharacterSidebarPr
           </div>
         </div>
         <div className="flex flex-col flex-wrap items-left w-full border-b border-white  p-2 mb-2">
-          <strong className="w-fit text-center mb-2 ml-2">Characteristics</strong>
+          <h2 className="w-fit text-center mb-2 ml-2 text-xl">Characteristics</h2>
           <div className="w-auto flex flex-wrap flex-row">
             {character.tags.characteristics.map((characteristic) => (
               <strong key={characteristic} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1 ml-2">
@@ -229,7 +229,7 @@ export default function CharacterSidebar({ character, slug }: CharacterSidebarPr
           </div>
         </div>
         <div className="flex flex-col flex-wrap items-left w-full p-2 mb-2">
-          <strong className="w-fit text-center mb-2 ml-2">Movelist Key</strong>
+          <h2 className="w-fit text-center mb-2 ml-2 text-xl">Movelist Key</h2>
           <button className="font-bold text-teal-400 flex items-center gap-2 ml-2" onClick={() => setMovesetKeyIsOpen((prevState) => !prevState)}>
             Click to {movesetKeyIsOpen ? "hide" : "expand"}
             {movesetKeyIsOpen ? <TbChevronUp size={20} /> : <TbChevronDown size={20} />}

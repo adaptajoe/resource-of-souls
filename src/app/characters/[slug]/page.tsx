@@ -205,7 +205,7 @@ export default async function CharacterPage(props: Props) {
           </div>
         </div>
         <div className="mb-4">
-          <blockquote className="italic text-lg text-gray-400 my-8 mr-8 border-l-4 border-l-gray-400 pl-4 py-6">`&quot;`{character.quote}`&quot;`</blockquote>
+          <h2 className="italic text-xl text-gray-400 my-8 mr-8 border-l-4 border-l-gray-400 pl-4 py-6">&quot;{character.quote}&quot;</h2>
         </div>
         <div className="mb-8 mr-8">
           <div>{parseGameTerms(character.description)}</div>

@@ -22,7 +22,7 @@ export function MobileNavigation() {
       text: "Bleach - Rebirth of Souls Discord",
       icon: <AiFillDiscord className="mb-2" size={40} />,
     },
-    { href: "/github", text: "GitHub", icon: <TbBrandGithubFilled className="mb-2" size={40} /> },
+    { href: "https://github.com/adaptajoe/resource-of-souls", text: "GitHub", icon: <TbBrandGithubFilled className="mb-2" size={40} /> },
     { href: "https://en.bandainamcoent.eu/bleach/bleach-rebirth-of-souls", text: "Official ENG Website", icon: <TbWorld className="mb-2" size={40} /> },
     { href: "https://bleach-ros.bn-ent.net/", text: "Official JP Website", icon: <TbWorld className="mb-2" size={40} /> },
     { href: "https://www.reddit.com/r/RebirthOfSoulsBleach/", text: "Bleach - Rebirth of Souls Subreddit", icon: <RiRedditFill className="mb-2" size={40} /> },

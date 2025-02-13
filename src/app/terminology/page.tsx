@@ -105,7 +105,7 @@ const TerminologyPage = () => {
 
     return (
       <div id={id} className={`p-4 border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-red-600 ring-2 ring-red-600 bg-red-900/10" : "border-gray-400"}`}>
-        <div className="font-bold text-xl mb-2">{title}</div>
+        <h2 className="font-bold text-xl mb-2">{title}</h2>
         <p className="text-gray-400 italic pb-2 text-sm">{description}</p>
         {characters.length > 0 && (
           <div className="mt-2 w-full border-t border-gray-400">
@@ -133,7 +133,7 @@ const TerminologyPage = () => {
     return (
       <div id={id} className={`p-4 border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-teal-400 ring-2 ring-teal-400 bg-teal-900/10" : "border-gray-400"}`}>
         <div className="font-bold text-xl mb-2 flex items-baseline">
-          <p>{title}</p>
+          <h2 className="text-xl">{title}</h2>
           {englishTitle && <p className="text-xs text-gray-400 ml-2 italic">(ENG: {englishTitle})</p>}
         </div>
         <p className="text-gray-400 italic text-sm">{description}</p>
@@ -156,7 +156,7 @@ const TerminologyPage = () => {
       <div>
         {/* Archetype Section */}
         <div className="border-y border-gray-400 py-4">
-          <p className="text-2xl font-bold text-white">Archetypes</p>
+          <h2 className="text-2xl font-bold text-white">Archetypes</h2>
           <div className="px-4">
             <p className="mb-6 pt-4">
               An Archetype - or role, if you prefer - is a label we assign to characters to make them easily identifiable and accessible to new players, to help them understand what a character does
@@ -180,7 +180,7 @@ const TerminologyPage = () => {
         <hr />
 
         <div className="mt-4 border-b border-gray-400 pb-4">
-          <p className="text-2xl font-bold text-white">Game Terms</p>
+          <h2 className="text-2xl font-bold text-white">Game Terms</h2>
           <div className="px-4">
             <div className="mb-6 pt-4">
               <p>

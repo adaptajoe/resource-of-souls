@@ -33,7 +33,7 @@ export function DesktopNavigation() {
         <NavLink href="/community">Community Hub</NavLink>
       </div>
       <div className="px-2">
-        <NavLink href="/github">GitHub</NavLink>
+        <NavLink href="https://github.com/adaptajoe/resource-of-souls">GitHub</NavLink>
       </div>
       <div className="px-2">
         <NavLink href="https://www.reddit.com/r/RebirthOfSoulsBleach/">Reddit</NavLink>

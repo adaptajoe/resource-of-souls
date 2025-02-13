@@ -8,9 +8,9 @@ export default function Home() {
       <div className="relative w-full">
         <div className="absolute bg-black p-4 left-8 top-3/4 -translate-y-1/2 z-10 border-x-2 border-l-red-600 border-r-teal-400 max-w-[90%] md:max-w-[70%]">
           <Link href={"/characters"} className="flex flex-col">
-            <p className="text-white text-sm md:text-xl lg:text-2xl xl:text-3xl font-black">
+            <h1 className="text-white text-sm md:text-xl lg:text-2xl xl:text-4xl font-black">
               <span className="text-red-600">B</span>LEACH - Resource of Souls has launched!
-            </p>
+            </h1>
             <p className="text-white text-xs md:text-sm xl:text-lg">
               Check out the Character Roster <span className="text-teal-400 hover:underline">here</span>!
             </p>
@@ -21,9 +21,9 @@ export default function Home() {
       <div className="p-4 md:p-8 bg-black text-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-between">
           <div className="text-base md:text-xl">
-            <h1 className="mb-4 text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
+            <h2 className="mb-4 text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
               <span className="text-red-600">W</span>elcome to BLEACH - Resource of Souls; the definitive unofficial Wiki for Bleach - Rebirth of Souls.
-            </h1>
+            </h2>
             <div className="border-r-8 border-teal-400 pr-4 space-y-4">
               <p>Learn about the characters in the game, plan tournaments, view frame data and movelists, research game terms and view the game&apos;s changelog.</p>
               <p>
@@ -96,14 +96,14 @@ export default function Home() {
         <hr className="my-8 md:my-10" />
         <div className="text-base md:text-xl">
           <div className="border-x-8 border-l-red-600 border-r-teal-400 px-4 text-center">
-            <p className="text-2xl md:text-3xl font-black mb-4">
+            <h2 className="text-2xl md:text-3xl xl:text-5xl font-black mb-4">
               <span className="text-red-600">A</span>d free. <span className="text-teal-400 underline">Forever</span>.
-            </p>
+            </h2>
             <p>
               BLEACH - Resource of Souls is a passion-project from dedicated long-time BLEACH fans; we&apos;ll <span className="text-red-600">never</span> paywall content, add advertisements, or ask
               for donations, and promise to open-source all of our code <span className="text-teal-400 underline">forever</span>.
             </p>
-            <p className="text-amber-400 font-black mt-4">- @jojicus</p>
+            <h3 className="text-amber-400 font-black mt-4">- @jojicus</h3>
           </div>
         </div>
       </div>

@@ -200,9 +200,9 @@ export default function Characters() {
                     }}
                   />
                   <div className="p-4">
-                    <div className="font-bold text-xl my-2">
+                    <h2 className="font-bold text-2xl my-2">
                       #{character.characterNumber}: {character.name}
-                    </div>
+                    </h2>
                     <p className="text-gray-400 text-sm mb-2 italic">&quot;{character.quote}&quot;</p>
                   </div>
                 </Link>
