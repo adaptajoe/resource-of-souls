@@ -28,6 +28,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -37,6 +38,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -87,15 +89,17 @@
       {
         "neutral": [
           {
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
+            "id": "sōkyoku-splitter",
+            "name": "Sōkyoku Splitter",
+            "description": "Ichigo delivers a powerful slash that opens up the opportunity to spin Zangetsu above his head like a rotor, before plunging it into the ground to deliver a powerful radial blast.",
             "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["melee", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -146,6 +150,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -155,6 +160,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -205,6 +211,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -214,6 +221,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -264,6 +272,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -273,6 +282,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -323,6 +333,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -332,6 +343,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -382,6 +394,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -391,6 +404,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -441,6 +455,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -450,6 +465,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -500,6 +516,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -509,6 +526,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -559,6 +577,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -568,6 +587,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -618,6 +638,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -627,6 +648,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -677,6 +699,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -686,6 +709,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -737,6 +761,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -746,6 +771,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -796,6 +822,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -805,6 +832,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -855,6 +883,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -864,6 +893,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -914,6 +944,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -923,6 +954,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -973,6 +1005,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -982,6 +1015,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -1032,6 +1066,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -1041,6 +1076,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -1091,6 +1127,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -1100,6 +1137,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -1150,6 +1188,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -1159,6 +1198,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -1209,6 +1249,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -1218,6 +1259,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -1268,6 +1310,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -1277,6 +1320,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -1327,6 +1371,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -1336,6 +1381,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -1386,6 +1432,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -1395,6 +1442,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -1445,6 +1493,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -1454,6 +1503,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -1504,6 +1554,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -1513,6 +1564,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -1563,6 +1615,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -1572,6 +1625,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -1622,6 +1676,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -1631,6 +1686,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
@@ -1681,6 +1737,7 @@
       {
         "neutral": [
           {
+            "id": "example-move",
             "name": "Example Move",
             "description": "A series of 5 slashes.",
             "input": "SOUTH SOUTHEAST EAST Q",
@@ -1690,6 +1747,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
+            "id": "test-move",
             "name": "Test Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",

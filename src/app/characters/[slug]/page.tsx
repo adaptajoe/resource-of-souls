@@ -253,7 +253,7 @@ export default async function CharacterPage(props: Props) {
               <div id="movelist" className="border border-white rounded-xl w-full grid grid-cols-1 mb-4 lg:mb-8">
                 <h2 className="text-xl font-semibold p-2 pl-4 static">Movelist</h2>
                 <div className="h-fit">
-                  <CharacterMoves moves={character.moves} />
+                  <CharacterMoves moves={character.moves} characterId={character.id} />
                 </div>
               </div>
 

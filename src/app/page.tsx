@@ -7,14 +7,12 @@ export default function Home() {
     <div className="min-h-screen -mx-4">
       <div className="relative w-full">
         <div className="absolute bg-black p-4 left-8 top-3/4 -translate-y-1/2 z-10 border-x-2 border-l-red-600 border-r-teal-400 max-w-[90%] md:max-w-[70%]">
-          <Link href={"/characters"} className="flex flex-col">
+          <div className="flex flex-col">
             <h1 className="text-white text-sm md:text-xl lg:text-2xl xl:text-4xl font-black">
               <span className="text-red-600">B</span>LEACH - Resource of Souls has launched!
             </h1>
-            <p className="text-white text-xs md:text-sm xl:text-lg">
-              Check out the Character Roster <span className="text-teal-400 hover:underline">here</span>!
-            </p>
-          </Link>
+            <p className="text-white text-xs md:text-sm xl:text-lg">Please bear with us as the game releases! A lot of data may be mistaken or missing.</p>
+          </div>
         </div>
         <AnimatedHero src={"/assets/site-assets/site-hero.mp4"} alt={""} filename={""} />
       </div>
@@ -26,19 +24,27 @@ export default function Home() {
             </h2>
             <div className="border-r-8 border-teal-400 pr-4 space-y-4">
               <p>Learn about the characters in the game, plan tournaments, view frame data and movelists, research game terms and view the game&apos;s changelog.</p>
-              <p>
+              <p className="flex flex-col">
                 Awaken the blade within you and reverse your fate in BLEACH Rebirth of Souls! Engage in thrilling battles with powerful sword abilities and characters from this legendary anime
                 franchise.
+                <Link className={`px-4 py-2 w-fit mt-4 font-black rounded text-white bg-gray-800 hover:bg-red-600 transition-colors`} href={"/characters"}>
+                  View the Character Roster
+                </Link>
               </p>
             </div>
           </div>
           <div className="flex justify-center xl:justify-end">
             <Image
-              src={`/assets/site-assets/game-screenshot-1.png`}
-              height="200"
-              width="150"
-              alt={"Bleach - Resource of Souls Gameplay"}
-              className="border-2 w-full max-w-[500px] rounded-xl border-gray-400 transition-colors"
+              src={`/assets/character-banner/ichigo-kurosaki-banner.png`}
+              height="300"
+              width="300"
+              alt={""}
+              className="max-h-[300px] w-fit object-cover object-top-center border-2 border-gray-400 rounded-xl"
+              style={{
+                objectFit: "cover",
+                objectPosition: "50% 40%",
+                aspectRatio: "2/1",
+              }}
             />
           </div>
         </div>
@@ -62,9 +68,12 @@ export default function Home() {
                 BLEACH - Rebirth of Souls is a fighting game developed by Tamsoft, and published by Bandai Namco, and is releasing on March 21st 2025. The game focuses on 1v1 combat, and is unique for
                 its&apos; dramatic comeback victories. The game is available on PS4, PS5, Xbox and Steam.
               </p>
-              <p>
+              <p className="flex flex-col">
                 Engage in thrilling community tournaments, challenge presets, and challenge yourself to rank on the community leaderboads! Gain exclusive, permanent clout awards for all to see, and
                 possibly even earn prizes (Only in specific Tournaments)..!
+                <Link className={`px-4 py-2 w-fit mt-4 font-black rounded text-white bg-gray-800 hover:bg-red-600 transition-colors`} href={"/community"}>
+                  View the BLEACH - Resource of Souls Community Hub
+                </Link>
               </p>
             </div>
           </div>
@@ -76,11 +85,20 @@ export default function Home() {
               <span className="text-red-600">B</span>uilt for Offline Players, Online Players and Competitive Players.
             </h1>
             <div className="border-r-8 border-teal-400 pr-4 space-y-4">
-              <p>
+              <p className="flex flex-col">
                 Don&apos;t fancy all of that &apos;online&apos; malarkey? No need to fear. Resource of Souls has you covered! Discover guides for the Story Mode, Mission Mode and find out what
                 unlockables you may want to strive for!
+                <Link className={`px-4 py-2 w-fit mt-4 font-black rounded text-white bg-gray-800 hover:bg-red-600 transition-colors`} href={"/offline"}>
+                  View the Offline Mode Guides
+                </Link>
               </p>
-              <p>Similarly, for esports and tournament hosts, find easy-to-refer-to sheets for each character, term and archetype in the game!</p>
+              <hr />
+              <p className="flex flex-col">
+                Similarly, for esports and tournament hosts, find easy-to-refer-to sheets for each character, term and archetype in the game!
+                <Link className={`px-4 py-2 w-fit mt-4 font-black rounded text-white bg-gray-800 hover:bg-red-600 transition-colors`} href={"/terminology"}>
+                  View the Terminology Index for BLEACH - Rebirth of Souls
+                </Link>
+              </p>
             </div>
           </div>
           <div className="flex justify-center xl:justify-end">

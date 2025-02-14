@@ -108,6 +108,7 @@ export type MoveTag =
   | "none";
 
 export interface MoveInput {
+  id: string;
   name: string;
   description: string;
   input: string;

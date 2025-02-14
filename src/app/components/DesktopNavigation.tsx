@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { BiLogoDiscordAlt } from "react-icons/bi";
+import { GrGithub, GrReddit } from "react-icons/gr";
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   const pathname = usePathname();
@@ -16,30 +18,48 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
 
 export function DesktopNavigation() {
   return (
-    <div className="absolute text-teal-400 font-black left-48 top-7 hidden xl:flex items-center">
-      <div className="pr-2">
-        <NavLink href="/">Home</NavLink>
-      </div>
+    <div className="absolute text-teal-400 font-black left-48 top-4 hidden xl:flex items-center">
       <div className="px-2">
         <NavLink href="/characters">Characters</NavLink>
       </div>
       <div className="px-2">
-        <NavLink href="/terminology">Terminology</NavLink>
+        <NavLink href="/terminology">Terms</NavLink>
       </div>
       <div className="px-2">
         <NavLink href="/changelog">Changelog</NavLink>
       </div>
       <div className="px-2">
-        <NavLink href="/community">Community Hub</NavLink>
+        <NavLink href="/offline">Offline</NavLink>
       </div>
       <div className="px-2">
-        <NavLink href="https://github.com/adaptajoe/resource-of-souls">GitHub</NavLink>
+        <NavLink href="/community">Community</NavLink>
       </div>
       <div className="px-2">
-        <NavLink href="https://www.reddit.com/r/RebirthOfSoulsBleach/">Reddit</NavLink>
+        <NavLink href="/modding">Modding</NavLink>
       </div>
       <div className="px-2">
-        <NavLink href="https://discord.gg/fA69CAE2eP">Discord</NavLink>
+        <NavLink href="/creators">Creators</NavLink>
+      </div>
+      <div className="px-2">
+        <Link className="text-white" href="https://github.com/adaptajoe/resource-of-souls">
+          <div className="bg-gray-800 p-2.5 hover:bg-red-600 rounded-xl">
+            <GrGithub size={30} />
+          </div>
+        </Link>
+      </div>
+      <div className="px-2">
+        <Link className="text-white" href="https://www.reddit.com/r/RebirthOfSoulsBleach/">
+          <div className="bg-gray-800 p-2.5 hover:bg-red-600 rounded-xl">
+            <GrReddit size={30} />
+          </div>
+        </Link>
+      </div>
+      <div className="px-2">
+        <Link className="text-white" href="https://discord.gg/fA69CAE2eP">
+          <div className="bg-gray-800 p-2.5 hover:bg-red-600 rounded-xl">
+            <BiLogoDiscordAlt size={30} />
+          </div>
+        </Link>
       </div>
     </div>
   );

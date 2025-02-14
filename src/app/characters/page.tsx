@@ -1,11 +1,11 @@
 "use client";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import characterData from "@/data/characterData.json";
 import supplementaryData from "@/data/supplementaryData.json";
 import { SupplementaryDataType } from "@/types/supplementaryData";
 import { CharacterData } from "@/types/character";
-import { useState, useMemo } from "react";
 import { TbArrowBigDownFilled, TbArrowBigUpFilled } from "react-icons/tb";
 import ArchetypeTooltip from "../components/ArchetypeTooltip";
 
@@ -19,8 +19,15 @@ export default function Characters() {
   const characters = characterData as CharacterData;
   const [searchTerm, setSearchTerm] = useState("");
   const [sortConfig, setSortConfig] = useState<SortType>({ type: "number", ascending: true });
-
   const [affiliationFilter, setAffiliationFilter] = useState<AffiliationType>("all");
+  const [imageSources, setImageSources] = useState<{ [key: string]: string }>({});
+
+  const handleImageError = (slug: string) => {
+    setImageSources((prev) => ({
+      ...prev,
+      [slug]: "/assets/character-banner/placeholder.png",
+    }));
+  };
 
   const formatArchetype = (archetype: string): { display: string; url: string } => {
     const specialCases: { [key: string]: string } = {
@@ -139,7 +146,9 @@ export default function Characters() {
                   ascending: prev.type === "number" ? !prev.ascending : true,
                 }))
               }
-              className={`px-3 py-1 rounded flex items-center font-black gap-1 ${sortConfig.type === "number" ? "bg-red-600 text-white" : "bg-gray-800 text-gray-300"}`}
+              className={`px-3 py-1 rounded flex items-center font-black gap-1 hover:bg-red-600 ${
+                sortConfig.type === "number" ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
+              }`}
             >
               Release Order
               {sortConfig.type === "number" && <span>{sortConfig.ascending ? <TbArrowBigUpFilled size={20} /> : <TbArrowBigDownFilled size={20} />}</span>}
@@ -151,7 +160,9 @@ export default function Characters() {
                   ascending: prev.type === "alphabetical" ? !prev.ascending : true,
                 }))
               }
-              className={`px-3 py-1 font-black rounded flex items-center gap-1 ${sortConfig.type === "alphabetical" ? "bg-red-600  text-white" : "bg-gray-800 text-gray-300"}`}
+              className={`px-3 py-1 font-black rounded flex items-center gap-1 hover:bg-red-600 ${
+                sortConfig.type === "alphabetical" ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
+              }`}
             >
               A-Z
               {sortConfig.type === "alphabetical" && <span>{sortConfig.ascending ? <TbArrowBigUpFilled size={20} /> : <TbArrowBigDownFilled size={20} />}</span>}
@@ -167,7 +178,7 @@ export default function Characters() {
               <button
                 key={aff.value}
                 onClick={() => setAffiliationFilter(aff.value as AffiliationType)}
-                className={`px-3 py-1 font-black rounded ${affiliationFilter === aff.value ? "bg-red-600 text-white" : "bg-gray-800 text-gray-300"}`}
+                className={`px-3 py-1 font-black hover:bg-red-600 rounded ${affiliationFilter === aff.value ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"}`}
               >
                 {aff.label}
               </button>
@@ -188,7 +199,7 @@ export default function Characters() {
               <div key={slug} className="border hover:border-red-600 transition-colors">
                 <Link href={`/characters/${slug}`} className="block">
                   <Image
-                    src={`/assets/character-banner/${slug}-banner.png`}
+                    src={imageSources[slug] || `/assets/character-banner/${slug}-banner.png`}
                     height="300"
                     width="300"
                     alt={character.name}
@@ -198,8 +209,9 @@ export default function Characters() {
                       objectPosition: "50% 40%",
                       aspectRatio: "2/1",
                     }}
+                    onError={() => handleImageError(slug)}
                   />
-                  <div className="p-4">
+                  <div className="p-4 border-t-2 border-gray-800">
                     <h2 className="font-bold text-2xl my-2">
                       #{character.characterNumber}: {character.name}
                     </h2>
@@ -215,6 +227,7 @@ export default function Characters() {
                 </div>
               </div>
             ))}
+            ;
           </div>
         )}
       </div>

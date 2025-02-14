@@ -163,8 +163,8 @@ const TerminologyPage = () => {
               without delving into the weeds of minutia...
             </p>
             <p className="mb-4 text-gray-400 italic">At present, there are {Object.keys(supplementaryData.archetypes).length} Archetypes to learn about.</p>
-            <button className="font-bold text-teal-400 flex items-center gap-2" onClick={() => setArchetypesIsOpen((prevState) => !prevState)}>
-              Click to {archetypesIsOpen ? "hide" : "expand"}
+            <button className="font-bold text-teal-400 flex items-center gap-2 hover:underline" onClick={() => setArchetypesIsOpen((prevState) => !prevState)}>
+              <span>Click to {archetypesIsOpen ? "hide" : "expand"}</span>
               {archetypesIsOpen ? <TbChevronUp size={20} /> : <TbChevronDown size={20} />}
             </button>
             {!archetypesIsOpen ? null : (
@@ -191,7 +191,7 @@ const TerminologyPage = () => {
                 <li>The Reishi Gauge is your HP.</li>
                 <li>Konpaku are your Stocks.</li>
                 <li>Kikon Moves are your Ultimates.</li>
-                <li>Clashes are failed Kikon Moves, triggered when over 30% Reishi and guarding.</li>
+                <li>Clashes are failed Kikon Moves, triggered when over 30% Reishi (HP) and guarding.</li>
                 <li>The Fighting Spirit Gauge is your Transformation Gauge and Buff Gauge, filled by landing hits, getting hit and hitting Kikon Moves (Ultimates).</li>
                 <li>Awakenings are a First Transformation that costs Fighting Spirit.</li>
                 <li>Reawakenings are a Second Transformation that also costs Fighting Spirit.</li>
@@ -206,7 +206,7 @@ const TerminologyPage = () => {
               </ul>
             </div>
             <p className="mb-4 text-gray-400 italic">At present, there are {Object.keys(supplementaryData.gameTerms).length} Game Terms to learn about.</p>
-            <button className="font-bold text-teal-400 flex items-center gap-2" onClick={() => setGameTermsIsOpen((prevState) => !prevState)}>
+            <button className="font-bold text-teal-400 flex items-center gap-2 hover:underline" onClick={() => setGameTermsIsOpen((prevState) => !prevState)}>
               <span>Click to {gameTermsIsOpen ? "hide" : "expand"}</span>
               {gameTermsIsOpen ? <TbChevronUp size={20} /> : <TbChevronDown size={20} />}
             </button>

@@ -18,10 +18,61 @@ import {
   TbCircleArrowRight,
   TbCircleArrowLeft,
 } from "react-icons/tb";
+import Image from "next/image";
 
 interface CharacterMovesProps {
   moves: MoveCategoryContainer[];
+  characterId: string;
 }
+
+interface MoveAnimationTooltipProps {
+  characterId: string;
+  moveId: string;
+  children: React.ReactNode;
+}
+
+interface MoveAnimationTooltipProps {
+  characterId: string;
+  moveId: string;
+  children: React.ReactNode;
+}
+
+const MoveAnimationTooltip = ({ characterId, moveId, children }: MoveAnimationTooltipProps) => {
+  const animationPath = `/assets/character-animations/${characterId}/${moveId}.gif`;
+
+  return (
+    <div className="relative inline-block group">
+      <span className="text-teal-400 cursor-pointer">{children}</span>
+      {/* Mobile tooltip (above) */}
+      <div
+        className="md:hidden absolute invisible group-hover:visible z-10 p-1 rounded-lg bg-black border-teal-400 border-2 shadow-lg
+        left-1/2 -translate-x-1/2 bottom-full mb-4"
+      >
+        <Image src={animationPath} alt={`${moveId} animation`} width={300} height={300} className="rounded-lg max-w-[300px]" />
+        <div
+          className="absolute left-1/2 -translate-x-1/2 bottom-[-12px] w-0 h-0 
+          border-l-[12px] border-l-transparent 
+          border-t-[12px] border-t-teal-400 
+          border-r-[12px] border-r-transparent"
+        />
+      </div>
+
+      {/* Desktop tooltip (right) */}
+      <div
+        className="hidden md:block absolute invisible group-hover:visible z-10 p-1 rounded-lg bg-black border-teal-400 border-2 shadow-lg
+        left-full ml-4 top-1/2 -translate-y-1/2"
+      >
+        <Image src={animationPath} alt={`${moveId} animation`} width={300} height={300} className="rounded-lg max-w-[300px]" />
+        <div
+          className="absolute left-[-12px] top-1/2 -translate-y-1/2 w-0 h-0 
+          border-t-[12px] border-t-transparent 
+          border-r-[12px] border-r-teal-400 
+          border-b-[12px] border-b-transparent"
+        />
+      </div>
+    </div>
+  );
+};
 
 const formatMoveTag = (tag: string): string => {
   const specialCases: { [key: string]: string } = {
@@ -90,27 +141,26 @@ const translateInput = (input: string): JSX.Element => {
     </>
   );
 };
-
-const CharacterMoves = ({ moves }: CharacterMovesProps) => {
+const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
   return (
     <div>
       {moves.map((moveCategory, categoryIndex) => (
         <div key={categoryIndex}>
           <div>
             {moveCategory.neutral.map((move, moveIndex) => (
-              <MoveDisplay key={moveIndex} move={move} />
+              <MoveDisplay key={moveIndex} move={move} characterId={characterId} />
             ))}
           </div>
 
           <div>
             {moveCategory.heavy?.map((move, moveIndex) => (
-              <MoveDisplay key={moveIndex} move={move} />
+              <MoveDisplay key={moveIndex} move={move} characterId={characterId} />
             ))}
           </div>
 
           <div>
             {moveCategory.light?.map((move, moveIndex) => (
-              <MoveDisplay key={moveIndex} move={move} />
+              <MoveDisplay key={moveIndex} move={move} characterId={characterId} />
             ))}
           </div>
         </div>
@@ -122,14 +172,17 @@ const CharacterMoves = ({ moves }: CharacterMovesProps) => {
 // Subcomponent to display individual moves
 interface MoveDisplayProps {
   move: MoveInput;
+  characterId: string;
 }
 
-const MoveDisplay = ({ move }: MoveDisplayProps) => {
+const MoveDisplay = ({ move, characterId }: MoveDisplayProps) => {
   return (
     <div className="border-t border-white">
       <div className="grid grid-cols-2 gap-4 items-start py-2 pr-2">
         <div>
-          <strong className="italic ml-4">{move.name}</strong>
+          <MoveAnimationTooltip characterId={characterId} moveId={move.id}>
+            <strong className="italic ml-4">{move.name}</strong>
+          </MoveAnimationTooltip>
           <p className="text-sm italic ml-4 text-gray-400">{move.description}</p>
         </div>
         <div className="flex flex-wrap mt-2">

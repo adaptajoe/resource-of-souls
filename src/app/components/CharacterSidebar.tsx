@@ -23,13 +23,13 @@ interface CharacterSidebarProps {
 
 export default function CharacterSidebar({ character, slug }: CharacterSidebarProps) {
   const [movesetKeyIsOpen, setMovesetKeyIsOpen] = useState(false);
-
   const [currentOutfit, setCurrentOutfit] = useState("base-outfit-1");
   const [availableOutfits, setAvailableOutfits] = useState<{
     base: number[];
     dlc: number[];
   }>({ base: [1], dlc: [] });
   const totalStats = character.stats[0].power + character.stats[0].speed + character.stats[0].range + character.stats[0].defense + character.stats[0].technique;
+  const [fullBodyImageSrc, setFullBodyImageSrc] = useState(`/assets/character-fullbody/${slug}-fullbody.png`);
 
   async function imageExists(imagePath: string): Promise<boolean> {
     try {
@@ -148,7 +148,9 @@ export default function CharacterSidebar({ character, slug }: CharacterSidebarPr
           objectPosition: "25% 0%",
           aspectRatio: "1/1",
         }}
+        onError={() => setFullBodyImageSrc("/assets/character-fullbody/placeholder.png")}
       />
+      <p className="hidden">{fullBodyImageSrc}</p>
       <div className="border-white border border-r-0 border-l-0 border-b-0 w-full">
         <div className="border-b border-white w-full flex flex-row text-center text-sm">
           <div className="w-1/6 bg-red-700 flex flex-col border-r border-white">

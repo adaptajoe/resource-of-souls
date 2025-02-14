@@ -35,6 +35,7 @@ interface Ability {
 }
 
 interface MoveInput {
+  id: string;
   input: string;
   damage: number;
   name: string;
