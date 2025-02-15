@@ -46,9 +46,9 @@ interface MoveInput {
 }
 
 interface Moves {
-  neutral: MoveInput[];
-  heavy?: MoveInput[];
-  light?: MoveInput[];
+  base: MoveInput[];
+  awakened: MoveInput[];
+  reawakened?: MoveInput[];
 }
 
 interface Stats {

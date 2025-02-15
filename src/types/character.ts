@@ -119,9 +119,9 @@ export interface MoveInput {
 }
 
 export interface MoveCategoryContainer {
-  neutral: MoveInput[];
-  heavy?: MoveInput[];
-  light?: MoveInput[];
+  base: MoveInput[];
+  awakened?: MoveInput[];
+  reawakened?: MoveInput[];
 }
 
 export interface Stats {

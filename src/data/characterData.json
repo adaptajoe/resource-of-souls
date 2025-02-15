@@ -26,7 +26,7 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -40,6 +40,28 @@
           {
             "id": "test-move",
             "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
+          {
+            "id": "awakened-move",
+            "name": "Awakened Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "ultra-move",
+            "name": "Ultra Move",
             "description": "A series of 5 slashes.",
             "input": "NORTH NORTHEAST EAST F",
             "damage": 10,
@@ -87,7 +109,7 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
           {
             "id": "sōkyoku-splitter",
             "name": "Sōkyoku Splitter",
@@ -97,6 +119,28 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["melee", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
           },
           {
             "id": "test-move",
@@ -148,7 +192,51 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "reawakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -209,7 +297,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -270,7 +380,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -331,7 +463,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -392,7 +546,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -453,7 +629,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -514,7 +712,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -575,7 +795,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -636,7 +878,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -697,7 +961,51 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "reawakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -759,7 +1067,51 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "reawakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -820,7 +1172,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -881,7 +1255,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -942,7 +1338,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -1003,7 +1421,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -1064,7 +1504,7 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -1096,6 +1536,28 @@
         "defense": 3,
         "technique": 3
       }
+    ],
+    "awakened": [
+      {
+        "id": "example-move",
+        "name": "Example Move",
+        "description": "A series of 5 slashes.",
+        "input": "SOUTH SOUTHEAST EAST Q",
+        "damage": 10,
+        "frames": 4,
+        "resourceCost": 2,
+        "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+      },
+      {
+        "id": "test-move",
+        "name": "Test Move",
+        "description": "A series of 5 slashes.",
+        "input": "NORTH NORTHEAST EAST F",
+        "damage": 10,
+        "frames": 4,
+        "resourceCost": 2,
+        "moveTags": ["melee", "resourceLoss", "flashAttack"]
+      }
     ]
   },
   "grimmjow-jaegerjaquez": {
@@ -1125,7 +1587,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -1186,7 +1670,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -1247,7 +1753,51 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "reawakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -1308,7 +1858,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -1369,7 +1941,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -1430,7 +2024,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -1491,7 +2107,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -1552,7 +2190,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -1613,7 +2273,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -1674,7 +2356,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",
@@ -1735,7 +2439,29 @@
     ],
     "moves": [
       {
-        "neutral": [
+        "base": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ],
+        "awakened": [
           {
             "id": "example-move",
             "name": "Example Move",

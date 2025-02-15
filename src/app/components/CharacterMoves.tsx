@@ -1,5 +1,6 @@
+"use client";
 import { MoveCategoryContainer, MoveInput } from "@/types/character";
-import React, { JSX } from "react";
+import React, { JSX, useState } from "react";
 import {
   TbCircleArrowUpRightFilled,
   TbCircleArrowUpLeftFilled,
@@ -142,29 +143,51 @@ const translateInput = (input: string): JSX.Element => {
   );
 };
 const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
+  const [activeTab, setActiveTab] = useState<"base" | "awakened" | "reawakened">("base");
+
+  const hasAwakening = moves.some((category) => category.awakened && category.awakened.length > 0);
+  const hasReawakening = moves.some((category) => category.reawakened && category.reawakened.length > 0);
+
   return (
     <div>
-      {moves.map((moveCategory, categoryIndex) => (
-        <div key={categoryIndex}>
-          <div>
-            {moveCategory.neutral.map((move, moveIndex) => (
-              <MoveDisplay key={moveIndex} move={move} characterId={characterId} />
-            ))}
-          </div>
+      {/* Tabs */}
+      <div className="flex gap-2 ml-4">
+        <button
+          className={`px-4 py-2 rounded-t-lg transition-colors ${activeTab === "base" ? "bg-red-600 text-white" : "bg-gray-800 text-white hover:bg-red-800"}`}
+          onClick={() => setActiveTab("base")}
+        >
+          Base
+        </button>
+        {hasAwakening && (
+          <button
+            className={`px-4 py-2 rounded-t-lg transition-colors ${activeTab === "awakened" ? "bg-red-600 text-white" : "bg-gray-800 text-white hover:bg-red-800"}`}
+            onClick={() => setActiveTab("awakened")}
+          >
+            Awakened
+          </button>
+        )}
+        {hasReawakening && (
+          <button
+            className={`px-4 py-2 rounded-t-lg transition-colors ${activeTab === "reawakened" ? "bg-red-600 text-white" : "bg-gray-800 text-white hover:bg-red-800"}`}
+            onClick={() => setActiveTab("reawakened")}
+          >
+            Reawakened
+          </button>
+        )}
+      </div>
 
-          <div>
-            {moveCategory.heavy?.map((move, moveIndex) => (
-              <MoveDisplay key={moveIndex} move={move} characterId={characterId} />
-            ))}
-          </div>
+      {/* Content */}
+      <div>
+        {moves.map((moveCategory, categoryIndex) => (
+          <div key={categoryIndex}>
+            {activeTab === "base" && moveCategory.base.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} />)}
 
-          <div>
-            {moveCategory.light?.map((move, moveIndex) => (
-              <MoveDisplay key={moveIndex} move={move} characterId={characterId} />
-            ))}
+            {activeTab === "awakened" && moveCategory.awakened?.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} />)}
+
+            {activeTab === "reawakened" && moveCategory.reawakened?.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} />)}
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

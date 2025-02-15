@@ -7,11 +7,14 @@ import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 
 import { TbChevronUp, TbChevronDown } from "react-icons/tb";
+import AnimatedImage from "../components/AnimatedImage";
 
 interface IArchetypeCardProps {
   title: string;
   id: string;
   description: string;
+  hoveredImageId: string | null;
+  setHoveredImageId: (id: string | null) => void;
 }
 
 interface IGameTermCardProps {
@@ -20,6 +23,8 @@ interface IGameTermCardProps {
   englishTitle?: string;
   description: string;
   isFocused?: boolean;
+  hoveredImageId: string | null;
+  setHoveredImageId: (id: string | null) => void;
 }
 
 const normalizeSpecialCharacters = (str: string): string => {
@@ -60,6 +65,7 @@ const TerminologyPage = () => {
   const [highlightedId, setHighlightedId] = useState<string | null>(null);
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
   const [imageExtensions, setImageExtensions] = useState<{ [key: string]: string }>({});
+  const [hoveredImageId, setHoveredImageId] = useState<string | null>(null);
 
   const filterItems = (text: string) => {
     return text.toLowerCase().includes(searchQuery.toLowerCase());
@@ -77,14 +83,6 @@ const TerminologyPage = () => {
       // If both PNG and GIF fail, mark as failed
       setFailedImages((prev) => new Set(prev).add(id));
     }
-  };
-
-  const getImageSrc = (id: string) => {
-    if (failedImages.has(id)) {
-      return "/assets/terminology-assets/placeholder.png";
-    }
-    const extension = imageExtensions[id] || "png";
-    return `/assets/terminology-assets/${id}.${extension}`;
   };
 
   const searchParams = useSearchParams();
@@ -129,23 +127,14 @@ const TerminologyPage = () => {
     }
   }, [highlightedArchetype]);
 
-  const ArchetypeCard = ({ title, description, id }: IArchetypeCardProps) => {
+  const ArchetypeCard = ({ title, description, id, hoveredImageId, setHoveredImageId }: IArchetypeCardProps) => {
     const characters = getCharactersByArchetype(title);
     const isHighlighted = id === highlightedId;
 
     return (
       <div id={id} className={`border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-red-600 ring-2 ring-red-600 bg-red-900/10" : "border-gray-400"}`}>
         <div className="relative w-full border-b-2 border-gray-800">
-          <Image
-            src={getImageSrc(id)}
-            alt={title}
-            width={300}
-            height={150}
-            className="w-full h-[150px] object-cover"
-            onError={() => handleImageError(id, imageExtensions[id] || "png")}
-            priority
-            unoptimized={imageExtensions[id] === "gif"}
-          />
+          <AnimatedImage id={id} alt={title} onError={handleImageError} currentExtension={imageExtensions[id] || "png"} hoveredImageId={hoveredImageId} setHoveredImageId={setHoveredImageId} />
         </div>
         <div className="p-4">
           <h2 className="font-bold text-xl mb-2">{title}</h2>
@@ -173,20 +162,18 @@ const TerminologyPage = () => {
 
   const GameTermCard = ({ title, englishTitle, description, id }: IGameTermCardProps) => {
     const isHighlighted = id === highlightedId;
+    const [isHovered, setIsHovered] = useState(false);
 
     return (
-      <div id={id} className={`border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-teal-400 ring-2 ring-teal-400 bg-teal-900/10" : "border-gray-400"}`}>
+      <div
+        id={id}
+        className={`border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-teal-400 ring-2 ring-teal-400 bg-teal-900/10" : "border-gray-400"}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <div className="relative w-full border-b-2 border-gray-800">
-          <Image
-            src={getImageSrc(id)}
-            alt={title}
-            width={300}
-            height={150}
-            className="w-full h-[150px] object-cover"
-            onError={() => handleImageError(id, imageExtensions[id] || "png")}
-            priority
-            unoptimized={imageExtensions[id] === "gif"}
-          />
+          <Image src={`/assets/terminology-assets/${id}.png`} alt={title} width={300} height={300} className="w-full" style={{ display: isHovered ? "none" : "block" }} />
+          <Image src={`/assets/terminology-assets/${id}.gif`} alt={title} width={300} height={300} className="w-full" style={{ display: isHovered ? "block" : "none" }} />
         </div>
         <div className="p-4">
           <div className="font-bold text-xl mb-2 flex items-baseline">
@@ -201,6 +188,7 @@ const TerminologyPage = () => {
 
   return (
     <div className="container p-8 min-w-fit">
+      <p className="hidden">{failedImages}</p>
       <nav className="flex flex-row">
         <Link href="/" className="text-teal-400 hover:underline">
           Home
@@ -242,7 +230,7 @@ const TerminologyPage = () => {
           {archetypesIsOpen && (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-2">
               {filteredArchetypes.map((archetype) => (
-                <ArchetypeCard key={archetype.id} id={archetype.id} title={archetype.name} description={archetype.description} />
+                <ArchetypeCard key={archetype.id} id={archetype.id} title={archetype.name} description={archetype.description} hoveredImageId={hoveredImageId} setHoveredImageId={setHoveredImageId} />
               ))}
             </div>
           )}
@@ -289,7 +277,15 @@ const TerminologyPage = () => {
           {gameTermsIsOpen && (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-2">
               {filteredGameTerms.map((term) => (
-                <GameTermCard key={term.id} id={term.id} title={term.name} englishTitle={term.engName} description={term.description} />
+                <GameTermCard
+                  key={term.id}
+                  id={term.id}
+                  title={term.name}
+                  englishTitle={term.engName}
+                  description={term.description}
+                  hoveredImageId={hoveredImageId}
+                  setHoveredImageId={setHoveredImageId}
+                />
               ))}
             </div>
           )}
