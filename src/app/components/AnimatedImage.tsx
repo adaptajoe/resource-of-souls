@@ -32,11 +32,7 @@ export default function AnimatedImage({ id, alt, onError, currentExtension, clas
   }, [isHovered, id, currentExtension, loadedGif, hasError, onError]);
 
   return (
-    <div
-      className="relative w-full h-[150px]"
-      onMouseEnter={() => setHoveredImageId(id)}
-      onMouseLeave={() => setHoveredImageId(null)}
-    >
+    <div className="relative w-full h-[150px]" onMouseEnter={() => setHoveredImageId(id)} onMouseLeave={() => setHoveredImageId(null)}>
       <Image
         src={isHovered && loadedGif && !hasError ? loadedGif : `/assets/terminology-assets/${id}.png`}
         alt={alt}

@@ -172,8 +172,22 @@ const TerminologyPage = () => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className="relative w-full border-b-2 border-gray-800">
-          <Image src={`/assets/terminology-assets/${id}.png`} alt={title} width={300} height={300} className="w-full" style={{ display: isHovered ? "none" : "block" }} />
-          <Image src={`/assets/terminology-assets/${id}.gif`} alt={title} width={300} height={300} className="w-full" style={{ display: isHovered ? "block" : "none" }} />
+          <Image
+            src={`/assets/terminology-assets/${id}.png`}
+            alt={title}
+            width={300}
+            height={300}
+            className="w-full"
+            style={{ display: isHovered ? "none" : "block", filter: "grayscale(100%)" }}
+          />
+          <Image
+            src={`/assets/terminology-assets/${id}.gif`}
+            alt={title}
+            width={300}
+            height={300}
+            className="w-full"
+            style={{ display: isHovered ? "block" : "none" }}
+          />
         </div>
         <div className="p-4">
           <div className="font-bold text-xl mb-2 flex items-baseline">
@@ -270,7 +284,9 @@ const TerminologyPage = () => {
               {!searchQuery && <p className="mb-4 text-gray-400 italic">At present, there are {Object.keys(supplementaryData.gameTerms).length} Game Terms to learn about.</p>}
               <button className="font-bold text-teal-400 flex items-center gap-2 hover:underline" onClick={() => setGameTermsIsOpen((prevState) => !prevState)}>
                 <span>Click to {gameTermsIsOpen ? "hide" : "expand"}</span>
-                {gameTermsIsOpen ? <TbChevronUp size={20} /> : <TbChevronDown size={20} />}
+                {gameTermsIsOpen ? <TbChevronUp size={20} /> : <TbChevronDown size={20
+
+} />}
               </button>
             </>
           )}

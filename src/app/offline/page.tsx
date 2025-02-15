@@ -20,39 +20,41 @@ export default function Offline() {
             Research all of the Offline Modes like Story Mode, Side Stories, Secret Stories, Mission Mode, and Custom Offline Matches for BLEACH - Rebirth of Souls here.
           </p>
         </div>
-        <div className="block">
-          <div className="grid grid-cols-1 md:grid-cols-4 space-y-4 md:space-y-0 space-x-0 md:space-x-4 justify-center items-center w-full">
-            <Link href="/offline/story-mode" className="h-full">
-              <div className="border-4 border-red-600 hover:border-white p-2">
-                <div className="bg-red-600 border-black border p-10 transition-colors text-black flex flex-col items-center">
-                  <GiButterfly size={100} className="mb-4" />
-                  <h2 className="text-4xl">Story Mode</h2>
-                </div>
-              </div>
+        <div className="grid grid-cols-2 md:grid-cols-4">
+          <div className="mr-4 mb-4 md:mb-0">
+            <Link
+              href="/offline/story-mode"
+              className="rounded-xl flex flex-col items-center border-2 border-red-600 bg-red-600 hover:bg-black hover:border-red-600 hover:text-red-600 transition-colors p-2"
+            >
+              <GiButterfly size={80} />
+              <h2 className="text-3xl">Story Mode</h2>
             </Link>
-            <Link href="/offline/side-stories" className="h-full">
-              <div className="border-4 border-teal-400 hover:border-white p-2">
-                <div className="bg-teal-400 border-black border p-10 transition-colors text-black flex flex-col items-center">
-                  <GiPathDistance size={100} className="mb-4" />
-                  <h2 className="text-4xl">Side Story Mode</h2>
-                </div>
-              </div>
+          </div>
+          <div className="mr-0 md:mr-4 mb-4 md:mb-0">
+            <Link
+              href="/offline/side-stories"
+              className="rounded-xl flex flex-col items-center border-2 border-red-600 bg-red-600 hover:bg-black hover:border-red-600 hover:text-red-600 transition-colors p-2"
+            >
+              <GiPathDistance size={80} />
+              <h2 className="text-3xl">Side Stories</h2>
             </Link>
-            <Link href="/offline/secret-stories" className="h-full">
-              <div className="border-4 border-amber-400 hover:border-white p-2">
-                <div className="bg-amber-400 border-black border p-10 transition-colors text-black flex flex-col items-center">
-                  <GiAbstract069 size={100} className="mb-4" />
-                  <h2 className="text-4xl">Secret Story Mode</h2>
-                </div>
-              </div>
+          </div>
+          <div className="mr-4 mb-4 md:mb-0">
+            <Link
+              href="/offline/secret-stories"
+              className="rounded-xl flex flex-col items-center border-2 border-red-600 bg-red-600 hover:bg-black hover:border-red-600 hover:text-red-600 transition-colors p-2"
+            >
+              <GiAbstract069 size={80} />
+              <h2 className="text-3xl">Secret Stories</h2>
             </Link>
-            <Link href="/offline/mission-mode" className="h-full">
-              <div className="border-4 border-purple-400 hover:border-white p-2">
-                <div className="bg-purple-400 border-black border p-10 transition-colors text-black flex flex-col items-center">
-                  <GiFire size={100} className="mb-4" />
-                  <h2 className="text-4xl">Mission Mode</h2>
-                </div>
-              </div>
+          </div>
+          <div className="mr-0 md:mr-4 mb-4 md:mb-0">
+            <Link
+              href="/offline/mission-mode"
+              className="rounded-xl flex flex-col items-center border-2 border-red-600 bg-red-600 hover:bg-black hover:border-red-600 hover:text-red-600 transition-colors p-2"
+            >
+              <GiFire size={80} />
+              <h2 className="text-3xl">Mission Mode</h2>
             </Link>
           </div>
         </div>
