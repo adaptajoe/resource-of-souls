@@ -15,7 +15,7 @@ export default function Modding() {
         </nav>
         <h1 className="text-3xl font-bold">Modding</h1>
         <div className="grid grid-cols-2">
-          <p className="mt-4 mb-6 col-span-1">Learn about modding BLEACH - Rebirth of Souls (If it&pos;s possible lmao).</p>
+          <p className="mt-4 mb-6 col-span-1">Learn about modding BLEACH - Rebirth of Souls (If it&apos;s possible lmao).</p>
         </div>
         <div className="space-x-4 justify-center items-center">Modding information will be added here.</div>
       </div>

@@ -373,25 +373,25 @@ export default function RankedLeaderboard() {
   const BadgeTable = ({ badges }: { title: string; badges: Badge[] }) => (
     <div>
       {/* Stats Section */}
-      <div className="flex gap-2 mb-4 justify-between">
+      <div className="flex gap-2 mb-4 justify-between overflow-x-scroll">
         <div className="flex flex-row space-x-2">
           <div className="px-4 font-black py-2 rounded-lg transition-colors bg-gray-800">
-            <p className="text-teal-400 text-sm">Number of Badges in League</p>
-            <p className="text-white font-bold text-xl">{badges.length}</p>
+            <p className="text-teal-400">Number of Badges in League</p>
+            <p className="text-white font-bold">{badges.length}</p>
           </div>
           <div className="px-4 font-black py-2 rounded-lg transition-colors bg-gray-800">
-            <p className="text-teal-400 text-sm">Unclaimed Badges in League</p>
-            <p className="text-white font-bold text-xl">{badges.filter((badge) => badge.owner === null).length}</p>
+            <p className="text-teal-400">Unclaimed Badges in League</p>
+            <p className="text-white font-bold">{badges.filter((badge) => badge.owner === null).length}</p>
           </div>
         </div>
         <div className="flex flex-row space-x-2">
           <div className="px-4 font-black py-2 rounded-lg transition-colors bg-gray-800">
-            <p className="text-teal-400 text-sm">Total Badges Available</p>
-            <p className="text-white font-bold text-xl">{globalStats.totalBadges}</p>
+            <p className="text-teal-400">Total Badges Available</p>
+            <p className="text-white font-bold">{globalStats.totalBadges}</p>
           </div>
           <div className="px-4 font-black py-2 rounded-lg transition-colors bg-gray-800">
-            <p className="text-teal-400 text-sm">Total Badges Unclaimed</p>
-            <p className="text-white font-bold text-xl">{globalStats.totalBadges - globalStats.totalClaimed}</p>
+            <p className="text-teal-400">Total Badges Unclaimed</p>
+            <p className="text-white font-bold">{globalStats.totalBadges - globalStats.totalClaimed}</p>
           </div>
         </div>
       </div>
@@ -420,7 +420,7 @@ export default function RankedLeaderboard() {
 
   return (
     <div className="min-h-screen p-12">
-      <div className="grid grid-cols-2 mb-6">
+      <div className="mb-6">
         <div>
           <nav className="flex flex-row">
             <Link href="/" className="text-teal-400 hover:underline">
@@ -435,17 +435,21 @@ export default function RankedLeaderboard() {
               Community Ranked Leaderboard
             </Link>
           </nav>
-          <h1 className="text-3xl font-bold mb-6">Community Ranked Leaderboard</h1>
-          <div className="mr-6 text-xl">
-            <p className="mb-4">
-              Badges represent marks of mastery, earned exclusively by participating in Tournaments. See a Badge that you&apos;d like against your name? Challenge the Badge owner via Discord, and duel
-              for it! Elevate the stakes by wagering your own Badges against your opponents - The winner takes all wagered Badges!
-            </p>
-            <p className="mb-4">You alone shall stand at the top. Claim that intolerable vaccuum, and stand upon the heavens!</p>
-            <p className="mb-4 text-gray-400 italic">(Badges expire after 6 months with no Challenges - See one that should be expired? Message @jojicus on Discord!)</p>
-          </div>
         </div>
-        <div>
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div>
+            <h1 className="text-3xl font-bold mb-6">Community Ranked Leaderboard</h1>
+            <div className="mr-6 text-xl">
+              <p className="mb-4">
+                Badges represent marks of mastery, earned exclusively by participating in Tournaments. See a Badge that you&apos;d like against your name? Challenge the Badge owner via Discord, and
+                duel for it! Elevate the stakes by wagering your own Badges against your opponents - The winner takes all wagered Badges!
+              </p>
+              <p className="mb-4">You alone shall stand at the top. Claim that intolerable vaccuum, and stand upon the heavens!</p>
+              <p className="mb-4 text-gray-400 italic">
+                (Badges expire after 6 months with no Challenges - See one that should be expired? Message <span className="text-amber-400">@jojicus</span> on Discord!)
+              </p>
+            </div>
+          </div>
           <div className="flex justify-center xl:justify-end">
             <Image
               src={`/assets/character-banner/aizen-sosuke-banner.png`}
@@ -463,7 +467,7 @@ export default function RankedLeaderboard() {
         </div>
       </div>
       <hr />
-      <div className="grid grid-cols-2 space-x-20 mt-12">
+      <div className="grid grid-cols-1 xl:grid-cols-2 xl:space-x-20 mt-12 space-x-0 space-y-4 xl:space-y-0">
         <div>
           <div className="mb-8">
             <p className="text-xl font-black mb-4">Badge Champions</p>
@@ -478,13 +482,13 @@ export default function RankedLeaderboard() {
           <p className="text-xl font-black mb-4 ml-2">Badges Leaderboard</p>
           <div className="w-full rounded-xl p-4 border border-gray-400">
             {/* League Tabs */}
-            <div className="flex gap-2 mb-4">
+            <div className="flex gap-2 mb-4 overflow-x-scroll">
               {Object.keys(tables).map((tableName) => (
                 <button
                   key={tableName}
                   onClick={() => setActiveTable(tableName)}
                   disabled={activeTable === tableName}
-                  className={`px-4 font-black py-2 rounded-lg transition-colors ${activeTable === tableName ? "bg-red-600 text-white cursor-not-allowed" : "bg-gray-800 hover:bg-red-600"}`}
+                  className={`px-4 text-sm font-black py-2 rounded-lg transition-colors ${activeTable === tableName ? "bg-red-600 text-white cursor-not-allowed" : "bg-gray-800 hover:bg-red-600"}`}
                 >
                   {tableName}
                 </button>

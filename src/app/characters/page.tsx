@@ -20,6 +20,7 @@ export default function Characters() {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortConfig, setSortConfig] = useState<SortType>({ type: "number", ascending: true });
   const [affiliationFilter, setAffiliationFilter] = useState<AffiliationType>("all");
+  const [genderFilter, setGenderFilter] = useState<"all" | "male" | "female">("all");
   const [imageSources, setImageSources] = useState<{ [key: string]: string }>({});
 
   const handleImageError = (slug: string) => {
@@ -74,7 +75,10 @@ export default function Characters() {
         (affiliationFilter === "soulSociety" && character.tags.affiliations.includes("soulSociety")) ||
         (affiliationFilter === "huecoMundo" && character.tags.affiliations.includes("huecoMundo"));
 
-      return matchesSearch && matchesAffiliation;
+      const matchesGender =
+        genderFilter === "all" || (genderFilter === "male" && character.tags.characteristics.includes("male")) || (genderFilter === "female" && character.tags.characteristics.includes("female"));
+
+      return matchesSearch && matchesAffiliation && matchesGender;
     });
 
     return filtered.sort(([, a], [, b]) => {
@@ -83,7 +87,7 @@ export default function Characters() {
       }
       return sortConfig.ascending ? a.characterNumber - b.characterNumber : b.characterNumber - a.characterNumber;
     });
-  }, [characters, searchTerm, sortConfig, affiliationFilter]);
+  }, [characters, searchTerm, sortConfig, affiliationFilter, genderFilter]);
 
   const shouldHighlightArchetype = (archetype: string): boolean => {
     return searchTerm.length > 0 && archetype.toLowerCase().includes(searchTerm.toLowerCase());
@@ -139,56 +143,79 @@ export default function Characters() {
             />
           </div>
           <div className="w-fit lg:w-full flex flex-col lg:flex-row mt-4 space-y-4 lg:space-y-0 lg:space-x-4">
-            <button
-              onClick={() =>
-                setSortConfig((prev) => ({
-                  type: "number",
-                  ascending: prev.type === "number" ? !prev.ascending : true,
-                }))
-              }
-              className={`px-3 py-1 rounded flex items-center font-black gap-1 hover:bg-red-600 ${
-                sortConfig.type === "number" ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
-              }`}
-            >
-              Release Order
-              {sortConfig.type === "number" && <span>{sortConfig.ascending ? <TbArrowBigUpFilled size={20} /> : <TbArrowBigDownFilled size={20} />}</span>}
-            </button>
-            <button
-              onClick={() =>
-                setSortConfig((prev) => ({
-                  type: "alphabetical",
-                  ascending: prev.type === "alphabetical" ? !prev.ascending : true,
-                }))
-              }
-              className={`px-3 py-1 font-black rounded flex items-center gap-1 hover:bg-red-600 ${
-                sortConfig.type === "alphabetical" ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
-              }`}
-            >
-              A-Z
-              {sortConfig.type === "alphabetical" && <span>{sortConfig.ascending ? <TbArrowBigUpFilled size={20} /> : <TbArrowBigDownFilled size={20} />}</span>}
-            </button>
+            <div className="flex flex-row space-x-4 pr-4 border-0 lg:border-r-2 border-gray-400">
+              <button
+                onClick={() =>
+                  setSortConfig((prev) => ({
+                    type: "number",
+                    ascending: prev.type === "number" ? !prev.ascending : true,
+                  }))
+                }
+                className={`px-3 py-1 rounded flex items-center font-black gap-1 hover:bg-red-600 ${
+                  sortConfig.type === "number" ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
+                }`}
+              >
+                Release Order
+                {sortConfig.type === "number" && <span>{sortConfig.ascending ? <TbArrowBigUpFilled size={20} /> : <TbArrowBigDownFilled size={20} />}</span>}
+              </button>
+
+              <button
+                onClick={() =>
+                  setSortConfig((prev) => ({
+                    type: "alphabetical",
+                    ascending: prev.type === "alphabetical" ? !prev.ascending : true,
+                  }))
+                }
+                className={`px-3 py-1 font-black rounded flex items-center gap-1 hover:bg-red-600 ${
+                  sortConfig.type === "alphabetical" ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
+                }`}
+              >
+                A-Z
+                {sortConfig.type === "alphabetical" && <span>{sortConfig.ascending ? <TbArrowBigUpFilled size={20} /> : <TbArrowBigDownFilled size={20} />}</span>}
+              </button>
+            </div>
 
             {/* Affiliation Filters */}
-            {[
-              { value: "all", label: "All Affiliations" },
-              { value: "worldOfTheLiving", label: "World of the Living" },
-              { value: "soulSociety", label: "Soul Society" },
-              { value: "huecoMundo", label: "Hueco Mundo" },
-            ].map((aff) => (
-              <button
-                key={aff.value}
-                onClick={() => setAffiliationFilter(aff.value as AffiliationType)}
-                className={`px-3 py-1 font-black hover:bg-red-600 rounded ${affiliationFilter === aff.value ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"}`}
-              >
-                {aff.label}
-              </button>
-            ))}
+            <div className="flex flex-row space-x-4 pr-4 border-0 lg:border-r-2 border-gray-400">
+              {[
+                { value: "all", label: "All Affiliations" },
+                { value: "worldOfTheLiving", label: "World of the Living" },
+                { value: "soulSociety", label: "Soul Society" },
+                { value: "huecoMundo", label: "Hueco Mundo" },
+              ].map((aff) => (
+                <button
+                  key={aff.value}
+                  onClick={() => setAffiliationFilter(aff.value as AffiliationType)}
+                  className={`px-3 py-1 font-black hover:bg-red-600 rounded ${affiliationFilter === aff.value ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"}`}
+                >
+                  {aff.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Gender Filters */}
+            <div className="flex flex-row space-x-4">
+              {[
+                { value: "all", label: "All Genders" },
+                { value: "male", label: "Male-Only" },
+                { value: "female", label: "Female-Only" },
+              ].map((gender) => (
+                <button
+                  key={gender.value}
+                  onClick={() => setGenderFilter(gender.value as "all" | "male" | "female")}
+                  className={`px-3 py-1 font-black hover:bg-red-600 rounded ${genderFilter === gender.value ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"}`}
+                >
+                  {gender.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
         <div className="text-sm text-gray-400">
           {filteredAndSortedCharacters.length} {filteredAndSortedCharacters.length === 1 ? "character" : "characters"} found
           {searchTerm && " matching search"}
           {affiliationFilter !== "all" && " in selected Affiliation"}
+          {genderFilter !== "all" && " in selected Gender"}
         </div>
         {/* Character Grid */}
         {filteredAndSortedCharacters.length === 0 ? (

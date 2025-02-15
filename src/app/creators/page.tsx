@@ -14,7 +14,7 @@ export default function Creators() {
           </Link>
         </nav>
         <h1 className="text-3xl font-bold">Creators</h1>
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 pr-8">
           <div>
             <p className="mt-4">
               Find high-quality BLEACH - Rebirth of Souls content creators and other affiliated<span className="text-red-600">*</span> programs and sites here!
@@ -24,12 +24,13 @@ export default function Creators() {
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <Link className={`px-4 py-2 w-fit mt-4 font-black rounded text-white bg-gray-800 hover:bg-red-600 transition-colors`} href={"/terminology"}>
+            <Link className={`px-4 py-2 w-fit my-4 font-black rounded text-white bg-gray-800 hover:bg-red-600 transition-colors`} href={"/terminology"}>
               Navigate to the BLEACH - Rebirth of Souls Press Kit
             </Link>
           </div>
         </div>
-        <div className="space-x-4 justify-center items-center">Creators will be added here.</div>
+        <hr />
+        <div className="space-x-4 justify-center items-center mt-4">Creators will be added here.</div>
       </div>
     </div>
   );

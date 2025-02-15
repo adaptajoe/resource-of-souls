@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { AiFillDiscord } from "react-icons/ai";
-import { RiPlaystationFill, RiRedditFill, RiSteamFill, RiXboxFill } from "react-icons/ri";
-import { TbBaselineDensityMedium, TbBookFilled, TbBrandGithubFilled, TbHomeFilled, TbListNumbers, TbMoonFilled, TbUserFilled, TbWorld, TbX } from "react-icons/tb";
+import { BiLogoDiscordAlt } from "react-icons/bi";
+import { GrGithub, GrReddit } from "react-icons/gr";
+import { TbBaselineDensityMedium, TbBookFilled, TbBrandYoutubeFilled, TbHomeFilled, TbListNumbers, TbMoonFilled, TbSettingsFilled, TbUserFilled, TbWifiOff, TbX } from "react-icons/tb";
 
 export function MobileNavigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,39 +11,22 @@ export function MobileNavigation() {
   const mainLinks = [
     { href: "/", text: "Home", icon: <TbHomeFilled className="mb-2" size={40} /> },
     { href: "/characters", text: "Characters", icon: <TbUserFilled className="mb-2" size={40} /> },
-    { href: "/terminology", text: "Terminology", icon: <TbBookFilled className="mb-2" size={40} /> },
+    { href: "/terminology", text: "Terms", icon: <TbBookFilled className="mb-2" size={40} /> },
     { href: "/changelog", text: "Changelog", icon: <TbListNumbers className="mb-2" size={40} /> },
-    { href: "/community", text: "Community Hub", icon: <TbMoonFilled className="mb-2" size={40} /> },
+    { href: "/offline", text: "Offline", icon: <TbWifiOff className="mb-2" size={40} /> },
+    { href: "/community", text: "Community", icon: <TbMoonFilled className="mb-2" size={40} /> },
+    { href: "/modding", text: "Modding", icon: <TbSettingsFilled className="mb-2" size={40} /> },
+    { href: "/creators", text: "Creators", icon: <TbBrandYoutubeFilled className="mb-2" size={40} /> },
   ];
 
   const subLinks = [
     {
       href: "https://discord.gg/fA69CAE2eP",
-      text: "Bleach - Rebirth of Souls Discord",
-      icon: <AiFillDiscord className="mb-2" size={40} />,
+      text: "Discord",
+      icon: <BiLogoDiscordAlt className="mb-2" size={40} />,
     },
-    { href: "https://github.com/adaptajoe/resource-of-souls", text: "GitHub", icon: <TbBrandGithubFilled className="mb-2" size={40} /> },
-    { href: "https://en.bandainamcoent.eu/bleach/bleach-rebirth-of-souls", text: "Official ENG Website", icon: <TbWorld className="mb-2" size={40} /> },
-    { href: "https://bleach-ros.bn-ent.net/", text: "Official JP Website", icon: <TbWorld className="mb-2" size={40} /> },
-    { href: "https://www.reddit.com/r/RebirthOfSoulsBleach/", text: "Bleach - Rebirth of Souls Subreddit", icon: <RiRedditFill className="mb-2" size={40} /> },
-  ];
-
-  const storeLinks = [
-    {
-      href: "https://store.playstation.com/en-gb/product/EP0700-PPSA03579_00-BLEACHROFS000000?gad_source=1&gclid=CjwKCAiAwaG9BhAREiwAdhv6Y-puE56RpXjrWrw-qFJlRDJ0Cu_UuB6y7wTv56NAFbzYBEBBOjXblRoCgmEQAvD_BwE&gclsrc=aw.ds",
-      text: "PlayStation Store Page",
-      icon: <RiPlaystationFill className="mb-2" size={40} />,
-    },
-    {
-      href: "https://www.xbox.com/en-GB/games/store/bleach-rebirth-of-souls/9PJK7WPHWM8L",
-      text: "Xbox Marketplace Page",
-      icon: <RiXboxFill className="mb-2" size={40} />,
-    },
-    {
-      href: "https://store.steampowered.com/app/1689620/BLEACH_Rebirth_of_Souls/",
-      text: "Steam Page",
-      icon: <RiSteamFill className="mb-2" size={40} />,
-    },
+    { href: "https://github.com/adaptajoe/resource-of-souls", text: "GitHub", icon: <GrGithub className="mb-2" size={40} /> },
+    { href: "https://www.reddit.com/r/RebirthOfSoulsBleach/", text: "Subreddit", icon: <GrReddit className="mb-2" size={40} /> },
   ];
 
   return (
@@ -73,7 +56,7 @@ export function MobileNavigation() {
 
           {/* Sub Links Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 items-center">
-            {[...subLinks, ...storeLinks].map((link) => (
+            {[...subLinks].map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
