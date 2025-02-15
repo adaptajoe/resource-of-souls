@@ -59,14 +59,7 @@ const TerminologyPage = () => {
   const [gameTermsIsOpen, setGameTermsIsOpen] = useState(false);
   const [highlightedId, setHighlightedId] = useState<string | null>(null);
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
-
-  const handleImageError = (id: string) => {
-    setFailedImages((prev) => new Set(prev).add(id));
-  };
-
-  const getImageSrc = (id: string) => {
-    return failedImages.has(id) ? "/assets/terminology-assets/placeholder.png" : `/assets/terminology-assets/${id}.png`;
-  };
+  const [imageExtensions, setImageExtensions] = useState<{ [key: string]: string }>({});
 
   const filterItems = (text: string) => {
     return text.toLowerCase().includes(searchQuery.toLowerCase());
@@ -75,6 +68,24 @@ const TerminologyPage = () => {
   const filteredArchetypes = Object.values(supplementaryData.archetypes).filter((archetype) => filterItems(archetype.name) || filterItems(archetype.description));
 
   const filteredGameTerms = Object.values(supplementaryData.gameTerms).filter((term) => filterItems(term.name) || filterItems(term.description) || (term.engName && filterItems(term.engName)));
+
+  const handleImageError = (id: string, currentExt: string) => {
+    if (currentExt === "png") {
+      // Try GIF if PNG fails
+      setImageExtensions((prev) => ({ ...prev, [id]: "gif" }));
+    } else {
+      // If both PNG and GIF fail, mark as failed
+      setFailedImages((prev) => new Set(prev).add(id));
+    }
+  };
+
+  const getImageSrc = (id: string) => {
+    if (failedImages.has(id)) {
+      return "/assets/terminology-assets/placeholder.png";
+    }
+    const extension = imageExtensions[id] || "png";
+    return `/assets/terminology-assets/${id}.${extension}`;
+  };
 
   const searchParams = useSearchParams();
   const highlightedArchetype = searchParams.get("highlight");
@@ -125,7 +136,16 @@ const TerminologyPage = () => {
     return (
       <div id={id} className={`border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-red-600 ring-2 ring-red-600 bg-red-900/10" : "border-gray-400"}`}>
         <div className="relative w-full border-b-2 border-gray-800">
-          <Image src={getImageSrc(id)} alt={title} width={300} height={150} className="w-full h-[150px] object-cover" onError={() => handleImageError(id)} priority />
+          <Image
+            src={getImageSrc(id)}
+            alt={title}
+            width={300}
+            height={150}
+            className="w-full h-[150px] object-cover"
+            onError={() => handleImageError(id, imageExtensions[id] || "png")}
+            priority
+            unoptimized={imageExtensions[id] === "gif"}
+          />
         </div>
         <div className="p-4">
           <h2 className="font-bold text-xl mb-2">{title}</h2>
@@ -157,7 +177,16 @@ const TerminologyPage = () => {
     return (
       <div id={id} className={`border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-teal-400 ring-2 ring-teal-400 bg-teal-900/10" : "border-gray-400"}`}>
         <div className="relative w-full border-b-2 border-gray-800">
-          <Image src={getImageSrc(id)} alt={title} width={300} height={150} className="w-full h-[150px] object-cover" onError={() => handleImageError(id)} priority />
+          <Image
+            src={getImageSrc(id)}
+            alt={title}
+            width={300}
+            height={150}
+            className="w-full h-[150px] object-cover"
+            onError={() => handleImageError(id, imageExtensions[id] || "png")}
+            priority
+            unoptimized={imageExtensions[id] === "gif"}
+          />
         </div>
         <div className="p-4">
           <div className="font-bold text-xl mb-2 flex items-baseline">
