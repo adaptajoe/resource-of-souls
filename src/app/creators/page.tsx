@@ -30,7 +30,88 @@ export default function Creators() {
           </div>
         </div>
         <hr />
-        <div className="space-x-4 justify-center items-center mt-4">Creators will be added here.</div>
+        <div className="space-x-4 justify-center items-center mt-4">
+          <div>
+            <div className="grid grid-cols-1 xl:grid-cols-2">
+              <div className="space-y-4 pr-4 xl:border-r border-gray-400 grid grid-cols-1 xl:grid-cols-2">
+                <div>
+                  <h2 className="text-4xl">
+                    <span className="text-red-600">W</span>eebs Guild
+                  </h2>
+                  <p className="pr-4">
+                    Introducing the Weebs Guild channel! The home of the popular Bleach Boys podcast, their channel and Discord server is home to many loyal BLEACH fans and they aim to create a fun
+                    and enduring BLEACH - Rebirth of Souls community. With planned tournaments, special game modes, and more! If you&apos;re looking for a place filled with BLEACH fans, this is it.
+                    Every Sunday there&apos;s a podcast on their YouTube channel, which is filled with BLEACH content and much more!
+                  </p>
+                </div>
+                <div>
+                  <iframe
+                    src="https://www.youtube.com/embed/wNIXW6zGJ0w?start=1"
+                    height={250}
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full max-h-[800px]"
+                  />
+                </div>
+              </div>
+              {/* <div className="space-y-4 pl-4 border-l border-gray-400 grid grid-cols-2">
+                <div>
+                  <h2 className="text-4xl">
+                    <span className="text-red-600">S</span>lot 2
+                  </h2>
+                  <p className="pr-4">A</p>
+                </div>
+                <div>
+                  <iframe
+                    src="https://www.youtube.com/embed/wNIXW6zGJ0w?start=1"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full max-h-[800px]"
+                  />
+                </div>
+              </div> */}
+            </div>
+            <hr className="my-4" />
+            {/* <div className="grid grid-cols-2">
+              <div className="space-y-4 pr-4 border-r border-gray-400 grid grid-cols-2">
+                <div>
+                  <h2 className="text-4xl">
+                    <span className="text-red-600">S</span>lot 3
+                  </h2>
+                  <p className="pr-4">A</p>
+                </div>
+                <div>
+                  <iframe
+                    src="https://www.youtube.com/embed/wNIXW6zGJ0w?start=1"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full max-h-[800px]"
+                  />
+                </div>
+              </div>
+              <div className="space-y-4 pl-4 border-l border-gray-400 grid grid-cols-2">
+                <div>
+                  <h2 className="text-4xl">
+                    <span className="text-red-600">S</span>lot 4
+                  </h2>
+                  <p className="pr-4">A</p>
+                </div>
+                <div>
+                  <iframe
+                    src="https://www.youtube.com/embed/wNIXW6zGJ0w?start=1"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full max-h-[800px]"
+                  />
+                </div>
+              </div>
+            </div> */}
+          </div>
+        </div>
       </div>
     </div>
   );

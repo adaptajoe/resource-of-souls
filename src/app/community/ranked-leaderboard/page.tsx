@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import BadgeWheel from "../../components/BadgeWheel";
 
 interface Badge {
   name: string;
@@ -444,7 +445,7 @@ export default function RankedLeaderboard() {
                 Badges represent marks of mastery, earned exclusively by participating in Tournaments. See a Badge that you&apos;d like against your name? Challenge the Badge owner via Discord, and
                 duel for it! Elevate the stakes by wagering your own Badges against your opponents - The winner takes all wagered Badges!
               </p>
-              <p className="mb-4">You alone shall stand at the top. Claim that intolerable vaccuum, and stand upon the heavens!</p>
+              <p className="mb-4">You alone shall stand at the top. Claim that intolerable vacuum, and stand upon the heavens!</p>
               <p className="mb-4 text-gray-400 italic">
                 (Badges expire after 6 months with no Challenges - See one that should be expired? Message <span className="text-amber-400">@jojicus</span> on Discord!)
               </p>
@@ -497,6 +498,10 @@ export default function RankedLeaderboard() {
             <BadgeTable title={activeTable} badges={tables[activeTable as keyof typeof tables]} />
           </div>
         </div>
+      </div>
+      <div className="mt-12">
+        <p className="text-xl font-black mb-4 ml-2">Random Badge Selector</p>
+        <BadgeWheel badges={Object.values(tables).flat()} />
       </div>
     </div>
   );

@@ -8,10 +8,10 @@ export default function Home() {
       <div className="relative w-full">
         <div className="absolute bg-black p-4 left-8 top-3/4 -translate-y-1/2 z-10 border-x-2 border-l-red-600 border-r-teal-400 max-w-[90%] md:max-w-[70%]">
           <div className="flex flex-col">
-            <h1 className="text-white text-sm md:text-xl lg:text-2xl xl:text-4xl font-black">
+            <h1 className="text-white text-xl lg:text-2xl xl:text-4xl font-black">
               <span className="text-red-600">B</span>LEACH - Resource of Souls has launched!
             </h1>
-            <p className="text-white text-xs md:text-sm xl:text-lg">Please bear with us as the game releases! A lot of data may be mistaken or missing.</p>
+            <p className="text-white text-sm xl:text-lg">Please bear with us as the game releases! A lot of data may be mistaken or missing.</p>
           </div>
         </div>
         <AnimatedHero src={"/assets/site-assets/site-hero.mp4"} alt={""} filename={""} />

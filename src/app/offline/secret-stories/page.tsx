@@ -18,6 +18,7 @@ export default function Secret() {
           </Link>
         </nav>
         <div>
+          <h1 className="text-3xl font-bold mb-6">Secret Stories</h1>
           <p>Secret Story Mode information goes here.</p>
         </div>
       </div>

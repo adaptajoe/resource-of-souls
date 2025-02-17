@@ -18,6 +18,7 @@ export default function Story() {
           </Link>
         </nav>
         <div>
+          <h1 className="text-3xl font-bold mb-6">Story Mode</h1>
           <p>Story Mode information goes here.</p>
         </div>
       </div>

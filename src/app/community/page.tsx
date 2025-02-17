@@ -6,13 +6,13 @@ export default function Community() {
   return (
     <div className="min-h-screen -mx-4">
       <div className="relative w-full">
-        <div className="absolute bg-black left-8 top-3/4 -translate-y-1/2 z-10 border-l-2 border-l-red-600 max-w-[90%] md:max-w-[70%]">
+        <div className="absolute bg-black left-8 top-2/3 -translate-y-1/2 z-10 border-l-2 border-l-red-600 max-w-[90%] md:max-w-[70%]">
           <Link href="https://challonge.com/n1h3cvgn" className="flex flex-col">
-            <div className="text-sm md:text-xl lg:text-2xl xl:text-3xl font-black max-w-[500px]">
-              <h2 className="text-black bg-red-600 p-4 border-red-600 border-b-2">NEW TOURNAMENT ANNOUNCEMENT</h2>
+            <div className="text-xl lg:text-2xl xl:text-3xl font-black max-w-[400px]">
+              <h2 className="text-black bg-red-600 p-2 md:p-4 border-red-600 border-b-2">NEW TOURNAMENT ANNOUNCEMENT</h2>
               <h2 className="p-4">The &quot;Warfare of Souls&quot; Tournament will begin on 29/03/2025!</h2>
             </div>
-            <div className="text-white text-xs md:text-sm xl:text-lg p-4">
+            <div className="text-white text-lg p-4 pt-0">
               Register <span className="text-teal-400 hover:underline">here</span>!
             </div>
           </Link>

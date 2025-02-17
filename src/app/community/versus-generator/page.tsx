@@ -497,7 +497,7 @@ export default function VersusGenerator() {
           </p>
         </div>
         <hr />
-        <div className="grid grid-cols-4 mt-4">
+        <div className="grid grid-col-2 xl:grid-cols-4 mt-4 pr-4 xl:pr-0">
           <div className="flex flex-row col-span-2 h-fit pb-4 border-b-2 border-gray-400">
             {/* Player 1 Controls */}
             <div className="border-r-1 border-gray-400 h-fit pr-4 space-y-2">
@@ -600,7 +600,7 @@ export default function VersusGenerator() {
                   </div>
 
                   <div className="w-full">
-                    <p className="text-xs text-gray-400 italic mb-1">Player 1 Text Size</p>
+                    <p className="text-xs text-gray-400 italic mb-1">Player 1 Text Sizes</p>
                     <select
                       value={player1.size}
                       onChange={(e) => setPlayer1((prev) => ({ ...prev, size: e.target.value as Size }))}
@@ -719,7 +719,7 @@ export default function VersusGenerator() {
                   </div>
 
                   <div className="w-full">
-                    <p className="text-xs text-gray-400 italic mb-1">Player 2 Text Size</p>
+                    <p className="text-xs text-gray-400 italic mb-1">Player 2 Text Sizes</p>
                     <select
                       value={player2.size}
                       onChange={(e) => setPlayer2((prev) => ({ ...prev, size: e.target.value as Size }))}
@@ -738,7 +738,7 @@ export default function VersusGenerator() {
             </div>
           </div>
 
-          <div className="w-full col-span-2 ml-12">
+          <div className="w-full col-span-2 ml-0 xl:ml-12">
             <canvas
               ref={canvasRef}
               width="3840"
@@ -757,7 +757,7 @@ export default function VersusGenerator() {
           </div>
         </div>
 
-        <div className="grid grid-cols-4 -mt-28">
+        <div className="grid grid-cols-2 xl:grid-cols-4 mt-8 space-x-4 xl:space-x-0 xl:-mt-12">
           <div>
             <div className="flex items-center gap-2">
               <input type="checkbox" checked={borderPlayer1} onChange={(e) => setBorderPlayer1(e.target.checked)} id="border1" />

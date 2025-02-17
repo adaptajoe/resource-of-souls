@@ -4,7 +4,7 @@
     "id": "rukia-kuchiki",
     "race": "shinigami",
     "quote": "I know the loneliness of being a prisoner. I know the joy you feel when your friends come to rescue you and the fear of them being injured and defeated.",
-    "description": "An unseated Shinigami belonging to Squad 13; under the tutelage of Jushiro Ukitake and Kaien Shiba, she established herself as a permanent member of her Squad. One day, a fateful encounter with a certain orange-haired boy changes her life forever... Rukia is a Balanced character that excels in both Short Range Melee combat and Kidō-based attacks. Her versatile moveset allows her to adapt to various situations while maintaining consistent pressure. With balanced stats across Power, Speed, Range, and Technique - but slightly lower Defense - Rukia is well-rounded but must be careful not to take too many direct hits.",
+    "description": "An unseated Shinigami belonging to Squad 13; under the tutelage of Jushiro Ukitake and Kaien Shiba, she established herself as a permanent member of her Squad. One day, a fateful encounter with a certain orange-haired boy changes her life forever... Rukia is a Balanced character that excels in both Short Range Melee combat and Charge-compatible Kidō-based attacks. Her versatile moveset allows her to adapt to various situations while maintaining consistent pressure. With balanced stats across Power, Speed, Range, and Technique - but slightly lower Defense - Rukia is well-rounded but must be careful not to take too many direct hits.",
     "tags": {
       "affiliations": ["soulSociety", "shinigami", "squad13"],
       "relationships": ["friend"],
@@ -12,7 +12,7 @@
       "characteristics": ["female", "unseatedOfficer", "gotei13"]
     },
     "characterEaseOfUse": 5,
-    "characterArchetype": ["shortRange", "melee", "kidō", "balanced"],
+    "characterArchetype": ["shortRange", "melee", "charge", "kidō", "balanced"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=pq-ECx9dnhg&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=38",
     "characterEngTrailer": "https://www.youtube.com/watch?v=JHod25mzWgY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=34",
     "characterNumber": 1,
@@ -28,46 +28,46 @@
       {
         "base": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+            "id": "hado-#31-shakkaho",
+            "name": "Hadō #31: Shakkaho",
+            "description": "Fires a trio of blazing orbs of Reiryoku at Rukia's opponent. Can be boosted by charging it.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "signatureMove", "needsStatInfo"]
           },
           {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "hado-#4-byakurai",
+            "name": "Hadō #4: Byakurai",
+            "description": "Fires a laser of electric Reiryoku at Rukia's opponent. It makes Rukia hop backwards, and grants Rukia Super Armor for a brief period.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "spiritualPressureMove1", "needsStatInfo"]
+          },
+          {
+            "id": "hado-#33-sokatsui",
+            "name": "Hadō #33: Sokatsui",
+            "description": "Fires an explosive wave of Reiryoku at Rukia's opponent. It can be chained to attacks, and makes Rukia lunge forwards when cast.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "spiritualPressureMove2", "needsStatInfo"]
           }
         ],
         "awakened": [
           {
-            "id": "awakened-move",
-            "name": "Awakened Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "ultra-move",
-            "name": "Ultra Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -99,7 +99,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=uO7EPxsy0Ds&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=37",
     "characterEngTrailer": "https://www.youtube.com/watch?v=mJ1xji2ihQ8&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=31",
     "characterNumber": 2,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1", "2", "3"],
     "abilities": [
       {
         "abilityName": "Zangetsu",
@@ -111,46 +111,26 @@
       {
         "base": [
           {
-            "id": "sōkyoku-splitter",
-            "name": "Sōkyoku Splitter",
+            "id": "wielding",
+            "name": "Wielding",
             "description": "Ichigo delivers a powerful slash that opens up the opportunity to spin Zangetsu above his head like a rotor, before plunging it into the ground to deliver a powerful radial blast.",
-            "input": "SOUTH SOUTHEAST EAST Q",
+            "input": "S1",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["melee", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "moveTags": ["melee", "resourceLoss", "spiritualPressureMove1", "needsStatInfo"]
           }
         ],
         "awakened": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -182,7 +162,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=jqTot703GpM&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=39",
     "characterEngTrailer": "https://www.youtube.com/watch?v=Ze2_7Aa1Uks&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=30",
     "characterNumber": 3,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1"],
     "abilities": [
       {
         "abilityName": "And the victor of this battle is me",
@@ -194,68 +174,48 @@
       {
         "base": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+            "id": "quincy-arrow",
+            "name": "Quincy Arrow",
+            "description": "Fires a Heilig Pfiel towards Uryu's opponent. If the arrow hits, Uryu uses Hirenkyaku to teleport towards the opponent, firing a successive barrage of 5 additional Heilig Pfiel arrows.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["ranged", "resourceLoss", "spiritualPressureMove1", "needsStatInfo"]
           },
           {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "seeleschneider",
+            "name": "Seeleschneider",
+            "description": "Uryu draws his Seeleschneider, holding it in-front of him. If an opponent hits Uryu, he absorbs the hit and counters with a powerful retaliation, followed by a precise Heilig Pfiel.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["melee", "ranged", "counter", "block", "resourceLoss", "spiritualPressureMove2", "needsStatInfo"]
           }
         ],
         "awakened": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ],
         "reawakened": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -275,7 +235,7 @@
     "id": "byakuya-kuchiki",
     "race": "shinigami",
     "quote": "I have discarded my feelings long ago. The Kuchiki clan head cannot display emotions.",
-    "description": "The 28th head of the noble Kuchiki clan and Captain of Squad 6. Known for his cold demeanor and unwavering dedication to law and order, Byakuya struggles between his duties as a noble and his personal feelings. Byakuya is a Hybrid Range fighter who combines Melee combat with Ranged attacks and Kidō to dominate his foes. His Balanced playstyle allows him to control space effectively while maintaining offensive pressure. With exceptional Range and Technique, moderate Defense, but lower Power and Speed, Byakuya excels at keeping opponents at bay while setting up devastating combos and unexpected snipe attacks.",
+    "description": "The 28th head of the noble Kuchiki clan and Captain of Squad 6. Known for his cold demeanor and unwavering dedication to law and order, Byakuya struggles between his duties as a noble and his personal feelings. Byakuya is a Hybrid Range fighter who combines Melee combat with Ranged attacks and Kidō to dominate his foes. His Balanced playstyle allows him to control space effectively while maintaining offensive pressure with his two Stances, 'Senbonzakura Seal', and 'Senbonzakura Release'. With exceptional Range and Technique, moderate Defense, but lower Power and Speed, Byakuya excels at keeping opponents at bay while setting up devastating combos and unexpected snipe attacks.",
     "tags": {
       "affiliations": ["soulSociety", "shinigami", "squad6"],
       "relationships": ["neutral"],
@@ -283,11 +243,11 @@
       "characteristics": ["male", "captain", "gotei13"]
     },
     "characterEaseOfUse": 3,
-    "characterArchetype": ["hybridRange", "melee", "ranged", "kidō", "balanced"],
+    "characterArchetype": ["hybridRange", "melee", "ranged", "kidō", "stance", "balanced"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=HBH0F3QBqeA&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=36",
     "characterEngTrailer": "https://www.youtube.com/watch?v=pzBelDvJt4c&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=29",
     "characterNumber": 4,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1", "2", "DLC1"],
     "abilities": [
       {
         "abilityName": "Senbonzakura",
@@ -299,46 +259,46 @@
       {
         "base": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+            "id": "senbonzakura-seal-and-release",
+            "name": "Senbonzakura: Seal / Release",
+            "description": "A Stance that Byakuya can shift between. When Senbonzakura is in the Sealed Stance, Byakuya becomes a Short Range Melee character, whereas when Senbonzakura is in the Released Stance, Byakuya becomes a Hybrid Range Ranged character.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["melee", "ranged", "resourceLoss", "stanceChange", "signatureMove", "needsStatInfo"]
           },
           {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
+            "id": "release-and-seal-senbonzakura",
+            "name": "Seal / Release: Senbonzakura",
+            "description": "Changes Byakuya's Stance. If Senbonzakura is in the Released Stance, it summons a vortex of Senbonzakura petals that draws the opponent in, changing Senbonzakura to the Sealed Stance. If Senbonzakura is in the Sealed Stance, it summons a vortex of Senbonzakura petals that pushes the opponent away, changing Senbonzakura to the Released Stance. In both instances, it damages the opponent.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
             "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "moveTags": ["ranged", "stanceChange", "resourceLoss", "spiritualPressureMove1", "needsStatInfo"]
+          },
+          {
+            "id": "that-wont-touch-me",
+            "name": "That Won't Touch Me",
+            "description": "Byakuya holds his arm to his waist, and readies to intercept the opponents' attack. If the opponent lands an attack on Byakuya in this state, Byakuya absorbs the hit and retaliates with a powerful 'Hadō #33: Sokatsui' counterattack.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 2,
+            "moveTags": ["melee", "ranged", "kidō", "block", "counter", "resourceLoss", "spiritualPressureMove2", "needsStatInfo"]
           }
         ],
         "awakened": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -366,7 +326,7 @@
       "characteristics": ["female", "captain", "exile", "gotei13"]
     },
     "characterEaseOfUse": 3,
-    "characterArchetype": ["shortRange", "melee", "kidō", "fast", "rushdown"],
+    "characterArchetype": ["shortRange", "melee", "charge", "kidō", "fast", "rushdown"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=gMd_2nwWnik&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=35",
     "characterEngTrailer": "https://www.youtube.com/watch?v=MUKNiK5g-RM&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=28",
     "characterNumber": 5,
@@ -382,46 +342,46 @@
       {
         "base": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
+            "id": "anken-and-flash-breaker",
+            "name": "Anken / Flash Breaker",
+            "description": "A two-stage move that fires one of two moves, depending on how long the user holds the input. The first-stage attack fires two small Anken knives at the opponent. The second-stage attack acts as a counter; if the opponent hits Yoruichi with an attack in this state, Yoruichi counters, dodges the attack and retaliates.",
             "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["ranged", "resourceLoss", "counter", "block", "signatureMove", "needsStatInfo"]
           },
           {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "bakko",
+            "name": "Bakko",
+            "description": "A long-distance rush that launches a devastating punch to the opponent's gut, before following up with an explosive Reiryoku bomb.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["melee", "resourceLoss", "spiritualPressureMove1", "needsStatInfo"]
+          },
+          {
+            "id": "oboro-neko",
+            "name": "Oboro Neko",
+            "description": "Yoruichi takes a lowered, hunched appearance flashing with afterimages. If Yoruichi is attacked, she avoids the attack and retaliates with a barrage of 10 melee strikes, finishing with a powerful downwards stomp.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["counter", "block", "melee", "resourceLoss", "spiritualPressureMove2", "needsStatInfo"]
           }
         ],
         "awakened": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -453,7 +413,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=FJWkFHuVeq4&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=34",
     "characterEngTrailer": "https://www.youtube.com/watch?v=Xb6G9l1ADzs&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=27",
     "characterNumber": 6,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1"],
     "abilities": [
       {
         "abilityName": "Brazo Derecha de Gigante",
@@ -465,46 +425,46 @@
       {
         "base": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+            "id": "agresión",
+            "name": "Agresión",
+            "description": "An explosive laser attack that can be charged, and held at full-charge whislt Chad moves. The more that Agresión is charged, the more powerful it becomes. Additionally, the closer the opponent is to Chad when firing Agresión, the more damage it deals. The boosts from Agresión's charge level and the opponent's distance stack.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["melee", "ranged", "resourceLoss", "charge", "signatureMove", "needsStatInfo"]
           },
           {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "alerta",
+            "name": "Alerta",
+            "description": "Chad regulates his breathing and glows with a blue flame, buffing the charge speed of Agresión for a period of time.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["resourceLoss", "spiritualPressureMove1", "needsStatInfo"]
+          },
+          {
+            "id": "contraataque",
+            "name": "Contraataque",
+            "description": "An uppercut that can catch an opponents' attack if Chad is hit by an attack during Contraataque's animation, which if successfully done drastically boosts Contraatque's strength.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["melee", "resourceLoss", "counter", "spiritualPressureMove2", "needsStatInfo"]
           }
         ],
         "awakened": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -536,7 +496,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=Pglr-98uFBY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=26",
     "characterEngTrailer": "https://www.youtube.com/watch?v=GaS4ybi0xwA&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=33",
     "characterNumber": 7,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1", "DLC1"],
     "abilities": [
       {
         "abilityName": "Benihime",
@@ -548,46 +508,36 @@
       {
         "base": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+            "id": "kamisori-benihime",
+            "name": "Kamisori Benihime",
+            "description": "Urahara fires a powerful wave of blood towards his opponent after a longer-than-usual animation, moving at a slower-than-usual speed, hitting multiple times. Kamisori Benihime can negate ranged attacks caught in its' path.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["ranged", "resourceLoss", "block", "spiritualPressureMove1", "needsStatInfo"]
           },
           {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "are-you-prepared",
+            "name": "Are You Prepared?",
+            "description": "Urahara tilts his hat, taking the fight seriously. He becomes buffed for a period of time, increasing his mobility and shortening the animation length of his attacks, mixing up his attack rhythm.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["resourceLoss", "spiritualPressureMove2"]
           }
         ],
         "awakened": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -631,46 +581,46 @@
       {
         "base": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+            "id": "serpent-strike",
+            "name": "Serpent Strike",
+            "description": "Gin shoots Shinso towards his opponent, hitting them over a considerable distance. Holding the input charges the attack, boosting the damage done by Serpent Strike.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["melee", "ranged", "charge", "signatureMove", "needsStatInfo"]
           },
           {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "urozuki",
+            "name": "Urozuki",
+            "description": "Gin turns his back to his opponent, bracing for an attack. If Gin is hit with an attack, Gin launches a powerful and precise stab using Shinso, which, if it hits, activates his Snake Possession boost, increasing the damage dealt by the tip of Shinso dramatically.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["melee", "ranged", "block", "counter", "spiritualPressureMove1", "needsStatInfo"]
+          },
+          {
+            "id": "shinso-sousen",
+            "name": "Shinso Sousen",
+            "description": "A wide cleave that, if it hits, allows Gin to exploit his opponent with a follow-up attack.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["melee", "spiritualPressureMove2", "needsStatInfo"]
           }
         ],
         "awakened": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -714,46 +664,46 @@
       {
         "base": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+            "id": "hado-#31-shakkaho",
+            "name": "Hadō #31: Shakkaho",
+            "description": "Fires a single blazing orbs of Reiryoku at Rangiku's opponent. If it hits, it can provide a follow-up attack.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["ranged", "kido", "signatureMove", "needsStatInfo"]
           },
           {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "youre-too-slow",
+            "name": "You're Too Slow!",
+            "description": "Rangiku squats, bracing for an attack. If Rangiku is hit with an attack in this state, she teleports behind her opponent and immediatley fires a 'Hadō #31: Shakkaho'.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["ranged", "counter", "block", "kido", "spiritualPressureMove1", "needsStatInfo"]
+          },
+          {
+            "id": "hado-#33-sokatsui",
+            "name": "Hadō #33: Sokatsui",
+            "description": "Fires a blast of blue Reiryoku that has poor range, but high damage.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["ranged", "kido", "spiritualPressureMove2", "needsStatInfo"]
           }
         ],
         "awakened": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -773,7 +723,7 @@
     "id": "toshiro-hitsugaya",
     "race": "shinigami",
     "quote": "We are not gods. We're just Shinigami. The moment you started thinking you were a God was the moment you stopped improving.",
-    "description": "The young prodigy Captain of Squad 10, wielding the strongest ice-type Zanpakutō. Despite his age, Tōshirō's tactical brilliance and dedication to duty have earned him respect among the Gotei 13. Toshiro is a Hybrid Range fighter who utilizes both Melee and 'Tenso Jyurin' Gauge-based abilities. Keeping the offensive on your opponents whilst avoiding being hit by attacks allow him to make the most of his 'Tenso Jyurin' Gauge. With high Power and Range, moderate Defense and Technique, but lower Speed, Toshiro can dominate the battlefield through his Balanced playstyle and Charge attacks, using careful positioning and resource management to send his foes to an icy grave.",
+    "description": "The young prodigy Captain of Squad 10, wielding the strongest ice-type Zanpakutō. Despite his age, Tōshirō's tactical brilliance and dedication to duty have earned him respect among the Gotei 13. Tōshiro is a Hybrid Range fighter who utilizes both Melee and 'Tenso Jyurin' Gauge-based abilities. Keeping the offensive on your opponents whilst avoiding being hit by attacks allow him to make the most of his 'Tenso Jyurin' Gauge. With high Power and Range, moderate Defense and Technique, but lower Speed, Tōshiro can dominate the battlefield through his Balanced playstyle and Charge attacks, using careful positioning and resource management to send his foes to an icy grave.",
     "tags": {
       "affiliations": ["soulSociety", "shinigami", "squad10"],
       "relationships": ["neutral"],
@@ -797,46 +747,36 @@
       {
         "base": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+            "id": "soten-hyogeki",
+            "name": "Soten Hyogeki",
+            "description": "Tōshiro summons an icicle that drops on the opponent regardless of distance. If Soten Hyogeki hits, Tōshiro can exploit his opponent with a follow-up attack. Increases the Tenso Jyurin Gauge when it hits.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["ranged", "resourceLoss", "gaugeIncreaseOnHit", "spiritualPressureMove1"]
           },
           {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "hyoryu-renbu",
+            "name": "Hyoryu Renbu",
+            "description": "Hyōrinmaru roars, as Tōshiro forms a large dragon head that trails ice behind it, firing it at the opponent over a long distance, allowing Toshiro to launch a follow-up attack. Increases the Tenso Jyurin Gauge when it hits.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["ranged", "resourceLoss", "gaugeIncreaseOnHit", "spiritualPressureMove2"]
           }
         ],
         "awakened": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -880,46 +820,46 @@
       {
         "base": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+            "id": "try-to-cut-me",
+            "name": "Try to Cut Me!",
+            "description": "Kenpachi embraces the opponent's killing intent, giving him Super Armor whilst the attack is charged, absorbing all of the damage that he would normally take; once the user releases 'Try to Cut Me!', Kenpachi reflects the amount of damage that would've been dealt to him back to the opponent, if the follow-up attack hits.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["melee", "resourceLoss", "charge", "counter", "block", "signatureMove", "needsStatInfo"]
           },
           {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "chop-you-up",
+            "name": "Chop You Up",
+            "description": "Kenpachi launches towards his opponent before bringing the full force of his weight down on his opponent with an apocalyptic, overhead cleave.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["melee", "resourceLoss", "spiritualPressureMove1", "needsStatInfo"]
+          },
+          {
+            "id": "nothing-i-cant-cut",
+            "name": "Nothing I Can't Cut",
+            "description": "Kenpachi launches towards his opponent, slicing his opponent twice, before following up with two more slices. Holding down the input and charging the attack deals more damage towards the opponents' Guard Gauge.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["melee", "resourceLoss", "charge", "spiritualPressureMove2", "needsStatInfo"]
           }
         ],
         "awakened": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -963,68 +903,48 @@
       {
         "base": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+            "id": "cero",
+            "name": "Cero",
+            "description": "Fires a green laser of Reiryoku towards Ulquiorra's opponent. It consumes a portion of Ulquiorra's Reishi in exchange for high damage.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["ranged", "resourceLoss", "signatureMove", "needsStatInfo"]
           },
           {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "instant-regeneration",
+            "name": "Instant Regeneration",
+            "description": "Ulquiorra assumes a pose and swirls green Reishi around him, healing a portion of his Reishi over time. Holding down the input and charging Instant Regeneration increases the speed of Ulquiorra' Reishi recovery.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["charge", "resourceGain", "spiritualPressureMove1", "needsStatInfo"]
           }
         ],
         "awakened": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ],
         "reawakened": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -1069,68 +989,58 @@
       {
         "base": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+            "id": "getsuga-tenshō",
+            "name": "Getsuga Tenshō",
+            "description": "Ichigo fires a wave of red and black Reiryoku towards his opponent. Getsuga Tenshō can be charged to increase its' strength.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["charge", "ranged", "resourceLoss", "signatureMove", "needsStatInfo"]
           },
           {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["spiritualPressureMove1", "needsStatInfo"]
+          },
+          {
+            "id": "getsuga-aura",
+            "name": "Getsuga Aura",
+            "description": "Ichigo instills himself with the power of Getsuga, channeling Getsuga Tenshō through Tensa Zangetsu, augmenting his damage. Getsuga Aura takes the form of a temporary Gauge that decreases as Ichigo lands attacks, and gets hit with attacks. Getsuga Aura can only be restored by reusing Getsuga Aura. There is no way to restore Getsuga Aura Gauge whilst Getsuga Aura is active.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["resourceGain", "resourceLoss", "spiritualPressureMove2", "needsStatInfo"]
           }
         ],
         "awakened": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ],
         "reawakened": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -1174,46 +1084,46 @@
       {
         "base": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+            "id": "transcendence",
+            "name": "Transcendence",
+            "description": "Tōsen braces with Suzumushi horizontally; if Tōsen is hit with an attack, he teleports behind his opponent, slicing them horizontally.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["melee", "block", "counter", "resourceLoss", "signatureMove", "needsStatInfo"]
           },
           {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "suzumushi-nishiki-benihiko",
+            "name": "Suzumushi Nishiki, Benihiko",
+            "description": "Tōsen jumps backwards and fires a blitz of sharp needles towards his opponent.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["ranged", "resourceLoss", "spiritualPressureMove1", "needsStatInfo"]
+          },
+          {
+            "id": "sayabane",
+            "name": "Sayabane",
+            "description": "Tōsen rushes towards the opponent and slashes their legs, before immediately executing 'Suzumushi Nishiki, Benihiko' straight after.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["melee", "resourceLoss", "signatureMove", "needsStatInfo"]
           }
         ],
         "awakened": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["spiritualPressureMove1", "needsStatInfo"]
           }
         ]
       }
@@ -2492,6 +2402,89 @@
         "range": 1,
         "defense": 5,
         "technique": 2
+      }
+    ]
+  },
+  "tier-harribel": {
+    "name": "Tier Harribel",
+    "id": "tier-harribel",
+    "race": "arrancar",
+    "quote": "I don't want to become stronger through the power I gain by killing and sacrificing another. If I can't win alone, then I'll win as a group.",
+    "description": "The current Tres Espada and the Aspect of Sacrifice; Tier is a Rushdown Hybrid Range Melee character that utilises her unique Aura Gauge in order to boost her offensive capabilities; hitting enemies with attacks builds her Aura Gauge, and failing to land attacks after a short period of time decreases the Aura Gauge - Utilising her extreme combo potential and constantly beating her opponents down, Tier makes the most of her Gauge by never giving her opponent an inch. If the opponent gains distance, using Tier's Spiritual Pressure 1 Move, 'Ola Azul' will provide a good Poking option to keep her gauge up. After Awakening, Tier's range increases considerably, and further increases the buffs provided by her Aura Gauge.",
+    "tags": {
+      "affiliations": ["huecoMundo", "arrancar"],
+      "relationships": ["enemy"],
+      "abilities": ["awakening", "resurrección"],
+      "characteristics": ["female", "espada", "ArrancarArmy"]
+    },
+    "characterEaseOfUse": 2,
+    "characterArchetype": ["hybridRange", "melee", "gauge", "rushdown"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=Moejkqz_ao4",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=B-rbTLO4wJs",
+    "characterNumber": 30,
+    "characterOutfits": ["1"],
+    "abilities": [
+      {
+        "abilityName": "Tiburon",
+        "abilityQuote": "Hunt",
+        "abilityQuoteTemplate": "{quote}. {ability}!"
+      }
+    ],
+    "moves": [
+      {
+        "base": [
+          {
+            "id": "ola-azul",
+            "name": "Ola Azul",
+            "description": "A blast of Reiryoku that is concentrated in the gap between Tiburon's blade, setting it ablaze, which is fired out like a bullet towards Tier's opponent. Increases the Aura Gauge when it hits.",
+            "input": "S1",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "resourceLoss", "gaugeIncreaseOnHit", "spiritualPressureMove1"]
+          },
+          {
+            "id": "ill-show-you",
+            "name": "I'll Show You",
+            "description": "A series of 3 slashes comprising of an uppercut, downslash and a wide slash from left to right. Increases the Aura Gauge when it hits.",
+            "input": "S2",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "gaugeIncreaseOnHit", "spiritualPressureMove2"]
+          }
+        ],
+        "awakened": [
+          {
+            "id": "example-move",
+            "name": "Example Move",
+            "description": "A series of 5 slashes.",
+            "input": "SOUTH SOUTHEAST EAST Q",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
+          },
+          {
+            "id": "test-move",
+            "name": "Test Move",
+            "description": "A series of 5 slashes.",
+            "input": "NORTH NORTHEAST EAST F",
+            "damage": 10,
+            "frames": 4,
+            "resourceCost": 2,
+            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 1,
+        "speed": 1,
+        "range": 1,
+        "defense": 1,
+        "technique": 1
       }
     ]
   }

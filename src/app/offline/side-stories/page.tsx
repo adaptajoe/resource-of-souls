@@ -18,6 +18,7 @@ export default function Side() {
           </Link>
         </nav>
         <div>
+          <h1 className="text-3xl font-bold mb-6">Side Stories</h1>
           <p>Side Story Mode information goes here.</p>
         </div>
       </div>

@@ -27,7 +27,7 @@ export default function Offline() {
               className="rounded-xl flex flex-col items-center border-2 border-red-600 bg-red-600 hover:bg-black hover:border-red-600 hover:text-red-600 transition-colors p-2"
             >
               <GiButterfly size={80} />
-              <h2 className="text-3xl">Story Mode</h2>
+              <h2 className="text-3xl mt-4">Story Mode</h2>
             </Link>
           </div>
           <div className="mr-0 md:mr-4 mb-4 md:mb-0">
@@ -36,7 +36,7 @@ export default function Offline() {
               className="rounded-xl flex flex-col items-center border-2 border-red-600 bg-red-600 hover:bg-black hover:border-red-600 hover:text-red-600 transition-colors p-2"
             >
               <GiPathDistance size={80} />
-              <h2 className="text-3xl">Side Stories</h2>
+              <h2 className="text-3xl mt-4">Side Stories</h2>
             </Link>
           </div>
           <div className="mr-4 mb-4 md:mb-0">
@@ -45,7 +45,7 @@ export default function Offline() {
               className="rounded-xl flex flex-col items-center border-2 border-red-600 bg-red-600 hover:bg-black hover:border-red-600 hover:text-red-600 transition-colors p-2"
             >
               <GiAbstract069 size={80} />
-              <h2 className="text-3xl">Secret Stories</h2>
+              <h2 className="text-3xl mt-4">Secret Stories</h2>
             </Link>
           </div>
           <div className="mr-0 md:mr-4 mb-4 md:mb-0">
@@ -54,7 +54,7 @@ export default function Offline() {
               className="rounded-xl flex flex-col items-center border-2 border-red-600 bg-red-600 hover:bg-black hover:border-red-600 hover:text-red-600 transition-colors p-2"
             >
               <GiFire size={80} />
-              <h2 className="text-3xl">Mission Mode</h2>
+              <h2 className="text-3xl mt-4">Mission Mode</h2>
             </Link>
           </div>
         </div>

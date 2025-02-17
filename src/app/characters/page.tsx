@@ -142,7 +142,7 @@ export default function Characters() {
               className="w-full p-2 border border-gray-400 rounded bg-transparent text-white"
             />
           </div>
-          <div className="w-fit lg:w-full flex flex-col lg:flex-row mt-4 space-y-4 lg:space-y-0 lg:space-x-4">
+          <div className="w-fit lg:w-full flex flex-col items-center lg:flex-row mt-4 space-y-4 lg:space-y-0 lg:space-x-4">
             <div className="flex flex-row space-x-4 pr-4 border-0 lg:border-r-2 border-gray-400">
               <button
                 onClick={() =>
@@ -254,7 +254,6 @@ export default function Characters() {
                 </div>
               </div>
             ))}
-            ;
           </div>
         )}
       </div>

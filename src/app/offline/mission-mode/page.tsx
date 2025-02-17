@@ -18,6 +18,7 @@ export default function Mission() {
           </Link>
         </nav>
         <div>
+          <h1 className="text-3xl font-bold mb-6">Mission Mode</h1>
           <p>Mission Mode information goes here.</p>
         </div>
       </div>
