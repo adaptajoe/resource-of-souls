@@ -2,6 +2,8 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/resour10/public_html/
+    - npm install
+    - npm run build
     - /bin/cp LICENSE $DEPLOYPATH
     - /bin/cp README.md $DEPLOYPATH
     - /bin/cp next-env.d.ts $DEPLOYPATH
@@ -11,4 +13,5 @@ deployment:
     - /bin/cp tsconfig.json $DEPLOYPATH
     - /bin/cp -R public $DEPLOYPATH
     - /bin/cp -R src $DEPLOYPATH
+    - /bin/cp -R .next $DEPLOYPATH
     - echo "Deployment completed successfully."
