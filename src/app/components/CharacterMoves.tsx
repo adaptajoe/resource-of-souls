@@ -108,7 +108,7 @@ const formatMoveTag = (tag: string): string => {
   return withSpaces.charAt(0).toUpperCase() + withSpaces.slice(1).trim();
 };
 
-const translateInput = (input: string): JSX.Element => {
+const useTranslateInput = (input: string): JSX.Element => {
   const translations: { [key: string]: JSX.Element } = useMemo(
     () => ({
       Q: <strong className="bg-teal-400 align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">Q</strong>,
@@ -226,6 +226,8 @@ interface MoveDisplayProps {
 }
 
 const MoveDisplay = ({ move, characterId }: MoveDisplayProps) => {
+  const translatedInput = useTranslateInput(move.input);
+
   return (
     <div className="border-t border-white">
       <div className="grid grid-cols-2 gap-4 items-start py-2 pr-2">
@@ -244,7 +246,7 @@ const MoveDisplay = ({ move, characterId }: MoveDisplayProps) => {
         </div>
       </div>
       <div className="grid grid-cols-2 gap-4 items-center pr-2">
-        <strong className="ml-4 mb-4">{translateInput(move.input)}</strong>
+        <strong className="ml-4 mb-4">{translatedInput}</strong>
         <div className="flex flex-wrap mb-2">
           <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 ml-2">Cost: {move.resourceCost}</strong>
           <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 ml-2">Damage: {move.damage}</strong>
