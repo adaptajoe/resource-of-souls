@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useCallback, useMemo } from "react";
+import { useEffect, useState, useCallback, useMemo, FC } from "react";
 import Image from "next/image";
 import StarRating from "./StarRating";
 import { Character } from "@/types/character";
@@ -16,12 +16,12 @@ import {
   TbChevronUp,
 } from "react-icons/tb";
 
-interface CharacterSidebarProps {
+export interface CharacterSidebarProps {
   character: Character;
   slug: string;
 }
 
-export default function CharacterSidebar({ character, slug }: CharacterSidebarProps) {
+const CharacterSidebar: FC<CharacterSidebarProps> = ({ character, slug }) => {
   const [movesetKeyIsOpen, setMovesetKeyIsOpen] = useState(false);
   const [currentOutfit, setCurrentOutfit] = useState("base-outfit-1");
   const [availableOutfits, setAvailableOutfits] = useState<{ base: number[]; dlc: number[] }>({ base: [1], dlc: [] });
@@ -338,4 +338,6 @@ export default function CharacterSidebar({ character, slug }: CharacterSidebarPr
       </div>
     </div>
   );
-}
+};
+
+export default CharacterSidebar;

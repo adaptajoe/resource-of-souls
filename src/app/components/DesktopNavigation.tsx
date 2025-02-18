@@ -17,6 +17,8 @@ const NavLink = memo(({ href, children }: { href: string; children: React.ReactN
   );
 });
 
+NavLink.displayName = "NavLink";
+
 export function DesktopNavigation() {
   const renderNavLink = useCallback(
     (href: string, label: string) => (

@@ -1,10 +1,14 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { FC } from "react";
+import { CharacterAnimationsProps } from "./CharacterAnimations";
 
-const CharacterAnimations = dynamic(() => import("./CharacterAnimations"), { ssr: false });
+const CharacterAnimations = dynamic(() => import("./CharacterAnimations").then((mod) => mod.default), {
+  ssr: false,
+});
 
-const CharacterAnimationsWrapper = (props: any) => {
+const CharacterAnimationsWrapper: FC<CharacterAnimationsProps> = (props) => {
   return <CharacterAnimations {...props} />;
 };
 

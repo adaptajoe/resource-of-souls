@@ -132,7 +132,7 @@ export default function RankedLeaderboard() {
       "Schatten Bereich League": schattenBereichLeagueBadges,
       "Special League": specialLeagueBadges,
     }),
-    []
+    [worldOfLivingLeagueBadges, soulSocietyLeagueBadges, huecoMundoLeagueBadges, schattenBereichLeagueBadges, specialLeagueBadges]
   );
 
   const calculateDaysSince = (dateString: string | null) => {
@@ -373,7 +373,7 @@ export default function RankedLeaderboard() {
     );
   };
 
-  const BadgeTable = ({ badges }: { title: string; badges: Badge[] }) => (
+  const BadgeTable = ({ badges }: { badges: Badge[] }) => (
     <div>
       {/* Stats Section */}
       <div className="flex gap-2 mb-4 justify-between overflow-x-scroll">
@@ -498,7 +498,7 @@ export default function RankedLeaderboard() {
                 </button>
               ))}
             </div>
-            <BadgeTable title={activeTable} badges={tables[activeTable as keyof typeof tables]} />
+            <BadgeTable badges={tables[activeTable as keyof typeof tables]} />
           </div>
         </div>
       </div>

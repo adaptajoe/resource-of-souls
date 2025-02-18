@@ -1,15 +1,15 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, FC } from "react";
 import { TbChevronUp, TbChevronDown } from "react-icons/tb";
 import AnimatedGif from "@/app/components/AnimatedGif";
 
-interface CharacterAnimationsProps {
+export interface CharacterAnimationsProps {
   animations: string[];
   slug: string;
 }
 
-export default function CharacterAnimations({ animations, slug }: CharacterAnimationsProps) {
+const CharacterAnimations: FC<CharacterAnimationsProps> = ({ animations, slug }) => {
   const [animationTabIsOpen, setAnimationTabIsOpen] = useState(false);
 
   const toggleAnimationTab = useCallback(() => {
@@ -40,4 +40,6 @@ export default function CharacterAnimations({ animations, slug }: CharacterAnima
       )}
     </div>
   );
-}
+};
+
+export default CharacterAnimations;
