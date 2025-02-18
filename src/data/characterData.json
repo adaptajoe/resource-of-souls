@@ -28,7 +28,7 @@
       {
         "base": [
           {
-            "id": "hado-#31-shakkaho",
+            "id": "hadō-#31-shakkaho",
             "name": "Hadō #31: Shakkaho",
             "description": "Fires a trio of blazing orbs of Reiryoku at Rukia's opponent. Can be boosted by charging it.",
             "input": "SI",
@@ -38,7 +38,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "signatureMove", "needsStatInfo"]
           },
           {
-            "id": "hado-#4-byakurai",
+            "id": "hadō-#4-byakurai",
             "name": "Hadō #4: Byakurai",
             "description": "Fires a laser of electric Reiryoku at Rukia's opponent. It makes Rukia hop backwards, and grants Rukia Super Armor for a brief period.",
             "input": "S1",
@@ -48,7 +48,7 @@
             "moveTags": ["ranged", "kidō", "resourceLoss", "spiritualPressureMove1", "needsStatInfo"]
           },
           {
-            "id": "hado-#33-sokatsui",
+            "id": "hadō-#33-sokatsui",
             "name": "Hadō #33: Sokatsui",
             "description": "Fires an explosive wave of Reiryoku at Rukia's opponent. It can be chained to attacks, and makes Rukia lunge forwards when cast.",
             "input": "S2",
@@ -111,6 +111,16 @@
       {
         "base": [
           {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Signature Move currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["signatureMove", "unknown"]
+          },
+          {
             "id": "wielding",
             "name": "Wielding",
             "description": "Ichigo delivers a powerful slash that opens up the opportunity to spin Zangetsu above his head like a rotor, before plunging it into the ground to deliver a powerful radial blast.",
@@ -119,6 +129,16 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["melee", "resourceLoss", "spiritualPressureMove1", "needsStatInfo"]
+          },
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Spiritual Pressure Move 2 currently not known.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["spiritualPressureMove2", "unknown"]
           }
         ],
         "awakened": [
@@ -173,6 +193,16 @@
     "moves": [
       {
         "base": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Signature Move currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["signatureMove", "unknown"]
+          },
           {
             "id": "quincy-arrow",
             "name": "Quincy Arrow",
@@ -330,7 +360,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=gMd_2nwWnik&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=35",
     "characterEngTrailer": "https://www.youtube.com/watch?v=MUKNiK5g-RM&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=28",
     "characterNumber": 5,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1", "2", "DLC1"],
     "abilities": [
       {
         "abilityName": "Shunko",
@@ -345,7 +375,7 @@
             "id": "anken-and-flash-breaker",
             "name": "Anken / Flash Breaker",
             "description": "A two-stage move that fires one of two moves, depending on how long the user holds the input. The first-stage attack fires two small Anken knives at the opponent. The second-stage attack acts as a counter; if the opponent hits Yoruichi with an attack in this state, Yoruichi counters, dodges the attack and retaliates.",
-            "input": "SOUTH SOUTHEAST EAST Q",
+            "input": "SI",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
@@ -508,6 +538,16 @@
       {
         "base": [
           {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Signature Move currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["signatureMove", "unknown"]
+          },
+          {
             "id": "kamisori-benihime",
             "name": "Kamisori Benihime",
             "description": "Urahara fires a powerful wave of blood towards his opponent after a longer-than-usual animation, moving at a slower-than-usual speed, hitting multiple times. Kamisori Benihime can negate ranged attacks caught in its' path.",
@@ -569,7 +609,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=_ag8qb0Zy6M&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=25",
     "characterEngTrailer": "https://www.youtube.com/watch?v=UjeF_Byhntk&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=32",
     "characterNumber": 8,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1", "2"],
     "abilities": [
       {
         "abilityName": "Shinsō",
@@ -652,7 +692,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=LDQIPXcVgYU&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=24",
     "characterEngTrailer": "https://www.youtube.com/watch?v=hq63eNoSvi4&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=31",
     "characterNumber": 9,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1", "DLC1"],
     "abilities": [
       {
         "abilityName": "Haineko",
@@ -735,7 +775,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=0nzHXmd9Pjo&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=30",
     "characterEngTrailer": "https://www.youtube.com/watch?v=gaTngNoe9ek&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=23",
     "characterNumber": 10,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1", "2", "DLC1"],
     "abilities": [
       {
         "abilityName": "Hyōrinmaru",
@@ -747,6 +787,16 @@
       {
         "base": [
           {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Signature Move currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["signatureMove", "unknown"]
+          },
+          {
             "id": "soten-hyogeki",
             "name": "Soten Hyogeki",
             "description": "Tōshiro summons an icicle that drops on the opponent regardless of distance. If Soten Hyogeki hits, Tōshiro can exploit his opponent with a follow-up attack. Increases the Tenso Jyurin Gauge when it hits.",
@@ -757,8 +807,8 @@
             "moveTags": ["ranged", "resourceLoss", "gaugeIncreaseOnHit", "spiritualPressureMove1"]
           },
           {
-            "id": "hyoryu-renbu",
-            "name": "Hyoryu Renbu",
+            "id": "hyōrinmaru-hyōryū-renbu",
+            "name": "Hyōrinmaru: Hyōryū Renbu",
             "description": "Hyōrinmaru roars, as Tōshiro forms a large dragon head that trails ice behind it, firing it at the opponent over a long distance, allowing Toshiro to launch a follow-up attack. Increases the Tenso Jyurin Gauge when it hits.",
             "input": "S2",
             "damage": 0,
@@ -808,7 +858,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=So0mg7_dE64&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=29",
     "characterEngTrailer": "https://www.youtube.com/watch?v=LxvCinpT440&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=22",
     "characterNumber": 11,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1"],
     "abilities": [
       {
         "abilityName": "FINALLY having fun",
@@ -891,7 +941,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=z6Sj7GDz3JU&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=26",
     "characterEngTrailer": "https://www.youtube.com/watch?v=SwczZ1FYyqg&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=21",
     "characterNumber": 12,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1", "2"],
     "abilities": [
       {
         "abilityName": "Murciélago",
@@ -913,14 +963,24 @@
             "moveTags": ["ranged", "resourceLoss", "signatureMove", "needsStatInfo"]
           },
           {
-            "id": "instant-regeneration",
-            "name": "Instant Regeneration",
+            "id": "high-speed-regeneration",
+            "name": "High-Speed Regeneration",
             "description": "Ulquiorra assumes a pose and swirls green Reishi around him, healing a portion of his Reishi over time. Holding down the input and charging Instant Regeneration increases the speed of Ulquiorra' Reishi recovery.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["charge", "resourceGain", "spiritualPressureMove1", "needsStatInfo"]
+          },
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Spiritual Pressure Move 2 currently not known.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["spiritualPressureMove2", "unknown"]
           }
         ],
         "awakened": [
@@ -977,7 +1037,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=d0VEZq9dMcY&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=27",
     "characterEngTrailer": "https://www.youtube.com/watch?v=iJdteynstKg&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=20",
     "characterNumber": 13,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1"],
     "abilities": [
       {
         "abilityName": "Tensa Zangetsu",
@@ -1001,7 +1061,7 @@
           {
             "id": "unknown",
             "name": "Unknown",
-            "description": "Moveset currently not known.",
+            "description": "Spiritual Pressure Move 1 currently not known.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -1072,7 +1132,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=bPRSt29aLG8&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=24",
     "characterEngTrailer": "https://www.youtube.com/watch?v=B6LO391TSdY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=17",
     "characterNumber": 14,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1", "2"],
     "abilities": [
       {
         "abilityName": "Suzumushi",
@@ -1111,7 +1171,7 @@
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["melee", "resourceLoss", "signatureMove", "needsStatInfo"]
+            "moveTags": ["melee", "resourceLoss", "spiritualPressureMove2", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -1155,7 +1215,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=Bisl7BbVK9o&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=23",
     "characterEngTrailer": "https://www.youtube.com/watch?v=dziYM2MU_S0",
     "characterNumber": 15,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1"],
     "abilities": [
       {
         "abilityName": "Suzumebachi",
@@ -1190,7 +1250,7 @@
             "id": "bakudo-#30-shitotsusansen",
             "name": "Bakudo #30: Shitotsusansen",
             "description": "Fires three golden wedges in a triangle pattern, that restrains the opponent and allows Soi-Fon to follow up with a powerful Kidō-infused Hakuda punch. Holding the input when firing 'Bakudo #30: Shitotsusansen', then it will restrain the opponent for longer.",
-            "input": "S1",
+            "input": "S2",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
@@ -1238,7 +1298,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=n3diSC5oclE&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=22",
     "characterEngTrailer": "https://www.youtube.com/watch?v=pp7a-Dq56lk&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=16",
     "characterNumber": 16,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1", "DLC1"],
     "abilities": [
       {
         "abilityName": "Zabimaru",
@@ -1321,7 +1381,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=cuB14RLuijk&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=21",
     "characterEngTrailer": "https://www.youtube.com/watch?v=F3tL_rpw6HQ&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=15",
     "characterNumber": 17,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1"],
     "abilities": [
       {
         "abilityName": "Wabisuke",
@@ -1356,7 +1416,7 @@
             "id": "bakudo-#61-rikujokoro",
             "name": "Bakudo #61: Rikujokoro",
             "description": "Izuru manifests six golden wedges of Reiryoku around his opponent, slamming them into the opponent's waist, restraining them for a period of time.",
-            "input": "S1",
+            "input": "S2",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
@@ -1404,7 +1464,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=__S1reKBbdo&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=20",
     "characterEngTrailer": "https://www.youtube.com/watch?v=KfFGVNIWBf0&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=14",
     "characterNumber": 18,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1"],
     "abilities": [
       {
         "abilityName": "Gamuza",
@@ -1468,18 +1528,6 @@
         "defense": 3,
         "technique": 3
       }
-    ],
-    "awakened": [
-      {
-        "id": "unknown",
-        "name": "Unknown",
-        "description": "Moveset currently not known.",
-        "input": "S1",
-        "damage": 0,
-        "frames": 0,
-        "resourceCost": 0,
-        "moveTags": ["spiritualPressureMove1", "needsStatInfo"]
-      }
     ]
   },
   "grimmjow-jaegerjaquez": {
@@ -1499,7 +1547,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=_LJafOpYxVw&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=19",
     "characterEngTrailer": "https://www.youtube.com/watch?v=dmEM_2Shrjg&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=13",
     "characterNumber": 19,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1"],
     "abilities": [
       {
         "abilityName": "Pantera",
@@ -1523,7 +1571,7 @@
           {
             "id": "unknown",
             "name": "Unknown",
-            "description": "Moveset currently not known.",
+            "description": "Spiritual Pressure Move 1 currently not known.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -1582,7 +1630,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=QspGqabpIQU&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=18",
     "characterEngTrailer": "https://www.youtube.com/watch?v=E_H67r2cg7Y&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=12",
     "characterNumber": 20,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1", "2"],
     "abilities": [
       {
         "abilityName": "Ashisogi Jizō",
@@ -1606,7 +1654,7 @@
           {
             "id": "unknown",
             "name": "Unknown",
-            "description": "Moveset currently not known.",
+            "description": "Spiritual Pressure Move 1 currently not known.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -1665,7 +1713,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=4qGGFhG-rIE&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=16",
     "characterEngTrailer": "https://www.youtube.com/watch?v=fZeTPMNf0bQ&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=10",
     "characterNumber": 21,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1"],
     "abilities": [
       {
         "abilityName": "Kyōka Suigetsu",
@@ -1677,6 +1725,16 @@
       {
         "base": [
           {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Signature Move currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["signatureMove", "unknown"]
+          },
+          {
             "id": "el-escudo",
             "name": "El Escudo",
             "description": "Aizen manually decreases his Guard Gauge without Guarding, giving him Super Armor, completley negating damage and knockback from an enemy's attack. When the Guard Gauge is empty, 'El Escudo' cannot be cast.",
@@ -1687,7 +1745,7 @@
             "moveTags": ["spiritualPressureMove1", "block", "resourceLoss", "needsStatInfo"]
           },
           {
-            "id": "hado-#90-kurohitsugi",
+            "id": "hadō-#90-kurohitsugi",
             "name": "Hadō #90: Kurohitsugi",
             "description": "After slashing the opponent, Aizen summons an alien mass of black and purple Reiryoku that traps his opponent within a space that weaves gravity, time and space. The damage of 'Hado #90: Kurohitsugi' scales with Aizen's current Hogyoku Fusion Level.",
             "input": "S2",
@@ -1762,6 +1820,16 @@
       {
         "base": [
           {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Signature Move currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["signatureMove", "unknown"]
+          },
+          {
             "id": "shiranui",
             "name": "Shiranui",
             "description": "Yamamoto flings a wave of flame towards the opponent, shifting him into the Hellfire State Stance afterwards. The damage is dependant on the length of time 'Shiranui' is charged. When in the Hellfire State, Yamamoto's damage increases, but loses Reishi automatically.",
@@ -1823,7 +1891,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=dV2QpXlq5ds&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=12",
     "characterEngTrailer": "https://www.youtube.com/watch?v=dVgkWouBJGA&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=7",
     "characterNumber": 23,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1", "2"],
     "abilities": [
       {
         "abilityName": "Sakanade",
@@ -1906,7 +1974,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=ARpSb6I009s&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=8",
     "characterEngTrailer": "https://www.youtube.com/watch?v=DAvJE24A53E&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=6",
     "characterNumber": 24,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1"],
     "abilities": [
       {
         "abilityName": "Fornicarás (La Lujuriosa)",
@@ -1936,6 +2004,16 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["spiritualPressureMove1", "melee", "counter", "resourceLoss", "needsStatInfo"]
+          },
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Spiritual Pressure Move 2 currently not known.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["spiritualPressureMove2", "unknown"]
           }
         ],
         "awakened": [
@@ -1979,7 +2057,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=PCnLPmAac-o&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=6",
     "characterEngTrailer": "https://www.youtube.com/watch?v=dMAmNAWY7z0&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=5",
     "characterNumber": 25,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1"],
     "abilities": [
       {
         "abilityName": "Katen Kyōkotsu",
@@ -2062,7 +2140,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=mbnUcwCRr9I&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=4",
     "characterEngTrailer": "https://www.youtube.com/watch?v=LE0Cfp6zekU&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=3",
     "characterNumber": 26,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1"],
     "abilities": [
       {
         "abilityName": "Tenken",
@@ -2145,7 +2223,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=w1y8-W4CRQI&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=3",
     "characterEngTrailer": "https://www.youtube.com/watch?v=1hkNH7tlj9E&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=2",
     "characterNumber": 27,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1"],
     "abilities": [
       {
         "abilityName": "Kazeshini",
@@ -2156,6 +2234,16 @@
     "moves": [
       {
         "base": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Signature Move currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["signatureMove", "unknown"]
+          },
           {
             "id": "hadō-#31-shakkaho-hadō-#33-sokatsui-hadō-#54-haien",
             "name": "Hadō #31: Shakkaho / Hadō #33: Sokatsui / Hadō #54: Haien",
@@ -2174,7 +2262,7 @@
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["spiritualPressureMove1", "counter", "block", "melee", "kidō", "resourceLoss", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "counter", "block", "melee", "kidō", "resourceLoss", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -2218,7 +2306,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=fBEu8HjbXFM&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=1",
     "characterEngTrailer": "https://www.youtube.com/watch?v=pQU59aOdOOY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=1",
     "characterNumber": 28,
-    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
+    "characterOutfits": ["1"],
     "abilities": [
       {
         "abilityName": "Hōzukimaru",
@@ -2379,7 +2467,7 @@
       "abilities": ["awakening", "resurrección"],
       "characteristics": ["female", "espada", "ArrancarArmy"]
     },
-    "characterEaseOfUse": 2,
+    "characterEaseOfUse": 4,
     "characterArchetype": ["hybridRange", "melee", "gauge", "rushdown"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=Moejkqz_ao4",
     "characterEngTrailer": "https://www.youtube.com/watch?v=B-rbTLO4wJs",
@@ -2395,6 +2483,16 @@
     "moves": [
       {
         "base": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Signature Move currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["signatureMove", "unknown"]
+          },
           {
             "id": "ola-azul",
             "name": "Ola Azul",
@@ -2418,35 +2516,25 @@
         ],
         "awakened": [
           {
-            "id": "example-move",
-            "name": "Example Move",
-            "description": "A series of 5 slashes.",
-            "input": "SOUTH SOUTHEAST EAST Q",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["ranged", "kidō", "resourceLoss", "quickAttack"]
-          },
-          {
-            "id": "test-move",
-            "name": "Test Move",
-            "description": "A series of 5 slashes.",
-            "input": "NORTH NORTHEAST EAST F",
-            "damage": 10,
-            "frames": 4,
-            "resourceCost": 2,
-            "moveTags": ["melee", "resourceLoss", "flashAttack"]
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["signatureMove", "unknown"]
           }
         ]
       }
     ],
     "stats": [
       {
-        "power": 1,
-        "speed": 1,
-        "range": 1,
-        "defense": 1,
-        "technique": 1
+        "power": 3,
+        "speed": 5,
+        "range": 2,
+        "defense": 3,
+        "technique": 3
       }
     ]
   }

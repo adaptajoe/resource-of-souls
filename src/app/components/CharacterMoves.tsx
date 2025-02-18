@@ -39,7 +39,9 @@ interface MoveAnimationTooltipProps {
 }
 
 const MoveAnimationTooltip = ({ characterId, moveId, children }: MoveAnimationTooltipProps) => {
-  const animationPath = `/assets/character-animations/${characterId}/${moveId}.gif`;
+  // Encode the moveId to handle special characters
+  const encodedMoveId = encodeURIComponent(moveId);
+  const animationPath = `/assets/character-animations/${characterId}/${encodedMoveId}.gif`;
 
   return (
     <div className="relative inline-block group">
@@ -49,7 +51,18 @@ const MoveAnimationTooltip = ({ characterId, moveId, children }: MoveAnimationTo
         className="md:hidden absolute invisible group-hover:visible z-10 p-1 rounded-lg bg-black border-teal-400 border-2 shadow-lg
         left-1/2 -translate-x-1/2 bottom-full mb-4"
       >
-        <Image src={animationPath} alt={`${moveId} animation`} width={300} height={300} className="rounded-lg max-w-[300px]" />
+        <Image
+          src={animationPath}
+          alt={`${moveId} animation`}
+          width={300}
+          height={300}
+          className="rounded-lg max-w-[300px]"
+          onError={(e) => {
+            // Handle image load errors
+            const target = e.target as HTMLImageElement;
+            target.style.display = "none";
+          }}
+        />
         <div
           className="absolute left-1/2 -translate-x-1/2 bottom-[-12px] w-0 h-0 
           border-l-[12px] border-l-transparent 
@@ -63,7 +76,18 @@ const MoveAnimationTooltip = ({ characterId, moveId, children }: MoveAnimationTo
         className="hidden md:block absolute invisible group-hover:visible z-10 p-1 rounded-lg bg-black border-teal-400 border-2 shadow-lg
         left-full ml-4 top-1/2 -translate-y-1/2"
       >
-        <Image src={animationPath} alt={`${moveId} animation`} width={300} height={300} className="rounded-lg max-w-[300px]" />
+        <Image
+          src={animationPath}
+          alt={`${moveId} animation`}
+          width={300}
+          height={300}
+          className="rounded-lg max-w-[300px]"
+          onError={(e) => {
+            // Handle image load errors
+            const target = e.target as HTMLImageElement;
+            target.style.display = "none";
+          }}
+        />
         <div
           className="absolute left-[-12px] top-1/2 -translate-y-1/2 w-0 h-0 
           border-t-[12px] border-t-transparent 
