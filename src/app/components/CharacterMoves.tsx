@@ -1,6 +1,6 @@
 "use client";
+import { useState, useCallback, useMemo, JSX } from "react";
 import { MoveCategoryContainer, MoveInput } from "@/types/character";
-import React, { JSX, useState } from "react";
 import {
   TbCircleArrowUpRightFilled,
   TbCircleArrowUpLeftFilled,
@@ -20,16 +20,11 @@ import {
   TbCircleArrowLeft,
 } from "react-icons/tb";
 import Image from "next/image";
+import React from "react";
 
 interface CharacterMovesProps {
   moves: MoveCategoryContainer[];
   characterId: string;
-}
-
-interface MoveAnimationTooltipProps {
-  characterId: string;
-  moveId: string;
-  children: React.ReactNode;
 }
 
 interface MoveAnimationTooltipProps {
@@ -152,10 +147,10 @@ const translateInput = (input: string): JSX.Element => {
   };
 
   // Sort keys by length in descending order to match longer patterns first
-  const sortedKeys = Object.keys(translations).sort((a, b) => b.length - a.length);
+  const sortedKeys = useMemo(() => Object.keys(translations).sort((a, b) => b.length - a.length), [translations]);
 
   // Split the input string into parts that match the pattern
-  const parts = input.split(new RegExp(`(${sortedKeys.join("|")}|[+\\-])`, "g"));
+  const parts = useMemo(() => input.split(new RegExp(`(${sortedKeys.join("|")}|[+\\-])`, "g")), [input, sortedKeys]);
 
   // Map each part to either its translation or itself
   return (
@@ -166,11 +161,16 @@ const translateInput = (input: string): JSX.Element => {
     </>
   );
 };
+
 const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
   const [activeTab, setActiveTab] = useState<"base" | "awakened" | "reawakened">("base");
 
-  const hasAwakening = moves.some((category) => category.awakened && category.awakened.length > 0);
-  const hasReawakening = moves.some((category) => category.reawakened && category.reawakened.length > 0);
+  const hasAwakening = useMemo(() => moves.some((category) => category.awakened && category.awakened.length > 0), [moves]);
+  const hasReawakening = useMemo(() => moves.some((category) => category.reawakened && category.reawakened.length > 0), [moves]);
+
+  const handleTabClick = useCallback((tab: "base" | "awakened" | "reawakened") => {
+    setActiveTab(tab);
+  }, []);
 
   return (
     <div>
@@ -178,14 +178,14 @@ const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
       <div className="flex gap-2 ml-4">
         <button
           className={`px-4 py-2 rounded-t-lg transition-colors ${activeTab === "base" ? "bg-red-600 text-white" : "bg-gray-800 text-white hover:bg-red-800"}`}
-          onClick={() => setActiveTab("base")}
+          onClick={() => handleTabClick("base")}
         >
           Base
         </button>
         {hasAwakening && (
           <button
             className={`px-4 py-2 rounded-t-lg transition-colors ${activeTab === "awakened" ? "bg-red-600 text-white" : "bg-gray-800 text-white hover:bg-red-800"}`}
-            onClick={() => setActiveTab("awakened")}
+            onClick={() => handleTabClick("awakened")}
           >
             Awakened
           </button>
@@ -193,7 +193,7 @@ const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
         {hasReawakening && (
           <button
             className={`px-4 py-2 rounded-t-lg transition-colors ${activeTab === "reawakened" ? "bg-red-600 text-white" : "bg-gray-800 text-white hover:bg-red-800"}`}
-            onClick={() => setActiveTab("reawakened")}
+            onClick={() => handleTabClick("reawakened")}
           >
             Reawakened
           </button>

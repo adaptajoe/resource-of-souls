@@ -2,12 +2,14 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import characterData from "@/data/characterData.json";
 import supplementaryData from "@/data/supplementaryData.json";
 import { SupplementaryDataType } from "@/types/supplementaryData";
 import { CharacterData } from "@/types/character";
 import { TbArrowBigDownFilled, TbArrowBigUpFilled } from "react-icons/tb";
-import ArchetypeTooltip from "../components/ArchetypeTooltip";
+
+const ArchetypeTooltip = dynamic(() => import("../components/ArchetypeTooltip"), { ssr: false });
 
 type SortType = {
   type: "number" | "alphabetical";
@@ -108,12 +110,6 @@ export default function Characters() {
     const { display } = formatArchetype(archetype);
     const archetypeKey = normalizeArchetypeKey(archetype);
     const archetypeData = (supplementaryData as SupplementaryDataType).archetypes[archetypeKey];
-
-    console.log({
-      archetype,
-      archetypeKey,
-      found: (supplementaryData as SupplementaryDataType).archetypes[archetypeKey] !== undefined,
-    });
 
     return <ArchetypeTooltip archetype={archetype} display={display} shortDescription={archetypeData?.shortDescription} highlighted={highlighted} />;
   };
@@ -237,6 +233,7 @@ export default function Characters() {
                       aspectRatio: "2/1",
                     }}
                     onError={() => handleImageError(slug)}
+                    loading="lazy"
                   />
                   <div className="p-4 border-t-2 border-gray-800">
                     <h2 className="font-bold text-2xl my-2">

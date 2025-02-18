@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
 interface AnimatedImageProps {
@@ -31,18 +31,22 @@ export default function AnimatedImage({ id, alt, onError, currentExtension, clas
     }
   }, [isHovered, id, currentExtension, loadedGif, hasError, onError]);
 
+  const handleMouseEnter = useCallback(() => setHoveredImageId(id), [id, setHoveredImageId]);
+  const handleMouseLeave = useCallback(() => setHoveredImageId(null), [setHoveredImageId]);
+  const handleError = useCallback(() => {
+    setHasError(true);
+    onError(id, currentExtension);
+  }, [id, currentExtension, onError]);
+
   return (
-    <div className="relative w-full h-[150px]" onMouseEnter={() => setHoveredImageId(id)} onMouseLeave={() => setHoveredImageId(null)}>
+    <div className="relative w-full h-[150px]" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <Image
         src={isHovered && loadedGif && !hasError ? loadedGif : `/assets/terminology-assets/${id}.png`}
         alt={alt}
         width={300}
         height={150}
         className={className || "w-full h-[150px] object-cover"}
-        onError={() => {
-          setHasError(true);
-          onError(id, currentExtension);
-        }}
+        onError={handleError}
         priority={false}
         unoptimized={isHovered}
       />

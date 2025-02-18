@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 interface AnimatedGifProps {
   src: string;
@@ -32,37 +32,28 @@ export default function AnimatedGif({ src, alt, filename }: AnimatedGifProps) {
   const encodedGifSrc = src.replace(/#/g, "%23");
 
   // Create URL with timestamp to force reload
-  const getGifUrl = () => `${encodedGifSrc}?t=${Date.now()}`;
+  const getGifUrl = useCallback(() => `${encodedGifSrc}?t=${Date.now()}`, [encodedGifSrc]);
+
+  const handleMouseEnter = useCallback(() => setIsHovered(true), []);
+  const handleMouseLeave = useCallback(() => setIsHovered(false), []);
+  const handleFocus = useCallback(() => setIsHovered(true), []);
+  const handleBlur = useCallback(() => setIsHovered(false), []);
 
   return (
-    <div
-      className="relative aspect-video group mx-2 cursor-pointer"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onFocus={() => setIsHovered(true)}
-      onBlur={() => setIsHovered(false)}
-      tabIndex={0}
-    >
+    <div className="relative aspect-video group mx-2 cursor-pointer" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onFocus={handleFocus} onBlur={handleBlur} tabIndex={0}>
       <Image
         width={600}
         height={300}
         src={isHovered ? getGifUrl() : encodedStaticSrc}
         alt={alt}
-        className={`border border-gray-400 w-full h-full rounded-lg transition-all duration-200 ${
-          isHovered ? "border-red-600" : "grayscale"
-        }`}
+        className={`border border-gray-400 w-full h-full rounded-lg transition-all duration-200 ${isHovered ? "border-red-600" : "grayscale"}`}
         style={{
           objectFit: "cover",
         }}
+        priority={true} // Use priority for important images
       />
 
-      <p
-        className={`text-sm text-center font-black italic py-2 border-b border-gray-400 transition-colors ${
-          isHovered ? "text-red-600" : "text-gray-400"
-        }`}
-      >
-        {formatFilename(filename)}
-      </p>
+      <p className={`text-sm text-center font-black italic py-2 border-b border-gray-400 transition-colors ${isHovered ? "text-red-600" : "text-gray-400"}`}>{formatFilename(filename)}</p>
     </div>
   );
 }

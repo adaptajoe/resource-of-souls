@@ -1,6 +1,6 @@
 import Image from "next/image";
-import AnimatedHero from "./components/AnimatedHero";
 import Link from "next/link";
+import AnimatedHeroWrapper from "./components/AnimatedHeroWrapper";
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
             <p className="text-white text-sm xl:text-lg">Please bear with us as the game releases! A lot of data may be mistaken or missing.</p>
           </div>
         </div>
-        <AnimatedHero src={"/assets/site-assets/site-hero.mp4"} alt={""} filename={""} />
+        <AnimatedHeroWrapper src={"/assets/site-assets/site-hero.mp4"} alt={""} filename={""} />
       </div>
       <div className="p-4 md:p-8 bg-black text-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-between">
@@ -45,6 +45,7 @@ export default function Home() {
                 objectPosition: "50% 40%",
                 aspectRatio: "2/1",
               }}
+              loading="lazy"
             />
           </div>
         </div>
@@ -57,6 +58,7 @@ export default function Home() {
               width="150"
               alt={"Bleach - Resource of Souls Gameplay"}
               className="border-2 w-full max-w-[500px] rounded-xl border-gray-400 transition-colors"
+              loading="lazy"
             />
           </div>
           <div className="text-base md:text-xl order-1 md:order-2">
@@ -108,6 +110,7 @@ export default function Home() {
               width="150"
               alt={"Bleach - Resource of Souls Gameplay"}
               className="border-2 w-full max-w-[500px] rounded-xl border-gray-400 transition-colors"
+              loading="lazy"
             />
           </div>
         </div>

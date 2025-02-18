@@ -1,8 +1,10 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-import BadgeWheel from "../../components/BadgeWheel";
+import { useState, useMemo } from "react";
+import dynamic from "next/dynamic";
+
+const BadgeWheel = dynamic(() => import("../../components/BadgeWheel"), { ssr: false });
 
 interface Badge {
   name: string;
@@ -122,13 +124,16 @@ export default function RankedLeaderboard() {
     { name: "Brick Thrower", owner: null, lastChallenged: null },
   ];
 
-  const tables = {
-    "World of the Living League": worldOfLivingLeagueBadges,
-    "Soul Society League": soulSocietyLeagueBadges,
-    "Hueco Mundo League": huecoMundoLeagueBadges,
-    "Schatten Bereich League": schattenBereichLeagueBadges,
-    "Special League": specialLeagueBadges,
-  };
+  const tables = useMemo(
+    () => ({
+      "World of the Living League": worldOfLivingLeagueBadges,
+      "Soul Society League": soulSocietyLeagueBadges,
+      "Hueco Mundo League": huecoMundoLeagueBadges,
+      "Schatten Bereich League": schattenBereichLeagueBadges,
+      "Special League": specialLeagueBadges,
+    }),
+    []
+  );
 
   const calculateDaysSince = (dateString: string | null) => {
     if (!dateString) return "Never challenged";
@@ -139,7 +144,7 @@ export default function RankedLeaderboard() {
     return `${diffDays} days ago`;
   };
 
-  const calculateGlobalStats = () => {
+  const calculateGlobalStats = useMemo(() => {
     let totalBadges = 0;
     let totalClaimed = 0;
 
@@ -149,12 +154,9 @@ export default function RankedLeaderboard() {
     });
 
     return { totalBadges, totalClaimed };
-  };
+  }, [tables]);
 
-  const globalStats = calculateGlobalStats();
-
-  // Add these helper functions inside your component
-  const getOwnerBadgeCounts = () => {
+  const getOwnerBadgeCounts = useMemo(() => {
     const ownerCounts: { [key: string]: Badge[] } = {};
 
     Object.values(tables).forEach((badges) => {
@@ -169,7 +171,7 @@ export default function RankedLeaderboard() {
     });
 
     return ownerCounts;
-  };
+  }, [tables]);
 
   const getLeagueOwnerBadgeCounts = (leagueBadges: Badge[]) => {
     const ownerCounts: { [key: string]: Badge[] } = {};
@@ -187,7 +189,7 @@ export default function RankedLeaderboard() {
   };
 
   const BadgeChampions = () => {
-    const ownerCounts = getOwnerBadgeCounts();
+    const ownerCounts = getOwnerBadgeCounts;
 
     if (Object.keys(ownerCounts).length === 0) {
       return (
@@ -388,11 +390,11 @@ export default function RankedLeaderboard() {
         <div className="flex flex-row space-x-2">
           <div className="px-4 font-black py-2 rounded-lg transition-colors bg-gray-800">
             <p className="text-teal-400">Total Badges Available</p>
-            <p className="text-white font-bold">{globalStats.totalBadges}</p>
+            <p className="text-white font-bold">{calculateGlobalStats.totalBadges}</p>
           </div>
           <div className="px-4 font-black py-2 rounded-lg transition-colors bg-gray-800">
             <p className="text-teal-400">Total Badges Unclaimed</p>
-            <p className="text-white font-bold">{globalStats.totalBadges - globalStats.totalClaimed}</p>
+            <p className="text-white font-bold">{calculateGlobalStats.totalBadges - calculateGlobalStats.totalClaimed}</p>
           </div>
         </div>
       </div>
@@ -463,6 +465,7 @@ export default function RankedLeaderboard() {
                 objectPosition: "0% 40%",
                 aspectRatio: "3/1",
               }}
+              loading="lazy"
             />
           </div>
         </div>

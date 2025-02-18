@@ -2,12 +2,13 @@
 import Link from "next/link";
 import characterData from "@/data/characterData.json";
 import supplementaryData from "@/data/supplementaryData.json";
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, Suspense, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
-
+import dynamic from "next/dynamic";
 import { TbChevronUp, TbChevronDown } from "react-icons/tb";
-import AnimatedImage from "../components/AnimatedImage";
+
+const AnimatedImage = dynamic(() => import("../components/AnimatedImage"), { ssr: false });
 
 interface IArchetypeCardProps {
   title: string;
@@ -71,9 +72,13 @@ const TerminologyPage = () => {
     return text.toLowerCase().includes(searchQuery.toLowerCase());
   };
 
-  const filteredArchetypes = Object.values(supplementaryData.archetypes).filter((archetype) => filterItems(archetype.name) || filterItems(archetype.description));
+  const filteredArchetypes = useMemo(() => {
+    return Object.values(supplementaryData.archetypes).filter((archetype) => filterItems(archetype.name) || filterItems(archetype.description));
+  }, [searchQuery]);
 
-  const filteredGameTerms = Object.values(supplementaryData.gameTerms).filter((term) => filterItems(term.name) || filterItems(term.description) || (term.engName && filterItems(term.engName)));
+  const filteredGameTerms = useMemo(() => {
+    return Object.values(supplementaryData.gameTerms).filter((term) => filterItems(term.name) || filterItems(term.description) || (term.engName && filterItems(term.engName)));
+  }, [searchQuery]);
 
   const handleImageError = (id: string, currentExt: string) => {
     if (currentExt === "png") {
@@ -179,15 +184,9 @@ const TerminologyPage = () => {
             height={300}
             className="w-full"
             style={{ display: isHovered ? "none" : "block", filter: "grayscale(100%)" }}
+            loading="lazy"
           />
-          <Image
-            src={`/assets/terminology-assets/${id}.gif`}
-            alt={title}
-            width={300}
-            height={300}
-            className="w-full"
-            style={{ display: isHovered ? "block" : "none" }}
-          />
+          <Image src={`/assets/terminology-assets/${id}.gif`} alt={title} width={300} height={300} className="w-full" style={{ display: isHovered ? "block" : "none" }} loading="lazy" />
         </div>
         <div className="p-4">
           <div className="font-bold text-xl mb-2 flex items-baseline">
@@ -284,9 +283,7 @@ const TerminologyPage = () => {
               {!searchQuery && <p className="mb-4 text-gray-400 italic">At present, there are {Object.keys(supplementaryData.gameTerms).length} Game Terms to learn about.</p>}
               <button className="font-bold text-teal-400 flex items-center gap-2 hover:underline" onClick={() => setGameTermsIsOpen((prevState) => !prevState)}>
                 <span>Click to {gameTermsIsOpen ? "hide" : "expand"}</span>
-                {gameTermsIsOpen ? <TbChevronUp size={20} /> : <TbChevronDown size={20
-
-} />}
+                {gameTermsIsOpen ? <TbChevronUp size={20} /> : <TbChevronDown size={20} />}
               </button>
             </>
           )}

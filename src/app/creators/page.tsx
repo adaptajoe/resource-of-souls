@@ -1,6 +1,7 @@
+import { FC } from "react";
 import Link from "next/link";
 
-export default function Creators() {
+const Creators: FC = () => {
   return (
     <div className="flex flex-col items-center lg:items-start lg:flex-row lg:justify-between">
       <div className="container ml-8 w-full mt-8">
@@ -24,7 +25,7 @@ export default function Creators() {
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <Link className={`px-4 py-2 w-fit my-4 font-black rounded text-white bg-gray-800 hover:bg-red-600 transition-colors`} href={"/terminology"}>
+            <Link className="px-4 py-2 w-fit my-4 font-black rounded text-white bg-gray-800 hover:bg-red-600 transition-colors" href="/terminology">
               Navigate to the BLEACH - Rebirth of Souls Press Kit
             </Link>
           </div>
@@ -115,4 +116,6 @@ export default function Creators() {
       </div>
     </div>
   );
-}
+};
+
+export default Creators;

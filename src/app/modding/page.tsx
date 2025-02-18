@@ -1,6 +1,7 @@
+import { FC } from "react";
 import Link from "next/link";
 
-export default function Modding() {
+const Modding: FC = () => {
   return (
     <div className="flex flex-col items-center lg:items-start lg:flex-row lg:justify-between">
       <div className="container ml-8 w-full mt-8">
@@ -24,4 +25,6 @@ export default function Modding() {
       </div>
     </div>
   );
-}
+};
+
+export default Modding;

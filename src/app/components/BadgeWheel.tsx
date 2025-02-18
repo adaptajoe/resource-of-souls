@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback, useMemo } from "react";
 
 interface Badge {
   name: string;
@@ -16,9 +16,9 @@ const BadgeWheel = ({ badges }: BadgeWheelProps) => {
   const [rotationDegree, setRotationDegree] = useState(0);
   const wheelRef = useRef<HTMLDivElement>(null);
 
-  const segmentAngle = 360 / badges.length;
+  const segmentAngle = useMemo(() => 360 / badges.length, [badges.length]);
 
-  const spinWheel = () => {
+  const spinWheel = useCallback(() => {
     if (isSpinning) return;
 
     setIsSpinning(true);
@@ -37,23 +37,26 @@ const BadgeWheel = ({ badges }: BadgeWheelProps) => {
       setIsSpinning(false);
       setSelectedBadge(badges[randomIndex]);
     }, 5000);
-  };
+  }, [isSpinning, rotationDegree, segmentAngle, badges]);
 
-  const round = (num: number) => Number(num.toFixed(4));
+  const round = useCallback((num: number) => Number(num.toFixed(4)), []);
 
-  const getSegmentPath = (index: number) => {
-    const startAngle = (index * segmentAngle * Math.PI) / 180;
-    const endAngle = ((index + 1) * segmentAngle * Math.PI) / 180;
+  const getSegmentPath = useCallback(
+    (index: number) => {
+      const startAngle = (index * segmentAngle * Math.PI) / 180;
+      const endAngle = ((index + 1) * segmentAngle * Math.PI) / 180;
 
-    const startX = round(50 + 50 * Math.sin(startAngle));
-    const startY = round(50 - 50 * Math.cos(startAngle));
-    const endX = round(50 + 50 * Math.sin(endAngle));
-    const endY = round(50 - 50 * Math.cos(endAngle));
+      const startX = round(50 + 50 * Math.sin(startAngle));
+      const startY = round(50 - 50 * Math.cos(startAngle));
+      const endX = round(50 + 50 * Math.sin(endAngle));
+      const endY = round(50 - 50 * Math.cos(endAngle));
 
-    const largeArcFlag = segmentAngle <= 180 ? "0" : "1";
+      const largeArcFlag = segmentAngle <= 180 ? "0" : "1";
 
-    return `M50,50 L${startX},${startY} A50,50 0 ${largeArcFlag},1 ${endX},${endY}Z`;
-  };
+      return `M50,50 L${startX},${startY} A50,50 0 ${largeArcFlag},1 ${endX},${endY}Z`;
+    },
+    [segmentAngle, round]
+  );
 
   return (
     <div className="flex flex-col items-center">

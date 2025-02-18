@@ -1,7 +1,8 @@
+import { FC } from "react";
 import Link from "next/link";
 import { GiAbstract069, GiButterfly, GiFire, GiPathDistance } from "react-icons/gi";
 
-export default function Offline() {
+const Offline: FC = () => {
   return (
     <div className="flex flex-col items-center lg:items-start lg:flex-row lg:justify-between">
       <div className="container mx-0 md:mx-8 w-full mt-8">
@@ -61,4 +62,6 @@ export default function Offline() {
       </div>
     </div>
   );
-}
+};
+
+export default Offline;

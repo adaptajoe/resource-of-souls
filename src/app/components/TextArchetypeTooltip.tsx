@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useMemo } from "react";
 
 interface ArchetypeData {
   id: string;
@@ -14,10 +15,12 @@ interface ArchetypeTooltipProps {
 }
 
 export default function TextArchetypeTooltip({ archetype, display }: ArchetypeTooltipProps) {
-  const url = `/terminology?highlight=${archetype.name
-    .replace(/([A-Z])/g, "-$1")
-    .toLowerCase()
-    .replace(/^-/, "")}`;
+  const url = useMemo(() => {
+    return `/terminology?highlight=${archetype.name
+      .replace(/([A-Z])/g, "-$1")
+      .toLowerCase()
+      .replace(/^-/, "")}`;
+  }, [archetype.name]);
 
   return (
     <div className="relative inline-block group">

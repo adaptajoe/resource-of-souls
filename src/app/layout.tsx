@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { MobileNavigation } from "@/app/components/MobileNavigation";
-import { DesktopNavigation } from "./components/DesktopNavigation";
 import Image from "next/image";
 import Link from "next/link";
+import { DesktopNavigation } from "./components/DesktopNavigation";
+import { MobileNavigation } from "./components/MobileNavigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,9 +38,9 @@ export default function RootLayout({
                 width="150"
                 alt={"Bleach - Resource of Souls Logo"}
                 className="fixed top-3 left-12 border-2 border-black hover:border-red-600 transition-colors"
+                loading="lazy"
               />
             </Link>
-            {/* Desktop Menu */}
             <DesktopNavigation />
             <MobileNavigation />
           </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useCallback } from "react";
 
 interface Character {
   characterEngTrailer: string;
@@ -9,15 +9,15 @@ interface Props {
   character: Character;
 }
 
-const YouTubeEmbed: React.FC<Props> = ({ character }) => {
-  const getYouTubeEmbedUrl = (url: string) => {
+const EmbedYoutube: React.FC<Props> = ({ character }) => {
+  const getYouTubeEmbedUrl = useCallback((url: string) => {
     const videoId = url.split("v=")[1];
     const ampersandPosition = videoId.indexOf("&");
     return ampersandPosition !== -1 ? videoId.substring(0, ampersandPosition) : videoId;
-  };
+  }, []);
 
-  const engTrailerId = getYouTubeEmbedUrl(character.characterEngTrailer);
-  const jpTrailerId = getYouTubeEmbedUrl(character.characterJpTrailer);
+  const engTrailerId = useMemo(() => getYouTubeEmbedUrl(character.characterEngTrailer), [character.characterEngTrailer, getYouTubeEmbedUrl]);
+  const jpTrailerId = useMemo(() => getYouTubeEmbedUrl(character.characterJpTrailer), [character.characterJpTrailer, getYouTubeEmbedUrl]);
 
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
@@ -27,6 +27,7 @@ const YouTubeEmbed: React.FC<Props> = ({ character }) => {
           <iframe
             height="300"
             src={`https://www.youtube.com/embed/${engTrailerId}`}
+            loading="lazy"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             title="English Trailer"
@@ -40,6 +41,7 @@ const YouTubeEmbed: React.FC<Props> = ({ character }) => {
           <iframe
             height="300"
             src={`https://www.youtube.com/embed/${jpTrailerId}`}
+            loading="lazy"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             title="Japanese Trailer"
@@ -51,4 +53,4 @@ const YouTubeEmbed: React.FC<Props> = ({ character }) => {
   );
 };
 
-export default YouTubeEmbed;
+export default EmbedYoutube;

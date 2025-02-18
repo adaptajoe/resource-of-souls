@@ -61,7 +61,6 @@ export default function VersusGenerator() {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        console.log("Fetched characters:", data);
         setCharacters(data);
 
         if (data.length >= 2) {
@@ -86,26 +85,21 @@ export default function VersusGenerator() {
         const url = `/assets/character-fullbody/${characterId}-base-outfit-${i}.png`;
         const response = await fetch(url, { method: "HEAD" });
         if (response.ok) {
-          console.log(`Found base outfit ${i} for ${characterId}`);
           outfits.push(`base-outfit-${i}`);
         }
       } catch {
         // Silently handle the error
-        console.log(`No base outfit ${i} found for ${characterId}`);
       }
     }
 
     try {
       const url = `/assets/character-fullbody/${characterId}-dlc-outfit-1.png`;
-      console.log(`Checking ${url}...`);
       const response = await fetch(url, { method: "HEAD" });
       if (response.ok) {
-        console.log(`Found DLC outfit for ${characterId}`);
         outfits.push("dlc-outfit-1");
       }
     } catch {
       // Silently handle the error
-      console.log(`No DLC outfit found for ${characterId}`);
     }
 
     return outfits;
@@ -115,12 +109,9 @@ export default function VersusGenerator() {
     const loadOutfits = async () => {
       const outfits: { [key: string]: string[] } = {};
       for (const char of characters) {
-        console.log(`Checking outfits for ${char.id}...`);
         const charOutfits = await checkAvailableOutfits(char.id);
-        console.log(`Found outfits for ${char.id}:`, charOutfits);
         outfits[char.id] = charOutfits;
       }
-      console.log("All available outfits:", outfits);
       setAvailableOutfits(outfits);
     };
 
@@ -501,7 +492,7 @@ export default function VersusGenerator() {
           <div className="flex flex-row col-span-2 h-fit pb-4 border-b-2 border-gray-400">
             {/* Player 1 Controls */}
             <div className="border-r-1 border-gray-400 h-fit pr-4 space-y-2">
-              <h3 className="text-lg font-bold">Player 2</h3>
+              <h3 className="text-lg font-bold">Player 1</h3>
               <div className="space-y-3">
                 <div>
                   <p className="text-xs text-gray-400 italic mb-1">Player 1 Character</p>

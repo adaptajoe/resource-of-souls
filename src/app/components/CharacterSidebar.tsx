@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import Image from "next/image";
 import StarRating from "./StarRating";
 import { Character } from "@/types/character";
@@ -24,21 +24,18 @@ interface CharacterSidebarProps {
 export default function CharacterSidebar({ character, slug }: CharacterSidebarProps) {
   const [movesetKeyIsOpen, setMovesetKeyIsOpen] = useState(false);
   const [currentOutfit, setCurrentOutfit] = useState("base-outfit-1");
-  const [availableOutfits, setAvailableOutfits] = useState<{
-    base: number[];
-    dlc: number[];
-  }>({ base: [1], dlc: [] });
-  const totalStats = character.stats[0].power + character.stats[0].speed + character.stats[0].range + character.stats[0].defense + character.stats[0].technique;
+  const [availableOutfits, setAvailableOutfits] = useState<{ base: number[]; dlc: number[] }>({ base: [1], dlc: [] });
+  const totalStats = useMemo(() => character.stats[0].power + character.stats[0].speed + character.stats[0].range + character.stats[0].defense + character.stats[0].technique, [character.stats]);
   const [fullBodyImageSrc, setFullBodyImageSrc] = useState(`/assets/character-fullbody/${slug}-fullbody.png`);
 
-  async function imageExists(imagePath: string): Promise<boolean> {
+  const imageExists = useCallback(async (imagePath: string): Promise<boolean> => {
     try {
       const response = await fetch(imagePath, { method: "HEAD" });
       return response.ok;
     } catch {
       return false;
     }
-  }
+  }, []);
 
   useEffect(() => {
     const checkOutfits = async () => {
@@ -61,14 +58,14 @@ export default function CharacterSidebar({ character, slug }: CharacterSidebarPr
     };
 
     checkOutfits();
-  }, [slug]);
+  }, [slug, imageExists]);
 
-  const handleOutfitChange = (outfitType: string, outfitNumber: number) => {
+  const handleOutfitChange = useCallback((outfitType: string, outfitNumber: number) => {
     const newOutfit = `${outfitType}-outfit-${outfitNumber}`;
     setCurrentOutfit(newOutfit);
-  };
+  }, []);
 
-  const formatTagName = (tag: string): string => {
+  const formatTagName = useCallback((tag: string): string => {
     // Handle Squad numbers first
     if (tag.toLowerCase().includes("squad")) {
       return tag.replace(/squad(\d+)/i, (_, num) => `Squad ${num}`);
@@ -105,7 +102,7 @@ export default function CharacterSidebar({ character, slug }: CharacterSidebarPr
       .join(" ")
       .trim()
       .replace(/\s+/g, " ");
-  };
+  }, []);
 
   return (
     <div className="container flex-col items-center w-fit md:w-[500px] border border-r-0 border-t-0 border-white justify-start h-fit rounded-bl-xl hidden lg:flex">
@@ -236,7 +233,7 @@ export default function CharacterSidebar({ character, slug }: CharacterSidebarPr
             Click to {movesetKeyIsOpen ? "hide" : "expand"}
             {movesetKeyIsOpen ? <TbChevronUp size={20} /> : <TbChevronDown size={20} />}
           </button>
-          {!movesetKeyIsOpen ? null : (
+          {movesetKeyIsOpen && (
             <div className="w-auto flex flex-wrap flex-row mt-4">
               <div className="grid grid-cols-2 w-full gap-2 ml-4 text-gray-400">
                 <div>
