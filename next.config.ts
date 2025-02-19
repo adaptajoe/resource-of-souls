@@ -1,17 +1,17 @@
-const withTM = require("next-transpile-modules")(["some-module", "and-another"]);
+import type { NextConfig } from "next";
+const withTM = require("next-transpile-modules")(["recharts"]); // Add the module you want to transpile
 
-const nextConfig = withTM({
+const nextConfig: NextConfig = withTM({
   images: {
     unoptimized: true,
     domains: ["localhost"],
     formats: ["image/avif", "image/webp"],
   },
-  webpack: (config: { module: { rules: { test: RegExp; type: string }[] }; resolve: { extensions: string[] } }) => {
+  webpack: (config: { module: { rules: { test: RegExp; type: string }[] } }) => {
     config.module.rules.push({
       test: /\.gif$/,
       type: "asset/resource",
     });
-    config.resolve.extensions.push(".js", ".jsx", ".ts", ".tsx");
     return config;
   },
 });
