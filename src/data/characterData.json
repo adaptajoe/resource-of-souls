@@ -1496,8 +1496,8 @@
             "moveTags": ["melee", "resourceLoss", "spiritualPressureMove1", "needsStatInfo"]
           },
           {
-            "id": "cero-sincretico",
-            "name": "Cero Sincretico",
+            "id": "cero-sincrético",
+            "name": "Cero Sincrético",
             "description": "Neliel summons Pesche and Dondochakka temporarily to fire a merged Cero. It takes time to charge, but deals massive damage and has an extreme range.",
             "input": "S2",
             "damage": 0,

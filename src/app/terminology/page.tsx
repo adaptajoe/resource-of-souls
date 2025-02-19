@@ -81,10 +81,10 @@ const TerminologyPage = () => {
 
   const handleImageError = (id: string, currentExt: string) => {
     if (currentExt === "png") {
-      // Try GIF if PNG fails
-      setImageExtensions((prev) => ({ ...prev, [id]: "gif" }));
+      // Try MP4 if PNG fails
+      setImageExtensions((prev) => ({ ...prev, [id]: "mp4" }));
     } else {
-      // If both PNG and GIF fail, mark as failed
+      // If both PNG and MP4 fail, mark as failed
       setFailedImages((prev) => new Set(prev).add(id));
     }
   };
@@ -176,16 +176,11 @@ const TerminologyPage = () => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className="relative w-full border-b-2 border-gray-800">
-          <Image
-            src={`/assets/terminology-assets/${id}.png`}
-            alt={title}
-            width={300}
-            height={300}
-            className="w-full"
-            style={{ display: isHovered ? "none" : "block", filter: "grayscale(100%)" }}
-            loading="lazy"
-          />
-          <Image src={`/assets/terminology-assets/${id}.gif`} alt={title} width={300} height={300} className="w-full" style={{ display: isHovered ? "block" : "none" }} loading="lazy" />
+          {!isHovered ? (
+            <Image src={`/assets/terminology-assets/${id}.png`} alt={title} width={300} height={300} className="w-full" style={{ filter: "grayscale(100%)" }} loading="lazy" />
+          ) : (
+            <video src={`/assets/terminology-assets/${id}.mp4`} width={300} height={300} className="w-full" autoPlay loop muted />
+          )}
         </div>
         <div className="p-4">
           <div className="font-bold text-xl mb-2 flex items-baseline">

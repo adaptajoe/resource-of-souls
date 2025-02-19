@@ -14,22 +14,22 @@ interface AnimatedImageProps {
 
 export default function AnimatedImage({ id, alt, onError, currentExtension, className, hoveredImageId, setHoveredImageId }: AnimatedImageProps) {
   const isHovered = hoveredImageId === id;
-  const [loadedGif, setLoadedGif] = useState<string | null>(null);
+  const [loadedVideo, setLoadedVideo] = useState<string | null>(null);
   const [hasError, setHasError] = useState<boolean>(false);
 
-  // Preload GIF when hovering
+  // Preload video when hovering
   useEffect(() => {
-    if (isHovered && !loadedGif && !hasError) {
-      const gifUrl = `/assets/terminology-assets/${id}.${currentExtension}`;
-      const img: HTMLImageElement = new window.Image();
-      img.src = gifUrl;
-      img.onload = () => setLoadedGif(gifUrl);
-      img.onerror = () => {
+    if (isHovered && !loadedVideo && !hasError) {
+      const videoUrl = `/assets/terminology-assets/${id}.${currentExtension}`;
+      const video = document.createElement("video");
+      video.src = videoUrl;
+      video.oncanplaythrough = () => setLoadedVideo(videoUrl);
+      video.onerror = () => {
         setHasError(true);
         onError(id, currentExtension);
       };
     }
-  }, [isHovered, id, currentExtension, loadedGif, hasError, onError]);
+  }, [isHovered, id, currentExtension, loadedVideo, hasError, onError]);
 
   const handleMouseEnter = useCallback(() => setHoveredImageId(id), [id, setHoveredImageId]);
   const handleMouseLeave = useCallback(() => setHoveredImageId(null), [setHoveredImageId]);
@@ -40,16 +40,20 @@ export default function AnimatedImage({ id, alt, onError, currentExtension, clas
 
   return (
     <div className="relative w-full h-[150px]" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <Image
-        src={isHovered && loadedGif && !hasError ? loadedGif : `/assets/terminology-assets/${id}.png`}
-        alt={alt}
-        width={300}
-        height={150}
-        className={className || "w-full h-[150px] object-cover"}
-        onError={handleError}
-        priority={false}
-        unoptimized={isHovered}
-      />
+      {isHovered && loadedVideo && !hasError ? (
+        <video src={loadedVideo} width={300} height={150} className={className || "w-full h-[150px] object-cover"} autoPlay loop muted onError={handleError} />
+      ) : (
+        <Image
+          src={`/assets/terminology-assets/${id}.png`}
+          alt={alt}
+          width={300}
+          height={150}
+          className={className || "w-full h-[150px] object-cover"}
+          onError={handleError}
+          priority={false}
+          unoptimized={isHovered}
+        />
+      )}
     </div>
   );
 }

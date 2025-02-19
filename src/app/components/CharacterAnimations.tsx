@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, FC } from "react";
-import AnimatedGif from "@/app/components/AnimatedGif";
+import AnimatedVideo from "@/app/components/AnimatedVideo";
 
 export interface CharacterAnimationsProps {
   animations: string[];
@@ -25,9 +25,9 @@ const CharacterAnimations: FC<CharacterAnimationsProps> = ({ animations, slug })
       {animationTabIsOpen && (
         <div className="h-fit p-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
           {animations.map((filename) => (
-            <AnimatedGif
+            <AnimatedVideo
               key={filename}
-              src={`/assets/character-animations/${encodeURIComponent(slug)}/${encodeURIComponent(filename)}.gif`}
+              src={`/assets/character-animations/${encodeURIComponent(slug)}/${encodeURIComponent(filename)}.mp4`}
               alt={filename
                 .split("-")
                 .map((word) => word.charAt(0).toUpperCase() + word.slice(1))

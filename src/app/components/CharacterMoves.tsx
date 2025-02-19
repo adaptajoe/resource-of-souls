@@ -20,7 +20,7 @@ const MoveAnimationTooltip = ({ characterId, moveId, children }: MoveAnimationTo
 
   // Encode the moveId to handle special characters
   const encodedMoveId = encodeURIComponent(moveId);
-  const animationPath = `/assets/character-animations/${characterId}/${encodedMoveId}.gif`;
+  const animationPath = `/assets/character-animations/${characterId}/${encodedMoveId}.mp4`;
 
   return (
     <div className="relative inline-block group">

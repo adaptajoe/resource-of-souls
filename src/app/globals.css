@@ -5,12 +5,12 @@
 @tailwind utilities;
 
 @layer utilities {
-  img[src$=".gif"] {
+  img[src$=".mp4"] {
     animation-play-state: paused;
     -webkit-animation-play-state: paused;
   }
 
-  img[src$=".gif"]:hover {
+  img[src$=".mp4"]:hover {
     animation-play-state: running;
     -webkit-animation-play-state: running;
   }

@@ -67,7 +67,7 @@ function getCharacterAnimations(characterSlug: string): string[] {
   const animationsDir = path.join(process.cwd(), "public", "assets", "character-animations", characterSlug);
   try {
     const files = fs.readdirSync(animationsDir);
-    return files.filter((file) => file.endsWith(".gif")).map((file) => file.replace(".gif", ""));
+    return files.filter((file) => file.endsWith(".mp4")).map((file) => file.replace(".mp4", ""));
   } catch {
     return [];
   }

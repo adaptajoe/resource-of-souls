@@ -46,7 +46,7 @@ export default function RootLayout({
                 BLEACH - Resource of Souls is developed, designed, managed and updated by Discord user <span className="text-amber-400 font-black">@jojicus</span>.
               </p>
               <p>
-                GIFs and other game data collection provided by Discord user <span className="text-fuchsia-400 font-black">@john30688</span>.
+                MP4s and other game data collection provided by Discord user <span className="text-fuchsia-400 font-black">@john30688</span>.
               </p>
             </div>
             <div className="flex flex-col text-center md:text-right text-gray-400 text-xs">

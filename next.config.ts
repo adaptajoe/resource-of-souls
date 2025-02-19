@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 import { Configuration } from "webpack";
-const withTM = require("next-transpile-modules")(["recharts"]); // Add the module you want to transpile
+const withTM = require("next-transpile-modules")(["recharts"]);
 
 const nextConfig: NextConfig = withTM({
   images: {
@@ -12,7 +12,7 @@ const nextConfig: NextConfig = withTM({
     if (config.module) {
       config.module.rules?.push(
         {
-          test: /\.gif$/,
+          test: /\.mp4$/,
           type: "asset/resource",
         },
         {
