@@ -1,7 +1,7 @@
 "use client";
 
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from "recharts";
-import { useMemo, useCallback } from "react";
+import { Radar, RadarChart, PolarGrid, PolarRadiusAxis, ResponsiveContainer } from "recharts";
+import { useMemo } from "react";
 
 interface RadarChartProps {
   stats: {
