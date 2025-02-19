@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import fs from "fs";
 import path from "path";
 import Image from "next/image";
@@ -6,12 +7,13 @@ import { notFound } from "next/navigation";
 import characterDataRaw from "@/data/characterData.json";
 import { CharacterData, Character } from "@/types/character";
 import { parseGameTerms } from "@/utils/termParser";
-import RadarChartComponentWrapper from "@/app/components/RadarChartComponentWrapper";
-import StarRatingWrapper from "@/app/components/StarRatingWrapper";
-import YouTubeEmbedWrapper from "@/app/components/EmbedYoutubeVideoWrapper";
-import CharacterAnimationsWrapper from "@/app/components/CharacterAnimationsWrapper";
-import CharacterMovesWrapper from "@/app/components/CharacterMovesWrapper";
-import CharacterSidebarWrapper from "@/app/components/CharacterSidebarWrapper";
+
+const CharacterAnimations = dynamic(() => import("@/app/components/CharacterAnimations"));
+const CharacterMoves = dynamic(() => import("@/app/components/CharacterMoves"));
+const CharacterSidebar = dynamic(() => import("@/app/components/CharacterSidebar"));
+const RadarChartComponent = dynamic(() => import("@/app/components/RadarChartComponent"));
+const StarRating = dynamic(() => import("@/app/components/StarRating"));
+const YouTubeEmbed = dynamic(() => import("@/app/components/EmbedYoutubeVideo"));
 
 function formatTagName(tag: string): string {
   // Handle Squad numbers first
@@ -103,7 +105,7 @@ export default async function CharacterPage(props: Props) {
         </nav>
 
         <h1 className="text-3xl font-bold">{character.name}</h1>
-        <h2 className="text-xl italic text-gray-400 mb-2">
+        <h2 className="text-sm italic text-gray-400 mb-2">
           {character.abilities.map((ability, index) => (
             <div key={index}>{ability.abilityQuoteTemplate.replace("{quote}", ability.abilityQuote).replace("{ability}", ability.abilityName)}</div>
           ))}
@@ -113,15 +115,15 @@ export default async function CharacterPage(props: Props) {
           <Link href="#stats" className="text-teal-400 hover:underline">
             Stats
           </Link>
-          <span className="text-gray-400">•</span>
+          <span className="text-gray-400"></span>
           <Link href="#trailers" className="text-teal-400 hover:underline">
             Trailers
           </Link>
-          <span className="text-gray-400">•</span>
+          <span className="text-gray-400"></span>
           <Link href="#movelist" className="text-teal-400 hover:underline">
             Movelist
           </Link>
-          <span className="text-gray-400">•</span>
+          <span className="text-gray-400"></span>
           <Link href="#animations" className="text-teal-400 hover:underline">
             Animations
           </Link>
@@ -138,87 +140,88 @@ export default async function CharacterPage(props: Props) {
               objectPosition: "0% 0%",
               aspectRatio: "3/1",
             }}
-            loading="lazy"
           />
           <div className="lg:hidden">
             <div className="my-4 w-full flex flex-col items-center border-b border-gray-400 pb-6">
               <strong>Ease of Use</strong>
               <div className="my-auto">
-                <StarRatingWrapper rating={character.characterEaseOfUse} character={character} />
-              </div>
-            </div>
-            <div className="mt-4 w-full flex flex-col items-center border-b border-gray-400 pb-6">
-              <div className="text-center grid grid-cols-3">
-                <div>
-                  <strong>Affiliations</strong>
-                  <div className="flex flex-wrap justify-center mt-1 mb-2">
-                    {character.characterArchetype.map((affiliation) => (
-                      <strong key={affiliation} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1 ml-2">
-                        {formatTagName(affiliation)}
-                      </strong>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <strong>Archetypes</strong>
-                  <div className="flex flex-wrap justify-center mt-1 mb-2">
-                    {character.characterArchetype.map((archetype) => (
-                      <strong key={archetype} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1 ml-2">
-                        {formatTagName(archetype)}
-                      </strong>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <strong>Abilities</strong>
-                  <div className="flex flex-wrap justify-center mt-1 mb-2">
-                    {character.tags.abilities.map((ability) => (
-                      <strong key={ability} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1  ml-2">
-                        {formatTagName(ability)}
-                      </strong>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="text-center grid grid-cols-2 mt-4">
-                <div>
-                  <strong>Relationships</strong>
-                  <div className="flex flex-wrap justify-center mt-1 mb-2">
-                    {character.tags.relationships.map((relationship) => (
-                      <strong key={relationship} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1  ml-2">
-                        {formatTagName(relationship)}
-                      </strong>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <strong>Characteristics</strong>
-                  <div className="flex flex-wrap justify-center mt-1 mb-2">
-                    {character.tags.characteristics.map((characteristic) => (
-                      <strong key={characteristic} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1  ml-2">
-                        {formatTagName(characteristic)}
-                      </strong>
-                    ))}
-                  </div>
-                </div>
+                <StarRating rating={character.characterEaseOfUse} />
               </div>
             </div>
           </div>
+          <div className="mt-4 w-full flex flex-col items-center border-b border-gray-400 pb-6">
+            <div className="text-center grid grid-cols-3">
+              <div>
+                <strong>Affiliations</strong>
+                <div className="flex flex-wrap justify-center mt-1 mb-2">
+                  {character.characterArchetype.map((affiliation) => (
+                    <strong key={affiliation} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1 ml-2">
+                      {formatTagName(affiliation)}
+                    </strong>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <strong>Archetypes</strong>
+                <div className="flex flex-wrap justify-center mt-1 mb-2">
+                  {character.characterArchetype.map((archetype) => (
+                    <strong key={archetype} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1 ml-2">
+                      {formatTagName(archetype)}
+                    </strong>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div>
+              <strong>Abilities</strong>
+              <div className="flex flex-wrap justify-center mt-1 mb-2">
+                {character.tags.abilities.map((ability) => (
+                  <strong key={ability} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1 ml-2">
+                    {formatTagName(ability)}
+                  </strong>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="text-center grid grid-cols-2 mt-4">
+            <div>
+              <strong>Relationships</strong>
+              <div className="flex flex-wrap justify-center mt-1 mb-2">
+                {character.tags.relationships.map((relationship) => (
+                  <strong key={relationship} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1 ml-2">
+                    {formatTagName(relationship)}
+                  </strong>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div>
+            <strong>Characteristics</strong>
+            <div className="flex flex-wrap justify-center mt-1 mb-2">
+              {character.tags.characteristics.map((characteristic) => (
+                <strong key={characteristic} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1 ml-2">
+                  {formatTagName(characteristic)}
+                </strong>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="mb-4">
-          <h2 className="italic text-xl text-gray-400 my-8 mr-8 border-l-4 border-l-gray-400 pl-4 py-6">&quot;{character.quote}&quot;</h2>
-        </div>
-        <div className="mb-8 mr-8">
-          <div>{parseGameTerms(character.description)}</div>
-        </div>
+      </div>
+      <div className="mb-4">
+        <h2 className="italic text-xl text-gray-400 my-8 mr-8 border-l-4 border-l-gray-400 pl-4 py-6">&quot;{character.quote}&quot;</h2>
+      </div>
+      <div className="mb-8 mr-8">
+        <div>{parseGameTerms(character.description)}</div>
+      </div>
 
+      <div className="mb-8">
         <div className="mb-8">
           <div className="bg-black shadow-md">
             <div className="grid grid-cols-1 xl:grid-cols-3 xl:gap-6 pr-8 mb-8">
               <div id="stats" className="border border-white rounded-xl w-full grid grid-cols-1 h-full">
                 <h2 className="text-xl font-semibold mb-2 p-2 pl-4">Stats</h2>
                 <div className="p-2">
-                  <RadarChartComponentWrapper stats={character.stats[0]} characterName={character.name} character={character} />
+                  <RadarChartComponent stats={character.stats[0]} characterName={character.name} />
                 </div>
                 <div className="w-full flex flex-row text-center items-end text-sm">
                   <div className="w-1/6 bg-red-700 flex flex-col border border-l-0 border-b-0 border-white rounded-bl-xl">
@@ -245,7 +248,7 @@ export default async function CharacterPage(props: Props) {
               <div id="trailers" className="border border-white rounded-xl w-full grid col-span-2 h-full mt-4 xl:mt-0">
                 <h2 className="text-xl font-semibold mb-2 p-2 pl-4">Trailers</h2>
                 <div className="m-2">
-                  <YouTubeEmbedWrapper character={character} />
+                  <YouTubeEmbed character={character} />
                 </div>
               </div>
             </div>
@@ -254,13 +257,13 @@ export default async function CharacterPage(props: Props) {
               <div id="movelist" className="border border-white rounded-xl w-full grid grid-cols-1 mb-4 lg:mb-8">
                 <h2 className="text-xl font-semibold p-2 pl-4 static">Movelist</h2>
                 <div className="h-fit">
-                  <CharacterMovesWrapper moves={character.moves} characterId={character.id} />
+                  <CharacterMoves moves={character.moves} characterId={character.id} />
                 </div>
               </div>
 
               <div id="animations">
                 {hasAnimations ? (
-                  <CharacterAnimationsWrapper animations={animations} slug={params.slug} />
+                  <CharacterAnimations animations={animations} slug={params.slug} />
                 ) : (
                   <div className="border border-white rounded-xl w-full p-4">
                     <h2 className="text-xl font-semibold mb-2">Animations</h2>
@@ -273,7 +276,7 @@ export default async function CharacterPage(props: Props) {
         </div>
       </div>
 
-      <CharacterSidebarWrapper character={character} slug={params.slug} />
+      <CharacterSidebar character={character} slug={params.slug} />
     </div>
   );
 }
