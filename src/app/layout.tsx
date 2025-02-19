@@ -7,13 +7,15 @@ import { DesktopNavigation } from "./components/DesktopNavigation";
 import { MobileNavigation } from "./components/MobileNavigation";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: 'swap',
+  adjustFontFallback: false // Add this line
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: 'swap',
+  adjustFontFallback: false // Add this line
 });
 
 export const metadata: Metadata = {
@@ -26,9 +28,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Combine the font classes safely
+  const fontClasses = [
+    geistSans.className,
+    geistMono.className,
+    'antialiased'
+  ].join(' ');
+
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={fontClasses}>
         <div className="bg-black fixed w-full h-10 border-b border-gray-400 p-6 pb-28 z-50">
           <div className="relative">
             <Link href="/">
