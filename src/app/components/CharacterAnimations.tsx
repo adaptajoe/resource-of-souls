@@ -28,11 +28,12 @@ const CharacterAnimations: FC<CharacterAnimationsProps> = ({ animations, slug })
           {animations.map((filename) => (
             <AnimatedGif
               key={filename}
-              src={`/assets/character-animations/${slug}/${filename}.gif`}
+              src={`/assets/character-animations/${encodeURIComponent(slug)}/${encodeURIComponent(filename)}.gif`}
               alt={filename
                 .split("-")
                 .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                .join(" ")}
+                .join(" ")
+                .replace(/\//g, " / ")}
               filename={filename}
             />
           ))}

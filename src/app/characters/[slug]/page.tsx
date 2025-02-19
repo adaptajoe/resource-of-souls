@@ -103,7 +103,7 @@ export default async function CharacterPage(props: Props) {
         </nav>
 
         <h1 className="text-3xl font-bold">{character.name}</h1>
-        <h2 className="text-sm italic text-gray-400 mb-2">
+        <h2 className="text-xl italic text-gray-400 mb-2">
           {character.abilities.map((ability, index) => (
             <div key={index}>{ability.abilityQuoteTemplate.replace("{quote}", ability.abilityQuote).replace("{ability}", ability.abilityName)}</div>
           ))}

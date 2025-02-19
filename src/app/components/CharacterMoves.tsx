@@ -34,62 +34,46 @@ interface MoveAnimationTooltipProps {
 }
 
 const MoveAnimationTooltip = ({ characterId, moveId, children }: MoveAnimationTooltipProps) => {
+  const [imageError, setImageError] = useState(false);
+
   // Encode the moveId to handle special characters
   const encodedMoveId = encodeURIComponent(moveId);
   const animationPath = `/assets/character-animations/${characterId}/${encodedMoveId}.gif`;
 
   return (
     <div className="relative inline-block group">
-      <span className="text-teal-400 cursor-pointer">{children}</span>
-      {/* Mobile tooltip (above) */}
-      <div
-        className="md:hidden absolute invisible group-hover:visible z-10 p-1 rounded-lg bg-black border-teal-400 border-2 shadow-lg
-        left-1/2 -translate-x-1/2 bottom-full mb-4"
-      >
-        <Image
-          src={animationPath}
-          alt={`${moveId} animation`}
-          width={300}
-          height={300}
-          className="rounded-lg max-w-[300px]"
-          onError={(e) => {
-            // Handle image load errors
-            const target = e.target as HTMLImageElement;
-            target.style.display = "none";
-          }}
-        />
-        <div
-          className="absolute left-1/2 -translate-x-1/2 bottom-[-12px] w-0 h-0 
-          border-l-[12px] border-l-transparent 
-          border-t-[12px] border-t-teal-400 
-          border-r-[12px] border-r-transparent"
-        />
-      </div>
+      <span className={`cursor-pointer ${imageError ? "text-red-600" : "text-teal-400"}`}>{children}</span>
+      {!imageError && (
+        <>
+          {/* Mobile tooltip (above) */}
+          <div
+            className="md:hidden absolute invisible group-hover:visible z-10 p-1 rounded-lg bg-black border-teal-400 border-2 shadow-lg
+            left-1/2 -translate-x-1/2 bottom-full mb-4"
+          >
+            <Image src={animationPath} alt={`${moveId} animation`} width={300} height={300} className="rounded-lg max-w-[300px]" onError={() => setImageError(true)} />
+            <div
+              className="absolute left-1/2 -translate-x-1/2 bottom-[-12px] w-0 h-0 
+              border-l-[12px] border-l-transparent 
+              border-t-[12px] border-t-teal-400 
+              border-r-[12px] border-r-transparent"
+            />
+          </div>
 
-      {/* Desktop tooltip (right) */}
-      <div
-        className="hidden md:block absolute invisible group-hover:visible z-10 p-1 rounded-lg bg-black border-teal-400 border-2 shadow-lg
-        left-full ml-4 top-1/2 -translate-y-1/2"
-      >
-        <Image
-          src={animationPath}
-          alt={`${moveId} animation`}
-          width={300}
-          height={300}
-          className="rounded-lg max-w-[300px]"
-          onError={(e) => {
-            // Handle image load errors
-            const target = e.target as HTMLImageElement;
-            target.style.display = "none";
-          }}
-        />
-        <div
-          className="absolute left-[-12px] top-1/2 -translate-y-1/2 w-0 h-0 
-          border-t-[12px] border-t-transparent 
-          border-r-[12px] border-r-teal-400 
-          border-b-[12px] border-b-transparent"
-        />
-      </div>
+          {/* Desktop tooltip (right) */}
+          <div
+            className="hidden md:block absolute invisible group-hover:visible z-10 p-1 rounded-lg bg-black border-teal-400 border-2 shadow-lg
+            left-full ml-4 top-1/2 -translate-y-1/2"
+          >
+            <Image src={animationPath} alt={`${moveId} animation`} width={300} height={300} className="rounded-lg max-w-[300px]" onError={() => setImageError(true)} />
+            <div
+              className="absolute left-[-12px] top-1/2 -translate-y-1/2 w-0 h-0 
+              border-t-[12px] border-t-transparent 
+              border-r-[12px] border-r-teal-400 
+              border-b-[12px] border-b-transparent"
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 };
@@ -119,7 +103,7 @@ const useTranslateInput = (input: string): JSX.Element => {
       BK: <strong className="bg-purple-400 align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">BK</strong>,
       R: <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">R</strong>,
       BR: <strong className="bg-red-300 align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">BR</strong>,
-      CR: <strong className="bg-orange-300 align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">CR</strong>,
+      CR: <strong className="bg-orange-300 align-middle rounded-full p-1 size-[25px] inline-flex items.center ml-1 text-black text-center text-xs font-black justify-center">CR</strong>,
       SR: <strong className="bg-blue-300 align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">SR</strong>,
       KI: <strong className="bg-pink-400 align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">KI</strong>,
       S1: <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">S1</strong>,
@@ -233,7 +217,7 @@ const MoveDisplay = ({ move, characterId }: MoveDisplayProps) => {
       <div className="grid grid-cols-2 gap-4 items-start py-2 pr-2">
         <div>
           <MoveAnimationTooltip characterId={characterId} moveId={move.id}>
-            <strong className="italic ml-4">{move.name}</strong>
+            <strong className="italic ml-4">{move.name.replace(/\//g, " / ")}</strong>
           </MoveAnimationTooltip>
           <p className="text-sm italic ml-4 text-gray-400">{move.description}</p>
         </div>

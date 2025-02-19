@@ -406,7 +406,7 @@
       "id": "ranged",
       "name": "Ranged",
       "shortDescription": "Uses projectiles like arrows, Ceros, bullets, Kidō, etc",
-      "description": "Self-explanatory. Ranged characters specialise in projectile attacks, like Ceros, Helig Pfiel, and other bullet-like abilities."
+      "description": "Self-explanatory. Ranged characters specialise in projectile attacks, like Ceros, Heilig Pfiel, and other bullet-like abilities."
     },
     "kido": {
       "id": "kido",

@@ -111,14 +111,14 @@
       {
         "base": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Signature Move currently not known.",
+            "id": "getsuga-tenshō",
+            "name": "Getsuga Tenshō",
+            "description": "Ichigo holds Zangetsu to the sky, charging with Reiryoku as it converges on his blade's edge. With a brisk swing, Ichigo fires this wave of Reiryoku at his opponent. Holding down the input makes the attack a continuous blast, whereas just tapping the input fires a small blast. Getsuga Tenshō is notable for its' increased damage to an opponents' Guard Gauge.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["signatureMove", "unknown"]
+            "moveTags": ["signatureMove", "ranged", "charge", "resourceLoss", "needsStatInfo"]
           },
           {
             "id": "wielding",
@@ -131,14 +131,14 @@
             "moveTags": ["melee", "resourceLoss", "spiritualPressureMove1", "needsStatInfo"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Spiritual Pressure Move 2 currently not known.",
+            "id": "swing",
+            "name": "Swing",
+            "description": "Ichigo swings Zangetsu horizontally before following-up with a powerful uppercut. Before Ichigo fires off Swing, he is temporarily invincible thanks to his granted Super Armor.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["spiritualPressureMove2", "unknown"]
+            "moveTags": ["spiritualPressureMove2", "melee", "resourceLoss", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -194,14 +194,14 @@
       {
         "base": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Signature Move currently not known.",
+            "id": "licht-regen",
+            "name": "Licht Regen",
+            "description": "Uryu fires a rain of arrows into the air and looses them upon his target. By holding the input, the arrow storm fired will last longer.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["signatureMove", "unknown"]
+            "moveTags": ["signatureMove", "ranged", "charge", "resourceLoss", "needsStatInfo"]
           },
           {
             "id": "quincy-arrow",
@@ -289,8 +289,8 @@
       {
         "base": [
           {
-            "id": "senbonzakura-seal-and-release",
-            "name": "Senbonzakura: Seal / Release",
+            "id": "senbonzakura-seal-&-release",
+            "name": "Senbonzakura: Seal & Release",
             "description": "A Stance that Byakuya can shift between. When Senbonzakura is in the Sealed Stance, Byakuya becomes a Short Range Melee character, whereas when Senbonzakura is in the Released Stance, Byakuya becomes a Hybrid Range Ranged character.",
             "input": "SI",
             "damage": 0,
@@ -299,8 +299,8 @@
             "moveTags": ["melee", "ranged", "resourceLoss", "stanceChange", "signatureMove", "needsStatInfo"]
           },
           {
-            "id": "release-and-seal-senbonzakura",
-            "name": "Seal / Release: Senbonzakura",
+            "id": "seal-&-release-senbonzakura",
+            "name": "Seal & Release: Senbonzakura",
             "description": "Changes Byakuya's Stance. If Senbonzakura is in the Released Stance, it summons a vortex of Senbonzakura petals that draws the opponent in, changing Senbonzakura to the Sealed Stance. If Senbonzakura is in the Sealed Stance, it summons a vortex of Senbonzakura petals that pushes the opponent away, changing Senbonzakura to the Released Stance. In both instances, it damages the opponent.",
             "input": "S1",
             "damage": 0,
@@ -309,7 +309,7 @@
             "moveTags": ["ranged", "stanceChange", "resourceLoss", "spiritualPressureMove1", "needsStatInfo"]
           },
           {
-            "id": "that-wont-touch-me",
+            "id": "that-won't-touch-me",
             "name": "That Won't Touch Me",
             "description": "Byakuya holds his arm to his waist, and readies to intercept the opponents' attack. If the opponent lands an attack on Byakuya in this state, Byakuya absorbs the hit and retaliates with a powerful 'Hadō #33: Sokatsui' counterattack.",
             "input": "S2",
@@ -372,8 +372,8 @@
       {
         "base": [
           {
-            "id": "anken-and-flash-breaker",
-            "name": "Anken / Flash Breaker",
+            "id": "anken-&-flash-breaker",
+            "name": "Anken & Flash Breaker",
             "description": "A two-stage move that fires one of two moves, depending on how long the user holds the input. The first-stage attack fires two small Anken knives at the opponent. The second-stage attack acts as a counter; if the opponent hits Yoruichi with an attack in this state, Yoruichi counters, dodges the attack and retaliates.",
             "input": "SI",
             "damage": 0,
@@ -538,14 +538,14 @@
       {
         "base": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Signature Move currently not known.",
+            "id": "just-a-plain-old-candy-store-owner",
+            "name": "Just a Plain Old Candy-Store Owner",
+            "description": "Urahara takes a defensive stance, preparing to counter his opponent. If Urahara is hit with an attack in this state, he retaliates with a forwards slice.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["signatureMove", "unknown"]
+            "moveTags": ["signatureMove", "melee", "counter", "block", "resourceLoss", "needsStatInfo"]
           },
           {
             "id": "kamisori-benihime",
@@ -558,7 +558,7 @@
             "moveTags": ["ranged", "resourceLoss", "block", "spiritualPressureMove1", "needsStatInfo"]
           },
           {
-            "id": "are-you-prepared",
+            "id": "are-you-prepared?",
             "name": "Are You Prepared?",
             "description": "Urahara tilts his hat, taking the fight seriously. He becomes buffed for a period of time, increasing his mobility and shortening the animation length of his attacks, mixing up his attack rhythm.",
             "input": "S2",
@@ -704,34 +704,34 @@
       {
         "base": [
           {
-            "id": "hado-#31-shakkaho",
+            "id": "hadō-#31-shakkaho",
             "name": "Hadō #31: Shakkaho",
             "description": "Fires a single blazing orbs of Reiryoku at Rangiku's opponent. If it hits, it can provide a follow-up attack.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["ranged", "kido", "signatureMove", "needsStatInfo"]
+            "moveTags": ["ranged", "kidō", "signatureMove", "needsStatInfo"]
           },
           {
-            "id": "youre-too-slow",
+            "id": "you're-too-slow!",
             "name": "You're Too Slow!",
             "description": "Rangiku squats, bracing for an attack. If Rangiku is hit with an attack in this state, she teleports behind her opponent and immediatley fires a 'Hadō #31: Shakkaho'.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["ranged", "counter", "block", "kido", "spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": ["ranged", "counter", "block", "kidō", "spiritualPressureMove1", "needsStatInfo"]
           },
           {
-            "id": "hado-#33-sokatsui",
+            "id": "hadō-#33-sokatsui",
             "name": "Hadō #33: Sokatsui",
             "description": "Fires a blast of blue Reiryoku that has poor range, but high damage.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["ranged", "kido", "spiritualPressureMove2", "needsStatInfo"]
+            "moveTags": ["ranged", "kidō", "spiritualPressureMove2", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -787,14 +787,14 @@
       {
         "base": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Signature Move currently not known.",
+            "id": "suihyōrin",
+            "name": "Suihyōrin",
+            "description": "Toshirō weaves a zone of icicles at his opponents' feet. Holding the input increases the attack's range and damage. Increases the Tenso Jyurin Gauge when it hits.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["signatureMove", "unknown"]
+            "moveTags": ["signatureMove", "charge", "ranged", "resourceLoss", "gaugeIncreaseOnHit", "needsStatInfo"]
           },
           {
             "id": "soten-hyogeki",
@@ -804,17 +804,17 @@
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["ranged", "resourceLoss", "gaugeIncreaseOnHit", "spiritualPressureMove1"]
+            "moveTags": ["ranged", "resourceLoss", "gaugeIncreaseOnHit", "spiritualPressureMove1", "needsStatInfo"]
           },
           {
-            "id": "hyōrinmaru-hyōryū-renbu",
-            "name": "Hyōrinmaru: Hyōryū Renbu",
+            "id": "hyōryū-renbu",
+            "name": "Hyōryū Renbu",
             "description": "Hyōrinmaru roars, as Tōshiro forms a large dragon head that trails ice behind it, firing it at the opponent over a long distance, allowing Toshiro to launch a follow-up attack. Increases the Tenso Jyurin Gauge when it hits.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["ranged", "resourceLoss", "gaugeIncreaseOnHit", "spiritualPressureMove2"]
+            "moveTags": ["ranged", "resourceLoss", "gaugeIncreaseOnHit", "spiritualPressureMove2", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -870,7 +870,7 @@
       {
         "base": [
           {
-            "id": "try-to-cut-me",
+            "id": "try-to-cut-me!",
             "name": "Try to Cut Me!",
             "description": "Kenpachi embraces the opponent's killing intent, giving him Super Armor whilst the attack is charged, absorbing all of the damage that he would normally take; once the user releases 'Try to Cut Me!', Kenpachi reflects the amount of damage that would've been dealt to him back to the opponent, if the follow-up attack hits.",
             "input": "SI",
@@ -890,7 +890,7 @@
             "moveTags": ["melee", "resourceLoss", "spiritualPressureMove1", "needsStatInfo"]
           },
           {
-            "id": "nothing-i-cant-cut",
+            "id": "nothing-i-can't-cut",
             "name": "Nothing I Can't Cut",
             "description": "Kenpachi launches towards his opponent, slicing his opponent twice, before following up with two more slices. Holding down the input and charging the attack deals more damage towards the opponents' Guard Gauge.",
             "input": "S2",
@@ -973,14 +973,14 @@
             "moveTags": ["charge", "resourceGain", "spiritualPressureMove1", "needsStatInfo"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Spiritual Pressure Move 2 currently not known.",
+            "id": "alternate-cero",
+            "name": "Alternate Cero",
+            "description": "Ulquiorra consumes a portion of his Reishi in order to fire a more powerful 'Cero', but it consumes more Reishi than his Signature Move counterpart. 'Alternate Cero' can be chained on the end of 'Cero' to deal devastating ranged damage at the cost of a lot of Reishi.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["spiritualPressureMove2", "unknown"]
+            "moveTags": ["spiritualPressureMove2", "ranged", "resourceLoss", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -1059,14 +1059,14 @@
             "moveTags": ["charge", "ranged", "resourceLoss", "signatureMove", "needsStatInfo"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Spiritual Pressure Move 1 currently not known.",
+            "id": "rapid-slash",
+            "name": "Rapid Slash",
+            "description": "Ichigo leaps upwards and slashes at the opponent. Damage is relatively low, but Ichigo gains Super Armor temporarily, rendering him invulnerable for a short period before his leap.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "melee", "resourceLoss", "needsStatInfo"]
           },
           {
             "id": "getsuga-aura",
@@ -1154,7 +1154,7 @@
             "moveTags": ["melee", "block", "counter", "resourceLoss", "signatureMove", "needsStatInfo"]
           },
           {
-            "id": "suzumushi-nishiki-benihiko",
+            "id": "suzumushi-nishiki,-benihiko",
             "name": "Suzumushi Nishiki, Benihiko",
             "description": "Tōsen jumps backwards and fires a blitz of sharp needles towards his opponent.",
             "input": "S1",
@@ -1237,8 +1237,8 @@
             "moveTags": ["ranged", "resourceLoss", "reload", "signatureMove", "needsStatInfo"]
           },
           {
-            "id": "kazaguruma-and-nigeki-kessatsu",
-            "name": "Kazaguruma / Nigeki Kessatsu",
+            "id": "kazaguruma-&-nigeki-kessatsu",
+            "name": "Kazaguruma & Nigeki Kessatsu",
             "description": "Soi-Fon rushes to her oppponent and hits them with a spinning kick. If you hold the input and charge Kazaguruma, it increases the number of hits, and if you charge Kazaguruma to maximum, it transforms into Nigeki Kessatsu. Nigeki Kessatsu has its' own Kikon-like animation, and is hard to dodge. If Soi-Fon lands two hits of Nigeki Kessatsu, Soi-Fon wins the Match instantly. Nigeki Kessatsu can only hit once per Kazaguruma charge.",
             "input": "S1",
             "damage": 0,
@@ -1393,8 +1393,8 @@
       {
         "base": [
           {
-            "id": "bakudo-#4-hainawa-and-hadō-#11-tsuzuri-raiden",
-            "name": "Bakudo #4: Hainawa; Hadō #11: Tsuzuri Raiden",
+            "id": "bakudo-#4-hainawa-&-hadō-#11-tsuzuri-raiden",
+            "name": "Bakudo #4: Hainawa & Hadō #11: Tsuzuri Raiden",
             "description": "Izuru shoots a rope of golden elasticated Reiryoku forwards, electrified with the power of 'Hadō #11: Tsuzuri Raiden'; if 'Bakudo #4: Hainawa' hits the opponent, it changes properties based on how long Izuru holds the input; without holding the input, the attack simply deals damage, however if Izuru holds the input, the opponent is instead pulled towards Izuru.",
             "input": "SI",
             "damage": 0,
@@ -1569,17 +1569,17 @@
             "moveTags": ["signatureMove", "resourceLoss", "resourceGain", "stanceChange", "needsStatInfo"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Spiritual Pressure Move 1 currently not known.",
+            "id": "cero",
+            "name": "Cero",
+            "description": "Grimmjow dashes to his opponent to slice his opponent, gripped their face and firing a Cero at point-blank range. When Grimmjow is in the Annihilation State, his Cero will deal significantly more damage to an opponents' Guard Gauge.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "melee", "resourceLoss", "needsStatInfo"]
           },
           {
-            "id": "kill-them-spare-no-one",
+            "id": "kill-them,-spare-no-one",
             "name": "Kill Them, Spare No One",
             "description": "Grimmjow enters the Decimation State for a period of time after activaton, which drastically boosts his damage output in exchange for him losing Reishi with each attack landed.",
             "input": "S2",
@@ -1652,17 +1652,17 @@
             "moveTags": ["signatureMove", "ranged", "resourceLoss", "resourceGain", "needsStatInfo"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Spiritual Pressure Move 1 currently not known.",
+            "id": "jinmen-himo",
+            "name": "Jinmen Himo",
+            "description": "Mayuri whips out a strange bomb from his left hand, wrapping it around his opponent's head before blowing them away with a combined explosion and slash. The range of 'Jinmen Himo' is extremely short, but is unblockable.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "unblockable", "melee", "resourceLoss", "needsStatInfo"]
           },
           {
-            "id": "move-you-idiot",
+            "id": "move,-you-idiot!",
             "name": "Move, You Idiot!",
             "description": "Mayuri calls Nemu to the field who charges at the opponent and restrains them before kicking them upwards after a short while. The opponent can still Guard when restrained by Nemu, but if they are hit by Nemu's kick whilst Guarding, they will take a massive amount of damage to their Guard Gauge.",
             "input": "S2",
@@ -1725,14 +1725,14 @@
       {
         "base": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Signature Move currently not known.",
+            "id": "transcendant-reiatsu",
+            "name": "Transcendant Reiatsu",
+            "description": "Aizen takes a defensive stance, becoming immune to all recoil whilst the input is held. Once the input is released, or after a certain period of time, any damage Aizen took during his use of 'Transcendant Reiatsu' will be unleashed in a surrounding shockwave.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["signatureMove", "unknown"]
+            "moveTags": ["signatureMove", "ranged", "block", "counter", "charge", "resourceLoss", "needsStatInfo"]
           },
           {
             "id": "el-escudo",
@@ -1820,14 +1820,14 @@
       {
         "base": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Signature Move currently not known.",
+            "id": "honagi",
+            "name": "Honagi",
+            "description": "Yamamoto looses a powerful, wide slash coated in Ryujin Jakka's flames, incinerating all that stands in his way. After successfully hitting 'Honagi', Yamamoto can follow up with an additional attack.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["signatureMove", "unknown"]
+            "moveTags": ["signatureMove", "melee", "resourceLoss", "needsStatInfo"]
           },
           {
             "id": "shiranui",
@@ -1840,8 +1840,8 @@
             "moveTags": ["spiritualPressureMove1", "ranged", "charge", "stanceChange", "resourceLoss", "needsStatInfo"]
           },
           {
-            "id": "taimatsu-and-nadegiri",
-            "name": "Taimatsu / Nadegiri",
+            "id": "taimatsu-&-nadegiri",
+            "name": "Taimatsu & Nadegiri",
             "description": "Two techniques in one, which changes form depending on which Stance Yamamoto is currently in. If Yamamoto is not in the Hellfire State Stance, then Taimatsu will be used, indicated by a simple - but powerful - slash. After using Taimatsu, the Inferno Gauge will not increase after a set period of time. If Yamamoto is in the Hellfire State Stance, then Nadegiri is used, which fires a spinning vortex of fire at the opponent, and forces Yamamoto out of the Hellfire State Stance.",
             "input": "S2",
             "damage": 0,
@@ -1903,8 +1903,8 @@
       {
         "base": [
           {
-            "id": "such-fun-and-thats-not-it",
-            "name": "Such Fun / That's Not It",
+            "id": "such-fun-&-that's-not-it",
+            "name": "Such Fun & That's Not It",
             "description": "Shinji flips between two Stances, 'Such Fun', where Sakanade is sealed, and 'That's Not It', where Sakanade is unsealed. The animations for these two states are different, and swaps from 'Such Fun' to 'That's Not It' on successive uses. During 'Such Fun', Shinji will stride towards the opponent, spinning his Zanpakuto in his hand. When he is hit with an attack in this state, he counters with a powerful slash. If no attack lands in this state, Shinji is left exposed for a significant amount of time. Breakers also will negate the counter of 'Such Fun'. In the 'That's Not It' state, Shinji strides towards the opponent, spinning Sakanade by its' ring, and has the same counter properties of 'Such Fun'; the difference being that 'That's Not It' won't leave Shinji exposed, and will instead automatically teleport him behind the opponent as if 'Such Fun' was successful.",
             "input": "SI / NORTH (Towards Opponent) + SI",
             "damage": 0,
@@ -1913,7 +1913,7 @@
             "moveTags": ["signatureMove", "stanceChange", "counter", "resourceLoss", "needsStatInfo"]
           },
           {
-            "id": "its-your-turn",
+            "id": "it's-your-turn!",
             "name": "It's Your Turn!",
             "description": "Hiyori joins the fight temporarily, attacking the opponent constantly. As soon as Hiyori takes a single hit, she leaves the field.",
             "input": "S1",
@@ -1993,7 +1993,7 @@
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["signatureMove", "melee", "resourceLoss", "resourceGain", "needsStatInfo"]
+            "moveTags": ["signatureMove", "melee", "resourceLoss", "resourceGain", "gaugeIncreaseOnHit", "needsStatInfo"]
           },
           {
             "id": "i-need-your-corpse-intact",
@@ -2006,14 +2006,14 @@
             "moveTags": ["spiritualPressureMove1", "melee", "counter", "resourceLoss", "needsStatInfo"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Spiritual Pressure Move 2 currently not known.",
+            "id": "you've-already-been-analysed!",
+            "name": "You've Already Been Analysed!",
+            "description": "Szayelaporro takes a stance and charges his Spiritual Pressure Understanding Level Gauge. The amount that is charged is dependent on his Analysis Progress Stage.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["spiritualPressureMove2", "unknown"]
+            "moveTags": ["spiritualPressureMove2", "stanceChange", "charge", "resourceLoss", "gaugeIncreaseOnHit", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -2235,18 +2235,18 @@
       {
         "base": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Signature Move currently not known.",
+            "id": "hadō-#58-tenran",
+            "name": "Hadō #58: Tenran",
+            "description": "Hisagi fires a tornado of Reiryoku infront of him. The range is short, but the attack itself lasts for a considerable amount of time, allowing you to halt approaching opponents. The range, number of hits and damage of 'Hadō #58: Tenran' is dependant on the current level of Hisagi's Fear Gauge.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["signatureMove", "unknown"]
+            "moveTags": ["signatureMove", "ranged", "resourceLoss", "needsStatInfo"]
           },
           {
-            "id": "hadō-#31-shakkaho-hadō-#33-sokatsui-hadō-#54-haien",
-            "name": "Hadō #31: Shakkaho / Hadō #33: Sokatsui / Hadō #54: Haien",
+            "id": "hadō-#31-shakkaho,-hadō-#33-sokatsui-&-hadō-#54-haien",
+            "name": "Hadō #31: Shakkaho, Hadō #33: Sokatsui & Hadō #54: Haien",
             "description": "Depending on the current level of Hisagi's Fear Gauge, Hisagi fires one of three projectiles; 'Hadō #31: Shakkaho' is the weakest of the three, and 'Hadō #54: Haien' is the strongest of the three.",
             "input": "S1",
             "damage": 0,
@@ -2255,7 +2255,7 @@
             "moveTags": ["spiritualPressureMove1", "ranged", "kidō", "resourceLoss", "needsStatInfo"]
           },
           {
-            "id": "a-warriors-poise",
+            "id": "a-warrior's-poise",
             "name": "A Warrior's Poise",
             "description": "Hisagi prepares to take an attack, and counters by teleporting behind the opponent, striking them with a simultaneous sword slice and cast of 'Hadō #11: Tsuzuri Raiden'. The damage of the counter is dependant on the current Fear Gauge level.",
             "input": "S2",
@@ -2328,7 +2328,7 @@
             "moveTags": ["signatureMove", "melee", "stanceChange", "resourceLoss", "counter", "block", "needsStatInfo"]
           },
           {
-            "id": "its-my-lucky-day",
+            "id": "it's-my-lucky-day!",
             "name": "It's My Lucky Day!",
             "description": "A secondary form of 'Slayer Stance' which makes Ikkaku's actions faster and hit much harder.",
             "input": "S1",
@@ -2421,7 +2421,7 @@
             "moveTags": ["spiritualPressureMove1", "unblockable", "resourceLoss", "melee", "needsStatInfo"]
           },
           {
-            "id": "dont-run-away-in-fear-now",
+            "id": "don't-run-away-in-fear-now!",
             "name": "Don't Run Away in Fear Now!",
             "description": "Nnoitra kicks upwards with an unblockable attack, slicing with his scythe and firing a follow-up Cero. This attack has a notably short range.",
             "input": "S2",
@@ -2484,14 +2484,14 @@
       {
         "base": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Signature Move currently not known.",
+            "id": "drift",
+            "name": "Drift",
+            "description": "Harribel charges towards her target at an immense speed; Harribel's Signature Move doesn't have any offensive capabilities, and is purely for movement, however it can lead to surprising opportunities for combos.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["signatureMove", "unknown"]
+            "moveTags": ["signatureMove", "resourceLoss", "needsStatInfo"]
           },
           {
             "id": "ola-azul",
@@ -2504,7 +2504,7 @@
             "moveTags": ["ranged", "resourceLoss", "gaugeIncreaseOnHit", "spiritualPressureMove1"]
           },
           {
-            "id": "ill-show-you",
+            "id": "i'll-show-you",
             "name": "I'll Show You",
             "description": "A series of 3 slashes comprising of an uppercut, downslash and a wide slash from left to right. Increases the Aura Gauge when it hits.",
             "input": "S2",
