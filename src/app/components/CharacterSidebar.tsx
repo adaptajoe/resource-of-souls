@@ -3,18 +3,6 @@ import { useEffect, useState, useCallback, useMemo, FC } from "react";
 import Image from "next/image";
 import StarRating from "./StarRating";
 import { Character } from "@/types/character";
-import {
-  TbCircleArrowUpRightFilled,
-  TbCircleArrowUpLeftFilled,
-  TbCircleArrowDownRightFilled,
-  TbCircleArrowDownLeftFilled,
-  TbCircleArrowUpFilled,
-  TbCircleArrowDownFilled,
-  TbCircleArrowRightFilled,
-  TbCircleArrowLeftFilled,
-  TbChevronDown,
-  TbChevronUp,
-} from "react-icons/tb";
 
 export interface CharacterSidebarProps {
   character: Character;
@@ -231,7 +219,7 @@ const CharacterSidebar: FC<CharacterSidebarProps> = ({ character, slug }) => {
           <h2 className="w-fit text-center mb-2 ml-2 text-xl">Movelist Key</h2>
           <button className="font-bold text-teal-400 flex items-center gap-2 ml-2" onClick={() => setMovesetKeyIsOpen((prevState) => !prevState)}>
             Click to {movesetKeyIsOpen ? "hide" : "expand"}
-            {movesetKeyIsOpen ? <TbChevronUp size={20} /> : <TbChevronDown size={20} />}
+            {movesetKeyIsOpen ? <span>&uarr;</span> : <span>&darr;</span>}
           </button>
           {movesetKeyIsOpen && (
             <div className="w-auto flex flex-wrap flex-row mt-4">
@@ -308,28 +296,28 @@ const CharacterSidebar: FC<CharacterSidebarProps> = ({ character, slug }) => {
                   Counter
                 </div>
                 <div>
-                  <TbCircleArrowUpRightFilled className="inline text-white" size={30} /> Up-Right
+                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&#8599;</span> Up-Right
                 </div>
                 <div>
-                  <TbCircleArrowUpLeftFilled className="inline text-white" size={30} /> Up-Left
+                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&#8598;</span> Up-Left
                 </div>
                 <div>
-                  <TbCircleArrowDownRightFilled className="inline text-white" size={30} /> Down-Right
+                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&#8600;</span> Down-Right
                 </div>
                 <div>
-                  <TbCircleArrowDownLeftFilled className="inline text-white" size={30} /> Down-Left
+                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&#8601;</span> Down-Left
                 </div>
                 <div>
-                  <TbCircleArrowUpFilled className="inline text-white" size={30} /> Up
+                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&uarr;</span> Up
                 </div>
                 <div>
-                  <TbCircleArrowDownFilled className="inline text-white" size={30} /> Down
+                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&darr;</span> Down
                 </div>
                 <div>
-                  <TbCircleArrowRightFilled className="inline text-white" size={30} /> Right
+                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&rarr;</span> Right
                 </div>
                 <div>
-                  <TbCircleArrowLeftFilled className="inline text-white" size={30} /> Left
+                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&larr;</span> Left
                 </div>
               </div>
             </div>

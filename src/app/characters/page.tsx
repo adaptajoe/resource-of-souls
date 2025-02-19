@@ -7,7 +7,6 @@ import characterData from "@/data/characterData.json";
 import supplementaryData from "@/data/supplementaryData.json";
 import { SupplementaryDataType } from "@/types/supplementaryData";
 import { CharacterData } from "@/types/character";
-import { TbArrowBigDownFilled, TbArrowBigUpFilled } from "react-icons/tb";
 
 const ArchetypeTooltip = dynamic(() => import("../components/ArchetypeTooltip"), { ssr: false });
 
@@ -152,7 +151,7 @@ export default function Characters() {
                 }`}
               >
                 Release Order
-                {sortConfig.type === "number" && <span>{sortConfig.ascending ? <TbArrowBigUpFilled size={20} /> : <TbArrowBigDownFilled size={20} />}</span>}
+                {sortConfig.type === "number" && <span>{sortConfig.ascending ? <span>&uarr;</span> : <span>&darr;</span>}</span>}
               </button>
 
               <button
@@ -167,7 +166,7 @@ export default function Characters() {
                 }`}
               >
                 A-Z
-                {sortConfig.type === "alphabetical" && <span>{sortConfig.ascending ? <TbArrowBigUpFilled size={20} /> : <TbArrowBigDownFilled size={20} />}</span>}
+                {sortConfig.type === "alphabetical" && <span>{sortConfig.ascending ? <span>&uarr;</span> : <span>&darr;</span>}</span>}
               </button>
             </div>
 

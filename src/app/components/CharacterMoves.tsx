@@ -1,24 +1,6 @@
 "use client";
 import { useState, useCallback, useMemo, JSX } from "react";
 import { MoveCategoryContainer, MoveInput } from "@/types/character";
-import {
-  TbCircleArrowUpRightFilled,
-  TbCircleArrowUpLeftFilled,
-  TbCircleArrowDownRightFilled,
-  TbCircleArrowDownLeftFilled,
-  TbCircleArrowUpFilled,
-  TbCircleArrowDownFilled,
-  TbCircleArrowRightFilled,
-  TbCircleArrowLeftFilled,
-  TbCircleArrowUpRight,
-  TbCircleArrowUpLeft,
-  TbCircleArrowDownRight,
-  TbCircleArrowDownLeft,
-  TbCircleArrowUp,
-  TbCircleArrowDown,
-  TbCircleArrowRight,
-  TbCircleArrowLeft,
-} from "react-icons/tb";
 import Image from "next/image";
 import React from "react";
 
@@ -113,22 +95,14 @@ const useTranslateInput = (input: string): JSX.Element => {
       HH: <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">HH</strong>,
       GD: <strong className="bg-green-400 align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">GD</strong>,
       CO: <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">CO</strong>,
-      NORTHEAST: <TbCircleArrowUpRightFilled className="inline" size={30} />,
-      NORTHWEST: <TbCircleArrowUpLeftFilled className="inline" size={30} />,
-      SOUTHEAST: <TbCircleArrowDownRightFilled className="inline" size={30} />,
-      SOUTHWEST: <TbCircleArrowDownLeftFilled className="inline" size={30} />,
-      NORTH: <TbCircleArrowUpFilled className="inline" size={30} />,
-      SOUTH: <TbCircleArrowDownFilled className="inline" size={30} />,
-      EAST: <TbCircleArrowRightFilled className="inline" size={30} />,
-      WEST: <TbCircleArrowLeftFilled className="inline" size={30} />,
-      DNORTHEAST: <TbCircleArrowUpRight className="inline" size={30} />,
-      DNORTHWEST: <TbCircleArrowUpLeft className="inline" size={30} />,
-      DSOUTHEAST: <TbCircleArrowDownRight className="inline" size={30} />,
-      DSOUTHWEST: <TbCircleArrowDownLeft className="inline" size={30} />,
-      DNORTH: <TbCircleArrowUp className="inline" size={30} />,
-      DSOUTH: <TbCircleArrowDown className="inline" size={30} />,
-      DEAST: <TbCircleArrowRight className="inline" size={30} />,
-      DWEST: <TbCircleArrowLeft className="inline" size={30} />,
+      NORTHEAST: <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">&nearr;</strong>,
+      NORTHWEST: <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">&nwarr;</strong>,
+      SOUTHEAST: <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">&searr;</strong>,
+      SOUTHWEST: <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">&swarr;</strong>,
+      NORTH: <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">&uarr;</strong>,
+      SOUTH: <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">&darr;</strong>,
+      EAST: <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">&rarr;</strong>,
+      WEST: <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center text-xs font-black justify-center">&larr;</strong>,
     }),
     []
   );

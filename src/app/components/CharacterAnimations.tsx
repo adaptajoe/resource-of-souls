@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useCallback, FC } from "react";
-import { TbChevronUp, TbChevronDown } from "react-icons/tb";
 import AnimatedGif from "@/app/components/AnimatedGif";
 
 export interface CharacterAnimationsProps {
@@ -21,7 +20,7 @@ const CharacterAnimations: FC<CharacterAnimationsProps> = ({ animations, slug })
       <h2 className="text-xl font-semibold p-2 pl-4 static">Animations</h2>
       <button className="font-bold text-teal-400 flex items-center gap-2 ml-4" onClick={toggleAnimationTab}>
         Click to {animationTabIsOpen ? "hide" : "expand"}
-        {animationTabIsOpen ? <TbChevronUp size={20} /> : <TbChevronDown size={20} />}
+        {animationTabIsOpen ? <span>&uarr;</span> : <span>&darr;</span>}
       </button>
       {animationTabIsOpen && (
         <div className="h-fit p-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">

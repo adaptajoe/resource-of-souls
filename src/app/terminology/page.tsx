@@ -6,7 +6,6 @@ import { useState, useEffect, Suspense, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { TbChevronUp, TbChevronDown } from "react-icons/tb";
 
 const AnimatedImage = dynamic(() => import("../components/AnimatedImage"), { ssr: false });
 
@@ -237,7 +236,7 @@ const TerminologyPage = () => {
           {(!searchQuery || filteredArchetypes.length > 0) && (
             <button className="font-bold text-teal-400 flex items-center gap-2 hover:underline" onClick={() => setArchetypesIsOpen((prevState) => !prevState)}>
               <span>Click to {archetypesIsOpen ? "hide" : "expand"}</span>
-              {archetypesIsOpen ? <TbChevronUp size={20} /> : <TbChevronDown size={20} />}
+              {archetypesIsOpen ? <span>&uarr;</span> : <span>&darr;</span>}
             </button>
           )}
           {archetypesIsOpen && (
@@ -283,7 +282,7 @@ const TerminologyPage = () => {
               {!searchQuery && <p className="mb-4 text-gray-400 italic">At present, there are {Object.keys(supplementaryData.gameTerms).length} Game Terms to learn about.</p>}
               <button className="font-bold text-teal-400 flex items-center gap-2 hover:underline" onClick={() => setGameTermsIsOpen((prevState) => !prevState)}>
                 <span>Click to {gameTermsIsOpen ? "hide" : "expand"}</span>
-                {gameTermsIsOpen ? <TbChevronUp size={20} /> : <TbChevronDown size={20} />}
+                {gameTermsIsOpen ? <span>&uarr;</span> : <span>&darr;</span>}
               </button>
             </>
           )}

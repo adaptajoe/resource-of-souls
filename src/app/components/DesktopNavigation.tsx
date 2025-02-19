@@ -2,8 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BiLogoDiscordAlt } from "react-icons/bi";
-import { GrGithub, GrReddit } from "react-icons/gr";
 import { useCallback, memo } from "react";
 
 const NavLink = memo(({ href, children }: { href: string; children: React.ReactNode }) => {
@@ -40,23 +38,17 @@ export function DesktopNavigation() {
       {renderNavLink("/creators", "Creators")}
       <div className="px-2">
         <Link className="text-white" href="https://github.com/adaptajoe/resource-of-souls">
-          <div className="bg-gray-800 p-2.5 hover:bg-red-600 rounded-xl">
-            <GrGithub size={30} />
-          </div>
+          <div className="bg-gray-800 p-2.5 hover:bg-red-600 rounded-xl">GitHub</div>
         </Link>
       </div>
       <div className="px-2">
         <Link className="text-white" href="https://www.reddit.com/r/RebirthOfSoulsBleach/">
-          <div className="bg-gray-800 p-2.5 hover:bg-red-600 rounded-xl">
-            <GrReddit size={30} />
-          </div>
+          <div className="bg-gray-800 p-2.5 hover:bg-red-600 rounded-xl">Reddit</div>
         </Link>
       </div>
       <div className="px-2">
         <Link className="text-white" href="https://discord.gg/fA69CAE2eP">
-          <div className="bg-gray-800 p-2.5 hover:bg-red-600 rounded-xl">
-            <BiLogoDiscordAlt size={30} />
-          </div>
+          <div className="bg-gray-800 p-2.5 hover:bg-red-600 rounded-xl">Discord</div>
         </Link>
       </div>
     </div>

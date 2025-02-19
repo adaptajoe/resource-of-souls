@@ -1,6 +1,5 @@
 import { FC } from "react";
 import Link from "next/link";
-import { GiAbstract069, GiButterfly, GiFire, GiPathDistance } from "react-icons/gi";
 
 const Offline: FC = () => {
   return (
@@ -27,7 +26,6 @@ const Offline: FC = () => {
               href="/offline/story-mode"
               className="rounded-xl flex flex-col items-center border-2 border-red-600 bg-red-600 hover:bg-black hover:border-red-600 hover:text-red-600 transition-colors p-2"
             >
-              <GiButterfly size={80} />
               <h2 className="text-3xl mt-4">Story Mode</h2>
             </Link>
           </div>
@@ -36,7 +34,6 @@ const Offline: FC = () => {
               href="/offline/side-stories"
               className="rounded-xl flex flex-col items-center border-2 border-red-600 bg-red-600 hover:bg-black hover:border-red-600 hover:text-red-600 transition-colors p-2"
             >
-              <GiPathDistance size={80} />
               <h2 className="text-3xl mt-4">Side Stories</h2>
             </Link>
           </div>
@@ -45,7 +42,6 @@ const Offline: FC = () => {
               href="/offline/secret-stories"
               className="rounded-xl flex flex-col items-center border-2 border-red-600 bg-red-600 hover:bg-black hover:border-red-600 hover:text-red-600 transition-colors p-2"
             >
-              <GiAbstract069 size={80} />
               <h2 className="text-3xl mt-4">Secret Stories</h2>
             </Link>
           </div>
@@ -54,7 +50,6 @@ const Offline: FC = () => {
               href="/offline/mission-mode"
               className="rounded-xl flex flex-col items-center border-2 border-red-600 bg-red-600 hover:bg-black hover:border-red-600 hover:text-red-600 transition-colors p-2"
             >
-              <GiFire size={80} />
               <h2 className="text-3xl mt-4">Mission Mode</h2>
             </Link>
           </div>
