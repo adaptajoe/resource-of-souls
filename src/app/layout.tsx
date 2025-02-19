@@ -1,22 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
 import { DesktopNavigation } from "./components/DesktopNavigation";
 import { MobileNavigation } from "./components/MobileNavigation";
-
-const geistSans = Geist({
-  subsets: ["latin"],
-  display: 'swap',
-  adjustFontFallback: false // Add this line
-});
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  display: 'swap',
-  adjustFontFallback: false // Add this line
-});
 
 export const metadata: Metadata = {
   title: "Resource of Souls",
@@ -28,16 +15,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Combine the font classes safely
-  const fontClasses = [
-    geistSans.className,
-    geistMono.className,
-    'antialiased'
-  ].join(' ');
-
   return (
     <html lang="en">
-      <body className={fontClasses}>
+      <body>
         <div className="bg-black fixed w-full h-10 border-b border-gray-400 p-6 pb-28 z-50">
           <div className="relative">
             <Link href="/">
