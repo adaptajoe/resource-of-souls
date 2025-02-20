@@ -1,5 +1,5 @@
 "use client";
-import { Radar, RadarChart, PolarGrid, PolarRadiusAxis, ResponsiveContainer } from "recharts";
+import { Radar, RadarChart, PolarGrid, PolarRadiusAxis, PolarAngleAxis, ResponsiveContainer } from "recharts";
 import { useMemo } from "react";
 
 interface RadarChartProps {
@@ -57,13 +57,27 @@ export default function RadarChartComponent({ stats, characterName }: RadarChart
   return (
     <div className="h-[300px] w-auto">
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+        <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
           <PolarGrid stroke="#444" strokeOpacity={0.5} />
           <PolarRadiusAxis domain={[0, 5]} axisLine={false} tick={false} tickCount={6} />
+          {/* Add colored labels */}
+          <PolarAngleAxis
+            dataKey="subject"
+            tick={(props) => {
+              const { x, y, payload } = props;
+              const dataPoint = data.find((item) => item.subject === payload.value);
+              return (
+                <text x={x} y={y} textAnchor="middle" fill={dataPoint?.color} fontSize="14px" fontWeight="500">
+                  {payload.value}
+                </text>
+              );
+            }}
+            tickLine={false}
+          />
           {/* Add max level outline */}
           <Radar name="Max" dataKey="maxValue" stroke="white" fill="none" strokeWidth={2} strokeOpacity={0.5} />
           {/* Character stats */}
-          <Radar name={characterName} dataKey="value" stroke="#14b8a6" fill="#14b8a6" fillOpacity={0.4} animationDuration={350} />
+          <Radar name={characterName} dataKey="value" stroke="#14b8a6" fill="#14b8a6" fillOpacity={0.4} animationDuration={500} animationEasing="ease-out" />
         </RadarChart>
       </ResponsiveContainer>
     </div>
