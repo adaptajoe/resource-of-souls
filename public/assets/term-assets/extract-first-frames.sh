@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Directory containing the MP4s
-MP4_DIR="public/assets/terminology-assets"
+MP4_DIR="public/assets/term-assets"
 # Directory to save the first-frame PNGs
-PNG_DIR="public/assets/terminology-assets"
+PNG_DIR="public/assets/term-assets"
 
 # Create the PNG directory if it doesn't exist
 mkdir -p $PNG_DIR

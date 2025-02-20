@@ -1,9 +1,10 @@
 "use client";
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import characterData from "@/data/characterData.json";
 import supplementaryData from "@/data/supplementaryData.json";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 interface IArchetypeCardProps {
   title: string;
@@ -60,6 +61,48 @@ export default function Terms() {
   const [highlightedId, setHighlightedId] = useState<string | null>(null);
   const [hoveredImageId, setHoveredImageId] = useState<string | null>(null);
 
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const highlight = searchParams.get("highlight");
+    const hash = window.location.hash.slice(1);
+
+    if (hash) {
+      setHighlightedId(hash);
+      setGameTermsIsOpen(true);
+
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          const headerOffset = 200;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+      }, 100);
+    } else if (highlight) {
+      setHighlightedId(highlight);
+      setArchetypesIsOpen(true);
+
+      setTimeout(() => {
+        const element = document.getElementById(highlight);
+        if (element) {
+          const headerOffset = 200;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+      }, 100);
+    }
+  }, [searchParams]);
   const filterItems = (text: string) => {
     return text.toLowerCase().includes(searchQuery.toLowerCase());
   };

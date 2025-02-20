@@ -9,7 +9,7 @@ export function MobileNavigation() {
     () => [
       { href: "/", text: "Home" },
       { href: "/characters", text: "Characters" },
-      { href: "/terminology", text: "Terms" },
+      { href: "/terms", text: "Terms" },
       { href: "/changelog", text: "Changelog" },
       { href: "/offline", text: "Offline" },
       { href: "/community", text: "Community" },

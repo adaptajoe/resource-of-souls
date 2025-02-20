@@ -38,7 +38,7 @@ export default function GameTermTooltip({ term, display }: GameTermTooltipProps)
 
   return (
     <span className="relative inline-block">
-      <Link href={`/terminology#${term.id}`} className="text-teal-400 hover:underline cursor-pointer" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <Link href={`/terms#${term.id}`} className="text-teal-400 hover:underline cursor-pointer" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         {display || term.name}
       </Link>
       {isHovered && tooltipContent}

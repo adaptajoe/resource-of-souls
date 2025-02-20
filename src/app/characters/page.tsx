@@ -37,7 +37,7 @@ export default function Characters() {
     if (specialCases[archetype.toLowerCase()]) {
       return {
         display: specialCases[archetype.toLowerCase()],
-        url: `/terminology?highlight=kido`,
+        url: `/terms?highlight=kido`,
       };
     }
 
@@ -48,7 +48,7 @@ export default function Characters() {
       .join(" ")
       .trim();
 
-    const url = `/terminology?highlight=${archetype
+    const url = `/terms?highlight=${archetype
       .replace(/([A-Z])/g, "-$1")
       .toLowerCase()
       .replace(/^-/, "")}`;

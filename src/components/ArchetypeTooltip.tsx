@@ -11,7 +11,7 @@ interface ArchetypeTooltipProps {
 
 export default function ArchetypeTooltip({ archetype, display, shortDescription, highlighted = false }: ArchetypeTooltipProps) {
   const url = useMemo(() => {
-    return `/terminology?highlight=${archetype
+    return `/terms?highlight=${archetype
       .replace(/([A-Z])/g, "-$1")
       .toLowerCase()
       .replace(/^-/, "")}`;
