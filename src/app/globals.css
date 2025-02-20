@@ -4,26 +4,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  img[src$=".mp4"] {
-    animation-play-state: paused;
-    -webkit-animation-play-state: paused;
-  }
-
-  img[src$=".mp4"]:hover {
-    animation-play-state: running;
-    -webkit-animation-play-state: running;
-  }
+@theme {
+  --font-bebas: "Bebas Neue" . serif;
 }
 
 :root {
-  --background: #000;
+  --background: #000000;
   --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #000;
+    --background: #000000;
     --foreground: #ededed;
   }
 }

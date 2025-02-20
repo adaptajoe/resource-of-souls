@@ -1,7 +1,7 @@
 import React from "react";
-import GameTermTooltip from "@/app/components/GameTermTooltip";
-import TextArchetypeTooltip from "@/app/components/TextArchetypeTooltip";
 import supplementaryData from "@/data/supplementaryData.json";
+import GameTermTooltip from "@/components/GameTermTooltip";
+import TextArchetypeTooltip from "@/components/TextArchetypeTooltip";
 
 interface Term {
   id: string;

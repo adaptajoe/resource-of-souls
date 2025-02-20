@@ -1,34 +1,29 @@
 {
   "name": "bleach-resource-of-souls",
-  "homepage": "https//resource-of-souls.com/",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^15.1.7",
-    "next": "15.1.6",
-    "next-transpile-modules": "^10.0.1",
+    "@tailwindcss/postcss": "^4.0.7",
+    "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "recharts": "^2.15.1",
-    "tailwind-join": "^0.2.2"
+    "recharts": "^2.15.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "css-loader": "^7.1.2",
     "eslint": "^9",
-    "eslint-config-next": "15.1.6",
-    "postcss": "^8",
-    "style-loader": "^4.0.0",
-    "tailwindcss": "^3.4.1",
+    "eslint-config-next": "15.1.7",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }
 }

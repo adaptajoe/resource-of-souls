@@ -1,12 +1,9 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
-import { useState, useMemo } from "react";
-import dynamic from "next/dynamic";
+import Link from "next/link";
+import { useMemo, useState } from "react";
 
-const BadgeWheel = dynamic(() => import("../../components/BadgeWheel"), { ssr: false });
-
-interface Badge {
+interface IBadge {
   name: string;
   owner: string | null;
   lastChallenged: string | null;
@@ -15,7 +12,7 @@ interface Badge {
 export default function RankedLeaderboard() {
   const [activeTable, setActiveTable] = useState<string>("World of the Living League");
 
-  const worldOfLivingLeagueBadges: Badge[] = [
+  const worldOfLivingLeagueBadges: IBadge[] = [
     { name: "K.O.N. (King of New York)", owner: null, lastChallenged: null },
     { name: "Karakura-Raizer", owner: null, lastChallenged: null },
     { name: "Karakura-Raizer Spirit", owner: null, lastChallenged: null },
@@ -35,7 +32,7 @@ export default function RankedLeaderboard() {
     { name: "Xcution Member #009", owner: null, lastChallenged: null },
   ];
 
-  const soulSocietyLeagueBadges: Badge[] = [
+  const soulSocietyLeagueBadges: IBadge[] = [
     { name: "Soul King", owner: null, lastChallenged: null },
     { name: "Squad 0 - Captain", owner: null, lastChallenged: null },
     { name: "Squad 0 - Divine General of the East", owner: null, lastChallenged: null },
@@ -70,7 +67,7 @@ export default function RankedLeaderboard() {
     { name: "Squad 13 Lieutenant", owner: null, lastChallenged: null },
   ];
 
-  const huecoMundoLeagueBadges: Badge[] = [
+  const huecoMundoLeagueBadges: IBadge[] = [
     { name: "Queen of Hueco Mundo", owner: null, lastChallenged: null },
     { name: "'King' of Hueco Mundo", owner: null, lastChallenged: null },
     { name: "Primordial Hollow", owner: null, lastChallenged: null },
@@ -87,7 +84,7 @@ export default function RankedLeaderboard() {
     { name: "Diez Espada", owner: null, lastChallenged: null },
   ];
 
-  const schattenBereichLeagueBadges: Badge[] = [
+  const schattenBereichLeagueBadges: IBadge[] = [
     { name: "Quincy King", owner: null, lastChallenged: null },
     { name: "Quincy Successor", owner: null, lastChallenged: null },
     { name: "Quincy Grandmaster", owner: null, lastChallenged: null },
@@ -119,7 +116,7 @@ export default function RankedLeaderboard() {
     { name: "Schrift-bearer: Z", owner: null, lastChallenged: null },
   ];
 
-  const specialLeagueBadges: Badge[] = [
+  const specialLeagueBadges: IBadge[] = [
     { name: "'A Huge Zanpakuto'", owner: null, lastChallenged: null },
     { name: "Brick Thrower", owner: null, lastChallenged: null },
   ];
@@ -157,7 +154,7 @@ export default function RankedLeaderboard() {
   }, [tables]);
 
   const getOwnerBadgeCounts = useMemo(() => {
-    const ownerCounts: { [key: string]: Badge[] } = {};
+    const ownerCounts: { [key: string]: IBadge[] } = {};
 
     Object.values(tables).forEach((badges) => {
       badges.forEach((badge) => {
@@ -173,8 +170,8 @@ export default function RankedLeaderboard() {
     return ownerCounts;
   }, [tables]);
 
-  const getLeagueOwnerBadgeCounts = (leagueBadges: Badge[]) => {
-    const ownerCounts: { [key: string]: Badge[] } = {};
+  const getLeagueOwnerBadgeCounts = (leagueBadges: IBadge[]) => {
+    const ownerCounts: { [key: string]: IBadge[] } = {};
 
     leagueBadges.forEach((badge) => {
       if (badge.owner) {
@@ -199,8 +196,7 @@ export default function RankedLeaderboard() {
       );
     }
 
-    // Group owners by their badge count
-    const groupedByBadgeCount: { [key: number]: Array<[string, Badge[]]> } = {};
+    const groupedByBadgeCount: { [key: number]: Array<[string, IBadge[]]> } = {};
     Object.entries(ownerCounts).forEach(([owner, badges]) => {
       const count = badges.length;
       if (!groupedByBadgeCount[count]) {
@@ -209,13 +205,11 @@ export default function RankedLeaderboard() {
       groupedByBadgeCount[count].push([owner, badges]);
     });
 
-    // Sort badge counts in descending order
     const sortedCounts = Object.keys(groupedByBadgeCount)
       .map(Number)
       .sort((a, b) => b - a);
 
-    // Get all competitors up to third place (including ties)
-    const topCompetitors: Array<[string, Badge[]]> = [];
+    const topCompetitors: Array<[string, IBadge[]]> = [];
     let currentRank = 1;
 
     for (const count of sortedCounts) {
@@ -229,7 +223,6 @@ export default function RankedLeaderboard() {
     }
 
     const getRankStyles = (badgeCount: number) => {
-      // Find which place this badge count represents
       const rank = sortedCounts.indexOf(badgeCount) + 1;
 
       switch (rank) {
@@ -267,7 +260,6 @@ export default function RankedLeaderboard() {
           };
       }
     };
-
     return (
       <div className="grid grid-cols-3 gap-4 mb-8">
         {topCompetitors.map(([owner, badges]) => {
@@ -309,7 +301,7 @@ export default function RankedLeaderboard() {
           }
 
           // Group owners by their badge count
-          const groupedByBadgeCount: { [key: number]: Array<[string, Badge[]]> } = {};
+          const groupedByBadgeCount: { [key: number]: Array<[string, IBadge[]]> } = {};
           Object.entries(ownerCounts).forEach(([owner, badges]) => {
             const count = badges.length;
             if (!groupedByBadgeCount[count]) {
@@ -324,7 +316,7 @@ export default function RankedLeaderboard() {
             .sort((a, b) => b - a);
 
           // Get all competitors up to third place (including ties)
-          const topCompetitors: Array<[string, Badge[]]> = [];
+          const topCompetitors: Array<[string, IBadge[]]> = [];
           let currentRank = 1;
 
           for (const count of sortedCounts) {
@@ -373,9 +365,8 @@ export default function RankedLeaderboard() {
     );
   };
 
-  const BadgeTable = ({ badges }: { badges: Badge[] }) => (
+  const BadgeTable = ({ badges }: { badges: IBadge[] }) => (
     <div>
-      {/* Stats Section */}
       <div className="flex gap-2 mb-4 justify-between overflow-x-scroll">
         <div className="flex flex-row space-x-2">
           <div className="px-4 font-black py-2 rounded-lg transition-colors bg-gray-800">
@@ -399,7 +390,6 @@ export default function RankedLeaderboard() {
         </div>
       </div>
 
-      {/* Table */}
       <table className="w-full">
         <thead>
           <tr className="bg-black text-teal-400">
@@ -422,89 +412,85 @@ export default function RankedLeaderboard() {
   );
 
   return (
-    <div className="min-h-screen p-12">
-      <div className="mb-6">
-        <div>
-          <nav className="flex flex-row">
-            <Link href="/" className="text-teal-400 hover:underline">
-              Home
-            </Link>
-            <p className="px-2">/</p>
-            <Link href="/community/" className="text-teal-400 hover:underline">
-              Community
-            </Link>
-            <p className="px-2">/</p>
-            <Link href="/community/ranked-leaderboard" className="text-teal-400 hover:underline">
-              Community Ranked Leaderboard
-            </Link>
-          </nav>
-        </div>
+    <div className="p-16 space-y-4 text-white">
+      <div className="flex flex-row space-x-2">
+        <Link href="/" className="text-teal-400 hover:underline" thref={""}>
+          Home
+        </Link>
+        <p>/</p>
+        <Link href="/community" className="text-teal-400 hover:underline" thref={""}>
+          Community
+        </Link>
+        <p>/</p>
+        <Link href="/ranked-leaderboard" className="text-teal-400 hover:underline" thref={""}>
+          Ranked Leaderboard
+        </Link>
+        <p>/</p>
+      </div>
+      <div>
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div>
-            <h1 className="text-3xl font-bold mb-6">Community Ranked Leaderboard</h1>
-            <div className="mr-6 text-xl">
-              <p className="mb-4">
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
+              <span className="text-red-600">R</span>anked Leaderboard
+            </h2>
+            <div className="pr-4 space-y-4 px-6">
+              <p>
                 Badges represent marks of mastery, earned exclusively by participating in Tournaments. See a Badge that you&apos;d like against your name? Challenge the Badge owner via Discord, and
                 duel for it! Elevate the stakes by wagering your own Badges against your opponents - The winner takes all wagered Badges!
               </p>
-              <p className="mb-4">You alone shall stand at the top. Claim that intolerable vacuum, and stand upon the heavens!</p>
-              <p className="mb-4 text-gray-400 italic">
-                (Badges expire after 6 months with no Challenges - See one that should be expired? Message <span className="text-amber-400">@jojicus</span> on Discord!)
+              <p className="text-sm text-gray-400 italic mb-8">
+                (Badges expire after 6 months with no Challenges - See one that should be expired? Message <span className="text-amber-400">@jojicus</span> on Discord!).
               </p>
             </div>
           </div>
-          <div className="flex justify-center xl:justify-end">
+          <div className="flex justify-self-end">
             <Image
               src={`/assets/character-banner/aizen-sosuke-banner.png`}
-              height="800"
-              width="800"
+              height="300"
+              width="300"
               alt={""}
-              className="max-h-[800px] w-full rounded-xl object-cover object-top-center border-2 border-white mb-8"
+              className="max-h-[300px] my-6 lg:mt-0 ml-4 w-fit object-cover object-top-center border-2 border-gray-400 rounded-xl"
               style={{
                 objectFit: "cover",
-                objectPosition: "0% 40%",
-                aspectRatio: "3/1",
+                objectPosition: "50% 40%",
+                aspectRatio: "2/1",
               }}
               loading="lazy"
             />
           </div>
         </div>
-      </div>
-      <hr />
-      <div className="grid grid-cols-1 xl:grid-cols-2 xl:space-x-20 mt-12 space-x-0 space-y-4 xl:space-y-0">
-        <div>
-          <div className="mb-8">
-            <p className="text-xl font-black mb-4">Badge Champions</p>
-            <BadgeChampions />
+        <hr className="my-6" />
+        <div className="grid grid-cols-1 xl:grid-cols-2 xl:space-x-20 mt-12 space-x-0 space-y-4 xl:space-y-0">
+          <div>
+            <div className="mb-8">
+              <p className="font-bebasFont text-2xl mb-4">Badge Champions</p>
+              <BadgeChampions />
+            </div>
+            <div>
+              <p className="text-2xl font-bebasFont mb-4">League Champions</p>
+              <LeagueChampions />
+            </div>
           </div>
           <div>
-            <p className="text-xl font-black mb-4">League Champions</p>
-            <LeagueChampions />
-          </div>
-        </div>
-        <div>
-          <p className="text-xl font-black mb-4 ml-2">Badges Leaderboard</p>
-          <div className="w-full rounded-xl p-4 border border-gray-400">
-            {/* League Tabs */}
-            <div className="flex gap-2 mb-4 overflow-x-scroll">
-              {Object.keys(tables).map((tableName) => (
-                <button
-                  key={tableName}
-                  onClick={() => setActiveTable(tableName)}
-                  disabled={activeTable === tableName}
-                  className={`px-4 text-sm font-black py-2 rounded-lg transition-colors ${activeTable === tableName ? "bg-red-600 text-white cursor-not-allowed" : "bg-gray-800 hover:bg-red-600"}`}
-                >
-                  {tableName}
-                </button>
-              ))}
+            <p className="text-2xl font-bebasFont mb-4 ml-2">Badges Leaderboard</p>
+            <div className="w-full rounded-xl p-4 border border-gray-400">
+              {/* League Tabs */}
+              <div className="flex gap-2 mb-4 overflow-x-scroll">
+                {Object.keys(tables).map((tableName) => (
+                  <button
+                    key={tableName}
+                    onClick={() => setActiveTable(tableName)}
+                    disabled={activeTable === tableName}
+                    className={`px-4 text-sm font-black py-2 rounded-lg transition-colors ${activeTable === tableName ? "bg-red-600 text-white cursor-not-allowed" : "bg-gray-800 hover:bg-red-600"}`}
+                  >
+                    {tableName}
+                  </button>
+                ))}
+              </div>
+              <BadgeTable badges={tables[activeTable as keyof typeof tables]} />
             </div>
-            <BadgeTable badges={tables[activeTable as keyof typeof tables]} />
           </div>
         </div>
-      </div>
-      <div className="mt-12">
-        <p className="text-xl font-black mb-4 ml-2">Random Badge Selector</p>
-        <BadgeWheel badges={Object.values(tables).flat()} />
       </div>
     </div>
   );

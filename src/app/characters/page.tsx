@@ -1,14 +1,12 @@
 "use client";
-import { useState, useMemo } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import dynamic from "next/dynamic";
+import Link from "next/link";
+import { useMemo, useState } from "react";
 import characterData from "@/data/characterData.json";
 import supplementaryData from "@/data/supplementaryData.json";
-import { SupplementaryDataType } from "@/types/supplementaryData";
-import { CharacterData } from "@/types/character";
-
-const ArchetypeTooltip = dynamic(() => import("../components/ArchetypeTooltip"), { ssr: false });
+import { CharacterData } from "@/types/characterDataTypes";
+import { SupplementaryData } from "@/types/supplementaryDataTypes";
+import ArchetypeTooltip from "@/components/ArchetypeTooltip";
 
 type SortType = {
   type: "number" | "alphabetical";
@@ -108,36 +106,41 @@ export default function Characters() {
   const ArchetypeCard = ({ archetype, highlighted }: { archetype: string; highlighted: boolean }) => {
     const { display } = formatArchetype(archetype);
     const archetypeKey = normalizeArchetypeKey(archetype);
-    const archetypeData = (supplementaryData as SupplementaryDataType).archetypes[archetypeKey];
+    const archetypeData = (supplementaryData as SupplementaryData).archetypes[archetypeKey];
 
     return <ArchetypeTooltip archetype={archetype} display={display} shortDescription={archetypeData?.shortDescription} highlighted={highlighted} />;
   };
 
   return (
-    <div className="container p-8 min-w-fit">
-      <nav className="flex flex-row">
-        <Link href="/" className="text-teal-400 hover:underline">
-          Home
-        </Link>
-        <p className="px-2">/</p>
-        <Link href="/characters" className="text-teal-400 hover:underline">
-          Characters
-        </Link>
-      </nav>
-      <h1 className="text-3xl font-bold mb-6">Characters</h1>
-
-      <div className="space-y-3 mb-6">
+    <div className="text-white">
+      <div className="p-16 space-y-4 text-white">
+        <div className="flex flex-row space-x-2">
+          <Link href="/" className="text-teal-400 hover:underline" thref={""}>
+            Home
+          </Link>
+          <p>/</p>
+          <Link href="/characters" className="text-teal-400 hover:underline" thref={""}>
+            Character Roster
+          </Link>
+          <p>/</p>
+        </div>
+        <h2 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
+          <span className="text-red-600">C</span>haracter Roster
+        </h2>
+        <p>
+          The world of BLEACH is vast and diverse - Find your new main based on looks, affiliation, Archetype, stats or more! There&apos;s a character for every kind of player, from hyper-technical to
+          simple and effective.
+        </p>
+        <hr className="my-6" />
+        <input
+          type="text"
+          placeholder="Search by Name or Archetype..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full p-2 border border-gray-400 rounded bg-transparent text-white"
+        />
         <div>
-          <div>
-            <input
-              type="text"
-              placeholder="Search by Name or Archetype..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full p-2 border border-gray-400 rounded bg-transparent text-white"
-            />
-          </div>
-          <div className="w-fit lg:w-full flex flex-col items-center lg:flex-row mt-4 space-y-4 lg:space-y-0 lg:space-x-4">
+          <div className="w-fit lg:w-full font-bebasFont text-xl flex flex-col items-center lg:flex-row mt-4 space-y-4 lg:space-y-0 lg:space-x-4">
             <div className="flex flex-row space-x-4 pr-4 border-0 lg:border-r-2 border-gray-400">
               <button
                 onClick={() =>
@@ -146,7 +149,7 @@ export default function Characters() {
                     ascending: prev.type === "number" ? !prev.ascending : true,
                   }))
                 }
-                className={`px-3 py-1 rounded flex items-center font-black gap-1 hover:bg-red-600 ${
+                className={`px-3 py-1 rounded flex transition-colorss items-center font-black gap-1 hover:bg-red-600 hover:text-black ${
                   sortConfig.type === "number" ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
                 }`}
               >
@@ -161,7 +164,7 @@ export default function Characters() {
                     ascending: prev.type === "alphabetical" ? !prev.ascending : true,
                   }))
                 }
-                className={`px-3 py-1 font-black rounded flex items-center gap-1 hover:bg-red-600 ${
+                className={`px-3 py-1 font-black rounded flex transition-colors items-center gap-1 hover:bg-red-600 hover:text-black ${
                   sortConfig.type === "alphabetical" ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
                 }`}
               >
@@ -170,7 +173,6 @@ export default function Characters() {
               </button>
             </div>
 
-            {/* Affiliation Filters */}
             <div className="flex flex-row space-x-4 pr-4 border-0 lg:border-r-2 border-gray-400">
               {[
                 { value: "all", label: "All Affiliations" },
@@ -181,14 +183,15 @@ export default function Characters() {
                 <button
                   key={aff.value}
                   onClick={() => setAffiliationFilter(aff.value as AffiliationType)}
-                  className={`px-3 py-1 font-black hover:bg-red-600 rounded ${affiliationFilter === aff.value ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"}`}
+                  className={`px-3 py-1 transition-colors font-black hover:bg-red-600 hover:text-black rounded ${
+                    affiliationFilter === aff.value ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
+                  }`}
                 >
                   {aff.label}
                 </button>
               ))}
             </div>
 
-            {/* Gender Filters */}
             <div className="flex flex-row space-x-4">
               {[
                 { value: "all", label: "All Genders" },
@@ -198,60 +201,62 @@ export default function Characters() {
                 <button
                   key={gender.value}
                   onClick={() => setGenderFilter(gender.value as "all" | "male" | "female")}
-                  className={`px-3 py-1 font-black hover:bg-red-600 rounded ${genderFilter === gender.value ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"}`}
+                  className={`px-3 py-1 font-black hover:bg-red-600 hover:text-black rounded ${
+                    genderFilter === gender.value ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
+                  } transition-colors`}
                 >
                   {gender.label}
                 </button>
               ))}
             </div>
           </div>
-        </div>
-        <div className="text-sm text-gray-400">
-          {filteredAndSortedCharacters.length} {filteredAndSortedCharacters.length === 1 ? "character" : "characters"} found
-          {searchTerm && " matching search"}
-          {affiliationFilter !== "all" && " in selected Affiliation"}
-          {genderFilter !== "all" && " in selected Gender"}
-        </div>
-        {/* Character Grid */}
-        {filteredAndSortedCharacters.length === 0 ? (
-          <div className="text-center py-8 text-gray-400">No characters found matching your criteria</div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            {filteredAndSortedCharacters.map(([slug, character]) => (
-              <div key={slug} className="border hover:border-red-600 transition-colors">
-                <Link href={`/characters/${slug}`} className="block">
-                  <Image
-                    src={imageSources[slug] || `/assets/character-banner/${slug}-banner.png`}
-                    height="300"
-                    width="300"
-                    alt={character.name}
-                    className="max-h-[300px] w-fit object-cover object-top-center"
-                    style={{
-                      objectFit: "cover",
-                      objectPosition: "50% 40%",
-                      aspectRatio: "2/1",
-                    }}
-                    onError={() => handleImageError(slug)}
-                    loading="lazy"
-                  />
-                  <div className="p-4 border-t-2 border-gray-800">
-                    <h2 className="font-bold text-2xl my-2">
-                      #{character.characterNumber}: {character.name}
-                    </h2>
-                    <p className="text-gray-400 text-sm mb-2 italic">&quot;{character.quote}&quot;</p>
-                  </div>
-                </Link>
-                <div className="px-4 pb-4">
-                  <div className="flex flex-wrap gap-2 border-t pt-2 border-gray-400">
-                    {character.characterArchetype.map((archetype, index) => (
-                      <ArchetypeCard key={index} archetype={archetype} highlighted={shouldHighlightArchetype(archetype)} />
-                    ))}
+          <div className="text-sm text-gray-400 pt-4">
+            {filteredAndSortedCharacters.length} {filteredAndSortedCharacters.length === 1 ? "character" : "characters"} found
+            {searchTerm && " matching search"}
+            {affiliationFilter !== "all" && " in selected Affiliation"}
+            {genderFilter !== "all" && " in selected Gender"}
+          </div>
+          <hr className="my-6" />
+          {filteredAndSortedCharacters.length === 0 ? (
+            <div className="text-center py-8 text-gray-400">No characters found matching your criteria</div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+              {filteredAndSortedCharacters.map(([slug, character]) => (
+                <div key={slug} className="border hover:border-red-600 transition-colors">
+                  <Link href={`/characters/${slug}`} className="block" thref={""}>
+                    <Image
+                      src={imageSources[slug] || `/assets/character-banner/${slug}-banner.png`}
+                      height="300"
+                      width="300"
+                      alt={character.name}
+                      className="max-h-[300px] w-fit object-cover object-top-center"
+                      style={{
+                        objectFit: "cover",
+                        objectPosition: "50% 40%",
+                        aspectRatio: "2/1",
+                      }}
+                      onError={() => handleImageError(slug)}
+                      loading="lazy"
+                    />
+                    <div className="p-4 border-t-2 border-gray-800">
+                      <h2 className="font-bold text-2xl my-2">
+                        #{character.characterNumber}: {character.name}
+                      </h2>
+                      <p className="text-gray-400 text-sm mb-2 italic">&quot;{character.quote}&quot;</p>
+                    </div>
+                  </Link>
+                  <div className="px-4 pb-4">
+                    <div className="flex flex-wrap gap-2 border-t pt-2 border-gray-400">
+                      {character.characterArchetype.map((archetype, index) => (
+                        <ArchetypeCard key={index} archetype={archetype} highlighted={shouldHighlightArchetype(archetype)} />
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        )}
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

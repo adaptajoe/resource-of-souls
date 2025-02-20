@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useMemo } from "react";
 
 const ChangelogEntry = ({ version, date, changes }: { version: string; date: string; changes: string[] }) => (
-  <div className="flex flex-col border-t border-gray-400">
+  <div className="flex flex-col border-t-2 border-gray-400">
     <strong className="text-lg pt-2">{version}</strong>
     <p className="text-gray-400 text-sm italic ml-4">{date}</p>
     <ul className="list-disc ml-8 my-2 text-xs">
@@ -79,18 +79,23 @@ export default function Changelog() {
   );
 
   return (
-    <div className="container p-8 min-w-fit">
-      <nav className="flex flex-row">
-        <Link href="/" className="text-teal-400 hover:underline">
+    <div className="p-16 space-y-4 text-white">
+      <div className="flex flex-row space-x-2">
+        <Link href="/" className="text-teal-400 hover:underline" thref={""}>
           Home
         </Link>
-        <p className="px-2">/</p>
-        <Link href="/changelog" className="text-teal-400 hover:underline">
+        <p>/</p>
+        <Link href="/changelog" className="text-teal-400 hover:underline" thref={""}>
           Changelog
         </Link>
-      </nav>
-      <h1 className="text-3xl font-bold mb-6">Changelog</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 space-x-4">
+        <p>/</p>
+      </div>
+      <h2 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
+        <span className="text-red-600">C</span>hangelog
+      </h2>
+      <div>View BLEACH - Rebirth of Souls and BLEACH - Resource of Souls&apos; respective changelogs.</div>
+      <hr />
+      <div className="grid grid-cols-1 md:grid-cols-2">
         <div>
           <h2 className="text-2xl font-bold mb-2">Rebirth of Souls</h2>
           {rebirthOfSoulsChangelog.map((entry, index) => (

@@ -1,38 +1,28 @@
-import fs from "fs";
-import path from "path";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import characterDataRaw from "@/data/characterData.json";
-import { CharacterData, Character } from "@/types/character";
+import { Character, CharacterData } from "@/types/characterDataTypes";
 import { parseGameTerms } from "@/utils/termParser";
-import RadarChartComponentWrapper from "@/app/components/RadarChartComponentWrapper";
-import StarRatingWrapper from "@/app/components/StarRatingWrapper";
-import YouTubeEmbedWrapper from "@/app/components/EmbedYoutubeVideoWrapper";
-import CharacterAnimationsWrapper from "@/app/components/CharacterAnimationsWrapper";
-import CharacterMovesWrapper from "@/app/components/CharacterMovesWrapper";
-import CharacterSidebarWrapper from "@/app/components/CharacterSidebarWrapper";
+import { notFound } from "next/navigation";
+import fs from "fs";
+import path from "path";
+import StarRatingWrapper from "@/components/StarRatingWrapper";
+import YouTubeEmbedWrapper from "@/components/EmbedYoutubeVideoWrapper";
+import RadarChartComponentWrapper from "@/components/RadarChartComponentWrapper";
+import CharacterMovesWrapper from "@/components/CharacterMovesWrapper";
+import CharacterAnimationsWrapper from "@/components/CharacterAnimationsWrapper";
+import CharacterSidebarWrapper from "@/components/CharacterSidebarWrapper";
 
 function formatTagName(tag: string): string {
-  // Handle Squad numbers first
   if (tag.toLowerCase().includes("squad")) {
     return tag.replace(/squad(\d+)/i, (_, num) => `Squad ${num}`);
   }
 
-  // Handle Gotei 13 specifically
   if (tag.toLowerCase().includes("gotei")) {
     return tag.replace(/gotei(\d+)/i, (_, num) => `Gotei ${num}`);
   }
 
-  const spanishTerms = ["Segunda Etapa", "Espada", "Cero", "Bala", "Cero Oscuras", "Gran Ray Cero", "Hierro", "Sonido"];
-  for (const term of spanishTerms) {
-    if (tag.toLowerCase().includes(term.toLowerCase())) {
-      return tag.replace(new RegExp(term, "i"), term);
-    }
-  }
-
   const acronyms = ["DLC", "PVP", "NPC"];
-  // Split on capital letters, numbers, hyphens, and underscores
   const words = tag.split(/(?=[A-Z0-9])|[-_]/);
 
   return words
@@ -41,7 +31,6 @@ function formatTagName(tag: string): string {
       if (acronyms.includes(lowercaseWord.toUpperCase())) {
         return lowercaseWord.toUpperCase();
       }
-      // Handle numbers by adding a space before them
       if (/^\d+$/.test(word)) {
         return ` ${word}`;
       }
@@ -73,82 +62,92 @@ function getCharacterAnimations(characterSlug: string): string[] {
   }
 }
 
-export default async function CharacterPage(props: Props) {
+export default async function CharacterDetails(props: Props) {
   const params = await props.params;
   const character = characterData[params.slug] as Character;
   const totalStats = character.stats[0].power + character.stats[0].speed + character.stats[0].range + character.stats[0].defense + character.stats[0].technique;
   const animations = getCharacterAnimations(params.slug);
+  const hasAnimations = Array.isArray(animations) && animations.length > 0;
 
   if (!character) {
     notFound();
   }
 
-  const hasAnimations = Array.isArray(animations) && animations.length > 0;
-
   return (
-    <div className="flex flex-col items-center lg:items-start lg:flex-row lg:justify-between">
-      <div className="container ml-8 w-full lg:w-3/4 mt-8">
-        <nav className="flex flex-row">
-          <Link href="/" className="text-teal-400 hover:underline">
-            Home
-          </Link>
-          <p className="px-2">/</p>
-          <Link href="/characters" className="text-teal-400 hover:underline">
-            Characters
-          </Link>
-          <p className="px-2">/</p>
-          <Link href={`/characters/${character.id}`} className="text-teal-400 hover:underline">
-            {character.name}
-          </Link>
-        </nav>
+    <div>
+      <div className="grid grid-cols-1 xl:grid-cols-3">
+        <div className="col-span-1 xl:col-span-2 mb-6">
+          <div className="p-16 space-y-4 text-white mr-4">
+            <div className="flex flex-row space-x-2">
+              <Link href="/" className="text-teal-400 hover:underline" thref={""}>
+                Home
+              </Link>
+              <p>/</p>
+              <Link href="/characters" className="text-teal-400 hover:underline" thref={""}>
+                Character Roster
+              </Link>
+              <p>/</p>
+              <Link href={`/characters/${character.id}`} className="text-teal-400 hover:underline" thref={""}>
+                {character.name}
+              </Link>
+            </div>
+            <h2 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4 first-letter:text-red-600">{character.name}</h2>
+            {character.abilities.map((ability, index) => (
+              <p className="text-gray-600 italic font-bebasFont text-xl" key={index}>
+                {ability.abilityQuoteTemplate.replace("{quote}", ability.abilityQuote).replace("{ability}", ability.abilityName)}
+              </p>
+            ))}
+            <p className="text-gray-400 xl:hidden">Character #{character.characterNumber}</p>
+            <div className="flex flex-wrap gap-4 my-4">
+              <Link href="#character-info" className="text-teal-400 hover:underline" thref={""}>
+                Character Info
+              </Link>
+              <span className="text-gray-400">•</span>
+              <Link href="#stats" className="text-teal-400 hover:underline" thref={""}>
+                Stats
+              </Link>
+              <span className="text-gray-400">•</span>
+              <Link href="#trailers" className="text-teal-400 hover:underline" thref={""}>
+                Trailers
+              </Link>
+              <span className="text-gray-400">•</span>
+              <Link href="#movelist" className="text-teal-400 hover:underline" thref={""}>
+                Movelist
+              </Link>
+              <span className="text-gray-400">•</span>
+              <Link href="#animations" className="text-teal-400 hover:underline" thref={""}>
+                Animations
+              </Link>
+              <span className="text-gray-400">•</span>
+              <Link href="#trivia" className="text-teal-400 hover:underline" thref={""}>
+                Trivia
+              </Link>
+            </div>
+            <Image
+              src={`/assets/character-hero/${params.slug}-hero.png`}
+              height="800"
+              width="800"
+              alt={character.name}
+              className="max-h-[800px] w-full rounded-xl object-cover object-top-center border-2 border-gray-400"
+              style={{
+                objectFit: "cover",
+                objectPosition: "0% 0%",
+                aspectRatio: "3/1",
+              }}
+              loading="lazy"
+            />
+          </div>
 
-        <h1 className="text-3xl font-bold">{character.name}</h1>
-        <h2 className="text-sm italic text-gray-400 mb-2">
-          {character.abilities.map((ability, index) => (
-            <div key={index}>{ability.abilityQuoteTemplate.replace("{quote}", ability.abilityQuote).replace("{ability}", ability.abilityName)}</div>
-          ))}
-        </h2>
-        <p className="text-gray-400 lg:hidden">Character #{character.characterNumber}</p>
-        <div className="flex flex-wrap gap-4 my-4">
-          <Link href="#stats" className="text-teal-400 hover:underline">
-            Stats
-          </Link>
-          <span className="text-gray-400">•</span>
-          <Link href="#trailers" className="text-teal-400 hover:underline">
-            Trailers
-          </Link>
-          <span className="text-gray-400">•</span>
-          <Link href="#movelist" className="text-teal-400 hover:underline">
-            Movelist
-          </Link>
-          <span className="text-gray-400">•</span>
-          <Link href="#animations" className="text-teal-400 hover:underline">
-            Animations
-          </Link>
-        </div>
-        <div className="pr-8 lg:pr-16 pt-2">
-          <Image
-            src={`/assets/character-hero/${params.slug}-hero.png`}
-            height="800"
-            width="800"
-            alt={character.name}
-            className="max-h-[800px] w-full rounded-xl object-cover object-top-center border-2 border-white"
-            style={{
-              objectFit: "cover",
-              objectPosition: "0% 0%",
-              aspectRatio: "3/1",
-            }}
-            loading="lazy"
-          />
-          <div className="lg:hidden">
-            <div className="my-4 w-full flex flex-col items-center border-b border-gray-400 pb-6">
+          {/* Mobile-only View */}
+          <div className="xl:hidden text-white">
+            <div className="my-4 w-full flex flex-col items-center">
               <strong>Ease of Use</strong>
               <div className="my-auto">
                 <StarRatingWrapper rating={character.characterEaseOfUse} character={character} />
               </div>
             </div>
-            <div className="mt-4 w-full flex flex-col items-center border-b border-gray-400 pb-6">
-              <div className="text-center grid grid-cols-3">
+            <div className="mt-4 w-full flex flex-col items-center px-4">
+              <div className="text-center grid grid-cols-3 space-x-4">
                 <div>
                   <strong>Affiliations</strong>
                   <div className="flex flex-wrap justify-center mt-1 mb-2">
@@ -203,23 +202,27 @@ export default async function CharacterPage(props: Props) {
                 </div>
               </div>
             </div>
+            <hr className="my-6 pr-20" />
           </div>
-        </div>
-        <div className="mb-4">
-          <h2 className="italic text-xl text-gray-400 my-8 mr-8 border-l-4 border-l-gray-400 pl-4 py-6">&quot;{character.quote}&quot;</h2>
-        </div>
-        <div className="mb-8 mr-8">
-          <div>{parseGameTerms(character.description)}</div>
-        </div>
 
-        <div className="mb-8">
-          <div className="bg-black shadow-md">
-            <div className="grid grid-cols-1 xl:grid-cols-3 xl:gap-6 pr-8 mb-8">
-              <div id="stats" className="border border-white rounded-xl w-full grid grid-cols-1 h-full">
-                <h2 className="text-xl font-semibold mb-2 p-2 pl-4">Stats</h2>
-                <div className="p-2">
-                  <RadarChartComponentWrapper stats={character.stats[0]} characterName={character.name} character={character} />
-                </div>
+          {/* Continue Page View */}
+          <div className="text-white px-16 mr-4">
+            {/* Character Info */}
+            <div id="character-info">
+              <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
+                <span className="text-red-600">C</span>haracter Info
+              </h3>
+              <h4 className="italic text-xl text-gray-400 my-8 mr-8 border-l-4 border-l-gray-400 pl-4 py-6">&quot;{character.quote}&quot;</h4>
+              <div>{parseGameTerms(character.description)}</div>
+            </div>
+            <hr className="my-6" />
+            {/* Stats */}
+            <div id="stats">
+              <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
+                <span className="text-red-600">S</span>tats
+              </h3>
+              <div className="border-2 border-gray-400 rounded-xl mt-6">
+                <RadarChartComponentWrapper stats={character.stats[0]} characterName={character.name} character={character} />
                 <div className="w-full flex flex-row text-center items-end text-sm">
                   <div className="w-1/6 bg-red-700 flex flex-col border border-l-0 border-b-0 border-white rounded-bl-xl">
                     <strong>P{character.stats[0].power}</strong>
@@ -241,45 +244,59 @@ export default async function CharacterPage(props: Props) {
                   </div>
                 </div>
               </div>
-
-              <div id="trailers" className="border border-white rounded-xl w-full grid col-span-2 h-full mt-4 xl:mt-0">
-                <h2 className="text-xl font-semibold mb-2 p-2 pl-4">Trailers</h2>
-                <div className="m-2">
-                  <YouTubeEmbedWrapper character={character} />
-                </div>
+            </div>
+            <hr className="my-6" />
+            {/* Trailers */}
+            <div id="trailers">
+              <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
+                <span className="text-red-600">T</span>railers
+              </h3>
+              <div className="border-2 border-gray-400 rounded-xl mt-6 p-4">
+                <YouTubeEmbedWrapper character={character} />
               </div>
             </div>
-
-            <div className="grid grid-cols-1 pr-8 mb-4">
-              <div id="movelist" className="border border-white rounded-xl w-full grid grid-cols-1 mb-4 lg:mb-8">
-                <h2 className="text-xl font-semibold p-2 pl-4 static">Movelist</h2>
-                <div className="h-fit">
-                  <CharacterMovesWrapper moves={character.moves} characterId={character.id} />
+            <hr className="my-6" />
+            {/* Movelist */}
+            <div id="movelist">
+              <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
+                <span className="text-red-600">M</span>ovelist
+              </h3>
+              <div className="border-2 border-gray-400 rounded-xl mt-6 pt-4">
+                <CharacterMovesWrapper moves={character.moves} characterId={character.id} />
+              </div>
+            </div>
+            <hr className="my-6" />
+            {/* Animations */}
+            <div id="animations">
+              <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
+                <span className="text-red-600">A</span>nimations
+              </h3>
+              {hasAnimations ? (
+                <CharacterAnimationsWrapper animations={animations} slug={params.slug} />
+              ) : (
+                <div className="border border-white rounded-xl w-full p-4">
+                  <p className="text-gray-400">No animations available for this character.</p>
                 </div>
-              </div>
-
-              <div id="animations">
-                {hasAnimations ? (
-                  <CharacterAnimationsWrapper animations={animations} slug={params.slug} />
-                ) : (
-                  <div className="border border-white rounded-xl w-full p-4">
-                    <h2 className="text-xl font-semibold mb-2">Animations</h2>
-                    <p className="text-gray-400">No animations available for this character.</p>
-                  </div>
-                )}
-              </div>
+              )}
+            </div>
+            <hr className="my-6" />
+            {/* Trivia */}
+            <div id="trivia">
+              <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
+                <span className="text-red-600">T</span>rivia
+              </h3>
+              <ul className="mt-6 list-disc border-2 border-gray-400 rounded-xl p-4">
+                <li className="ml-6">{character.trivia}</li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
 
-      <CharacterSidebarWrapper character={character} slug={params.slug} />
+        {/* Desktop Character Right Sidebar */}
+        <div className="hidden xl:grid col-span-1 justify-self-end text-white">
+          <CharacterSidebarWrapper character={character} slug={params.slug} />
+        </div>
+      </div>
     </div>
   );
-}
-
-export async function generateStaticParams() {
-  return Object.keys(characterData).map((slug) => ({
-    slug,
-  }));
 }

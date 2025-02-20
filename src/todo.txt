@@ -1,3 +1,0 @@
-- Fix responsiveness on Community Ranked Leaderboard Page
-- Fix responsiveness on Community Page
-- Fix responsiveness on Versus Generator Page
