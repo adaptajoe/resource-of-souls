@@ -24,7 +24,7 @@ export default function Community() {
               <p className="flex flex-col">You alone shall stand at the top. Claim that intolerable vacuum, and stand upon the heavens!</p>
               <p className="text-sm text-gray-400 italic mb-8">(Badges expire after 6 months with no Challenges).</p>
               <p>
-                <Link className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700 hover:bg-red-600 hover:text-black transition-colors" href={"/community/ranked-leaderboard"} thref={""}>
+                <Link className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700 hover:bg-red-600 hover:text-black transition-colors" href={"/community/ranked-leaderboard"}>
                   View the Community Ranked Leaderboard
                 </Link>
               </p>

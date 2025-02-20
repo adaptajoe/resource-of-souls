@@ -24,7 +24,7 @@ export default function TextArchetypeTooltip({ archetype, display }: ArchetypeTo
 
   return (
     <div className="relative inline-block group">
-      <Link href={url} className="text-red-600 hover:underline cursor-pointer" thref={""}>
+      <Link href={url} className="text-red-600 hover:underline cursor-pointer">
         {display || archetype.name}
       </Link>
       {archetype.shortDescription && (

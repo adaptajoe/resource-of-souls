@@ -24,7 +24,6 @@ export default function ArchetypeTooltip({ archetype, display, shortDescription,
         className={`text-xs px-2 py-1 transition-colors ${
           highlighted ? "bg-red-900 border-red-600 border text-white" : "bg-black border-gray-400 border text-gray-400"
         } hover:bg-red-900 hover:border-red-600 hover:text-white`}
-        thref={""}
       >
         {display}
       </Link>

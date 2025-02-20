@@ -58,7 +58,6 @@ export function MobileNavigation() {
                   href={link.href}
                   className="text-white hover:border-red-600 hover:bg-red-600 hover:text-black p-4 text-center border-2 rounded-xl flex flex-col items-center transition-colors text-2xl"
                   onClick={closeMenu}
-                  thref={""}
                 >
                   {link.text}
                 </Link>
@@ -75,7 +74,6 @@ export function MobileNavigation() {
                   href={link.href}
                   className="text-white hover:border-red-600 hover:bg-red-600 hover:text-black p-4 text-center border-2 rounded-xl flex flex-col items-center h-full justify-center transition-colors text-2xl"
                   onClick={closeMenu}
-                  thref={""}
                 >
                   {link.text}
                 </Link>

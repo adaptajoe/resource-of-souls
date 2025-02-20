@@ -4,11 +4,11 @@ export default function Modding() {
   return (
     <div className="p-16 space-y-4 text-white">
       <div className="flex flex-row space-x-2">
-        <Link href="/" className="text-teal-400 hover:underline" thref={""}>
+        <Link href="/" className="text-teal-400 hover:underline">
           Home
         </Link>
         <p>/</p>
-        <Link href="/modding" className="text-teal-400 hover:underline" thref={""}>
+        <Link href="/modding" className="text-teal-400 hover:underline">
           Modding
         </Link>
         <p>/</p>

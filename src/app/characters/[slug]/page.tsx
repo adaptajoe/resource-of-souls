@@ -79,15 +79,15 @@ export default async function CharacterDetails(props: Props) {
         <div className="col-span-1 xl:col-span-2 mb-6">
           <div className="p-16 space-y-4 text-white mr-4">
             <div className="flex flex-row space-x-2">
-              <Link href="/" className="text-teal-400 hover:underline" thref={""}>
+              <Link href="/" className="text-teal-400 hover:underline">
                 Home
               </Link>
               <p>/</p>
-              <Link href="/characters" className="text-teal-400 hover:underline" thref={""}>
+              <Link href="/characters" className="text-teal-400 hover:underline">
                 Character Roster
               </Link>
               <p>/</p>
-              <Link href={`/characters/${character.id}`} className="text-teal-400 hover:underline" thref={""}>
+              <Link href={`/characters/${character.id}`} className="text-teal-400 hover:underline">
                 {character.name}
               </Link>
             </div>
@@ -99,27 +99,27 @@ export default async function CharacterDetails(props: Props) {
             ))}
             <p className="text-gray-400 xl:hidden">Character #{character.characterNumber}</p>
             <div className="flex flex-wrap gap-4 my-4">
-              <Link href="#character-info" className="text-teal-400 hover:underline" thref={""}>
+              <Link href="#character-info" className="text-teal-400 hover:underline">
                 Character Info
               </Link>
               <span className="text-gray-400">•</span>
-              <Link href="#stats" className="text-teal-400 hover:underline" thref={""}>
+              <Link href="#stats" className="text-teal-400 hover:underline">
                 Stats
               </Link>
               <span className="text-gray-400">•</span>
-              <Link href="#trailers" className="text-teal-400 hover:underline" thref={""}>
+              <Link href="#trailers" className="text-teal-400 hover:underline">
                 Trailers
               </Link>
               <span className="text-gray-400">•</span>
-              <Link href="#movelist" className="text-teal-400 hover:underline" thref={""}>
+              <Link href="#movelist" className="text-teal-400 hover:underline">
                 Movelist
               </Link>
               <span className="text-gray-400">•</span>
-              <Link href="#animations" className="text-teal-400 hover:underline" thref={""}>
+              <Link href="#animations" className="text-teal-400 hover:underline">
                 Animations
               </Link>
               <span className="text-gray-400">•</span>
-              <Link href="#trivia" className="text-teal-400 hover:underline" thref={""}>
+              <Link href="#trivia" className="text-teal-400 hover:underline">
                 Trivia
               </Link>
             </div>

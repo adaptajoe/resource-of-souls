@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <div className="bg-black w-full h-[125px] border-b-2 border-gray-400 py-2 px-12 z-50 hidden lg:flex flex-row items-center space-x-2 text-xs lg:text-sm xl:text-xl font-bebasFont text-white">
           {/* At below LG, change to mobile nav. */}
-          <Link href="/" thref={""}>
+          <Link href="/">
             <Image
               src={`/assets/site-assets/site-logo.png`}
               height="200"
@@ -40,39 +40,39 @@ export default function RootLayout({
               priority
             />
           </Link>
-          <Link href="/characters" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl" thref={""}>
+          <Link href="/characters" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
             Characters
           </Link>
-          <Link href="/terms" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl" thref={""}>
+          <Link href="/terms" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
             Terms
           </Link>
-          <Link href="/changelog" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl" thref={""}>
+          <Link href="/changelog" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
             Changelog
           </Link>
-          <Link href="/offline" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl" thref={""}>
+          <Link href="/offline" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
             Offline
           </Link>
-          <Link href="/community" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl" thref={""}>
+          <Link href="/community" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
             Community
           </Link>
-          <Link href="/modding" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl" thref={""}>
+          <Link href="/modding" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
             Modding
           </Link>
-          <Link href="/creators" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl" thref={""}>
+          <Link href="/creators" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
             Creators
           </Link>
-          <Link href="https://github.com/adaptajoe/resource-of-souls" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl" thref={""}>
+          <Link href="https://github.com/adaptajoe/resource-of-souls" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
             GitHub
           </Link>
-          <Link href="https://www.reddit.com/r/RebirthOfSoulsBleach/" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl" thref={""}>
+          <Link href="https://www.reddit.com/r/RebirthOfSoulsBleach/" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
             Reddit
           </Link>
-          <Link href="https://discord.gg/fA69CAE2eP" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl" thref={""}>
+          <Link href="https://discord.gg/fA69CAE2eP" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
             Discord
           </Link>
         </div>
         <div className="bg-black w-full h-[125px] border-b-2 border-gray-400 py-2 px-12 z-50 flex lg:hidden flex-row items-center space-x-2 text-xs lg:text-sm xl:text-xl font-bebasFont text-white">
-          <Link href="/" thref={""}>
+          <Link href="/">
             <Image
               src={`/assets/site-assets/site-logo.png`}
               height="200"

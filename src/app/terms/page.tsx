@@ -93,7 +93,6 @@ export default function Terms() {
                     key={index}
                     className="text-xs bg-black border border-gray-600 hover:border-red-600 text-gray-400 px-2 py-1 hover:bg-red-900 hover:text-white transition-all"
                     href={`/characters/${character.slug}`}
-                    thref={""}
                   >
                     {character.name}
                   </Link>

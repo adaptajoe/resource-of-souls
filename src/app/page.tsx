@@ -26,7 +26,7 @@ export default function Home() {
                 franchise.
               </p>
               <p>
-                <Link className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700 hover:bg-red-600 hover:text-black transition-colors" href={"/characters"} thref={""}>
+                <Link className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700 hover:bg-red-600 hover:text-black transition-colors" href={"/characters"}>
                   View the Character Roster
                 </Link>
               </p>
@@ -75,7 +75,7 @@ export default function Home() {
                 possibly even earn prizes (Only in specific Tournaments)..!
               </p>
               <p>
-                <Link className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700 hover:bg-red-600 hover:text-black transition-colors" href={"/community"} thref={""}>
+                <Link className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700 hover:bg-red-600 hover:text-black transition-colors" href={"/community"}>
                   View the BLEACH - Resource of Souls Community Hub
                 </Link>
               </p>
@@ -94,14 +94,14 @@ export default function Home() {
                 unlockables you may want to strive for!
               </p>
               <p>
-                <Link className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700 hover:bg-red-600 hover:text-black transition-colors" href={"/offline"} thref={""}>
+                <Link className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700 hover:bg-red-600 hover:text-black transition-colors" href={"/offline"}>
                   View the Offline Mode Guides
                 </Link>
               </p>
               <hr className="my-6" />
               <p className="flex flex-col">Similarly, for esports and tournament hosts, find easy-to-refer-to sheets for each character, term and archetype in the game!</p>
               <p>
-                <Link className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700 hover:bg-red-600 hover:text-black transition-colors" href={"/terms"} thref={""}>
+                <Link className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700 hover:bg-red-600 hover:text-black transition-colors" href={"/terms"}>
                   View the Terms used in BLEACH - Rebirth of Souls
                 </Link>
               </p>

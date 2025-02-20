@@ -414,15 +414,15 @@ export default function RankedLeaderboard() {
   return (
     <div className="p-16 space-y-4 text-white">
       <div className="flex flex-row space-x-2">
-        <Link href="/" className="text-teal-400 hover:underline" thref={""}>
+        <Link href="/" className="text-teal-400 hover:underline">
           Home
         </Link>
         <p>/</p>
-        <Link href="/community" className="text-teal-400 hover:underline" thref={""}>
+        <Link href="/community" className="text-teal-400 hover:underline">
           Community
         </Link>
         <p>/</p>
-        <Link href="/ranked-leaderboard" className="text-teal-400 hover:underline" thref={""}>
+        <Link href="/ranked-leaderboard" className="text-teal-400 hover:underline">
           Ranked Leaderboard
         </Link>
         <p>/</p>

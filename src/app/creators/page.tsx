@@ -4,11 +4,11 @@ export default function Creators() {
   return (
     <div className="p-16 space-y-4 text-white">
       <div className="flex flex-row space-x-2">
-        <Link href="/" className="text-teal-400 hover:underline" thref={""}>
+        <Link href="/" className="text-teal-400 hover:underline">
           Home
         </Link>
         <p>/</p>
-        <Link href="/creators" className="text-teal-400 hover:underline" thref={""}>
+        <Link href="/creators" className="text-teal-400 hover:underline">
           Creators
         </Link>
         <p>/</p>

@@ -115,11 +115,11 @@ export default function Characters() {
     <div className="text-white">
       <div className="p-16 space-y-4 text-white">
         <div className="flex flex-row space-x-2">
-          <Link href="/" className="text-teal-400 hover:underline" thref={""}>
+          <Link href="/" className="text-teal-400 hover:underline">
             Home
           </Link>
           <p>/</p>
-          <Link href="/characters" className="text-teal-400 hover:underline" thref={""}>
+          <Link href="/characters" className="text-teal-400 hover:underline">
             Character Roster
           </Link>
           <p>/</p>
@@ -223,7 +223,7 @@ export default function Characters() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
               {filteredAndSortedCharacters.map(([slug, character]) => (
                 <div key={slug} className="border hover:border-red-600 transition-colors">
-                  <Link href={`/characters/${slug}`} className="block" thref={""}>
+                  <Link href={`/characters/${slug}`} className="block">
                     <Image
                       src={imageSources[slug] || `/assets/character-banner/${slug}-banner.png`}
                       height="300"
