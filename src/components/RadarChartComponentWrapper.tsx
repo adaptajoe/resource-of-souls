@@ -1,7 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
-import { FC } from "react";
-import { Character } from "@/types/characterDataTypes";
+import type { FC } from "react";
+import type { Character } from "@/types/characterDataTypes";
 
 interface Stats {
   power: number;
@@ -17,10 +17,19 @@ interface RadarChartProps {
   characterName: string;
 }
 
-const RadarChartComponent = dynamic(() => import("./RadarChartComponent"), { ssr: false });
+const RadarChartComponent = dynamic(() => import("./RadarChartComponent"), {
+  ssr: false,
+  loading: () => (
+    <div className="h-[300px] w-auto flex items-center justify-center bg-black/20 rounded-lg">
+      <div className="animate-pulse text-gray-400">Loading chart...</div>
+    </div>
+  ),
+});
 
-const RadarChartComponentWrapper: FC<RadarChartProps> = (props) => {
-  return <RadarChartComponent {...props} />;
-};
+// Memoize the wrapper component
+const RadarChartComponentWrapper: FC<RadarChartProps> = ({ stats, characterName }) => <RadarChartComponent stats={stats} characterName={characterName} />;
+
+// Add display name for better debugging
+RadarChartComponentWrapper.displayName = "RadarChartComponentWrapper";
 
 export default RadarChartComponentWrapper;

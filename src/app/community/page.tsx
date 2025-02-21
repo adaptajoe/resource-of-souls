@@ -12,7 +12,7 @@ export default function Community() {
         </Link>
       </div>
       <div className="border-b-2 border-gray-400">
-        <AnimatedHeroWrapper src={"/assets/site-assets/community-hero.mp4"} alt={""} filename={""} />
+        <AnimatedHeroWrapper src={"/assets/site-assets/community-hero.mp4"} alt={""} />
       </div>
       <div className="p-16">
         <div className="grid grid-cols-1 lg:grid-cols-2">

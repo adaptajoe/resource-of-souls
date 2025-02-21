@@ -14,11 +14,6 @@ export default function AnimatedVideo({ src, alt, filename }: AnimatedVideoProps
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Debug the incoming src
-  useEffect(() => {
-    console.log("Video source path:", src);
-  }, [src]);
-
   const formatFilename = (filename: string) => {
     return filename
       .split("-")
@@ -38,8 +33,7 @@ export default function AnimatedVideo({ src, alt, filename }: AnimatedVideoProps
     if (videoRef.current && isVideoLoaded) {
       const playPromise = videoRef.current.play();
       if (playPromise !== undefined) {
-        playPromise.catch((error) => {
-          console.error("Error playing video:", error);
+        playPromise.catch(() => {
           setVideoError(true);
         });
       }
@@ -55,27 +49,29 @@ export default function AnimatedVideo({ src, alt, filename }: AnimatedVideoProps
   }, []);
 
   const handleVideoLoaded = useCallback(() => {
-    console.log("Video loaded successfully:", src);
     setIsVideoLoaded(true);
-  }, [src]);
+  }, []);
 
-  // Try to detect if the file exists
+  // Cleanup on unmount
   useEffect(() => {
-    fetch(src)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        console.log("Video file exists:", src);
-      })
-      .catch((error) => {
-        console.error("Video file not found:", src, error);
-        setVideoError(true);
-      });
-  }, [src]);
+    return () => {
+      if (videoRef.current) {
+        videoRef.current.pause();
+        videoRef.current.src = "";
+        videoRef.current.load();
+      }
+    };
+  }, []);
 
   return (
-    <div className="relative aspect-video group mx-2 cursor-pointer" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} tabIndex={0}>
+    <div
+      className="relative aspect-video group mx-2 cursor-pointer"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      tabIndex={0}
+      role="button"
+      aria-label={`Play ${formatFilename(filename)} animation`}
+    >
       <div className="relative w-full h-full">
         <Image
           src={staticImageSrc}
@@ -85,6 +81,7 @@ export default function AnimatedVideo({ src, alt, filename }: AnimatedVideoProps
           className={`w-full h-full object-cover transition-opacity duration-200 ${isHovered && !videoError ? "opacity-0" : "opacity-100"}`}
           style={{ filter: "grayscale(100%)" }}
           loading="lazy"
+          sizes="(max-width: 768px) 100vw, 300px"
         />
 
         {!videoError && (
@@ -96,11 +93,11 @@ export default function AnimatedVideo({ src, alt, filename }: AnimatedVideoProps
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             onLoadedData={handleVideoLoaded}
+            onError={() => setVideoError(true)}
           >
             <source src={src} type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
         )}
       </div>
