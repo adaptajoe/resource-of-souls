@@ -1,7 +1,7 @@
 <IfModule mod_rewrite.c>
-  RewriteEngine On RewriteBase / # If the request is not for a valid file or directory RewriteCond %{REQUEST_FILENAME} !-f RewriteCond %{REQUEST_FILENAME} !-d # If the request doesn't have a file
-  extension RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$ RewriteRule (.*)$ /$1/ [L,R=301] # If the requested file doesn't exist, redirect to index.html RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d RewriteRule . /index.html [L]
+  RewriteEngine On RewriteBase / # Add trailing slash if not present RewriteCond %{REQUEST_FILENAME} !-f RewriteCond %{REQUEST_URI} !(.*)/$ RewriteRule ^(.*)$ /$1/ [L,R=301] # If the request is not
+  for an actual file or directory RewriteCond %{REQUEST_FILENAME} !-f RewriteCond %{REQUEST_FILENAME} !-d # Handle Next.js routes RewriteRule ^(.*)$ /index.html [L] # Prevent direct access to _next
+  directory RewriteRule ^_next/(.*) /$1 [L]
 </IfModule>
 
-# Ensure proper MIME types AddType application/javascript .js AddType text/css .css
+# Handle JSON files AddType application/json .json # Handle JavaScript files AddType application/javascript .js AddType text/javascript .js # Handle CSS files AddType text/css .css
