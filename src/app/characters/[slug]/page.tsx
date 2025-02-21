@@ -19,6 +19,8 @@ export async function generateStaticParams() {
   }));
 }
 
+export const dynamic = "force-static";
+
 function formatTagName(tag: string): string {
   if (tag.toLowerCase().includes("squad")) {
     return tag.replace(/squad(\d+)/i, (_, num) => `Squad ${num}`);
@@ -70,6 +72,8 @@ function getCharacterAnimations(characterSlug: string): string[] {
 
 export default async function CharacterDetails(props: Props) {
   const params = await props.params;
+  console.log("Available characters:", Object.keys(characterData).length);
+  console.log("Requested slug:", params.slug);
   const character = characterData[params.slug] as Character;
 
   if (!character) {
