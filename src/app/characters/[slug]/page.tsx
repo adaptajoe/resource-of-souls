@@ -13,6 +13,12 @@ import CharacterMovesWrapper from "@/components/CharacterMovesWrapper";
 import CharacterAnimationsWrapper from "@/components/CharacterAnimationsWrapper";
 import CharacterSidebarWrapper from "@/components/CharacterSidebarWrapper";
 
+export async function generateStaticParams() {
+  return Object.keys(characterData).map((slug) => ({
+    slug: slug,
+  }));
+}
+
 function formatTagName(tag: string): string {
   if (tag.toLowerCase().includes("squad")) {
     return tag.replace(/squad(\d+)/i, (_, num) => `Squad ${num}`);
@@ -65,13 +71,14 @@ function getCharacterAnimations(characterSlug: string): string[] {
 export default async function CharacterDetails(props: Props) {
   const params = await props.params;
   const character = characterData[params.slug] as Character;
-  const totalStats = character.stats[0].power + character.stats[0].speed + character.stats[0].range + character.stats[0].defense + character.stats[0].technique;
-  const animations = getCharacterAnimations(params.slug);
-  const hasAnimations = Array.isArray(animations) && animations.length > 0;
 
   if (!character) {
     notFound();
   }
+
+  const totalStats = character.stats[0].power + character.stats[0].speed + character.stats[0].range + character.stats[0].defense + character.stats[0].technique;
+  const animations = getCharacterAnimations(params.slug);
+  const hasAnimations = Array.isArray(animations) && animations.length > 0;
 
   return (
     <div>
