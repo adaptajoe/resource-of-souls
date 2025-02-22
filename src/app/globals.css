@@ -37,6 +37,7 @@ h3,
 h4,
 h5 {
   font-family: "Bebas Neue", serif;
+  letter-spacing: 0.055em;
 }
 
 @keyframes pulse {

@@ -37,7 +37,7 @@ export default function Characters() {
     if (specialCases[archetype.toLowerCase()]) {
       return {
         display: specialCases[archetype.toLowerCase()],
-        url: `/terms?highlight=kido`,
+        url: `/glossary?highlight=kido`,
       };
     }
 
@@ -48,7 +48,7 @@ export default function Characters() {
       .join(" ")
       .trim();
 
-    const url = `/terms?highlight=${archetype
+    const url = `/glossary?highlight=${archetype
       .replace(/([A-Z])/g, "-$1")
       .toLowerCase()
       .replace(/^-/, "")}`;
@@ -113,7 +113,7 @@ export default function Characters() {
 
   return (
     <div className="text-white">
-      <div className="p-16 space-y-4 text-white">
+      <div className="p-4 lg:p-16 space-y-4 text-white">
         <div className="flex flex-row space-x-2">
           <Link href="/" className="text-teal-400 hover:underline">
             Home

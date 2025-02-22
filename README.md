@@ -26,7 +26,7 @@ To edit Character information, edit `src/data/characterData.json`. It should be 
 
 To add MP4s to a Character's page, add them to `public/assets/character-animations/CHARACTER`. Please note that MP4s should follow the following naming convention:
 
-- Special characters are required for ability terms (I.E. Kidō, Murciélago) in all cases.
+- Special characters are required for ability glossary (I.E. Kidō, Murciélago) in all cases.
 - Each character's 'Intro' animation is called `intro.mp4`.
 - Each character's 'Surprised' animation is called `being-countered.mp4`.
 - Character moves should just be their technique name, so `TECHNIQUE-NAME.mp4`.

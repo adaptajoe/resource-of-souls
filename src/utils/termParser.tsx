@@ -11,12 +11,35 @@ interface Term {
   engName?: string;
 }
 
+const formatTermId = (term: string): string => {
+  return term
+    .toLowerCase()
+    .replace(/([A-Z])/g, "-$1")
+    .replace(/[^a-z0-9-]/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+};
+
 const findGameTerm = (term: string): Term | undefined => {
-  return Object.values(supplementaryData.gameTerms).find((t) => t.name === term);
+  const foundTerm = Object.values(supplementaryData.gameTerms).find((t) => t.name === term);
+  if (foundTerm) {
+    return {
+      ...foundTerm,
+      id: formatTermId(term),
+    };
+  }
+  return undefined;
 };
 
 const findArchetype = (term: string): Term | undefined => {
-  return Object.values(supplementaryData.archetypes).find((a) => a.name === term);
+  const foundArchetype = Object.values(supplementaryData.archetypes).find((a) => a.name === term);
+  if (foundArchetype) {
+    return {
+      ...foundArchetype,
+      id: formatTermId(term),
+    };
+  }
+  return undefined;
 };
 
 const gameTerms = Object.values(supplementaryData.gameTerms).map((term) => term.name);
@@ -36,12 +59,30 @@ export const parseGameTerms = (text: string): React.ReactNode[] => {
   return parts.map((part, index) => {
     const gameTerm = findGameTerm(part);
     if (gameTerm) {
-      return <GameTermTooltip key={index} term={gameTerm} display={part} />;
+      return (
+        <GameTermTooltip
+          key={index}
+          term={{
+            ...gameTerm,
+            id: formatTermId(part),
+          }}
+          display={part}
+        />
+      );
     }
 
     const archetype = findArchetype(part);
     if (archetype) {
-      return <TextArchetypeTooltip key={index} archetype={archetype} display={part} />;
+      return (
+        <TextArchetypeTooltip
+          key={index}
+          archetype={{
+            ...archetype,
+            id: formatTermId(part),
+          }}
+          display={part}
+        />
+      );
     }
 
     return part;

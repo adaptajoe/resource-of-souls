@@ -98,7 +98,7 @@ const GameTermTooltip = memo(function GameTermTooltip({ term, display, className
   return (
     <span className={`relative inline-block ${className}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onFocus={handleMouseEnter} onBlur={handleMouseLeave}>
       <Link
-        href={`/terms#${term.id}`}
+        href={`/glossary#${term.id}`}
         className="
           text-teal-400 hover:underline cursor-pointer
           focus:outline-none focus:ring-2 focus:ring-teal-400 rounded

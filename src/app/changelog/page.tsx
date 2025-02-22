@@ -34,12 +34,28 @@ export default function Changelog() {
     () => [
       {
         version: "v1.0.1",
-        date: "??/??/????",
-        changes: ["TBC."],
+        date: "23/02/2025",
+        changes: [
+          "Fixed an issue where Rukia was incorrectly assigned the first character slot.",
+          "Fixed an issue where Ichigo (Shikai) was incorrectly assigned the second character slot.",
+          "Removed redundant Moveset Key expander from the Character Sidebar component.",
+          "Added custom Banner and Hero Images to Ichigo Kurosaki (Bankai), which will be replaced once Bandai Namco releases his wallpapers.",
+          "Fixed various mobile-only issues.",
+          "Renamed the 'Terms' page to the 'Glossary' page.",
+          "Set Archetypes and Game Terms on the Glossary page to be expanded by default.",
+          "Fixed a bug where Game Terms and Archetypes on Character pages wouldn't take you to their Glossary entry if they had two or more words.",
+          "Renamed the 'Offline' page to the 'Game' page.",
+          "Added the current Version Number to the Footer.",
+          "Updated the order of the Desktop navigation.",
+          "Increased kerning on headings to improve readability for Dyslexic users.",
+          "Fixed Mobile views across the site.",
+          "Fixed a typo on Rukia's page.",
+          "Fixed issues where Japanese Character Trailers were appearing in English Character Trailer spots.",
+        ],
       },
       {
         version: "v1.0.0",
-        date: "??/0?/2025",
+        date: "21/02/2025",
         changes: [
           "BLEACH - Resource of Souls released.",
           "Homepage was added.",
@@ -57,11 +73,11 @@ export default function Changelog() {
           "Character Detail page Animations were added.",
           "Character Detail page Moveset system was added.",
           "Character Detail page Trivia was added.",
-          "Term page was added.",
-          "Term page searching was added.",
+          "Glossary page was added.",
+          "Glossary page searching was added.",
           "Archetypes were added.",
           "Game Terms were added.",
-          "Offline page was added.",
+          "Game page was added.",
           "Story Mode page was added.",
           "Side Story Mode page was added.",
           "Secret Story Mode page was added.",
@@ -79,7 +95,7 @@ export default function Changelog() {
   );
 
   return (
-    <div className="p-16 space-y-4 text-white">
+    <div className="p-4 lg:p-16 space-y-4 text-white">
       <div className="flex flex-row space-x-2">
         <Link href="/" className="text-teal-400 hover:underline">
           Home

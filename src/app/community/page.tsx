@@ -6,15 +6,15 @@ export default function Community() {
   return (
     <div className="text-white">
       <div className="flex flex-row items-center w-full py-1 text-base justify-center px-4 md:text-2xl border-b-2 border-b-gray-400 font-bebasFont">
-        <Link href="https://challonge.com/communities/0a1b873a46a4142dc1e40cfa" className="border-l-8 border-l-red-600 border-r-8 border-r-teal-400 px-4 hover:underline">
+        <Link href="https://discord.gg/fA69CAE2eP" className="border-l-8 border-l-red-600 border-r-8 border-r-teal-400 px-4 hover:underline">
           NEW TOURNAMENT ANNOUNCEMENT - The &quot;Warfare of Souls&quot; Tournament will begin on 29/03/2025 on <span className="text-red-600">PS4/PS5</span> and{" "}
-          <span className="text-red-600">PC</span>! Sign up <span className="text-teal-400">here</span>!
+          <span className="text-red-600">PC</span>! Sign up <span className="text-teal-400">in our Discord</span>!
         </Link>
       </div>
       <div className="border-b-2 border-gray-400">
         <AnimatedHeroWrapper src={"/assets/site-assets/community-hero.mp4"} alt={""} />
       </div>
-      <div className="p-16">
+      <div className="p-4 lg:p-16">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
@@ -33,7 +33,7 @@ export default function Community() {
               </p>
             </div>
           </div>
-          <div className="flex justify-self-end">
+          <div className="flex justify-self-end pr-6">
             <Image
               src={`/assets/character-banner/aizen-sosuke-banner.png`}
               height="300"
@@ -51,7 +51,7 @@ export default function Community() {
         </div>
         <hr className="my-6" />
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="flex justify-self-start">
+          <div className="flex justify-self-start pr-6">
             <Image
               src={`/assets/site-assets/game-screenshot-1.png`}
               height="300"

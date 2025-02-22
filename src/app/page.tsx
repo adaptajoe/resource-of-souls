@@ -13,7 +13,7 @@ export default function Home() {
       <div className="border-b-2 border-gray-400">
         <AnimatedHeroWrapper src={"/assets/site-assets/site-hero.mp4"} alt={""} />
       </div>
-      <div className="p-16">
+      <div className="p-4 lg:p-16">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
@@ -32,7 +32,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex justify-self-end">
+          <div className="flex justify-self-end pr-6">
             <Image
               src={`/assets/character-banner/ichigo-kurosaki-banner.png`}
               height="300"
@@ -50,7 +50,7 @@ export default function Home() {
         </div>
         <hr className="my-6" />
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="flex justify-self-start">
+          <div className="flex justify-self-start pr-6">
             <Image
               src={`/assets/site-assets/game-screenshot-2.png`}
               height="300"
@@ -76,7 +76,7 @@ export default function Home() {
               </p>
               <p>
                 <Link className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700 hover:bg-red-600 hover:text-black transition-colors" href={"/community"}>
-                  View the BLEACH - Resource of Souls Community Hub
+                  View the Community Hub
                 </Link>
               </p>
             </div>
@@ -94,20 +94,20 @@ export default function Home() {
                 unlockables you may want to strive for!
               </p>
               <p>
-                <Link className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700 hover:bg-red-600 hover:text-black transition-colors" href={"/offline"}>
-                  View the Offline Mode Guides
+                <Link className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700 hover:bg-red-600 hover:text-black transition-colors" href={"/game"}>
+                  View the Game Guides
                 </Link>
               </p>
               <hr className="my-6" />
               <p className="flex flex-col">Similarly, for esports and tournament hosts, find easy-to-refer-to sheets for each character, term and archetype in the game!</p>
               <p>
-                <Link className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700 hover:bg-red-600 hover:text-black transition-colors" href={"/terms"}>
-                  View the Terms used in BLEACH - Rebirth of Souls
+                <Link className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700 hover:bg-red-600 hover:text-black transition-colors" href={"/glossary"}>
+                  View the Glossary
                 </Link>
               </p>
             </div>
           </div>
-          <div className="flex justify-self-end">
+          <div className="flex justify-self-end pr-6">
             <Image
               src={`/assets/site-assets/game-screenshot-3.png`}
               height="300"
@@ -123,7 +123,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <hr className="mb-16 my-6" />
+        <hr className="lg:mb-16 my-6" />
         <div className="grid grid-cols-1 text-center">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl xl:text-5xl mb-4">

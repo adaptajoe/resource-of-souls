@@ -2,17 +2,17 @@ import Link from "next/link";
 
 export default function SecretStoriesMode() {
   return (
-    <div className="p-16 space-y-4 text-white">
+    <div className="p-4 lg:p-16 space-y-4 text-white">
       <div className="flex flex-row space-x-2">
         <Link href="/" className="text-teal-400 hover:underline">
           Home
         </Link>
         <p>/</p>
-        <Link href="/offline" className="text-teal-400 hover:underline">
-          Offline
+        <Link href="/game" className="text-teal-400 hover:underline">
+          Game
         </Link>
         <p>/</p>
-        <Link href="/offline/secret-stories-mode" className="text-teal-400 hover:underline">
+        <Link href="/game/secret-stories-mode" className="text-teal-400 hover:underline">
           Secret Stories Mode
         </Link>
         <p>/</p>

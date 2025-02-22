@@ -22,6 +22,16 @@ interface IGameTermCardProps {
   setHoveredImageId: (id: string | null) => void;
 }
 
+const formatTermId = (term: string): string => {
+  return term
+    .replace(/%20/g, " ")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+    .replace(/-+/g, "-");
+};
+
 const normalizeSpecialCharacters = (str: string): string => {
   const charMap: { [key: string]: string } = {
     ū: "u",
@@ -53,55 +63,58 @@ const getCharactersByArchetype = (archetype: string): { name: string; slug: stri
     }));
 };
 
-export default function TermsContent() {
+export default function GlossaryContent() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [archetypesIsOpen, setArchetypesIsOpen] = useState(false);
-  const [gameTermsIsOpen, setGameTermsIsOpen] = useState(false);
+  const [archetypesIsOpen, setArchetypesIsOpen] = useState(true);
+  const [gameTermsIsOpen, setGameTermsIsOpen] = useState(true);
   const [highlightedId, setHighlightedId] = useState<string | null>(null);
   const [hoveredImageId, setHoveredImageId] = useState<string | null>(null);
 
   const searchParams = useSearchParams();
+
+  const scrollToElement = (elementId: string) => {
+    setTimeout(() => {
+      const element = document.getElementById(elementId);
+      if (element) {
+        const headerOffset = 200;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }, 100);
+  };
 
   useEffect(() => {
     const highlight = searchParams.get("highlight");
     const hash = window.location.hash.slice(1);
 
     if (hash) {
-      setHighlightedId(hash);
+      const decodedHash = decodeURIComponent(hash);
+      const formattedHash = formatTermId(decodedHash);
+      setHighlightedId(formattedHash);
       setGameTermsIsOpen(true);
-
-      setTimeout(() => {
-        const element = document.getElementById(hash);
-        if (element) {
-          const headerOffset = 200;
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          });
-        }
-      }, 100);
+      scrollToElement(formattedHash);
     } else if (highlight) {
-      setHighlightedId(highlight);
-      setArchetypesIsOpen(true);
+      const decodedHighlight = decodeURIComponent(highlight);
+      const formattedHighlight = formatTermId(decodedHighlight);
+      setHighlightedId(formattedHighlight);
 
-      setTimeout(() => {
-        const element = document.getElementById(highlight);
-        if (element) {
-          const headerOffset = 200;
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const isGameTerm = Object.values(supplementaryData.gameTerms).some((term) => formatTermId(term.name) === formattedHighlight);
 
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          });
-        }
-      }, 100);
+      if (isGameTerm) {
+        setGameTermsIsOpen(true);
+      } else {
+        setArchetypesIsOpen(true);
+      }
+
+      scrollToElement(formattedHighlight);
     }
   }, [searchParams]);
+
   const filterItems = (text: string) => {
     return text.toLowerCase().includes(searchQuery.toLowerCase());
   };
@@ -116,10 +129,11 @@ export default function TermsContent() {
 
   const ArchetypeCard = ({ title, description, id }: IArchetypeCardProps) => {
     const characters = getCharactersByArchetype(title);
-    const isHighlighted = id === highlightedId;
+    const formattedId = formatTermId(id);
+    const isHighlighted = formattedId === highlightedId;
 
     return (
-      <div id={id} className={`border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-red-600 ring-2 ring-red-600 bg-red-900/10" : "border-gray-400"}`}>
+      <div id={formattedId} className={`border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-red-600 ring-2 ring-red-600 bg-red-900/10" : "border-gray-400"}`}>
         <div className="relative w-full border-b-2 border-gray-800">
           <Image width="300" height="150" alt="" id={id} src={`/assets/term-assets/${id}.png`} className="w-full h-[150px] object-cover" />
         </div>
@@ -148,12 +162,13 @@ export default function TermsContent() {
   };
 
   const GameTermCard = ({ title, englishTitle, description, id }: IGameTermCardProps) => {
-    const isHighlighted = id === highlightedId;
+    const formattedId = formatTermId(id);
+    const isHighlighted = formattedId === highlightedId;
     const [isHovered, setIsHovered] = useState(false);
 
     return (
       <div
-        id={id}
+        id={formattedId}
         className={`border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-teal-400 ring-2 ring-teal-400 bg-teal-900/10" : "border-gray-400"}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -177,9 +192,19 @@ export default function TermsContent() {
   };
 
   return (
-    <div className="p-16 space-y-4 text-white">
+    <div className="p-4 lg:p-16  space-y-4 text-white">
+      <div className="flex flex-row space-x-2">
+        <Link href="/" className="text-teal-400 hover:underline">
+          Home
+        </Link>
+        <p>/</p>
+        <Link href="/glossary" className="text-teal-400 hover:underline">
+          Glossary
+        </Link>
+        <p>/</p>
+      </div>
       <h2 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
-        <span className="text-red-600">T</span>erms
+        <span className="text-red-600">G</span>lossary
       </h2>
       <p>
         BLEACH - Rebirth of Souls has a wealth of terms that can be confusing to newcomers. To assist with this, we&apos;ve laid out easy-to-read, easy-to-view examples below of these terms in action.
@@ -218,7 +243,7 @@ export default function TermsContent() {
             </button>
           )}
           {archetypesIsOpen && (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-2">
               {filteredArchetypes.map((archetype) => (
                 <ArchetypeCard key={archetype.id} title={archetype.name} id={archetype.id} description={archetype.description} />
               ))}
@@ -266,7 +291,7 @@ export default function TermsContent() {
             </>
           )}
           {gameTermsIsOpen && (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-2">
               {filteredGameTerms.map((term) => (
                 <GameTermCard
                   key={term.id}

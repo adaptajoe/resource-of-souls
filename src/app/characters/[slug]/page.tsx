@@ -88,7 +88,7 @@ export default async function CharacterDetails(props: Props) {
     <div>
       <div className="grid grid-cols-1 xl:grid-cols-3">
         <div className="col-span-1 xl:col-span-2 mb-6">
-          <div className="p-16 space-y-4 text-white mr-4">
+          <div className="p-4 lg:p-16  space-y-4 text-white mr-4">
             <div className="flex flex-row space-x-2">
               <Link href="/" className="text-teal-400 hover:underline">
                 Home
@@ -217,7 +217,7 @@ export default async function CharacterDetails(props: Props) {
           </div>
 
           {/* Continue Page View */}
-          <div className="text-white px-16 mr-4">
+          <div className="text-white px-4 lg:px-16 mr-4">
             {/* Character Info */}
             <div id="character-info">
               <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">

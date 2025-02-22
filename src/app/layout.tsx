@@ -43,14 +43,11 @@ export default function RootLayout({
           <Link href="/characters" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
             Characters
           </Link>
-          <Link href="/terms" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
-            Terms
+          <Link href="/game" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
+            Game
           </Link>
-          <Link href="/changelog" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
-            Changelog
-          </Link>
-          <Link href="/offline" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
-            Offline
+          <Link href="/glossary" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
+            Glossary
           </Link>
           <Link href="/community" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
             Community
@@ -60,6 +57,9 @@ export default function RootLayout({
           </Link>
           <Link href="/creators" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
             Creators
+          </Link>
+          <Link href="/changelog" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
+            Changelog
           </Link>
           <Link href="https://github.com/adaptajoe/resource-of-souls" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
             GitHub
@@ -71,7 +71,7 @@ export default function RootLayout({
             Discord
           </Link>
         </div>
-        <div className="bg-black w-full h-[125px] border-b-2 border-gray-400 py-2 px-12 z-50 flex lg:hidden flex-row items-center space-x-2 text-xs lg:text-sm xl:text-xl font-bebasFont text-white">
+        <div className="bg-black w-full h-[125px] border-b-2 border-gray-400 py-2 px-4 md:px-12 z-50 flex lg:hidden flex-row items-center space-x-2 text-xs lg:text-sm xl:text-xl font-bebasFont text-white justify-between md:justify-normal">
           <Link href="/">
             <Image
               src={`/assets/site-assets/site-logo.png`}
@@ -89,6 +89,7 @@ export default function RootLayout({
         <div>{children}</div>
         <footer className="px-12 py-3 border-t-2 border-gray-400 grid grid-cols-1 lg:grid-cols-2 text-gray-500 italic text-xs justify-center lg:justify-between">
           <div>
+            <p className="text-xl text-gray-400">Site Version: v1.0.1.</p>
             <p className="mb-4 md:mb-0">
               BLEACH - Resource of Souls is developed, designed, managed and updated by Discord user <span className="text-amber-400 font-black">@jojicus</span>.
             </p>

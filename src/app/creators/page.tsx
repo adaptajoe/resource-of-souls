@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Creators() {
   return (
-    <div className="p-16 space-y-4 text-white">
+    <div className="p-4 lg:p-16 space-y-4 text-white">
       <div className="flex flex-row space-x-2">
         <Link href="/" className="text-teal-400 hover:underline">
           Home

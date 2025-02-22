@@ -10,7 +10,6 @@ export interface CharacterSidebarProps {
 }
 
 const CharacterSidebar: FC<CharacterSidebarProps> = ({ character, slug }) => {
-  const [movesetKeyIsOpen, setMovesetKeyIsOpen] = useState(false);
   const [currentOutfit, setCurrentOutfit] = useState("base-outfit-1");
   const [availableOutfits, setAvailableOutfits] = useState<{ base: number[]; dlc: number[] }>({ base: [1], dlc: [] });
   const totalStats = useMemo(() => character.stats[0].power + character.stats[0].speed + character.stats[0].range + character.stats[0].defense + character.stats[0].technique, [character.stats]);
@@ -205,7 +204,7 @@ const CharacterSidebar: FC<CharacterSidebarProps> = ({ character, slug }) => {
             ))}
           </div>
         </div>
-        <div className="flex flex-col flex-wrap items-left w-full border-b border-white  p-2 mb-2">
+        <div className="flex flex-col flex-wrap items-left w-full p-2 mb-2">
           <h2 className="w-fit text-center mb-2 ml-2 text-xl">Characteristics</h2>
           <div className="w-auto flex flex-wrap flex-row">
             {character.tags.characteristics.map((characteristic) => (
@@ -214,114 +213,6 @@ const CharacterSidebar: FC<CharacterSidebarProps> = ({ character, slug }) => {
               </strong>
             ))}
           </div>
-        </div>
-        <div className="flex flex-col flex-wrap items-left w-full p-2 mb-2">
-          <h2 className="w-fit text-center mb-2 ml-2 text-xl">Movelist Key</h2>
-          <button className="font-bold text-teal-400 flex items-center gap-2 ml-2" onClick={() => setMovesetKeyIsOpen((prevState) => !prevState)}>
-            Click to {movesetKeyIsOpen ? "hide" : "expand"}
-            {movesetKeyIsOpen ? <span>&uarr;</span> : <span>&darr;</span>}
-          </button>
-          {movesetKeyIsOpen && (
-            <div className="w-auto flex flex-wrap flex-row mt-4">
-              <div className="grid grid-cols-2 w-full gap-2 ml-4 text-gray-400">
-                <div>
-                  <strong className="bg-teal-400 align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">Q</strong> Quick
-                  Attack
-                </div>
-                <div>
-                  <strong className="bg-amber-400 align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">F</strong> Flash
-                  Attack
-                </div>
-                <div>
-                  <strong className="bg-teal-400 align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">SQ</strong>
-                  Step Quick Attack
-                </div>
-                <div>
-                  <strong className="bg-amber-400 align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">SF</strong>
-                  Special Flash Attack
-                </div>
-                <div>
-                  <strong className="bg-indigo-400 align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">SI</strong>
-                  Signature Move
-                </div>
-                <div>
-                  <strong className="bg-purple-400 align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">BK</strong>
-                  Breaker
-                </div>
-                <div>
-                  <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">R</strong> Reverse
-                </div>
-                <div>
-                  <strong className="bg-red-300 align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">BR</strong>
-                  Burst Reverse
-                </div>
-                <div>
-                  <strong className="bg-orange-300 align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">CR</strong>
-                  Chain Reverse
-                </div>
-                <div>
-                  <strong className="align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center bg-blue-300">SR</strong>
-                  Soul Reverse
-                </div>
-                <div>
-                  <strong className="bg-pink-400 align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">KI</strong>
-                  Kikon Move
-                </div>
-                <div>
-                  <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">S1</strong>
-                  SP Move 1
-                </div>
-                <div>
-                  <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">S2</strong>
-                  SP Move 2
-                </div>
-                <div>
-                  <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">AW</strong>
-                  Awakening
-                </div>
-                <div>
-                  <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">RE</strong>
-                  Reawakening
-                </div>
-                <div>
-                  <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">HH</strong>
-                  Follow-up Hoho
-                </div>
-                <div>
-                  <strong className="bg-green-400 align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">GD</strong>
-                  Guard
-                </div>
-                <div>
-                  <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">CO</strong>
-                  Counter
-                </div>
-                <div>
-                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&#8599;</span> Up-Right
-                </div>
-                <div>
-                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&#8598;</span> Up-Left
-                </div>
-                <div>
-                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&#8600;</span> Down-Right
-                </div>
-                <div>
-                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&#8601;</span> Down-Left
-                </div>
-                <div>
-                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&uarr;</span> Up
-                </div>
-                <div>
-                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&darr;</span> Down
-                </div>
-                <div>
-                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&rarr;</span> Right
-                </div>
-                <div>
-                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&larr;</span> Left
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </div>

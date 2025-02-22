@@ -412,7 +412,7 @@ export default function RankedLeaderboard() {
   );
 
   return (
-    <div className="p-16 space-y-4 text-white">
+    <div className="p-4 lg:p-16  space-y-4 text-white">
       <div className="flex flex-row space-x-2">
         <Link href="/" className="text-teal-400 hover:underline">
           Home
@@ -443,7 +443,7 @@ export default function RankedLeaderboard() {
               </p>
             </div>
           </div>
-          <div className="flex justify-self-end">
+          <div className="flex justify-self-end pr-6">
             <Image
               src={`/assets/character-banner/aizen-sosuke-banner.png`}
               height="300"

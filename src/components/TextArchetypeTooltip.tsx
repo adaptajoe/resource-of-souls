@@ -76,7 +76,7 @@ Tooltip.displayName = "ArchetypeTooltip";
 const TextArchetypeTooltip = memo(function TextArchetypeTooltip({ archetype, display, className = "", tooltipPosition = "bottom" }: ArchetypeTooltipProps) {
   const [isTooltipVisible, setTooltipVisible] = useState(false);
 
-  const url = useMemo(() => `/terms?highlight=${formatArchetypeName(archetype.name)}`, [archetype.name]);
+  const url = useMemo(() => `/glossary?highlight=${formatArchetypeName(archetype.name)}`, [archetype.name]);
 
   const handleMouseEnter = useCallback(() => {
     setTooltipVisible(true);

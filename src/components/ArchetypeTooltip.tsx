@@ -19,7 +19,7 @@ export default function ArchetypeTooltip({ archetype, display, shortDescription,
       .replace(/^-/, "")
       .trim();
 
-    return `/terms?highlight=${encodeURIComponent(formattedArchetype)}`;
+    return `/glossary?highlight=${encodeURIComponent(formattedArchetype)}`;
   }, [archetype]);
 
   const handleKeyPress = useCallback(
