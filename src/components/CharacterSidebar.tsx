@@ -3,6 +3,7 @@ import { useEffect, useState, useCallback, useMemo, FC } from "react";
 import Image from "next/image";
 import StarRating from "./StarRating";
 import { Character } from "@/types/characterDataTypes";
+import { useInView } from "react-intersection-observer";
 
 export interface CharacterSidebarProps {
   character: Character;
@@ -13,11 +14,19 @@ const CharacterSidebar: FC<CharacterSidebarProps> = ({ character, slug }) => {
   const [currentOutfit, setCurrentOutfit] = useState("base-outfit-1");
   const [availableOutfits, setAvailableOutfits] = useState<{ base: number[]; dlc: number[] }>({ base: [1], dlc: [] });
   const totalStats = useMemo(() => character.stats[0].power + character.stats[0].speed + character.stats[0].range + character.stats[0].defense + character.stats[0].technique, [character.stats]);
-  const [fullBodyImageSrc, setFullBodyImageSrc] = useState(`/assets/character-fullbody/${slug}-fullbody.png`);
+  const [imageError, setImageError] = useState(false);
+
+  const { ref: imageRef, inView } = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
 
   const imageExists = useCallback(async (imagePath: string): Promise<boolean> => {
     try {
-      const response = await fetch(imagePath, { method: "HEAD" });
+      const response = await fetch(imagePath, {
+        method: "HEAD",
+        cache: "force-cache",
+      });
       return response.ok;
     } catch {
       return false;
@@ -26,20 +35,14 @@ const CharacterSidebar: FC<CharacterSidebarProps> = ({ character, slug }) => {
 
   useEffect(() => {
     const checkOutfits = async () => {
-      const baseOutfits = [];
-      const dlcOutfits = [];
+      const basePromises = Array.from({ length: 3 }, (_, i) => imageExists(`/assets/character-fullbody/${slug}-base-outfit-${i + 1}.png`));
+      const dlcPromises = Array.from({ length: 2 }, (_, i) => imageExists(`/assets/character-fullbody/${slug}-dlc-outfit-${i + 1}.png`));
 
-      // Check base outfits (1-3)
-      for (let i = 1; i <= 3; i++) {
-        const exists = await imageExists(`/assets/character-fullbody/${slug}-base-outfit-${i}.png`);
-        if (exists) baseOutfits.push(i);
-      }
+      const [baseResults, dlcResults] = await Promise.all([Promise.all(basePromises), Promise.all(dlcPromises)]);
 
-      // Check DLC outfits (1-2)
-      for (let i = 1; i <= 2; i++) {
-        const exists = await imageExists(`/assets/character-fullbody/${slug}-dlc-outfit-${i}.png`);
-        if (exists) dlcOutfits.push(i);
-      }
+      const baseOutfits = baseResults.map((exists, index) => (exists ? index + 1 : null)).filter((index): index is number => index !== null);
+
+      const dlcOutfits = dlcResults.map((exists, index) => (exists ? index + 1 : null)).filter((index): index is number => index !== null);
 
       setAvailableOutfits({ base: baseOutfits, dlc: dlcOutfits });
     };
@@ -121,20 +124,25 @@ const CharacterSidebar: FC<CharacterSidebarProps> = ({ character, slug }) => {
           ))}
         </div>
       </div>
-      <Image
-        src={`/assets/character-fullbody/${slug}-${currentOutfit}.png`}
-        height="300"
-        width="300"
-        alt={character.name}
-        className="max-h-[300px] w-fit pt-2 object-cover object-top-center"
-        style={{
-          objectFit: "cover",
-          objectPosition: "25% 0%",
-          aspectRatio: "1/1",
-        }}
-        onError={() => setFullBodyImageSrc("/assets/character-fullbody/placeholder.png")}
-      />
-      <p className="hidden">{fullBodyImageSrc}</p>
+      <div ref={imageRef} className="relative w-[300px] h-[300px]">
+        {inView && (
+          <Image
+            src={imageError ? "/assets/character-fullbody/placeholder.png" : `/assets/character-fullbody/${slug}-${currentOutfit}.png`}
+            fill
+            priority={false}
+            sizes="300px" // Reduced from 300px
+            alt={character.name}
+            className="max-h-[300px] w-fit pt-2 object-cover object-top-center" // Reduced from 300px
+            style={{
+              objectFit: "cover",
+              objectPosition: "25% 0%",
+            }}
+            onError={() => setImageError(true)}
+            loading="lazy"
+            quality={75}
+          />
+        )}
+      </div>
       <div className="border-white border border-r-0 border-l-0 border-b-0 w-full">
         <div className="border-b border-white w-full flex flex-row text-center text-sm">
           <div className="w-1/6 bg-red-700 flex flex-col border-r border-white">

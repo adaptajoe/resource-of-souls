@@ -19,6 +19,7 @@ export interface Character {
   moves: Moves[];
   stats: Stat[];
   trivia: string[];
+  show: boolean;
 }
 
 export interface Tags {
@@ -38,6 +39,7 @@ export interface Moves {
   base: Move[];
   awakened?: Move[];
   reawakened?: Move[];
+  kikon: Move[];
 }
 
 export interface Move {

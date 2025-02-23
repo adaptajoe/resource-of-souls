@@ -122,13 +122,12 @@ const useTranslateInput = (input: string): JSX.Element => {
 };
 
 const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
-  const [activeTab, setActiveTab] = useState<"base" | "awakened" | "reawakened">("base");
+  const [activeTab, setActiveTab] = useState<"base" | "awakened" | "reawakened" | "kikon">("base");
   const [movesetKeyIsOpen, setMovesetKeyIsOpen] = useState(false);
 
-  const hasAwakening = useMemo(() => moves.some((category) => category.awakened && category.awakened.length > 0), [moves]);
   const hasReawakening = useMemo(() => moves.some((category) => category.reawakened && category.reawakened.length > 0), [moves]);
 
-  const handleTabClick = useCallback((tab: "base" | "awakened" | "reawakened") => {
+  const handleTabClick = useCallback((tab: "base" | "awakened" | "reawakened" | "kikon") => {
     setActiveTab(tab);
   }, []);
 
@@ -188,11 +187,11 @@ const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
                 </div>
                 <div>
                   <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">S1</strong>
-                  SP Move 1
+                  Spiritual Pressure Move 1
                 </div>
                 <div>
                   <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">S2</strong>
-                  SP Move 2
+                  Spiritual Pressure Move 2
                 </div>
                 <div>
                   <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">AW</strong>
@@ -252,14 +251,12 @@ const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
         >
           Base
         </button>
-        {hasAwakening && (
-          <button
-            className={`px-4 py-2 rounded-t-lg transition-colors ${activeTab === "awakened" ? "bg-red-600 text-white" : "bg-gray-800 text-white hover:bg-red-800"}`}
-            onClick={() => handleTabClick("awakened")}
-          >
-            Awakened
-          </button>
-        )}
+        <button
+          className={`px-4 py-2 rounded-t-lg transition-colors ${activeTab === "awakened" ? "bg-red-600 text-white" : "bg-gray-800 text-white hover:bg-red-800"}`}
+          onClick={() => handleTabClick("awakened")}
+        >
+          Awakened
+        </button>
         {hasReawakening && (
           <button
             className={`px-4 py-2 rounded-t-lg transition-colors ${activeTab === "reawakened" ? "bg-red-600 text-white" : "bg-gray-800 text-white hover:bg-red-800"}`}
@@ -268,6 +265,12 @@ const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
             Reawakened
           </button>
         )}
+        <button
+          className={`px-4 py-2 rounded-t-lg transition-colors ${activeTab === "kikon" ? "bg-red-600 text-white" : "bg-gray-800 text-white hover:bg-red-800"}`}
+          onClick={() => handleTabClick("kikon")}
+        >
+          Kikon
+        </button>
       </div>
 
       {/* Content */}
@@ -279,6 +282,8 @@ const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
             {activeTab === "awakened" && moveCategory.awakened?.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} />)}
 
             {activeTab === "reawakened" && moveCategory.reawakened?.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} />)}
+
+            {activeTab === "kikon" && moveCategory.kikon.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} />)}
           </div>
         ))}
       </div>
@@ -286,7 +291,6 @@ const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
   );
 };
 
-// Subcomponent to display individual moves
 interface MoveDisplayProps {
   move: Move;
   characterId: string;

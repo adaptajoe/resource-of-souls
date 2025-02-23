@@ -145,14 +145,14 @@
       "name": "Reiatsu",
       "engName": "Spiritual Pressure",
       "shortDescription": "Special Meter Points",
-      "description": "A resource that fills the Reiatsu Gauge. Increases by landing attacks and being attacked, and decreases by performing Special Attacks and Signature Moves."
+      "description": "A resource that fills the Reiatsu Gauge. Increases by landing attacks and being attacked, and decreases by performing Spiritual Pressure Moves and Signature Moves."
     },
     "reiatsu-gauge": {
       "id": "reiatsu-gauge",
       "name": "Reiatsu Gauge",
       "engName": "Spiritual Pressure Gauge",
       "shortDescription": "Special Meter",
-      "description": "A resource that is global to every character that is spent on performing Special Attacks and Signature Moves."
+      "description": "A resource that is global to every character that is spent on performing Spiritual Pressure Moves and Signature Moves."
     },
     "fighting-spirit-gauge": {
       "id": "fighting-spirit-gauge",
@@ -310,7 +310,7 @@
       "id": "reviver",
       "name": "Reviver",
       "shortDescription": "Can revive themselves",
-      "description": "These characters have a unique mechanic that can bring them back from the brink of defeat if the conditions are right. These characters can cheat death, making them surprising opponents to face. Keep this in mind to defeat them."
+      "description": "These characters have a unique mechanic that can bring them back from the brink of defeat, restoring a set amount of Reishi if the conditions are right. These characters can cheat death, making them surprising opponents to face. Keep this in mind to defeat them."
     },
     "zoner": {
       "id": "zoner",

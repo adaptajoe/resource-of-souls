@@ -5,11 +5,19 @@ import Link from "next/link";
 export default function Community() {
   return (
     <div className="text-white">
-      <div className="flex flex-row items-center w-full py-1 text-base justify-center px-4 md:text-2xl border-b-2 border-b-gray-400 font-bebasFont">
-        <Link href="https://discord.gg/fA69CAE2eP" className="border-l-8 border-l-red-600 border-r-8 border-r-teal-400 px-4 hover:underline">
-          NEW TOURNAMENT ANNOUNCEMENT - The &quot;Warfare of Souls&quot; Tournament will begin on 29/03/2025 on <span className="text-red-600">PS4/PS5</span> and{" "}
-          <span className="text-red-600">PC</span>! Sign up <span className="text-teal-400">in our Discord</span>!
-        </Link>
+      <div className="flex flex-col items-center w-full py-2 text-base justify-center px-4 md:text-xl border-b-2 border-b-gray-400 font-bebasFont">
+        <p className="border-l-8 border-l-red-600 border-r-8 border-r-teal-400 text-center px-4 mb-2">
+          NEW TOURNAMENT ANNOUNCEMENT - The &quot;Warfare of Souls (WOS)&quot; & &quot;Chains of Fate (COF)&quot; Tournaments will begin on 29/03/2025 on{" "}
+          <span className="text-red-600">PS4 / PS5 (COF + WOS)</span> and <span className="text-red-600">PC (WOS)</span>..!
+        </p>
+        <hr className="p-1 my-1 w-full" />
+        <p className="border-l-8 border-l-red-600 border-r-8 border-r-teal-400 text-center px-4">
+          SIGN UP ON THE{" "}
+          <Link className="text-teal-400 hover:underline" href="/community/ranked-leaderboard">
+            COMMUNITY RANKED LEADERBOARD PAGE
+          </Link>
+          ..!
+        </p>
       </div>
       <div className="border-b-2 border-gray-400">
         <AnimatedHeroWrapper src={"/assets/site-assets/community-hero.mp4"} alt={""} />

@@ -60,6 +60,11 @@ export default function Characters() {
     const searchTermLower = searchTerm.toLowerCase();
 
     const filtered = Object.entries(characters).filter(([, character]) => {
+      // First check if the character should be shown
+      if (character.show === false) {
+        return false;
+      }
+
       const matchesSearch =
         character.name.toLowerCase().includes(searchTermLower) ||
         character.tags.characteristics.some((char) => char.toLowerCase().includes(searchTermLower)) ||

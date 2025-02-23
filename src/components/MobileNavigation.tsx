@@ -11,6 +11,7 @@ const MAIN_LINKS = [
   { href: "/community", text: "Community" },
   { href: "/modding", text: "Modding" },
   { href: "/creators", text: "Creators" },
+  { href: "/faq", text: "FAQ" },
 ] as const;
 
 const SUB_LINKS = [

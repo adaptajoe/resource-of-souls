@@ -5,9 +5,18 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="text-white">
-      <div className="flex flex-row items-center w-full py-1 text-base justify-center px-4 md:text-2xl border-b-2 border-b-gray-400 font-bebasFont">
+      <div className="flex flex-col items-center w-full py-2 text-base justify-center px-4 md:text-xl border-b-2 border-b-gray-400 font-bebasFont">
+        <p className="border-l-8 border-l-red-600 border-r-8 border-r-teal-400 text-center px-4 mb-2">
+          NEW TOURNAMENT ANNOUNCEMENT - The &quot;Warfare of Souls (WOS)&quot; & &quot;Chains of Fate (COF)&quot; Tournaments will begin on 29/03/2025 on{" "}
+          <span className="text-red-600">PS4 / PS5 (COF + WOS)</span> and <span className="text-red-600">PC (WOS)</span>..!
+        </p>
+        <hr className="p-1 my-1 w-full" />
         <p className="border-l-8 border-l-red-600 border-r-8 border-r-teal-400 text-center px-4">
-          BLEACH Resource of Souls has launched! Please bear with us as the game launches, as a lot of information may be incorrect or missing.
+          SIGN UP ON THE{" "}
+          <Link className="text-teal-400 hover:underline" href="/community/ranked-leaderboard">
+            COMMUNITY RANKED LEADERBOARD PAGE
+          </Link>
+          ..!
         </p>
       </div>
       <div className="border-b-2 border-gray-400">

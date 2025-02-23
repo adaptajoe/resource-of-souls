@@ -33,6 +33,20 @@ export default function Changelog() {
   const resourceOfSoulsChangelog = useMemo(
     () => [
       {
+        version: "v1.0.2",
+        date: "23/02/2025",
+        changes: [
+          "Added enhanced Filters to the Glossary Page that lets you filter everything on the Glossary Page based on which mechanic it affects (Reishi, Kikon, etc).",
+          "Added a new tab to every character's Movelist, `Kikon`, which shows their Kikon Moves along with a description.",
+          "Added new Creators to the Creator page.",
+          "Fixed an issue causing Character Details Full-body Images to load extremely slowly.",
+          "Added placeholder info for Barragan and Starrk (Let's face it, they're getting in) along with placeholder custom Banners which is hidden for now.",
+          "Added the FAQ page, which includes a roadmap for Resource of Souls.",
+          "Added the currently running Tournaments to the Community Ranked Leaderboard Page.",
+          "Edited the Home Page announcement and Community Page announcement to better notify users of upcoming Tournaments.",
+        ],
+      },
+      {
         version: "v1.0.1",
         date: "23/02/2025",
         changes: [

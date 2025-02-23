@@ -119,6 +119,7 @@ export default function RankedLeaderboard() {
   const specialLeagueBadges: IBadge[] = [
     { name: "'A Huge Zanpakuto'", owner: null, lastChallenged: null },
     { name: "Brick Thrower", owner: null, lastChallenged: null },
+    { name: "Bankai Spammer", owner: null, lastChallenged: null },
   ];
 
   const tables = useMemo(
@@ -441,6 +442,37 @@ export default function RankedLeaderboard() {
               <p className="text-sm text-gray-400 italic mb-8">
                 (Badges expire after 6 months with no Challenges - See one that should be expired? Message <span className="text-amber-400">@jojicus</span> on Discord!).
               </p>
+              <hr />
+              <h3 className="text-3xl">Currently Earnable Badges</h3>
+              <p>
+                Click the blue links below to register for a Badge&apos;s Tournament. Finding that the Tournament is full? Watch for who places first in the Tournament and challenge them for the
+                Badge!
+              </p>
+              <hr />
+              <h3 className="text-3xl">Sign Up for Available Tournaments</h3>
+              <ul className="list-disc pl-4">
+                <li>
+                  <span className="text-amber-400">Queen of Hueco Mundo</span> - PlayStation -{" "}
+                  <Link className="text-teal-400 hover:underline" href="https://challonge.com/6kqo6q99">
+                    john30688&apos;s &apos;Warfare of Souls&apos; Tournament
+                  </Link>{" "}
+                  - 29/03/2025
+                </li>
+                <li>
+                  <span className="text-amber-400">Bankai Spammer</span> - PC -{" "}
+                  <Link className="text-teal-400 hover:underline" href="https://challonge.com/4t9d5lew#">
+                    john30688&apos;s &apos;Warfare of Souls&apos; Tournament
+                  </Link>{" "}
+                  - 29/03/2025
+                </li>
+                <li>
+                  <span className="text-amber-400">Karakura-Raizer Spirit</span> - PlayStation -{" "}
+                  <Link className="text-teal-400 hover:underline" href="https://www.start.gg/tournament/chains-of-fate-opening-tournament/details">
+                    Contourxci&apos;s &apos;Chains of Fate&apos; Tournament
+                  </Link>{" "}
+                  - 29/03/2025
+                </li>
+              </ul>
             </div>
           </div>
           <div className="flex justify-self-end pr-6">

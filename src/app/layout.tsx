@@ -61,6 +61,9 @@ export default function RootLayout({
           <Link href="/changelog" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
             Changelog
           </Link>
+          <Link href="/faq" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
+            FAQ
+          </Link>
           <Link href="https://github.com/adaptajoe/resource-of-souls" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
             GitHub
           </Link>

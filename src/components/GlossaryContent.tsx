@@ -44,7 +44,7 @@ const normalizeSpecialCharacters = (str: string): string => {
     .join("");
 };
 
-const getCharactersByArchetype = (archetype: string): { name: string; slug: string }[] => {
+const getCharactersByArchetype = (archetype: string): { name: string; slug: string; id: string }[] => {
   const normalizedArchetype = normalizeSpecialCharacters(archetype).toLowerCase().replace(/\s+/g, "");
 
   return Object.values(characterData)
@@ -54,6 +54,7 @@ const getCharactersByArchetype = (archetype: string): { name: string; slug: stri
     })
     .map((character) => ({
       name: character.name,
+      id: character.id,
       slug: normalizeSpecialCharacters(character.name)
         .toLowerCase()
         .replace(/\s*\((.*?)\)/g, "-$1")
@@ -69,6 +70,47 @@ export default function GlossaryContent() {
   const [gameTermsIsOpen, setGameTermsIsOpen] = useState(true);
   const [highlightedId, setHighlightedId] = useState<string | null>(null);
   const [hoveredImageId, setHoveredImageId] = useState<string | null>(null);
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
+
+  const FilterButton = ({ label, isActive, onClick }: { label: string; isActive: boolean; onClick: () => void }) => {
+    return (
+      <button
+        onClick={onClick}
+        className={`px-3 m-1 w-fit py-1 font-black hover:bg-red-600 hover:text-black text-lg rounded ${
+          isActive ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
+        } transition-colors`}
+      >
+        {label}
+      </button>
+    );
+  };
+
+  const FilterButtons = () => {
+    const commonFilters = ["Guard", "Attack", "Reishi", "Reiatsu", "Kikon", "Konpaku", "Reverse", "Breaker", "Quick Attack", "Flash Attack", "Signature", "Spiritual Pressure", "Fighting Spirit"];
+
+    return (
+      <div className="w-fit lg:w-full font-bebasFont text-xl flex items-center justify-center mt-4 space-y-4 lg:space-y-0 lg:space-x-4">
+        <div className="grid grid-cols-3 lg:grid-cols-7 grid-flow-row-dense xl:grid-flow-col-dense items-center w-fit">
+          {commonFilters.map((filter) => (
+            <FilterButton
+              key={filter}
+              label={filter}
+              isActive={activeFilter === filter}
+              onClick={() => {
+                if (activeFilter === filter) {
+                  setActiveFilter(null);
+                  setSearchQuery("");
+                } else {
+                  setActiveFilter(filter);
+                  setSearchQuery(filter);
+                }
+              }}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  };
 
   const searchParams = useSearchParams();
 
@@ -116,11 +158,22 @@ export default function GlossaryContent() {
   }, [searchParams]);
 
   const filterItems = (text: string) => {
-    return text.toLowerCase().includes(searchQuery.toLowerCase());
+    if (!searchQuery) return true;
+
+    const searchWords = searchQuery.toLowerCase().split(/\s+/);
+    const targetWords = text.toLowerCase().split(/\s+/);
+
+    return searchWords.every((searchWord) =>
+      targetWords.some(
+        (targetWord) => targetWord === searchWord || targetWord === searchWord + "." || targetWord === searchWord + "," || targetWord === searchWord + ":" || targetWord === searchWord + ";"
+      )
+    );
   };
 
   const filteredArchetypes = useMemo(() => {
-    return Object.values(supplementaryData.archetypes).filter((archetype) => filterItems(archetype.name) || filterItems(archetype.description));
+    return Object.values(supplementaryData.archetypes).filter((archetype) => {
+      return filterItems(archetype.name) || filterItems(archetype.description);
+    });
   }, [searchQuery]);
 
   const filteredGameTerms = useMemo(() => {
@@ -139,7 +192,7 @@ export default function GlossaryContent() {
         </div>
         <div className="p-4">
           <h2 className="font-bold text-xl mb-2">{title}</h2>
-          <p className="text-gray-400 italic pb-2 text-sm">{description}</p>
+          <p className="text-gray-400 italic pb-2 text-xs">{description}</p>
           {characters.length > 0 && (
             <div className="mt-2 w-full border-t border-gray-400">
               <div className="text-sm font-semibold pt-2">Characters:</div>
@@ -147,7 +200,7 @@ export default function GlossaryContent() {
                 {characters.map((character, index) => (
                   <Link
                     key={index}
-                    className="text-xs bg-black border border-gray-600 hover:border-red-600 text-gray-400 px-2 py-1 hover:bg-red-900 hover:text-white transition-all"
+                    className="text-xs bg-black border border-gray-600 hover:border-red-600 text-gray-400 px-2 py-1 hover:bg-red-900 hover:text-white transition-all rounded-xl"
                     href={`/characters/${character.slug}`}
                   >
                     {character.name}
@@ -185,7 +238,7 @@ export default function GlossaryContent() {
             <h2 className="text-xl">{title}</h2>
             {englishTitle && <p className="text-xs text-gray-400 ml-2 italic">(ENG: {englishTitle})</p>}
           </div>
-          <p className="text-gray-400 italic text-sm">{description}</p>
+          <p className="text-gray-400 italic text-xs">{description}</p>
         </div>
       </div>
     );
@@ -223,6 +276,7 @@ export default function GlossaryContent() {
         }}
         className="w-full p-2 bg-gray-700 border-2 border-gray-400 rounded-xl text-white"
       />
+      <FilterButtons />
       <hr className="my-6" />
       <div>
         <h2 className="text-2xl font-bold text-white">Archetypes</h2>
