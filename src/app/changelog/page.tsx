@@ -33,7 +33,23 @@ export default function Changelog() {
   const resourceOfSoulsChangelog = useMemo(
     () => [
       {
-        version: "v1.0.2",
+        version: "v1.0.3.",
+        date: "24/02/2025",
+        changes: [
+          "Fixed all instances of characters having incorrect stat ratings.",
+          "Fixed all instances of characters having incorrect Ease of Use ratings.",
+          "Added the new `MidRange` Archetype, and added appropriate characters to said Archetype.",
+          "Added the `Online Modes` page to the Game section.",
+          "Fixed a bug where Mobile Movelist Animations were playing off the screen.",
+          "(Hopefully) Fixed a bug where moves with special characters (I.E. ō, ū, é) weren't loading their animations properly for the Movelist Tooltip.",
+          "Adjusted the descriptions of `ShortRange`, `LongRange` and `HybridRange` Archetypes.",
+          "Added `Character #31 - Coyote Starrk`.",
+          "Added placeholder imagery for Coyote Starrk.",
+          "Added placeholder Ease of Use and Stats for Coyote Starrk (These will be updated later today in v1.0.4.).",
+        ],
+      },
+      {
+        version: "v1.0.2.",
         date: "23/02/2025",
         changes: [
           "Added enhanced Filters to the Glossary Page that lets you filter everything on the Glossary Page based on which mechanic it affects (Reishi, Kikon, etc).",
@@ -47,7 +63,7 @@ export default function Changelog() {
         ],
       },
       {
-        version: "v1.0.1",
+        version: "v1.0.1.",
         date: "23/02/2025",
         changes: [
           "Fixed an issue where Rukia was incorrectly assigned the first character slot.",

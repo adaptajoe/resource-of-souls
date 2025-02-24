@@ -33,6 +33,9 @@ export default function Game() {
         <Link href="/game/mission-mode" className="p-8 hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
           Mission Mode
         </Link>
+        <Link href="/game/online-modes" className="p-8 hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+          Online Modes
+        </Link>
         <Link href="/game/stages" className="p-8 hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
           Stages
         </Link>

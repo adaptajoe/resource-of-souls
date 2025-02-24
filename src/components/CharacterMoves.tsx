@@ -1,7 +1,14 @@
 "use client";
-import { useState, useCallback, useMemo, JSX } from "react";
+import { useState, useCallback, useMemo, JSX, useEffect } from "react";
 import { Moves, Move } from "@/types/characterDataTypes";
 import React from "react";
+
+interface DebugInfo {
+  originalMoveId: string;
+  safeFileName: string;
+  fullPath: string;
+  isKikonMove: boolean;
+}
 
 interface CharacterMovesProps {
   moves: Moves[];
@@ -16,36 +23,75 @@ interface MoveAnimationTooltipProps {
 
 const MoveAnimationTooltip = ({ characterId, moveId, children }: MoveAnimationTooltipProps) => {
   const [videoError, setVideoError] = useState(false);
+  const [debugInfo, setDebugInfo] = useState<DebugInfo | null>(null);
 
-  // Encode the moveId to handle special characters
-  const encodedMoveId = encodeURIComponent(moveId);
-  const animationPath = `/assets/character-animations/${characterId}/${encodedMoveId}.mp4`;
+  const safeFileName = moveId.replace(/\s+/g, "-").toLowerCase();
+  const animationPath = `/assets/character-animations/${characterId}/${safeFileName}.mp4`;
+
+  useEffect(() => {
+    const isKikonMove = moveId.includes("kikon-move");
+    setDebugInfo({
+      originalMoveId: moveId,
+      safeFileName,
+      fullPath: animationPath,
+      isKikonMove,
+    });
+  }, [moveId, safeFileName, animationPath]);
 
   return (
     <div className="relative inline-block group">
       <span className={`cursor-pointer ${videoError ? "text-red-600" : "text-teal-400"}`}>{children}</span>
       {!videoError && (
         <>
-          {/* Mobile tooltip (above) */}
+          {/* Mobile tooltip */}
           <div
             className="md:hidden absolute invisible group-hover:visible z-10 p-1 rounded-lg bg-black border-teal-400 border-2 shadow-lg
-            left-1/2 -translate-x-1/2 bottom-full mb-4"
+            left-36 -translate-x-1/2 bottom-full mb-4"
           >
-            <video src={animationPath} width={300} height={300} className="rounded-lg max-w-[300px]" onError={() => setVideoError(true)} autoPlay loop muted />
-            <div
-              className="absolute left-1/2 -translate-x-1/2 bottom-[-12px] w-0 h-0 
-              border-l-[12px] border-l-transparent 
-              border-t-[12px] border-t-teal-400 
-              border-r-[12px] border-r-transparent"
+            <video
+              src={animationPath}
+              width={300}
+              height={300}
+              className="rounded-lg max-w-[250px]"
+              onError={(e) => {
+                console.error("Video load error:", {
+                  error: e,
+                  debugInfo,
+                  attemptedPath: animationPath,
+                });
+                setVideoError(true);
+              }}
+              onLoad={() => {
+                console.log("Video loaded successfully:", debugInfo);
+              }}
+              autoPlay
+              loop
+              muted
             />
           </div>
 
-          {/* Desktop tooltip (right) */}
+          {/* Desktop tooltip */}
           <div
             className="hidden md:block absolute invisible group-hover:visible z-10 p-1 rounded-lg bg-black border-teal-400 border-2 shadow-lg
             left-full ml-4 top-1/2 -translate-y-1/2"
           >
-            <video src={animationPath} width={300} height={300} className="rounded-lg max-w-[300px]" onError={() => setVideoError(true)} autoPlay loop muted />
+            <video
+              src={animationPath}
+              width={300}
+              height={300}
+              className="rounded-lg max-w-[300px]"
+              onError={(e) => {
+                console.error("Video load error:", {
+                  error: e,
+                  debugInfo,
+                  attemptedPath: animationPath,
+                });
+                setVideoError(true);
+              }}
+              autoPlay
+              loop
+              muted
+            />
             <div
               className="absolute left-[-12px] top-1/2 -translate-y-1/2 w-0 h-0 
               border-t-[12px] border-t-transparent 
@@ -58,6 +104,7 @@ const MoveAnimationTooltip = ({ characterId, moveId, children }: MoveAnimationTo
     </div>
   );
 };
+
 const formatMoveTag = (tag: string): string => {
   const specialCases: { [key: string]: string } = {
     sp1: "SP1",

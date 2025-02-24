@@ -364,37 +364,43 @@
       "id": "short-range",
       "name": "Short Range",
       "shortDescription": "Close attacker",
-      "description": "Self-explanatory. Short Range characters specialse at close-combat."
+      "description": "Self-explanatory. Short Range characters specialse in purely close-combat."
+    },
+    "mid-range": {
+      "id": "mid-range",
+      "name": "Mid Range",
+      "shortDescription": "Medium-range attacker",
+      "description": "Self-explanatory. Mid Range characters specialse in having a bit of distance between them and their opponent."
     },
     "hybrid-range": {
       "id": "hybrid-range",
       "name": "Hybrid Range",
       "shortDescription": "Mixed-range attacker",
-      "description": "Self-explanatory. Hybrid Range characters can handle both Short Range and Long Range situations flexibly."
+      "description": "Self-explanatory. Hybrid Range characters can handle two or more ranges at will with little effort; these ranges include Short Range, Mid Range and Long Range."
     },
     "long-range": {
       "id": "long-range",
       "name": "Long Range",
       "shortDescription": "Distant attacker",
-      "description": "Self-explanatory. Long Range characters specialse at distant combat."
+      "description": "Self-explanatory. Long Range characters specialse in purely distant combat."
     },
     "slow": {
       "id": "slow",
       "name": "Slow",
       "shortDescription": "High Power, & Defense, Low Speed & Technique",
-      "description": "Self-explanatory. Slow characters often have high Power and Defense, in exchange for Speed and Technique."
+      "description": "Self-explanatory. Slow characters often have high Power and Defense, in exchange for Speed and Technique. Categorised by low Movement Speed."
     },
     "balanced": {
       "id": "balanced",
       "name": "Balanced",
       "shortDescription": "No extreme stats",
-      "description": "Self-explanatory. Balanced characters have a blend of Fast and Slow properites, often giving them their own unique speed."
+      "description": "Self-explanatory. Balanced characters have a blend of Fast and Slow properites, often giving them their own unique speed. Categorised by average Movement Speed."
     },
     "fast": {
       "id": "fast",
       "name": "Fast",
       "shortDescription": "High Speed & High Technique, Low Power & Low Defense",
-      "description": "Self-explanatory. Fast characters often have high Speed and Technique, in exchange for Power and Defense."
+      "description": "Self-explanatory. Fast characters often have high Speed and Technique, in exchange for Power and Defense. Categorised by high Movement Speed."
     },
     "melee": {
       "id": "melee",

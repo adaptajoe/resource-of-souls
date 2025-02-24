@@ -12,7 +12,7 @@
       "characteristics": ["male", "karakuraResident"]
     },
     "characterEaseOfUse": 5,
-    "characterArchetype": ["shortRange", "melee", "rushdown", "charge"],
+    "characterArchetype": ["shortRange", "melee", "rushdown", "charge", "balanced"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=uO7EPxsy0Ds&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=37",
     "characterEngTrailer": "https://www.youtube.com/watch?v=mJ1xji2ihQ8&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=31",
     "characterNumber": 1,
@@ -129,7 +129,7 @@
       "characteristics": ["female", "unseatedOfficer", "gotei13"]
     },
     "characterEaseOfUse": 5,
-    "characterArchetype": ["shortRange", "melee", "charge", "kidō", "balanced"],
+    "characterArchetype": ["midRange", "melee", "charge", "kidō", "balanced"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=pq-ECx9dnhg&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=38",
     "characterEngTrailer": "https://www.youtube.com/watch?v=JHod25mzWgY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=34",
     "characterNumber": 2,
@@ -224,7 +224,7 @@
     "stats": [
       {
         "power": 3,
-        "speed": 3,
+        "speed": 4,
         "range": 3,
         "defense": 2,
         "technique": 3
@@ -246,7 +246,7 @@
       "characteristics": ["male", "karakuraResident"]
     },
     "characterEaseOfUse": 3,
-    "characterArchetype": ["longRange", "ranged", "balanced", "reawakener"],
+    "characterArchetype": ["longRange", "ranged", "balanced", "reawakener", "zoner"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=jqTot703GpM&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=39",
     "characterEngTrailer": "https://www.youtube.com/watch?v=Ze2_7Aa1Uks&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=30",
     "characterNumber": 3,
@@ -363,7 +363,7 @@
     "stats": [
       {
         "power": 1,
-        "speed": 1,
+        "speed": 3,
         "range": 5,
         "defense": 1,
         "technique": 4
@@ -714,7 +714,7 @@
     "stats": [
       {
         "power": 4,
-        "speed": 3,
+        "speed": 2,
         "range": 2,
         "defense": 5,
         "technique": 1
@@ -736,7 +736,7 @@
       "characteristics": ["male", "captain", "exile", "gotei13"]
     },
     "characterEaseOfUse": 3,
-    "characterArchetype": ["shortRange", "melee", "trickster", "balanced"],
+    "characterArchetype": ["midRange", "melee", "trickster", "balanced"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=GaS4ybi0xwA&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=33",
     "characterEngTrailer": "https://www.youtube.com/watch?v=Pglr-98uFBY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=26",
     "characterNumber": 7,
@@ -853,7 +853,7 @@
       "characteristics": ["male", "captain", "traitor", "gotei13"]
     },
     "characterEaseOfUse": 4,
-    "characterArchetype": ["melee", "fast", "charge", "rushdown", "longRange"],
+    "characterArchetype": ["melee", "fast", "charge", "rushdown", "hybridRange", "midRange"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=UjeF_Byhntk&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=32",
     "characterEngTrailer": "https://www.youtube.com/watch?v=_ag8qb0Zy6M&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=25",
     "characterNumber": 8,
@@ -970,7 +970,7 @@
       "characteristics": ["female", "lieutenant", "gotei13"]
     },
     "characterEaseOfUse": 3,
-    "characterArchetype": ["hybridRange", "melee", "ranged", "kidō", "zoner"],
+    "characterArchetype": ["hybridRange", "midRange", "melee", "fast", "ranged", "kidō", "zoner"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=hq63eNoSvi4&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=31",
     "characterEngTrailer": "https://www.youtube.com/watch?v=LDQIPXcVgYU&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=24",
     "characterNumber": 9,
@@ -1460,8 +1460,8 @@
       "abilities": ["awakening", "reawakening", "bankai", "hollowfication"],
       "characteristics": ["male", "karakuraResident", "vizard"]
     },
-    "characterEaseOfUse": 4,
-    "characterArchetype": ["hybridRange", "melee", "ranged", "fast", "reviver", "gauge", "charge", "rushdown", "reawakener"],
+    "characterEaseOfUse": 5,
+    "characterArchetype": ["midRange", "melee", "ranged", "fast", "reviver", "gauge", "charge", "rushdown", "reawakener"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=d0VEZq9dMcY&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=27",
     "characterEngTrailer": "https://www.youtube.com/watch?v=iJdteynstKg&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=20",
     "characterNumber": 13,
@@ -1577,11 +1577,11 @@
     ],
     "stats": [
       {
-        "power": 2,
+        "power": 4,
         "speed": 3,
-        "range": 2,
-        "defense": 3,
-        "technique": 5
+        "range": 3,
+        "defense": 4,
+        "technique": 2
       }
     ],
     "trivia": ["To be defined."],
@@ -1600,7 +1600,7 @@
       "characteristics": ["male", "captain", "traitor", "gotei13"]
     },
     "characterEaseOfUse": 4,
-    "characterArchetype": ["shortRange", "melee", "ranged", "gimmick", "trickster"],
+    "characterArchetype": ["shortRange", "melee", "balanced", "ranged", "gimmick", "trickster"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=bPRSt29aLG8&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=24",
     "characterEngTrailer": "https://www.youtube.com/watch?v=B6LO391TSdY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=17",
     "characterNumber": 14,
@@ -1717,7 +1717,7 @@
       "characteristics": ["female", "captain", "gotei13"]
     },
     "characterEaseOfUse": 5,
-    "characterArchetype": ["shortRange", "melee", "ranged", "kidō", "reloader", "charge", "gimmick", "instakill", "rushdown"],
+    "characterArchetype": ["shortRange", "melee", "fast", "ranged", "kidō", "reloader", "charge", "gimmick", "instakill", "rushdown"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=Bisl7BbVK9o&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=23",
     "characterEngTrailer": "https://www.youtube.com/watch?v=dziYM2MU_S0",
     "characterNumber": 15,
@@ -1834,7 +1834,7 @@
       "characteristics": ["male", "lieutenant", "gotei13"]
     },
     "characterEaseOfUse": 4,
-    "characterArchetype": ["hybridRange", "melee", "ranged", "giantSummon", "balanced", "kidō"],
+    "characterArchetype": ["midRange", "melee", "ranged", "giantSummon", "balanced", "fast", "kidō"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=n3diSC5oclE&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=22",
     "characterEngTrailer": "https://www.youtube.com/watch?v=pp7a-Dq56lk&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=16",
     "characterNumber": 16,
@@ -1951,7 +1951,7 @@
       "characteristics": ["male", "lieutenant", "gotei13"]
     },
     "characterEaseOfUse": 3,
-    "characterArchetype": ["shortRange", "melee", "zoner", "gimmick"],
+    "characterArchetype": ["shortRange", "melee", "zoner", "gimmick", "balanced"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=cuB14RLuijk&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=21",
     "characterEngTrailer": "https://www.youtube.com/watch?v=F3tL_rpw6HQ&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=15",
     "characterNumber": 17,
@@ -2068,7 +2068,7 @@
       "characteristics": ["female", "espada", "exile"]
     },
     "characterEaseOfUse": 4,
-    "characterArchetype": ["hybridRange", "melee", "ranged", "fast", "gauge", "charge"],
+    "characterArchetype": ["shortRange", "melee", "ranged", "fast", "gauge", "charge"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=__S1reKBbdo&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=20",
     "characterEngTrailer": "https://www.youtube.com/watch?v=KfFGVNIWBf0&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=14",
     "characterNumber": 18,
@@ -2185,7 +2185,7 @@
       "characteristics": ["male", "espada", "ArrancarArmy"]
     },
     "characterEaseOfUse": 3,
-    "characterArchetype": ["shortRange", "melee", "rushdown", "gauge", "stance", "fast"],
+    "characterArchetype": ["shortRange", "melee", "rushdown", "fast", "gauge", "stance", "fast"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=_LJafOpYxVw&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=19",
     "characterEngTrailer": "https://www.youtube.com/watch?v=dmEM_2Shrjg&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=13",
     "characterNumber": 19,
@@ -2302,7 +2302,7 @@
       "characteristics": ["male", "captain", "gotei13"]
     },
     "characterEaseOfUse": 3,
-    "characterArchetype": ["hybridRange", "gauge", "melee", "ranged", "rushdown", "zoner"],
+    "characterArchetype": ["hybridRange", "midRange", "balanced", "gauge", "melee", "ranged", "rushdown", "zoner"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=QspGqabpIQU&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=18",
     "characterEngTrailer": "https://www.youtube.com/watch?v=E_H67r2cg7Y&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=12",
     "characterNumber": 20,
@@ -2419,7 +2419,7 @@
       "characteristics": ["male", "captain", "gotei13", "traitor"]
     },
     "characterEaseOfUse": 2,
-    "characterArchetype": ["shortRange", "melee", "gimmick", "reviver", "gauge", "ramper", "reawakener"],
+    "characterArchetype": ["shortRange", "melee", "gimmick", "balanced", "reviver", "gauge", "ramper", "reawakener"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=4qGGFhG-rIE&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=16",
     "characterEngTrailer": "https://www.youtube.com/watch?v=fZeTPMNf0bQ&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=10",
     "characterNumber": 21,
@@ -2548,7 +2548,7 @@
       "characteristics": ["male", "captain", "gotei13"]
     },
     "characterEaseOfUse": 2,
-    "characterArchetype": ["shortRange", "melee", "zoner", "stance", "gauge", "charge"],
+    "characterArchetype": ["shortRange", "melee", "zoner", "stance", "gauge", "slow", "charge"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=APf68D3Ty64&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=15",
     "characterEngTrailer": "https://www.youtube.com/watch?v=2JYfn-o37aA&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=8",
     "characterNumber": 22,
@@ -2665,7 +2665,7 @@
       "characteristics": ["male", "captain", "exile", "gotei13"]
     },
     "characterEaseOfUse": 3,
-    "characterArchetype": ["shortRange", "melee", "trickster", "stance", "rushdown"],
+    "characterArchetype": ["shortRange", "balanced", "melee", "trickster", "stance", "rushdown"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=dV2QpXlq5ds&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=12",
     "characterEngTrailer": "https://www.youtube.com/watch?v=dVgkWouBJGA&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=7",
     "characterNumber": 23,
@@ -2782,7 +2782,7 @@
       "characteristics": ["male", "ArrancarArmy", "espada"]
     },
     "characterEaseOfUse": 2,
-    "characterArchetype": ["shortRange", "melee", "gimmick", "gauge", "gambler", "reviver"],
+    "characterArchetype": ["shortRange", "balanced", "melee", "gimmick", "gauge", "gambler", "reviver"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=ARpSb6I009s&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=8",
     "characterEngTrailer": "https://www.youtube.com/watch?v=DAvJE24A53E&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=6",
     "characterNumber": 24,
@@ -2899,7 +2899,7 @@
       "characteristics": ["male", "captain", "gotei13"]
     },
     "characterEaseOfUse": 3,
-    "characterArchetype": ["shortRange", "melee", "ranged", "gimmick", "charge", "gambler"],
+    "characterArchetype": ["midRange", "melee", "balanced", "ranged", "gimmick", "charge", "gambler"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=PCnLPmAac-o&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=6",
     "characterEngTrailer": "https://www.youtube.com/watch?v=dMAmNAWY7z0&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=5",
     "characterNumber": 25,
@@ -3016,7 +3016,7 @@
       "characteristics": ["male", "captain", "gotei13"]
     },
     "characterEaseOfUse": 4,
-    "characterArchetype": ["hybridRange", "melee", "slow", "giantSummon", "stance", "berserker"],
+    "characterArchetype": ["midRange", "hybridRange", "melee", "slow", "giantSummon", "stance", "berserker"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=mbnUcwCRr9I&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=4",
     "characterEngTrailer": "https://www.youtube.com/watch?v=LE0Cfp6zekU&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=3",
     "characterNumber": 26,
@@ -3133,7 +3133,7 @@
       "characteristics": ["male", "lieutenant", "gotei13"]
     },
     "characterEaseOfUse": 4,
-    "characterArchetype": ["hybridRange", "melee", "ranged", "kidō", "gauge", "ramper"],
+    "characterArchetype": ["midRange", "hybridRange", "fast", "melee", "ranged", "kidō", "gauge", "ramper"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=w1y8-W4CRQI&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=3",
     "characterEngTrailer": "https://www.youtube.com/watch?v=1hkNH7tlj9E&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=2",
     "characterNumber": 27,
@@ -3250,7 +3250,7 @@
       "characteristics": ["male", "seatedOfficer", "gotei13"]
     },
     "characterEaseOfUse": 4,
-    "characterArchetype": ["shortRange", "melee", "stance", "gauge", "fast", "rushdown"],
+    "characterArchetype": ["midRange", "melee", "fast", "stance", "gauge", "fast", "rushdown"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=fBEu8HjbXFM&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=1",
     "characterEngTrailer": "https://www.youtube.com/watch?v=pQU59aOdOOY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=1",
     "characterNumber": 28,
@@ -3367,7 +3367,7 @@
       "characteristics": ["male", "espada", "ArrancarArmy"]
     },
     "characterEaseOfUse": 2,
-    "characterArchetype": ["shortRange", "melee", "slow", "stance", "charge"],
+    "characterArchetype": ["midRange", "melee", "slow", "stance", "charge"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=qoL7R5nqAsM",
     "characterEngTrailer": "https://www.youtube.com/watch?v=BieqWlJgYoE",
     "characterNumber": 29,
@@ -3484,7 +3484,7 @@
       "characteristics": ["female", "espada", "ArrancarArmy"]
     },
     "characterEaseOfUse": 4,
-    "characterArchetype": ["hybridRange", "melee", "gauge", "rushdown"],
+    "characterArchetype": ["midRange", "hybridRange", "fast", "melee", "gauge", "rushdown"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=Moejkqz_ao4",
     "characterEngTrailer": "https://www.youtube.com/watch?v=B-rbTLO4wJs",
     "characterNumber": 30,
@@ -3588,129 +3588,12 @@
     "trivia": ["To be defined."],
     "show": true
   },
-  "barragan-louisenbairn": {
-    "name": "Barragan Louisenbairn",
-    "id": "barragan-louisenbairn",
-    "race": "arrancar",
-    "quote": "Shinigami, Humans, Hollows, Arrancar, all of their differences and strife, will, freedom, beasts, plants, the moon and stars and sun - All of it is meaningless! There is but one absolute in this world, and that is my power..!!",
-    "description": "The former ruler of Hueco Mundo, Segunda Espada and the Aspect of Senescence.",
-    "tags": {
-      "affiliations": ["huecoMundo", "arrancar"],
-      "relationships": ["enemy"],
-      "abilities": ["awakening", "resurrección"],
-      "characteristics": ["male", "espada", "ArrancarArmy"]
-    },
-    "characterEaseOfUse": 5,
-    "characterArchetype": ["melee"],
-    "characterJpTrailer": "https://www.youtube.com/watch?v=Moejkqz_ao4",
-    "characterEngTrailer": "https://www.youtube.com/watch?v=B-rbTLO4wJs",
-    "characterNumber": 31,
-    "characterOutfits": ["1"],
-    "abilities": [
-      {
-        "abilityName": "Arrogante",
-        "abilityQuote": "Rot",
-        "abilityQuoteTemplate": "{quote}... {ability}..."
-      }
-    ],
-    "moves": [
-      {
-        "base": [
-          {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "SI",
-            "damage": 0,
-            "frames": 0,
-            "resourceCost": 0,
-            "moveTags": ["signatureMove", "needsStatInfo"]
-          },
-          {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "SI",
-            "damage": 0,
-            "frames": 0,
-            "resourceCost": 0,
-            "moveTags": ["spiritualPressureMove1", "needsStatInfo"]
-          },
-          {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "SI",
-            "damage": 0,
-            "frames": 0,
-            "resourceCost": 0,
-            "moveTags": ["spiritualPressureMove2", "needsStatInfo"]
-          }
-        ],
-        "awakened": [
-          {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "SI",
-            "damage": 0,
-            "frames": 0,
-            "resourceCost": 0,
-            "moveTags": ["signatureMove", "unknown"]
-          }
-        ],
-        "kikon": [
-          {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Base Kikon currently not known.",
-            "input": "KI",
-            "damage": 0,
-            "frames": 0,
-            "resourceCost": 0,
-            "moveTags": ["kikonMove", "needsStatInfo"]
-          },
-          {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Awakened Kikon currently not known.",
-            "input": "AW + KI",
-            "damage": 0,
-            "frames": 0,
-            "resourceCost": 0,
-            "moveTags": ["kikonMove", "needsStatInfo"]
-          },
-          {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Alternate Awakened Kikon currently not known.",
-            "input": "AW + KI",
-            "damage": 0,
-            "frames": 0,
-            "resourceCost": 0,
-            "moveTags": ["kikonMove", "needsStatInfo"]
-          }
-        ]
-      }
-    ],
-    "stats": [
-      {
-        "power": 1,
-        "speed": 1,
-        "range": 1,
-        "defense": 1,
-        "technique": 1
-      }
-    ],
-    "trivia": ["To be defined."],
-    "show": false
-  },
   "coyote-starrk": {
     "name": "Coyote Starrk",
     "id": "coyote-starrk",
     "race": "arrancar",
     "quote": "I always envied the weak. Whenever we made friends, their souls would waste away just from being near us. Because we were so alone, we split our soul in two. I don't know which was our original form. Or perhaps, it was neither...",
-    "description": "The Primera Espada and the Aspect of Loneliness.",
+    "description": "The Primera Espada and the Aspect of Loneliness. Starrk is a dangerous character that has two distinct changes between his Unawakened and Awakened forms; whilst Unawakened, Starrk is a Long Range fighter that specialises in Ranged attacks, consuming his Reiatsu in exchange for his attacks. By using `The Two of Us Become One`, Starrk can remove this detrimental trade-off to fire multiple powerful Ceros extremely quickly. The more Reiatsu that Starrk has, the stronger, longer-lasting, and numerous his attacks become. Once Awakened, Starrk transitions into a Close Ranged fighter with Mid Range and Hybrid Range capabilities, expertly controlling distance with crushing Melee strikes and Ranged wolf attacks. These abilities now can cost Starrk Konpaku ontop of Reiatsu, making the risk - but also the reward - far higher and sweeter.",
     "tags": {
       "affiliations": ["huecoMundo", "arrancar"],
       "relationships": ["enemy"],
@@ -3718,9 +3601,9 @@
       "characteristics": ["male", "espada", "ArrancarArmy"]
     },
     "characterEaseOfUse": 5,
-    "characterArchetype": ["melee"],
-    "characterJpTrailer": "https://www.youtube.com/watch?v=Moejkqz_ao4",
-    "characterEngTrailer": "https://www.youtube.com/watch?v=B-rbTLO4wJs",
+    "characterArchetype": ["melee", "ranged", "shortRange", "midRange", "longRange", "hybridRange", "charge"],
+    "characterJpTrailer": "https://www.youtube.com/watch?v=F9ayho5kctk",
+    "characterEngTrailer": "https://www.youtube.com/watch?v=tMRIDgEaKSA",
     "characterNumber": 31,
     "characterOutfits": ["1"],
     "abilities": [
@@ -3734,38 +3617,48 @@
       {
         "base": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
+            "id": "alma-carma",
+            "name": "Alma Carma",
+            "description": "Starrk assumes an oppressive position as he charges his Spiritual Pressure. Holding down the input charges his Spiritual Pressure for longer.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["signatureMove", "needsStatInfo"]
+            "moveTags": ["signatureMove", "resourceGain", "needsStatInfo"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "SI",
+            "id": "cero-automático",
+            "name": "Cero Automático",
+            "description": "Starrk steps backwards and fires a Cero from his gun. The number of Ceros fired, the duration of the attack, and their damage is all influenced by Starrk's current Spiritual Pressure.",
+            "input": "S1",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "ranged", "resourceLoss", "needsStatInfo"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "SI",
+            "id": "the-two-of-us-make-one",
+            "name": "The Two of Us Make One",
+            "description": "Starrk activates a 'Draining Stance' effect on his Spiritual Pressure in exchange for the ability to not consume Spiritual Pressure for a short amount of time whilst activating a Dashing Quick Attack, Flash Attack, or Special Flash Attack.",
+            "input": "S2",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["spiritualPressureMove2", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "resourceLoss", "stanceChange", "needsStatInfo"]
           }
         ],
         "awakened": [
           {
+            "id": "generación-de-manada-de-lobos-colmillo-awakening",
+            "name": "Generación de Manada de Lobos (Wolf Pack Generation): Colmillo Awakening",
+            "description": "Starrk splits their soul back into two, as Starrk and Lilynette's conciousness is split between blade, body, and wolf. Starrk dual-weilds their blades made of blue Reiryoku, Colmillo, in this form, transitioning into a short-ranged fighter that can summon powerful wolf-based attacks in exchange for trading not just his Spiritual Pressure, but also his Konpaku. Starrk loses a lot of his long-ranged capabilities when Awakened.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -3773,7 +3666,7 @@
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["signatureMove", "unknown"]
+            "moveTags": ["unknown"]
           }
         ],
         "kikon": [
@@ -3820,6 +3713,6 @@
       }
     ],
     "trivia": ["To be defined."],
-    "show": false
+    "show": true
   }
 }

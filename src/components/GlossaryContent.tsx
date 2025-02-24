@@ -76,7 +76,7 @@ export default function GlossaryContent() {
     return (
       <button
         onClick={onClick}
-        className={`px-3 m-1 w-fit py-1 font-black hover:bg-red-600 hover:text-black text-lg rounded ${
+        className={`px-3 m-1 w-auto py-1 font-black hover:bg-red-600 hover:text-black text-base tracking-wide rounded ${
           isActive ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
         } transition-colors`}
       >
@@ -86,11 +86,11 @@ export default function GlossaryContent() {
   };
 
   const FilterButtons = () => {
-    const commonFilters = ["Guard", "Attack", "Reishi", "Reiatsu", "Kikon", "Konpaku", "Reverse", "Breaker", "Quick Attack", "Flash Attack", "Signature", "Spiritual Pressure", "Fighting Spirit"];
+    const commonFilters = ["Guard", "Movement", "Attack", "Reishi", "Reiatsu", "Kikon", "Konpaku", "Reverse", "Breaker", "Quick", "Flash", "Signature", "Spiritual Pressure", "Fighting Spirit"];
 
     return (
-      <div className="w-fit lg:w-full font-bebasFont text-xl flex items-center justify-center mt-4 space-y-4 lg:space-y-0 lg:space-x-4">
-        <div className="grid grid-cols-3 lg:grid-cols-7 grid-flow-row-dense xl:grid-flow-col-dense items-center w-fit">
+      <div className="w-fit lg:w-full font-bebasFont text-xl flex items-center justify-center mt-4 space-y-4 lg:space-y-0">
+        <div className="grid grid-cols-3 lg:grid-cols-auto grid-flow-row-dense xl:grid-flow-col-dense items-center w-fit">
           {commonFilters.map((filter) => (
             <FilterButton
               key={filter}
