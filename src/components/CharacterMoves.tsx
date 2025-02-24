@@ -351,7 +351,7 @@ const MoveDisplay = ({ move, characterId }: MoveDisplayProps) => {
       <div className="grid grid-cols-2 gap-4 items-start py-2 pr-2">
         <div>
           <MoveAnimationTooltip characterId={characterId} moveId={move.id}>
-            <strong className="italic ml-4">{move.name.replace(/\//g, " / ")}</strong>
+            <strong className="italic pl-4">{move.name.replace(/\//g, " / ")}</strong>
           </MoveAnimationTooltip>
           <p className="text-sm italic ml-4 text-gray-400">{move.description}</p>
         </div>

@@ -3627,8 +3627,8 @@
             "moveTags": ["signatureMove", "resourceGain", "needsStatInfo"]
           },
           {
-            "id": "cero-automático",
-            "name": "Cero Automático",
+            "id": "cero-automatico",
+            "name": "Cero Automatico",
             "description": "Starrk steps backwards and fires a Cero from his gun. The number of Ceros fired, the duration of the attack, and their damage is all influenced by Starrk's current Spiritual Pressure.",
             "input": "S1",
             "damage": 0,
