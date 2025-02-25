@@ -92,7 +92,7 @@ export default function RootLayout({
         <div>{children}</div>
         <footer className="px-12 py-3 border-t-2 border-gray-400 grid grid-cols-1 lg:grid-cols-2 text-gray-500 italic text-xs justify-center lg:justify-between">
           <div>
-            <p className="text-xl text-gray-400">Site Version: v1.0.3.</p>
+            <p className="text-xl text-gray-400">Site Version: v1.0.4.</p>
             <p className="mb-4 md:mb-0">
               BLEACH - Resource of Souls is developed, designed, managed and updated by Discord user <span className="text-amber-400 font-black">@jojicus</span>.
             </p>
