@@ -4691,7 +4691,7 @@
     "id": "coyote-starrk",
     "race": "arrancar",
     "quote": "I always envied the weak. Whenever we made friends, their souls would waste away just from being near us. Because we were so alone, we split our soul in two. I don't know which was our original form. Or perhaps, it was neither...",
-    "description": "The Primera Espada and the Aspect of Loneliness. Starrk is a dangerous character that has two distinct changes between his Unawakened and Awakened forms; whilst Unawakened, Starrk is a Long Range fighter that specialises in Ranged attacks, consuming his Reiatsu in exchange for his attacks. By using `The Two of Us Become One`, Starrk can remove this detrimental trade-off to fire multiple powerful Ceros extremely quickly. The more Reiatsu that Starrk has, the stronger, longer-lasting, and numerous his attacks become. Once Awakened, Starrk transitions into a Close Ranged fighter with Mid Range and Hybrid Range capabilities, expertly controlling distance with crushing Melee strikes and Ranged wolf attacks. These abilities now can cost Starrk Konpaku ontop of Reiatsu, making the risk - but also the reward - far higher and sweeter.",
+    "description": "The Primera Espada and the Aspect of Loneliness. Starrk is a dangerous character that has two distinct changes between his Unawakened and Awakening forms; whilst Unawakened, Starrk is a Long Range fighter that specialises in Ranged attacks, consuming his Reiatsu in exchange for his attacks. By using `The Two of Us Become One`, Starrk can remove this detrimental trade-off to fire multiple powerful Ceros extremely quickly. The more Reiatsu that Starrk has, the stronger, longer-lasting, and numerous his attacks become. Once performing his Awakening, Starrk transitions into a Close Ranged fighter with Mid Range and Hybrid Range capabilities, expertly controlling distance with crushing Melee strikes and Ranged wolf attacks. These abilities now can cost Starrk Konpaku ontop of Reiatsu, making the risk - but also the reward - far higher and sweeter.",
     "tags": {
       "affiliations": ["huecoMundo", "arrancar"],
       "relationships": ["enemy"],
@@ -4722,7 +4722,7 @@
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["signatureMove", "resourceGain", "needsStatInfo"]
+            "moveTags": ["signatureMove", "resourceGain", "charge", "needsStatInfo"]
           },
           {
             "id": "cero-automatico",
@@ -4749,7 +4749,7 @@
           {
             "id": "generacion-de-manada-de-lobos-colmillo-awakening",
             "name": "Generación de Manada de Lobos (Wolf Pack Generation): Colmillo Awakening",
-            "description": "Starrk splits their soul back into two, as Starrk and Lilynette's conciousness is split between blade, body, and wolf. Starrk dual-weilds their blades made of blue Reiryoku, Colmillo, in this form, transitioning into a short-ranged fighter that can summon powerful wolf-based attacks in exchange for trading not just their Spiritual Pressure, but also their Konpaku. Starrk loses a lot of their long-ranged capabilities when Awakened.",
+            "description": "Starrk further merges his and Lilynette's soul back into one, as Starrk and Lilynette's joint conciousness is then split between blade, body, and wolf. Starrk dual-weilds their blades made of blue Reiryoku, Colmillo, in this form, transitioning into a short-ranged fighter that can summon powerful wolf-based attacks in exchange for trading not just their Spiritual Pressure, but also their Konpaku. Starrk loses a lot of their long-ranged capabilities when Awakened.",
             "input": "AW",
             "damage": 0,
             "frames": 0,
