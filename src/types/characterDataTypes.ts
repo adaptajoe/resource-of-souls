@@ -40,6 +40,9 @@ export interface Moves {
   awakened?: Move[];
   reawakened?: Move[];
   kikon: Move[];
+  baseCombos: Move[];
+  awakenedCombos?: Move[];
+  reawakenedCombos?: Move[];
 }
 
 export interface Move {

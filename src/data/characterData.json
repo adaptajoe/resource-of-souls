@@ -60,6 +60,16 @@
         ],
         "awakened": [
           {
+            "id": "bankai-tensa-zangetsu-awakening",
+            "name": "Bankai: `Tensa Zangetsu` Awakening",
+            "description": "Ichigo holds Zangetsu towards his opponent whilst Reiryoku collates on his blade, exploding in a violent flash; Ichigo emerges from the dust, clad in his Bankai. Whilst Awakened, Ichigo's Power, Speed and Defense dramatically increases, and the number of extra Special Flash Attacks he can perform is increased.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -100,6 +110,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -177,6 +211,16 @@
         ],
         "awakened": [
           {
+            "id": "shikai-sode-no-shirayuki-awakening",
+            "name": "Shikai: `Sode no Shirayuki` Awakening",
+            "description": "Rukia releases `Sode no Shirayuki`, strengthening all of her stats by a slight amount, but transformaing all of her Spiritual Pressure Moves to better use her Shikai's ice abilities.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -217,6 +261,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -294,6 +362,16 @@
         ],
         "awakened": [
           {
+            "id": "ransōtengai-awakening",
+            "name": "Ransōtengai Awakening",
+            "description": "Uryu manipulates his body through threads of Reiryoku, enhancing his damage output and increasing the amount of Reiatsu he can store.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -305,6 +383,16 @@
           }
         ],
         "reawakened": [
+          {
+            "id": "letzt-stile-reawakening",
+            "name": "Letzt Stile Reawakening",
+            "description": "Uryu snaps one of the prongs of his Sanrei Glove, breaking his commitment to his Grandfather and instilling within him the true power of `The Last Quincy`. Uryu's outfit changes, and his mastery over Reishi is exponentially enhanced. It is currently not known exactly what this Reawakening does to Uryu in regards to gameplay.",
+            "input": "RE",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["reawakening"]
+          },
           {
             "id": "unknown",
             "name": "Unknown",
@@ -356,6 +444,42 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "reawakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Reawakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -433,6 +557,16 @@
         ],
         "awakened": [
           {
+            "id": "bankai-senbonzakura-kageyoshi-awakening",
+            "name": "Bankai: `Senbonzakura Kageyoshi` Awakening",
+            "description": "Byakuya drops Senbonzakura towards the ground, as it dissipates into a portal and spawns a row of towering blades behind him; the blades glow pink, as they erupt into thousands of razor-sharp cherry blossom petals. When Awakened, Byakuya can no longer change his Stance, and his Mid Range to Long Range capabilities are greatly enhanced. He still retains Short Range options, however.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -473,6 +607,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -550,6 +708,16 @@
         ],
         "awakened": [
           {
+            "id": "shunkō-awakening",
+            "name": "Shunkō Awakening",
+            "description": "Yoruichi outstretches her arm, wrapping Kidō into a pair of electrical flurries that stem from her back like wings before the sheer force blows her outfit down to a basic bodysuit due to the force. When Awakened, Yoruichi's Speed and Power are drastically increased, making her one of the fastest characters in the game.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -590,6 +758,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -667,6 +859,16 @@
         ],
         "awakened": [
           {
+            "id": "brazo-derecha-de-gigante-y-brazo-izquierda-del-diablo-awakening",
+            "name": "`Brazo Derecha de Gigante y Brazo Izquierda Del Diablo` Awakening",
+            "description": "Chad calls forth the power of his demonic left arm, Brazo Izquierda Del Diablo, wrapping it in a Hollow-white armor as the shield on his right arm grows larger; when Awakened, Chad's offensive capabilities are enhanced as he now mixes both of his arms into his attacks.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -707,6 +909,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -784,6 +1010,16 @@
         ],
         "awakened": [
           {
+            "id": "shikai-benihime-awakening",
+            "name": "Shikai: `Benihime` Awakening",
+            "description": "Urahara spawns a shield of bloody Reiryoku as he flickers with crimson Reiatsu, before shooting a serious glare and shattering the shield into glass-like fragments, fully releasing Benihime. When Awakened, Urahara regenerates his Reverse Gauge far faster, and also enhances the speed and rate of his Flash Steps and Reverse Actions.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -824,6 +1060,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -901,6 +1161,16 @@
         ],
         "awakened": [
           {
+            "id": "bankai-kamishini-no-yari-awakening",
+            "name": "Bankai: `Kamishini no Yari` Awakening",
+            "description": "Gin opens his serpent-like eyes, swinging Shinso at full length whilst unleashing his Bankai, cleaving a massive dust cloud with ease. Whilst Awakened, Gin's Range incerases massively, turning his Poking options into stage-wide offensive threats.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -941,6 +1211,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -1018,6 +1312,16 @@
         ],
         "awakened": [
           {
+            "id": "shikai-haineko-awakening",
+            "name": "Shikai: `Haineko` Awakening",
+            "description": "Rangiku slashes with Haineko, releasing it into a vortex of ashen dust. When Awakened, Rangiku's attacks change into Mid Ranged abilities, along with her Signature Move, vastly improving her Zoning options.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -1058,6 +1362,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -1135,6 +1463,16 @@
         ],
         "awakened": [
           {
+            "id": "bankai-daiguren-hyōrinmaru-awakening",
+            "name": "Bankai: `Daiguren Hyōrinmaru` Awakening",
+            "description": "Tōshiro raises Hyōrinmaru to the heavens, activating his Bankai and cladding himself in frosted ice wings that descend down his spine into a dragon's tail. When Awakened, Tōshiro's abilities are enhanced, and the limit of his Tenso Jyurin Gauge increases considerably.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -1175,6 +1513,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -1252,6 +1614,16 @@
         ],
         "awakened": [
           {
+            "id": "reiryoku-sealing-eyepatch-removal-awakening",
+            "name": "Reiryoku-sealing Eyepatch Removal Awakening",
+            "description": "Kenpachi wrenches his back, looking to the sky as he tears off the only thing that can keep his power sealed. When Awakened, Kenpachi's Power and amount of maximum Reishi increases, enhancing Kenpachi's Kikon Moves to a devastating degree.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -1292,6 +1664,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -1369,6 +1765,16 @@
         ],
         "awakened": [
           {
+            "id": "ressurección-murciélago-awakening",
+            "name": "Ressurección: `Murciélago` Awakening",
+            "description": "Ulquiorra swells with power as he points Murciélago at his foe, exploding with Reiryoku and raining down blackened green Reiryoku on the surrounding area. Two jet-black wings sprout from Ulquiorra's back, as his Hollow Mask now mirrors itself to form a fuller form. Whilst Awakened, the amount of Reiatsu he can hold is drastically increased, making it easier to use his Spiritual Pressure moves.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -1381,14 +1787,14 @@
         ],
         "reawakened": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "S1",
+            "id": "segunda-etapa-reawakening",
+            "name": "Segunda Etapa Reawakening",
+            "description": "Emerging from a storm of nothingness, Ulquiorra showcases his perfected form, the Segunda Etapa release. In this form, he becomes fully bat-like, shedding his Hollow Mask, and is clad in a thick, blackened fur, sprouting sharp nails on his hands and feet, and a long, windy tail at his rear. When Reawakened, all of Ulquiorra's attacks change, and his Power and Speed drastically increase.",
+            "input": "RE",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["unknown"]
+            "moveTags": ["reawakening"]
           }
         ],
         "kikon": [
@@ -1403,8 +1809,18 @@
             "moveTags": ["kikonMove", "needsStatInfo"]
           },
           {
+            "id": "murciélago-cero-oscuras-kikon-move",
+            "name": "Murciélago: Cero Oscuras",
+            "description": "Whilst Awakened, Ulquiorra stabs his opponent's waist with a javelin a single time before firing a Cero Oscuras straight at his opponent.",
+            "input": "AW + KI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["kikonMove", "needsStatInfo"]
+          },
+          {
             "id": "murciélago-luz-de-la-luna-kikon-move",
-            "name": "Murciélago Luz de la Luna",
+            "name": "Murciélago: Luz de la Luna",
             "description": "Whilst Awakened, Ulquiorra slashes his opponent's waist a single time, before wrapping himself in his jet black wings, spinning into a throwing stance where he looses a javelin of extremely explosive Reiryoku straight at his opponent.",
             "input": "AW + KI",
             "damage": 0,
@@ -1414,7 +1830,7 @@
           },
           {
             "id": "segunda-etapa-latigo-cero-oscuras-kikon-move",
-            "name": "Segunda Etapa Latigo Cero Oscuras",
+            "name": "Segunda Etapa: Latigo Cero Oscuras",
             "description": "Whilst Reawakened, Ulquiorra sends his opponent flying catching them with his whip-like tail, hanging them  above him whilst he fires a point-blank Cero Oscuras through the center of his opponent's chest.",
             "input": "RE + KI",
             "damage": 0,
@@ -1424,13 +1840,49 @@
           },
           {
             "id": "segunda-etapa-lanza-del-relámpago",
-            "name": "Segunda Etapa Lanza del Relámpago",
+            "name": "Segunda Etapa: Lanza del Relámpago",
             "description": "Whilst Reawakened, Ulquiorra clasps his hands together to weave a long javelin of immense explosive Reiryoku, gripping it and firing it straight towards his opponent to cause an astoundingly powerful blast.",
             "input": "RE + KI",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "reawakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Reawakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -1509,6 +1961,16 @@
         ],
         "awakened": [
           {
+            "id": "hollowfication-awakening",
+            "name": "Hollowfication Awakening",
+            "description": "Ichigo steels himself as he rips in a claw-like motion at his face, donning his Hollowfication, screaming alongside a torrent of violent Reiryoku. When Awakened, the amount of Reiatsu Ichigo can hold is increased, and his stats get an overall boost.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -1520,6 +1982,16 @@
           }
         ],
         "reawakened": [
+          {
+            "id": "full-hollowfication-reawakening",
+            "name": "Full Hollowfication Reawakening",
+            "description": "Ichigo is revived from death a single time, as the Hollow inside takes full control. In this form, Ichigo resembles a Vasto Lorde, draped in bone-white skin with claws on his hands and feet, a Hollow Hole having formed in his chest. His Hollow Mask also changes, becoming more demonic and adorned with long, flowing hair and two grand horns. It is currently not known exactly what this Reawakening does to Ichigo in regards to gameplay.",
+            "input": "RE",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["reawakening"]
+          },
           {
             "id": "unknown",
             "name": "Unknown",
@@ -1572,6 +2044,42 @@
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
           }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "reawakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
         ]
       }
     ],
@@ -1592,7 +2100,7 @@
     "id": "kaname-tosen",
     "race": "shinigami",
     "quote": "My eyes can only see one path and that is the path with the least bloodshed.",
-    "description": "Former Captain of Squad 9 who follows Aizen despite his strong sense of justice. Blind since birth, Tōsen's pursuit of justice is paradoxically driven by a desire for revenge, leading him down a path of betrayal. As a Short Range fighter, he combines Melee combat with unique Ranged abilities, utilizing Gimmick mechanics that reflect his unique sensory abilities - After Awakening, his Bankai, 'Suzumushi Tsuishiki: Enma Korogi', activats his core Gimmick mechanic, which transports both players to a new arena and restricts the opponents' field of vision. His Trickster playstyle allows him to disorient opponents while setting up devastating combinations. With high Technique, moderate Speed and Defense, but lower Power and Range, Tōsen excels at confusing opponents before striking with precise attacks.",
+    "description": "Former Captain of Squad 9 who follows Aizen despite his strong sense of justice. Blind since birth, Tōsen's pursuit of justice is paradoxically driven by a desire for revenge, leading him down a path of betrayal. As a Short Range fighter, he combines Melee combat with unique Ranged abilities, utilizing Gimmick mechanics that reflect his unique sensory abilities - After Awakening, his Bankai, 'Suzumushi Tsuishiki: Enma Korogi', activats his core Gimmick mechanic, which transports both players to a new arena temporarily and restricts the opponents' field of vision. His Trickster playstyle allows him to disorient opponents while setting up devastating combinations. With high Technique, moderate Speed and Defense, but lower Power and Range, Tōsen excels at confusing opponents before striking with precise attacks.",
     "tags": {
       "affiliations": ["soulSociety", "huecoMundo", "shinigami", "squad9"],
       "relationships": ["enemy"],
@@ -1648,6 +2156,16 @@
         ],
         "awakened": [
           {
+            "id": "bankai-suzumushi-tsuishiki-enma-kōrogi-awakening",
+            "name": "Bankai: `Suzumushi Tsuishiki: Enma Kōrogi` Awakening",
+            "description": "Tōsen releases his Bankai, `Suzumushi Tsuishiki: Enma Kōrogi` by throwing a multitude of metallic rings around his opponent; when Awakened, Tōsen transports himself and his opponent to a new stage temporarily, whilst Tōsen's opponent's visible area shrinks to a tiny, clear area that makes it hard for them to react to Tōsen's attacks. The enemy can recover their sight over time, but it is possible to reapply the full vision-shrinking effect of `Suzumushi Tsuishiki: Enma Kōrogi` by using a Kikon Move.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -1688,6 +2206,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -1765,6 +2307,16 @@
         ],
         "awakened": [
           {
+            "id": "incomplete-shunkō-awakening",
+            "name": "Incomplete Shunkō Awakening",
+            "description": "Soi-Fon reaches her arm out, coating it in a wispy purple tornado of Reiryoku, perfectly blending Hakuda and Kidō - When Awakened, Soi-Fon's Power increases, and the amount of Reiatsu she can hold, along with her Dash Speed, is increased.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -1787,9 +2339,9 @@
             "moveTags": ["kikonMove", "needsStatInfo"]
           },
           {
-            "id": "shunkō-kikon-move",
-            "name": "Shunkō!",
-            "description": "Soi-Fon wraps her arm in Kidō before smirking, launching a tornado of razor-sharp Reiryoku at her foe with a single punch.",
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Kikon currently not known.",
             "input": "AW + KI",
             "damage": 0,
             "frames": 0,
@@ -1805,6 +2357,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -1882,6 +2458,16 @@
         ],
         "awakened": [
           {
+            "id": "bankai-hihiō-zabimaru-awakening",
+            "name": "Bankai: `Hihiō Zabimaru` Awakening",
+            "description": "Renji holds Zabimaru across his chest, the blade glowing with a firey aura, before outstretching his arm to cloak himself - and the spirit of Zabimaru - in a swirling vortex; Renji's outfit changes, cladding him in a fur jacket, as his Zanpakuto changes to form a colossal bone serpent. When Awakened, Renji transports himself and his opponent to a new stage temporarily, fully restoring Renji's Reishi, and changing his attacks to be extremely Long Ranged. After a certain period of time - or when Renji's Reishi hits zero (Or is hit by a Kikon Move) - Renji's Awakening will disable itself, weakening him considerably. Notably, Renji can use his Awakening again.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -1922,6 +2508,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -1999,6 +2609,16 @@
         ],
         "awakened": [
           {
+            "id": "shikai-wabisuke-awakening",
+            "name": "Shikai: `Wabisuke` Awakening",
+            "description": "Izuru snaps Wabisuke into a contorted form, activating his Shikai - When Awakened, Izuru gains the `Wabisuke Counter`, which slows his opponents' animations by a fixed amount when hit with a Spiritual Pressure Move. The Wabisuke Counter can increase and decreases over a fixed period of time without being hit by a Spiritual Pressure Move. The higher the Wabisuke Counter, the slower the opponent becomes, and the more damage they take.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -2039,6 +2659,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -2116,6 +2760,16 @@
         ],
         "awakening": [
           {
+            "id": "ressurección-gamuza-awakening",
+            "name": "Ressurección: `Gamuza` Awakening",
+            "description": "Neliel holds Gamuza horizontally across her in a ritualistic stance, glowing pink - The sword explodes into a mist, transforming Neliel into a furred centaur, her Hollow Mask fully restored and gaining armor around her shoulders and hands, as the sword itself morphs into a gigantic lance. When Awakened, all of Neliel's attacks change, making it easier for her to handle Mid Ranged situations whilst maintaining her impressive Speed.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -2156,6 +2810,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -2233,6 +2911,16 @@
         ],
         "awakened": [
           {
+            "id": "ressurección-pantera-awakening",
+            "name": "Ressurección: `Pantera` Awakening",
+            "description": "Grimmjow grinds the blade of Pantera before erupting into a violent flash of blue Reiryoku, transforming him into a regal panther-like form with long, flowing hair. Whilst Awakened, all of Grimmjow's stats are increased, and the amount of Reishi he has will increase. Grimmjow's Annhilation State and Decimation States also gain massive boosts.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -2273,6 +2961,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -2350,6 +3062,16 @@
         ],
         "awakened": [
           {
+            "id": "bankai-konjiki-ashisogi-jizō-awakening",
+            "name": "Bankai: `Konjiki Ashisogi Jizō` Awakening",
+            "description": "Mayuri grins as Ashisogi Jizō is thrust to the sky, billowing poisonous gases as his Bankai manifests. When Awakened, even if Mayuri does not land a hit, his `Poison Gauge` will still build. The speed of the `Poison Gauge`'s buildup is drastically increased as well.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -2390,6 +3112,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -2467,6 +3213,16 @@
         ],
         "awakened": [
           {
+            "id": "hōgyoku-third-evolution-'Daisan'-awakening",
+            "name": "Hōgyoku - Third Evolution: `Daisan` Awakening",
+            "description": "Aizen sheds his crystalline form, emerging with long, flowing hair and a newfound power. All of Aizen's stats are drastically increased, and his `Hōgyoku Fusion Level` Gauge gains new limits, allowing for further evolutions.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -2478,6 +3234,16 @@
           }
         ],
         "reawakened": [
+          {
+            "id": "hōgyoku-fourth-evolution-'Daiyon'-awakening",
+            "name": "Hōgyoku - Fourth Evolution: `Daiyon` Awakening",
+            "description": "Aizen revives from death in a new, godly form, adorned with six insect-like wings, being fused with Kyōka Suigetsu by his wrist and gaining a central slit on his forehead that houses a third eye. It is currently not known exactly what this Reawakening does to Aizen in regards to gameplay, asides from removing the limits on his 'Hōgyoku Fusion Level', allowing for one final transformation.",
+            "input": "RE",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
           {
             "id": "unknown",
             "name": "Unknown",
@@ -2520,6 +3286,42 @@
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
           }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "reawakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Reawakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
         ]
       }
     ],
@@ -2540,7 +3342,7 @@
     "id": "genryusai-shigekuni-yamamoto",
     "race": "shinigami",
     "quote": "My flames are the very flames of creation. All things in the universe are born from fire, and all things in the universe will die by fire.",
-    "description": "The founding Captain-Commander of the Gotei 13, wielding the most powerful fire-type Zanpakutō. His stern leadership and overwhelming power has drove off countless threats, and has maintained order in Soul Society for over a thousand years. As a Short Range fighter, he combines devastating Melee combat with powerful Zoner abilities through his mastery over Ryujin Jakka's flames. His unique 'Hellfire' Stance mechanics and 'Inferno' Gauge allow him to gradually increase the power of his flames, while his Charge attacks can instantly turn the tide of battle. With maximum Power and Defense, decent Range, high Technique, but minimal Speed, Yamamoto dominates through sheer destructive force and tactical positioning, burning all who dare oppose him to ash.",
+    "description": "The founding Captain-Commander of the Gotei 13, wielding the most powerful fire-type Zanpakutō. His stern leadership and overwhelming power has drove off countless threats, and has maintained order in Soul Society for over a thousand years. As a Short Range fighter, he combines devastating Melee combat with powerful Zoner abilities through his mastery over Ryūjin Jakka's flames. His unique 'Hellfire' Stance mechanics and 'Inferno' Gauge allow him to gradually increase the power of his flames, while his Charge attacks can instantly turn the tide of battle. With maximum Power and Defense, decent Range, high Technique, but minimal Speed, Yamamoto dominates through sheer destructive force and tactical positioning, burning all who dare oppose him to ash.",
     "tags": {
       "affiliations": ["soulSociety", "shinigami", "squad1"],
       "relationships": ["neutral"],
@@ -2566,7 +3368,7 @@
           {
             "id": "honagi",
             "name": "Honagi",
-            "description": "Yamamoto looses a powerful, wide slash coated in Ryujin Jakka's flames, incinerating all that stands in his way. After successfully hitting 'Honagi', Yamamoto can follow up with an additional attack.",
+            "description": "Yamamoto looses a powerful, wide slash coated in Ryūjin Jakka's flames, incinerating all that stands in his way. After successfully hitting 'Honagi', Yamamoto can follow up with an additional attack.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -2596,6 +3398,16 @@
         ],
         "awakened": [
           {
+            "id": "shikai-ryūjin-jakka-awakening",
+            "name": "Shikai: `Ryūjin Jakka` Awakening",
+            "description": "Yamamoto fully releases Ryūjin Jakka, unleashing the full fury of his flames. After Awakening, Yamamoto's Reishi increases, and his Power further escalates to compensate for his low Speed.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -2636,6 +3448,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -2713,14 +3549,14 @@
         ],
         "awakened": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "S1",
+            "id": "hollowfication-awakening",
+            "name": "Hollowfication Awakening",
+            "description": "Shinji dons his Hollow Mask, enhancing all of his stats, but also greatly increasing the effects of his Signature Move and Spiritual Pressure Moves.",
+            "input": "AW",
             "damage": 0,
             "frames": 0,
             "resourceCost": 0,
-            "moveTags": ["spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": ["awakening"]
           }
         ],
         "kikon": [
@@ -2753,6 +3589,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -2830,6 +3690,16 @@
         ],
         "awakened": [
           {
+            "id": "ressurección-fornicarás-(la-lujuriosa)-awakening",
+            "name": "Ressurección: `Fornicarás (La Lujuriosa)` Awakening",
+            "description": "Szayelaporro swallows his blade provocatively, erupting into a pink light before revealing his new, perfect form. After Awakening, Szayelaporro's stats are increased, and Szayelaporro's Gambler mechanics kick in. The number of Konpaku taken by Szayelaporro's Kikon Moves will vary depending on randomness, being weighed by the level of his `Spiritual Pressure Analysis Level` Gauge. Additionally, when Szayelaporro reaches 0 Konpaku, he is able to revive once with 3 additional Konpaku.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -2870,6 +3740,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -2947,6 +3841,16 @@
         ],
         "awakened": [
           {
+            "id": "kodomo-no-asobi-o-genjitsu-ni-suru-awakening",
+            "name": "`Kodomo no Asobi o Genjitsu ni Suru` Awakening",
+            "description": "Shunsui becomes more serious and begins to activate his Shikai's `Children's Games`. When Awakened, Shunsui activates his Gambler abilities and begins one of three Children's Games; the first game is `Tag`, or `Hot Potato`, where one player is set as `It`. Attacking a player who is not `It` will make them `It`. During this game, damage cannot be dealt. After a certain period of time, the player who is `It` takes all of the collected damage that would have been inflicted during the game. For instance, if `A` is `It`, `A` attacks `B`, then `B` attacks `A`, and the game ends, then `A` will take all of the collected damage. The second game is `King of the Hill`, or `Capture the Zone`, where a `Zone` appears on the stage. If no players are in the Zone, they both will take passive damage to their Reishi. If one player is inside the Zone, then the passive damage to them is negated. The last game is `Quickdraw`, or `Duel`, where a `Signal` is given after a random period of time. The player who lands a hit closest to the activation of the `Signal` wins, and is given a significant Power boost until the beginning of the next Children's Game. If a player attacks before the `Signal` is given, then their opponent gains this boost automatically. It is not known what happens on frame-perfect draws in regards to this game.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -2987,6 +3891,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -3064,6 +3992,16 @@
         ],
         "awakened": [
           {
+            "id": "bankai-kokujō-tengen-myō'ō-awakening",
+            "name": "Bankai: `Kokujō Tengen Myō'ō` Awakening",
+            "description": "Sajin calls forth the power of his Bankai, Kokujō Tengen Myō'ō, awakening the mighty warrior. After Awakening, Sajin transports himself and his opponent to a new stage temporarily where he is in control of the giant, greatly increasing his Range and Power. After a certain period of time, or after Komamura loses Konpaku, his Awakening is cancelled, and is completely inaccessible afterwards, drastically reducing Sajin's capabilities. The key to victory is to guarantee victory before Sajin's Awakening runs out.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -3104,6 +4042,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -3181,6 +4143,16 @@
         ],
         "awakened": [
           {
+            "id": "shikai-kazeshini-awakening",
+            "name": "Shikai: `Kazeshini` Awakening",
+            "description": "Hisagi tosses his blade aside, as it warps into a double-ended scythe, spinning in the air connected to a second scythe by a long chain, returning to Hisagi; after Awakening, Hisagi's Flash Attack changes, giving him good Mid Range options, and further increasing the boosts provided by his `Fear Gauge`.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -3222,6 +4194,30 @@
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
           }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
         ]
       }
     ],
@@ -3242,7 +4238,7 @@
     "id": "ikkaku-madarame",
     "race": "shinigami",
     "quote": "I want to fight, I want to become stronger. It's simple as that!",
-    "description": "3rd Seat of Squad 11 who secretly achieved Bankai. A battle-loving warrior who follows Zaraki's philosophy of seeking strong opponents, while hiding his true power to remain in his preferred position. Incredibly lucky and proudly bald. As a Short Range fighter, he combines Fast Melee combat with unique triple-Stance mechanics through his three-part Zanpakutō, Hōzukimaru. After Awakening, his 'Ryumon' Gauge builds up as he maintains offensive pressure, providing further buffs, while his Rushdown playstyle allows him to overwhelm opponents with relentless attacks. With high Power and Speed, but lower Range, Defense, and Technique, Ikkaku excels at aggressive combat that rewards luck, maintaining offensive momentum through careful stance management, and constant pressure.",
+    "description": "3rd Seat of Squad 11 who secretly achieved Bankai. A battle-loving warrior who follows Zaraki's philosophy of seeking strong opponents, while hiding his true power to remain in his preferred position. Incredibly lucky and proudly bald. As a Short Range fighter, he combines Fast Melee combat with unique triple-Stance mechanics through his three-part Zanpakutō, Hōzukimaru. After Awakening, his 'Ryūmon' Gauge builds up as he maintains offensive pressure, providing further buffs, while his Rushdown playstyle allows him to overwhelm opponents with relentless attacks. With high Power and Speed, but lower Range, Defense, and Technique, Ikkaku excels at aggressive combat that rewards luck, maintaining offensive momentum through careful stance management, and constant pressure.",
     "tags": {
       "affiliations": ["soulSociety", "shinigami", "squad11"],
       "relationships": ["neutral"],
@@ -3298,6 +4294,16 @@
         ],
         "awakened": [
           {
+            "id": "bankai-ryūmon-hōzukimaru-awakening",
+            "name": "Bankai: `Ryūmon Hōzukimaru` Awakening",
+            "description": "Ikkaku spins Hōzukimaru above his head, yelling out as he releases his Bankai; his Shihakusho's top half becomes shed, as he gains a gigantic axe-head that floats behind him, adorned with a dragon, connected to two massive cleavers that Ikkaku holds; after Awakening, Ikkaku gets access to the `Ryūmon Gauge`, which increases by attacking Ikkaku's opponent or by taking damage. The higher the Gauge, the more damage Ikkaku deals.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -3338,6 +4344,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -3415,6 +4445,16 @@
         ],
         "awakened": [
           {
+            "id": "ressurección-santa-teresa-awakening",
+            "name": "Ressurección: `Santa Teresa` Awakening",
+            "description": "Nnoitra rears Santa Teresa to the moon, releasing his Ressurección, gaining four mantis-like arms with retractable scythes for each, and a moon-like crown. After Awakening, Nnoitra's Power significantly increases, and his Reversals become more powerful.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -3455,6 +4495,30 @@
             "frames": 0,
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
           }
         ]
       }
@@ -3532,6 +4596,16 @@
         ],
         "awakened": [
           {
+            "id": "ressurección-tiburon-awakening",
+            "name": "Ressurección: `Tiburon` Awakening",
+            "description": "Harribel holds Tiburon vertically as water swells around her, entombing her body; she emerges with a slash, losing her Hollow Mask and most of her clothes, as Tiburon transforms into a large fin-like blade. After Awakening, Harribel's range increases granting her new Mid Range capabilities whilst increasing her Power.",
+            "input": "AW",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["awakening"]
+          },
+          {
             "id": "unknown",
             "name": "Unknown",
             "description": "Moveset currently not known.",
@@ -3573,6 +4647,30 @@
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
           }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
         ]
       }
     ],
@@ -3600,8 +4698,8 @@
       "abilities": ["awakening", "resurrección"],
       "characteristics": ["male", "espada", "ArrancarArmy"]
     },
-    "characterEaseOfUse": 5,
-    "characterArchetype": ["melee", "ranged", "shortRange", "midRange", "longRange", "hybridRange", "charge"],
+    "characterEaseOfUse": 2,
+    "characterArchetype": ["melee", "ranged", "shortRange", "midRange", "longRange", "hybridRange", "charge", "stance"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=F9ayho5kctk",
     "characterEngTrailer": "https://www.youtube.com/watch?v=tMRIDgEaKSA",
     "characterNumber": 31,
@@ -3651,7 +4749,7 @@
           {
             "id": "generación-de-manada-de-lobos-colmillo-awakening",
             "name": "Generación de Manada de Lobos (Wolf Pack Generation): Colmillo Awakening",
-            "description": "Starrk splits their soul back into two, as Starrk and Lilynette's conciousness is split between blade, body, and wolf. Starrk dual-weilds their blades made of blue Reiryoku, Colmillo, in this form, transitioning into a short-ranged fighter that can summon powerful wolf-based attacks in exchange for trading not just his Spiritual Pressure, but also his Konpaku. Starrk loses a lot of his long-ranged capabilities when Awakened.",
+            "description": "Starrk splits their soul back into two, as Starrk and Lilynette's conciousness is split between blade, body, and wolf. Starrk dual-weilds their blades made of blue Reiryoku, Colmillo, in this form, transitioning into a short-ranged fighter that can summon powerful wolf-based attacks in exchange for trading not just their Spiritual Pressure, but also their Konpaku. Starrk loses a lot of their long-ranged capabilities when Awakened.",
             "input": "AW",
             "damage": 0,
             "frames": 0,
@@ -3700,16 +4798,40 @@
             "resourceCost": 0,
             "moveTags": ["kikonMove", "needsStatInfo"]
           }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "resourceCost": 0,
+            "moveTags": ["unknown"]
+          }
         ]
       }
     ],
     "stats": [
       {
-        "power": 1,
-        "speed": 1,
-        "range": 1,
+        "power": 3,
+        "speed": 3,
+        "range": 5,
         "defense": 1,
-        "technique": 1
+        "technique": 3
       }
     ],
     "trivia": ["To be defined."],

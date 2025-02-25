@@ -1,109 +1,13 @@
 "use client";
-import { useState, useCallback, useMemo, JSX, useEffect } from "react";
+import { useState, useCallback, useMemo, JSX } from "react";
 import { Moves, Move } from "@/types/characterDataTypes";
 import React from "react";
-
-interface DebugInfo {
-  originalMoveId: string;
-  safeFileName: string;
-  fullPath: string;
-  isKikonMove: boolean;
-}
+import { MoveAnimationTooltip } from "./MoveAnimationTooltip";
 
 interface CharacterMovesProps {
   moves: Moves[];
   characterId: string;
 }
-
-interface MoveAnimationTooltipProps {
-  characterId: string;
-  moveId: string;
-  children: React.ReactNode;
-}
-
-const MoveAnimationTooltip = ({ characterId, moveId, children }: MoveAnimationTooltipProps) => {
-  const [videoError, setVideoError] = useState(false);
-  const [debugInfo, setDebugInfo] = useState<DebugInfo | null>(null);
-
-  const safeFileName = moveId.replace(/\s+/g, "-").toLowerCase();
-  const animationPath = `/assets/character-animations/${characterId}/${safeFileName}.mp4`;
-
-  useEffect(() => {
-    const isKikonMove = moveId.includes("kikon-move");
-    setDebugInfo({
-      originalMoveId: moveId,
-      safeFileName,
-      fullPath: animationPath,
-      isKikonMove,
-    });
-  }, [moveId, safeFileName, animationPath]);
-
-  return (
-    <div className="relative inline-block group">
-      <span className={`cursor-pointer ${videoError ? "text-red-600" : "text-teal-400"}`}>{children}</span>
-      {!videoError && (
-        <>
-          {/* Mobile tooltip */}
-          <div
-            className="md:hidden absolute invisible group-hover:visible z-10 p-1 rounded-lg bg-black border-teal-400 border-2 shadow-lg
-            left-36 -translate-x-1/2 bottom-full mb-4"
-          >
-            <video
-              src={animationPath}
-              width={300}
-              height={300}
-              className="rounded-lg max-w-[250px]"
-              onError={(e) => {
-                console.error("Video load error:", {
-                  error: e,
-                  debugInfo,
-                  attemptedPath: animationPath,
-                });
-                setVideoError(true);
-              }}
-              onLoad={() => {
-                console.log("Video loaded successfully:", debugInfo);
-              }}
-              autoPlay
-              loop
-              muted
-            />
-          </div>
-
-          {/* Desktop tooltip */}
-          <div
-            className="hidden md:block absolute invisible group-hover:visible z-10 p-1 rounded-lg bg-black border-teal-400 border-2 shadow-lg
-            left-full ml-4 top-1/2 -translate-y-1/2"
-          >
-            <video
-              src={animationPath}
-              width={300}
-              height={300}
-              className="rounded-lg max-w-[300px]"
-              onError={(e) => {
-                console.error("Video load error:", {
-                  error: e,
-                  debugInfo,
-                  attemptedPath: animationPath,
-                });
-                setVideoError(true);
-              }}
-              autoPlay
-              loop
-              muted
-            />
-            <div
-              className="absolute left-[-12px] top-1/2 -translate-y-1/2 w-0 h-0 
-              border-t-[12px] border-t-transparent 
-              border-r-[12px] border-r-teal-400 
-              border-b-[12px] border-b-transparent"
-            />
-          </div>
-        </>
-      )}
-    </div>
-  );
-};
 
 const formatMoveTag = (tag: string): string => {
   const specialCases: { [key: string]: string } = {
@@ -169,12 +73,12 @@ const useTranslateInput = (input: string): JSX.Element => {
 };
 
 const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
-  const [activeTab, setActiveTab] = useState<"base" | "awakened" | "reawakened" | "kikon">("base");
+  const [activeTab, setActiveTab] = useState<"base" | "awakened" | "reawakened" | "kikon" | "baseCombos" | "awakenedCombos" | "reawakenedCombos">("base");
   const [movesetKeyIsOpen, setMovesetKeyIsOpen] = useState(false);
 
   const hasReawakening = useMemo(() => moves.some((category) => category.reawakened && category.reawakened.length > 0), [moves]);
 
-  const handleTabClick = useCallback((tab: "base" | "awakened" | "reawakened" | "kikon") => {
+  const handleTabClick = useCallback((tab: "base" | "awakened" | "reawakened" | "kikon" | "baseCombos" | "awakenedCombos" | "reawakenedCombos") => {
     setActiveTab(tab);
   }, []);
 
@@ -291,7 +195,7 @@ const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
       </div>
 
       {/* Tabs */}
-      <div className="flex gap-2 ml-4">
+      <div className="flex gap-2 ml-4 overflow-x-scroll">
         <button
           className={`px-4 py-2 rounded-t-lg transition-colors ${activeTab === "base" ? "bg-red-600 text-white" : "bg-gray-800 text-white hover:bg-red-800"}`}
           onClick={() => handleTabClick("base")}
@@ -318,19 +222,45 @@ const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
         >
           Kikon
         </button>
+        <button
+          className={`px-4 py-2 rounded-t-lg transition-colors ${activeTab === "baseCombos" ? "bg-red-600 text-white" : "bg-gray-800 text-white hover:bg-red-800"}`}
+          onClick={() => handleTabClick("baseCombos")}
+        >
+          Base Combos
+        </button>
+        <button
+          className={`px-4 py-2 rounded-t-lg transition-colors ${activeTab === "awakenedCombos" ? "bg-red-600 text-white" : "bg-gray-800 text-white hover:bg-red-800"}`}
+          onClick={() => handleTabClick("awakenedCombos")}
+        >
+          Awakened Combos
+        </button>
+        {hasReawakening && (
+          <button
+            className={`px-4 py-2 rounded-t-lg transition-colors ${activeTab === "reawakenedCombos" ? "bg-red-600 text-white" : "bg-gray-800 text-white hover:bg-red-800"}`}
+            onClick={() => handleTabClick("reawakenedCombos")}
+          >
+            Reawakened Combos
+          </button>
+        )}
       </div>
 
       {/* Content */}
       <div>
         {moves.map((moveCategory, categoryIndex) => (
           <div key={categoryIndex}>
-            {activeTab === "base" && moveCategory.base.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} />)}
+            {activeTab === "base" && moveCategory.base.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} activeTab={activeTab} />)}
 
-            {activeTab === "awakened" && moveCategory.awakened?.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} />)}
+            {activeTab === "awakened" && moveCategory.awakened?.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} activeTab={activeTab} />)}
 
-            {activeTab === "reawakened" && moveCategory.reawakened?.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} />)}
+            {activeTab === "reawakened" && moveCategory.reawakened?.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} activeTab={activeTab} />)}
 
-            {activeTab === "kikon" && moveCategory.kikon.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} />)}
+            {activeTab === "kikon" && moveCategory.kikon.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} activeTab={activeTab} />)}
+
+            {activeTab === "baseCombos" && moveCategory.baseCombos.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} activeTab={activeTab} />)}
+
+            {activeTab === "awakenedCombos" && moveCategory.awakenedCombos?.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} activeTab={activeTab} />)}
+
+            {activeTab === "reawakenedCombos" && moveCategory.reawakenedCombos?.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} activeTab={activeTab} />)}
           </div>
         ))}
       </div>
@@ -341,34 +271,92 @@ const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
 interface MoveDisplayProps {
   move: Move;
   characterId: string;
+  activeTab: string;
 }
 
-const MoveDisplay = ({ move, characterId }: MoveDisplayProps) => {
+const MoveDisplay = ({ move, characterId, activeTab }: MoveDisplayProps) => {
   const translatedInput = useTranslateInput(move.input);
+  const isComboTab = activeTab.includes("Combos");
 
   return (
     <div className="border-t border-white">
       <div className="grid grid-cols-2 gap-4 items-start py-2 pr-2">
         <div>
           <MoveAnimationTooltip characterId={characterId} moveId={move.id}>
-            <strong className="italic pl-4">{move.name.replace(/\//g, " / ")}</strong>
+            <strong>{move.name}</strong>
           </MoveAnimationTooltip>
-          <p className="text-sm italic ml-4 text-gray-400">{move.description}</p>
+          <p className="text-sm italic ml-4 text-gray-400 mb-4">{move.description}</p>
+          {isComboTab && (
+            <div className="mt-2 ml-4 text-sm">
+              <p className="font-bold text-red-600">Global Notation:</p>
+              <div className="text-gray-400 ml-2 mt-2">
+                <table className="border border-gray-400">
+                  <thead className="border-b border-gray-400">
+                    <tr>
+                      {/* Global Notation */}
+                      <th className="p-2 border-r border-gray-400 text-xs">A</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">B</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">C</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">D</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">W</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">X</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">Y</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">Z</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">1</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">2</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">3</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">4</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">5</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">6</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">7</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">8</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">9</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      {/* Xbox Notation */}
+                      <th className="p-2 border-r border-gray-400 text-xs">A</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">B</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">Y</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">X</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">RB</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">RT</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">LB</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">LT</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">&uarr;</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">&#8599;</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">&rarr;</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">&#8600;</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">&darr;</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">&#8601;</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">&larr;</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">&#8598;</th>
+                      <th className="p-2 border-r border-gray-400 text-xs">&#8857;</th>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+          <div className="mb-4 mt-4">
+            <strong className="ml-4">{translatedInput}</strong>
+          </div>
         </div>
-        <div className="flex flex-wrap mt-2">
-          {move.moveTags.map((tag, index) => (
-            <strong key={index} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 ml-2 mb-2">
-              {formatMoveTag(tag)}
-            </strong>
-          ))}
-        </div>
-      </div>
-      <div className="grid grid-cols-2 gap-4 items-center pr-2">
-        <strong className="ml-4 mb-4">{translatedInput}</strong>
-        <div className="flex flex-wrap mb-2">
-          <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 ml-2">Cost: {move.resourceCost}</strong>
-          <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 ml-2">Damage: {move.damage}</strong>
-          <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 ml-2">Frames: {move.frames}</strong>
+        <div>
+          <div className="flex flex-wrap mt-2">
+            {move.moveTags.map((tag, index) => (
+              <strong key={index} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 ml-2 mb-2">
+                {formatMoveTag(tag)}
+              </strong>
+            ))}
+          </div>
+          <hr className="my-2" />
+          <div className="flex flex-wrap mb-2 pt-2">
+            <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 ml-2">Cost: {move.resourceCost}</strong>
+            <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 ml-2">Damage: {move.damage}</strong>
+            <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 ml-2">Frames: {move.frames}</strong>
+          </div>
         </div>
       </div>
     </div>

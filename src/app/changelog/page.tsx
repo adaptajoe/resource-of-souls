@@ -33,6 +33,16 @@ export default function Changelog() {
   const resourceOfSoulsChangelog = useMemo(
     () => [
       {
+        version: "v1.0.4.",
+        date: "24/02/2025",
+        changes: [
+          "Added proper Stats and Ease of Use details for `Coyote Starrk`.",
+          "Added Awakening and Reawakening descriptions with details on which every Awakening and Reawakening does in the game.",
+          "Added the new `Base Combos`, `Awakened Combos` and `Reawakened Combos` to showcase common combos for Character Movelists.",
+          "Edited the names of some MP4 and PNG files in Character Animations.",
+        ],
+      },
+      {
         version: "v1.0.3.",
         date: "24/02/2025",
         changes: [
