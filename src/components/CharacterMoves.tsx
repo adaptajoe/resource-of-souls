@@ -248,19 +248,19 @@ const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
       <div>
         {moves.map((moveCategory, categoryIndex) => (
           <div key={categoryIndex}>
-            {activeTab === "base" && moveCategory.base.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} activeTab={activeTab} />)}
+            {activeTab === "base" && moveCategory.base.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} />)}
 
-            {activeTab === "awakened" && moveCategory.awakened?.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} activeTab={activeTab} />)}
+            {activeTab === "awakened" && moveCategory.awakened?.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} />)}
 
-            {activeTab === "reawakened" && moveCategory.reawakened?.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} activeTab={activeTab} />)}
+            {activeTab === "reawakened" && moveCategory.reawakened?.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} />)}
 
-            {activeTab === "kikon" && moveCategory.kikon.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} activeTab={activeTab} />)}
+            {activeTab === "kikon" && moveCategory.kikon.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} />)}
 
-            {activeTab === "baseCombos" && moveCategory.baseCombos.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} activeTab={activeTab} />)}
+            {activeTab === "baseCombos" && moveCategory.baseCombos.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} />)}
 
-            {activeTab === "awakenedCombos" && moveCategory.awakenedCombos?.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} activeTab={activeTab} />)}
+            {activeTab === "awakenedCombos" && moveCategory.awakenedCombos?.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} />)}
 
-            {activeTab === "reawakenedCombos" && moveCategory.reawakenedCombos?.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} activeTab={activeTab} />)}
+            {activeTab === "reawakenedCombos" && moveCategory.reawakenedCombos?.map((move, moveIndex) => <MoveDisplay key={moveIndex} move={move} characterId={characterId} />)}
           </div>
         ))}
       </div>
@@ -271,12 +271,10 @@ const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
 interface MoveDisplayProps {
   move: Move;
   characterId: string;
-  activeTab: string;
 }
 
-const MoveDisplay = ({ move, characterId, activeTab }: MoveDisplayProps) => {
+const MoveDisplay = ({ move, characterId }: MoveDisplayProps) => {
   const translatedInput = useTranslateInput(move.input);
-  const isComboTab = activeTab.includes("Combos");
 
   return (
     <div className="border-t border-white">
@@ -286,59 +284,6 @@ const MoveDisplay = ({ move, characterId, activeTab }: MoveDisplayProps) => {
             <strong>{move.name}</strong>
           </MoveAnimationTooltip>
           <p className="text-sm italic ml-4 text-gray-400 mb-4">{move.description}</p>
-          {isComboTab && (
-            <div className="mt-2 ml-4 text-sm">
-              <p className="font-bold text-red-600">Global Notation:</p>
-              <div className="text-gray-400 ml-2 mt-2">
-                <table className="border border-gray-400">
-                  <thead className="border-b border-gray-400">
-                    <tr>
-                      {/* Global Notation */}
-                      <th className="p-2 border-r border-gray-400 text-xs">A</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">B</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">C</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">D</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">W</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">X</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">Y</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">Z</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">1</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">2</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">3</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">4</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">5</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">6</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">7</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">8</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">9</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      {/* Xbox Notation */}
-                      <th className="p-2 border-r border-gray-400 text-xs">A</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">B</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">Y</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">X</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">RB</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">RT</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">LB</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">LT</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">&uarr;</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">&#8599;</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">&rarr;</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">&#8600;</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">&darr;</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">&#8601;</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">&larr;</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">&#8598;</th>
-                      <th className="p-2 border-r border-gray-400 text-xs">&#8857;</th>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          )}
           <div className="mb-4 mt-4">
             <strong className="ml-4">{translatedInput}</strong>
           </div>
