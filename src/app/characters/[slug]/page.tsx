@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import characterDataRaw from "@/data/characterData.json";
-import { Character, CharacterData } from "@/types/characterDataTypes";
+import { ICharacter, ICharacterData } from "@/types/characterDataTypes";
 import { parseGameTerms } from "@/utils/termParser";
 import { notFound } from "next/navigation";
 import fs from "fs";
@@ -49,7 +49,7 @@ function formatTagName(tag: string): string {
     .replace(/\s+/g, " ");
 }
 
-const characterData = characterDataRaw as CharacterData;
+const characterData = characterDataRaw as ICharacterData;
 
 type PageParams = {
   slug: string;
@@ -74,7 +74,7 @@ export default async function CharacterDetails(props: Props) {
   const params = await props.params;
   console.log("Available characters:", Object.keys(characterData).length);
   console.log("Requested slug:", params.slug);
-  const character = characterData[params.slug] as Character;
+  const character = characterData[params.slug] as ICharacter;
 
   if (!character) {
     notFound();

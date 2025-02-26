@@ -1,9 +1,9 @@
 "use client";
 import dynamic from "next/dynamic";
 import type { FC } from "react";
-import type { Character } from "@/types/characterDataTypes";
+import type { ICharacter } from "@/types/characterDataTypes";
 
-interface Stats {
+interface IStats {
   power: number;
   speed: number;
   range: number;
@@ -11,9 +11,9 @@ interface Stats {
   technique: number;
 }
 
-interface RadarChartProps {
-  character: Character;
-  stats: Stats;
+interface IRadarChartProps {
+  character: ICharacter;
+  stats: IStats;
   characterName: string;
 }
 
@@ -26,10 +26,7 @@ const RadarChartComponent = dynamic(() => import("./RadarChartComponent"), {
   ),
 });
 
-// Memoize the wrapper component
-const RadarChartComponentWrapper: FC<RadarChartProps> = ({ stats, characterName }) => <RadarChartComponent stats={stats} characterName={characterName} />;
-
-// Add display name for better debugging
+const RadarChartComponentWrapper: FC<IRadarChartProps> = ({ stats, characterName }) => <RadarChartComponent stats={stats} characterName={characterName} />;
 RadarChartComponentWrapper.displayName = "RadarChartComponentWrapper";
 
 export default RadarChartComponentWrapper;

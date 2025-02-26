@@ -2,13 +2,13 @@
 import Image from "next/image";
 import { useState, useCallback, useRef, useEffect } from "react";
 
-interface AnimatedVideoProps {
+interface IAnimatedVideoProps {
   src: string;
   alt: string;
   filename: string;
 }
 
-export default function AnimatedVideo({ src, alt, filename }: AnimatedVideoProps) {
+export default function AnimatedVideo({ src, alt, filename }: IAnimatedVideoProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
@@ -52,7 +52,6 @@ export default function AnimatedVideo({ src, alt, filename }: AnimatedVideoProps
     setIsVideoLoaded(true);
   }, []);
 
-  // Cleanup on unmount
   useEffect(() => {
     return () => {
       if (videoRef.current) {

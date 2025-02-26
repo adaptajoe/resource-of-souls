@@ -1,9 +1,9 @@
-export interface SupplementaryData {
-  gameTerms: { [key: string]: GameTerm };
-  archetypes: { [key: string]: Archetype };
+export interface ISupplementaryData {
+  gameTerms: { [key: string]: IGameTerm };
+  archetypes: { [key: string]: IArchetype };
 }
 
-export interface GameTerm {
+export interface IGameTerm {
   id: string;
   name: string;
   engName: string;
@@ -11,7 +11,7 @@ export interface GameTerm {
   description: string;
 }
 
-export interface Archetype {
+export interface IArchetype {
   id: string;
   name: string;
   shortDescription: string;

@@ -1,16 +1,16 @@
 "use client";
 import React, { useMemo, useCallback, useState } from "react";
 
-interface Character {
+interface ICharacter {
   characterEngTrailer: string;
   characterJpTrailer: string;
 }
 
-interface Props {
-  character: Character;
+interface IProps {
+  character: ICharacter;
 }
 
-interface VideoFrameProps {
+interface IVideoFrameProps {
   videoId: string;
   title: string;
   onError: () => void;
@@ -18,8 +18,7 @@ interface VideoFrameProps {
   onLoad: () => void;
 }
 
-// Separate video frame component for better reusability
-const VideoFrame: React.FC<VideoFrameProps> = React.memo(({ videoId, title, onError, isLoading, onLoad }) => (
+const VideoFrame: React.FC<IVideoFrameProps> = React.memo(({ videoId, title, onError, isLoading, onLoad }) => (
   <div className="relative">
     {isLoading && (
       <div className="absolute inset-0 bg-gray-900 rounded-xl flex items-center justify-center">
@@ -42,16 +41,14 @@ const VideoFrame: React.FC<VideoFrameProps> = React.memo(({ videoId, title, onEr
 
 VideoFrame.displayName = "VideoFrame";
 
-const EmbedYoutube: React.FC<Props> = ({ character }) => {
+const EmbedYoutube: React.FC<IProps> = ({ character }) => {
   const [engError, setEngError] = useState(false);
   const [jpError, setJpError] = useState(false);
   const [engLoading, setEngLoading] = useState(true);
   const [jpLoading, setJpLoading] = useState(true);
 
-  // Enhanced YouTube URL parser
   const getYouTubeEmbedUrl = useCallback((url: string): string | null => {
     try {
-      // Handle different YouTube URL formats
       const patterns = [/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i, /^[a-zA-Z0-9_-]{11}$/];
 
       for (const pattern of patterns) {
@@ -70,10 +67,8 @@ const EmbedYoutube: React.FC<Props> = ({ character }) => {
   }, []);
 
   const engTrailerId = useMemo(() => getYouTubeEmbedUrl(character.characterEngTrailer), [character.characterEngTrailer, getYouTubeEmbedUrl]);
-
   const jpTrailerId = useMemo(() => getYouTubeEmbedUrl(character.characterJpTrailer), [character.characterJpTrailer, getYouTubeEmbedUrl]);
 
-  // Error message component
   const ErrorMessage: React.FC<{ onRetry: () => void }> = ({ onRetry }) => (
     <div className="flex flex-col items-center justify-center h-[300px] bg-gray-900 rounded-xl border border-red-500">
       <p className="text-red-500 mb-4">Failed to load video</p>
@@ -127,7 +122,6 @@ const EmbedYoutube: React.FC<Props> = ({ character }) => {
   );
 };
 
-// Add display name for better debugging
 EmbedYoutube.displayName = "EmbedYoutube";
 
 export default React.memo(EmbedYoutube);

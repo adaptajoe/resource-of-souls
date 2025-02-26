@@ -1,15 +1,15 @@
 import React, { useMemo, useCallback } from "react";
 
-interface Character {
+interface ICharacter {
   characterEngTrailer: string;
   characterJpTrailer: string;
 }
 
-interface Props {
-  character: Character;
+interface IProps {
+  character: ICharacter;
 }
 
-const EmbedYoutube: React.FC<Props> = ({ character }) => {
+const EmbedYoutube: React.FC<IProps> = ({ character }) => {
   const getYouTubeEmbedUrl = useCallback((url: string) => {
     const videoId = url.split("v=")[1];
     const ampersandPosition = videoId.indexOf("&");

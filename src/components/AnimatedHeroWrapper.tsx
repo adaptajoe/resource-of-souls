@@ -7,12 +7,12 @@ const AnimatedHero = dynamic(() => import("./AnimatedHero"), {
   loading: () => <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] bg-gray-800 animate-pulse" />,
 });
 
-interface AnimatedHeroWrapperProps {
+interface IAnimatedHeroWrapperProps {
   src: string;
   alt: string;
 }
 
-const AnimatedHeroWrapper: React.FC<AnimatedHeroWrapperProps> = ({ src, alt }) => {
+const AnimatedHeroWrapper: React.FC<IAnimatedHeroWrapperProps> = ({ src, alt }) => {
   return (
     <Suspense fallback={<div className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] bg-gray-800 animate-pulse" />}>
       <AnimatedHero src={src} alt={alt} />

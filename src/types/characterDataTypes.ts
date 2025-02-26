@@ -1,62 +1,74 @@
-export interface CharacterData {
-  [key: string]: Character;
+export interface ICharacterData {
+  [key: string]: ICharacter;
 }
 
-export interface Character {
+export interface ICharacter {
   name: string;
   id: string;
   race: string;
   quote: string;
   description: string;
-  tags: Tags;
+  tags: ITags;
   characterEaseOfUse: number;
   characterArchetype: string[];
   characterJpTrailer: string;
   characterEngTrailer: string;
   characterNumber: number;
   characterOutfits: string[];
-  abilities: Ability[];
-  moves: Moves[];
-  stats: Stat[];
+  abilities: IAbility[];
+  moves: IMoves[];
+  stats: IStat[];
   trivia: string[];
   show: boolean;
 }
 
-export interface Tags {
+export interface ITags {
   affiliations: string[];
   relationships: string[];
   abilities: string[];
   characteristics: string[];
 }
 
-export interface Ability {
+export interface IAbility {
   abilityName: string;
   abilityQuote: string;
   abilityQuoteTemplate: string;
 }
 
-export interface Moves {
-  base: Move[];
-  awakened?: Move[];
-  reawakened?: Move[];
-  kikon: Move[];
-  baseCombos: Move[];
-  awakenedCombos?: Move[];
-  reawakenedCombos?: Move[];
+export interface IMoves {
+  base: IMove[];
+  awakened?: IMove[];
+  reawakened?: IMove[];
+  kikon: IMove[];
+  baseCombos: IMove[];
+  awakenedCombos?: IMove[];
+  reawakenedCombos?: IMove[];
 }
 
-export interface Move {
+export interface IMove {
   id: string;
   name: string;
   description: string;
   input: string;
-  damage: number;
-  frames: number;
-  resourceCost: number;
+  damage: number | null;
+  frames: number | null;
+  reishiGain?: number | null;
+  reishiCost?: number | null;
+  reiatsuGain?: number | null;
+  reiatsuCost?: number | null;
+  fightingSpiritGain?: number | null;
+  fightingSpiritCost?: number | null;
+  reversalGain?: number | null;
+  reversalCost?: number | null;
+  gaugeGain?: number | null;
+  gaugeCost?: number | null;
+  resourceGain?: number | null;
+  resourceCost?: number | null;
+  cooldown?: string | null;
   moveTags: string[];
 }
 
-export interface Stat {
+export interface IStat {
   power: number;
   speed: number;
   range: number;

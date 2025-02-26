@@ -1,12 +1,12 @@
 "use client";
 import { FC, useState } from "react";
 
-interface AnimatedHeroProps {
+interface IAnimatedHeroProps {
   src: string;
   alt: string;
 }
 
-const AnimatedHero: FC<AnimatedHeroProps> = ({ src, alt }) => {
+const AnimatedHero: FC<IAnimatedHeroProps> = ({ src, alt }) => {
   const [isError, setIsError] = useState(false);
 
   return (

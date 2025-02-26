@@ -2,9 +2,9 @@
 import { Suspense, Component, ReactNode, ErrorInfo } from "react";
 import dynamic from "next/dynamic";
 import type { FC } from "react";
-import type { CharacterSidebarProps } from "./CharacterSidebar";
+import type { ICharacterSidebarProps } from "./CharacterSidebar";
 
-const CharacterSidebar = dynamic<CharacterSidebarProps>(() => import("./CharacterSidebar").then((mod) => mod.default), {
+const CharacterSidebar = dynamic<ICharacterSidebarProps>(() => import("./CharacterSidebar").then((mod) => mod.default), {
   ssr: false,
   loading: () => <SidebarSkeleton />,
 });
@@ -85,7 +85,7 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boole
   }
 }
 
-const CharacterSidebarWrapper: FC<CharacterSidebarProps> = (props) => {
+const CharacterSidebarWrapper: FC<ICharacterSidebarProps> = (props) => {
   return (
     <ErrorBoundary>
       <Suspense fallback={<SidebarSkeleton />}>

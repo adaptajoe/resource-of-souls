@@ -33,6 +33,19 @@ export default function Changelog() {
   const resourceOfSoulsChangelog = useMemo(
     () => [
       {
+        version: "v1.0.5.",
+        date: "26/02/2025",
+        changes: [
+          "Unified code Interfaces across the app.",
+          "Added Master League to the Ranked Leaderboard Badges.",
+          "Added `Signature Move`, `Spiritual Pressure Move 1` and `Spiritual Pressure Move 2` to the Glossary Page.",
+          "Fixed the Move Tag Parser to improve handling of spaces and numbers.",
+          "Greatly expanded the Move Tagging System and Move Data System.",
+          "Rewrote all Tags and Data for every character's moves (Yes, all 31 of them...)",
+          "Got our first hate comment: 'this website looks like shit - @DDarkxwind via X - 25/02/2025'. This is the only hate comment that will ever be featured on the site. For the memes, of course.",
+        ],
+      },
+      {
         version: "v1.0.4.",
         date: "24/02/2025",
         changes: [

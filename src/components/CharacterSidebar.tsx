@@ -2,15 +2,15 @@
 import { useEffect, useState, useCallback, useMemo, FC } from "react";
 import Image from "next/image";
 import StarRating from "./StarRating";
-import { Character } from "@/types/characterDataTypes";
+import { ICharacter } from "@/types/characterDataTypes";
 import { useInView } from "react-intersection-observer";
 
-export interface CharacterSidebarProps {
-  character: Character;
+export interface ICharacterSidebarProps {
+  character: ICharacter;
   slug: string;
 }
 
-const CharacterSidebar: FC<CharacterSidebarProps> = ({ character, slug }) => {
+const CharacterSidebar: FC<ICharacterSidebarProps> = ({ character, slug }) => {
   const [currentOutfit, setCurrentOutfit] = useState("base-outfit-1");
   const [availableOutfits, setAvailableOutfits] = useState<{ base: number[]; dlc: number[] }>({ base: [1], dlc: [] });
   const totalStats = useMemo(() => character.stats[0].power + character.stats[0].speed + character.stats[0].range + character.stats[0].defense + character.stats[0].technique, [character.stats]);
@@ -56,25 +56,15 @@ const CharacterSidebar: FC<CharacterSidebarProps> = ({ character, slug }) => {
   }, []);
 
   const formatTagName = useCallback((tag: string): string => {
-    // Handle Squad numbers first
     if (tag.toLowerCase().includes("squad")) {
       return tag.replace(/squad(\d+)/i, (_, num) => `Squad ${num}`);
     }
 
-    // Handle Gotei 13 specifically
     if (tag.toLowerCase().includes("gotei")) {
       return tag.replace(/gotei(\d+)/i, (_, num) => `Gotei ${num}`);
     }
 
-    const spanishTerms = ["Segunda Etapa", "Espada", "Cero", "Bala", "Cero Oscuras", "Gran Ray Cero", "Hierro", "Sonido"];
-    for (const term of spanishTerms) {
-      if (tag.toLowerCase().includes(term.toLowerCase())) {
-        return tag.replace(new RegExp(term, "i"), term);
-      }
-    }
-
     const acronyms = ["DLC", "PVP", "NPC"];
-    // Split on capital letters, numbers, hyphens, and underscores
     const words = tag.split(/(?=[A-Z0-9])|[-_]/);
 
     return words
@@ -83,7 +73,6 @@ const CharacterSidebar: FC<CharacterSidebarProps> = ({ character, slug }) => {
         if (acronyms.includes(lowercaseWord.toUpperCase())) {
           return lowercaseWord.toUpperCase();
         }
-        // Handle numbers by adding a space before them
         if (/^\d+$/.test(word)) {
           return ` ${word}`;
         }

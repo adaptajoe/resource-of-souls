@@ -140,6 +140,20 @@
       "shortDescription": "Blue Reverse, pushback + Guard Restoration",
       "description": "A Reverse Move that is global for every character. Performed by being attacked by the opponent and activating Reverse. Burst Reverse is colored blue, blocks an opponent's attack and pushes them away. It also restores your Guard Gauge."
     },
+    "signature-move": {
+      "id": "signature-move",
+      "name": "Signature Move",
+      "engName": "",
+      "shortDescription": "Unique move",
+      "description": "A unique move that varies from character to character."
+    },
+    "spiritual-pressure-move": {
+      "id": "spiritual-pressure-move",
+      "name": "Spiritual Pressure Move",
+      "engName": "",
+      "shortDescription": "Special move",
+      "description": "Abbreviated to SP1 or SP2, Spiritual Pressure Moves are special moves that characters can use to unleash powerful attacks. Each character has two Spiritual Pressure Moves, called Spiritual Pressure Move 1 (SP1) and Spiritual Pressure Move 2 (SP2). Spiritual Pressure moves cost Reiatsu."
+    },
     "reiatsu": {
       "id": "reiatsu",
       "name": "Reiatsu",

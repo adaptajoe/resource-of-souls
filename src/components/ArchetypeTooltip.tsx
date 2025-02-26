@@ -2,14 +2,14 @@
 import Link from "next/link";
 import { useMemo, useState, useCallback } from "react";
 
-interface ArchetypeTooltipProps {
+interface IArchetypeTooltipProps {
   archetype: string;
   display: string;
   shortDescription: string;
   highlighted?: boolean;
 }
 
-export default function ArchetypeTooltip({ archetype, display, shortDescription, highlighted = false }: ArchetypeTooltipProps) {
+export default function ArchetypeTooltip({ archetype, display, shortDescription, highlighted = false }: IArchetypeTooltipProps) {
   const [isFocused, setIsFocused] = useState(false);
 
   const url = useMemo(() => {

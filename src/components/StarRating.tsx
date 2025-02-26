@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-interface StarRatingProps {
+interface IStarRatingProps {
   rating: number;
   maxRating?: number;
   label?: string;
@@ -21,7 +21,7 @@ const Star = memo(function Star({ filled, index, total }: { filled: boolean; ind
   );
 });
 
-const StarRating = memo(function StarRating({ rating, maxRating = 5, label = "Rating" }: StarRatingProps) {
+const StarRating = memo(function StarRating({ rating, maxRating = 5, label = "Rating" }: IStarRatingProps) {
   const validRating = Math.max(0, Math.min(rating, maxRating));
 
   return (

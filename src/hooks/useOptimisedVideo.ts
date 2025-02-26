@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
-interface UseOptimizedVideoProps {
+interface IUseOptimizedVideoProps {
   inView: boolean;
 }
 
-export const useOptimizedVideo = ({ inView }: UseOptimizedVideoProps) => {
+export const useOptimizedVideo = ({ inView }: IUseOptimizedVideoProps) => {
   const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {

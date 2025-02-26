@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useState, memo, useCallback } from "react";
 
-interface Term {
+interface ITerm {
   id: string;
   name: string;
   shortDescription: string;
@@ -10,8 +10,8 @@ interface Term {
   engName?: string;
 }
 
-interface GameTermTooltipProps {
-  term: Term;
+interface IGameTermTooltipProps {
+  term: ITerm;
   display?: string;
   className?: string;
   tooltipPosition?: "top" | "bottom" | "left" | "right";
@@ -44,14 +44,14 @@ const tooltipArrowClasses = {
   },
 };
 
-interface TooltipContentProps {
+interface ITooltipContentProps {
   shortDescription: string;
   position: "top" | "bottom" | "left" | "right";
   isVisible: boolean;
   width: string | number;
 }
 
-const TooltipContent = memo(({ shortDescription, position, isVisible, width }: TooltipContentProps) => (
+const TooltipContent = memo(({ shortDescription, position, isVisible, width }: ITooltipContentProps) => (
   <div
     className={`
       absolute 
@@ -84,7 +84,7 @@ const TooltipContent = memo(({ shortDescription, position, isVisible, width }: T
 
 TooltipContent.displayName = "TooltipContent";
 
-const GameTermTooltip = memo(function GameTermTooltip({ term, display, className = "", tooltipPosition = "top", tooltipWidth = "fit" }: GameTermTooltipProps) {
+const GameTermTooltip = memo(function GameTermTooltip({ term, display, className = "", tooltipPosition = "top", tooltipWidth = "fit" }: IGameTermTooltipProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = useCallback(() => {

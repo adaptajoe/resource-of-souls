@@ -1,10 +1,10 @@
 "use client";
 import dynamic from "next/dynamic";
 import type { FC } from "react";
-import type { Character } from "@/types/characterDataTypes";
+import type { ICharacter } from "@/types/characterDataTypes";
 
-interface StarRatingProps {
-  character: Character;
+interface IStarRatingProps {
+  character: ICharacter;
   rating: number;
 }
 
@@ -19,8 +19,7 @@ const StarRating = dynamic(() => import("./StarRating"), {
   ),
 });
 
-const StarRatingWrapper: FC<StarRatingProps> = ({ rating }) => <StarRating rating={rating} />;
-
+const StarRatingWrapper: FC<IStarRatingProps> = ({ rating }) => <StarRating rating={rating} />;
 StarRatingWrapper.displayName = "StarRatingWrapper";
 
 export default StarRatingWrapper;

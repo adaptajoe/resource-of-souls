@@ -5,12 +5,12 @@ import { useInView } from "react-intersection-observer";
 
 const ITEMS_PER_PAGE = 6;
 
-export interface CharacterAnimationsProps {
+export interface ICharacterAnimationsProps {
   animations: string[];
   slug: string;
 }
 
-const CharacterAnimations: FC<CharacterAnimationsProps> = ({ animations, slug }) => {
+const CharacterAnimations: FC<ICharacterAnimationsProps> = ({ animations, slug }) => {
   const [animationTabIsOpen, setAnimationTabIsOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const containerRef = useRef<HTMLDivElement>(null);

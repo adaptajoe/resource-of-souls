@@ -1,11 +1,11 @@
 "use client";
 import { useState, useCallback, useMemo, JSX } from "react";
-import { Moves, Move } from "@/types/characterDataTypes";
+import { IMoves, IMove } from "@/types/characterDataTypes";
 import React from "react";
 import { MoveAnimationTooltip } from "./MoveAnimationTooltip";
 
-interface CharacterMovesProps {
-  moves: Moves[];
+interface ICharacterMovesProps {
+  moves: IMoves[];
   characterId: string;
 }
 
@@ -20,7 +20,9 @@ const formatMoveTag = (tag: string): string => {
   }
 
   const withSpaces = tag.replace(/([A-Z])/g, " $1");
-  return withSpaces.charAt(0).toUpperCase() + withSpaces.slice(1).trim();
+  const withSpacesBeforeNumbers = withSpaces.replace(/(\d+)/g, " $1");
+  const cleaned = withSpacesBeforeNumbers.replace(/\s+/g, " ").trim();
+  return cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
 };
 
 const useTranslateInput = (input: string): JSX.Element => {
@@ -56,13 +58,9 @@ const useTranslateInput = (input: string): JSX.Element => {
     []
   );
 
-  // Sort keys by length in descending order to match longer patterns first
   const sortedKeys = useMemo(() => Object.keys(translations).sort((a, b) => b.length - a.length), [translations]);
-
-  // Split the input string into parts that match the pattern
   const parts = useMemo(() => input.split(new RegExp(`(${sortedKeys.join("|")}|[+\\-])`, "g")), [input, sortedKeys]);
 
-  // Map each part to either its translation or itself
   return (
     <>
       {parts.map((part, index) => (
@@ -72,7 +70,7 @@ const useTranslateInput = (input: string): JSX.Element => {
   );
 };
 
-const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
+const CharacterMoves = ({ moves, characterId }: ICharacterMovesProps) => {
   const [activeTab, setActiveTab] = useState<"base" | "awakened" | "reawakened" | "kikon" | "baseCombos" | "awakenedCombos" | "reawakenedCombos">("base");
   const [movesetKeyIsOpen, setMovesetKeyIsOpen] = useState(false);
 
@@ -268,16 +266,16 @@ const CharacterMoves = ({ moves, characterId }: CharacterMovesProps) => {
   );
 };
 
-interface MoveDisplayProps {
-  move: Move;
+interface IMoveDisplayProps {
+  move: IMove;
   characterId: string;
 }
 
-const MoveDisplay = ({ move, characterId }: MoveDisplayProps) => {
+const MoveDisplay = ({ move, characterId }: IMoveDisplayProps) => {
   const translatedInput = useTranslateInput(move.input);
 
   return (
-    <div className="border-t border-white">
+    <div className="border-t border-white hover:bg-gray-800 rounded-b-xl transition-colors">
       <div className="grid grid-cols-2 gap-4 items-start py-2 pr-2">
         <div>
           <MoveAnimationTooltip characterId={characterId} moveId={move.id}>
@@ -298,9 +296,19 @@ const MoveDisplay = ({ move, characterId }: MoveDisplayProps) => {
           </div>
           <hr className="my-2" />
           <div className="flex flex-wrap mb-2 pt-2">
-            <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 ml-2">Cost: {move.resourceCost}</strong>
-            <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 ml-2">Damage: {move.damage}</strong>
-            <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 ml-2">Frames: {move.frames}</strong>
+            {move.reishiGain !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Reishi Gain: {move.reishiGain}</strong>}
+            {move.reishiCost !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Reishi Cost: {move.reishiCost}</strong>}
+            {move.reiatsuGain !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Reiatsu Gain: {move.reiatsuGain}</strong>}
+            {move.reiatsuCost !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Reiatsu Cost: {move.reiatsuCost}</strong>}
+            {move.fightingSpiritGain !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Fighting Spirit Gain: {move.fightingSpiritGain}</strong>}
+            {move.fightingSpiritCost !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Fighting Spirit Cost: {move.fightingSpiritCost}</strong>}
+            {move.reversalGain !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Reversal Gain: {move.reversalGain}</strong>}
+            {move.reversalCost !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Reversal Cost: {move.reversalCost}</strong>}
+            {move.resourceGain !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Resource Gain: {move.resourceGain}</strong>}
+            {move.resourceCost !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Resource Cost: {move.resourceCost}</strong>}
+            {move.damage !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Damage: {move.damage}</strong>}
+            {move.frames !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Frames: {move.frames}</strong>}
+            {move.cooldown !== "X Seconds" && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Cooldown: {move.cooldown}</strong>}
           </div>
         </div>
       </div>

@@ -1,15 +1,14 @@
-// src/components/MoveAnimationTooltip.tsx
 "use client";
 import { useState, useRef, useCallback, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-interface MoveAnimationTooltipProps {
+interface IMoveAnimationTooltipProps {
   characterId: string;
   moveId: string;
   children: React.ReactNode;
 }
 
-export const MoveAnimationTooltip = ({ characterId, moveId, children }: MoveAnimationTooltipProps) => {
+export const MoveAnimationTooltip = ({ characterId, moveId, children }: IMoveAnimationTooltipProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
@@ -78,6 +77,8 @@ export const MoveAnimationTooltip = ({ characterId, moveId, children }: MoveAnim
               onLoadedData={() => setIsVideoLoaded(true)}
               muted
               playsInline
+              autoPlay
+              loop
               preload="metadata"
             >
               <source src={animationPath} type="video/mp4" />
@@ -107,6 +108,7 @@ export const MoveAnimationTooltip = ({ characterId, moveId, children }: MoveAnim
               onError={() => setVideoError(true)}
               onLoadedData={() => setIsVideoLoaded(true)}
               muted
+              loop
               playsInline
               preload="metadata"
             >

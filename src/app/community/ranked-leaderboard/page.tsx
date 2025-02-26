@@ -122,6 +122,40 @@ export default function RankedLeaderboard() {
     { name: "Bankai Spammer", owner: null, lastChallenged: null },
   ];
 
+  const masterLeagueBadges: IBadge[] = [
+    { name: "Number 1 Ichigo Kurosaki (Shikai) Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Rukia Kuchiki Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Uryu Ishida Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Byakuya Kuchiki Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Yoruichi Shihōin Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Yasutora 'Chad' Sado Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Kisuke Urahara Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Gin Ichimaru Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Rangiku Matsumoto Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Tōshiro Hitsugaya Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Kenpachi Zaraki Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Ulquiorra Shifar Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Ichigo Kurosaki (Bankai) Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Kaname Tōsen Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Soi-Fon Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Renji Abarai Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Izuru Kira Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Neliel Tu Odelschwanck Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Grimmjow Jaegerjaquez Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Mayuri Kurotsuchi Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Aizen Sosuke Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Genryůsai Shigekuni Yamamoto Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Shinji Hirako Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Szayelaporro Granz Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Shunsui Kyoraku Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Sajin Komamura Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Shuhei Hisagi Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Ikkaku Madarame Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Nnoitra Gilga Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Tier Harribel Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Coyote Starrk Player", owner: null, lastChallenged: null },
+  ];
+
   const tables = useMemo(
     () => ({
       "World of the Living League": worldOfLivingLeagueBadges,
@@ -129,8 +163,9 @@ export default function RankedLeaderboard() {
       "Hueco Mundo League": huecoMundoLeagueBadges,
       "Schatten Bereich League": schattenBereichLeagueBadges,
       "Special League": specialLeagueBadges,
+      "Master League": masterLeagueBadges,
     }),
-    [worldOfLivingLeagueBadges, soulSocietyLeagueBadges, huecoMundoLeagueBadges, schattenBereichLeagueBadges, specialLeagueBadges]
+    [worldOfLivingLeagueBadges, soulSocietyLeagueBadges, huecoMundoLeagueBadges, schattenBereichLeagueBadges, specialLeagueBadges, masterLeagueBadges]
   );
 
   const calculateDaysSince = (dateString: string | null) => {
@@ -301,7 +336,6 @@ export default function RankedLeaderboard() {
             );
           }
 
-          // Group owners by their badge count
           const groupedByBadgeCount: { [key: number]: Array<[string, IBadge[]]> } = {};
           Object.entries(ownerCounts).forEach(([owner, badges]) => {
             const count = badges.length;
@@ -311,12 +345,10 @@ export default function RankedLeaderboard() {
             groupedByBadgeCount[count].push([owner, badges]);
           });
 
-          // Sort badge counts in descending order
           const sortedCounts = Object.keys(groupedByBadgeCount)
             .map(Number)
             .sort((a, b) => b - a);
 
-          // Get all competitors up to third place (including ties)
           const topCompetitors: Array<[string, IBadge[]]> = [];
           let currentRank = 1;
 

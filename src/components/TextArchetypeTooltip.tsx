@@ -2,15 +2,15 @@
 import Link from "next/link";
 import { memo, useMemo, useState, useCallback } from "react";
 
-interface ArchetypeData {
+interface IArchetypeData {
   id: string;
   name: string;
   shortDescription: string;
   description: string;
 }
 
-interface ArchetypeTooltipProps {
-  archetype: ArchetypeData;
+interface IArchetypeTooltipProps {
+  archetype: IArchetypeData;
   display?: string;
   className?: string;
   tooltipPosition?: "top" | "bottom" | "left" | "right";
@@ -36,13 +36,13 @@ const tooltipArrowClasses = {
   right: "left-[-12px] top-1/2 -translate-y-1/2 -rotate-90",
 };
 
-interface TooltipProps {
+interface ITooltipProps {
   shortDescription: string;
   position: "top" | "bottom" | "left" | "right";
   isVisible: boolean;
 }
 
-const Tooltip = memo(({ shortDescription, position, isVisible }: TooltipProps) => (
+const Tooltip = memo(({ shortDescription, position, isVisible }: ITooltipProps) => (
   <div
     className={`
       absolute 
@@ -73,7 +73,7 @@ const Tooltip = memo(({ shortDescription, position, isVisible }: TooltipProps) =
 
 Tooltip.displayName = "ArchetypeTooltip";
 
-const TextArchetypeTooltip = memo(function TextArchetypeTooltip({ archetype, display, className = "", tooltipPosition = "bottom" }: ArchetypeTooltipProps) {
+const TextArchetypeTooltip = memo(function TextArchetypeTooltip({ archetype, display, className = "", tooltipPosition = "bottom" }: IArchetypeTooltipProps) {
   const [isTooltipVisible, setTooltipVisible] = useState(false);
 
   const url = useMemo(() => `/glossary?highlight=${formatArchetypeName(archetype.name)}`, [archetype.name]);

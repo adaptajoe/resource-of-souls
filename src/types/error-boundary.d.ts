@@ -1,5 +1,5 @@
 declare namespace React {
-  interface ErrorInfo {
+  interface IErrorInfo {
     componentStack: string;
   }
 }

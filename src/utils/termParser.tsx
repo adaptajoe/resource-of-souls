@@ -3,7 +3,7 @@ import supplementaryData from "@/data/supplementaryData.json";
 import GameTermTooltip from "@/components/GameTermTooltip";
 import TextArchetypeTooltip from "@/components/TextArchetypeTooltip";
 
-interface Term {
+interface ITerm {
   id: string;
   name: string;
   shortDescription: string;
@@ -20,7 +20,7 @@ const formatTermId = (term: string): string => {
     .replace(/^-|-$/g, "");
 };
 
-const findGameTerm = (term: string): Term | undefined => {
+const findGameTerm = (term: string): ITerm | undefined => {
   const foundTerm = Object.values(supplementaryData.gameTerms).find((t) => t.name === term);
   if (foundTerm) {
     return {
@@ -31,7 +31,7 @@ const findGameTerm = (term: string): Term | undefined => {
   return undefined;
 };
 
-const findArchetype = (term: string): Term | undefined => {
+const findArchetype = (term: string): ITerm | undefined => {
   const foundArchetype = Object.values(supplementaryData.archetypes).find((a) => a.name === term);
   if (foundArchetype) {
     return {

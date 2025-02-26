@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import characterData from "@/data/characterData.json";
 import supplementaryData from "@/data/supplementaryData.json";
-import { CharacterData } from "@/types/characterDataTypes";
-import { SupplementaryData } from "@/types/supplementaryDataTypes";
+import { ICharacterData } from "@/types/characterDataTypes";
+import { ISupplementaryData } from "@/types/supplementaryDataTypes";
 import ArchetypeTooltip from "@/components/ArchetypeTooltip";
 
 type SortType = {
@@ -15,7 +15,7 @@ type SortType = {
 type AffiliationType = "all" | "worldOfTheLiving" | "soulSociety" | "huecoMundo";
 
 export default function Characters() {
-  const characters = characterData as CharacterData;
+  const characters = characterData as ICharacterData;
   const [searchTerm, setSearchTerm] = useState("");
   const [sortConfig, setSortConfig] = useState<SortType>({ type: "number", ascending: true });
   const [affiliationFilter, setAffiliationFilter] = useState<AffiliationType>("all");
@@ -60,7 +60,6 @@ export default function Characters() {
     const searchTermLower = searchTerm.toLowerCase();
 
     const filtered = Object.entries(characters).filter(([, character]) => {
-      // First check if the character should be shown
       if (character.show === false) {
         return false;
       }
@@ -111,7 +110,7 @@ export default function Characters() {
   const ArchetypeCard = ({ archetype, highlighted }: { archetype: string; highlighted: boolean }) => {
     const { display } = formatArchetype(archetype);
     const archetypeKey = normalizeArchetypeKey(archetype);
-    const archetypeData = (supplementaryData as SupplementaryData).archetypes[archetypeKey];
+    const archetypeData = (supplementaryData as ISupplementaryData).archetypes[archetypeKey];
 
     return <ArchetypeTooltip archetype={archetype} display={display} shortDescription={archetypeData?.shortDescription} highlighted={highlighted} />;
   };

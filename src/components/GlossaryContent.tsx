@@ -86,7 +86,7 @@ export default function GlossaryContent() {
   };
 
   const FilterButtons = () => {
-    const commonFilters = ["Guard", "Movement", "Attack", "Reishi", "Reiatsu", "Kikon", "Konpaku", "Reverse", "Breaker", "Quick", "Flash", "Signature", "Spiritual Pressure", "Fighting Spirit"];
+    const commonFilters = ["Attack", "Breaker", "FightingSpirit", "Flash", "Guard", "Kikon", "Konpaku", "Movement", "Quick", "Reiatsu", "Reishi", "Reverse", "Signature"];
 
     return (
       <div className="w-fit lg:w-full font-bebasFont text-xl flex items-center justify-center mt-4 space-y-4 lg:space-y-0">

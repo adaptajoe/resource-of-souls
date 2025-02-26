@@ -1,15 +1,15 @@
 "use client";
 import { Suspense, Component, ReactNode, ErrorInfo } from "react";
 import dynamic from "next/dynamic";
-import { Moves } from "@/types/characterDataTypes";
+import { IMoves } from "@/types/characterDataTypes";
 
-const CharacterMoves = dynamic<CharacterMovesWrapperProps>(() => import("./CharacterMoves").then((mod) => mod.default), {
+const CharacterMoves = dynamic<ICharacterMovesWrapperProps>(() => import("./CharacterMoves").then((mod) => mod.default), {
   ssr: false,
   loading: () => <LoadingPlaceholder />,
 });
 
-interface CharacterMovesWrapperProps {
-  moves: Moves[];
+interface ICharacterMovesWrapperProps {
+  moves: IMoves[];
   characterId: string;
 }
 
@@ -69,7 +69,7 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boole
   }
 }
 
-const CharacterMovesWrapper = (props: CharacterMovesWrapperProps) => {
+const CharacterMovesWrapper = (props: ICharacterMovesWrapperProps) => {
   return (
     <ErrorBoundary>
       <Suspense fallback={<LoadingPlaceholder />}>
