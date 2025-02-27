@@ -383,7 +383,7 @@ export default function RankedLeaderboard() {
     const ownerCounts = getOwnerBadgeCounts;
 
     const generateRandomStars = (count: number) => {
-      return Array.from({ length: count }, (_, i) => ({
+      return Array.from({ length: count }, () => ({
         left: `${Math.random() * 100}%`,
         top: `${Math.random() * 100}%`,
         animationDelay: `${Math.random() * 2}s`,
@@ -686,7 +686,7 @@ export default function RankedLeaderboard() {
                   If a user is found to be in breach of either the Subreddit or Discord rules, or is found to be cheating, using exploits, non-cosmetic mods, server-side mods, or client-side mods that
                   grant any form of advantage, or is being generally toxic (A 3 strike system will be used), then their Badge will be FORCIBLY revoked and their Discord username will be added to a
                   Ranked Leaderboard Blacklist. False flagging will count as a strike against your Discord username. This is NON-NEGOTIABLE. Selling Badges or trading Badges outside of the honor-based
-                  "Duel" system will result in an immediate blacklist.
+                  &quot;Duel&quot; system will result in an immediate blacklist.
                 </li>
                 <li>BLEACH - Resource of Souls reserves the right to edit, remove or add to these rules at any time.</li>
               </ul>
