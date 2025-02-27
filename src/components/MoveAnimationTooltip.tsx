@@ -19,7 +19,11 @@ export const MoveAnimationTooltip = ({ characterId, moveId, children }: IMoveAni
     triggerOnce: false,
   });
 
-  const animationPath = `/assets/character-animations/${encodeURIComponent(characterId)}/${encodeURIComponent(moveId)}.mp4`;
+  const cleanMoveId = moveId.replace(".mp4", "");
+
+  const normalizedMoveId = cleanMoveId.normalize("NFKD").replace(/\u0304/g, "\u0304"); // Ensure consistent macron encoding
+
+  const animationPath = `/assets/character-animations/${encodeURIComponent(characterId)}/${encodeURIComponent(normalizedMoveId)}.mp4`;
 
   const handleMouseEnter = useCallback(() => {
     setIsHovered(true);
