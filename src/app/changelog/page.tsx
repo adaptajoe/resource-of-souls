@@ -33,6 +33,11 @@ export default function Changelog() {
   const resourceOfSoulsChangelog = useMemo(
     () => [
       {
+        version: "v1.0.6.",
+        date: "26/02/2025",
+        changes: ["Further cleaned up Character Movelists", "Added new Kikon Moves for `Grimmjow`, `Rukia`, `Yamamoto` `Tōshiro` and `Aizen`.", "Added Stage information."],
+      },
+      {
         version: "v1.0.5.",
         date: "26/02/2025",
         changes: [

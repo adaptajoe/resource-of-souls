@@ -47,7 +47,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "ranged", "costsReiatsu", "shortToMidRange", "charge", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToMidRange", "charge", "needsStatInfo"]
           },
           {
             "id": "wielding",
@@ -69,7 +69,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "costsReiatsu", "shortRange", "spiritualPressureMove1", "trapsOpponent", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortRange", "trapsOpponent", "needsStatInfo"]
           },
           {
             "id": "swing",
@@ -91,7 +91,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "melee", "shortRange", "superArmor", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "shortRange", "superArmor", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -115,7 +115,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "boostsStats", "noDamage", "noRange", "grantsNewMoves"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "boostsStats", "grantsPermanentNewMoves"]
           },
           {
             "id": "unknown",
@@ -318,7 +318,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "kidō", "costsReiatsu", "midToLongRange", "signatureMove", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "kidō", "midToLongRange", "needsStatInfo"]
           },
           {
             "id": "hadō-#4-byakurai",
@@ -340,11 +340,11 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "kidō", "costsReiatsu", "shortToLongRange", "spiritualPressureMove1", "superArmor", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "kidō", "shortToLongRange", "grantsTemporarySuperArmor", "needsStatInfo"]
           },
           {
-            "id": "hadō-#33-sokatsui",
-            "name": "Hadō #33: Sokatsui",
+            "id": "hadō-#33-sōkatsui",
+            "name": "Hadō #33: Sōkatsui",
             "description": "Fires an explosive wave of Reiryoku at Rukia's opponent. It can be chained to attacks, and makes Rukia lunge forwards when cast.",
             "input": "S2",
             "damage": 0,
@@ -362,7 +362,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "kidō", "costsReiatsu", "shortRange", "spiritualPressureMove2", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeRanged", "kidō", "shortRange", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -386,7 +386,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "noDamage", "noRange", "setsFightingSpiritTo0", "grantsNewMoves"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "grantsPermanentNewMoves"]
           },
           {
             "id": "unknown",
@@ -457,9 +457,9 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Alternate Awakened Kikon currently not known.",
+            "id": "hadō-#73-sōren-sōkatsui-kikon-move",
+            "name": "Hadō #73: Sōren Sōkatsui",
+            "description": "Whilst Awakened, Rukia dances into a squatted stance, sheathing Sode no Shirayuki before clasping her hands together, holding them parallel with the palms' base touching one-another, as a rupturing blue flame riots from her hands towards her opponent.",
             "input": "AW + KI",
             "damage": null,
             "frames": null,
@@ -589,7 +589,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "ranged", "charge", "tracksOpponent", "shortToLongRange", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "charge", "tracksOpponent", "needsStatInfo"]
           },
           {
             "id": "quincy-arrow",
@@ -611,7 +611,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "teleportsToOpponentOnHit", "costsReiatsu", "shortToLongRange", "spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "teleportsToOpponentOnHit", "needsStatInfo"]
           },
           {
             "id": "seeleschneider",
@@ -633,7 +633,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "ranged", "noRangeToMidRange", "costsReiatsu", "counter", "block", "spiritualPressureMove2", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "attackTypeRanged", "noRangeToMidRange", "counter", "block", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -657,7 +657,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "increasesReiatsuLimit", "noRange"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "increasesReiatsuLimit"]
           },
           {
             "id": "unknown",
@@ -703,7 +703,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["reawakening", "noDamage", "setsFightingSpiritTo0", "noDamage", "noRange", "needsMoreInfo"]
+            "moveTags": ["reawakening", "noDamage", "setsFightingSpiritTo0", "noRange", "needsMoreInfo"]
           },
           {
             "id": "unknown",
@@ -798,7 +798,7 @@
           {
             "id": "letzt-stile-heilig-pfeil-kikon-move",
             "name": "Letzt Stile: Heilig Pfeil",
-            "description": "Uryu summons a Heilig Pfeil from the surrounding Reishi, notching it on his bow, firing an explosive blast truly worthy of one known as 'The Last Quincy'.",
+            "description": "Whilst Reawakened, Uryu summons a Heilig Pfeil from the surrounding Reishi, notching it on his bow, firing an explosive blast truly worthy of one known as 'The Last Quincy'.",
             "input": "RE + KI",
             "damage": null,
             "frames": null,
@@ -974,7 +974,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["meleeInStanceA", "rangedInStanceB", "shortRangeInStanceA", "midToLongRangeInStanceB", "stanceChange", "costsReiatsu", "signatureMove", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMeleeInStanceA", "attackTypeRangedInStanceB", "shortRangeInStanceA", "midToLongRangeInStanceB", "stanceChange", "needsStatInfo"]
           },
           {
             "id": "seal-&-release-senbonzakura",
@@ -996,12 +996,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "stanceChange", "resourceLoss", "trapsOpponentInStanceB", "pushesOpponentInStanceA", "midRange", "costsReiatsu", "spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "midRange", "stanceChange", "trapsOpponentInStanceB", "pushesOpponentInStanceA", "needsStatInfo"]
           },
           {
             "id": "that-won't-touch-me",
             "name": "That Won't Touch Me",
-            "description": "Byakuya holds his arm to his waist, and readies to intercept the opponents' attack. If the opponent lands an attack on Byakuya in this state, Byakuya absorbs the hit and retaliates with a powerful 'Hadō #33: Sokatsui' counterattack.",
+            "description": "Byakuya holds his arm to his waist, and readies to intercept the opponents' attack. If the opponent lands an attack on Byakuya in this state, Byakuya absorbs the hit and retaliates with a powerful 'Hadō #33: Sōkatsui' counterattack.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -1018,7 +1018,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "ranged", "kidō", "block", "counter", "resourceLoss", "noRangeToShortRange", "costsReiatsu", "spiritualPressureMove2", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeRanged", "noRangeToShortRange", "kidō", "block", "counter", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -1042,7 +1042,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "removesStances", "grantsNewMoves", "noDamage", "noRange"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "removesStances", "grantsPermanentNewMoves"]
           },
           {
             "id": "unknown",
@@ -1071,7 +1071,7 @@
           {
             "id": "senbonzakura-kikon-move",
             "name": "Senbonzakura: Scattering",
-            "description": "Byakuya fires a Kidō to restrain his opponent, as he releases Senbonzakura, scattering razor-sharp sakura petals into two pillars that crash into his opponent in the shape of the letter x.",
+            "description": "Whilst Unawakened, Byakuya fires a Kidō to restrain his opponent, as he releases Senbonzakura, scattering razor-sharp sakura petals into two pillars that crash into his opponent in the shape of the letter x.",
             "input": "KI",
             "damage": null,
             "frames": null,
@@ -1093,7 +1093,7 @@
           {
             "id": "senbonzakura-kageyoshi-senkei-kikon-move",
             "name": "Senbonzakura Kageyoshi: Senkei",
-            "description": "Byakuya condenses his Senbonzakura's sakura petals into the shape of countless swords before raising his hand, borrowing the energy of these blades to form his own, executing his opponent with a swift slice.",
+            "description": "Whilst Awakened, Byakuya condenses his Senbonzakura's sakura petals into the shape of countless swords before raising his hand, borrowing the energy of these blades to form his own, executing his opponent with a swift slice.",
             "input": "AW + KI",
             "damage": null,
             "frames": null,
@@ -1115,7 +1115,7 @@
           {
             "id": "senbonzakura-kageyoshi-shūkei-hakuteiken-kikon-move",
             "name": "Senbonzakura Kageyoshi: Shūkei Hakuteiken",
-            "description": "Byakuya catches one of his Senkei blades in his hand, holding it infront of him as his Reiryoku shifts from a bright pink to a more mellow white color; blazing wings of Reiryoku spread from Byakuya's back, joined with a circular halo as he charges, Senbonzakura in-hand, towards his opponent.",
+            "description": "Whilst Awakened, Byakuya catches one of his Senkei blades in his hand, holding it infront of him as his Reiryoku shifts from a bright pink to a more mellow white color; blazing wings of Reiryoku spread from Byakuya's back, joined with a circular halo as he charges, Senbonzakura in-hand, towards his opponent.",
             "input": "AW + KI",
             "damage": null,
             "frames": null,
@@ -1245,7 +1245,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "blockCharge", "costsReiatsu", "counterCharge", "teleportsToOpponentOnBlock", "signatureMove", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "noRange", "blockCharge", "counterCharge", "teleportsToOpponentOnBlock", "needsStatInfo"]
           },
           {
             "id": "bakko",
@@ -1267,7 +1267,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "dashesToOpponent", "costsReiatsu", "spiritualPressureMove1", "midToLongRange", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "dashesTowardsOpponent", "needsStatInfo"]
           },
           {
             "id": "oboro-neko",
@@ -1289,7 +1289,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["counter", "block", "melee", "costsReiatsu", "teleportsToOpponentOnBlock", "spiritualPressureMove2", "noRangeToShortRange", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "noRangeToShortRange", "counter", "block", "teleportsToOpponentOnBlock", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -1313,7 +1313,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "boostsStats", "noDamage", "noRange"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "boostsStats"]
           },
           {
             "id": "unknown",
@@ -1364,7 +1364,7 @@
           {
             "id": "shunkō-blitz-kikon-move",
             "name": "Shunkō: Blitz",
-            "description": "After kicking her opponent, Yoruichi prepares to display her mastery of Hakuda and Kidō by striking the opponent with 10 precise, electrified punches in the span of 2 seconds.",
+            "description": "Whilst Awakened, yoruichi kicks her opponent, preparing to display her mastery of Hakuda and Kidō by striking the opponent with 10 precise, electrified punches in the span of 2 seconds.",
             "input": "AW + KI",
             "damage": null,
             "frames": null,
@@ -1516,7 +1516,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "ranged", "costsReiatsu", "charge", "shortToMidRange", "variableDamage", "signatureMove", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "attackTypeRanged", "shortToMidRange", "charge", "variableDamage", "needsStatInfo"]
           },
           {
             "id": "alerta",
@@ -1538,7 +1538,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "boostsSignatureChargeSpeed", "noRange", "noDamage", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "noDamage", "noRange", "boostsSignatureMoveChargeSpeed", "needsStatInfo"]
           },
           {
             "id": "contraataque",
@@ -1560,7 +1560,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "shortRange", "costsReiatsu", "variableDamage", "counter", "spiritualPressureMove2", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "shortRange", "variableDamage", "counter", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -1584,7 +1584,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "boostsStats", "boostsComboLength", "noDamage", "noRange"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "boostsStats", "boostsComboLength"]
           },
           {
             "id": "unknown",
@@ -1787,7 +1787,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "melee", "counter", "block", "noRangeToShortRange", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "noRangeToShortRange", "counter", "block", "needsStatInfo"]
           },
           {
             "id": "kamisori-benihime",
@@ -1809,7 +1809,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "destroysProjectiles", "costsReiatsu", "shortToMidRange", "spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortToMidRange", "destroysProjectiles", "needsStatInfo"]
           },
           {
             "id": "are-you-prepared?",
@@ -1831,7 +1831,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["noRange", "boostsStats", "costsReiatsu", "boostsAnimationSpeed", "spiritualPressureMove2"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "noRange", "boostsStats", "boostsAnimationSpeed", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -1855,7 +1855,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "boostsStats", "boostsReverseRegeneration", "boostsFlashSteps", "boostsReverses", "noDamage", "noRange"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "boostsStats", "boostsReverseRegeneration", "boostsFlashSteps", "boostsReverses"]
           },
           {
             "id": "unknown",
@@ -1906,7 +1906,7 @@
           {
             "id": "hadō-#91-senju-kōten-taihō-kikon-move",
             "name": "Hadō #91: Senju Kōten Taihō",
-            "description": "Kisuke waves Benihime with the authority of a military commander, directing the magical cannon fire of 'Hadō #91: Senju Kōten Taihō' towards his opponent, resulting in a barrage and explosion of magenta star-like blasts.",
+            "description": "Whilst Awakened, Kisuke waves Benihime with the authority of a military commander, directing the magical cannon fire of 'Hadō #91: Senju Kōten Taihō' towards his opponent, resulting in a barrage and explosion of magenta star-like blasts.",
             "input": "AW + KI",
             "damage": null,
             "frames": null,
@@ -2058,7 +2058,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "ranged", "costsReiatsu", "charge", "signatureMove", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "shortToLongRange", "charge", "needsStatInfo"]
           },
           {
             "id": "urozuki",
@@ -2080,7 +2080,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "ranged", "costsReiatsu", "block", "counter", "activatesTemporaryBuff", "spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "noRangeToMidRange", "block", "counter", "activatesTemporaryBuff", "needsStatInfo"]
           },
           {
             "id": "shinso-sousen",
@@ -2102,7 +2102,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "costsReiatsu", "spiritualPressureMove2", "midRange", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "midRange", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -2126,7 +2126,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "noDamage", "noRange", "setsFightingSpiritTo0", "boostsStats"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "boostsStats"]
           },
           {
             "id": "unknown",
@@ -2177,7 +2177,7 @@
           {
             "id": "kamishini-no-yari-butō-renjin-kikon-move",
             "name": "Kamishini no Yari: Butō Renjin",
-            "description": "Gin holds Kamishini no Yari at his chest, blade tip pointed towards his opponent, as he extends and contracts his blade to display its' speed... Before quickly loosing a barrage of unexpected and rapid thrusts without lifting a single finger.",
+            "description": "Whilst Awakened, Gin holds Kamishini no Yari at his chest, blade tip pointed towards his opponent, as he extends and contracts his blade to display its' speed... Before quickly loosing a barrage of unexpected and rapid thrusts without lifting a single finger.",
             "input": "AW + KI",
             "damage": null,
             "frames": null,
@@ -2329,7 +2329,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "kidō", "costsReiatsu", "midRange", "signatureMove", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "kidō", "midRange", "needsStatInfo"]
           },
           {
             "id": "you're-too-slow!",
@@ -2351,11 +2351,11 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "counter", "block", "costsReiatsu", "teleportsToOpponentOnBlock", "noRangeToShortRange", "kidō", "spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "noRangeToShortRange", "kidō", "counter", "block", "teleportsToOpponentOnBlock", "needsStatInfo"]
           },
           {
-            "id": "hadō-#33-sokatsui",
-            "name": "Hadō #33: Sokatsui",
+            "id": "hadō-#33-sōkatsui",
+            "name": "Hadō #33: Sōkatsui",
             "description": "Fires a blast of blue Reiryoku that has poor range, but high damage.",
             "input": "S2",
             "damage": 0,
@@ -2373,7 +2373,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "kidō", "shortRange", "costsReiatsu", "spiritualPressureMove2", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeRanged", "shortRange", "kidō", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -2397,7 +2397,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "noDamage", "setsFightingSpiritTo0", "noRange", "grantsNewMoves"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "grantsPermanentNewMoves"]
           },
           {
             "id": "unknown",
@@ -2583,7 +2583,7 @@
           {
             "id": "suihyōrin",
             "name": "Suihyōrin",
-            "description": "Toshirō weaves a zone of icicles at his opponents' feet. Holding the input increases the attack's range and damage. Increases the Tenso Jyurin Gauge when it hits.",
+            "description": "Toshirō weaves a zone of icicles at his opponents' feet. Holding the input increases the attack's range and damage. Increases the `Tenso Jyurin Gauge` when it hits.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -2600,12 +2600,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "charge", "ranged", "tracksOpponent", "shortToLongRange", "gaugeIncreaseOnHit", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "charge", "tracksOpponent", "gaugeIncreaseOnHit", "gaugeDecreaseOnWhiff", "needsStatInfo"]
           },
           {
             "id": "soten-hyogeki",
             "name": "Soten Hyogeki",
-            "description": "Tōshiro summons an icicle that drops on the opponent regardless of distance. If Soten Hyogeki hits, Tōshiro can exploit his opponent with a follow-up attack. Increases the Tenso Jyurin Gauge when it hits.",
+            "description": "Tōshiro summons an icicle that drops on the opponent regardless of distance. If Soten Hyogeki hits, Tōshiro can exploit his opponent with a follow-up attack. Increases the `Tenso Jyurin Gauge` when it hits.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -2622,12 +2622,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "costsReiatsu", "tracksOpponent", "shortToLongRange", "gaugeIncreaseOnHit", "spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "tracksOpponent", "gaugeIncreaseOnHit", "gaugeDecreaseOnWhiff", "needsStatInfo"]
           },
           {
             "id": "hyōryū-renbu",
             "name": "Hyōryū Renbu",
-            "description": "Hyōrinmaru roars, as Tōshiro forms a large dragon head that trails ice behind it, firing it at the opponent over a long distance, allowing Toshiro to launch a follow-up attack. Increases the Tenso Jyurin Gauge when it hits.",
+            "description": "Hyōrinmaru roars, as Tōshiro forms a large dragon head that trails ice behind it, firing it at the opponent over a long distance, allowing Toshiro to launch a follow-up attack. Increases the `Tenso Jyurin Gauge` when it hits.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -2644,14 +2644,14 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "costsReiatsu", "midToLongRange", "gaugeIncreaseOnHit", "spiritualPressureMove2", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeRanged", "midToLongRange", "gaugeIncreaseOnHit", "gaugeDecreaseOnWhiff", "needsStatInfo"]
           }
         ],
         "awakened": [
           {
             "id": "bankai-daiguren-hyōrinmaru-awakening",
             "name": "Bankai: `Daiguren Hyōrinmaru` Awakening",
-            "description": "Tōshiro raises Hyōrinmaru to the heavens, activating his Bankai and cladding himself in frosted ice wings that descend down his spine into a dragon's tail. When Awakened, Tōshiro's abilities are enhanced, and the limit of his Tenso Jyurin Gauge increases considerably.",
+            "description": "Tōshiro raises Hyōrinmaru to the heavens, activating his Bankai and cladding himself in frosted ice wings that descend down his spine into a dragon's tail. When Awakened, Tōshiro's abilities are enhanced, and the limit of his `Tenso Jyurin Gauge` increases considerably.",
             "input": "AW",
             "damage": null,
             "frames": null,
@@ -2668,7 +2668,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "noDamage", "noRange", "setsFightingSpiritTo0", "increasesGaugeLimit"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "increasesGaugeLimit"]
           },
           {
             "id": "unknown",
@@ -2697,7 +2697,7 @@
           {
             "id": "hyōryū-renbu-kikon-move",
             "name": "Hyōrinmaru: Hyōryū Renbu",
-            "description": "Tōshiro leaps into the air, spawning a colossal, spiralling serpent with the head of a dragon, launching it towards his opponent, causing a field of ice crystals to form at the epicentre.",
+            "description": "Whilst Unawakened, Tōshiro leaps into the air, spawning a colossal, spiralling serpent with the head of a dragon, launching it towards his opponent, causing a field of ice crystals to form at the epicentre.",
             "input": "KI",
             "damage": null,
             "frames": null,
@@ -2719,7 +2719,7 @@
           {
             "id": "daiguren-hyōrinmaru-hyōten-hyakkasō-kikon-move",
             "name": "Daiguren Hyōrinmaru: Hyōten Hyakkasō",
-            "description": "Tōshiro slices his opponent before holding Hyōrinmaru to the heavens, opening the clouds for snowfall. As the snow lands and comes into contact with his opponent, dramatic flowers of ice form, coating the opponent in a bouquet of flowers towering towards the gap in the heavens, before shattering.",
+            "description": "Whislt Awakened, Tōshiro slices his opponent before holding Hyōrinmaru to the heavens, opening the clouds for snowfall. As the snow lands and comes into contact with his opponent, dramatic flowers of ice form, coating the opponent in a bouquet of flowers towering towards the gap in the heavens, before shattering.",
             "input": "AW + KI",
             "damage": null,
             "frames": null,
@@ -2739,9 +2739,9 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Alternate Awakened Kikon currently not known.",
+            "id": "daiguren-hyōrinmaru-ryūsenka-kikon-move",
+            "name": "Daiguren Hyōrinmaru: Ryūsenka",
+            "description": "Whilst Awakened, Tōshiro dashes towards his opponent with a stab prepared for his opponents' chest, launching them before following up with a second, more powerful stab that erupts a crucifix of ice from their body, marking their grave.",
             "input": "AW + KI",
             "damage": null,
             "frames": null,
@@ -2871,7 +2871,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "costsReiatsu", "charge", "noRangeToShortRange", "counter", "block", "variableDamage", "signatureMove", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "noRangeToShortRange", "charge", "counter", "block", "variableDamage", "needsStatInfo"]
           },
           {
             "id": "chop-you-up",
@@ -2893,7 +2893,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "costsReiatsu", "dashesToOpponent", "shortToMidRange", "spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "dashesTowardsOpponent", "needsStatInfo"]
           },
           {
             "id": "nothing-i-can't-cut",
@@ -2915,7 +2915,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "costsReiatsu", "dashesToOpponent", "shortToMidRange", "charge", "extraGuardDamageIfCharged", "spiritualPressureMove2", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "dashesTowardsOpponent", "charge", "extraGuardDamageIfCharged", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -2939,7 +2939,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "increasesReishiLimit", "noDamage", "noRange", "boostsStats", "setsFightingSpiritTo0"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "increasesReishiLimit", "boostsStats"]
           },
           {
             "id": "unknown",
@@ -2990,7 +2990,7 @@
           {
             "id": "unknown",
             "name": "Unknown",
-            "description": "Awakened Sublimation Kikon currently not known.",
+            "description": "Awakened Kikon currently not known.",
             "input": "AW + KI",
             "damage": null,
             "frames": null,
@@ -3142,7 +3142,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "shortToMidRange", "costsReiatsu", "costsReishi", "signatureMove", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "costsReishi", "attackTypeRanged", "shortToMidRange", "needsStatInfo"]
           },
           {
             "id": "high-speed-regeneration",
@@ -3164,7 +3164,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["charge", "reishiRecovery", "costsReiatsu", "noRange", "noDamage", "spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "noRange", "noDamage", "charge", "recoversReishiOnCharge", "needsStatInfo"]
           },
           {
             "id": "alternate-cero",
@@ -3186,7 +3186,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "ranged", "costsReiatsu", "shortToMidRange", "costsReishi", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "costsReishi", "attackTypeRanged", "shortToMidRange", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -3210,7 +3210,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "noDamage", "noRange", "increasesReiatsuLimit", "setsFightingSpiritTo0"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "increasesReiatsuLimit"]
           },
           {
             "id": "unknown",
@@ -3256,7 +3256,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["reawakening", "noDamage", "noRange", "setsFightingSpiritTo0"]
+            "moveTags": ["reawakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           }
         ],
         "kikon": [
@@ -3506,7 +3506,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["charge", "ranged", "costsReiatsu", "shortToMidRange", "gaugeDecreaseOnHit", "signatureMove", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToMidRange", "charge", "gaugeDecreaseOnHit", "gaugeDecreaseOnWhiff", "needsStatInfo"]
           },
           {
             "id": "rapid-slash",
@@ -3528,7 +3528,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "shortRange", "melee", "superArmor", "gaugeDecreaseOnHit", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortRange", "superArmor", "gaugeDecreaseOnHit", "gaugeDecreaseOnWhiff", "needsStatInfo"]
           },
           {
             "id": "getsuga-aura",
@@ -3550,7 +3550,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["resourceGain", "costsReiatsu", "noRange", "noDamage", "grantsTemporaryGauge", "spiritualPressureMove2", "needsStatInfo"]
+            "moveTags": ["resourceGain", "costsReiatsu", "noRange", "noDamage", "grantsTemporaryGauge", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -3574,7 +3574,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "noDamage", "noRange", "setsFightingSpiritTo0"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
             "id": "unknown",
@@ -3691,9 +3691,31 @@
             "moveTags": ["kikonMove"]
           },
           {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Alternate Awakened Kikon currently not known.",
+            "input": "AW + KI",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          },
+          {
             "id": "fully-hollowfied-cero-kikon-move",
             "name": "Fully Hollowfied Cero",
-            "description": "Ichigo wrenches his back from an arched position, pointing his head towards his opponent before standing on his foe's head, firing a horrifying point-blank Cero at them.",
+            "description": "Whilst Reawakened, Ichigo wrenches his back from an arched position, pointing his head towards his opponent before standing on his foe's head, firing a horrifying point-blank Cero at them.",
             "input": "RE + KI",
             "damage": null,
             "frames": null,
@@ -3869,7 +3891,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "block", "counter", "costsReiatsu", "noRangeToMidRange", "teleportsToOpponentOnBlock", "signatureMove", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "noRangeToMidRange", "block", "counter", "teleportsToOpponentOnBlock", "needsStatInfo"]
           },
           {
             "id": "suzumushi-nishiki,-benihiko",
@@ -3891,7 +3913,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "movesBackwards", "costsReiatsu", "shortRange", "spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortRange", "movesBackwards", "needsStatInfo"]
           },
           {
             "id": "sayabane",
@@ -3913,7 +3935,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "ranged", "dashesToOpponent", "costsReiatsu", "movesBackwards", "midRange", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "attackTypeRanged", "midRange", "dashesTowardsOpponent", "movesBackwards", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -3937,7 +3959,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "noDamage", "noRange", "telportsToTemporaryStage", "setsFightingSpiritTo0", "restrictsOpponentsVision"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "telportsToTemporaryStage", "restrictsOpponentsVision"]
           },
           {
             "id": "unknown",
@@ -3988,7 +4010,7 @@
           {
             "id": "unknown",
             "name": "Unknown",
-            "description": "Awakened Sublimation Kikon currently not known.",
+            "description": "Awakened Kikon currently not known.",
             "input": "AW + KI",
             "damage": null,
             "frames": null,
@@ -4140,7 +4162,7 @@
             "resourceGain": null,
             "resourceCost": 1,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "resourceLoss", "costsReiatsu", "resourceGainOnReload", "reload", "shortToLongRange", "signatureMove", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "costsResource", "reloadResource", "needsStatInfo"]
           },
           {
             "id": "kazaguruma-&-nigeki-kessatsu",
@@ -4162,7 +4184,19 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "variableHits", "costsReiatsu", "variableDamage", "charge", "twoChargeHitKill", "instakill", "spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": [
+              "spiritualPressureMove1",
+              "costsReiatsu",
+              "attackTypeMelee",
+              "shortToMidRange",
+              "dashesTowardsOpponent",
+              "variableHits",
+              "variableDamage",
+              "charge",
+              "twoChargeHitKill",
+              "instakill",
+              "needsStatInfo"
+            ]
           },
           {
             "id": "bakudo-#30-shitotsusansen",
@@ -4184,7 +4218,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "ranged", "kidō", "costsReiatsu", "restrctsOpponentsMovement", "shortToMidRange", "charge", "spiritualPressureMove2", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeRanged", "attackTypeMelee", "shortToMidRange", "kidō", "restrictsOpponentsMovement", "charge", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -4208,7 +4242,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "noDamage", "noRange", "setsFightingSpiritTo0", "increasesReiatsuLimit", "increasesDashSpeed", "boostsStats"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "increasesReiatsuLimit", "increasesDashSpeed", "boostsStats"]
           },
           {
             "id": "unknown",
@@ -4411,7 +4445,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "shortToMidRange", "costsReiatsu", "signatureMove", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "needsStatInfo"]
           },
           {
             "id": "tsumuji-kaze",
@@ -4433,7 +4467,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "launchesOpponent", "costsReiatsu", "shortToMidRange", "spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "launchesOpponent", "needsStatInfo"]
           },
           {
             "id": "oath-of-the-soul",
@@ -4455,7 +4489,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["boostsStats", "activatesTemporaryBuff", "costsReiatsu", "noDamage", "noRange", "spiritualPressureMove2", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "noDamage", "noRange", "grantsTemporaryBuff", "boostsStats", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -4479,7 +4513,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "noDamage", "noRange", "setsFightingSpiritTo0", "telportsToTemporaryStage", "grantsNewMoves", "giantSummon", "temporaryAwakening"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "telportsToTemporaryStage", "grantsTemporaryNewMoves", "giantSummon", "temporaryAwakening"]
           },
           {
             "id": "unknown",
@@ -4682,7 +4716,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "charge", "costsReiatsu", "pullsOpponentWhenCharged", "shortToMidRange", "kidō", "signatureMove", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToMidRange", "kidō", "charge", "pullsOpponentWhenCharged", "needsStatInfo"]
           },
           {
             "id": "jujokenmai",
@@ -4704,7 +4738,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "shortRange", "costsReiatsu", "spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortRange", "needsStatInfo"]
           },
           {
             "id": "bakudo-#61-rikujokoro",
@@ -4726,7 +4760,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "kidō", "midRange", "costsReiatsu", "tracksOpponent", "restrctsOpponentsMovement", "spiritualPressureMove2", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeRanged", "midRange", "kidō", "tracksOpponent", "restrictsOpponentsMovement", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -4750,7 +4784,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "noRange", "setsFightingSpiritTo0", "noDamage", "grantsCounter"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noRange", "noDamage", "grantsPermanentCounter"]
           },
           {
             "id": "unknown",
@@ -4953,7 +4987,7 @@
             "resourceGain": 1,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["resourceGain", "gaugeIncreaseOnCharge", "costsReiatsu", "noDamage", "noRange", "signatureMove", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "noDamage", "noRange", "gaugeIncreaseOnCharge", "needsStatInfo"]
           },
           {
             "id": "viento-de-esperanza",
@@ -4975,7 +5009,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "dashesToOpponent", "costsReiatsu", "shortToMidRange", "spiritualPressureMove1", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "dashesTowardsOpponent", "needsStatInfo"]
           },
           {
             "id": "cero-sincrético",
@@ -4997,7 +5031,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "shortToLongRange", "summonsAlly", "costsReiatsu", "spiritualPressureMove2", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "summonsAlly", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -5021,7 +5055,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "grantsNewMoves"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "grantsPermanentNewMoves"]
           },
           {
             "id": "unknown",
@@ -5072,7 +5106,7 @@
           {
             "id": "gamuza-cero-sincrético-doble-kikon-move",
             "name": "Gamuza: Cero Sincrético Doble",
-            "description": "Neliel directs Pesche and Dondochakka to fire Ceros at her, which she consumes using 'Cero Doble', mixing them into a 'Cero Sincrético'; as the energy swells, Neliel rears her head before ejecting the 'Cero Sincrético' as a powerful laser towards her foe.",
+            "description": "Whilst Awakened, Neliel directs Pesche and Dondochakka to fire Ceros at her, which she consumes using 'Cero Doble', mixing them into a 'Cero Sincrético'; as the energy swells, Neliel rears her head before ejecting the 'Cero Sincrético' as a powerful laser towards her foe.",
             "input": "AW + KI",
             "damage": null,
             "frames": null,
@@ -5224,7 +5258,7 @@
             "resourceGain": 1,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "noDamage", "noRange", "costsReiatsu", "resourceGain", "gaugeIncreaseOnCharge", "stanceChange", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "noDamage", "noRange", "gaugeIncreaseOnCharge", "stanceChange", "needsStatInfo"]
           },
           {
             "id": "cero",
@@ -5246,7 +5280,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "dashesToOpponent", "shortToMidRange", "melee", "extraGuardDamageIfInStanceA", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "dashesTowardsOpponent", "extraGuardDamageIfInStanceA", "needsStatInfo"]
           },
           {
             "id": "kill-them,-spare-no-one",
@@ -5268,7 +5302,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "triggersReishiBleed", "stanceChange", "costsReishi", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "triggersReishiBleed", "noDamage", "noRange", "stanceChange", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -5292,7 +5326,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "boostsStats"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "boostsStats"]
           },
           {
             "id": "unknown",
@@ -5319,9 +5353,9 @@
         ],
         "kikon": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Base Kikon currently not known.",
+            "id": "gran-ray-cero-kikon-move",
+            "name": "Gran Ray Cero",
+            "description": "Whilst Unawakened, Grimmjow tears from Pantera as he charges an extremely powerful Gran Rey Cero, firing it at his foe.",
             "input": "KI",
             "damage": null,
             "frames": null,
@@ -5495,7 +5529,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "ranged", "shortToMidRange", "gaugeIncreaseOnHit", "costsReiatsu", "remoteDetonation", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToMidRange", "gaugeIncreaseOnHit", "remoteDetonation", "needsStatInfo"]
           },
           {
             "id": "jinmen-himo",
@@ -5517,7 +5551,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "unblockable", "ranged", "shortRange", "costsReiatsu", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortRange", "unblockable", "needsStatInfo"]
           },
           {
             "id": "move,-you-idiot!",
@@ -5539,7 +5573,17 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "ranged", "melee", "shortToMidRange", "summonsAlly", "costsReiatsu", "restrctsOpponentsMovement", "extraGuardDamageIfGuarding", "needsStatInfo"]
+            "moveTags": [
+              "spiritualPressureMove2",
+              "costsReiatsu",
+              "attackTypeRanged",
+              "attackTypeMelee",
+              "shortToMidRange",
+              "summonsAlly",
+              "restrictsOpponentsMovement",
+              "extraGuardDamageIfGuarding",
+              "needsStatInfo"
+            ]
           }
         ],
         "awakened": [
@@ -5563,7 +5607,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "changesGaugeMechanics", "setsFightingSpiritTo0"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "changesGaugeMechanics"]
           },
           {
             "id": "unknown",
@@ -5766,7 +5810,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "ranged", "block", "counter", "charge", "superArmor", "costsReiatsu", "invulnerability", "variableDamage", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "variableRange", "variableDamage", "block", "counter", "charge", "superArmor", "invulnerability", "needsStatInfo"]
           },
           {
             "id": "el-escudo",
@@ -5788,7 +5832,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "block", "noRange", "noDamage", "guardGaugeLoss", "costsReiatsu", "superArmor", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "noDamage", "noRange", "block", "triggersGuardBleed", "superArmor", "needsStatInfo"]
           },
           {
             "id": "hadō-#90-kurohitsugi",
@@ -5810,7 +5854,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "ranged", "melee", "kidō", "shortRange", "movesBackwards", "costsReiatsu", "variableDamage", "resourceLoss", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "attackTypeRanged", "shortRange", "kidō", "movesBackwards", "variableDamage", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -5834,7 +5878,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "noDamage", "noRange", "boostsStats", "evolvesGauge", "setsFightingSpiritTo0"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "boostsStats", "evolvesGauge"]
           },
           {
             "id": "unknown",
@@ -5880,7 +5924,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["reawakening", "revivesUser", "setsFightingSpiritTo0", "noDamage", "noRange", "evolvesGauge"]
+            "moveTags": ["reawakening", "setsFightingSpiritTo0", "noDamage", "noRange", "revivesUser", "evolvesGauge"]
           },
           {
             "id": "unknown",
@@ -5907,9 +5951,9 @@
         ],
         "kikon": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Base Kikon currently not known.",
+            "id": "let-me-teach-you-the-meaning-of-power-kikon-move",
+            "name": "'Let me teach you the meaning of Power.'",
+            "description": "Whilst Unawakened, Aizen swells with purple Reiryoku, exhuming his dominance as he raises Kyōka Suigetsu, draping it down like an illusionist dropping the final curtain as a purple spatial splice tears his opponent to shreds.",
             "input": "KI",
             "damage": null,
             "frames": null,
@@ -5954,6 +5998,50 @@
             "id": "unknown",
             "name": "Unknown",
             "description": "Alternate Awakened Kikon currently not known.",
+            "input": "AW + KI",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          },
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Reawakened Kikon currently not known.",
+            "input": "AW + KI",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          },
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Alternate Reawakened Kikon currently not known.",
             "input": "AW + KI",
             "damage": null,
             "frames": null,
@@ -6092,22 +6180,22 @@
             "name": "Honagi",
             "description": "Yamamoto looses a powerful, wide slash coated in Ryūjin Jakka's flames, incinerating all that stands in his way. After successfully hitting 'Honagi', Yamamoto can follow up with an additional attack.",
             "input": "SI",
-            "damage": null,
-            "frames": null,
+            "damage": 0,
+            "frames": 0,
             "reishiGain": null,
             "reishiCost": null,
             "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
             "fightingSpiritCost": null,
-            "reversalGain": null,
+            "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
             "gaugeCost": null,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "melee", "costsReiatsu", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "needsStatInfo"]
           },
           {
             "id": "shiranui",
@@ -6129,7 +6217,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "shortToMidRange", "ranged", "charge", "stanceChange", "triggersReishiBleed", "costsReiatsu", "costsReishi", "boostsStats", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "variableRange", "variableDamage", "triggersReishiBleedInStanceB", "charge", "stanceChange", "needsStatInfo"]
           },
           {
             "id": "taimatsu-&-nadegiri",
@@ -6153,12 +6241,12 @@
             "cooldown": "X Seconds",
             "moveTags": [
               "spiritualPressureMove2",
-              "meleeInStanceA",
-              "rangedInStanceB",
+              "costsReiatsu",
+              "attackTypeMeleeInStanceA",
+              "attackTypeRangedInStanceB",
               "shortRangeInStanceA",
               "midRangeInStanceB",
               "stanceChange",
-              "costsReiatsu",
               "trapsOpponentInStanceB",
               "needsStatInfo"
             ]
@@ -6185,7 +6273,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "noDamage", "noRange", "setsFightingSpiritTo0", "increasesReishiLimit", "boostsStats"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "increasesReishiLimit", "boostsStats"]
           },
           {
             "id": "unknown",
@@ -6212,9 +6300,9 @@
         ],
         "kikon": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Base Kikon currently not known.",
+            "id": "all-things-in-the-universe-turn-to-ashes-kikon-move",
+            "name": "All Things in the Universe Turn to Ashes",
+            "description": "Whilst Unawakened, Yamamoto drapes Ryūjin Jakka in a semicircle, emblematic of the rising sun itself, as a halo of flames emerge from his blade and adorn his back. Yamamoto looses an effortless, but devastating strike backed by the full power of the sun itself.",
             "input": "KI",
             "damage": null,
             "frames": null,
@@ -6388,7 +6476,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "stanceChange", "counter", "whiffPenaltyInStanceA", "resourceLoss", "teleportsToOpponentOnHit", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "noRangeToShortRange", "stanceChange", "counter", "whiffPenaltyInStanceA", "teleportsToOpponentOnBlock", "needsStatInfo"]
           },
           {
             "id": "it's-your-turn!",
@@ -6410,7 +6498,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "shortToMidRange", "summonsAlly", "ranged", "costsReiatsu", "melee", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "summonsAlly", "needsStatInfo"]
           },
           {
             "id": "sakanade",
@@ -6432,7 +6520,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "stanceChange", "breaker", "melee", "shortRange", "costsReiatsu", "unblockable", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "shortRange", "stanceChange", "breaker", "unblockable", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -6456,7 +6544,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "boostsStats", "boostsSignatureMove", "boostsSpiritualPressure1Move", "boostsSpiritualPressure2Move", "setsFightingSpiritTo0", "noDamage", "noRange"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "boostsStats", "boostsSignatureMove", "boostsSpiritualPressure1Move", "boostsSpiritualPressure2Move"]
           }
         ],
         "kikon": [
@@ -6485,7 +6573,7 @@
           {
             "id": "hollowfied-cero-kikon-move",
             "name": "Hollowfied Cero",
-            "description": "Shinji dons his Hollow Mask and holds his blade horizontally, charging a powerful Cero and firing it with a superior amount of force.",
+            "description": "Whilst Awakened, Shinji dons his Hollow Mask and holds his blade horizontally, charging a powerful Cero and firing it with a superior amount of force.",
             "input": "AW + KI",
             "damage": null,
             "frames": null,
@@ -6637,7 +6725,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "melee", "gaugeIncreaseOnHit", "costsReiatsu", "takesItem", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "gaugeIncreaseOnHit", "takesItem", "needsStatInfo"]
           },
           {
             "id": "i-need-your-corpse-intact",
@@ -6659,7 +6747,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "melee", "shortRange", "counter", "costsReiatsu", "teleportsToOpponentOnBlock", "givesItem", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortRange", "counter", "teleportsToOpponentOnBlock", "givesItem", "needsStatInfo"]
           },
           {
             "id": "you've-already-been-analysed!",
@@ -6681,7 +6769,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "noRange", "noDamage", "gaugeIncreaseOnCharge", "charge", "costsReiatsu", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "noRange", "noDamage", "gaugeIncreaseOnCharge", "charge", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -6705,7 +6793,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "noDamage", "noRange", "setsFightingSpiritTo0", "changesGaugeMechanics"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "changesGaugeMechanics"]
           },
           {
             "id": "unknown",
@@ -6908,7 +6996,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "melee", "charge", "variableHits", "variableDamage", "shortRange", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "shortRange", "variableHits", "variableDamage", "charge", "needsStatInfo"]
           },
           {
             "id": "bushogoma",
@@ -6930,7 +7018,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "ranged", "costsReiatsu", "shortToLongRange", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "needsStatInfo"]
           },
           {
             "id": "no-need-to-panic",
@@ -6952,7 +7040,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "melee", "dashesToOpponent", "shortToMidRange", "costsReiatsu", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "dashesTowardsOpponent", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -6976,7 +7064,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "noDamage", "noRange", "setsFightingSpiritTo0"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
             "id": "unknown",
@@ -7179,7 +7267,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "rangedInStanceB", "tracksOpponentInStanceB", "shortToLongRange", "stanceChange", "costsReiatsu", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRangedInStanceB", "shortToLongRange", "tracksOpponentInStanceB", "stanceChange", "needsStatInfo"]
           },
           {
             "id": "divine-punishment",
@@ -7201,7 +7289,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "melee", "block", "superArmor", "costsReiatsu", "dashesToOpponent", "shortToMidRange", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "block", "superArmor", "dashesTowardsOpponent", "needsStatInfo"]
           },
           {
             "id": "imperial-authority",
@@ -7223,7 +7311,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "melee", "ranged", "unblockable", "shortToMidRange", "costsReiatsu", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "unblockable", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -7247,7 +7335,18 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "telportsToTemporaryStage", "giantSummon", "setsFightingSpiritTo0", "temporaryAwakening", "oneUseAwakening", "boostsStats", "noDamage", "noRange"]
+            "moveTags": [
+              "awakening",
+              "setsFightingSpiritTo0",
+              "noDamage",
+              "noRange",
+              "telportsToTemporaryStage",
+              "giantSummon",
+              "grantsTemporaryNewMoves",
+              "temporaryAwakening",
+              "oneUseAwakening",
+              "boostsStats"
+            ]
           },
           {
             "id": "unknown",
@@ -7450,11 +7549,11 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "ranged", "kidō", "variableDamage", "variableHits", "shortToMidRange", "costsReiatsu", "gaugeIncreaseOnHit", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToMidRange", "kidō", "variableDamage", "variableHits", "gaugeIncreaseOnHit", "needsStatInfo"]
           },
           {
-            "id": "hadō-#31-shakkaho,-hadō-#33-sokatsui-&-hadō-#54-haien",
-            "name": "Hadō #31: Shakkaho, Hadō #33: Sokatsui & Hadō #54: Haien",
+            "id": "hadō-#31-shakkaho,-hadō-#33-sōkatsui-&-hadō-#54-haien",
+            "name": "Hadō #31: Shakkaho, Hadō #33: Sōkatsui & Hadō #54: Haien",
             "description": "Depending on the current level of Hisagi's `Fear Gauge`, Hisagi fires one of three projectiles; 'Hadō #31: Shakkaho' is the weakest of the three, and 'Hadō #54: Haien' is the strongest of the three.",
             "input": "S1",
             "damage": 0,
@@ -7472,7 +7571,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "ranged", "kidō", "variableDamage", "variableHits", "shortToLongRange", "gaugeIncreaseOnHit", "costsReiatsu", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "kidō", "variableDamage", "variableHits", "gaugeIncreaseOnHit", "needsStatInfo"]
           },
           {
             "id": "a-warrior's-poise",
@@ -7494,7 +7593,19 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "counter", "block", "melee", "variableDamage", "shortRange", "kidō", "teleportsToOpponentOnBlock", "costsReiatsu", "needsStatInfo"]
+            "moveTags": [
+              "spiritualPressureMove2",
+              "costsReiatsu",
+              "attackTypeMelee",
+              "shortRange",
+              "counter",
+              "block",
+              "variableDamage",
+              "kidō",
+              "teleportsToOpponentOnHit",
+              "gaugeIncreaseOnHit",
+              "needsStatInfo"
+            ]
           }
         ],
         "awakened": [
@@ -7518,7 +7629,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "grantsNewMoves", "noDamage", "noRange", "setsFightingSpiritTo0", "evolvesGauge"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "grantsPermanentNewMoves", "evolvesGauge"]
           },
           {
             "id": "unknown",
@@ -7564,7 +7675,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["kikonMove", "needsStatInfo"]
+            "moveTags": ["kikonMove"]
           },
           {
             "id": "unknown",
@@ -7586,7 +7697,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["kikonMove", "needsStatInfo"]
+            "moveTags": ["kikonMove"]
           },
           {
             "id": "unknown",
@@ -7608,7 +7719,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["kikonMove", "needsStatInfo"]
+            "moveTags": ["kikonMove"]
           }
         ],
         "baseCombos": [
@@ -7721,7 +7832,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "melee", "variableDamage", "variableHits", "variableRange", "grantsNewMoves", "counter", "block", "costsReiatsu", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "variableRange", "variableDamage", "variableHits", "grantsTemporaryNewMoves", "counter", "block", "needsStatInfo"]
           },
           {
             "id": "it's-my-lucky-day!",
@@ -7743,7 +7854,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "melee", "variableDamage", "variableHits", "variableRange", "grantsNewMoves", "costsReiatsu", "counter", "block", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "variableRange", "variableDamage", "variableHits", "grantsTemporaryNewMoves", "counter", "block", "needsStatInfo"]
           },
           {
             "id": "watch-closely",
@@ -7765,7 +7876,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "noDamage", "noRange", "boostsStats", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "noDamage", "noRange", "boostsStats", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -7789,7 +7900,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "grantsNewMoves", "noDamage", "noRange", "setsFightingSpiritTo0", "grantsPermanentGauge"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "grantsPermanentNewMoves", "grantsPermanentGauge"]
           },
           {
             "id": "unknown",
@@ -7992,7 +8103,7 @@
             "resourceGain": 0,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "block", "noDamage", "noRange", "grantsCounter", "costsReiatsu", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "noDamage", "noRange", "block", "grantsTemporaryCounter", "needsStatInfo"]
           },
           {
             "id": "guillotina",
@@ -8014,7 +8125,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "unblockableWhenCharged", "melee", "midRange", "costsReiatsu", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "midRange", "unblockableWhenCharged", "needsStatInfo"]
           },
           {
             "id": "don't-run-away-in-fear-now!",
@@ -8036,7 +8147,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "unblockable", "melee", "ranged", "shortToMidRange", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "attackTypeRanged", "shortToMidRange", "unblockable", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -8060,7 +8171,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "boostsStats", "boostsReverses", "noDamage", "noRange"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "boostsStats", "boostsReverses"]
           },
           {
             "id": "unknown",
@@ -8263,7 +8374,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "noDamage", "dashesToOpponent", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu", "noDamage", "noRange", "dashesTowardsOpponent", "needsStatInfo"]
           },
           {
             "id": "ola-azul",
@@ -8285,7 +8396,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["ranged", "shortToMidRange", "costsReiatsu", "gaugeIncreaseOnHit", "spiritualPressureMove1"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortToMidRange", "gaugeIncreaseOnHit"]
           },
           {
             "id": "i'll-show-you",
@@ -8307,7 +8418,7 @@
             "resourceGain": 0,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["melee", "shortRange", "gaugeIncreaseOnHit", "costsReiatsu", "spiritualPressureMove2"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "shortRange", "gaugeIncreaseOnHit"]
           }
         ],
         "awakened": [
@@ -8331,7 +8442,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "boostsStats"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "boostsStats"]
           },
           {
             "id": "unknown",
@@ -8517,7 +8628,7 @@
           {
             "id": "alma-carma",
             "name": "Alma Carma",
-            "description": "Starrk assumes an oppressive position as he charges his Spiritual Pressure. Holding down the input charges his Spiritual Pressure for longer.",
+            "description": "Starrk assumes an oppressive position as he charges his Reiatsu. Holding down the input charges his Reiatsu for longer.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -8534,7 +8645,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "reiatsuRecoveryOnCharge", "noRange", "noDamage", "charge", "needsStatInfo"]
+            "moveTags": ["signatureMove", "noDamage", "noRange", "reiatsuRecoveryOnCharge", "charge", "needsStatInfo"]
           },
           {
             "id": "cero-automatico",
@@ -8556,7 +8667,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "ranged", "shortToLongRange", "variableDamage", "variableHits", "costsReiatsu", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "variableDamage", "variableHits", "needsStatInfo"]
           },
           {
             "id": "the-two-of-us-make-one",
@@ -8578,7 +8689,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "triggersReiatsuBleedInStanceB", "stanceChange", "noDamage", "noRange", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "noDamage", "noRange", "triggersReiatsuBleedInStanceB", "stanceChange", "needsStatInfo"]
           }
         ],
         "awakened": [
@@ -8602,7 +8713,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "grantsNewMoves"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "grantsNewMoves"]
           },
           {
             "id": "unknown",
