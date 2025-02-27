@@ -88,7 +88,10 @@ const CharacterSidebar: FC<ICharacterSidebarProps> = ({ character, slug }) => {
       <div className="flex flex-row w-full">
         <div className="py-4 border-b border-b-white text-center w-full">
           <h2 className="text-3xl">{character.name}</h2>
-          <p className="italic text-sm text-gray-400">Character #{character.characterNumber}</p>
+          <div className="italic text-gray-400 flex flex-row items-center justify-center">
+            Character #{character.characterNumber}
+            {!character.isEcho ? null : <p className="text-teal-400 ml-1">&epsilon;</p>}
+          </div>
         </div>
       </div>
       <div className="flex flex-row w-full">

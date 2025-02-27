@@ -5,155 +5,298 @@ import { useMemo, useState } from "react";
 
 interface IBadge {
   name: string;
-  owner: string | null;
-  lastChallenged: string | null;
+  pcOwner: string | null;
+  psOwner: string | null;
+  xboxOwner: string | null;
+  pcLastChallenged: string | null;
+  psLastChallenged: string | null;
+  xboxLastChallenged: string | null;
 }
 
 export default function RankedLeaderboard() {
   const [activeTable, setActiveTable] = useState<string>("World of the Living League");
 
   const worldOfLivingLeagueBadges: IBadge[] = [
-    { name: "K.O.N. (King of New York)", owner: null, lastChallenged: null },
-    { name: "Karakura-Raizer", owner: null, lastChallenged: null },
-    { name: "Karakura-Raizer Spirit", owner: null, lastChallenged: null },
-    { name: "Karakura-Raizer Tiny-Devil", owner: null, lastChallenged: null },
-    { name: "Karakura-Raizer Beast", owner: null, lastChallenged: null },
-    { name: "Karakura-Raizer Erotic", owner: null, lastChallenged: null },
-    { name: "Karakura-Raizer Delicate", owner: null, lastChallenged: null },
-    { name: "Bread Queen", owner: null, lastChallenged: null },
-    { name: "Xcution Member #001", owner: null, lastChallenged: null },
-    { name: "Xcution Member #002", owner: null, lastChallenged: null },
-    { name: "Xcution Member #003", owner: null, lastChallenged: null },
-    { name: "Xcution Member #004", owner: null, lastChallenged: null },
-    { name: "Xcution Member #005", owner: null, lastChallenged: null },
-    { name: "Xcution Member #006", owner: null, lastChallenged: null },
-    { name: "Xcution Member #007", owner: null, lastChallenged: null },
-    { name: "Xcution Member #008", owner: null, lastChallenged: null },
-    { name: "Xcution Member #009", owner: null, lastChallenged: null },
+    {
+      name: "K.O.N. (King of New York)",
+      pcOwner: null,
+      psOwner: null,
+      xboxOwner: null,
+      pcLastChallenged: null,
+      psLastChallenged: null,
+      xboxLastChallenged: null,
+    },
+    {
+      name: "Karakura-Raizer",
+      pcOwner: null,
+      psOwner: null,
+      xboxOwner: null,
+      pcLastChallenged: null,
+      psLastChallenged: null,
+      xboxLastChallenged: null,
+    },
+    {
+      name: "Karakura-Raizer Spirit",
+      pcOwner: null,
+      psOwner: null,
+      xboxOwner: null,
+      pcLastChallenged: null,
+      psLastChallenged: null,
+      xboxLastChallenged: null,
+    },
+    {
+      name: "Karakura-Raizer Tiny-Devil",
+      pcOwner: null,
+      psOwner: null,
+      xboxOwner: null,
+      pcLastChallenged: null,
+      psLastChallenged: null,
+      xboxLastChallenged: null,
+    },
+    {
+      name: "Karakura-Raizer Beast",
+      pcOwner: null,
+      psOwner: null,
+      xboxOwner: null,
+      pcLastChallenged: null,
+      psLastChallenged: null,
+      xboxLastChallenged: null,
+    },
+    {
+      name: "Karakura-Raizer Erotic",
+      pcOwner: null,
+      psOwner: null,
+      xboxOwner: null,
+      pcLastChallenged: null,
+      psLastChallenged: null,
+      xboxLastChallenged: null,
+    },
+    {
+      name: "Karakura-Raizer Delicate",
+      pcOwner: null,
+      psOwner: null,
+      xboxOwner: null,
+      pcLastChallenged: null,
+      psLastChallenged: null,
+      xboxLastChallenged: null,
+    },
+    {
+      name: "Bread Queen",
+      pcOwner: null,
+      psOwner: null,
+      xboxOwner: null,
+      pcLastChallenged: null,
+      psLastChallenged: null,
+      xboxLastChallenged: null,
+    },
+    {
+      name: "Xcution Member #001",
+      pcOwner: null,
+      psOwner: null,
+      xboxOwner: null,
+      pcLastChallenged: null,
+      psLastChallenged: null,
+      xboxLastChallenged: null,
+    },
+    {
+      name: "Xcution Member #002",
+      pcOwner: null,
+      psOwner: null,
+      xboxOwner: null,
+      pcLastChallenged: null,
+      psLastChallenged: null,
+      xboxLastChallenged: null,
+    },
+    {
+      name: "Xcution Member #003",
+      pcOwner: null,
+      psOwner: null,
+      xboxOwner: null,
+      pcLastChallenged: null,
+      psLastChallenged: null,
+      xboxLastChallenged: null,
+    },
+    {
+      name: "Xcution Member #004",
+      pcOwner: null,
+      psOwner: null,
+      xboxOwner: null,
+      pcLastChallenged: null,
+      psLastChallenged: null,
+      xboxLastChallenged: null,
+    },
+    {
+      name: "Xcution Member #005",
+      pcOwner: null,
+      psOwner: null,
+      xboxOwner: null,
+      pcLastChallenged: null,
+      psLastChallenged: null,
+      xboxLastChallenged: null,
+    },
+    {
+      name: "Xcution Member #006",
+      pcOwner: null,
+      psOwner: null,
+      xboxOwner: null,
+      pcLastChallenged: null,
+      psLastChallenged: null,
+      xboxLastChallenged: null,
+    },
+    {
+      name: "Xcution Member #007",
+      pcOwner: null,
+      psOwner: null,
+      xboxOwner: null,
+      pcLastChallenged: null,
+      psLastChallenged: null,
+      xboxLastChallenged: null,
+    },
+    {
+      name: "Xcution Member #008",
+      pcOwner: null,
+      psOwner: null,
+      xboxOwner: null,
+      pcLastChallenged: null,
+      psLastChallenged: null,
+      xboxLastChallenged: null,
+    },
+    {
+      name: "Xcution Member #009",
+      pcOwner: null,
+      psOwner: null,
+      xboxOwner: null,
+      pcLastChallenged: null,
+      psLastChallenged: null,
+      xboxLastChallenged: null,
+    },
   ];
 
   const soulSocietyLeagueBadges: IBadge[] = [
-    { name: "Soul King", owner: null, lastChallenged: null },
-    { name: "Squad 0 - Captain", owner: null, lastChallenged: null },
-    { name: "Squad 0 - Divine General of the East", owner: null, lastChallenged: null },
-    { name: "Squad 0 - Divine General of the West", owner: null, lastChallenged: null },
-    { name: "Squad 0 - Divine General of the South", owner: null, lastChallenged: null },
-    { name: "Squad 0 - Divine General of the North", owner: null, lastChallenged: null },
-    { name: "Head Captain", owner: null, lastChallenged: null },
-    { name: "Squad 1 Lieutenant", owner: null, lastChallenged: null },
-    { name: "Squad 2 Captain", owner: null, lastChallenged: null },
-    { name: "Squad 2 Lieutenant", owner: null, lastChallenged: null },
-    { name: "Squad 3 Captain", owner: null, lastChallenged: null },
-    { name: "Squad 3 Lieutenant", owner: null, lastChallenged: null },
-    { name: "Squad 4 Captain", owner: null, lastChallenged: null },
-    { name: "Squad 4 Lieutenant", owner: null, lastChallenged: null },
-    { name: "Squad 5 Captain", owner: null, lastChallenged: null },
-    { name: "Squad 5 Lieutenant", owner: null, lastChallenged: null },
-    { name: "Squad 6 Captain", owner: null, lastChallenged: null },
-    { name: "Squad 6 Lieutenant", owner: null, lastChallenged: null },
-    { name: "Squad 7 Captain", owner: null, lastChallenged: null },
-    { name: "Squad 7 Lieutenant", owner: null, lastChallenged: null },
-    { name: "Squad 8 Captain", owner: null, lastChallenged: null },
-    { name: "Squad 8 Lieutenant", owner: null, lastChallenged: null },
-    { name: "Squad 9 Captain", owner: null, lastChallenged: null },
-    { name: "Squad 9 Lieutenant", owner: null, lastChallenged: null },
-    { name: "Squad 10 Captain", owner: null, lastChallenged: null },
-    { name: "Squad 10 Lieutenant", owner: null, lastChallenged: null },
-    { name: "Squad 11 Captain", owner: null, lastChallenged: null },
-    { name: "Squad 11 Lieutenant", owner: null, lastChallenged: null },
-    { name: "Squad 12 Captain", owner: null, lastChallenged: null },
-    { name: "Squad 12 Lieutenant", owner: null, lastChallenged: null },
-    { name: "Squad 13 Captain", owner: null, lastChallenged: null },
-    { name: "Squad 13 Lieutenant", owner: null, lastChallenged: null },
+    { name: "Soul King", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 0 - Captain", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 0 - Divine General of the East", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 0 - Divine General of the West", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 0 - Divine General of the South", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 0 - Divine General of the North", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Head Captain", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 1 Lieutenant", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 2 Captain", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 2 Lieutenant", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 3 Captain", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 3 Lieutenant", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 4 Captain", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 4 Lieutenant", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 5 Captain", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 5 Lieutenant", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 6 Captain", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 6 Lieutenant", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 7 Captain", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 7 Lieutenant", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 8 Captain", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 8 Lieutenant", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 9 Captain", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 9 Lieutenant", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 10 Captain", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 10 Lieutenant", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 11 Captain", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 11 Lieutenant", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 12 Captain", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 12 Lieutenant", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 13 Captain", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Squad 13 Lieutenant", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
   ];
 
   const huecoMundoLeagueBadges: IBadge[] = [
-    { name: "Queen of Hueco Mundo", owner: null, lastChallenged: null },
-    { name: "'King' of Hueco Mundo", owner: null, lastChallenged: null },
-    { name: "Primordial Hollow", owner: null, lastChallenged: null },
-    { name: "Cero Espada", owner: null, lastChallenged: null },
-    { name: "Primera Espada", owner: null, lastChallenged: null },
-    { name: "Segunda Espada", owner: null, lastChallenged: null },
-    { name: "Tres Espada", owner: null, lastChallenged: null },
-    { name: "Cuatro Espada", owner: null, lastChallenged: null },
-    { name: "Quinto Espada", owner: null, lastChallenged: null },
-    { name: "Sexta Espada", owner: null, lastChallenged: null },
-    { name: "Séptima Espada", owner: null, lastChallenged: null },
-    { name: "Octava Espada", owner: null, lastChallenged: null },
-    { name: "Noveno Espada", owner: null, lastChallenged: null },
-    { name: "Diez Espada", owner: null, lastChallenged: null },
+    { name: "Queen of Hueco Mundo", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "'King' of Hueco Mundo", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Primordial Hollow", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Cero Espada", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Primera Espada", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Segunda Espada", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Tres Espada", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Cuatro Espada", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Quinto Espada", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Sexta Espada", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Séptima Espada", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Octava Espada", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Noveno Espada", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Diez Espada", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
   ];
 
   const schattenBereichLeagueBadges: IBadge[] = [
-    { name: "Quincy King", owner: null, lastChallenged: null },
-    { name: "Quincy Successor", owner: null, lastChallenged: null },
-    { name: "Quincy Grandmaster", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: A", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: B", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: C", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: D", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: E", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: F", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: G", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: H", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: I", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: J", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: K", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: L", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: M", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: N", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: O", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: P", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: Q", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: R", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: S", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: T", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: U", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: V", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: W", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: X", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: Y", owner: null, lastChallenged: null },
-    { name: "Schrift-bearer: Z", owner: null, lastChallenged: null },
+    { name: "Quincy King", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Quincy Successor", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Quincy Grandmaster", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: A", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: B", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: C", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: D", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: E", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: F", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: G", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: H", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: I", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: J", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: K", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: L", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: M", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: N", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: O", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: P", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: Q", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: R", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: S", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: T", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: U", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: V", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: W", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: X", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: Y", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Schrift-bearer: Z", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
   ];
 
   const specialLeagueBadges: IBadge[] = [
-    { name: "'A Huge Zanpakuto'", owner: null, lastChallenged: null },
-    { name: "Brick Thrower", owner: null, lastChallenged: null },
-    { name: "Bankai Spammer", owner: null, lastChallenged: null },
+    { name: "'A Huge Zanpakuto'", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Brick Thrower", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Bankai Spammer", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
   ];
 
   const masterLeagueBadges: IBadge[] = [
-    { name: "Number 1 Ichigo Kurosaki (Shikai) Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Rukia Kuchiki Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Uryu Ishida Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Byakuya Kuchiki Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Yoruichi Shihōin Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Yasutora 'Chad' Sado Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Kisuke Urahara Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Gin Ichimaru Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Rangiku Matsumoto Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Tōshiro Hitsugaya Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Kenpachi Zaraki Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Ulquiorra Shifar Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Ichigo Kurosaki (Bankai) Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Kaname Tōsen Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Soi-Fon Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Renji Abarai Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Izuru Kira Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Neliel Tu Odelschwanck Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Grimmjow Jaegerjaquez Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Mayuri Kurotsuchi Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Aizen Sosuke Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Genryůsai Shigekuni Yamamoto Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Shinji Hirako Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Szayelaporro Granz Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Shunsui Kyoraku Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Sajin Komamura Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Shuhei Hisagi Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Ikkaku Madarame Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Nnoitra Gilga Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Tier Harribel Player", owner: null, lastChallenged: null },
-    { name: "Number 1 Coyote Starrk Player", owner: null, lastChallenged: null },
+    { name: "Number 1 Ichigo Kurosaki (Shikai) Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 White Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Rukia Kuchiki Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Uryu Ishida Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Byakuya Kuchiki Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Yoruichi Shihōin Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Yasutora 'Chad' Sado Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Kisuke Urahara Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Gin Ichimaru Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Rangiku Matsumoto Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Tōshiro Hitsugaya Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Kenpachi Zaraki Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Ulquiorra Shifar Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Ichigo Kurosaki (Bankai) Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Kaname Tōsen Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Soi-Fon Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Renji Abarai Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Izuru Kira Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Neliel Tu Odelschwanck Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Grimmjow Jaegerjaquez Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Mayuri Kurotsuchi Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Aizen Sosuke Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Genryůsai Shigekuni Yamamoto Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Shinji Hirako Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Szayelaporro Granz Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Shunsui Kyoraku Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Sajin Komamura Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Shūhei Hisagi Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Ikkaku Madarame Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Nnoitra Gilga Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Tier Harribel Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Coyote Starrk Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Aaroniero Aaruruerie Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
+    { name: "Number 1 Kaien Shiba Player", pcOwner: null, psOwner: null, xboxOwner: null, pcLastChallenged: null, psLastChallenged: null, xboxLastChallenged: null },
   ];
 
   const tables = useMemo(
@@ -177,29 +320,24 @@ export default function RankedLeaderboard() {
     return `${diffDays} days ago`;
   };
 
-  const calculateGlobalStats = useMemo(() => {
-    let totalBadges = 0;
-    let totalClaimed = 0;
-
-    Object.values(tables).forEach((badges) => {
-      totalBadges += badges.length;
-      totalClaimed += badges.filter((badge) => badge.owner !== null).length;
-    });
-
-    return { totalBadges, totalClaimed };
-  }, [tables]);
-
   const getOwnerBadgeCounts = useMemo(() => {
     const ownerCounts: { [key: string]: IBadge[] } = {};
 
     Object.values(tables).forEach((badges) => {
       badges.forEach((badge) => {
-        if (badge.owner) {
-          if (!ownerCounts[badge.owner]) {
-            ownerCounts[badge.owner] = [];
+        [
+          { owner: badge.pcOwner, platform: "PC" },
+          { owner: badge.psOwner, platform: "PlayStation" },
+          { owner: badge.xboxOwner, platform: "Xbox" },
+        ].forEach(({ owner, platform }) => {
+          if (owner) {
+            const key = `${owner} (${platform})`;
+            if (!ownerCounts[key]) {
+              ownerCounts[key] = [];
+            }
+            ownerCounts[key].push(badge);
           }
-          ownerCounts[badge.owner].push(badge);
-        }
+        });
       });
     });
 
@@ -210,19 +348,48 @@ export default function RankedLeaderboard() {
     const ownerCounts: { [key: string]: IBadge[] } = {};
 
     leagueBadges.forEach((badge) => {
-      if (badge.owner) {
-        if (!ownerCounts[badge.owner]) {
-          ownerCounts[badge.owner] = [];
+      [
+        { owner: badge.pcOwner, platform: "PC" },
+        { owner: badge.psOwner, platform: "PlayStation" },
+        { owner: badge.xboxOwner, platform: "Xbox" },
+      ].forEach(({ owner, platform }) => {
+        if (owner) {
+          const key = `${owner} (${platform})`;
+          if (!ownerCounts[key]) {
+            ownerCounts[key] = [];
+          }
+          ownerCounts[key].push(badge);
         }
-        ownerCounts[badge.owner].push(badge);
-      }
+      });
     });
 
     return ownerCounts;
   };
 
+  const Star = ({ style }: { style: React.CSSProperties }) => (
+    <div
+      className="absolute w-2 h-2"
+      style={{
+        ...style,
+        animation: `starAnimation ${2 + Math.random() * 4}s infinite ease-in-out`,
+      }}
+    >
+      <div className="absolute w-2 h-0.5 bg-white transform -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute w-0.5 h-2 bg-white transform -translate-x-1/2 -translate-y-1/2" />
+    </div>
+  );
+
   const BadgeChampions = () => {
     const ownerCounts = getOwnerBadgeCounts;
+
+    const generateRandomStars = (count: number) => {
+      return Array.from({ length: count }, (_, i) => ({
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        animationDelay: `${Math.random() * 2}s`,
+        animationDuration: `${2 + Math.random() * 4}s`,
+      }));
+    };
 
     if (Object.keys(ownerCounts).length === 0) {
       return (
@@ -260,56 +427,71 @@ export default function RankedLeaderboard() {
 
     const getRankStyles = (badgeCount: number) => {
       const rank = sortedCounts.indexOf(badgeCount) + 1;
-
       switch (rank) {
-        case 1: // Gold
+        case 1:
           return {
             background: "linear-gradient(to bottom right, #ffd700, #b8860b)",
             border: "2px solid #ffd700",
             textColor: "text-black",
-            glowColor: "#ffd700",
-            shadowColor: "shadow-[#ffd700]",
+            boxShadow: "0 0 15px #ffd700",
           };
-        case 2: // Silver
+        case 2:
           return {
             background: "linear-gradient(to bottom right, #c0c0c0, #808080)",
             border: "2px solid #c0c0c0",
             textColor: "text-black",
-            glowColor: "#c0c0c0",
-            shadowColor: "shadow-[#c0c0c0]",
+            boxShadow: "0 0 15px #c0c0c0",
           };
-        case 3: // Bronze
+        case 3:
           return {
             background: "linear-gradient(to bottom right, #cd7f32, #8b4513)",
             border: "2px solid #cd7f32",
             textColor: "text-black",
-            glowColor: "#cd7f32",
-            shadowColor: "shadow-[#cd7f32]",
+            boxShadow: "0 0 15px #cd7f32",
           };
         default:
           return {
             background: "bg-gray-800",
             border: "border-gray-700",
             textColor: "text-white",
-            glowColor: "none",
-            shadowColor: "shadow-none",
+            boxShadow: "none",
           };
       }
     };
+
     return (
-      <div className="grid grid-cols-3 gap-4 mb-8">
+      <div className="flex flex-col gap-4 mb-8">
         {topCompetitors.map(([owner, badges]) => {
           const styles = getRankStyles(badges.length);
+          const stars = generateRandomStars(20);
+
           return (
             <div
               key={owner}
-              className="relative p-4 rounded-lg shadow-lg"
+              className="relative p-4 rounded-lg shadow-lg overflow-hidden transition-all duration-300"
               style={{
                 background: styles.background,
                 border: styles.border,
+                boxShadow: styles.boxShadow,
               }}
             >
-              <div className="relative z-10 space-y-2 text-center">
+              {/* Shimmer effect */}
+              <div
+                className="absolute inset-0 z-0"
+                style={{
+                  background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)",
+                  backgroundSize: "1000px 100%",
+                  animation: "shimmer 3s infinite linear",
+                }}
+              />
+
+              {/* Animated stars */}
+              {stars.map((starStyle, index) => (
+                <Star key={index} style={starStyle} />
+              ))}
+
+              {/* Content */}
+              <div className="relative z-10 space-y-2 text-center backdrop-blur-sm">
                 <div className={`${styles.textColor} text-lg font-bold`}>{owner}</div>
                 <div className={`${styles.textColor} text-sm font-black`}>Total Badges: {badges.length}</div>
                 <div className={`${styles.textColor} text-xs italic font-black`}>{badges.map((badge) => badge.name).join(", ")}</div>
@@ -366,13 +548,33 @@ export default function RankedLeaderboard() {
             const rank = sortedCounts.indexOf(badgeCount) + 1;
             switch (rank) {
               case 1:
-                return "text-yellow-400"; // Gold
+                return {
+                  background: "linear-gradient(to bottom right, #ffd700, #b8860b)",
+                  border: "2px solid #ffd700",
+                  textColor: "text-black",
+                  boxShadow: "0 0 15px #ffd700",
+                };
               case 2:
-                return "text-gray-400"; // Silver
+                return {
+                  background: "linear-gradient(to bottom right, #c0c0c0, #808080)",
+                  border: "2px solid #c0c0c0",
+                  textColor: "text-black",
+                  boxShadow: "0 0 15px #c0c0c0",
+                };
               case 3:
-                return "text-amber-700"; // Bronze
+                return {
+                  background: "linear-gradient(to bottom right, #cd7f32, #8b4513)",
+                  border: "2px solid #cd7f32",
+                  textColor: "text-black",
+                  boxShadow: "0 0 15px #cd7f32",
+                };
               default:
-                return "text-white";
+                return {
+                  background: "bg-gray-800",
+                  border: "border-gray-700",
+                  textColor: "text-white",
+                  boxShadow: "none",
+                };
             }
           };
 
@@ -397,46 +599,32 @@ export default function RankedLeaderboard() {
       </div>
     );
   };
-
   const BadgeTable = ({ badges }: { badges: IBadge[] }) => (
     <div>
-      <div className="flex gap-2 mb-4 justify-between overflow-x-scroll">
-        <div className="flex flex-row space-x-2">
-          <div className="px-4 font-black py-2 rounded-lg transition-colors bg-gray-800">
-            <p className="text-teal-400">Number of Badges in League</p>
-            <p className="text-white font-bold">{badges.length}</p>
-          </div>
-          <div className="px-4 font-black py-2 rounded-lg transition-colors bg-gray-800">
-            <p className="text-teal-400">Unclaimed Badges in League</p>
-            <p className="text-white font-bold">{badges.filter((badge) => badge.owner === null).length}</p>
-          </div>
-        </div>
-        <div className="flex flex-row space-x-2">
-          <div className="px-4 font-black py-2 rounded-lg transition-colors bg-gray-800">
-            <p className="text-teal-400">Total Badges Available</p>
-            <p className="text-white font-bold">{calculateGlobalStats.totalBadges}</p>
-          </div>
-          <div className="px-4 font-black py-2 rounded-lg transition-colors bg-gray-800">
-            <p className="text-teal-400">Total Badges Unclaimed</p>
-            <p className="text-white font-bold">{calculateGlobalStats.totalBadges - calculateGlobalStats.totalClaimed}</p>
-          </div>
-        </div>
-      </div>
-
       <table className="w-full">
         <thead>
           <tr className="bg-black text-teal-400">
             <th className="border p-2 text-left">Badge</th>
-            <th className="border p-2 text-left">Current Owner</th>
-            <th className="border p-2 text-left">Last Challenged</th>
+            <th className="border p-2 text-left text-purple-600">PC Owner</th>
+            <th className="border p-2 text-left text-purple-600">Last Challenged (PC)</th>
+            <th className="border p-2 text-left text-blue-600">PlayStation Owner</th>
+            <th className="border p-2 text-left text-blue-600">Last Challenged (PlayStation)</th>
+            <th className="border p-2 text-left text-lime-500">Xbox Owner</th>
+            <th className="border p-2 text-left text-lime-500">Last Challenged (Xbox)</th>
           </tr>
         </thead>
         <tbody>
           {badges.map((badge, index) => (
-            <tr key={index} className="italic">
+            <tr key={index} className="italic hover:bg-gray-700 transition-colors">
               <td className="border p-2">{badge.name}</td>
-              <td className="border p-2">{badge.owner || "Unawarded"}</td>
-              <td className="border p-2">{calculateDaysSince(badge.lastChallenged)}</td>
+              <td className="border p-2">{badge.pcOwner || "Unawarded"}</td>
+              <td className="border p-2">{calculateDaysSince(badge.pcLastChallenged)}</td>
+
+              <td className="border p-2">{badge.psOwner || "Unawarded"}</td>
+              <td className="border p-2">{calculateDaysSince(badge.psLastChallenged)}</td>
+
+              <td className="border p-2">{badge.xboxOwner || "Unawarded"}</td>
+              <td className="border p-2">{calculateDaysSince(badge.xboxLastChallenged)}</td>
             </tr>
           ))}
         </tbody>
@@ -444,8 +632,9 @@ export default function RankedLeaderboard() {
     </div>
   );
 
+  // Main return statement
   return (
-    <div className="p-4 lg:p-16  space-y-4 text-white">
+    <div className="p-4 lg:p-16 space-y-4 text-white">
       <div className="flex flex-row space-x-2">
         <Link href="/" className="text-teal-400 hover:underline">
           Home
@@ -471,9 +660,36 @@ export default function RankedLeaderboard() {
                 Badges represent marks of mastery, earned exclusively by participating in Tournaments. See a Badge that you&apos;d like against your name? Challenge the Badge owner via Discord, and
                 duel for it! Elevate the stakes by wagering your own Badges against your opponents - The winner takes all wagered Badges!
               </p>
-              <p className="text-sm text-gray-400 italic mb-8">
-                (Badges expire after 6 months with no Challenges - See one that should be expired? Message <span className="text-amber-400">@jojicus</span> on Discord!).
-              </p>
+              <hr />
+              <h3 className="text-3xl">Rules</h3>
+              <ul className="text-sm list-disc italic mb-8 pl-4 space-y-4">
+                <li>Badges have three copies, and ONLY three copies. One for PC, one for PlayStation, and one for Xbox.</li>
+                <li>
+                  &quot;Unawarded Badges&quot; are earned through placing FIRST in Tournaments either hosted by the &quot;BLEACH - Rebirth of Souls Subreddit&quot; Discord, or by affiliated Discords
+                  participating in Resource of Souls Tournaments. If you win a Badge, you MUST supply your public Discord username. If you do not, then the Badge will go to the runner-up (And so forth
+                  until someone supplies their public Discord username).
+                </li>
+                <li>
+                  &quot;Awarded Badges&quot; can be Dueled for in our Discord; to do this, join our Discord, and propose a Duel to the Discord username listed as the Badge Owner. After a Duel is
+                  proposed, it becomes Unawarded temporarily. Duels are a set of three matches, and the player who wins two out of three matches wins the Badge.
+                </li>
+                <li className="text-amber-400">We are currently figuring out the rules surrounding redueling and duel rejection limitations.</li>
+                <li>
+                  To heighten the stakes, Badge Owners can wager multiple Badges. To do this, mention that you wish to Wager in the Duel request. The number of Badges wagered must be equal between
+                  opponents (For instance, Player X wagers 2 Badges; this means if Player Y accepts, they must also wager 2 Badges and no more or less).
+                </li>
+                <li>
+                  Additionally, there may be &quot;Pro League Tournaments&quot; that will require applicants to wager Badges as a MANDATORY entry requirement. In these instances, the number of Badges
+                  will be divided in bespoke ways (For instance, divided across the Top 4, Top 8 and so forth). This will be communicated in the Tournament details if applicable.
+                </li>
+                <li className="text-red-600">
+                  If a user is found to be in breach of either the Subreddit or Discord rules, or is found to be cheating, using exploits, non-cosmetic mods, server-side mods, or client-side mods that
+                  grant any form of advantage, or is being generally toxic (A 3 strike system will be used), then their Badge will be FORCIBLY revoked and their Discord username will be added to a
+                  Ranked Leaderboard Blacklist. False flagging will count as a strike against your Discord username. This is NON-NEGOTIABLE. Selling Badges or trading Badges outside of the honor-based
+                  "Duel" system will result in an immediate blacklist.
+                </li>
+                <li>BLEACH - Resource of Souls reserves the right to edit, remove or add to these rules at any time.</li>
+              </ul>
               <hr />
               <h3 className="text-3xl">Currently Earnable Badges</h3>
               <p>
@@ -524,8 +740,8 @@ export default function RankedLeaderboard() {
           </div>
         </div>
         <hr className="my-6" />
-        <div className="grid grid-cols-1 xl:grid-cols-2 xl:space-x-20 mt-12 space-x-0 space-y-4 xl:space-y-0">
-          <div>
+        <div className="grid grid-cols-1 xl:grid-cols-3 xl:space-x-20 mt-12 space-x-0 space-y-4 xl:space-y-0">
+          <div className="xl:col-span-1">
             <div className="mb-8">
               <p className="font-bebasFont text-2xl mb-4">Badge Champions</p>
               <BadgeChampions />
@@ -535,10 +751,9 @@ export default function RankedLeaderboard() {
               <LeagueChampions />
             </div>
           </div>
-          <div>
+          <div className="xl:col-span-2">
             <p className="text-2xl font-bebasFont mb-4 ml-2">Badges Leaderboard</p>
             <div className="w-full rounded-xl p-4 border border-gray-400">
-              {/* League Tabs */}
               <div className="flex gap-2 mb-4 overflow-x-scroll">
                 {Object.keys(tables).map((tableName) => (
                   <button

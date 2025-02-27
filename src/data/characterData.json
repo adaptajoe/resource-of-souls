@@ -16,6 +16,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=uO7EPxsy0Ds&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=37",
     "characterEngTrailer": "https://www.youtube.com/watch?v=mJ1xji2ihQ8&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=31",
     "characterNumber": 1,
+    "isEcho": false,
     "characterOutfits": ["1", "2", "3"],
     "abilities": [
       {
@@ -267,7 +268,284 @@
         "technique": 3
       }
     ],
-    "trivia": ["To be defined."],
+    "trivia": [
+      "At the first portion of the Main Story, Ichigo fights with a gigantic, bare Zanpakuto before he obtains Zangetsu.",
+      "In the Main Story, whilst confronting White for the first time, Ichigo fights with a bare Asauchi, with an ovular tsuba.",
+      "Ichigo was the first character to get a Character Trailer.",
+      "Ichigo was the first character to appear in Bleach - Resource of Souls' Announcement Trailer."
+    ],
+    "show": true
+  },
+  "white": {
+    "name": "White",
+    "id": "white",
+    "race": "hollow",
+    "quote": "What's the difference between a king and a horse? Is it shape, ability, strength? When two beings are exactly the same, how do they decide which of them will be king and lead them into battle, which will lend its strength to the other, like a horse? What allows one to dominate another? I'll tell you what it is. INSTINCT..!!!",
+    "description": "The darkness that resides within Ichigo Kurosaki, claiming to be Zangetsu, yet is able to manifest Hollow abilities and is responsible for providing Ichigo with his Hollow Mask during Hollowfication. Always gnawing at Ichigo's soul like a rat in a cage, White is a Short Range fighter who excels in Melee combat with a Rushdown playstyle. His aggressive approach and powerful strikes make him an intimidating opponent at close range. With exceptional Power and Defense, but lower Speed and Range, White must close the distance to be effective. His moderate Technique and Charge attacks allow for some tactical flexibility in combat.",
+    "tags": {
+      "affiliations": ["worldOfTheLiving", "hollow", "shinigami"],
+      "relationships": ["enemy"],
+      "abilities": ["awakening", "shikai", "bankai", "hollowfication"],
+      "characteristics": ["male"]
+    },
+    "characterEaseOfUse": 5,
+    "characterArchetype": ["shortRange", "melee", "rushdown", "charge", "balanced"],
+    "characterJpTrailer": "https://www.youtube.com/embed/PAcBKlp7UGQ?si=jTjBjF4kxHIK1R39",
+    "characterEngTrailer": "https://www.youtube.com/embed/PAcBKlp7UGQ?si=jTjBjF4kxHIK1R39",
+    "characterNumber": 1,
+    "isEcho": true,
+    "characterOutfits": ["1"],
+    "abilities": [
+      {
+        "abilityName": "Zangetsu",
+        "abilityQuote": "I am",
+        "abilityQuoteTemplate": "{quote}... {ability}..!!!"
+      }
+    ],
+    "moves": [
+      {
+        "base": [
+          {
+            "id": "getsuga-tenshō",
+            "name": "Getsuga Tenshō",
+            "description": "White holds Zangetsu to the sky, charging with Reiryoku as it converges on his blade's edge. With a brisk swing, White fires this wave of Reiryoku at his opponent. Holding down the input makes the attack a continuous blast, whereas just tapping the input fires a small blast. Getsuga Tenshō is notable for its' increased damage to an opponents' Guard Gauge.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToMidRange", "charge", "needsStatInfo"]
+          },
+          {
+            "id": "wielding",
+            "name": "Wielding",
+            "description": "White delivers a powerful slash that opens up the opportunity to spin Zangetsu above his head like a rotor, before plunging it into the ground to deliver a powerful radial blast.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortRange", "trapsOpponent", "needsStatInfo"]
+          },
+          {
+            "id": "swing",
+            "name": "Swing",
+            "description": "White swings Zangetsu horizontally before following-up with a powerful uppercut. Before White fires off Swing, he is temporarily invincible thanks to his granted Super Armor.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "shortRange", "superArmor", "needsStatInfo"]
+          }
+        ],
+        "awakened": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "AW",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": 100,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
+          },
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["unknown"]
+          }
+        ],
+        "kikon": [
+          {
+            "id": "deadly-darts-kikon-move",
+            "name": "Deadly Darts",
+            "description": "White spins Zangetsu viciously by the cloth wrapping, building velocity before cackling into a depraved toss, throwing Zangetsu like a throwing knife towards his foe, stabbing them and recoiling the blade back to his hands with an effortless whip.",
+            "input": "KI",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          },
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Kikon currently not known.",
+            "input": "AW + KI",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          },
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Alternate Awakened Kikon currently not known.",
+            "input": "AW + KI",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["unknown"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 4,
+        "speed": 2,
+        "range": 2,
+        "defense": 4,
+        "technique": 3
+      }
+    ],
+    "trivia": ["White was the first Alternate Character to be revealed."],
     "show": true
   },
   "rukia-kuchiki": {
@@ -287,6 +565,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=pq-ECx9dnhg&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=38",
     "characterEngTrailer": "https://www.youtube.com/watch?v=JHod25mzWgY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=34",
     "characterNumber": 2,
+    "isEcho": false,
     "characterOutfits": ["1", "2"],
     "abilities": [
       {
@@ -558,6 +837,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=jqTot703GpM&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=39",
     "characterEngTrailer": "https://www.youtube.com/watch?v=Ze2_7Aa1Uks&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=30",
     "characterNumber": 3,
+    "isEcho": false,
     "characterOutfits": ["1"],
     "abilities": [
       {
@@ -943,6 +1223,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=HBH0F3QBqeA&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=36",
     "characterEngTrailer": "https://www.youtube.com/watch?v=pzBelDvJt4c&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=29",
     "characterNumber": 4,
+    "isEcho": false,
     "characterOutfits": ["1", "2", "DLC1"],
     "abilities": [
       {
@@ -1214,6 +1495,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=gMd_2nwWnik&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=35",
     "characterEngTrailer": "https://www.youtube.com/watch?v=MUKNiK5g-RM&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=28",
     "characterNumber": 5,
+    "isEcho": false,
     "characterOutfits": ["1", "2", "DLC1"],
     "abilities": [
       {
@@ -1485,6 +1767,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=FJWkFHuVeq4&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=34",
     "characterEngTrailer": "https://www.youtube.com/watch?v=Xb6G9l1ADzs&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=27",
     "characterNumber": 6,
+    "isEcho": false,
     "characterOutfits": ["1"],
     "abilities": [
       {
@@ -1744,7 +2027,7 @@
     "id": "kisuke-urahara",
     "race": "shinigami",
     "quote": "There is nothing but fear reflected in your sword. When you dodge, you're afraid of getting killed. When you attack, you're afraid of killing someone.",
-    "description": "Former Captain of Squad 12 and founder of the Department of Research and Development, Urahara is a brilliant scientist and skilled strategist; since his exile, he spends his time running a small shop in the World of the Living. Kisuke is a Short Range fighter who utilizes Melee combat with a Trickster playstyle. His Balanced approach allows him to adapt to various situations through clever use of his tactical abilities. With well-rounded stats across Power, Speed, Range, Defense, and Technique, Kisuke can plan for all situations effectively while setting up elaborate combinations to garuntee victory.",
+    "description": "Former Captain of Squad 12 and founder of the Department of Research and Development, Urahara is a brilliant scientist and skilled strategist; since his exile, he spends his time running a small shop in the World of the Living. Kisuke is a Short Range fighter who utilizes Melee combat with a Trickster playstyle. His Balanced approach allows him to adapt to various situations through clever use of his tactical abilities. With well-rounded stats across Power, Speed, Range, Defense, and Technique, Kisuke can plan for all situations effectively while setting up elaborate combinations to guarantee victory.",
     "tags": {
       "affiliations": ["worldOfTheLiving", "soulSociety", "shinigami", "squad12"],
       "relationships": ["friend"],
@@ -1756,6 +2039,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=GaS4ybi0xwA&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=33",
     "characterEngTrailer": "https://www.youtube.com/watch?v=Pglr-98uFBY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=26",
     "characterNumber": 7,
+    "isEcho": false,
     "characterOutfits": ["1", "DLC1"],
     "abilities": [
       {
@@ -2027,6 +2311,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=UjeF_Byhntk&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=32",
     "characterEngTrailer": "https://www.youtube.com/watch?v=_ag8qb0Zy6M&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=25",
     "characterNumber": 8,
+    "isEcho": false,
     "characterOutfits": ["1", "2"],
     "abilities": [
       {
@@ -2298,6 +2583,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=hq63eNoSvi4&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=31",
     "characterEngTrailer": "https://www.youtube.com/watch?v=LDQIPXcVgYU&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=24",
     "characterNumber": 9,
+    "isEcho": false,
     "characterOutfits": ["1", "DLC1"],
     "abilities": [
       {
@@ -2569,6 +2855,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=0nzHXmd9Pjo&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=30",
     "characterEngTrailer": "https://www.youtube.com/watch?v=gaTngNoe9ek&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=23",
     "characterNumber": 10,
+    "isEcho": false,
     "characterOutfits": ["1", "2", "DLC1"],
     "abilities": [
       {
@@ -2840,6 +3127,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=So0mg7_dE64&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=29",
     "characterEngTrailer": "https://www.youtube.com/watch?v=LxvCinpT440&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=22",
     "characterNumber": 11,
+    "isEcho": false,
     "characterOutfits": ["1"],
     "abilities": [
       {
@@ -3111,6 +3399,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=z6Sj7GDz3JU&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=26",
     "characterEngTrailer": "https://www.youtube.com/watch?v=SwczZ1FYyqg&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=21",
     "characterNumber": 12,
+    "isEcho": false,
     "characterOutfits": ["1", "2"],
     "abilities": [
       {
@@ -3475,6 +3764,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=d0VEZq9dMcY&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=27",
     "characterEngTrailer": "https://www.youtube.com/watch?v=iJdteynstKg&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=20",
     "characterNumber": 13,
+    "isEcho": false,
     "characterOutfits": ["1"],
     "abilities": [
       {
@@ -3860,6 +4150,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=bPRSt29aLG8&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=24",
     "characterEngTrailer": "https://www.youtube.com/watch?v=B6LO391TSdY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=17",
     "characterNumber": 14,
+    "isEcho": false,
     "characterOutfits": ["1", "2"],
     "abilities": [
       {
@@ -4131,6 +4422,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=Bisl7BbVK9o&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=23",
     "characterEngTrailer": "https://www.youtube.com/watch?v=dziYM2MU_S0",
     "characterNumber": 15,
+    "isEcho": false,
     "characterOutfits": ["1"],
     "abilities": [
       {
@@ -4269,9 +4561,9 @@
         ],
         "kikon": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Base Kikon currently not known.",
+            "id": "incomplete-shunkō-flying-fist",
+            "name": "Incomplete Shunkō: Flying Fist",
+            "description": "Whislt Unawakened, Soi-fon twirls backwards, manifesting an aspect of her Incomplete Shunkō across one of her arms; grinning, she rides the winds of her Shunkō into a devastating singular punch, spawning a vortex of razor-sharp Reiryoku from her wrists.",
             "input": "KI",
             "damage": null,
             "frames": null,
@@ -4414,6 +4706,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=n3diSC5oclE&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=22",
     "characterEngTrailer": "https://www.youtube.com/watch?v=pp7a-Dq56lk&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=16",
     "characterNumber": 16,
+    "isEcho": false,
     "characterOutfits": ["1", "DLC1"],
     "abilities": [
       {
@@ -4685,6 +4978,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=cuB14RLuijk&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=21",
     "characterEngTrailer": "https://www.youtube.com/watch?v=F3tL_rpw6HQ&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=15",
     "characterNumber": 17,
+    "isEcho": false,
     "characterOutfits": ["1"],
     "abilities": [
       {
@@ -4956,6 +5250,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=__S1reKBbdo&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=20",
     "characterEngTrailer": "https://www.youtube.com/watch?v=KfFGVNIWBf0&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=14",
     "characterNumber": 18,
+    "isEcho": false,
     "characterOutfits": ["1"],
     "abilities": [
       {
@@ -5227,6 +5522,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=_LJafOpYxVw&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=19",
     "characterEngTrailer": "https://www.youtube.com/watch?v=dmEM_2Shrjg&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=13",
     "characterNumber": 19,
+    "isEcho": false,
     "characterOutfits": ["1"],
     "abilities": [
       {
@@ -5498,6 +5794,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=QspGqabpIQU&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=18",
     "characterEngTrailer": "https://www.youtube.com/watch?v=E_H67r2cg7Y&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=12",
     "characterNumber": 20,
+    "isEcho": false,
     "characterOutfits": ["1", "2"],
     "abilities": [
       {
@@ -5779,6 +6076,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=4qGGFhG-rIE&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=16",
     "characterEngTrailer": "https://www.youtube.com/watch?v=fZeTPMNf0bQ&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=10",
     "characterNumber": 21,
+    "isEcho": false,
     "characterOutfits": ["1"],
     "abilities": [
       {
@@ -6164,6 +6462,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=APf68D3Ty64&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=15",
     "characterEngTrailer": "https://www.youtube.com/watch?v=2JYfn-o37aA&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=8",
     "characterNumber": 22,
+    "isEcho": false,
     "characterOutfits": ["1"],
     "abilities": [
       {
@@ -6445,6 +6744,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=dV2QpXlq5ds&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=12",
     "characterEngTrailer": "https://www.youtube.com/watch?v=dVgkWouBJGA&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=7",
     "characterNumber": 23,
+    "isEcho": false,
     "characterOutfits": ["1", "2"],
     "abilities": [
       {
@@ -6694,6 +6994,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=ARpSb6I009s&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=8",
     "characterEngTrailer": "https://www.youtube.com/watch?v=DAvJE24A53E&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=6",
     "characterNumber": 24,
+    "isEcho": false,
     "characterOutfits": ["1"],
     "abilities": [
       {
@@ -6965,6 +7266,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=PCnLPmAac-o&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=6",
     "characterEngTrailer": "https://www.youtube.com/watch?v=dMAmNAWY7z0&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=5",
     "characterNumber": 25,
+    "isEcho": false,
     "characterOutfits": ["1"],
     "abilities": [
       {
@@ -7236,6 +7538,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=mbnUcwCRr9I&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=4",
     "characterEngTrailer": "https://www.youtube.com/watch?v=LE0Cfp6zekU&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=3",
     "characterNumber": 26,
+    "isEcho": false,
     "characterOutfits": ["1"],
     "abilities": [
       {
@@ -7502,7 +7805,7 @@
     "show": true
   },
   "shuhei-hisagi": {
-    "name": "Shuhei Hisagi",
+    "name": "Shūhei Hisagi",
     "id": "shuhei-hisagi",
     "race": "shinigami",
     "quote": "I believe that fighting is not about being afraid or not. It's about standing up to face an enemy who you're afraid of.",
@@ -7518,6 +7821,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=w1y8-W4CRQI&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=3",
     "characterEngTrailer": "https://www.youtube.com/watch?v=1hkNH7tlj9E&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=2",
     "characterNumber": 27,
+    "isEcho": false,
     "characterOutfits": ["1"],
     "abilities": [
       {
@@ -7656,9 +7960,9 @@
         ],
         "kikon": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Base Kikon currently not known.",
+            "id": "explosive-band-followup-slash-kikon-move",
+            "name": "Explosive Band Followup Slash",
+            "description": "When Unawakened, Hisagi launches a set of his Explosive Bands at his opponent, before leaping backwards into the smoke, emerging with a stalwardt one-handed overhead slash.",
             "input": "KI",
             "damage": null,
             "frames": null,
@@ -7801,6 +8105,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=fBEu8HjbXFM&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=1",
     "characterEngTrailer": "https://www.youtube.com/watch?v=pQU59aOdOOY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=1",
     "characterNumber": 28,
+    "isEcho": false,
     "characterOutfits": ["1"],
     "abilities": [
       {
@@ -8072,6 +8377,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=qoL7R5nqAsM",
     "characterEngTrailer": "https://www.youtube.com/watch?v=BieqWlJgYoE",
     "characterNumber": 29,
+    "isEcho": false,
     "characterOutfits": ["1"],
     "abilities": [
       {
@@ -8323,7 +8629,9 @@
         "technique": 2
       }
     ],
-    "trivia": ["To be defined."],
+    "trivia": [
+      "Nnoitra was mistakenly revealed by Bandai Namco a week early when they accidentally uploaded his Character Trailer after releasing Ikkaku Madarame's Character Trailer. This period of time is referred to in the Discord as the infamous 'Gilga Drought'."
+    ],
     "show": true
   },
   "tier-harribel": {
@@ -8343,6 +8651,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=Moejkqz_ao4",
     "characterEngTrailer": "https://www.youtube.com/watch?v=B-rbTLO4wJs",
     "characterNumber": 30,
+    "isEcho": false,
     "characterOutfits": ["1"],
     "abilities": [
       {
@@ -8614,6 +8923,7 @@
     "characterJpTrailer": "https://www.youtube.com/watch?v=F9ayho5kctk",
     "characterEngTrailer": "https://www.youtube.com/watch?v=tMRIDgEaKSA",
     "characterNumber": 31,
+    "isEcho": false,
     "characterOutfits": ["1"],
     "abilities": [
       {
@@ -8867,5 +9177,549 @@
     ],
     "trivia": ["Starrk is the first character to cover every range type, Short Range, Mid Range, Long Range and Hybrid Range. I am become Range; measurer of distance."],
     "show": true
+  },
+  "aaroniero-arruruerie": {
+    "name": "Aaroniero Arruruerie",
+    "id": "aaroniero-arruerie",
+    "race": "arrancar",
+    "quote": "Sorry, but I simply can't stand the sunlight, and the sunlight can't make it in here.",
+    "description": "The Noveno Espada and the Aspect of Greed, Aaroniero Arruruerie is a fascinating being comprised of two Gillian-class Menos Grande, evolved from Metastacia - The same Hollow that killed and consumed Rukia Kuchiki's former mentor, and Squad 13 Lieutenant, Kaien Shiba. It has access to its' own unique abilities through its' Zanpakuto, Glotoneria, but also can call upon Kaien Shiba's Zanpakuto, Nejibana to augment its' fighting capabilities.",
+    "tags": {
+      "affiliations": ["huecoMundo", "arrancar"],
+      "relationships": ["enemy"],
+      "abilities": ["awakening", "resurrección"],
+      "characteristics": ["ungendered", "ArrancarArmy"]
+    },
+    "characterEaseOfUse": 1,
+    "characterArchetype": ["melee"],
+    "characterJpTrailer": "https://www.youtube.com/embed/jpIVIPd4a_Y?si=5-J6uVcbgZSalpAs",
+    "characterEngTrailer": "https://www.youtube.com/embed/5TECdzMVLbU?si=w_h7E_LVzVVDngTK",
+    "characterNumber": 32,
+    "isEcho": false,
+    "characterOutfits": ["1"],
+    "abilities": [
+      {
+        "abilityName": "Glotonería",
+        "abilityQuote": "Devour",
+        "abilityQuoteTemplate": "{quote}! {ability}!"
+      }
+    ],
+    "moves": [
+      {
+        "base": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsReiatsu", "needsStatInfo"]
+          },
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsReiatsu", "needsStatInfo"]
+          },
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsReiatsu", "needsStatInfo"]
+          }
+        ],
+        "awakened": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "AW",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": 100,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
+          },
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["unknown"]
+          }
+        ],
+        "kikon": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Kikon currently not known.",
+            "input": "KI",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          },
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Kikon currently not known.",
+            "input": "AW + KI",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          },
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Alternate Awakened Kikon currently not known.",
+            "input": "AW + KI",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["unknown"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 1,
+        "speed": 1,
+        "range": 1,
+        "defense": 1,
+        "technique": 1
+      }
+    ],
+    "trivia": ["To be defined."],
+    "show": false
+  },
+  "kaien-shiba": {
+    "name": "Kaien Shiba",
+    "id": "kaien-shiba",
+    "race": "arrancar",
+    "quote": "Heart isn't something inside you. But whenever you think, whenever you remember someone, that's when heart is born.",
+    "description": "The former Lieutenant of Squad 13 who is tragically killed by the Hollow Metastacia before Ichigo's story begins. He was a charismatic and upbeat individual responsible for mentoring Rukia Kuchiki, and was a beloved member of his Squad during his time serving Jushiro Ukitake.",
+    "tags": {
+      "affiliations": ["shinigami", "squad13"],
+      "relationships": ["friend"],
+      "abilities": ["awakening", "shikai"],
+      "characteristics": ["male", "gotei13", "lieutenant", "dead"]
+    },
+    "characterEaseOfUse": 1,
+    "characterArchetype": ["melee"],
+    "characterJpTrailer": "https://www.youtube.com/embed/jpIVIPd4a_Y?si=5-J6uVcbgZSalpAs",
+    "characterEngTrailer": "https://www.youtube.com/embed/5TECdzMVLbU?si=w_h7E_LVzVVDngTK",
+    "characterNumber": 32,
+    "isEcho": true,
+    "characterOutfits": ["1"],
+    "abilities": [
+      {
+        "abilityName": "Nejibana",
+        "abilityQuote": "Rage Through the Seas and Heavens",
+        "abilityQuoteTemplate": "{quote}! {ability}!"
+      }
+    ],
+    "moves": [
+      {
+        "base": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsReiatsu", "needsStatInfo"]
+          },
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsReiatsu", "needsStatInfo"]
+          },
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsReiatsu", "needsStatInfo"]
+          }
+        ],
+        "awakened": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "AW",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": 100,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
+          },
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Moveset currently not known.",
+            "input": "S1",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["unknown"]
+          }
+        ],
+        "kikon": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Kikon currently not known.",
+            "input": "KI",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          },
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Kikon currently not known.",
+            "input": "AW + KI",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          },
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Alternate Awakened Kikon currently not known.",
+            "input": "AW + KI",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          }
+        ],
+        "baseCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Base Combos currently not known.",
+            "input": "SI",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["unknown"]
+          }
+        ],
+        "awakenedCombos": [
+          {
+            "id": "unknown",
+            "name": "Unknown",
+            "description": "Awakened Combos currently not known.",
+            "input": "SI",
+            "damage": null,
+            "frames": null,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["unknown"]
+          }
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "power": 1,
+        "speed": 1,
+        "range": 1,
+        "defense": 1,
+        "technique": 1
+      }
+    ],
+    "trivia": ["To be defined."],
+    "show": false
   }
 }

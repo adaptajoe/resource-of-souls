@@ -108,7 +108,10 @@ export default async function CharacterDetails(props: Props) {
                 {ability.abilityQuoteTemplate.replace("{quote}", ability.abilityQuote).replace("{ability}", ability.abilityName)}
               </p>
             ))}
-            <p className="text-gray-400 xl:hidden">Character #{character.characterNumber}</p>
+            <div className="text-gray-400 xl:hidden">
+              Character #{character.characterNumber}
+              {!character.isEcho ? null : <p className="text-teal-400">&epsilon;</p>}
+            </div>
             <div className="flex flex-wrap gap-4 my-4">
               <Link href="#character-info" className="text-teal-400 hover:underline">
                 Character Info
@@ -297,7 +300,11 @@ export default async function CharacterDetails(props: Props) {
                 <span className="text-red-600">T</span>rivia
               </h3>
               <ul className="mt-6 list-disc border-2 border-gray-400 rounded-xl p-4">
-                <li className="ml-6">{character.trivia}</li>
+                {character.trivia.map((triviaItem, index) => (
+                  <li key={index} className="ml-6 mb-2">
+                    {triviaItem}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

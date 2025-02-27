@@ -21,6 +21,8 @@ export default function Characters() {
   const [affiliationFilter, setAffiliationFilter] = useState<AffiliationType>("all");
   const [genderFilter, setGenderFilter] = useState<"all" | "male" | "female">("all");
   const [imageSources, setImageSources] = useState<{ [key: string]: string }>({});
+  const [showEchoFighters, setShowEchoFighters] = useState(false);
+  const [isEchoTooltipVisible, setIsEchoTooltipVisible] = useState(false);
 
   const handleImageError = (slug: string) => {
     setImageSources((prev) => ({
@@ -64,6 +66,10 @@ export default function Characters() {
         return false;
       }
 
+      if (!showEchoFighters && character.isEcho) {
+        return false;
+      }
+
       const matchesSearch =
         character.name.toLowerCase().includes(searchTermLower) ||
         character.tags.characteristics.some((char) => char.toLowerCase().includes(searchTermLower)) ||
@@ -90,7 +96,7 @@ export default function Characters() {
       }
       return sortConfig.ascending ? a.characterNumber - b.characterNumber : b.characterNumber - a.characterNumber;
     });
-  }, [characters, searchTerm, sortConfig, affiliationFilter, genderFilter]);
+  }, [characters, searchTerm, sortConfig, affiliationFilter, genderFilter, showEchoFighters]);
 
   const shouldHighlightArchetype = (archetype: string): boolean => {
     return searchTerm.length > 0 && archetype.toLowerCase().includes(searchTerm.toLowerCase());
@@ -146,6 +152,25 @@ export default function Characters() {
         <div>
           <div className="w-fit lg:w-full font-bebasFont text-xl flex flex-col items-center lg:flex-row mt-4 space-y-4 lg:space-y-0 lg:space-x-4">
             <div className="flex flex-row space-x-4 pr-4 border-0 lg:border-r-2 border-gray-400">
+              <div className="relative" onMouseEnter={() => setIsEchoTooltipVisible(true)} onMouseLeave={() => setIsEchoTooltipVisible(false)}>
+                <button
+                  onClick={() => setShowEchoFighters((prev) => !prev)}
+                  className={`px-3 py-1 rounded flex transition-colors items-center font-black gap-1 hover:bg-red-600 hover:text-black ${
+                    showEchoFighters ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
+                  }`}
+                >
+                  {showEchoFighters ? "Exclude" : "Include"} Alternates
+                </button>
+                {isEchoTooltipVisible && (
+                  <div className="absolute z-10 ml-12 border-2 border-gray-400 w-52 font-sans p-4 mt-2 transform -translate-x-1/4 bg-gray-800 rounded shadow-lg">
+                    <div className="absolute -top-2 border-l-2 border-t-2 border-gray-400 left-1/2 transform -translate-x-1/2 w-4 h-4 rotate-45 bg-gray-800"></div>
+                    <p className="text-sm text-gray-300">
+                      Alternates (Wiki Term) are similar to existing characters, but have unique animations and voice lines. DLC outfits like TYBW outfits do NOT count.
+                    </p>
+                  </div>
+                )}
+              </div>
+
               <button
                 onClick={() =>
                   setSortConfig((prev) => ({
@@ -198,7 +223,7 @@ export default function Characters() {
 
             <div className="flex flex-row space-x-4">
               {[
-                { value: "all", label: "All Genders" },
+                { value: "all", label: "All" },
                 { value: "male", label: "Male-Only" },
                 { value: "female", label: "Female-Only" },
               ].map((gender) => (
@@ -226,14 +251,14 @@ export default function Characters() {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
               {filteredAndSortedCharacters.map(([slug, character]) => (
-                <div key={slug} className="border hover:border-red-600 transition-colors">
+                <div key={slug} className="border hover:border-red-600 transition-colors rounded-lg">
                   <Link href={`/characters/${slug}`} className="block">
                     <Image
                       src={imageSources[slug] || `/assets/character-banner/${slug}-banner.png`}
                       height="300"
                       width="300"
                       alt={character.name}
-                      className="max-h-[300px] w-fit object-cover object-top-center"
+                      className="max-h-[300px] w-fit object-cover rounded-t-lg object-top-center"
                       style={{
                         objectFit: "cover",
                         objectPosition: "50% 40%",
@@ -243,8 +268,9 @@ export default function Characters() {
                       loading="lazy"
                     />
                     <div className="p-4 border-t-2 border-gray-800">
-                      <h2 className="font-bold text-2xl my-2">
-                        #{character.characterNumber}: {character.name}
+                      <h2 className="font-bold text-2xl my-2 flex flex-row items-center">
+                        #{character.characterNumber}
+                        {!character.isEcho ? null : <p className="text-teal-400">&epsilon;</p>}: {character.name}
                       </h2>
                       <p className="text-gray-400 text-sm mb-2 italic">&quot;{character.quote}&quot;</p>
                     </div>
