@@ -19,9 +19,7 @@ export const MoveAnimationTooltip = ({ characterId, moveId, children }: IMoveAni
     triggerOnce: false,
   });
 
-  const encodedMoveId = encodeURIComponent(moveId);
-  const encodedCharacterId = encodeURIComponent(characterId);
-  const animationPath = `/assets/character-animations/${encodedCharacterId}/${encodedMoveId}.mp4`;
+  const animationPath = `/assets/character-animations/${encodeURIComponent(characterId)}/${encodeURIComponent(moveId)}.mp4`;
 
   const handleMouseEnter = useCallback(() => {
     setIsHovered(true);
