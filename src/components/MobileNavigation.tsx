@@ -14,12 +14,6 @@ const MAIN_LINKS = [
   { href: "/faq", text: "FAQ" },
 ] as const;
 
-const SUB_LINKS = [
-  { href: "https://discord.gg/fA69CAE2eP", text: "Discord" },
-  { href: "https://github.com/adaptajoe/resource-of-souls", text: "GitHub" },
-  { href: "https://www.reddit.com/r/RebirthOfSoulsBleach/", text: "Subreddit" },
-] as const;
-
 const NavLink = memo(({ href, text, onClick }: { href: string; text: string; onClick: () => void }) => (
   <Link
     href={href}
@@ -56,9 +50,6 @@ export const MobileNavigation = memo(function MobileNavigation() {
             <>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4 items-center">
                 {MAIN_LINKS.map((link) => (
-                  <NavLink key={link.href} href={link.href} text={link.text} onClick={closeMenu} />
-                ))}
-                {SUB_LINKS.map((link) => (
                   <NavLink key={link.href} href={link.href} text={link.text} onClick={closeMenu} />
                 ))}
               </div>

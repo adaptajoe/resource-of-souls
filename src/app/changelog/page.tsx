@@ -33,6 +33,20 @@ export default function Changelog() {
   const resourceOfSoulsChangelog = useMemo(
     () => [
       {
+        version: "v1.0.7.",
+        date: "26/02/2025",
+        changes: [
+          "Added the Alternate Character system to the Character Roster",
+          "Added `White` as an Alternate Character.",
+          "Removed the `GitHub`, `Discord` and `Reddit` links from the main navigation.",
+          "Added these links - and more - to the Footer. These are `GitHub`, `Discord`, `Reddit`, `Japanese Site`, `English Site`, `Steam Store Page`, `Xbox Marketplace Page` and `PlayStation Store Page`.",
+          "Updated the Community Ranked Leaderboard",
+          "Reworked the `Creators Page` to accomodate more Creators by using a Tab system.",
+          "Added presumptive data for `Aaroniero Aaruruerie` and `Kaien Shiba`.",
+          "Fixed a long-standing bug that made it so that Moves with a special character (ō, ū, é, á, etc) could not find their animations, even if they existed.",
+        ],
+      },
+      {
         version: "v1.0.6.",
         date: "26/02/2025",
         changes: ["Further cleaned up Character Movelists", "Added new Kikon Moves for `Grimmjow`, `Rukia`, `Yamamoto` `Tōshiro` and `Aizen`.", "Added Stage information."],
