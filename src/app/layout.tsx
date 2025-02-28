@@ -85,7 +85,7 @@ export default function RootLayout({
         <footer className="px-12 py-3 border-t-2 border-gray-400 grid grid-cols-1 lg:grid-cols-2 text-gray-500 italic text-xs justify-center lg:justify-between">
           <div>
             <Link href="/changelog" className="text-xl text-teal-400 hover:underline">
-              Site Version: v1.0.7.
+              Site Version: v1.0.8.
             </Link>
             <div className="flex flex-row mt-4">
               <Link href="https://github.com/adaptajoe/resource-of-souls" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 mr-4 rounded-xl">
@@ -114,10 +114,7 @@ export default function RootLayout({
               >
                 <XCircle size={30} color="white" />
               </Link>
-              <Link
-                href="https://www.xbox.com/en-GB/games/store/bleach-rebirth-of-souls/9PJK7WPHWM8L"
-                className="bg-gray-700 hover:bg-blue-800  hover:text-black transition-colors p-4 my-4 mr-4 rounded-xl"
-              >
+              <Link href="https://store.playstation.com/en-us/concept/10001710/" className="bg-gray-700 hover:bg-blue-800  hover:text-black transition-colors p-4 my-4 mr-4 rounded-xl">
                 <GameController size={30} color="white" />
               </Link>
             </div>

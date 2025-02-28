@@ -33,8 +33,17 @@ export default function Changelog() {
   const resourceOfSoulsChangelog = useMemo(
     () => [
       {
+        version: "v1.0.8.",
+        date: "28/02/2025",
+        changes: [
+          "Added the official art for `Coyote Starrk` to his Character Page.",
+          "Began preliminary work on the new ELO-based Ranked Leaderboard",
+          "Added a different icon for `shortRange`, `midRange` and `longRange` based off of the new `Training Stage`; we plan on defining `shortRange` as one white grid square, `midRange` as two white grid squares, and `longRange` as anything covering three or more white grid squares.",
+        ],
+      },
+      {
         version: "v1.0.7.",
-        date: "26/02/2025",
+        date: "27/02/2025",
         changes: [
           "Added the Alternate Character system to the Character Roster",
           "Added `White` as an Alternate Character.",

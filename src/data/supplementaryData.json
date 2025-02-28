@@ -378,13 +378,13 @@
       "id": "short-range",
       "name": "Short Range",
       "shortDescription": "Close attacker",
-      "description": "Self-explanatory. Short Range characters specialse in purely close-combat."
+      "description": "Self-explanatory. Short Range is defined by this Wiki as covering exactly one Training Stage white-grid squares. Short Range characters specialse in purely close-combat."
     },
     "mid-range": {
       "id": "mid-range",
       "name": "Mid Range",
       "shortDescription": "Medium-range attacker",
-      "description": "Self-explanatory. Mid Range characters specialse in having a bit of distance between them and their opponent."
+      "description": "Self-explanatory. Mid Range is defined by this Wiki as covering exactly two Training Stage white-grid squares. Mid Range characters specialse in having a bit of distance between them and their opponent."
     },
     "hybrid-range": {
       "id": "hybrid-range",
@@ -396,7 +396,7 @@
       "id": "long-range",
       "name": "Long Range",
       "shortDescription": "Distant attacker",
-      "description": "Self-explanatory. Long Range characters specialse in purely distant combat."
+      "description": "Self-explanatory. Long Range is defined by this Wiki as covering three or more Training Stage white-grid squares. Long Range characters specialse in purely distant combat."
     },
     "slow": {
       "id": "slow",

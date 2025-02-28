@@ -13,8 +13,8 @@ export default function Community() {
         <hr className="p-1 my-1 w-full" />
         <p className="border-l-8 border-l-red-600 border-r-8 border-r-teal-400 text-center px-4">
           SIGN UP ON THE{" "}
-          <Link className="text-teal-400 hover:underline" href="/community/ranked-leaderboard">
-            COMMUNITY RANKED LEADERBOARD PAGE
+          <Link className="text-teal-400 hover:underline" href="/community/community-leaderboard">
+            COMMUNITY LEADERBOARD PAGE
           </Link>
           ..!
         </p>
@@ -26,17 +26,14 @@ export default function Community() {
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
-              <span className="text-red-600">C</span>ommunity Ranked Leaderboard
+              <span className="text-red-600">C</span>ommunity Leaderboard
             </h2>
             <div className="border-r-8 border-teal-400 pr-4 space-y-4 px-6">
-              <p>
-                Test your mettle and earn a unique Badge in our Community Ranked Leaderboard; wager your Badge against others to raise the stakes, or discover previous Tournament results and victors.
-              </p>
+              <p>Test your mettle and earn a unique Badge in our Community Leaderboard; wager your Badge against others to raise the stakes, or discover previous Tournament results and victors.</p>
               <p className="flex flex-col">You alone shall stand at the top. Claim that intolerable vacuum, and stand upon the heavens!</p>
-              <p className="text-sm text-gray-400 italic mb-8">(Badges expire after 6 months with no Challenges).</p>
               <p>
-                <Link className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700 hover:bg-red-600 hover:text-black transition-colors" href={"/community/ranked-leaderboard"}>
-                  View the Community Ranked Leaderboard
+                <Link className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700 hover:bg-red-600 hover:text-black transition-colors" href={"/community/community-leaderboard"}>
+                  View the Community Leaderboard
                 </Link>
               </p>
             </div>
@@ -76,11 +73,11 @@ export default function Community() {
           </div>
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
-              <span className="text-red-600">G</span>enerate Thrilling Versus Images
+              <span className="text-red-600">R</span>anked Leaderboard
             </h2>
             <div className="border-r-8 border-teal-400 pr-4 space-y-4 px-6">
-              <p>Create dynamic Versus Images for Tournaments and social media to help promote your epic duels!</p>
-              <p className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700">Coming Soon!</p>
+              <p className="mb-4">Participate in our ELO-based Leaderboard, built for the most competitive players! Arise to your heavenly position of Reiō!</p>
+              <p className="px-4 py-2 w-fit font-bebasFont text-xl rounded bg-gray-700 hover:bg-red-600 hover:text-black transition-colors">Coming soon!</p>
             </div>
           </div>
         </div>

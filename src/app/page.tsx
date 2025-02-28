@@ -13,8 +13,8 @@ export default function Home() {
         <hr className="p-1 my-1 w-full" />
         <p className="border-l-8 border-l-red-600 border-r-8 border-r-teal-400 text-center px-4">
           SIGN UP ON THE{" "}
-          <Link className="text-teal-400 hover:underline" href="/community/ranked-leaderboard">
-            COMMUNITY RANKED LEADERBOARD PAGE
+          <Link className="text-teal-400 hover:underline" href="/community/community-leaderboard">
+            COMMUNITY LEADERBOARD PAGE
           </Link>
           ..!
         </p>
@@ -26,7 +26,8 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
-              <span className="text-red-600">W</span>elcome to BLEACH - Resource of Souls; the definitive unofficial Wiki for Bleach - Rebirth of Souls.
+              <span className="text-red-600">W</span>elcome to BLEACH - Resource of Souls; the definitive unofficial <span className="text-red-600 underline underline-offset-4">FAN</span> Wiki for
+              Bleach - Rebirth of Souls.
             </h2>
             <div className="border-r-8 border-teal-400 pr-4 space-y-4 px-6">
               <p>Learn about the characters in the game, plan tournaments, view frame data and movelists, research game terms and view the game&apos;s changelog.</p>
