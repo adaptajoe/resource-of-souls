@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
 import { MobileNavigation } from "@/components/MobileNavigation";
+import { DiscordLogo, GithubLogo, RedditLogo, SteamLogo, XCircle, GameController, GlobeHemisphereEast, GlobeHemisphereWest } from "@phosphor-icons/react/dist/ssr";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -64,15 +65,6 @@ export default function RootLayout({
           <Link href="/faq" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
             FAQ
           </Link>
-          <Link href="https://github.com/adaptajoe/resource-of-souls" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
-            GitHub
-          </Link>
-          <Link href="https://www.reddit.com/r/RebirthOfSoulsBleach/" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
-            Reddit
-          </Link>
-          <Link href="https://discord.gg/fA69CAE2eP" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl">
-            Discord
-          </Link>
         </div>
         <div className="bg-black w-full h-[125px] border-b-2 border-gray-400 py-2 px-4 md:px-12 z-50 flex lg:hidden flex-row items-center space-x-2 text-xs lg:text-sm xl:text-xl font-bebasFont text-white justify-between md:justify-normal">
           <Link href="/">
@@ -95,6 +87,41 @@ export default function RootLayout({
             <Link href="/changelog" className="text-xl text-teal-400 hover:underline">
               Site Version: v1.0.6.
             </Link>
+            <div className="flex flex-row mt-4">
+              <Link href="https://github.com/adaptajoe/resource-of-souls" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 mr-4 rounded-xl">
+                <GithubLogo size={30} color="white" />
+              </Link>
+              <Link href="https://discord.gg/fA69CAE2eP" className="bg-gray-700 hover:bg-purple-800 hover:text-black transition-colors p-4 mr-4 rounded-xl">
+                <DiscordLogo size={30} color="white" />
+              </Link>
+              <Link href="https://www.reddit.com/r/RebirthOfSoulsBleach/" className="bg-gray-700 hover:bg-orange-700 hover:text-black transition-colors p-4 mr-4 rounded-xl">
+                <RedditLogo size={30} color="white" />
+              </Link>
+              <Link href="https://bleach-ros.bn-ent.net/" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 mr-4 rounded-xl">
+                <GlobeHemisphereEast size={30} color="white" />
+              </Link>
+              <Link href="https://en.bandainamcoent.eu/bleach/bleach-rebirth-of-souls" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 mr-4 rounded-xl">
+                <GlobeHemisphereWest size={30} color="white" />
+              </Link>
+            </div>{" "}
+            <div className="flex flex-row">
+              <Link href="https://store.steampowered.com/app/1689620/BLEACH_Rebirth_of_Souls/" className="bg-gray-700 hover:bg-gray-500  hover:text-black transition-colors p-4 my-4 mr-4 rounded-xl">
+                <SteamLogo size={30} color="white" />
+              </Link>
+              <Link
+                href="https://www.xbox.com/en-GB/games/store/bleach-rebirth-of-souls/9PJK7WPHWM8L"
+                className="bg-gray-700 hover:bg-lime-600  hover:text-black transition-colors p-4 my-4 mr-4 rounded-xl"
+              >
+                <XCircle size={30} color="white" />
+              </Link>
+              <Link
+                href="https://www.xbox.com/en-GB/games/store/bleach-rebirth-of-souls/9PJK7WPHWM8L"
+                className="bg-gray-700 hover:bg-blue-800  hover:text-black transition-colors p-4 my-4 mr-4 rounded-xl"
+              >
+                <GameController size={30} color="white" />
+              </Link>
+            </div>
+            <p className="mb-4 md:mb-0">The above storefront links for Steam, PlayStation and Xbox are NOT affiliate links.</p>
             <p className="mb-4 md:mb-0">
               BLEACH - Resource of Souls is developed, designed, managed and updated by Discord user <span className="text-amber-400 font-black">@jojicus</span>.
             </p>
