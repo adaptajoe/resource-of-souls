@@ -21,26 +21,35 @@ export default function Game() {
         Rebirth of Souls here.
       </p>
       <div className="grid grid-cols-1 lg:grid-cols-4 text-center font-bebasFont md:text-3xl text-2xl">
-        <Link href="/game/story-mode" className="p-8  hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+        <Link href="/game/story-mode" className="p-8  hover:bg-red-600 hover:text-black transition-colors bg-black border-2 border-red-600 rounded-xl m-2">
           Story Mode
         </Link>
-        <Link href="/game/side-stories-mode" className="p-8 hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+        <Link href="/game/side-stories-mode" className="p-8 bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
           Side Stories Mode
         </Link>
-        <Link href="/game/secret-stories-mode" className="p-8 hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+        <Link href="/game/secret-stories-mode" className="p-8 bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
           Secret Stories Mode
         </Link>
-        <Link href="/game/mission-mode" className="p-8 hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+        <Link href="/game/mission-mode" className="p-8 bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
           Mission Mode
         </Link>
-        <Link href="/game/online-modes" className="p-8 hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+        <Link href="/game/online-modes" className="p-8 bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
           Online Modes
         </Link>
-        <Link href="/game/stages" className="p-8 hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+        <Link href="/game/stages" className="p-8 bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
           Stages
         </Link>
-        <Link href="/game/urahara-shop" className="p-8 hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+        <Link href="/game/urahara-shop" className="p-8 bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
           Urahara Shop
+        </Link>
+        <Link href="/game/tutorial" className="p-8 bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+          Tutorial
+        </Link>
+        <Link href="/game/challenges" className="p-8 bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+          Challenges
+        </Link>
+        <Link href="/game/user-interface-breakdown" className="p-8 bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+          User Interface Breakdown
         </Link>
       </div>
     </div>

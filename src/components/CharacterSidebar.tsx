@@ -35,8 +35,8 @@ const CharacterSidebar: FC<ICharacterSidebarProps> = ({ character, slug }) => {
 
   useEffect(() => {
     const checkOutfits = async () => {
-      const basePromises = Array.from({ length: 3 }, (_, i) => imageExists(`/assets/character-fullbody/${slug}-base-outfit-${i + 1}.png`));
-      const dlcPromises = Array.from({ length: 2 }, (_, i) => imageExists(`/assets/character-fullbody/${slug}-dlc-outfit-${i + 1}.png`));
+      const basePromises = Array.from({ length: 3 }, (_, i) => imageExists(`/assets/character-fullbody/${slug}/${slug}-base-outfit-${i + 1}.png`));
+      const dlcPromises = Array.from({ length: 2 }, (_, i) => imageExists(`/assets/character-fullbody/${slug}/${slug}-dlc-outfit-${i + 1}.png`));
 
       const [baseResults, dlcResults] = await Promise.all([Promise.all(basePromises), Promise.all(dlcPromises)]);
 
@@ -86,7 +86,7 @@ const CharacterSidebar: FC<ICharacterSidebarProps> = ({ character, slug }) => {
   return (
     <div className="container flex-col items-center w-fit md:w-[500px] border border-r-0 border-t-0 border-white justify-start h-fit rounded-bl-xl hidden lg:flex">
       <div className="flex flex-row w-full">
-        <div className="py-4 border-b border-b-white text-center w-full">
+        <div className="py-4 border-b border-b-white text-center bg-black w-full">
           <h2 className="text-3xl">{character.name}</h2>
           <div className="italic text-gray-400 flex flex-row items-center justify-center">
             Character #{character.characterNumber}
@@ -95,7 +95,7 @@ const CharacterSidebar: FC<ICharacterSidebarProps> = ({ character, slug }) => {
         </div>
       </div>
       <div className="flex flex-row w-full">
-        <div className="py-1 text-sm border-b border-b-white text-center w-full justify-around flex flex-row px-4">
+        <div className="py-1 text-sm border-b border-b-white bg-black text-center w-full justify-around flex flex-row px-4">
           {availableOutfits.base.map((outfitNum) => (
             <button
               key={`base-${outfitNum}`}
@@ -119,12 +119,12 @@ const CharacterSidebar: FC<ICharacterSidebarProps> = ({ character, slug }) => {
       <div ref={imageRef} className="relative w-[300px] h-[300px]">
         {inView && (
           <Image
-            src={imageError ? "/assets/character-fullbody/placeholder.png" : `/assets/character-fullbody/${slug}-${currentOutfit}.png`}
+            src={imageError ? "/assets/character-fullbody/placeholder.png" : `/assets/character-fullbody/${slug}/${slug}-${currentOutfit}.png`}
             fill
             priority={false}
-            sizes="300px" // Reduced from 300px
+            sizes="300px"
             alt={character.name}
-            className="max-h-[300px] w-fit pt-2 object-cover object-top-center" // Reduced from 300px
+            className="max-h-[300px] w-fit pt-2 object-cover object-top-center"
             style={{
               objectFit: "cover",
               objectPosition: "25% 0%",
@@ -156,7 +156,7 @@ const CharacterSidebar: FC<ICharacterSidebarProps> = ({ character, slug }) => {
             <strong>{totalStats}</strong>
           </div>
         </div>
-        <div className="flex flex-row">
+        <div className="flex bg-black flex-row">
           <div className="flex flex-col w-auto items-center text-center px-4 border-b border-r border-white py-2">
             <h2 className="text-xl">Ease of Use</h2>
             <div className="my-auto">
@@ -174,7 +174,7 @@ const CharacterSidebar: FC<ICharacterSidebarProps> = ({ character, slug }) => {
             </div>
           </div>
         </div>
-        <div className="flex flex-row flex-wrap items-left w-full border-b border-white p-2 pb-4">
+        <div className="flex bg-black flex-row flex-wrap items-left w-full border-b border-white p-2 pb-4">
           <h2 className="w-full text-left mb-2 ml-2 text-xl">Affiliations</h2>
           <div className="w-auto flex flex-wrap flex-row">
             {character.tags.affiliations.map((affiliation) => (
@@ -184,7 +184,7 @@ const CharacterSidebar: FC<ICharacterSidebarProps> = ({ character, slug }) => {
             ))}
           </div>
         </div>
-        <div className="flex flex-col flex-wrap items-left w-full border-b border-white p-2 pb-4">
+        <div className="flex bg-black flex-col flex-wrap items-left w-full border-b border-white p-2 pb-4">
           <h2 className="w-fit text-center mb-2 ml-2 text-xl">Relationships</h2>
           <div className="w-auto flex flex-wrap flex-row">
             {character.tags.relationships.map((relationship) => (
@@ -194,7 +194,7 @@ const CharacterSidebar: FC<ICharacterSidebarProps> = ({ character, slug }) => {
             ))}
           </div>
         </div>
-        <div className="flex flex-col flex-wrap items-left w-full border-b border-white p-2 pb-4">
+        <div className="flex bg-black flex-col flex-wrap items-left w-full border-b border-white p-2 pb-4">
           <h2 className="w-fit text-center mb-2 ml-2 text-xl">Abilities</h2>
           <div className="w-auto flex flex-wrap flex-row">
             {character.tags.abilities.map((ability) => (
@@ -204,7 +204,7 @@ const CharacterSidebar: FC<ICharacterSidebarProps> = ({ character, slug }) => {
             ))}
           </div>
         </div>
-        <div className="flex flex-col flex-wrap items-left w-full p-2 mb-2">
+        <div className="flex bg-black flex-col flex-wrap items-left w-full p-2 mb-2">
           <h2 className="w-fit text-center mb-2 ml-2 text-xl">Characteristics</h2>
           <div className="w-auto flex flex-wrap flex-row">
             {character.tags.characteristics.map((characteristic) => (

@@ -12,6 +12,9 @@ export default {
         foreground: "var(--foreground)",
       },
     },
+    backgroundImage: {
+      "custom-bg": "url('/assets/site-assets/bleach-rebirth-of-souls-bg.png')",
+    },
   },
   plugins: [],
 } satisfies Config;

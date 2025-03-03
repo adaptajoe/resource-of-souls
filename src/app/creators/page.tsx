@@ -98,10 +98,10 @@ export default function Creators() {
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            className="w-full max-h-[800px] p-2 border-2 border-black hover:border-red-600"
+            className="w-full max-h-[800px] p-2 border-2 border-gray-400 hover:border-red-600"
           />
         ) : selectedCreator.imageSrc ? (
-          <Image src={selectedCreator.imageSrc} alt="" height={350} width={250} title="Image" className="w-full max-h-[800px] p-2 border-2 border-black hover:border-red-600" />
+          <Image src={selectedCreator.imageSrc} alt="" height={350} width={250} title="Image" className="w-full max-h-[800px] p-2 border-2 border-gray-400 hover:border-red-600" />
         ) : null}
       </div>
     </div>

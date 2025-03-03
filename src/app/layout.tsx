@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen`}>
         <div className="bg-black w-full h-[125px] border-b-2 border-gray-400 py-2 px-12 z-50 hidden lg:flex flex-row items-center space-x-2 text-xs lg:text-sm xl:text-xl font-bebasFont text-white">
           {/* At below LG, change to mobile nav. */}
           <Link href="/">
@@ -82,10 +82,10 @@ export default function RootLayout({
           </div>
         </div>
         <div>{children}</div>
-        <footer className="px-12 py-3 border-t-2 border-gray-400 grid grid-cols-1 lg:grid-cols-2 text-gray-500 italic text-xs justify-center lg:justify-between">
+        <footer className="px-12 py-3 bg-black border-t-2 border-gray-400 grid grid-cols-1 lg:grid-cols-2 text-gray-500 italic text-xs justify-center lg:justify-between">
           <div>
             <Link href="/changelog" className="text-xl text-teal-400 hover:underline">
-              Site Version: v1.0.8.
+              Site Version: v1.0.9.
             </Link>
             <div className="flex flex-row mt-4">
               <Link href="https://github.com/adaptajoe/resource-of-souls" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 mr-4 rounded-xl">
@@ -129,10 +129,28 @@ export default function RootLayout({
           <div>
             <p className="my-4 md:mt-0">Content is available under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) unless otherwise noted.</p>
             <p>
-              All original characters, artwork, and story elements are owned by ©[ SHUEISHA ( 株式会社集英社 ) ], ©[ VIZ Media ( VIZ Media, LLC. )], ©[ Bandai Namco (
-              株式会社バンダイナムコエンターテインメント ) ], ©[ Tamsoft Corporation ( 株式会社タムソフト ) ] and ©[ Tite Kubo ( 久保 帯人 ) ]. All other characters, assets, game screenshots,
-              animations, settings, game data, videos, elements, name &quot;BLEACH - Resource of Souls&quot; and edited &quot;BLEACH - Resource of Souls&quot; Logo belong to their respective copyright
-              holders. This work is not intended for commercial use, does not - and will not - run advertising or donation programs, and is considered fair use under copyright law.
+              All original characters, artwork, and story elements are owned by ©SHUEISHA ( 株式会社集英社 ), ©VIZ Media ( VIZ Media, LLC. ), ©Bandai Namco ( 株式会社バンダイナムコエンターテインメント
+              ), ©Tamsoft Corporation ( 株式会社タムソフト ), ©TV Tokyo ( 株式会社テレビ東京 ), ©Dentsu Group Inc. ( 株式会社電通グループ ), ©Pierrot Co., Ltd. ( 株式会社ぴえろ ) and ©Tite Kubo ( 久保
+              帯人 ).
+            </p>
+            <p className="mt-4">
+              All other characters, assets, game screenshots, animations, settings, game data, videos, elements, name &quot;BLEACH - Resource of Souls&quot; and edited &quot;BLEACH - Resource of
+              Souls&quot; Logo, and all content producted for &quot;BLEACH - Resource of Souls&quot; belong to their respective copyright holders as listed above. This work is not intended for
+              commercial use, does not - and will not - run advertising or donation programs, and is considered fair use under copyright law. &quot;BLEACH - Resource of Souls&quot; is NOT affiliated
+              with ANY of the above copyright holders.
+            </p>
+            <p className="mt-4">
+              ©2024 Sony Interactive Entertainment Inc. &quot;PlayStation Family Mark&quot;, &quot;PlayStation&quot;, &quot;PlayStation&quot;, &quot;PlayStation Plus&quot;, &quot;PS5 logo&quot;,
+              &quot;PS5&quot;, &quot;PS4 logo&quot;, &quot;PS4&quot;, &quot;PlayStation Circle&quot;, &quot;PlayStation Square&quot;, &quot;PlayStation Triangle&quot;, &quot;PlayStation Cross&quot;,
+              &quot;DualShock 4&quot; and &quot;DualSense 5&quot; are trademarks and/or registered trademarks of Sony Interactive Entertainment Inc in the United States and/or other countries.
+            </p>
+            <p className="mt-4">
+              ©2024 Microsoft Corporation &quot;Xbox&quot;, &quot;Xbox Series&quot;, &quot;Xbox Series X|S&quot;, &quot;Xbox A&quot;, &quot;Xbox B&quot;, &quot;Xbox Y&quot;, &quot;Xbox X&quot;,
+              &quot;Xbox Controller&quot; and &quot;Xbox Game Pass&quot; are trademarks and/or registered trademarks of Microsoft Corporation in the United States and/or other countries.
+            </p>
+            <p className="mt-4">
+              ©2024 Valve Corporation. &quot;Steam&quot;, &quot;Steam Deck&quot; and &quot;Steam Logo&quot; are trademarks and/or registered trademarks of Valve Corporation in the United States and/or
+              other countries.
             </p>
           </div>
         </footer>

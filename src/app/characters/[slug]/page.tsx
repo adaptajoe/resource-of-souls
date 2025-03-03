@@ -12,6 +12,7 @@ import RadarChartComponentWrapper from "@/components/RadarChartComponentWrapper"
 import CharacterMovesWrapper from "@/components/CharacterMovesWrapper";
 import CharacterAnimationsWrapper from "@/components/CharacterAnimationsWrapper";
 import CharacterSidebarWrapper from "@/components/CharacterSidebarWrapper";
+import CharacterOutfitsWrapper from "@/components/CharacterOutfitsWrapper";
 
 export async function generateStaticParams() {
   return Object.keys(characterData).map((slug) => ({
@@ -72,8 +73,6 @@ function getCharacterAnimations(characterSlug: string): string[] {
 
 export default async function CharacterDetails(props: Props) {
   const params = await props.params;
-  console.log("Available characters:", Object.keys(characterData).length);
-  console.log("Requested slug:", params.slug);
   const character = characterData[params.slug] as ICharacter;
 
   if (!character) {
@@ -135,6 +134,9 @@ export default async function CharacterDetails(props: Props) {
               <span className="text-gray-400">•</span>
               <Link href="#trivia" className="text-teal-400 hover:underline">
                 Trivia
+              </Link>
+              <Link href="#outfits" className="text-teal-400 hover:underline">
+                Outfits
               </Link>
             </div>
             <Image
@@ -235,7 +237,7 @@ export default async function CharacterDetails(props: Props) {
               <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
                 <span className="text-red-600">S</span>tats
               </h3>
-              <div className="border-2 border-gray-400 rounded-xl mt-6">
+              <div className="border-2 bg-black border-gray-400 rounded-xl mt-6">
                 <RadarChartComponentWrapper stats={character.stats[0]} characterName={character.name} character={character} />
                 <div className="w-full flex flex-row text-center items-end text-sm">
                   <div className="w-1/6 bg-red-700 flex flex-col border border-l-0 border-b-0 border-white rounded-bl-xl">
@@ -265,7 +267,7 @@ export default async function CharacterDetails(props: Props) {
               <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
                 <span className="text-red-600">T</span>railers
               </h3>
-              <div className="border-2 border-gray-400 rounded-xl mt-6 p-4">
+              <div className="border-2 bg-black border-gray-400 rounded-xl mt-6 p-4">
                 <YouTubeEmbedWrapper character={character} />
               </div>
             </div>
@@ -275,7 +277,7 @@ export default async function CharacterDetails(props: Props) {
               <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
                 <span className="text-red-600">M</span>ovelist
               </h3>
-              <div className="border-2 border-gray-400 rounded-xl mt-6 pt-4">
+              <div className="border-2 bg-black border-gray-400 rounded-xl mt-6 pt-4">
                 <CharacterMovesWrapper moves={character.moves} characterId={character.id} />
               </div>
             </div>
@@ -285,13 +287,15 @@ export default async function CharacterDetails(props: Props) {
               <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
                 <span className="text-red-600">A</span>nimations
               </h3>
-              {hasAnimations ? (
-                <CharacterAnimationsWrapper animations={animations} slug={params.slug} />
-              ) : (
-                <div className="border border-white rounded-xl w-full p-4">
-                  <p className="text-gray-400">No animations available for this character.</p>
-                </div>
-              )}
+              <div className="bg-black">
+                {hasAnimations ? (
+                  <CharacterAnimationsWrapper animations={animations} slug={params.slug} />
+                ) : (
+                  <div className="border border-white rounded-xl w-full p-4">
+                    <p className="text-gray-400">No animations available for this character.</p>
+                  </div>
+                )}
+              </div>
             </div>
             <hr className="my-6" />
             {/* Trivia */}
@@ -299,13 +303,23 @@ export default async function CharacterDetails(props: Props) {
               <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
                 <span className="text-red-600">T</span>rivia
               </h3>
-              <ul className="mt-6 list-disc border-2 border-gray-400 rounded-xl p-4">
+              <ul className="mt-6 bg-black list-disc border-2 border-gray-400 rounded-xl p-4 space-y-4w">
                 {character.trivia.map((triviaItem, index) => (
-                  <li key={index} className="ml-6 mb-2">
+                  <li key={index} className="ml-6">
                     {triviaItem}
                   </li>
                 ))}
               </ul>
+            </div>
+            <hr className="my-6" />
+            {/* Outfits */}
+            <div id="outfits">
+              <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
+                <span className="text-red-600">O</span>utfits
+              </h3>
+              <div className="mt-4 bg-black">
+                <CharacterOutfitsWrapper character={character} slug={params.slug} />
+              </div>
             </div>
           </div>
         </div>

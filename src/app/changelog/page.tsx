@@ -33,6 +33,28 @@ export default function Changelog() {
   const resourceOfSoulsChangelog = useMemo(
     () => [
       {
+        version: "v1.0.9.",
+        date: "03/03/2025",
+        changes: [
+          "Added `Character #32 - Kaien Shiba`, along with his moves, animations and temporary assets.",
+          "Added the Outfits tab to all Character Details pages for Mobile users.",
+          "Added the Challenges and User Interface Breakdown pages to the Game page.",
+          "Added official names for Ichigo Kurosaki's Signature, SP1, SP2, Awakened SP1 and SP2, along with new Animation videos.",
+          "Added Rukia Kuchiki's Awakened Moveset for Signature, SP1 and SP2, along with new Animation videos.",
+          "Added Uryu Ishida's Signature Move, along with a new Animation video.",
+          "Added new Animations to Yoruichi Shihōin.",
+          "Added new Animations to Gin Ichimaru.",
+          "Added new Animations to Tōshiro Hitsugaya.",
+          "Added new Animations to Ulquiorra Schifar",
+          "Added new Animations to Soi-Fon.",
+          "Added new Animations to Shuhei Hisagi.",
+          "Added new Animations to Grimmjow Jaegerjaques.",
+          "Added new Animations to Aizen Sosuke.",
+          "Added new Animations to Genryūsai Shigekuni Yamamoto.",
+          "Added SP costs to every SP1 and SP2 move so far.",
+        ],
+      },
+      {
         version: "v1.0.8.",
         date: "28/02/2025",
         changes: [

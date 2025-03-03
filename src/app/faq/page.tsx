@@ -8,6 +8,7 @@ export default function FAQ() {
   const [assetRightsIsOpen, setAssetRightsIsOpen] = useState(false);
   const [donationsIsOpen, setDonationsIsOpen] = useState(false);
   const [bugReportingIsOpen, setBugReportingIsOpen] = useState(false);
+  const [specsIsOpen, setSpecsIsOpen] = useState(false);
 
   return (
     <div className="p-4 lg:p-16 space-y-4 text-white">
@@ -67,7 +68,10 @@ export default function FAQ() {
       </button>
       {!assetRightsIsOpen ? null : (
         <div>
-          <p>Yes. The only thing I request you don&apos;t do is clone the whole site and reupload it somewhere. All MP4s, data, images and so forth are free to use.</p>
+          <p>
+            Yes. <span className="text-red-600">The only thing I request you don&apos;t do is clone the whole site and reupload it somewhere</span>. All MP4s, data, images and so forth are free to
+            use.
+          </p>
         </div>
       )}
       <hr />
@@ -78,8 +82,9 @@ export default function FAQ() {
       {!donationsIsOpen ? null : (
         <div>
           <p>
-            No. You cannot donate to me. As much as I appreciate the sentiment, BLEACH - Resource of Souls is - and always was - intended to be a pure passion project from a lifelong BLEACH fan. I do
-            this to give back to a community that I call home, and to a franchise that saved my life.
+            <span className="text-red-600">No.</span> You <span className="text-red-600">cannot</span> donate to me. As much as I appreciate the sentiment, BLEACH - Resource of Souls is - and always
+            was - intended to be a pure passion project from a lifelong BLEACH fan. I do this to give back to a community that I call home, and to a franchise that saved my life.{" "}
+            <span className="text-amber-400">I will not take a single penny from - or for - BLEACH - Resource of Souls</span>.
           </p>
         </div>
       )}
@@ -91,6 +96,226 @@ export default function FAQ() {
       {!bugReportingIsOpen ? null : (
         <div>
           <p>If you&apos;ve found something wrong, that&apos;s great! You can report it by getting in touch via Discord, or on GitHub by raising a new Issue.</p>
+        </div>
+      )}
+      <hr />
+      <button className="font-bold text-teal-400 flex items-center gap-2 hover:underline" onClick={() => setSpecsIsOpen((prevState) => !prevState)}>
+        <span>What are the recommended specs &amp; game specs for BLEACH - Rebirth of Souls?</span>
+        {specsIsOpen ? <span>&uarr;</span> : <span>&darr;</span>}
+      </button>
+      {!specsIsOpen ? null : (
+        <div>
+          <div>BLEACH - Resource of Souls is available on PlayStation, Xbox and Steam, and has the following System Requirements:</div>
+          <div className="mt-4 bg-black">
+            <h3 className="text-xl">PC Game Specs</h3>
+            <table className="border-2 border-gray-400 text-sm">
+              <thead className="border border-gray-400">
+                <tr>
+                  <th scope="col" className="border-r border-gray-400 p-1">
+                    &nbsp;
+                  </th>
+                  <th scope="col" className="border-r bg-white text-black border-gray-400 p-1">
+                    Minimum Settings (30FPS)
+                  </th>
+                  <th scope="col" className="border-r bg-white text-black border-gray-400 p-1">
+                    Minimum Settings (60FPS)
+                  </th>
+                  <th scope="col" className="border-r bg-white text-black border-gray-400 p-1">
+                    Recommended Settings (60FPS)
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border border-gray-400">
+                  <th scope="row" className="border-r bg-white text-black border-gray-400 p-1">
+                    Mode
+                  </th>
+                  <th className="border-r border-gray-400 p-1">Performance Mode</th>
+                  <th className="border-r border-gray-400 p-1">Performance Mode</th>
+                  <th className="border-r border-gray-400 p-1">Balanced Mode</th>
+                </tr>
+                <tr className="border border-gray-400">
+                  <th scope="row" className="border-r bg-white text-black border-gray-400 p-1">
+                    CPU
+                  </th>
+                  <th className="border-r border-gray-400 p-1">AMD Ryzen 3 3100, 3.40 GHz / Intel Core i3-8100, 3.60 GHz</th>
+                  <th className="border-r border-gray-400 p-1">AMD Ryzen 5 3600 / Intel Core i7-9700k</th>
+                  <th className="border-r border-gray-400 p-1">AMD Ryzen 7 5800K / Intel Core i7-12700KF</th>
+                </tr>
+                <tr className="border border-gray-400">
+                  <th scope="row" className="border-r bg-white text-black border-gray-400 p-1">
+                    RAM
+                  </th>
+                  <th className="border-r border-gray-400 p-1">8GB</th>
+                  <th className="border-r border-gray-400 p-1">16GB</th>
+                  <th className="border-r border-gray-400 p-1">16GB</th>
+                </tr>
+                <tr className="border border-gray-400">
+                  <th scope="row" className="border-r bg-white text-black border-gray-400 p-1">
+                    GPU
+                  </th>
+                  <th className="border-r border-gray-400 p-1">AMD Radeon RX 590 / Intel Arc A580 / Nvidia GeForce GTX 980</th>
+                  <th className="border-r border-gray-400 p-1">AMD Radeon VII / Nvidia GeForce RTX 2070</th>
+                  <th className="border-r border-gray-400 p-1">AMD Radeon RX 6700 XT / Nvidia GeForce RTX 2080 Ti</th>
+                </tr>
+                <tr className="border border-gray-400">
+                  <th scope="row" className="border-r bg-white text-black border-gray-400 p-1">
+                    Storage
+                  </th>
+                  <th className="border-r border-gray-400 p-1">HDD 75GB or more</th>
+                  <th className="border-r border-gray-400 p-1">HDD 75GB or more</th>
+                  <th className="border-r border-gray-400 p-1">SSD 75GB or more</th>
+                </tr>
+                <tr className="border border-gray-400">
+                  <th scope="row" className="border-r bg-white text-black border-gray-400 p-1">
+                    DirectX
+                  </th>
+                  <th className="border-r border-gray-400 p-1">Version 12</th>
+                  <th className="border-r border-gray-400 p-1">Version 12</th>
+                  <th className="border-r border-gray-400 p-1">Version 12</th>
+                </tr>
+                <tr className="border border-gray-400">
+                  <th scope="row" className="border-r bg-white text-black border-gray-400 p-1">
+                    OS
+                  </th>
+                  <th className="border-r border-gray-400 p-1">Windows 10 / 11</th>
+                  <th className="border-r border-gray-400 p-1">Windows 10 / 11</th>
+                  <th className="border-r border-gray-400 p-1">Windows 10 / 11</th>
+                </tr>
+                <tr className="border border-gray-400">
+                  <th scope="row" className="border-r bg-white text-black border-gray-400 p-1">
+                    Notes
+                  </th>
+                  <th className="border-r border-gray-400 p-1">-</th>
+                  <th className="border-r border-gray-400 p-1">-</th>
+                  <th className="border-r border-gray-400 p-1">
+                    If you plan to play in &quot;Quality Mode&quot; at 60 fps, an AMD Ryzen 7 7700X / Intel Core i7-12700KF CPU and an AMD Radeon RX 7800 XT / Nvidia GeForce RTX 3070 Ti GPU is
+                    recommended
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-4 bg-black">
+            <h3 className="text-xl">Game Specs</h3>
+            <table className="border-2 border-gray-400 text-sm">
+              <thead className="border border-gray-400">
+                <tr>
+                  <th scope="col" className="bg-black text-black border-r border-gray-400 p-1">
+                    &nbsp;
+                  </th>
+                  <th scope="col" className="border-r bg-blue-500 text-white border-gray-400 p-1">
+                    PlayStation 5
+                  </th>
+                  <th scope="col" className="border-r bg-blue-500 text-white border-gray-400 p-1">
+                    PlayStation 4
+                  </th>
+                  <th scope="col" className="border-r bg-lime-500 text-black border-gray-400 p-1">
+                    Xbox Series X|S
+                  </th>
+                  <th scope="col" className="border-r bg-gray-700 text-white border-gray-400 p-1">
+                    Steam
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border border-gray-400">
+                  <th scope="row" className="border-r bg-white text-black border-gray-400 p-1">
+                    Screen Resolution
+                  </th>
+                  <th className="border-r border-gray-400 p-1">1920x1080</th>
+                  <th className="border-r border-gray-400 p-1">1920x1080</th>
+                  <th className="border-r border-gray-400 p-1">1920x1080</th>
+                  <th className="border-r border-gray-400 p-1">1920x1080 up to 3840x2160</th>
+                </tr>
+                <tr className="border border-gray-400">
+                  <th scope="row" className="border-r bg-white text-black border-gray-400 p-1">
+                    Frame Rate
+                  </th>
+                  <th className="border-r border-gray-400 p-1">60fps Dynamic</th>
+                  <th className="border-r border-gray-400 p-1">30fps Dynamic</th>
+                  <th className="border-r border-gray-400 p-1">60fps Dynamic</th>
+                  <th className="border-r border-gray-400 p-1">60fps Dynamic under Recommended Hardware</th>
+                </tr>
+                <tr className="border border-gray-400">
+                  <th scope="row" className="border-r bg-white text-black border-gray-400 p-1">
+                    RAM
+                  </th>
+                  <th className="border-r border-gray-400 p-1">8GB</th>
+                  <th className="border-r border-gray-400 p-1">16GB</th>
+                  <th className="border-r border-gray-400 p-1">16GB</th>
+                </tr>
+                <tr className="border border-gray-400">
+                  <th scope="row" className="border-r bg-white text-black border-gray-400 p-1">
+                    Online Features &amp; Number of Online Players
+                  </th>
+                  <th className="border-r border-gray-400 p-1">Online Battles, up to 2 Players</th>
+                  <th className="border-r border-gray-400 p-1">Online Battles, up to 2 Players</th>
+                  <th className="border-r border-gray-400 p-1">Online Battles, up to 2 Players</th>
+                  <th className="border-r border-gray-400 p-1">Online Battles, up to 2 Players</th>
+                </tr>
+                <tr className="border border-gray-400">
+                  <th scope="row" className="border-r bg-white text-black border-gray-400 p-1">
+                    Offline Features &amp; Players
+                  </th>
+                  <th className="border-r border-gray-400 p-1">Main Story, Single Player, Offline Battles, up to 2 players</th>
+                  <th className="border-r border-gray-400 p-1">Main Story, Single Player, Offline Battles, up to 2 players</th>
+                  <th className="border-r border-gray-400 p-1">Main Story, Single Player, Offline Battles, up to 2 players</th>
+                  <th className="border-r border-gray-400 p-1">Main Story, Single Player, Offline Battles, up to 2 players</th>
+                </tr>
+                <tr className="border border-gray-400">
+                  <th className="border-r bg-white text-black border-gray-400 p-1">Paid Service Requirements</th>
+                  <th className="border-r border-gray-400 p-1">To play Online, you must sign up for PlayStation Plus (Paid). For details, visit the official Sony PlayStation Plus website</th>
+                  <th className="border-r border-gray-400 p-1">To play Online, you must sign up for PlayStation Plus (Paid). For details, visit the official Sony PlayStation Plus website</th>
+                  <th className="border-r border-gray-400 p-1">To play Online, you must sign up for Xbox Game Pass Core (Paid) For details, visit the official Microsoft Xbox website</th>
+                  <th>-</th>
+                </tr>
+                <tr className="border border-gray-400">
+                  <th scope="row" className="border-r bg-white text-black border-gray-400 p-1">
+                    Recommended Storage Capacity & Number of Available Save Slots
+                  </th>
+                  <th scope="row" className="border-r border-gray-400 p-1">
+                    Required storage (35GB) - 1 Save Slot
+                  </th>
+                  <th scope="row" className="border-r border-gray-400 p-1">
+                    Required storage (50GB) - 1 Save Slot
+                  </th>
+                  <th scope="row" className="border-r border-gray-400 p-1">
+                    Required storage (46GB) - 1 Save Slot
+                  </th>
+                  <th scope="row" className="border-r border-gray-400 p-1">
+                    Required storage (75GB) - 1 Save Slot
+                  </th>
+                </tr>
+                <tr className="border border-gray-400">
+                  <th scope="row" className="border-r bg-white text-black border-gray-400 p-1">
+                    Save Data Transfer
+                  </th>
+                  <th scope="row" className="border-r border-gray-400 p-1">
+                    Compatible with PlayStation 4 to PlayStation 5 only
+                  </th>
+                  <th scope="row" className="border-r border-gray-400 p-1">
+                    Compatible with PlayStation 4 to PlayStation 5 only
+                  </th>
+                  <th scope="row" className="border-r border-gray-400 p-1">
+                    -
+                  </th>
+                  <th scope="row" className="border-r border-gray-400 p-1">
+                    -
+                  </th>
+                </tr>
+                <tr className="border border-gray-400">
+                  <th scope="row" className="border-r bg-white text-black border-gray-400 p-1">
+                    Cross-platform Compatibility (Crossplay)
+                  </th>
+                  <th className="border-r border-gray-400 p-1">Online battles between PlayStation 5 and Playstation 4 only</th>
+                  <th className="border-r border-gray-400 p-1">Online battles between PlayStation 5 and Playstation 4 only</th>
+                  <th className="border-r border-gray-400 p-1">Not supported</th>
+                  <th className="border-r border-gray-400 p-1">Not supported</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
       <hr />

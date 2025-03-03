@@ -321,7 +321,7 @@ export default function CommunityLeaderboard() {
   };
 
   const BadgeTable = ({ badges }: { badges: IBadge[] }) => (
-    <div>
+    <div className="bg-black">
       <table className="w-full">
         <thead>
           <tr className="bg-black text-teal-400">

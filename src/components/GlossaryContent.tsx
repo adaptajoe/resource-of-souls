@@ -186,7 +186,7 @@ export default function GlossaryContent() {
     const isHighlighted = formattedId === highlightedId;
 
     return (
-      <div id={formattedId} className={`rounded-xl border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-red-600 ring-2 ring-red-600 bg-red-900/10" : "border-gray-400"}`}>
+      <div id={formattedId} className={`rounded-xl bg-black border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-red-600 ring-2 ring-red-600 bg-red-900/10" : "border-gray-400"}`}>
         <div className="relative w-full border-b-2 border-gray-800">
           <Image width="300" height="150" alt="" id={id} src={`/assets/term-assets/${id}.png`} className="rounded-t-xl w-full h-[150px] object-cover" />
         </div>
@@ -222,7 +222,7 @@ export default function GlossaryContent() {
     return (
       <div
         id={formattedId}
-        className={`rounded-b-xl border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-teal-400 ring-2 ring-teal-400 bg-teal-900/10" : "border-gray-400"}`}
+        className={`rounded-b-xl bg-black border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-teal-400 ring-2 ring-teal-400 bg-teal-900/10" : "border-gray-400"}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

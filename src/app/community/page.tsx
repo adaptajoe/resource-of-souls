@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Community() {
   return (
     <div className="text-white">
-      <div className="flex flex-col items-center w-full py-2 text-base justify-center px-4 md:text-xl border-b-2 border-b-gray-400 font-bebasFont">
+      <div className="flex flex-col items-center w-full py-2 text-base bg-black justify-center px-4 md:text-xl border-b-2 border-b-gray-400 font-bebasFont">
         <p className="border-l-8 border-l-red-600 border-r-8 border-r-teal-400 text-center px-4 mb-2">
           NEW TOURNAMENT ANNOUNCEMENT - The &quot;Warfare of Souls (WOS)&quot; & &quot;Chains of Fate (COF)&quot; Tournaments will begin on 29/03/2025 on{" "}
           <span className="text-red-600">PS4 / PS5 (COF + WOS)</span> and <span className="text-red-600">PC (WOS)</span>..!

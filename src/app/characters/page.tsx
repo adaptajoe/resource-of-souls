@@ -142,13 +142,15 @@ export default function Characters() {
           simple and effective.
         </p>
         <hr className="my-6" />
-        <input
-          type="text"
-          placeholder="Search by Name or Archetype..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full p-2 border border-gray-400 rounded bg-transparent text-white"
-        />
+        <div className="bg-black">
+          <input
+            type="text"
+            placeholder="Search by Name or Archetype..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full p-2 border border-gray-400 rounded bg-transparent text-white"
+          />
+        </div>
         <div>
           <div className="w-fit lg:w-full font-bebasFont text-xl flex flex-col items-center lg:flex-row mt-4 space-y-4 lg:space-y-0 lg:space-x-4">
             <div className="flex flex-row space-x-4 pr-4 border-0 lg:border-r-2 border-gray-400">
@@ -251,7 +253,7 @@ export default function Characters() {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
               {filteredAndSortedCharacters.map(([slug, character]) => (
-                <div key={slug} className="border hover:border-red-600 transition-colors rounded-lg">
+                <div key={slug} className="border hover:border-red-600 transition-colors rounded-lg bg-black">
                   <Link href={`/characters/${slug}`} className="block">
                     <Image
                       src={imageSources[slug] || `/assets/character-banner/${slug}-banner.png`}
