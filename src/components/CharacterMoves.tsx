@@ -3,6 +3,7 @@ import { useState, useCallback, useMemo, JSX } from "react";
 import { IMoves, IMove } from "@/types/characterDataTypes";
 import React from "react";
 import { MoveAnimationTooltip } from "./MoveAnimationTooltip";
+import { ArrowDown, ArrowDownLeft, ArrowDownRight, ArrowLeft, ArrowRight, ArrowUp, ArrowUpLeft, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 
 interface ICharacterMovesProps {
   moves: IMoves[];
@@ -163,28 +164,52 @@ const CharacterMoves = ({ moves, characterId }: ICharacterMovesProps) => {
                   Counter
                 </div>
                 <div>
-                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&#8599;</span> Up-Right
+                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">
+                    <ArrowUpRight size={30} />
+                  </span>{" "}
+                  Up-Right
                 </div>
                 <div>
-                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&#8598;</span> Up-Left
+                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">
+                    <ArrowUpLeft size={30} />
+                  </span>{" "}
+                  Up-Left
                 </div>
                 <div>
-                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&#8600;</span> Down-Right
+                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">
+                    <ArrowDownRight size={30} />
+                  </span>{" "}
+                  Down-Right
                 </div>
                 <div>
-                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&#8601;</span> Down-Left
+                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">
+                    <ArrowDownLeft size={30} />
+                  </span>{" "}
+                  Down-Left
                 </div>
                 <div>
-                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&uarr;</span> Up
+                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">
+                    <ArrowUp size={30} />
+                  </span>{" "}
+                  Up
                 </div>
                 <div>
-                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&darr;</span> Down
+                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">
+                    <ArrowDown size={30} />
+                  </span>{" "}
+                  Down
                 </div>
                 <div>
-                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&rarr;</span> Right
+                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">
+                    <ArrowRight size={30} />
+                  </span>{" "}
+                  Right
                 </div>
                 <div>
-                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">&larr;</span> Left
+                  <span className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center mr-1 text-black text-center text-xs font-black justify-center">
+                    <ArrowLeft size={30} />
+                  </span>{" "}
+                  Left
                 </div>
               </div>
             </div>

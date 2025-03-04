@@ -10,7 +10,7 @@ const CharacterOutfits = dynamic<ICharacterOutfitsProps>(() => import("./Charact
 });
 
 const SidebarSkeleton: FC = () => (
-  <div className="container flex-col items-center w-full border border-r-0 border-t-0 border-white justify-start h-fit rounded-bl-xl hidden lg:flex animate-pulse">
+  <div className="container flex-col items-center w-full border border-r-0 border-t-0 border-white justify-start h-fit rounded-bl-xl flex animate-pulse">
     {/* Outfit Selection Skeleton */}
     <div className="flex flex-row w-full">
       <div className="py-1 text-sm border-b border-b-white text-center w-full justify-around flex flex-row px-4">
@@ -41,7 +41,7 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boole
   render() {
     if (this.state.hasError) {
       return (
-        <div className="container flex-col items-center w-fit md:w-[500px] border border-r-0 border-t-0 border-white justify-start h-fit rounded-bl-xl hidden lg:flex">
+        <div className="container flex-col items-center w-fit md:w-[500px] border border-r-0 border-t-0 border-white justify-start h-fit rounded-bl-xl flex">
           <div className="p-4 text-center">
             <h2 className="text-xl text-red-500 mb-2">Failed to load character information</h2>
             <button onClick={() => window.location.reload()} className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors">

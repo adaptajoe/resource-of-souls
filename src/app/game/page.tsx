@@ -1,3 +1,4 @@
+import { BookOpenText, Broadcast, Certificate, Coins, CompassRose, GameController, GraduationCap, LineSegments, MapPinArea, Medal } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 
 export default function Game() {
@@ -21,34 +22,44 @@ export default function Game() {
         Rebirth of Souls here.
       </p>
       <div className="grid grid-cols-1 lg:grid-cols-4 text-center font-bebasFont md:text-3xl text-2xl">
-        <Link href="/game/story-mode" className="p-8  hover:bg-red-600 hover:text-black transition-colors bg-black border-2 border-red-600 rounded-xl m-2">
+        <Link href="/game/story-mode" className="p-8 flex flex-col items-center hover:bg-red-600 hover:text-black transition-colors bg-black border-2 border-red-600 rounded-xl m-2">
+          <BookOpenText size={60} className="mb-4" />
           Story Mode
         </Link>
-        <Link href="/game/side-stories-mode" className="p-8 bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+        <Link href="/game/side-stories-mode" className="p-8 flex flex-col items-center bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+          <LineSegments size={60} className="mb-4" />
           Side Stories Mode
         </Link>
-        <Link href="/game/secret-stories-mode" className="p-8 bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+        <Link href="/game/secret-stories-mode" className="p-8 flex flex-col items-center bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+          <CompassRose size={60} className="mb-4" />
           Secret Stories Mode
         </Link>
-        <Link href="/game/mission-mode" className="p-8 bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+        <Link href="/game/mission-mode" className="p-8 flex flex-col items-center bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+          <Medal size={60} className="mb-4" />
           Mission Mode
         </Link>
-        <Link href="/game/online-modes" className="p-8 bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+        <Link href="/game/online-modes" className="p-8 flex flex-col items-center bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+          <Broadcast size={60} className="mb-4" />
           Online Modes
         </Link>
-        <Link href="/game/stages" className="p-8 bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+        <Link href="/game/stages" className="p-8 flex flex-col items-center bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+          <MapPinArea size={60} className="mb-4" />
           Stages
         </Link>
-        <Link href="/game/urahara-shop" className="p-8 bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+        <Link href="/game/urahara-shop" className="p-8 flex flex-col items-center bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+          <Coins size={60} className="mb-4" />
           Urahara Shop
         </Link>
-        <Link href="/game/tutorial" className="p-8 bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+        <Link href="/game/tutorial" className="p-8 flex flex-col items-center bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+          <GraduationCap size={60} className="mb-4" />
           Tutorial
         </Link>
-        <Link href="/game/challenges" className="p-8 bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+        <Link href="/game/challenges" className="p-8 flex flex-col items-center bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+          <Certificate size={60} className="mb-4" />
           Challenges
         </Link>
-        <Link href="/game/user-interface-breakdown" className="p-8 bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+        <Link href="/game/user-interface-breakdown" className="p-8 flex flex-col items-center bg-black hover:bg-red-600 hover:text-black transition-colors border-2 border-red-600 rounded-xl m-2">
+          <GameController size={60} className="mb-4" />
           User Interface Breakdown
         </Link>
       </div>

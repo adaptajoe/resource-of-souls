@@ -15,6 +15,7 @@ export interface ICharacter {
   characterEngTrailer: string;
   characterNumber: number;
   isEcho?: boolean;
+  tldr?: string;
   characterOutfits: string[];
   abilities: IAbility[];
   moves: IMoves[];

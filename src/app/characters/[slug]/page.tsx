@@ -120,6 +120,10 @@ export default async function CharacterDetails(props: Props) {
                 Stats
               </Link>
               <span className="text-gray-400">•</span>
+              <Link href="#tldr" className="text-teal-400 hover:underline">
+                TLDR Guide
+              </Link>
+              <span className="text-gray-400">•</span>
               <Link href="#trailers" className="text-teal-400 hover:underline">
                 Trailers
               </Link>
@@ -135,6 +139,7 @@ export default async function CharacterDetails(props: Props) {
               <Link href="#trivia" className="text-teal-400 hover:underline">
                 Trivia
               </Link>
+              <span className="text-gray-400">•</span>
               <Link href="#outfits" className="text-teal-400 hover:underline">
                 Outfits
               </Link>
@@ -232,33 +237,48 @@ export default async function CharacterDetails(props: Props) {
               <div>{parseGameTerms(character.description)}</div>
             </div>
             <hr className="my-6" />
-            {/* Stats */}
-            <div id="stats">
-              <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
-                <span className="text-red-600">S</span>tats
-              </h3>
-              <div className="border-2 bg-black border-gray-400 rounded-xl mt-6">
-                <RadarChartComponentWrapper stats={character.stats[0]} characterName={character.name} character={character} />
-                <div className="w-full flex flex-row text-center items-end text-sm">
-                  <div className="w-1/6 bg-red-700 flex flex-col border border-l-0 border-b-0 border-white rounded-bl-xl">
-                    <strong>P{character.stats[0].power}</strong>
-                  </div>
-                  <div className="w-1/6 bg-yellow-700 flex flex-col border-r border-t border-white">
-                    <strong>S{character.stats[0].speed}</strong>
-                  </div>
-                  <div className="w-1/6 bg-purple-700 flex flex-col border-r border-t border-white">
-                    <strong>R{character.stats[0].range}</strong>
-                  </div>
-                  <div className="w-1/6 bg-green-700 flex flex-col border-r border-t border-white">
-                    <strong>D{character.stats[0].defense}</strong>
-                  </div>
-                  <div className="w-1/6 bg-blue-700 flex flex-col border-r border-t border-white">
-                    <strong>T{character.stats[0].technique}</strong>
-                  </div>
-                  <div className="w-1/6 bg-black border-r-0 border-t border-white flex flex-col rounded-br-xl">
-                    <strong>{totalStats}</strong>
+            <div className="grid grid-cols-1 md:grid-cols-2 space-x-4">
+              {/* Stats */}
+              <div id="stats">
+                <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
+                  <span className="text-red-600">S</span>tats
+                </h3>
+                <div className="border-2 bg-black border-gray-400 rounded-xl mt-6">
+                  <RadarChartComponentWrapper stats={character.stats[0]} characterName={character.name} character={character} />
+                  <div className="w-full font-bebasFont flex flex-row text-center items-end text-sm tracking-widest">
+                    <div className="w-1/6 py-2 bg-red-700 flex flex-col border border-l-0 border-b-0 border-white rounded-bl-xl">
+                      <strong>Power</strong>
+                      <strong>{character.stats[0].power}</strong>
+                    </div>
+                    <div className="w-1/6 py-2 bg-yellow-700 flex flex-col border-r border-t border-white">
+                      <strong>Speed</strong>
+                      <strong>{character.stats[0].speed}</strong>
+                    </div>
+                    <div className="w-1/6 py-2 bg-purple-700 flex flex-col border-r border-t border-white">
+                      <strong>Range</strong>
+                      <strong>{character.stats[0].range}</strong>
+                    </div>
+                    <div className="w-1/6 py-2 bg-green-700 flex flex-col border-r border-t border-white">
+                      <strong>Defense</strong>
+                      <strong>{character.stats[0].defense}</strong>
+                    </div>
+                    <div className="w-1/6 py-2 bg-blue-700 flex flex-col border-r border-t border-white overflow-ellipsis">
+                      <strong>Technique</strong>
+                      <strong>{character.stats[0].technique}</strong>
+                    </div>
+                    <div className="w-1/6 py-2 bg-black border-r-0 border-t border-white flex flex-col rounded-br-xl">
+                      <strong>Total</strong>
+                      <strong>{totalStats}</strong>
+                    </div>
                   </div>
                 </div>
+              </div>
+              {/* TLDR Guide */}
+              <div id="tldr" className="mt-6 md:mt-0">
+                <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
+                  <span className="text-red-600">T</span>LDR Guide
+                </h3>
+                <div className="p-4 border-2 bg-black border-gray-400 rounded-xl mt-6">{character.tldr}</div>
               </div>
             </div>
             <hr className="my-6" />

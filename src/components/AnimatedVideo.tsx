@@ -141,7 +141,7 @@ export default function AnimatedVideo({ src, alt, filename }: IAnimatedVideoProp
       {isFullscreen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75" onClick={handleFullscreenClick}>
           <div className="relative max-w-full max-h-full p-4">
-            <video src={src} className="max-w-[1200px] max-h-full" controls muted autoPlay />
+            <video src={src} className="max-w-[1200px] w-full max-h-full" controls loop muted autoPlay />
             <button className="absolute top-2 -right-8 text-white text-2xl" onClick={handleFullscreenToggle} aria-label="Close fullscreen">
               <X size={40} className="hover:bg-gray-800 rounded-xl p-1 transition-colors" />
             </button>

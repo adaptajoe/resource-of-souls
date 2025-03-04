@@ -54,7 +54,7 @@ const CharacterOutfits: FC<ICharacterOutfitsProps> = ({ character, slug }) => {
   }, []);
 
   return (
-    <div className="container flex-col items-center w-full border border-gray-400 justify-start h-fit rounded-xl hidden lg:flex">
+    <div className="container flex-col items-center w-full border border-gray-400 justify-start h-fit rounded-xl flex">
       <div className="flex flex-row w-full">
         <div className="text-xl font-bebasFont border-b border-b-gray-400 text-center w-full justify-around flex flex-row p-4">
           {availableOutfits.base.map((outfitNum) => (
