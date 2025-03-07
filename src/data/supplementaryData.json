@@ -5,28 +5,28 @@
       "name": "Reishi",
       "engName": "Spirit Particles",
       "shortDescription": "Health",
-      "description": "Health. HP. Life."
+      "description": "Health. HP. Life. In the animation above, the middle bar is the Reishi Gauge."
     },
     "reishi-gauge": {
       "id": "reishi-gauge",
       "name": "Reishi Gauge",
       "engName": "Spirit Particle Gauge",
       "shortDescription": "Health Gauge",
-      "description": "Characters start with their Reishi Gauge filled to 100%, and once they hit a certain threshold (Identified with a larger bar segment), they enter the 'Now or Never State'. When your Reishi Gauge reaches 0%, you lose Konpaku via 'Soul Break'. You start with your Reishi Gauge at 100%."
+      "description": "Characters start with their Reishi Gauge filled to 100%, and once they hit a certain threshold (Identified with a larger bar segment), they enter the 'Now or Never State'. When your Reishi Gauge reaches 0%, you lose Konpaku via 'Soul Break'. You start with your Reishi Gauge at 100%. In the animation above, the middle bar is the Reishi Gauge."
     },
     "now-or-never-state": {
       "id": "now-or-never-state",
       "name": "Now or Never State",
       "engName": "",
       "shortDescription": "< 30% Reishi (HP) state",
-      "description": "A state that is entered once your Reishi Gauge reaches a certain threshold (Identified with a larger bar segment). This state makes you stunned for a short moment, leaving you open to Kikon Moves. The 'Now or Never State' is indicated by the Reishi Gauge turning red."
+      "description": "A state that is entered once your Reishi Gauge reaches a certain threshold (Identified with a larger bar segment). This state makes you stunned for a short moment, leaving you open to Kikon Moves. The 'Now or Never State' is indicated by the Reishi Gauge turning red, along with the Kanji next to the Konpaku turning orange."
     },
     "konpaku": {
       "id": "konpaku",
       "name": "Konpaku",
       "engName": "Soul",
       "shortDescription": "Stocks",
-      "description": "Stocks. Lives. Rounds. Characters start with 9 Konpaku, and once either their Reishi Gauge reaches 0% (Soul Break), or they are hit with a Kikon Move in the 'Now or Never State', they lose Konpaku. The amount of Konpaku lost is highlighted in orange, capped with yellow. Once a character reaches 0 Konpaku, they are 'Beat Up', and lose the Match."
+      "description": "Stocks. Lives. Rounds. Characters start with 9 Konpaku, and once either their Reishi Gauge reaches 0% (Soul Break), or they are hit with a Kikon Move in the 'Now or Never State', they lose Konpaku. The amount of Konpaku lost is highlighted in orange, capped with yellow. Once a character reaches 0 Konpaku, they are 'Beat Up', and lose the Match. In the animation above, the top shapes are the Konpaku."
     },
     "beat-up": {
       "id": "beat-up",
@@ -47,7 +47,7 @@
       "name": "Timer",
       "engName": "",
       "shortDescription": "Beep-beep",
-      "description": "The time limit for a single Match."
+      "description": "The time limit for a single Match. The Timer is held in the middle of both players' interfaces."
     },
     "time-out": {
       "id": "time-out",
@@ -68,7 +68,7 @@
       "name": "Kikon Move",
       "engName": "Destroy Move",
       "shortDescription": "Ultimate",
-      "description": "A slow ultimate attack that can be performed at any time, but has the most potential when an enemy is in the 'Now or Never State', as enemies are stunned when they enter this state. Kikon Moves garuntee a 'Beat Up'."
+      "description": "A slow ultimate attack that can be performed at any time, but has the most potential when an enemy is in the 'Now or Never State', as enemies are stunned when they enter this state."
     },
     "kikon-channel": {
       "id": "kikon-channel",
@@ -103,21 +103,21 @@
       "name": "Guard Gauge",
       "engName": "",
       "shortDescription": "Shows remaining Guard",
-      "description": "A resource that is global to every character that is spent on performing a Guard located underneath the Reishi Gauge after performing a Guard. Similar to Super Smash Bros.' Bubble Shield. Guard Gauge is restored passively over time, and can be further restored by successfully performing a Burst Reverse. It is reduced by being hit whilst performing a Guard. You start with a full Guard Gauge."
+      "description": "A resource that is global to every character that is spent on performing a Guard located underneath the Reishi Gauge after performing a Guard. Similar to Super Smash Bros.' Bubble Shield. Guard Gauge is restored passively over time, and can be further restored by successfully performing a Burst Reverse. It is reduced by being hit whilst performing a Guard. You start with a full Guard Gauge. In the animation above, the Guard Gauge is the bottom bar."
     },
     "reverse": {
       "id": "reverse",
       "name": "Reverse",
       "engName": "",
       "shortDescription": "Augment mechanic; Soul R. boosts speed + HP Restore, Chain R. extends combos, Burst R. pushes away + Guard Restore",
-      "description": "A unique move (Referred to in this page as a 'Reverse Move') that every character can perform. A Reverse can be performed at any time to gain advantages, but changes forms depending on what the player is doing at the time of the Reverse. There are three types of Reverse; 'Soul Reverse', 'Chain Reverse' and 'Burst Reverse'. Reverses consume the Reverse Gauge. The Reverse Gauge recovers slowly over time. You start with a full Reverse Gauge."
+      "description": "A unique move (Referred to in this page as a 'Reverse Move') that every character can perform. A Reverse can be performed at any time to gain advantages, but changes forms depending on what the player is doing at the time of the Reverse. There are three types of Reverse; 'Soul Reverse', 'Chain Reverse' and 'Burst Reverse'. Reverses consume the Reverse Gauge. The Reverse Gauge recovers slowly over time. You start with a full Reverse Gauge. Reverses can also have positive effects on characters, augmenting and changing their attacks when in any Reverse state."
     },
     "reverse-gauge": {
       "id": "reverse-gauge",
       "name": "Reverse Gauge",
       "engName": "",
       "shortDescription": "Resource consumed by Reversing; restores over time",
-      "description": "The gauge associated with Reverses, located at the bottom of the screen. Performing Reverses consumes amounts of the Reverse Gauge."
+      "description": "The gauge associated with Reverses, located at the bottom of the screen. Performing Reverses consumes amounts of the Reverse Gauge. In the above animation, the Reverse Gauge is the bottom bar, and changes color to show which type of Reverse is currently active."
     },
     "soul-reverse": {
       "id": "soul-reverse",
@@ -145,7 +145,7 @@
       "name": "Signature Move",
       "engName": "",
       "shortDescription": "Unique move",
-      "description": "A unique move that varies from character to character."
+      "description": "A unique move that varies from character to character, and either costs nothing, or a unique resource. Check the Character Roster for more information on what characters' Signature Moves do."
     },
     "spiritual-pressure-move": {
       "id": "spiritual-pressure-move",
@@ -159,35 +159,35 @@
       "name": "Reiatsu",
       "engName": "Spiritual Pressure",
       "shortDescription": "Special Meter Points",
-      "description": "A resource that fills the Reiatsu Gauge. Increases by landing attacks and being attacked, and decreases by performing Spiritual Pressure Moves and Signature Moves."
+      "description": "A resource that fills the Reiatsu Gauge. Increases by landing attacks and being attacked, and decreases by performing Spiritual Pressure Moves. Spiritual Pressure 1 Moves cost 50 Reiatsu, and Spritual Pressure 2 Moves cost 100 Reiatsu. In the animation above, Reiatsu is the top bar."
     },
     "reiatsu-gauge": {
       "id": "reiatsu-gauge",
       "name": "Reiatsu Gauge",
       "engName": "Spiritual Pressure Gauge",
       "shortDescription": "Special Meter",
-      "description": "A resource that is global to every character that is spent on performing Spiritual Pressure Moves and Signature Moves."
+      "description": "A resource that is global to every character that is spent on performing Spiritual Pressure Moves. In the animation above, Reiatsu is the top bar."
     },
     "fighting-spirit-gauge": {
       "id": "fighting-spirit-gauge",
       "name": "Fighting Spirit Gauge",
       "engName": "",
       "shortDescription": "Transformation Meter",
-      "description": "A gauge that fills by attacking, being attacked, and losing Konpaku. When the Fighting Spirit Gauge is fully charged, you can perform Awakenings, and - under certain conditions - Reawakenings. After Awakening, the Fighting Spirit Gauge enters the Sublimation State and is reset to 0%."
+      "description": "A gauge that fills by attacking, being attacked, and losing Konpaku. When the Fighting Spirit Gauge is fully charged, you can perform Awakenings, and - under certain conditions - Reawakenings. After Awakening, the Fighting Spirit Gauge enters the Sublimation State and is reset to 0%. In the above animation, the Fighting Spirit Gauge is the left-most bar with `P1` attached."
     },
     "sublimation-state": {
       "id": "sublimation-state",
       "name": "Sublimation State",
       "engName": "",
       "shortDescription": "LV1 Post-Awakening 100% Fighting Spirit buff-state",
-      "description": "The state that the Fighting Spirit Gauge enters after Awakening. The Fighting Spirit Gauge is reset to 0%, and turns red; once the Fighting Spirit Gauge - in the Sublimation State - is refilled again to 100%, the Fighting Spirit Gauge enters the Spirit Drive State."
+      "description": "The state that the Fighting Spirit Gauge enters after Awakening. The Fighting Spirit Gauge is reset to 0%, and turns red; once the Fighting Spirit Gauge - in the Sublimation State - is refilled again to 100%, the Fighting Spirit Gauge enters the Spirit Drive State. Sublimation State changes the Fighting Spirit Gauge from pinkish-red to a sharp red."
     },
     "spirit-drive-state": {
       "id": "spirit-drive-state",
       "name": "Spirit Drive State",
       "engName": "",
       "shortDescription": "LV2 Post-Awakening 100% Fighting Spirit buff-state",
-      "description": "The state that the Fighting Spirit Gauge enters after being filled a second time after Awakening. The Fighting Spirit Gauge is now stuck at 100%, and turns red with a flaming effect; in this state, the Fighting Spirit Gauge enhances your abilities and stats."
+      "description": "The state that the Fighting Spirit Gauge enters after being filled a second time after Awakening. The Fighting Spirit Gauge is now stuck at 100%, and turns sharp red with a flaming effect; in this state, the Fighting Spirit Gauge enhances your abilities and stats."
     },
     "awakening": {
       "id": "awakening",
@@ -203,9 +203,9 @@
       "shortDescription": "Second Transformation",
       "description": "A second-level transformation that is achieved by fully filling your Fighting Spirit Gauge a second time after Awakening first, and by fulfilling certain conditions unique to the characters that can use Reawakening. This transformation gives the character more new abilities, moves, buffs, animations and mechanics. Each character's Reawakening is unique to them."
     },
-    "follow-up-hoho": {
-      "id": "follow-up-hoho",
-      "name": "Follow-up Hoho",
+    "follow-up-hohō": {
+      "id": "follow-up-hohō",
+      "name": "Follow-up Hohō",
       "engName": "Follow-up Fast Movement",
       "shortDescription": "Launch combo catch-up teleport",
       "description": "A global combo extender that can be used by any character that teleports the user to their target whilst the user is already in the middle of a combo; helps to prevent you losing a combo due to launching an opponent away from you."
@@ -215,14 +215,14 @@
       "name": "Counter",
       "engName": "",
       "shortDescription": "Parry",
-      "description": "A global move that can be used by any character that teleports the user behind their target whilst the user is nearly being hit by an opponent's attack; begins a combo instantly after a successful Counter."
+      "description": "A global move that can be used by any character that teleports the user behind their target whilst the user is nearly being hit by an opponent's attack; in order to pull off a Counter, you need to use a Follow-up Hohō at a near-precise moment before being hit by an attack. A Counter begins a combo instantly when successful."
     },
     "tilting": {
       "id": "tilting",
       "name": "Tilting",
       "engName": "",
       "shortDescription": "Stick wobble to change attack types; affects Quick Attack + Flash Attack",
-      "description": "A method of augmenting a Quick Attack or Flash Attack into a different form, specifically known as Step Quick Attack and Special Flash Attack. Perforned by moving the left stick in a certain direction at the same time as performing the attack's input button."
+      "description": "A method of augmenting a Quick Attack or Flash Attack into a different form, specifically known as Step Quick Attack and Special Flash Attack. Perforned by moving the left stick in a certain direction (Or affiliated keybind) at the same time as performing the attack's input button."
     },
     "quick-attack": {
       "id": "quick-attack",

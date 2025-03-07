@@ -7,11 +7,13 @@ import supplementaryData from "@/data/supplementaryData.json";
 import { ICharacterData } from "@/types/characterDataTypes";
 import { ISupplementaryData } from "@/types/supplementaryDataTypes";
 import ArchetypeTooltip from "@/components/ArchetypeTooltip";
+import StarRatingWrapper from "@/components/StarRatingWrapper";
 
 type SortType = {
-  type: "number" | "alphabetical";
+  type: "number" | "alphabetical" | "easeOfUse";
   ascending: boolean;
 };
+
 type AffiliationType = "all" | "worldOfTheLiving" | "soulSociety" | "huecoMundo";
 
 export default function Characters() {
@@ -94,7 +96,13 @@ export default function Characters() {
       if (sortConfig.type === "alphabetical") {
         return sortConfig.ascending ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
       }
-      return sortConfig.ascending ? a.characterNumber - b.characterNumber : b.characterNumber - a.characterNumber;
+      if (sortConfig.type === "number") {
+        return sortConfig.ascending ? a.characterNumber - b.characterNumber : b.characterNumber - a.characterNumber;
+      }
+      if (sortConfig.type === "easeOfUse") {
+        return sortConfig.ascending ? a.characterEaseOfUse - b.characterEaseOfUse : b.characterEaseOfUse - a.characterEaseOfUse;
+      }
+      return 0;
     });
   }, [characters, searchTerm, sortConfig, affiliationFilter, genderFilter, showEchoFighters]);
 
@@ -152,7 +160,7 @@ export default function Characters() {
           />
         </div>
         <div>
-          <div className="w-fit lg:w-full font-bebasFont text-xl flex flex-col items-center lg:flex-row mt-4 space-y-4 lg:space-y-0 lg:space-x-4">
+          <div className="w-fit lg:w-full font-bebasFont tracking-wider flex flex-col items-center lg:flex-row mt-4 space-y-4 lg:space-y-0 lg:space-x-4">
             <div className="flex flex-row space-x-4 pr-4 border-0 lg:border-r-2 border-gray-400">
               <div className="relative" onMouseEnter={() => setIsEchoTooltipVisible(true)} onMouseLeave={() => setIsEchoTooltipVisible(false)}>
                 <button
@@ -202,6 +210,21 @@ export default function Characters() {
                 A-Z
                 {sortConfig.type === "alphabetical" && <span>{sortConfig.ascending ? <span>&uarr;</span> : <span>&darr;</span>}</span>}
               </button>
+
+              <button
+                onClick={() =>
+                  setSortConfig((prev) => ({
+                    type: "easeOfUse",
+                    ascending: prev.type === "easeOfUse" ? !prev.ascending : true,
+                  }))
+                }
+                className={`px-3 py-1 font-black rounded flex transition-colors items-center gap-1 hover:bg-red-600 hover:text-black ${
+                  sortConfig.type === "easeOfUse" ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
+                }`}
+              >
+                Ease of Use
+                {sortConfig.type === "easeOfUse" && <span>{sortConfig.ascending ? <span>&uarr;</span> : <span>&darr;</span>}</span>}
+              </button>
             </div>
 
             <div className="flex flex-row space-x-4 pr-4 border-0 lg:border-r-2 border-gray-400">
@@ -244,8 +267,14 @@ export default function Characters() {
           <div className="text-sm text-gray-400 pt-4">
             {filteredAndSortedCharacters.length} {filteredAndSortedCharacters.length === 1 ? "character" : "characters"} found
             {searchTerm && " matching search"}
-            {affiliationFilter !== "all" && " in selected Affiliation"}
-            {genderFilter !== "all" && " in selected Gender"}
+            {affiliationFilter !== "all" && genderFilter !== "all" ? (
+              <> in selected Affiliation and in selected Gender</>
+            ) : (
+              <>
+                {affiliationFilter !== "all" && " in selected Affiliation"}
+                {genderFilter !== "all" && " in selected Gender"}
+              </>
+            )}
           </div>
           <hr className="my-6" />
           {filteredAndSortedCharacters.length === 0 ? (
@@ -269,12 +298,18 @@ export default function Characters() {
                       onError={() => handleImageError(slug)}
                       loading="lazy"
                     />
-                    <div className="p-4 border-t-2 border-gray-800">
-                      <h2 className="font-bold text-2xl my-2 flex flex-row items-center">
+                    <div className="p-4 pt-2 border-t-2 border-gray-800">
+                      <h2 className="font-bold text-xl flex flex-row items-center py-2">
                         #{character.characterNumber}
                         {!character.isEcho ? null : <p className="text-teal-400">&epsilon;</p>}: {character.name}
                       </h2>
-                      <p className="text-gray-400 text-sm mb-2 italic">&quot;{character.quote}&quot;</p>
+                      <hr className="my-2" />
+                      <div className="my-auto flex flex-row items-center justify-between">
+                        <p className="text-gray-400">Ease of Use:</p>
+                        <StarRatingWrapper rating={character.characterEaseOfUse} character={character} />
+                      </div>
+                      <hr className="my-2" />
+                      <p className="text-gray-400 text-sm my-2 pt-4 italic">&quot;{character.quote}&quot;</p>
                     </div>
                   </Link>
                   <div className="px-4 pb-4">

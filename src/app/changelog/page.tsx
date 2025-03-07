@@ -33,6 +33,17 @@ export default function Changelog() {
   const resourceOfSoulsChangelog = useMemo(
     () => [
       {
+        version: "v1.0.10.",
+        date: "04/03/2025",
+        changes: [
+          "Added the new `Notation Toggle` system to Character Movelists, allowing you to see the plain terms, Xbox, PlayStation, PC Default Keybinds, and Universal Fighting Game Notaton.",
+          "Added a new tournament to the Community Leaderboard.",
+          "Added an Ease of Use filter, and added Ease of Use details to the Character Roster cards.",
+          "Fixed poor aspect ratios of some Game Term MP4s.",
+          "Edited some Game Term descriptions for better accuracy.",
+        ],
+      },
+      {
         version: "v1.0.9.",
         date: "03/03/2025",
         changes: [

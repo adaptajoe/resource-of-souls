@@ -441,6 +441,13 @@ export default function CommunityLeaderboard() {
                   </Link>{" "}
                   - 29/03/2025
                 </li>
+                <li>
+                  <span className="text-amber-400">Tres Espada</span> - PC -{" "}
+                  <Link className="text-teal-400 hover:underline" href="https://www.start.gg/tournament/society-scramble-weekly/details">
+                    Owlflame&apos;s &apos;Society Scramble&apos; Tournament
+                  </Link>{" "}
+                  - 28/03/2025
+                </li>
               </ul>
             </div>
           </div>

@@ -128,10 +128,6 @@ export default async function CharacterDetails(props: Props) {
                 Trailers
               </Link>
               <span className="text-gray-400">•</span>
-              <Link href="#movelist" className="text-teal-400 hover:underline">
-                Movelist
-              </Link>
-              <span className="text-gray-400">•</span>
               <Link href="#animations" className="text-teal-400 hover:underline">
                 Animations
               </Link>
@@ -142,6 +138,10 @@ export default async function CharacterDetails(props: Props) {
               <span className="text-gray-400">•</span>
               <Link href="#outfits" className="text-teal-400 hover:underline">
                 Outfits
+              </Link>
+              <span className="text-gray-400">•</span>
+              <Link href="#movelist" className="text-teal-400 hover:underline">
+                Movelist
               </Link>
             </div>
             <Image
@@ -292,16 +292,6 @@ export default async function CharacterDetails(props: Props) {
               </div>
             </div>
             <hr className="my-6" />
-            {/* Movelist */}
-            <div id="movelist">
-              <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
-                <span className="text-red-600">M</span>ovelist
-              </h3>
-              <div className="border-2 bg-black border-gray-400 rounded-xl mt-6 pt-4">
-                <CharacterMovesWrapper moves={character.moves} characterId={character.id} />
-              </div>
-            </div>
-            <hr className="my-6" />
             {/* Animations */}
             <div id="animations">
               <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
@@ -339,6 +329,16 @@ export default async function CharacterDetails(props: Props) {
               </h3>
               <div className="mt-4 bg-black">
                 <CharacterOutfitsWrapper character={character} slug={params.slug} />
+              </div>
+            </div>
+            <hr className="my-6" />
+            {/* Movelist */}
+            <div id="movelist">
+              <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
+                <span className="text-red-600">M</span>ovelist
+              </h3>
+              <div className="border-2 bg-black border-gray-400 rounded-xl mt-6 pt-4">
+                <CharacterMovesWrapper moves={character.moves} characterId={character.id} />
               </div>
             </div>
           </div>

@@ -188,7 +188,7 @@ export default function GlossaryContent() {
     return (
       <div id={formattedId} className={`rounded-xl bg-black border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-red-600 ring-2 ring-red-600 bg-red-900/10" : "border-gray-400"}`}>
         <div className="relative w-full border-b-2 border-gray-800">
-          <Image width="300" height="150" alt="" id={id} src={`/assets/term-assets/${id}.png`} className="rounded-t-xl w-full h-[150px] object-cover" />
+          <Image width="300" height="150" alt="" id={id} src={`/assets/term-assets/archetypes/${id}.png`} className="rounded-t-xl w-full h-[150px] object-cover" />
         </div>
         <div className="p-4">
           <h2 className="font-bold text-xl mb-2">{title}</h2>
@@ -228,9 +228,9 @@ export default function GlossaryContent() {
       >
         <div className="relative w-full border-b-2 border-gray-800">
           {!isHovered ? (
-            <Image src={`/assets/term-assets/${id}.png`} alt={title} width={300} height={300} className="w-full h-[180px]" style={{ filter: "grayscale(100%)" }} loading="lazy" />
+            <Image src={`/assets/term-assets/game-terms/${id}.png`} alt={title} width={300} height={300} className="w-full h-fit" style={{ filter: "grayscale(100%)" }} loading="lazy" />
           ) : (
-            <video src={`/assets/term-assets/${id}.mp4`} width={300} height={300} className="w-full h-[180px]" autoPlay loop muted />
+            <video src={`/assets/term-assets/game-terms/${id}.mp4`} width={300} height={300} className="w-full h-fit" autoPlay loop muted />
           )}
         </div>
         <div className="p-4">
@@ -325,7 +325,7 @@ export default function GlossaryContent() {
                 <li>Awakenings are a First Transformation that costs Fighting Spirit.</li>
                 <li>Reawakenings are a Second Transformation that also costs Fighting Spirit.</li>
                 <li>Counters are teleporting Counters.</li>
-                <li>Follow-up Hoho is a teleporting combo extender.</li>
+                <li>Follow-up Hohō is a teleporting combo extender.</li>
                 <li>The Reiatsu Gauge is your Special Bar.</li>
                 <li>Quick Attacks are Light Attacks that build the Reiatsu Gauge (Special Bar).</li>
                 <li>Flash Attacks are Heavy Attacks that damages Guards.</li>

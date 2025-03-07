@@ -54,6 +54,7 @@ export interface IMove {
   input: string;
   damage: number | null;
   frames: number | null;
+  hits: number | null;
   reishiGain?: number | null;
   reishiCost?: number | null;
   reiatsuGain?: number | null;
