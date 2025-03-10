@@ -7,16 +7,16 @@ export default function Home() {
     <div className="text-white">
       <div className="flex bg-black flex-col items-center w-full py-2 text-base justify-center px-4 md:text-xl border-b-2 border-b-gray-400 font-bebasFont">
         <p className="border-l-8 border-l-red-600 border-r-8 border-r-teal-400 text-center px-4 mb-2">
-          GAME LAUNCH TOURNAMENTS - We have multiple Tournaments being ran on the 28th / 29th March for both
-          <span className="text-red-600"> PS4 / PS5</span> and <span className="text-red-600">PC</span>..!
-        </p>
-        <hr className="p-1 my-1 w-full" />
-        <p className="border-l-8 border-l-red-600 border-r-8 border-r-teal-400 text-center px-4">
-          SIGN UP ON THE{" "}
+          We have multiple Tournaments being ran on the 28th / 29th March for
+          <span className="text-blue-500"> PS4 / PS5</span>, <span className="text-lime-400">Xbox</span> and <span className="text-red-600">PC</span> - Sign up on the{" "}
           <Link className="text-teal-400 hover:underline" href="/community/community-leaderboard">
             COMMUNITY LEADERBOARD PAGE
           </Link>
           ..!
+        </p>
+        <hr className="p-1 my-1 w-full" />
+        <p className="border-l-8 border-l-red-600 border-r-8 border-r-teal-400 text-center px-4">
+          Please bear with us as BLEACH - Rebirth of Souls releases; a lot of information may be incorrect or missing.
         </p>
       </div>
       <div className="border-b-2 border-gray-400">
@@ -143,7 +143,7 @@ export default function Home() {
               BLEACH - Resource of Souls is a passion-project from dedicated long-time BLEACH fans; we&apos;ll <span className="text-red-600">never</span> paywall content, add advertisements, or ask
               for donations, and promise to open-source all of our code <span className="text-teal-400 underline">forever</span>.
             </p>
-            <h2 className="text-2xl xl:text-3xl text-amber-400 mt-4">- @jojicus</h2>
+            <h2 className="text-2xl xl:text-3xl text-red-400 mt-4">- @jojicus</h2>
           </div>
         </div>
       </div>

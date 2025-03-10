@@ -19,6 +19,11 @@ const creators: Creator[] = [
     videoSrc: "https://www.youtube.com/embed/wNIXW6zGJ0w?start=1",
   },
   {
+    name: "Globku",
+    description: `I'm Globku. I'm a Youtuber with the simple goal of making anime games better. I do this with honest reviews and community building events like competitive tournaments.`,
+    videoSrc: "https://www.youtube.com/embed/qzke2hj_6PE?si=uPtZwFX2fPhjp1s0",
+  },
+  {
     name: "TheRealQuinnJr",
     description: `I'm an anime YouTube channel that covers the newest anime games. You'll see some gameplay but a lot of my content is also tips, guides, and discussions! I'll be
     hosting streams and some tournaments once the game releases and dropping a guide on
@@ -42,6 +47,11 @@ const creators: Creator[] = [
     bleach. They offer clan battles, tournaments, fun events, and matchmaking for every platform. If you're looking for more people to play Bleach Rebirth Of Souls with then feel free
     to join.`,
     imageSrc: "/assets/site-assets/ros-header.png",
+  },
+  {
+    name: "shisha",
+    description: `I’m a BLEACH Content Creator! I delve into the Competitive Scene for Rebirth of Souls. I do streams where I Read and Analyze the Manga. I made a series called BLEACH Legacy where I played every major Bleach Fighting Game. Join the Discord where we will Rank and Host Tournaments on RoS or talk about anything BLEACH!`,
+    videoSrc: "https://www.youtube.com/embed/R5AH7czvVt8?si=QZ5Y_fwu-IU1nPSU",
   },
 ];
 

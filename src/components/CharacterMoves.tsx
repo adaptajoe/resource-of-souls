@@ -1,11 +1,11 @@
 "use client";
-import { useState, useCallback, useMemo, useEffect, useRef, JSX } from "react";
+import { useState, useCallback, useMemo, useRef, JSX } from "react";
 import { IMoves, IMove } from "@/types/characterDataTypes";
 import React from "react";
 import { ArrowDown, ArrowDownLeft, ArrowDownRight, ArrowLeft, ArrowRight, ArrowUp, ArrowUpLeft, ArrowUpRight, Circle, Plus, Square, Triangle, X } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 
-type NotationType = "term" | "pc" | "playstation" | "xbox" | "universal";
+type NotationType = "term" | "playstation" | "xbox" | "universal";
 interface ICharacterMovesProps {
   moves: IMoves[];
   characterId: string;
@@ -22,7 +22,6 @@ interface ITranslationElement {
 
 interface ITranslations {
   term: ITranslationElement;
-  pc: ITranslationElement;
   playstation: ITranslationElement;
   xbox: ITranslationElement;
   universal: ITranslationElement;
@@ -98,6 +97,11 @@ const TranslateInput = ({ input, notation }: ITranslateInputProps) => {
             Soul Reverse
           </strong>
         ),
+        H: (
+          <strong className="bg-pink-400 align-middle rounded-full p-1 px-2 w-fit font-bebasFont tracking-wider inline-flex items-center ml-1 text-black text-center font-black justify-center">
+            Hakugeki
+          </strong>
+        ),
         KI: (
           <strong className="bg-pink-400 align-middle rounded-full p-1 px-2 w-fit font-bebasFont tracking-wider inline-flex items-center ml-1 text-black text-center  font-black justify-center">
             Kikon
@@ -129,13 +133,13 @@ const TranslateInput = ({ input, notation }: ITranslateInputProps) => {
           </strong>
         ),
         D: (
-          <strong className="bg-amber-400 align-middle rounded-full p-1 px-2 w-fit font-bebasFont tracking-wider inline-flex items-center ml-1 text-black text-center  font-black justify-center">
+          <strong className="bg-white align-middle rounded-full p-1 px-2 w-fit font-bebasFont tracking-wider inline-flex items-center ml-1 text-black text-center  font-black justify-center">
             Dash
           </strong>
         ),
         HH: (
           <strong className="bg-white align-middle rounded-full p-1 px-2 w-fit font-bebasFont tracking-wider inline-flex items-center ml-1 text-black text-center  font-black justify-center">
-            Hohō
+            Hoho
           </strong>
         ),
         GD: (
@@ -200,6 +204,7 @@ const TranslateInput = ({ input, notation }: ITranslateInputProps) => {
         BR: <strong className="bg-red-300 align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center  font-black justify-center">BR</strong>,
         CR: <strong className="bg-orange-300 align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center  font-black justify-center">CR</strong>,
         SR: <strong className="bg-blue-300 align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center  font-black justify-center">SR</strong>,
+        H: <strong className="bg-pink-400 align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center  font-black justify-center">H</strong>,
         KI: <strong className="bg-pink-400 align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center  font-black justify-center">KI</strong>,
         S1: <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center  font-black justify-center">S1</strong>,
         S2: <strong className="bg-white align-middle rounded-full p-1 size-[25px] inline-flex items-center ml-1 text-black text-center  font-black justify-center">S2</strong>,
@@ -337,6 +342,11 @@ const TranslateInput = ({ input, notation }: ITranslateInputProps) => {
               <Square size={15} className="text-fuchsia-400" />
             </div>
             <p className="ml-2  tracking-wider pr-1">(When not being hit / attacking)</p>
+          </div>
+        ),
+        H: (
+          <div className="bg-gray-400 align-middle rounded-full w-fit h-6 mr-1 inline-flex flex-row items-center ml-1 text-black text-center font-bebasFont px-2 py-4 justify-center">
+            <p className="tracking-widest">R2 (Hold)</p>
           </div>
         ),
         KI: (
@@ -544,6 +554,11 @@ const TranslateInput = ({ input, notation }: ITranslateInputProps) => {
             <p className="ml-2  tracking-wider pr-2">(When not being hit / attacking)</p>
           </div>
         ),
+        H: (
+          <div className="bg-gray-400 align-middle rounded-full w-fit h-6 inline-flex flex-row items-center ml-1 text-black text-center font-bebasFont px-2 py-4 justify-center">
+            <p className="tracking-widest">RT (Hold)</p>
+          </div>
+        ),
         KI: (
           <div className="bg-gray-400 align-middle rounded-full w-fit h-6 inline-flex flex-row items-center ml-1 text-black text-center font-bebasFont px-2 py-4 justify-center">
             <p className="tracking-widest">RT</p>
@@ -735,6 +750,13 @@ const TranslateInput = ({ input, notation }: ITranslateInputProps) => {
             <p className="ml-2  tracking-wider pr-1">(Whilst being hit)</p>
           </div>
         ),
+        H: (
+          <div className="bg-white align-middle rounded-full w-fit h-6 inline-flex flex-row items-center ml-1 text-black text-center font-bebasFont px-1 py-4 justify-center">
+            <div className="p-1">
+              <p className="px-1">H (Hold)</p>
+            </div>
+          </div>
+        ),
         KI: (
           <div className="bg-white align-middle rounded-full w-fit h-6 inline-flex flex-row items-center ml-1 text-black text-center font-bebasFont px-1 py-4 justify-center">
             <div className="p-1">
@@ -861,6 +883,7 @@ const CharacterMoves = ({ moves, characterId }: ICharacterMovesProps) => {
       { key: "BR", label: "Burst Reverse" },
       { key: "CR", label: "Chain Reverse" },
       { key: "SR", label: "Soul Reverse" },
+      { key: "H", label: "Hakugeki" },
       { key: "KI", label: "Kikon Move" },
       { key: "S1", label: "Spiritual Pressure Move 1" },
       { key: "S2", label: "Spiritual Pressure Move 2" },
@@ -868,7 +891,7 @@ const CharacterMoves = ({ moves, characterId }: ICharacterMovesProps) => {
       { key: "RE", label: "Reawakening" },
       { key: "S", label: "4-Directional Step" },
       { key: "D", label: "Dash" },
-      { key: "HH", label: "Follow-up Hohō" },
+      { key: "HH", label: "Follow-up Hoho" },
       { key: "GD", label: "Guard" },
       { key: "CO", label: "Counter" },
       { key: "NORTHEAST", label: "Up-Right" },
@@ -902,7 +925,6 @@ const CharacterMoves = ({ moves, characterId }: ICharacterMovesProps) => {
             Notation Style:
             <select value={notation} onChange={handleNotationChange} className="ml-2 p-1 bg-gray-800 w-full sm:w-fit text-white rounded">
               <option value="term">Term Notation</option>
-              <option value="pc">Default PC Keybind Notation</option>
               <option value="playstation">PlayStation Notation</option>
               <option value="xbox">Xbox Notation</option>
               <option value="universal">Universal Notation</option>
@@ -999,56 +1021,56 @@ interface IMoveDisplayProps {
 
 const MoveDisplay = ({ move, characterId, notation }: IMoveDisplayProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
   const [videoError, setVideoError] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const isMounted = useRef(true);
+  const handleMouseEnter = useCallback(() => {
+    setIsHovered(true);
+    if (videoRef.current && isVideoLoaded) {
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          setVideoError(true);
+        });
+      }
+    }
+  }, [isVideoLoaded]);
 
-  useEffect(() => {
-    return () => {
-      isMounted.current = false;
-    };
+  const handleMouseLeave = useCallback(() => {
+    setIsHovered(false);
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
   }, []);
 
-  useEffect(() => {
-    const playVideo = async () => {
-      if (!videoRef.current || !isMounted.current) return;
-
-      try {
-        if (isHovered && !videoError) {
-          await videoRef.current.play();
-        } else {
-          videoRef.current.pause();
-          if (videoRef.current.paused) {
-            videoRef.current.currentTime = 0;
-          }
-        }
-      } catch (error) {
-        if (isMounted.current) {
-          console.error("Error handling video:", error);
-          setVideoError(true);
-        }
-      }
-    };
-
-    const timeoutId = setTimeout(playVideo, 50);
-    return () => clearTimeout(timeoutId);
-  }, [isHovered, videoError]);
+  const handleVideoLoaded = useCallback(() => {
+    setIsVideoLoaded(true);
+  }, []);
 
   return (
     <div
       className="border-b border-gray-400 bg-black hover:bg-gray-900 transition-colors last:mb-0 last:rounded-b-xl cursor-pointer"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       onClick={() => setIsExpanded(!isExpanded)}
+      tabIndex={0}
+      role="button"
     >
       {/* Top bar */}
       <div className="grid grid-cols-1 md:grid-cols-2 border-b border-gray-400">
         <div className="flex flex-col border-r border-gray-400 items-start justify-center ml-4">
           <div className="flex items-center">
             <span className={`transform ${isExpanded ? "rotate-180" : ""} mr-2`}>▼</span>
-            <p className="font-bebasFont text-3xl tracking-wide text-teal-400 py-2 mr-2">{move.name}</p>
+            <p
+              className={`font-bebasFont text-3xl tracking-wide py-2 mr-2 ${move.name !== "Unknown" && move.hasOfficialName ? "text-teal-400" : undefined} ${
+                move.name === "Unknown" && "text-red-600"
+              } ${!move.hasOfficialName && "text-amber-400"}`}
+            >
+              {move.name}
+            </p>
           </div>
         </div>
         <div className="p-2">
@@ -1087,14 +1109,16 @@ const MoveDisplay = ({ move, characterId, notation }: IMoveDisplayProps) => {
                   ref={videoRef}
                   width={300}
                   height={300}
-                  className={`absolute border-2 border-gray-400 w-fit ${isHovered ? "block" : "hidden"}`}
-                  onError={() => setVideoError(true)}
-                  src={`/assets/character-animations/${characterId}/${move.id}.mp4`}
-                  loop
+                  className={`absolute top-0 left-0 border-2 border-gray-400 w-full h-full object-cover transition-opacity duration-200 ${isHovered && isVideoLoaded ? "opacity-100" : "opacity-0"}`}
                   muted
+                  loop
                   playsInline
-                  preload="auto"
-                />
+                  preload="metadata"
+                  onLoadedData={handleVideoLoaded}
+                  onError={() => setVideoError(true)}
+                >
+                  <source src={`/assets/character-animations/${characterId}/${move.id}.mp4`} type="video/mp4" />
+                </video>
               )}
             </div>
           </div>

@@ -421,28 +421,53 @@ export default function CommunityLeaderboard() {
               <h3 className="text-3xl">Sign Up for Available Tournaments</h3>
               <ul className="list-disc pl-4">
                 <li>
-                  <span className="text-amber-400">Queen of Hueco Mundo</span> - PlayStation -{" "}
+                  <span className="text-amber-400">Queen of Hueco Mundo</span> - <span className="text-blue-400">PlayStation</span> -{" "}
                   <Link className="text-teal-400 hover:underline" href="https://challonge.com/6kqo6q99">
                     john30688&apos;s &apos;Warfare of Souls&apos; Tournament
                   </Link>{" "}
                   - 29/03/2025
                 </li>
                 <li>
-                  <span className="text-amber-400">Bankai Spammer</span> - PC -{" "}
+                  <span className="text-amber-400">Bankai Spammer</span> - <span className="text-red-400">PC</span> -{" "}
                   <Link className="text-teal-400 hover:underline" href="https://challonge.com/4t9d5lew#">
                     john30688&apos;s &apos;Warfare of Souls&apos; Tournament
                   </Link>{" "}
                   - 29/03/2025
                 </li>
                 <li>
-                  <span className="text-amber-400">Karakura-Raizer Spirit</span> - PlayStation -{" "}
+                  <span className="text-amber-400">Brick Thrower</span> - <span className="text-lime-400">Xbox</span> -{" "}
+                  <Link className="text-teal-400 hover:underline" href="https://challonge.com/1s83r135">
+                    john30688&apos;s &apos;Warfare of Souls&apos; Tournament
+                  </Link>{" "}
+                  - 29/03/2025
+                </li>
+                <hr className="my-2" />
+                <li>
+                  <span className="text-amber-400">Karakura-Raizer Spirit</span> - <span className="text-blue-400">PlayStation</span> -{" "}
                   <Link className="text-teal-400 hover:underline" href="https://www.start.gg/tournament/chains-of-fate-opening-tournament/details">
                     Contourxci&apos;s &apos;Chains of Fate&apos; Tournament
                   </Link>{" "}
                   - 29/03/2025
                 </li>
+                <hr className="my-2" />
                 <li>
-                  <span className="text-amber-400">Tres Espada</span> - PC -{" "}
+                  <span className="text-amber-400">Bread Queen</span> - <span className="text-amber-400">&#36;150 USD Prize</span> - <span className="text-blue-400">PlayStation</span> -{" "}
+                  <Link className="text-teal-400 hover:underline" href="https://www.start.gg/tournament/bleach-rebirth-of-souls-eu-tournament/details">
+                    Globku&apos;s &apos;Bleach Rebirth of Souls EU Tournament&apos; Tournament
+                  </Link>{" "}
+                  - 29/03/2025
+                </li>
+                <hr className="my-2" />
+                <li>
+                  <span className="text-amber-400">Squad 8 Captain</span> - <span className="text-amber-400">&#36;150 USD Prize</span> - <span className="text-blue-400">PlayStation</span> -{" "}
+                  <Link className="text-teal-400 hover:underline" href="https://www.start.gg/tournament/chains-of-fate-opening-tournament/details">
+                    Quyon&apos;s &apos;Bleach Rebirth of Souls NA Tournament&apos; Tournament
+                  </Link>{" "}
+                  - 29/03/2025
+                </li>
+                <hr className="my-2" />
+                <li>
+                  <span className="text-amber-400">Tres Espada</span> - <span className="text-red-400">PC</span> -{" "}
                   <Link className="text-teal-400 hover:underline" href="https://www.start.gg/tournament/society-scramble-weekly/details">
                     Owlflame&apos;s &apos;Society Scramble&apos; Tournament
                   </Link>{" "}

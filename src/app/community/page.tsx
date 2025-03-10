@@ -7,17 +7,15 @@ export default function Community() {
     <div className="text-white">
       <div className="flex flex-col items-center w-full py-2 text-base bg-black justify-center px-4 md:text-xl border-b-2 border-b-gray-400 font-bebasFont">
         <p className="border-l-8 border-l-red-600 border-r-8 border-r-teal-400 text-center px-4 mb-2">
-          GAME LAUNCH TOURNAMENTS - We have multiple Tournaments being ran on the 28th / 29th March for both
-          <span className="text-red-600"> PS4 / PS5</span> and <span className="text-red-600">PC</span>..!
-        </p>
-        <hr className="p-1 my-1 w-full" />
-        <p className="border-l-8 border-l-red-600 border-r-8 border-r-teal-400 text-center px-4">
-          SIGN UP ON THE{" "}
+          We have multiple Tournaments being ran on the 28th / 29th March for
+          <span className="text-blue-500"> PS4 / PS5</span>, <span className="text-lime-400">Xbox</span> and <span className="text-red-600">PC</span> - Sign up on the{" "}
           <Link className="text-teal-400 hover:underline" href="/community/community-leaderboard">
             COMMUNITY LEADERBOARD PAGE
           </Link>
           ..!
         </p>
+        <hr className="p-1 my-1 w-full" />
+        <p className="border-l-8 border-l-red-600 border-r-8 border-r-teal-400 text-center px-4">Have a Tournament that you&apos;d like featured? Message one of our Staff credited in the Footer!</p>
       </div>
       <div className="border-b-2 border-gray-400">
         <AnimatedHeroWrapper src={"/assets/site-assets/community-hero.mp4"} alt={""} />

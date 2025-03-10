@@ -10,7 +10,7 @@ import ArchetypeTooltip from "@/components/ArchetypeTooltip";
 import StarRatingWrapper from "@/components/StarRatingWrapper";
 
 type SortType = {
-  type: "number" | "alphabetical" | "easeOfUse";
+  type: "number" | "alphabetical" | "easeOfUse" | "power" | "speed" | "range" | "defense" | "technique";
   ascending: boolean;
 };
 
@@ -23,8 +23,8 @@ export default function Characters() {
   const [affiliationFilter, setAffiliationFilter] = useState<AffiliationType>("all");
   const [genderFilter, setGenderFilter] = useState<"all" | "male" | "female">("all");
   const [imageSources, setImageSources] = useState<{ [key: string]: string }>({});
-  const [showEchoFighters, setShowEchoFighters] = useState(false);
-  const [isEchoTooltipVisible, setIsEchoTooltipVisible] = useState(false);
+  // const [showEchoFighters, setShowEchoFighters] = useState(false);
+  // const [isEchoTooltipVisible, setIsEchoTooltipVisible] = useState(false);
 
   const handleImageError = (slug: string) => {
     setImageSources((prev) => ({
@@ -68,9 +68,9 @@ export default function Characters() {
         return false;
       }
 
-      if (!showEchoFighters && character.isEcho) {
-        return false;
-      }
+      // if (!showEchoFighters && character.isEcho) {
+      //   return false;
+      // }
 
       const matchesSearch =
         character.name.toLowerCase().includes(searchTermLower) ||
@@ -102,9 +102,24 @@ export default function Characters() {
       if (sortConfig.type === "easeOfUse") {
         return sortConfig.ascending ? a.characterEaseOfUse - b.characterEaseOfUse : b.characterEaseOfUse - a.characterEaseOfUse;
       }
+      if (sortConfig.type === "power") {
+        return sortConfig.ascending ? a.stats[0].power - b.stats[0].power : b.stats[0].power - a.stats[0].power;
+      }
+      if (sortConfig.type === "speed") {
+        return sortConfig.ascending ? a.stats[0].speed - b.stats[0].speed : b.stats[0].speed - a.stats[0].speed;
+      }
+      if (sortConfig.type === "range") {
+        return sortConfig.ascending ? a.stats[0].range - b.stats[0].range : b.stats[0].range - a.stats[0].range;
+      }
+      if (sortConfig.type === "defense") {
+        return sortConfig.ascending ? a.stats[0].defense - b.stats[0].defense : b.stats[0].defense - a.stats[0].defense;
+      }
+      if (sortConfig.type === "technique") {
+        return sortConfig.ascending ? a.stats[0].technique - b.stats[0].technique : b.stats[0].technique - a.stats[0].technique;
+      }
       return 0;
     });
-  }, [characters, searchTerm, sortConfig, affiliationFilter, genderFilter, showEchoFighters]);
+  }, [characters, searchTerm, sortConfig, affiliationFilter, genderFilter]);
 
   const shouldHighlightArchetype = (archetype: string): boolean => {
     return searchTerm.length > 0 && archetype.toLowerCase().includes(searchTerm.toLowerCase());
@@ -131,7 +146,7 @@ export default function Characters() {
 
   return (
     <div className="text-white">
-      <div className="p-4 lg:p-16 space-y-4 text-white">
+      <div className="p-4 xl:p-16 space-y-4 text-white">
         <div className="flex flex-row space-x-2">
           <Link href="/" className="text-teal-400 hover:underline">
             Home
@@ -160,9 +175,9 @@ export default function Characters() {
           />
         </div>
         <div>
-          <div className="w-fit lg:w-full font-bebasFont tracking-wider flex flex-col items-center lg:flex-row mt-4 space-y-4 lg:space-y-0 lg:space-x-4">
-            <div className="flex flex-row space-x-4 pr-4 border-0 lg:border-r-2 border-gray-400">
-              <div className="relative" onMouseEnter={() => setIsEchoTooltipVisible(true)} onMouseLeave={() => setIsEchoTooltipVisible(false)}>
+          <div className="w-fit text-sm xl:w-full font-bebasFont tracking-wider flex flex-col items-center xl:flex-row mt-4 space-y-4 xl:space-y-0 xl:space-x-4">
+            <div className="flex flex-row space-x-2 pr-4 border-0 xl:border-r-2 border-gray-400">
+              {/* <div className="relative" onMouseEnter={() => setIsEchoTooltipVisible(true)} onMouseLeave={() => setIsEchoTooltipVisible(false)}>
                 <button
                   onClick={() => setShowEchoFighters((prev) => !prev)}
                   className={`px-3 py-1 rounded flex transition-colors items-center font-black gap-1 hover:bg-red-600 hover:text-black ${
@@ -179,7 +194,7 @@ export default function Characters() {
                     </p>
                   </div>
                 )}
-              </div>
+              </div> */}
 
               <button
                 onClick={() =>
@@ -227,7 +242,7 @@ export default function Characters() {
               </button>
             </div>
 
-            <div className="flex flex-row space-x-4 pr-4 border-0 lg:border-r-2 border-gray-400">
+            <div className="flex flex-row space-x-2 pr-4 border-0 xl:border-r-2 border-gray-400">
               {[
                 { value: "all", label: "All Affiliations" },
                 { value: "worldOfTheLiving", label: "World of the Living" },
@@ -246,7 +261,7 @@ export default function Characters() {
               ))}
             </div>
 
-            <div className="flex flex-row space-x-4">
+            <div className="flex flex-row pr-4 space-x-2 border-0 xl:border-r-2 border-gray-400">
               {[
                 { value: "all", label: "All" },
                 { value: "male", label: "Male-Only" },
@@ -263,7 +278,33 @@ export default function Characters() {
                 </button>
               ))}
             </div>
+            <div className="flex flex-row space-x-2">
+              {[
+                { type: "power", label: "Power" },
+                { type: "speed", label: "Speed" },
+                { type: "range", label: "Range" },
+                { type: "defense", label: "Defense" },
+                { type: "technique", label: "Technique" },
+              ].map((stat) => (
+                <button
+                  key={stat.type}
+                  onClick={() =>
+                    setSortConfig((prev) => ({
+                      type: stat.type as SortType["type"],
+                      ascending: prev.type === stat.type ? !prev.ascending : true,
+                    }))
+                  }
+                  className={`px-3 py-1 font-black hover:bg-red-600 hover:text-black rounded ${
+                    sortConfig.type === stat.type ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
+                  } transition-colors`}
+                >
+                  {stat.label}
+                  {sortConfig.type === stat.type && <span>{sortConfig.ascending ? <span>&darr;</span> : <span>&uarr;</span>}</span>}
+                </button>
+              ))}
+            </div>
           </div>
+
           <div className="text-sm text-gray-400 pt-4">
             {filteredAndSortedCharacters.length} {filteredAndSortedCharacters.length === 1 ? "character" : "characters"} found
             {searchTerm && " matching search"}
@@ -280,7 +321,7 @@ export default function Characters() {
           {filteredAndSortedCharacters.length === 0 ? (
             <div className="text-center py-8 text-gray-400">No characters found matching your criteria</div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
               {filteredAndSortedCharacters.map(([slug, character]) => (
                 <div key={slug} className="border hover:border-red-600 transition-colors rounded-lg bg-black">
                   <Link href={`/characters/${slug}`} className="block">
@@ -307,6 +348,14 @@ export default function Characters() {
                       <div className="my-auto flex flex-row items-center justify-between">
                         <p className="text-gray-400">Ease of Use:</p>
                         <StarRatingWrapper rating={character.characterEaseOfUse} character={character} />
+                      </div>
+                      <hr className="my-2" />
+                      <div className="text-xl grid grid-cols-5 text-center space-x-2 font-bebasFont">
+                        <div className="text-red-700 rounded p-1">P{character.stats[0].power}</div>
+                        <div className="text-yellow-700 rounded p-1">S{character.stats[0].speed}</div>
+                        <div className="text-purple-700 rounded p-1">R{character.stats[0].range}</div>
+                        <div className="text-green-700 rounded p-1">D{character.stats[0].defense}</div>
+                        <div className="text-blue-700 rounded p-1">T{character.stats[0].technique}</div>
                       </div>
                       <hr className="my-2" />
                       <p className="text-gray-400 text-sm my-2 pt-4 italic">&quot;{character.quote}&quot;</p>

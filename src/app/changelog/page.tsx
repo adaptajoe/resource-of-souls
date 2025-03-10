@@ -33,6 +33,40 @@ export default function Changelog() {
   const resourceOfSoulsChangelog = useMemo(
     () => [
       {
+        version: "v1.0.13.",
+        date: "10/03/2025",
+        changes: [
+          "Cleaned up some redundant data.",
+          "Removed White from the Alternates system, and removed the 'Include Alternates' filter (For now).",
+          "Added new entries to the Creators Page.",
+          "Added new Tournaments to the Community Leaderboard Page.",
+        ],
+      },
+      {
+        version: "v1.0.12.",
+        date: "09/03/2025",
+        changes: [
+          "Disabled the PC Notation Scheme for now as we don't know the input map.",
+          "Added a new placeholder for missing move animations.",
+          "Added stat filters to the Character Roster page.",
+          "Added new credits to the Footer.",
+          "Added new Tournaments to the Community Leaderboard Page.",
+          "Added new animations to a few pages from the newest trailer.",
+        ],
+      },
+      {
+        version: "v1.0.11.",
+        date: "07/03/2025",
+        changes: [
+          "Reworked the Movelist component to better show more moves.",
+          "Added base moves to every character, along with common combos shared across every character.",
+          "Fixed some incorrect controls in the Movelist.",
+          "Added official assets for Kaien Shiba.",
+          "Edited some Game Term descriptions for better accuracy.",
+          "Added Official English Terms for some moves for Ichigo Kurosaki (Shikai), Yoruichi Shihoin, Toshiro Hitsugaya, Rukia Kuchiki, Gin Ichimaru and Ulquiorra Shifar",
+        ],
+      },
+      {
         version: "v1.0.10.",
         date: "04/03/2025",
         changes: [

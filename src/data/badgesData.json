@@ -21,7 +21,7 @@
     {
       "name": "Karakura-Raizer Spirit",
       "pcOwner": null,
-      "psOwner": null,
+      "psOwner": "Pending...",
       "xboxOwner": null,
       "pcLastChallenged": null,
       "psLastChallenged": null,
@@ -66,7 +66,7 @@
     {
       "name": "Bread Queen",
       "pcOwner": null,
-      "psOwner": null,
+      "psOwner": "Pending...",
       "xboxOwner": null,
       "pcLastChallenged": null,
       "psLastChallenged": null,
@@ -338,7 +338,7 @@
     {
       "name": "Squad 8 Captain",
       "pcOwner": null,
-      "psOwner": null,
+      "psOwner": "Pending...",
       "xboxOwner": null,
       "pcLastChallenged": null,
       "psLastChallenged": null,
@@ -448,7 +448,7 @@
     {
       "name": "Queen of Hueco Mundo",
       "pcOwner": null,
-      "psOwner": null,
+      "psOwner": "Pending...",
       "xboxOwner": null,
       "pcLastChallenged": null,
       "psLastChallenged": null,
@@ -501,7 +501,7 @@
     },
     {
       "name": "Tres Espada",
-      "pcOwner": null,
+      "pcOwner": "Pending...",
       "psOwner": null,
       "xboxOwner": null,
       "pcLastChallenged": null,
@@ -849,14 +849,14 @@
       "name": "Brick Thrower",
       "pcOwner": null,
       "psOwner": null,
-      "xboxOwner": null,
+      "xboxOwner": "Pending...",
       "pcLastChallenged": null,
       "psLastChallenged": null,
       "xboxLastChallenged": null
     },
     {
       "name": "Bankai Spammer",
-      "pcOwner": null,
+      "pcOwner": "Pending...",
       "psOwner": null,
       "xboxOwner": null,
       "pcLastChallenged": null,
@@ -867,15 +867,6 @@
   "masterLeagueBadges": [
     {
       "name": "Number 1 Ichigo Kurosaki (Shikai) Player",
-      "pcOwner": null,
-      "psOwner": null,
-      "xboxOwner": null,
-      "pcLastChallenged": null,
-      "psLastChallenged": null,
-      "xboxLastChallenged": null
-    },
-    {
-      "name": "Number 1 White Player",
       "pcOwner": null,
       "psOwner": null,
       "xboxOwner": null,
@@ -1146,15 +1137,6 @@
     },
     {
       "name": "Number 1 Coyote Starrk Player",
-      "pcOwner": null,
-      "psOwner": null,
-      "xboxOwner": null,
-      "pcLastChallenged": null,
-      "psLastChallenged": null,
-      "xboxLastChallenged": null
-    },
-    {
-      "name": "Number 1 Aaroniero Aaruruerie Player",
       "pcOwner": null,
       "psOwner": null,
       "xboxOwner": null,
