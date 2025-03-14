@@ -1,4 +1,3 @@
-import AnimatedHeroWrapper from "@/components/AnimatedHeroWrapper";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,7 +19,19 @@ export default function Home() {
         </p>
       </div>
       <div className="border-b-2 border-gray-400">
-        <AnimatedHeroWrapper src={"/assets/site-assets/site-hero.mp4"} alt={""} />
+        {/* <AnimatedHeroWrapper src={"/assets/site-assets/site-hero.mp4"} alt={""} /> */}
+        <Image
+          src="/assets/site-assets/game-hero-1.png"
+          height={300}
+          width={300}
+          alt=""
+          className="max-h-[600px] w-full object-cover rounded-t-lg object-top-center"
+          style={{
+            objectFit: "cover",
+            objectPosition: "50% 20%",
+            aspectRatio: "2/1",
+          }}
+        />
       </div>
       <div className="p-4 lg:p-16">
         <div className="grid grid-cols-1 lg:grid-cols-2">

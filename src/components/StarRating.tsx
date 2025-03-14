@@ -25,10 +25,19 @@ const StarRating = memo(function StarRating({ rating, maxRating = 5, label = "Ra
   const validRating = Math.max(0, Math.min(rating, maxRating));
 
   return (
-    <div className="flex items-center space-x-1" role="img" aria-label={`${validRating} out of ${maxRating} ${label}`}>
-      {Array.from({ length: maxRating }, (_, index) => (
-        <Star key={index} filled={index < validRating} index={index} total={maxRating} />
-      ))}
+    <div className="flex flex-col items-center">
+      <div className="flex flex-row items-center space-x-1" role="img" aria-label={`${validRating} out of ${maxRating} ${label}`}>
+        {Array.from({ length: maxRating }, (_, index) => (
+          <Star key={index} filled={index < validRating} index={index} total={maxRating} />
+        ))}
+      </div>
+      <p className="text-xs text-gray-400">
+        ({rating === 1 && `Extremely Challenging`}
+        {rating === 2 && `Challenging`}
+        {rating === 3 && `Fairly Challenging`}
+        {rating === 4 && `Fairly Simple`}
+        {rating === 5 && `Simple`})
+      </p>
     </div>
   );
 });

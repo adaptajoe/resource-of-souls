@@ -10,6 +10,7 @@ interface IArchetypeCardProps {
   title: string;
   id: string;
   description: string;
+  shortDescription?: string;
 }
 
 interface IGameTermCardProps {
@@ -17,6 +18,7 @@ interface IGameTermCardProps {
   id: string;
   englishTitle?: string;
   description: string;
+  shortDescription?: string;
   isFocused?: boolean;
   hoveredImageId: string | null;
   setHoveredImageId: (id: string | null) => void;
@@ -177,10 +179,12 @@ export default function GlossaryContent() {
   }, [searchQuery]);
 
   const filteredGameTerms = useMemo(() => {
-    return Object.values(supplementaryData.gameTerms).filter((term) => filterItems(term.name) || filterItems(term.description) || (term.engName && filterItems(term.engName)));
+    return Object.values(supplementaryData.gameTerms).filter(
+      (term) => filterItems(term.name) || filterItems(term.description) || filterItems(term.shortDescription) || (term.engName && filterItems(term.engName))
+    );
   }, [searchQuery]);
 
-  const ArchetypeCard = ({ title, description, id }: IArchetypeCardProps) => {
+  const ArchetypeCard = ({ title, description, id, shortDescription }: IArchetypeCardProps) => {
     const characters = getCharactersByArchetype(title);
     const formattedId = formatTermId(id);
     const isHighlighted = formattedId === highlightedId;
@@ -193,8 +197,10 @@ export default function GlossaryContent() {
         <div className="p-4">
           <h2 className="font-bold text-xl mb-2">{title}</h2>
           <p className="text-gray-400 italic pb-2 text-xs">{description}</p>
+          <hr className="my-4" />
+          <strong>TLDR:</strong> <p className="text-gray-400 italic text-xs mt-2">{shortDescription}</p>
           {characters.length > 0 && (
-            <div className="mt-2 w-full border-t border-gray-400">
+            <div className="mt-4 w-full border-t border-gray-400">
               <div className="text-sm font-semibold pt-2">Characters:</div>
               <div className="flex flex-wrap gap-2 pt-2">
                 {characters.map((character, index) => (
@@ -214,7 +220,7 @@ export default function GlossaryContent() {
     );
   };
 
-  const GameTermCard = ({ title, englishTitle, description, id }: IGameTermCardProps) => {
+  const GameTermCard = ({ title, englishTitle, description, shortDescription, id }: IGameTermCardProps) => {
     const formattedId = formatTermId(id);
     const isHighlighted = formattedId === highlightedId;
     const [isHovered, setIsHovered] = useState(false);
@@ -233,12 +239,15 @@ export default function GlossaryContent() {
             <video src={`/assets/term-assets/game-terms/${id}.mp4`} width={300} height={300} className="w-full h-fit" autoPlay loop muted />
           )}
         </div>
-        <div className="p-4">
-          <div className="font-bold text-xl mb-2 flex items-baseline">
+        <div className="p-4 flex flex-col">
+          <div className="font-bold text-xl flex items-baseline">
             <h2 className="text-xl">{title}</h2>
             {englishTitle && <p className="text-xs text-gray-400 ml-2 italic">(ENG: {englishTitle})</p>}
           </div>
+          <hr className="my-4" />
           <p className="text-gray-400 italic text-xs">{description}</p>
+          <hr className="my-4" />
+          <strong>TLDR:</strong> <p className="text-gray-400 italic text-xs mt-2">{shortDescription}</p>
         </div>
       </div>
     );
@@ -299,7 +308,7 @@ export default function GlossaryContent() {
           {archetypesIsOpen && (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-2">
               {filteredArchetypes.map((archetype) => (
-                <ArchetypeCard key={archetype.id} title={archetype.name} id={archetype.id} description={archetype.description} />
+                <ArchetypeCard key={archetype.id} title={archetype.name} id={archetype.id} description={archetype.description} shortDescription={archetype.shortDescription} />
               ))}
             </div>
           )}
@@ -353,6 +362,7 @@ export default function GlossaryContent() {
                   title={term.name}
                   englishTitle={term.engName}
                   description={term.description}
+                  shortDescription={term.shortDescription}
                   hoveredImageId={hoveredImageId}
                   setHoveredImageId={setHoveredImageId}
                 />

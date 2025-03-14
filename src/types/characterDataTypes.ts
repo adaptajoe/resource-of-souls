@@ -51,7 +51,7 @@ export interface IMove {
   id: string;
   name: string;
   description: string;
-  input: string;
+  input: string | null;
   damage: number | null;
   frames: number | null;
   hits: number | null;

@@ -12,7 +12,7 @@ interface ICharacterMovesProps {
 }
 
 interface ITranslateInputProps {
-  input: string;
+  input: string | null;
   notation: NotationType;
 }
 
@@ -845,8 +845,12 @@ const TranslateInput = ({ input, notation }: ITranslateInputProps) => {
   );
 
   const sortedKeys = useMemo(() => Object.keys(translations[notation]).sort((a, b) => b.length - a.length), [translations, notation]);
-  const parts = useMemo(() => input.split(new RegExp(`(${sortedKeys.join("|")}|[+\\-])`, "g")), [input, sortedKeys]);
-
+  const parts = useMemo(() => {
+    if (input === null) {
+      return [];
+    }
+    return input.split(new RegExp(`(${sortedKeys.join("|")}|[+\\-])`, "g"));
+  }, [input, sortedKeys]);
   return (
     <>
       {parts.map((part, index) => (
@@ -1050,6 +1054,8 @@ const MoveDisplay = ({ move, characterId, notation }: IMoveDisplayProps) => {
     setIsVideoLoaded(true);
   }, []);
 
+  const encodedMoveId = encodeURIComponent(move.id);
+
   return (
     <div
       className="border-b border-gray-400 bg-black hover:bg-gray-900 transition-colors last:mb-0 last:rounded-b-xl cursor-pointer"
@@ -1094,7 +1100,7 @@ const MoveDisplay = ({ move, characterId, notation }: IMoveDisplayProps) => {
           <div className="p-4">
             <div className="flex flex-col h-full relative items-center justify-center">
               <Image
-                src={`/assets/character-animations/${characterId}/${move.id}.png`}
+                src={`/assets/character-animations/${characterId}/${encodedMoveId}.png`}
                 alt={`${move.name} first frame`}
                 width={300}
                 height={300}
@@ -1117,7 +1123,7 @@ const MoveDisplay = ({ move, characterId, notation }: IMoveDisplayProps) => {
                   onLoadedData={handleVideoLoaded}
                   onError={() => setVideoError(true)}
                 >
-                  <source src={`/assets/character-animations/${characterId}/${move.id}.mp4`} type="video/mp4" />
+                  <source src={`/assets/character-animations/${characterId}/${encodedMoveId}.mp4`} type="video/mp4" />
                 </video>
               )}
             </div>

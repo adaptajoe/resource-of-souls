@@ -345,7 +345,7 @@ export default function Characters() {
                         {!character.isEcho ? null : <p className="text-teal-400">&epsilon;</p>}: {character.name}
                       </h2>
                       <hr className="my-2" />
-                      <div className="my-auto flex flex-row items-center justify-between">
+                      <div className="my-auto flex flex-row items-center justify-between py-2">
                         <p className="text-gray-400">Ease of Use:</p>
                         <StarRatingWrapper rating={character.characterEaseOfUse} character={character} />
                       </div>

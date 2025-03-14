@@ -4,10 +4,10 @@ export interface IBadgeData {
 
 export interface IBadge {
   name: string;
-  pcOwner?: string;
-  psOwner?: string;
-  xboxOwner?: string;
-  pcLastChallenged?: Date;
-  psLastChallenged?: Date;
-  xboxLastChallenged?: Date;
+  pcOwner?: string | null;
+  psOwner?: string | null;
+  xboxOwner?: string | null;
+  pcLastChallenged?: Date | null;
+  psLastChallenged?: Date | null;
+  xboxLastChallenged?: Date | null;
 }

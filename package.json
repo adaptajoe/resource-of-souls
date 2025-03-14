@@ -5,12 +5,14 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:characters": "node combineCharacters.js",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.7",
     "@tailwindcss/postcss": "^4.0.7",
+    "@tinacms/cli": "^1.9.2",
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

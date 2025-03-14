@@ -33,6 +33,15 @@ export default function Changelog() {
   const resourceOfSoulsChangelog = useMemo(
     () => [
       {
+        version: "v1.0.14.",
+        date: "12/03/2025",
+        changes: [
+          "Added some new Tournaments.",
+          "Added new information for Ikkaku Madarame, Kaname Tōsen, and Kenpachi Zaraki.",
+          "Began adding new entries for each Character's Unique Mechanic (If applicable). So far, up to Aizen Sosuke is covered.",
+        ],
+      },
+      {
         version: "v1.0.13.",
         date: "10/03/2025",
         changes: [
