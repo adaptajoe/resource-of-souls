@@ -20,7 +20,7 @@ When you are done making your changes, run `git status`; you should see all the 
 
 When you are sure you have only the changes that you want to make live, run `git add --all`, and then run `git status`. All of those files that were `red` should now be `green`. Now run `git commit -m "DESCRIPTION"`, changing `DESCRIPTION` to be a short description of your changes.
 
-Then, once that finishes running, use the command `git push`. Now when that command completes, navigate to `[https://github.com/adaptajoe/resource-of-souls/pulls](https://github.com/adaptajoe/resource-of-souls/pulls)` and you should see a big yellow banner saying `Create Pull Request`. Do that, and add `@adaptajoe` as a `reviewer`. Add a description of what you changed, and then wait for `@adaptajoe` to review your changes.
+Then, once that finishes running, use the command `git push`. Now when that command completes, navigate to [https://github.com/adaptajoe/resource-of-souls/pulls](https://github.com/adaptajoe/resource-of-souls/pulls) and you should see a big yellow banner saying `Create Pull Request`. Do that, and add `@adaptajoe` as a `reviewer`. Add a description of what you changed, and then wait for `@adaptajoe` to review your changes.
 
 Once I am happy with your changes, I will merge them into the main branch.
 
