@@ -1,0 +1,71 @@
+{
+  "pc": [
+    {
+      "name": "@jojicus",
+      "elo": 10000,
+      "region": "UK",
+      "timezone": "GMT+0",
+      "mains": ["Ichigo Kurosaki (Bankai)", "Nnoitra Gilga", "Coyote Starrk"]
+    },
+    {
+      "name": "@john30688",
+      "elo": 2000,
+      "region": "EU",
+      "timezone": "GMT+3",
+      "mains": ["Uryu Ishida", "Tier Harribel", "White"]
+    },
+    {
+      "name": "@neuu",
+      "elo": 400,
+      "region": "US",
+      "timezone": "GMT+6",
+      "mains": ["Kisuke Urahara", "Aizen Sosuke", "Soi-Fon"]
+    }
+  ],
+  "playstation": [
+    {
+      "name": "@cairix2",
+      "elo": 2000,
+      "region": "UK",
+      "timezone": "GMT+0",
+      "mains": ["Ichigo Kurosaki (Bankai)", "Nnoitra Gilga", "Coyote Starrk"]
+    },
+    {
+      "name": "@theepicguy",
+      "elo": 1750,
+      "region": "EU",
+      "timezone": "GMT+3",
+      "mains": ["Uryu Ishida", "Tier Harribel", "White"]
+    },
+    {
+      "name": "@sharogen",
+      "elo": 400,
+      "region": "US",
+      "timezone": "GMT+6",
+      "mains": ["Kisuke Urahara", "Aizen Sosuke", "Soi-Fon"]
+    }
+  ],
+  "xbox": [
+    {
+      "name": "@tim",
+      "elo": 10000,
+      "region": "UK",
+      "timezone": "GMT+0",
+      "mains": ["Ichigo Kurosaki (Bankai)", "Nnoitra Gilga", "Coyote Starrk"]
+    },
+    {
+      "name": "@tom",
+      "elo": 2000,
+      "region": "EU",
+      "timezone": "GMT+3",
+      "mains": ["Uryu Ishida", "Tier Harribel", "White"]
+    },
+    {
+      "name": "@tam",
+      "elo": 400,
+      "region": "US",
+      "timezone": "GMT+6",
+      "mains": ["Kisuke Urahara", "Aizen Sosuke", "Soi-Fon"]
+    }
+  ]
+}
