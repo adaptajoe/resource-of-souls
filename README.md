@@ -1,5 +1,5 @@
 ## Getting Started
-"hello"
+"hello jojicus IS BALDI-"
 First, clone the repository by clicking "Download ZIP" or by cloning via CLI, navigate to it in your Terminal, and run `npm i`. Afterwards, navigate to the cloned folder (For instance, `cd downloads/resource-of-souls/`) and run the development server:
 
 ```bash
