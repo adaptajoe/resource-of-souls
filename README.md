@@ -10,7 +10,7 @@ Open [http://localhost:3001](http://localhost:3001) with your browser to see the
 
 ## Before Editing and Contributing
 
-To contribute, first, make sure you have Git installed ((https://github.com/git-guides/install-git)[https://github.com/git-guides/install-git]). Then, when you're ready, navigate to the cloned `/resource-of-souls/` folder and you should see `git(main)` in your Terminal.
+To contribute, first, make sure you have Git installed ([https://github.com/git-guides/install-git](https://github.com/git-guides/install-git)). Then, when you're ready, navigate to the cloned `/resource-of-souls/` folder and you should see `git(main)` in your Terminal.
 
 Run `git pull`, and then run `git checkout -b "CHANGESNAME"`, replacing `CHANGESNAME` with a summary of what you are changing.
 
