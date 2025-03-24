@@ -507,6 +507,12 @@
       "shortDescription": "Has unique mechanics.",
       "description": "Self-explanatory. These characters often have a unique mechanic that gives them a rare edge against their competition. Most Gimmick characters' kits revolve around the core Gimmick."
     },
+    "concluder": {
+      "id": "concluder",
+      "name": "Concluder",
+      "shortDescription": "Cannot use Awakening or Reawakening. Wins by landing successive Kikon Moves.",
+      "description": "Concluders cannot use Awakening, Reawakening, or claim Konpaku using their Kikon Moves. Instead, Concluders have to hit a certain number of Kikon Moves over the course of a Match, with their final Kikon Move instantly winning them the Match regardless of Reishi or existing Konpaku."
+    },
     "dlc": {
       "id": "dlc",
       "name": "DLC",

@@ -11,14 +11,14 @@
       "abilities": ["awakening", "reawakening"],
       "characteristics": ["male", "karakuraResident"]
     },
-    "characterEaseOfUse": 3,
-    "characterArchetype": ["longRange", "ranged", "balanced", "reawakener", "zoner"],
+    "characterEaseOfUse": 2,
+    "characterArchetype": ["longRange", "ranged", "balanced", "reawakener", "zoner", "gauge", "charge"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=jqTot703GpM&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=39",
     "characterEngTrailer": "https://www.youtube.com/watch?v=Ze2_7Aa1Uks&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=30",
     "characterNumber": 3,
     "isEcho": false,
-    "tldr": "To be defined.",
-    "characterOutfits": ["1"],
+    "tldr": "A proud Quincy. Pierces foes with a variety of ranged skills. Has multiple projectiles and excels in mid-to-long-range combat. Not good at close-range, so make sure to stay away from your opponent. Quick Attacks are special in that what you transition to depends on whether his bow attacks land. Fully charge your Fighting Spirit after Awakening to enter a Reawakened state.",
+    "characterOutfits": ["1", "2", "3", "4"],
     "abilities": [
       {
         "abilityName": "And the victor of this battle is me",
@@ -30,10 +30,34 @@
       {
         "base": [
           {
-            "id": "licht-regen",
-            "name": "Licht Regen",
-            "description": "Uryu fires a rain of arrows into the air and looses them upon his target. By holding the input, the arrow storm fired will last longer.",
-            "input": "SI",
+            "id": "exclusive-ability-reishi-concentration-state",
+            "name": "Exclusive Ability: Reishi Concentration State",
+            "description": "A signature upgrade state for Uryu Ishida. Entering Reishi Concentration State adds a Reishi Concentration Gauge and powers up your attacks. The Reishi Concentration Gauge goes down over time.",
+            "input": null,
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "base-licht-regen",
+            "name": "Signature Move: Licht Regen",
+            "description": "Shoot upward to rain a barrage of arrows down onto your foe. Hold the input to shower more arrows down. Use a forward or backwards movement input the moment you release this to shift the point of impact forward or backward. Always rains down the maximum number of arrows in Reishi Concentration State.",
+            "input": "SI | SI + NORTH | SI + SOUTH",
             "damage": 0,
             "frames": 0,
             "hits": null,
@@ -51,12 +75,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "charge", "tracksOpponent", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quincy-arrow",
-            "name": "Quincy Arrow",
-            "description": "Fires a Heilig Pfiel towards Uryu's opponent. If the arrow hits, Uryu uses Hirenkyaku to teleport towards the opponent, firing a successive barrage of 5 additional Heilig Pfiel arrows.",
+            "id": "base-quincy-arrow",
+            "name": "Spiritual Pressure Move 1: Quincy Arrow",
+            "description": "Fires an arrow forward. Move in front of the enemy with Hirenkyaku on hit and follow up with a barrage of countless arrows. A mighty move perfect for a combo finisher.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -75,12 +99,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "teleportsToOpponentOnHit", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "needsStatInfo"]
           },
           {
-            "id": "seeleschneider",
-            "name": "Seeleschneider",
-            "description": "Uryu draws his Seeleschneider, holding it in-front of him. If an opponent hits Uryu, he absorbs the hit and counters with a powerful retaliation, followed by a precise Heilig Pfiel.",
+            "id": "base-seeleschneider",
+            "name": "Spiritual Pressure Move 2: Seeleschneider",
+            "description": "Take a stance for a Seeleschneider. Take an attack during this pose to unleash a powerful counter with Seeleschneider. A successful counter triggers Reishi Concentration State.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -99,10 +123,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "attackTypeRanged", "noRangeToMidRange", "counter", "block", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "base-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -126,9 +150,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "base-special-flash-attack",
+            "name": "Special Flash Attack: Heavy Shot",
+            "description": "A long-range attack launched forward. Flies far to strike at distant foes. Hold the input for a stronger projectile. Hits multiple times with boosted strength in Reishi Concentrated State.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -147,10 +171,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "base-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -174,7 +198,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "base-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -201,8 +225,8 @@
         "awakened": [
           {
             "id": "ransōtengai-awakening",
-            "name": "Ransōtengai Awakening",
-            "description": "Uryu manipulates his body through threads of Reiryoku, enhancing his damage output and increasing the amount of Reiatsu he can store.",
+            "name": "Awakening: Ransōtengai",
+            "description": "Uryu Ishida's Awakened state. Trigger by Awakening when Fighting Spirit is at max. Uryu manipulates his body through threads of Reiryoku, enhancing his damage output and increasing the amount of Reiatsu he can store.",
             "input": "AW",
             "damage": null,
             "frames": null,
@@ -221,13 +245,13 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "increasesReiatsuLimit"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "S1",
+            "id": "exclusive-ability-reishi-concentration-state",
+            "name": "Exclusive Ability: Reishi Concentration State",
+            "description": "A signature upgrade state for Uryu Ishida. Entering Reishi Concentration State adds a Reishi Concentration Gauge and powers up your attacks. The Reishi Concentration Gauge goes down over time.",
+            "input": null,
             "damage": null,
             "frames": null,
             "hits": null,
@@ -245,10 +269,82 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["unknown"]
+            "moveTags": ["exclusiveAbility"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "awakened-licht-regen",
+            "name": "Signature Move: Licht Regen",
+            "description": "Shoot upward to rain a barrage of arrows down onto your foe. Hold the input to shower more arrows down. Use a forward or backwards movement input the moment you release this to shift the point of impact forward or backward. Always rains down the maximum number of arrows in Reishi Concentration State.",
+            "input": "SI | SI + NORTH | SI + SOUTH",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing", "needsStatInfo"]
+          },
+          {
+            "id": "awakened-quincy-arrow",
+            "name": "Spiritual Pressure Move 1: Quincy Arrow",
+            "description": "Fires an arrow forward. Move in front of the enemy with Hirenkyaku on hit and follow up with a barrage of countless arrows. A mighty move perfect for a combo finisher.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "needsStatInfo"]
+          },
+          {
+            "id": "awakened-seeleschneider",
+            "name": "Spiritual Pressure Move 2: Seeleschneider",
+            "description": "Take a stance for a Seeleschneider. Take an attack during this pose to unleash a powerful counter with Seeleschneider. A successful counter triggers Reishi Concentration State.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 100,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "needsStatInfo"]
+          },
+          {
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -272,9 +368,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Heavy Shot",
+            "description": "A long-range attack launched forward. Flies far to strike at distant foes. Hold the input for a stronger projectile. Hits multiple times with boosted strength in Reishi Concentrated State.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -293,10 +389,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -320,7 +416,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -346,9 +442,9 @@
         ],
         "reawakened": [
           {
-            "id": "letzt-stile-reawakening",
-            "name": "Letzt Stile Reawakening",
-            "description": "Uryu snaps one of the prongs of his Sanrei Glove, breaking his commitment to his Grandfather and instilling within him the true power of `The Last Quincy`. Uryu's outfit changes, and his mastery over Reishi is exponentially enhanced. It is currently not known exactly what this Reawakening does to Uryu in regards to gameplay.",
+            "id": "quincy-letz-stile-reawakening",
+            "name": "Reawakening: Quincy Letz Stile",
+            "description": "Uryu Ishida's Reawakened state. Trigger by Awakening while in Awakened state when Fighting Spirit is at max. Uryu snaps one of the prongs of his Sanrei Glove, breaking his commitment to his Grandfather and instilling within him the true power of `The Last Quincy`. Uryu's outfit changes, and his mastery over Reishi is exponentially enhanced. It is currently not known exactly what this Reawakening does to Uryu in regards to gameplay.",
             "input": "RE",
             "damage": null,
             "frames": null,
@@ -370,10 +466,10 @@
             "moveTags": ["reawakening", "noDamage", "setsFightingSpiritTo0", "noRange", "needsMoreInfo"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "S1",
+            "id": "exclusive-ability-reishi-concentration-state",
+            "name": "Exclusive Ability: Reishi Concentration State",
+            "description": "A signature upgrade state for Uryu Ishida. Entering Reishi Concentration State adds a Reishi Concentration Gauge and powers up your attacks. The Reishi Concentration Gauge goes down over time.",
+            "input": null,
             "damage": null,
             "frames": null,
             "hits": null,
@@ -391,10 +487,82 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["unknown"]
+            "moveTags": ["exclusiveAbility"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "reawakened-licht-regen",
+            "name": "Signature Move: Licht Regen",
+            "description": "Shoot upward to rain a barrage of arrows down onto your foe. Hold the input to shower more arrows down. Use a forward or backwards movement input the moment you release this to shift the point of impact forward or backward. Always rains down the maximum number of arrows in Reishi Concentration State.",
+            "input": "SI | SI + NORTH | SI + SOUTH",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing", "needsStatInfo"]
+          },
+          {
+            "id": "reawakened-quincy-arrow",
+            "name": "Spiritual Pressure Move 1: Quincy Arrow",
+            "description": "Fires an arrow forward. Move in front of the enemy with Hirenkyaku on hit and follow up with a barrage of countless arrows. A mighty move perfect for a combo finisher.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "needsStatInfo"]
+          },
+          {
+            "id": "reawakened-seeleschneider",
+            "name": "Spiritual Pressure Move 2: Seeleschneider",
+            "description": "Take a stance for a Seeleschneider. Take an attack during this pose to unleash a powerful counter with Seeleschneider. A successful counter triggers Reishi Concentration State.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 100,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "needsStatInfo"]
+          },
+          {
+            "id": "reawakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -418,9 +586,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "reawakened-special-flash-attack",
+            "name": "Special Flash Attack: Heavy Shot",
+            "description": "A long-range attack launched forward. Flies far to strike at distant foes. Hold the input for a stronger projectile. Hits multiple times with boosted strength in Reishi Concentrated State.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -439,10 +607,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "reawakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -466,7 +634,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "reawakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -492,11 +660,11 @@
         ],
         "kikon": [
           {
-            "id": "heilig-pfeil-kikon-move",
-            "name": "Heilig Pfeil",
-            "description": "Whilst Unawakened, Uryu draws his bowstring, charging a powerful Heilig Pfeil before loosing it upon his foe in a powerful, precise blast.",
+            "id": "normal-swift-arrow-kikon-move",
+            "name": "Normal State Kikon Move 1: Swift Arrow",
+            "description": "Whilst Unawakened, Uryu draws his bowstring, charging a powerful Heilig Pfeil before loosing it upon his foe in a powerful, precise blast. Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break.",
             "input": "KI",
-            "damage": null,
+            "damage": 3,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -516,11 +684,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-swift-arrow-kikon-move",
+            "name": "Awakened Kikon Move 1: Swift Arrow",
+            "description": "Whilst Awakened, Uryu draws his bowstring, charging a powerful Heilig Pfeil before loosing it upon his foe in a powerful, precise blast. Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 4,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -540,11 +708,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Alternate Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-sprengen-kikon-move",
+            "name": "Awakened Kikon Move 2: Sprengen",
+            "description": "Whilst Awakened, Uryu launches five Seeleschneider in a pentagon pattern, stabbing a final Seeleschneider in the center of the pentagon, holding out a Ginto filled with Reishi, tipping it onto the central Seeleschneider to cause a dramatic and erupting explosion. Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 5,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -564,35 +732,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "letzt-stile-heilig-pfeil-kikon-move",
-            "name": "Letzt Stile: Heilig Pfeil",
-            "description": "Whilst Reawakened, Uryu summons a Heilig Pfeil from the surrounding Reishi, notching it on his bow, firing an explosive blast truly worthy of one known as 'The Last Quincy'.",
-            "input": "RE -> KI",
-            "damage": null,
-            "frames": null,
-            "hits": null,
-            "hasOfficialName": true,
-            "reishiGain": null,
-            "reishiCost": null,
-            "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": null,
-            "reversalGain": null,
-            "reversalCost": null,
-            "gaugeGain": null,
-            "gaugeCost": null,
-            "resourceGain": null,
-            "resourceCost": null,
-            "cooldown": "X Seconds",
-            "moveTags": ["kikonMove"]
-          },
-          {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Alternate Reawakened Kikon currently not known.",
-            "input": "RE -> KI",
-            "damage": null,
+            "id": "reawakened-final-arrow-kikon-move",
+            "name": "Reawakened Kikon Move 1: Final Arrow",
+            "description": "Whilst Reawakened, Uryu draws his bow backwards, abandoning the promise he made to his master, firing an unbelievable blast of Reiryoku towards his foe. Destroys 5 Konpaku. Destroys 6 Konpaku with a Soul Break.",
+            "input": "(After) RE, KI",
+            "damage": 6,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -614,7 +758,7 @@
         ],
         "baseCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "base-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -638,7 +782,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "base-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -662,10 +806,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "base-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -686,10 +830,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "base-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -710,7 +854,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "base-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -734,7 +878,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "base-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -758,7 +902,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "base-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -782,10 +926,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "base-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -806,10 +950,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "base-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -830,7 +974,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "base-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -854,10 +998,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "base-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -880,7 +1024,7 @@
         ],
         "awakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "awakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -904,7 +1048,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "awakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -928,10 +1072,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "awakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -952,10 +1096,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "awakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -976,7 +1120,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "awakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -1000,7 +1144,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "awakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -1024,7 +1168,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "awakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -1048,10 +1192,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "awakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1072,10 +1216,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "awakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1096,7 +1240,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "awakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -1120,10 +1264,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "awakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1146,7 +1290,7 @@
         ],
         "reawakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "reawakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -1170,7 +1314,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "reawakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -1194,10 +1338,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "reawakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1218,10 +1362,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "reawakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1242,7 +1386,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "reawakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -1266,7 +1410,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "reawakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -1290,7 +1434,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "reawakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -1314,10 +1458,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "reawakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1338,10 +1482,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "reawakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1362,7 +1506,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "reawakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -1386,10 +1530,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "reawakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,

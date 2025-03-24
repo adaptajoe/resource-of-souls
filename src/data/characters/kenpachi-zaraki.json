@@ -11,14 +11,14 @@
       "abilities": ["awakening"],
       "characteristics": ["male", "captain", "gotei13"]
     },
-    "characterEaseOfUse": 5,
+    "characterEaseOfUse": 4,
     "characterArchetype": ["shortRange", "melee", "slow", "berserker", "stance", "charge"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=So0mg7_dE64&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=29",
     "characterEngTrailer": "https://www.youtube.com/watch?v=LxvCinpT440&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=22",
     "characterNumber": 11,
     "isEcho": false,
-    "tldr": "To be defined.",
-    "characterOutfits": ["1"],
+    "tldr": "Squad 11 Captain and heir to the 'Kenpachi' moniker. His great strength grows in tandem with that of his foes. Very offense-focused, with massive attack that can be boosted to the point it becomes difficult to wield. Although slow, he can power through enemy strikes with his Super Armor to land hits. His Signature Move that boosts power when he gets hit and the strength of his Awakened Kikon Move 2 make it easy to bounce back from a weak position.",
+    "characterOutfits": ["1", "2", "3", "DLC1"],
     "abilities": [
       {
         "abilityName": "FINALLY having fun",
@@ -30,9 +30,33 @@
       {
         "base": [
           {
-            "id": "try-to-cut-me!",
-            "name": "Try to Cut Me!",
-            "description": "Kenpachi embraces the opponent's killing intent, giving him Super Armor whilst the attack is charged, absorbing all of the damage that he would normally take; once the user releases 'Try to Cut Me!', Kenpachi reflects the amount of damage that would've been dealt to him back to the opponent, if the follow-up attack hits.",
+            "id": "exclusive-ability-spritual-pressure-amplification",
+            "name": "Exclusive Ability: Spiritual Pressure Amplification",
+            "description": "An ability exclusive to Kenpachi Zaraki. The fewer Konpaku he has left, the more Spiritual Pressure he gains, the more his attack strength is boosted.",
+            "input": null,
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "base-i-can-take-it!",
+            "name": "Signature Move: I Can Take It!",
+            "description": "Prepare as if to taunt opponent. Hold the input to stand ready, then release it to perform a slash to the front. You have Super Armor and won't flinch from enemy attacks while holding this stance. Release after being attacked to make the move more powerful. The more damage received, the greater the power.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -51,12 +75,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "noRangeToShortRange", "charge", "counter", "block", "variableDamage", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "chop-you-up",
-            "name": "Chop You Up",
-            "description": "Kenpachi launches towards his opponent before bringing the full force of his weight down on his opponent with an apocalyptic, overhead cleave.",
+            "id": "base-chop-you-up",
+            "name": "Spiritual Pressure Move 1: Chop You Up",
+            "description": "Release an all-out attack. High power and covers a wide area, so can be used to follow-up on opponents that have been knocked away.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -66,8 +90,8 @@
             "reishiCost": null,
             "reiatsuGain": null,
             "reiatsuCost": 50,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
@@ -75,12 +99,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "dashesTowardsOpponent", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "nothing-i-can't-cut",
-            "name": "Nothing I Can't Cut",
-            "description": "Kenpachi launches towards his opponent, slicing his opponent twice, before following up with two more slices. Holding down the input and charging the attack deals more damage towards the opponents' Guard Gauge.",
+            "id": "base-nothing-i-can't-cut",
+            "name": "Spiritual Pressure Move 2: Nothing I Can't Cut",
+            "description": "Once prepared, cuts down the opponent in a sudden forward movement. You are invincible while moving forward, so it can be performed even in the face of a head-on attack. Hold the input to fully charge it and make the move unguardable.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -95,14 +119,14 @@
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "dashesTowardsOpponent", "charge", "extraGuardDamageIfCharged", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "base-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -126,13 +150,13 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Kenpachi barrels forwards, launching into a pair of powerful strikes.",
+            "id": "base-special-flash-attack",
+            "name": "Special Flash Attack: Thrust",
+            "description": "Thrust blade while moving in. Slow to activate but easy to use since it doesn't leave you open when guarded. Allows you to attack while taking opponent attacks with Super Armor.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
-            "hits": 4,
+            "hits": 0,
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -147,10 +171,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "base-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -174,13 +198,13 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "base-step-quick-attack",
             "name": "Step Quick Attack",
-            "description": "Kenpachi leans forwards, rocketing into a demonic dash towards his foe, unleashing a powerful initial strike before swinging into a violent downwards slice, chaining it into an uppercut.",
+            "description": "Moveset currently not known.",
             "input": "SQ",
             "damage": null,
             "frames": null,
-            "hits": 10,
+            "hits": null,
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -195,13 +219,13 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["stepQuickAttack", "costsNothing", "attackTypeMelee", "shortToMidRange", "needsStatInfo"]
+            "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           }
         ],
         "awakened": [
           {
-            "id": "reiryoku-sealing-eyepatch-removal-awakening",
-            "name": "Reiryoku-sealing Eyepatch Removal Awakening",
+            "id": "awakening-reiryoku-sealing-eyepatch-removal",
+            "name": "Awakening: Reiryoku Sealing Eyepatch - Removal",
             "description": "Kenpachi wrenches his back, looking to the sky as he tears off the only thing that can keep his power sealed. When Awakened, Kenpachi's Power and amount of maximum Reishi increases, enhancing Kenpachi's Kikon Moves to a devastating degree.",
             "input": "AW",
             "damage": null,
@@ -221,12 +245,36 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "increasesReishiLimit", "boostsStats"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "try-to-cut-me!",
-            "name": "Try to Cut Me!",
-            "description": "Kenpachi embraces the opponent's killing intent, giving him Super Armor whilst the attack is charged, absorbing all of the damage that he would normally take; once the user releases 'Try to Cut Me!', Kenpachi reflects the amount of damage that would've been dealt to him back to the opponent, if the follow-up attack hits.",
+            "id": "exclusive-ability-spritual-pressure-amplification",
+            "name": "Exclusive Ability: Spiritual Pressure Amplification",
+            "description": "An ability exclusive to Kenpachi Zaraki. The fewer Konpaku he has left, the more Spiritual Pressure he gains, the more his attack strength is boosted.",
+            "input": null,
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "awakened-i-can-take-it!",
+            "name": "Signature Move: I Can Take It!",
+            "description": "Prepare as if to taunt opponent. Hold the input to stand ready, then release it to perform a slash to the front. You have Super Armor and won't flinch from enemy attacks while holding this stance. Release after being attacked to make the move more powerful. The more damage received, the greater the power.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -245,12 +293,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "noRangeToShortRange", "charge", "counter", "block", "variableDamage", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "chop-you-up",
-            "name": "Chop You Up",
-            "description": "Kenpachi launches towards his opponent before bringing the full force of his weight down on his opponent with an apocalyptic, overhead cleave.",
+            "id": "awakened-chop-you-up",
+            "name": "Spiritual Pressure Move 1: Chop You Up",
+            "description": "Release an all-out attack. High power and covers a wide area, so can be used to follow-up on opponents that have been knocked away.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -260,8 +308,8 @@
             "reishiCost": null,
             "reiatsuGain": null,
             "reiatsuCost": 50,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
@@ -269,12 +317,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "dashesTowardsOpponent", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "nothing-i-can't-cut",
-            "name": "Nothing I Can't Cut",
-            "description": "Kenpachi launches towards his opponent, slicing his opponent twice, before following up with two more slices. Holding down the input and charging the attack deals more damage towards the opponents' Guard Gauge.",
+            "id": "awakened-nothing-i-can't-cut",
+            "name": "Spiritual Pressure Move 2: Nothing I Can't Cut",
+            "description": "Once prepared, cuts down the opponent in a sudden forward movement. You are invincible while moving forward, so it can be performed even in the face of a head-on attack. Hold the input to fully charge it and make the move unguardable.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -289,14 +337,14 @@
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "dashesTowardsOpponent", "charge", "extraGuardDamageIfCharged", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -320,13 +368,13 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Kenpachi barrels forwards, launching into a pair of powerful strikes.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Thrust",
+            "description": "Thrust blade while moving in. Slow to activate but easy to use since it doesn't leave you open when guarded. Allows you to attack while taking opponent attacks with Super Armor.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
-            "hits": 4,
+            "hits": 0,
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -341,10 +389,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -368,13 +416,13 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
-            "description": "Kenpachi leans forwards, rocketing into a demonic dash towards his foe, unleashing a powerful initial strike before swinging into a violent downwards slice, chaining it into an uppercut.",
+            "description": "Moveset currently not known.",
             "input": "SQ",
             "damage": null,
             "frames": null,
-            "hits": 10,
+            "hits": null,
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -389,16 +437,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["stepQuickAttack", "costsNothing", "attackTypeMelee", "shortToMidRange", "needsStatInfo"]
+            "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           }
         ],
         "kikon": [
           {
-            "id": "hellslash-kikon-move",
-            "name": "Hellslash",
-            "description": "Whislt Unawakened, Kenpachi roars with excitement as he wrenches up his blade, slamming it onto his foe with reckless abandon.",
+            "id": "base-not-too-shabby!-kikon-move",
+            "name": "Normal State Kikon Move 1: Not Too Shabby!",
+            "description": "Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break.",
             "input": "KI",
-            "damage": null,
+            "damage": 3,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -418,11 +466,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "awakened-hellslash-kikon-move",
-            "name": "Awakened Hellslash",
-            "description": "Whilst Awakened, Kenpachi roars with excitement as he wrenches up his blade, slamming it onto his foe with reckless abandon.",
-            "input": "KI",
-            "damage": null,
+            "id": "awakened-not-too-shabby!-kikon-move",
+            "name": "Awakened Kikon Move 1: Not Too Shabby!",
+            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 4,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -442,11 +490,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "kendo-kikon-move",
-            "name": "Kendo",
-            "description": "Kenpachi begins to take the fight seriously, lamenting as he now grips his blade with both hands, erupting into a brief, but impossibly powerful slice.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-bisect-kikon-move",
+            "name": "Awakened Kikon Move 2: Bisect",
+            "description": "Destroys 5 Konpaku. Destroys 6 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 6,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -468,7 +516,7 @@
         ],
         "baseCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "base-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -492,7 +540,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "base-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -516,10 +564,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "base-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -540,10 +588,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "base-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -564,7 +612,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "base-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -588,7 +636,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "base-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -612,7 +660,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "base-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -636,10 +684,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "base-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -660,10 +708,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "base-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -684,7 +732,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "base-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -708,10 +756,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "base-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -734,7 +782,7 @@
         ],
         "awakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "awakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -758,7 +806,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "awakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -782,10 +830,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "awakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -806,10 +854,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "awakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -830,7 +878,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "awakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -854,7 +902,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "awakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -878,7 +926,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "awakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -902,10 +950,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "awakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -926,10 +974,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "awakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -950,7 +998,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "awakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -974,10 +1022,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "awakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,

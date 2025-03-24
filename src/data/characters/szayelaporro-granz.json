@@ -11,14 +11,14 @@
       "abilities": ["awakening", "resurrección"],
       "characteristics": ["male", "ArrancarArmy", "espada"]
     },
-    "characterEaseOfUse": 2,
+    "characterEaseOfUse": 1,
     "characterArchetype": ["shortRange", "balanced", "melee", "gimmick", "gauge", "gambler", "reviver"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=ARpSb6I009s&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=8",
     "characterEngTrailer": "https://www.youtube.com/watch?v=DAvJE24A53E&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=6",
     "characterNumber": 24,
     "isEcho": false,
-    "tldr": "To be defined.",
-    "characterOutfits": ["1"],
+    "tldr": "The Octava Espada boasts a peerless life force. Augments his strength with careful analysis of foes. Has a special fighting style that involves analysing foes by collecting Rokureichu. Certain attacks plant Rokureichu in his opponent, and his Signature Move collects them. Collecting Rokureichu affects damage dealt, damage received, and the number of Konpaku destroyed for Kikon Moves. He starts with only 5 Konpaku, but he can endure long battles by using Rokureichu to power-up and his recovery move 'Gabriel' after Awakening.",
+    "characterOutfits": ["1", "2"],
     "abilities": [
       {
         "abilityName": "Fornicarás (La Lujuriosa)",
@@ -30,9 +30,9 @@
       {
         "base": [
           {
-            "id": "analysis-process",
-            "name": "Unique Mechanic: Analysis Process Counter",
-            "description": "Szayelaporro has a Unique Mechanic where by using his Spiritual Pressure Move 1 `I Need Your Corpse Intact` and his Signature Move `Retrieve Rokureichu`, his Analysis Process Counter increases. The Analysis Process Counter begins at 0, and has a maximum value of 100. When the Analysis Process Counter hits 100, it resets back to 0, and levels up the Spiritual Pressure Understanding Gauge by one Level (To a maximum Level of Level 3), tilting the RNG aspects of Szayelaporro's Awakening towards his favour with each Level gained.",
+            "id": "exclusive-ability-rokureichu-count",
+            "name": "Exclusive Ability: Rokureichu Count",
+            "description": "An ability exclusive to Szayelaporro. A value accrued by planting Rokureichu on the opponent with certain attacks. Increases Analysis Progress Stage in proportion with the number of times planted in battle.",
             "input": null,
             "damage": null,
             "frames": null,
@@ -51,12 +51,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["uniqueMechanic"]
+            "moveTags": ["exclusiveAbility"]
           },
           {
-            "id": "spiritual-pressure-understanding",
-            "name": "Unique Mechanic: Spiritual Pressure Understanding Gauge",
-            "description": "Szayelaporro has a Unique Mechanic where his Spiritual Pressure Understanding Gauge fills as his Analysis Process Counter hits 100. The Spiritual Pressure Understanding Gauge has three Levels, with each enhancing the RNG aspects of Szayelaporro's Awakening. As the Spritual Pressure Understanding Gauge increases, and when Szayelaporro is in Awakening, the number of Konpaku his Kikon Moves claim, the chance of him reviving after death, and the amount that his Analysis Process Counter increases by when claiming Rokureichu is all subject to the current 'weight' of the RNG affected by the Spiritual Pressure Understanding Gauge Level.",
+            "id": "exclusive-ability-analysis-progress-stage",
+            "name": "Exclusive Ability: Analysis Progress Stage",
+            "description": "An Exclusive Ability of Szayelaporro. A stat improving in stages based on the times Rokureichu were planted in battle. The higher your Analysis Progress Stage, the more the Spiritual Pressure Analysis Level gauge is raised by Spiritual Pressure Move 2: I've Already Analysed Your Abilities!, and the fewer Rokureichu are required to use Signature Move: Retrieve Rokureichu.",
             "input": null,
             "damage": null,
             "frames": null,
@@ -75,12 +75,36 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["uniqueMechanic"]
+            "moveTags": ["exclusiveAbility"]
           },
           {
-            "id": "retrieve-rokureichu",
-            "name": "Retrieve Rokureichu",
-            "description": "Szayelaporro grabs the opponent, retrieving any planted Rokureichu and increasing his Analysis Progress Counter.",
+            "id": "exclusive-ability-spiritual-pressure-understanding-level",
+            "name": "Exclusive Ability: Spiritual Pressure Understanding Level",
+            "description": "An Exclusive Ability of Szayelaporro. A power-up obtainable through Signature Move: Retrieve Rokureichu, and Spiritual Pressure Move 2: I've Already Analyzed Your Abilities!. Its main powers come after Awakening, but has benefits including reducing Reishi damage taken based on its level even in Normal State.",
+            "input": null,
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "base-retrieve-rokureichu",
+            "name": "Signature Move: Retrieve Rokureichu",
+            "description": "A Breaker-type move that closes in to grab the opponent. Does little damage to the opponent, but is unblockable. Recovers planted Rokureichu, raising your Spiritual Pressure Understanding Level.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -89,22 +113,22 @@
             "reishiGain": null,
             "reishiCost": null,
             "reiatsuGain": null,
-            "reiatsuCost": 0,
+            "reiatsuCost": 50,
             "fightingSpiritGain": 0,
             "fightingSpiritCost": null,
             "reversalGain": 0,
             "reversalCost": null,
-            "gaugeGain": 0,
+            "gaugeGain": null,
             "gaugeCost": null,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "gaugeIncreaseOnHit", "takesItem", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu"]
           },
           {
-            "id": "i-need-your-corpse-intact",
-            "name": "I Need Your Corpse Intact",
-            "description": "Szayelaporro fakes taking a hit and teleports behind the opponent, planting a Rokureichu inside the opponent and dealing damage.",
+            "id": "base-i-need-your-corpse-intact",
+            "name": "Spiritual Pressure Move 1: I Need Your Corpse Intact",
+            "description": "Brandish your blade to provoke your opponent. Make a close-range attack in this stance to trigger a backstab counter behind your opponent. The counter plants Rokureichu.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -123,12 +147,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortRange", "counter", "teleportsToOpponentOnBlock", "givesItem", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "you've-already-been-analysed!",
-            "name": "You've Already Been Analysed!",
-            "description": "Szayelaporro takes a stance and charges his Spiritual Pressure Understanding Gauge. The amount that is charged is dependent on his Analysis Progress Counter.",
+            "id": "base-i've-already-analyzed-your-abiliites!",
+            "name": "Spiritual Pressure Move 2: I've Already Analyzed Your Abilities!",
+            "description": "An ability that increases your Spiritual Pressure Understanding Level gauge without consuming Rokureichu. The higher your Analysis Progress Stage, the more your Spiritual Pressure Understanding Level will be filled.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -142,15 +166,15 @@
             "fightingSpiritCost": null,
             "reversalGain": 0,
             "reversalCost": null,
-            "gaugeGain": 0,
+            "gaugeGain": null,
             "gaugeCost": null,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "noRange", "noDamage", "gaugeIncreaseOnCharge", "charge", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "base-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -174,9 +198,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "base-special-flash-attack",
+            "name": "Special Flash Attack: Plant Rokureichu",
+            "description": "Approach quickly to attack. Low on power, but follows up by attaching a Rokureichu on the opponent.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -195,10 +219,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "base-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -222,7 +246,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "base-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -248,9 +272,9 @@
         ],
         "awakened": [
           {
-            "id": "analysis-process",
-            "name": "Unique Mechanic: Analysis Process Counter",
-            "description": "Szayelaporro has a Unique Mechanic where by using his Spiritual Pressure Move 1 `I Need Your Corpse Intact` and his Signature Move `Retrieve Rokureichu`, his Analysis Process Counter increases. The Analysis Process Counter begins at 0, and has a maximum value of 100. When the Analysis Process Counter hits 100, it resets back to 0, and levels up the Spiritual Pressure Understanding Gauge by one Level (To a maximum Level of Level 3), tilting the RNG aspects of Szayelaporro's Awakening towards his favour with each Level gained.",
+            "id": "exclusive-ability-rokureichu-count",
+            "name": "Exclusive Ability: Rokureichu Count",
+            "description": "An ability exclusive to Szayelaporro. A value accrued by planting Rokureichu on the opponent with certain attacks. Increases Analysis Progress Stage in proportion with the number of times planted in battle.",
             "input": null,
             "damage": null,
             "frames": null,
@@ -269,12 +293,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["uniqueMechanic"]
+            "moveTags": ["exclusiveAbility"]
           },
           {
-            "id": "spiritual-pressure-understanding",
-            "name": "Unique Mechanic: Spiritual Pressure Understanding Gauge",
-            "description": "Szayelaporro has a Unique Mechanic where his Spiritual Pressure Understanding Gauge fills as his Analysis Process Counter hits 100. The Spiritual Pressure Understanding Gauge has three Levels, with each enhancing the RNG aspects of Szayelaporro's Awakening. As the Spritual Pressure Understanding Gauge increases, and when Szayelaporro is in Awakening, the number of Konpaku his Kikon Moves claim, the chance of him reviving after death, and the amount that his Analysis Process Counter increases by when claiming Rokureichu is all subject to the current 'weight' of the RNG affected by the Spiritual Pressure Understanding Gauge Level.",
+            "id": "exclusive-ability-analysis-progress-stage",
+            "name": "Exclusive Ability: Analysis Progress Stage",
+            "description": "An Exclusive Ability of Szayelaporro. A stat improving in stages based on the times Rokureichu were planted in battle. The higher your Analysis Progress Stage, the more the Spiritual Pressure Analysis Level gauge is raised by Spiritual Pressure Move 2: I've Already Analysed Your Abilities!, and the fewer Rokureichu are required to use Signature Move: Retrieve Rokureichu.",
             "input": null,
             "damage": null,
             "frames": null,
@@ -293,13 +317,13 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["uniqueMechanic"]
+            "moveTags": ["exclusiveAbility"]
           },
           {
-            "id": "ressurección-fornicarás-(la-lujuriosa)-awakening",
-            "name": "Ressurección: `Fornicarás (La Lujuriosa)` Awakening",
-            "description": "Szayelaporro swallows his blade provocatively, erupting into a pink light before revealing his new, perfect form. After Awakening, Szayelaporro's stats are increased, and Szayelaporro's Gambler mechanics kick in. The number of Konpaku taken by Szayelaporro's Kikon Moves will vary depending on randomness, being weighed by the level of his `Spiritual Pressure Analysis Gauge`. Additionally, when Szayelaporro reaches 0 Konpaku, he is able to revive once with 3 additional Konpaku, depending on RNG. Finally, the amount that his `Analysis Process Counter` increases by will vary according to RNG.",
-            "input": "AW",
+            "id": "exclusive-ability-spiritual-pressure-understanding-level",
+            "name": "Exclusive Ability: Spiritual Pressure Understanding Level",
+            "description": "An Exclusive Ability of Szayelaporro. A power-up obtainable through Signature Move: Retrieve Rokureichu, and Spiritual Pressure Move 2: I've Already Analyzed Your Abilities!. Its main powers come after Awakening, but has benefits including reducing Reishi damage taken based on its level even in Normal State.",
+            "input": null,
             "damage": null,
             "frames": null,
             "hits": null,
@@ -309,7 +333,7 @@
             "reiatsuGain": null,
             "reiatsuCost": null,
             "fightingSpiritGain": null,
-            "fightingSpiritCost": 100,
+            "fightingSpiritCost": null,
             "reversalGain": null,
             "reversalCost": null,
             "gaugeGain": null,
@@ -317,12 +341,36 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "changesGaugeMechanics"]
+            "moveTags": ["exclusiveAbility"]
           },
           {
-            "id": "retrieve-rokureichu",
-            "name": "Retrieve Rokureichu",
-            "description": "Szayelaporro grabs the opponent, retrieving any planted Rokureichu and increasing his Analysis Progress Counter.",
+            "id": "exclusive-ability-gabriel",
+            "name": "Exclusive Ability: Gabriel",
+            "description": "An ability exclusive to Szayelaporro. Activates if at Spiritual Pressure Understanding Level 1 or above when your Konpaku fall to 0. Restores you 3 Konpaku, putting you back in the fight. Reaching Spiritual Pressure Understanding Level 3 allows you to revive up to twice.",
+            "input": null,
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "awakened-retrieve-rokureichu",
+            "name": "Signature Move: Retrieve Rokureichu",
+            "description": "A Breaker-type move that closes in to grab the opponent. Does little damage to the opponent, but is unblockable. Recovers planted Rokureichu, raising your Spiritual Pressure Understanding Level. This action is more powerful at Spiritual Pressure Understanding Level 2 or higher.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -331,22 +379,22 @@
             "reishiGain": null,
             "reishiCost": null,
             "reiatsuGain": null,
-            "reiatsuCost": 0,
+            "reiatsuCost": 50,
             "fightingSpiritGain": 0,
             "fightingSpiritCost": null,
             "reversalGain": 0,
             "reversalCost": null,
-            "gaugeGain": 0,
+            "gaugeGain": null,
             "gaugeCost": null,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "gaugeIncreaseOnHit", "takesItem", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReiatsu"]
           },
           {
-            "id": "i-need-your-corpse-intact",
-            "name": "I Need Your Corpse Intact",
-            "description": "Szayelaporro fakes taking a hit and teleports behind the opponent, planting a Rokureichu inside the opponent and dealing damage.",
+            "id": "awakened-i-need-your-corpse-intact",
+            "name": "Spiritual Pressure Move 1: I Need Your Corpse Intact",
+            "description": "Brandish your blade to provoke your opponent. Make a close-range attack in this stance to trigger a backstab counter behind your opponent. The counter plants Rokureichu. This action is more powerful at Spiritual Pressure Understanding Level 2 or higher.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -365,12 +413,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortRange", "counter", "teleportsToOpponentOnBlock", "givesItem", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "you've-already-been-analysed!",
-            "name": "You've Already Been Analysed!",
-            "description": "Szayelaporro takes a stance and charges his Spiritual Pressure Understanding Gauge. The amount that is charged is dependent on his Analysis Progress Counter.",
+            "id": "awakened-i've-already-analyzed-your-abiliites!",
+            "name": "Spiritual Pressure Move 2: I've Already Analyzed Your Abilities!",
+            "description": "An ability that increases your Spiritual Pressure Understanding Level gauge without consuming Rokureichu. The higher your Analysis Progress Stage, the more your Spiritual Pressure Understanding Level will be filled.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -384,15 +432,15 @@
             "fightingSpiritCost": null,
             "reversalGain": 0,
             "reversalCost": null,
-            "gaugeGain": 0,
+            "gaugeGain": null,
             "gaugeCost": null,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "noRange", "noDamage", "gaugeIncreaseOnCharge", "charge", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -416,9 +464,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Plant Rokureichu",
+            "description": "Approach quickly to attack. Low on power, but follows up by attaching a Rokureichu on the opponent. This action is more powerful at Spiritual Pressure Understanding Level 2 or higher.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -437,10 +485,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -464,7 +512,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -490,11 +538,11 @@
         ],
         "kikon": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Base Kikon currently not known.",
+            "id": "base-and-now,-for-the-finale-kikon-move",
+            "name": "Normal State Kikon Move 1: And Now, For the Finale",
+            "description": "Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break..",
             "input": "KI",
-            "damage": null,
+            "damage": 3,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -514,11 +562,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-teatro-de-titere-kikon-move",
+            "name": "Awakened Kikon Move 1: Teatro de Titere",
+            "description": "A Kikon Move that makes a doll of the opponent, from which you take out and destroy organs. The destroyed organ is chosen at random, each of which destroys a different amount of Konpaku. The higher your Spiritual Pressure Understanding Level, the more likely you are to extract organs with better effects.",
+            "input": "(After) AW, KI",
+            "damage": 0,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -538,11 +586,131 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Alternate Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-wrong-organ-kikon-move",
+            "name": "Awakened Kikon Move 1: Wrong Organ",
+            "description": "Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break..",
+            "input": "(After) AW, KI",
+            "damage": 3,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          },
+          {
+            "id": "awakened-humerus-kikon-move",
+            "name": "Awakened Kikon Move 1: Humerus (Húmero)",
+            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break. Temporarily reduces enemy attack, and takes a big chunk out of their Guard Gauge.",
+            "input": "(After) AW, KI",
+            "damage": 4,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          },
+          {
+            "id": "awakened-lung-kikon-move",
+            "name": "Awakened Kikon Move 1: Lung (Pulmón)",
+            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break. Temporarily halves the amount of Reiatsu earned by the opponent.",
+            "input": "(After) AW, KI",
+            "damage": 4,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          },
+          {
+            "id": "awakened-achilles-tendon-kikon-move",
+            "name": "Awakened Kikon Move 1: Achilles Tendon (Tendón de Aquiles)",
+            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break. Temporarily reduces the move speed of Steps/Dashes/normal movement.",
+            "input": "(After) AW, KI",
+            "damage": 4,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          },
+          {
+            "id": "awakened-stomach-kikon-move",
+            "name": "Awakened Kikon Move 1: Stomach (Estómago)",
+            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 4,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          },
+          {
+            "id": "awakened-heart-kikon-move",
+            "name": "Awakened Kikon Move 1: Heart (Corazón)",
+            "description": "Destroys 6 Konpaku. Destroys 7 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 7,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -564,7 +732,7 @@
         ],
         "baseCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "base-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -588,7 +756,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "base-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -612,10 +780,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "base-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -636,10 +804,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "base-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -660,7 +828,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "base-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -684,7 +852,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "base-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -708,7 +876,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "base-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -732,10 +900,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "base-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -756,10 +924,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "base-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -780,7 +948,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "base-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -804,10 +972,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "base-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -830,7 +998,7 @@
         ],
         "awakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "awakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -854,7 +1022,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "awakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -878,10 +1046,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "awakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -902,10 +1070,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "awakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -926,7 +1094,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "awakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -950,7 +1118,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "awakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -974,7 +1142,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "awakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -998,10 +1166,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "awakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1022,10 +1190,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "awakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1046,7 +1214,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "awakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -1070,10 +1238,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "awakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,

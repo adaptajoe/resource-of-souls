@@ -11,14 +11,14 @@
       "abilities": ["awakening"],
       "characteristics": ["female", "captain", "exile", "gotei13"]
     },
-    "characterEaseOfUse": 3,
+    "characterEaseOfUse": 5,
     "characterArchetype": ["shortRange", "melee", "charge", "kidō", "fast", "rushdown"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=gMd_2nwWnik&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=35",
     "characterEngTrailer": "https://www.youtube.com/watch?v=MUKNiK5g-RM&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=28",
     "characterNumber": 5,
     "isEcho": false,
-    "tldr": "To be defined.",
-    "characterOutfits": ["1", "2", "DLC1"],
+    "tldr": "The 'Flash Master', an expert in rapid Hohō and close combat. She overwhelms her foes through mastery of these skills. Can seize the initiative to close in on opponents and rack up damage. Attacking from a step or dash strengthens her moves, making it easy to maintain an offensive flow. Has low Reishi, so it's important to find a way to keep attacking the opponent without being interrupted.",
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
     "abilities": [
       {
         "abilityName": "Shunko",
@@ -30,9 +30,33 @@
       {
         "base": [
           {
-            "id": "anken-&-flash-breaker",
-            "name": "Anken & Flash Breaker",
-            "description": "A two-stage move that fires one of two moves, depending on how long the user holds the input. The first-stage attack fires two small Anken knives at the opponent. The second-stage attack acts as a counter; if the opponent hits Yoruichi with an attack in this state, Yoruichi counters, dodges the attack and retaliates.",
+            "id": "exclusive-ability-flash-master",
+            "name": "Exclusive Ability: Flash Master",
+            "description": "The signature ability of Yoruichi Shihoin. Strengthens moves unleashed during a Step or Dash.",
+            "input": null,
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "base-flash-breaker",
+            "name": "Signature Move: Flash Breaker",
+            "description": "Rotate on the spot. You're invincible while spinning, letting you fend off enemy attacks. Slide in any direction while triggering while Flash Master is active.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -51,12 +75,36 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "noRange", "blockCharge", "counterCharge", "teleportsToOpponentOnBlock", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "bakko",
-            "name": "Bakko",
-            "description": "A long-distance rush that launches a devastating punch to the opponent's gut, before following up with an explosive Reiryoku bomb.",
+            "id": "base-anken",
+            "name": "Signature Move: Anken",
+            "description": "Swing your leg to launch 2 dark Anken blades. Although weak, they have long range and can keep foes at bay. You can slide in any direction while launching the Anken while Flash Master is active.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "base-bakko",
+            "name": "Spiritual Pressure Move 1: Bakko",
+            "description": "Rush forward and punch the enemy, slamming a ball of Reiatsu into them. Activates quickly, making it viable in many ways, including as a combo finisher. The attack triggers faster while Flash Master is active, and your charge covers more distance.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -75,12 +123,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "dashesTowardsOpponent", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "oboro-neko",
-            "name": "Oboro Neko",
-            "description": "Yoruichi takes a lowered, hunched appearance flashing with afterimages. If Yoruichi is attacked, she avoids the attack and retaliates with a barrage of 10 melee strikes, finishing with a powerful downwards stomp.",
+            "id": "base-oboro-neko",
+            "name": "Spiritual Pressure Move 2: Oboro Neko",
+            "description": "Take a stance for unleashing afterimages. Take an attack during this stance to unleash a swift, multi-hit counter. Warps to the opponent to counterattack, making this effective even at long range.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -95,14 +143,14 @@
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "noRangeToShortRange", "counter", "block", "teleportsToOpponentOnBlock", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "base-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -126,9 +174,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "base-special-flash-attack",
+            "name": "Special Flash Attack: Shorai",
+            "description": "Use a palm strike, then launch a ball of Reiatsu to attack. Takes time to unleash, but attacks a wide area. The palm strike is a Breaker, and is unblockable at point-blank range. Slide forward to attack while Flash Master is active.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -147,10 +195,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "base-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -174,7 +222,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "base-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -200,9 +248,9 @@
         ],
         "awakened": [
           {
-            "id": "shunkō-awakening",
-            "name": "Shunkō Awakening",
-            "description": "Yoruichi outstretches her arm, wrapping Kidō into a pair of electrical flurries that stem from her back like wings before the sheer force blows her outfit down to a basic bodysuit due to the force. When Awakened, Yoruichi's Speed and Power are drastically increased, making her one of the fastest characters in the game.",
+            "id": "awakening-complete-shunko",
+            "name": "Awakening: Complete Shunko",
+            "description": "Yoruichi reaches her arm out, coating it and her back in an electric yellow storm of Reiryoku, perfectly blending Hakuda and Kido - When Awakened, Yoruichi's Speed and Power increases dramatically, making her one of the fastest characters in the game.",
             "input": "AW",
             "damage": null,
             "frames": null,
@@ -221,13 +269,13 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "boostsStats"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "S1",
+            "id": "exclusive-ability-flash-master",
+            "name": "Exclusive Ability: Flash Master",
+            "description": "The signature ability of Yoruichi Shihoin. Strengthens moves unleashed during a Step or Dash.",
+            "input": null,
             "damage": null,
             "frames": null,
             "hits": null,
@@ -245,10 +293,106 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["unknown"]
+            "moveTags": ["exclusiveAbility"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "awakened-flash-breaker",
+            "name": "Signature Move: Flash Breaker",
+            "description": "Rotate on the spot. You're invincible while spinning, letting you fend off enemy attacks. Slide in any direction while triggering while Flash Master is active.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "awakened-anken",
+            "name": "Signature Move: Anken",
+            "description": "Swing your leg to launch 2 dark Anken blades. Although weak, they have long range and can keep foes at bay. You can slide in any direction while launching the Anken while Flash Master is active.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "awakened-bakko",
+            "name": "Spiritual Pressure Move 1: Bakko",
+            "description": "Rush forward and punch the enemy, slamming a ball of Reiatsu into them. Activates quickly, making it viable in many ways, including as a combo finisher. The attack triggers faster while Flash Master is active, and your charge covers more distance.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-oboro-neko",
+            "name": "Spiritual Pressure Move 2: Oboro Neko",
+            "description": "Take a stance for unleashing afterimages. Take an attack during this stance to unleash a swift, multi-hit counter. Warps to the opponent to counterattack, making this effective even at long range.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 100,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": 100,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -272,9 +416,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Shorai",
+            "description": "Use a palm strike, then launch a ball of Reiatsu to attack. Takes time to unleash, but attacks a wide area. The palm strike is a Breaker, and is unblockable at point-blank range. Slide forward to attack while Flash Master is active.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -293,10 +437,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -320,7 +464,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -346,11 +490,11 @@
         ],
         "kikon": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Base Kikon currently not known.",
+            "id": "base-mujin-senda-kikon-move",
+            "name": "Normal State Kikon Move 1: Mujin Senda",
+            "description": "Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break.",
             "input": "KI",
-            "damage": null,
+            "damage": 3,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -370,11 +514,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "mujin-senda-kikon-move",
-            "name": "Mujin Senda",
-            "description": "Whilst Awakened, Yoruichi kicks her opponent, preparing to display her mastery of Hakuda and Kidō by striking the opponent with 10 precise, electrified punches in the span of 2 seconds.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-mujin-senda-kikon-move",
+            "name": "Awakened Kikon Move 1: Mujin Senda",
+            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 4,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -394,11 +538,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "shunrai-kikon-move",
-            "name": "Shunrai",
-            "description": "Whilst Awakened, Yoruichi lands on the ground, raising her arm towards he foe, palm outstretched as electrified Reiryoku collates at the centre of her hand, buzzing and vibrating with kinetic energy as Yoruichi unleashes it, firing an amazingly powerful blast of electrical energy.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-shunrai-kikon-move",
+            "name": "Awakened Kikon Move 2: Shunrai",
+            "description": "Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 5,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -420,7 +564,7 @@
         ],
         "baseCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "base-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -444,7 +588,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "base-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -468,10 +612,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "base-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -492,10 +636,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "base-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -516,7 +660,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "base-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -540,7 +684,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "base-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -564,7 +708,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "base-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -588,10 +732,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "base-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -612,10 +756,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "base-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -636,7 +780,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "base-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -660,10 +804,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "base-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -686,7 +830,7 @@
         ],
         "awakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "awakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -710,7 +854,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "awakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -734,10 +878,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "awakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -758,10 +902,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "awakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -782,7 +926,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "awakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -806,7 +950,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "awakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -830,7 +974,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "awakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -854,10 +998,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "awakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -878,10 +1022,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "awakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -902,7 +1046,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "awakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -926,10 +1070,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "awakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -948,6 +1092,30 @@
             "resourceCost": null,
             "cooldown": "X Seconds",
             "moveTags": ["stepQuickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
+          },
+          {
+            "id": "awakened-full-meter-cashout-community-combo",
+            "name": "Community Combo: Full Meter Cashout",
+            "description": "Expend all of Soi-Fon's resources in an oppressive combo that overwhelms her foe. Requires 100 Reverse, 8 Anken, and at least 50 Reiatsu. Will not allow for a launcher at the end. Useful for pushing the opponent into Soul Break or into Now or Never. Created by '@kombat.'.",
+            "input": "Q -> Q -> Q -> SI -> F -> Q -> Q -> SI -> F -> Q -> F -> CR -> HH -> F -> Q -> Q -> SI -> F -> Q -> Q -> SI -> F -> Q -> F -> S2",
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": 100,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": 8,
+            "cooldown": "X Seconds",
+            "moveTags": ["needsStatInfo"]
           }
         ]
       }

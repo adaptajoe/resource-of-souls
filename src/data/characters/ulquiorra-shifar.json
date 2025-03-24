@@ -11,13 +11,13 @@
       "abilities": ["awakening", "reawakening", "resurrección", "segunda etapa"],
       "characteristics": ["male", "ArrancarArmy", "espada"]
     },
-    "characterEaseOfUse": 3,
+    "characterEaseOfUse": 4,
     "characterArchetype": ["hybridRange", "melee", "ranged", "fast", "vampiric", "balanced", "reawakener"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=z6Sj7GDz3JU&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=26",
     "characterEngTrailer": "https://www.youtube.com/watch?v=SwczZ1FYyqg&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=21",
     "characterNumber": 12,
     "isEcho": false,
-    "tldr": "To be defined.",
+    "tldr": "The Cuatro Espada, borne of the void. Rapidly regains Reishi and has two tiers of power release. Can attack with oppressive forece by performing combos with his Signature Move Cero and Spiritual Pressure Move 1 Cero. These moves consume Reishi but deal high damage and can be used in a variety of ways, such as to cover openings after an attack. Fully charging Fighting Spirit after Awakening lets him Reawaken.",
     "characterOutfits": ["1", "2"],
     "abilities": [
       {
@@ -30,40 +30,16 @@
       {
         "base": [
           {
-            "id": "vampirism",
-            "name": "Unique Mechanic: Vampirism",
-            "description": "Ulquiorra has a unique Archetype that allows him to shed his Reiatsu during his Signature Move, and to recover Reiatsu with his Spiritual Pressure Move 2. It is unknown if Ulquiorra can reduce his Reiatsu below 1 at this point, or if Ulquiorra's Signature Move can be used at 1 Reiatsu.",
-            "input": null,
-            "damage": null,
-            "frames": null,
-            "hits": null,
-            "hasOfficialName": true,
-            "reishiGain": null,
-            "reishiCost": null,
-            "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": null,
-            "reversalGain": null,
-            "reversalCost": null,
-            "gaugeGain": null,
-            "gaugeCost": null,
-            "resourceGain": null,
-            "resourceCost": null,
-            "cooldown": "X Seconds",
-            "moveTags": ["uniqueMechanic"]
-          },
-          {
-            "id": "cero",
-            "name": "Cero",
-            "description": "Fires a green laser of Reiryoku towards Ulquiorra's opponent. It consumes a portion of Ulquiorra's Reishi in exchange for high damage.",
+            "id": "base-cero-signature",
+            "name": "Signature Move: Cero",
+            "description": "Unleash a small-scale Cero. Consumes your Reishi on activation, but is easy to use and boasts incredible power. You can cancel various attacks into this move.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
             "hits": null,
             "hasOfficialName": true,
             "reishiGain": null,
-            "reishiCost": 0,
+            "reishiCost": null,
             "reiatsuGain": null,
             "reiatsuCost": 0,
             "fightingSpiritGain": 0,
@@ -75,17 +51,18 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "costsReishi", "attackTypeRanged", "shortToMidRange", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReishi"]
           },
           {
-            "id": "instant-regeneration",
-            "name": "Instant Regeneration",
-            "description": "Ulquiorra assumes a pose and swirls green Reishi around him, healing a portion of his Reishi over time. Holding down the input and charging Instant Regeneration increases the speed of Ulquiorra' Reishi recovery.",
+            "id": "base-cero",
+            "name": "Spiritual Pressure Move 1: Cero",
+            "description": "Unleash a powerful Cero. Consumes your Reishi on activation, but boasts devastating power. A versatile move with fast activation, letting you activate it under all sorts of conditions.",
             "input": "S1",
-            "damage": null,
+            "damage": 0,
             "frames": 0,
+            "hits": null,
             "hasOfficialName": true,
-            "reishiGain": 0,
+            "reishiGain": null,
             "reishiCost": null,
             "reiatsuGain": null,
             "reiatsuCost": 50,
@@ -98,19 +75,19 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "noRange", "noDamage", "charge", "recoversReishiOnCharge", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReishi", "costsReiatsu"]
           },
           {
-            "id": "alternate-cero",
-            "name": "Alternate Cero",
-            "description": "Ulquiorra consumes a portion of his Reishi in order to fire a more powerful 'Cero', but it consumes more Reishi than his Signature Move counterpart. 'Alternate Cero' can be chained on the end of 'Cero' to deal devastating ranged damage at the cost of a lot of Reishi.",
+            "id": "base-instant-regeneration",
+            "name": "Spiritual Pressure Move 2: Instant Regeneration",
+            "description": "Activates Ulquiorra's Instant Regeneration ability, where Reishi recovers over time after activation, continuing for a set period of time or until you take damage from an attack. Hold the input to boost the amount recovered.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
             "hits": null,
             "hasOfficialName": true,
             "reishiGain": null,
-            "reishiCost": 0,
+            "reishiCost": null,
             "reiatsuGain": null,
             "reiatsuCost": 100,
             "fightingSpiritGain": 0,
@@ -122,10 +99,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "costsReishi", "attackTypeRanged", "shortToMidRange", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "refundsReishi"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "base-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -149,9 +126,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "base-special-flash-attack",
+            "name": "Special Flash Attack: Trunk Cleave",
+            "description": "Close in quickly for a cleaving strike. Rushes in quickly to attack a wide area, letting you commence the attack from mid-range. Can transition into Cero after the attack.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -170,10 +147,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "base-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -197,7 +174,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "base-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -223,34 +200,10 @@
         ],
         "awakened": [
           {
-            "id": "vampirism",
-            "name": "Unique Mechanic: Vampirism",
-            "description": "Ulquiorra has a unique Archetype that allows him to shed his Reiatsu during his Signature Move, and to recover Reiatsu with his Spiritual Pressure Move 2. It is unknown if Ulquiorra can reduce his Reiatsu below 1 at this point, or if Ulquiorra's Signature Move can be used at 1 Reiatsu.",
+            "id": "awakening-ressurección-murciélago",
+            "name": "Awakening: Ressurrección - Murciélago",
+            "description": "Ulquiorra hovers upwards, like the moon rising in the night sky, pointing his blade at his foe as a rupturous flurry of blackened green Reiryoku raindrops spread across the arena like thick needles, blanketing the sky. Ulquiorra emerges, donning a long, flowing robe, his Hollow mask altered, and spawning two vampiric-looking bat wings.",
             "input": null,
-            "damage": null,
-            "frames": null,
-            "hits": null,
-            "hasOfficialName": true,
-            "reishiGain": null,
-            "reishiCost": null,
-            "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": null,
-            "reversalGain": null,
-            "reversalCost": null,
-            "gaugeGain": null,
-            "gaugeCost": null,
-            "resourceGain": null,
-            "resourceCost": null,
-            "cooldown": "X Seconds",
-            "moveTags": ["uniqueMechanic"]
-          },
-          {
-            "id": "ressurección-murciélago-awakening",
-            "name": "Ressurección: `Murciélago` Awakening",
-            "description": "Ulquiorra swells with power as he points Murciélago at his foe, exploding with Reiryoku and raining down blackened green Reiryoku on the surrounding area. Two jet-black wings sprout from Ulquiorra's back, as his Hollow Mask now mirrors itself to form a fuller form. Whilst Awakened, the amount of Reiatsu he can hold is drastically increased, making it easier to use his Spiritual Pressure moves.",
-            "input": "AW",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -268,19 +221,19 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "increasesReiatsuLimit"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "cero",
-            "name": "Cero",
-            "description": "Fires a green laser of Reiryoku towards Ulquiorra's opponent. It consumes a portion of Ulquiorra's Reishi in exchange for high damage.",
+            "id": "awakened-cero-signature",
+            "name": "Signature Move: Cero",
+            "description": "Unleash a small-scale Cero. Consumes your Reishi on activation, but is easy to use and boasts incredible power. You can cancel various attacks into this move.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
             "hits": null,
             "hasOfficialName": true,
             "reishiGain": null,
-            "reishiCost": 0,
+            "reishiCost": null,
             "reiatsuGain": null,
             "reiatsuCost": 0,
             "fightingSpiritGain": 0,
@@ -292,17 +245,18 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "costsReishi", "attackTypeRanged", "shortToMidRange", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsReishi"]
           },
           {
-            "id": "instant-regeneration",
-            "name": "Instant Regeneration",
-            "description": "Ulquiorra assumes a pose and swirls green Reishi around him, healing a portion of his Reishi over time. Holding down the input and charging Instant Regeneration increases the speed of Ulquiorra' Reishi recovery.",
+            "id": "awakened-cero-oscuras",
+            "name": "Spiritual Pressure Move 1: Cero Oscuras",
+            "description": "Unleash a Cero Oscuras. Consumes your Reishi on activation, but boasts devastating power. A versatile move with fast activation, letting you activate it under all sorts of conditions.",
             "input": "S1",
-            "damage": null,
+            "damage": 0,
             "frames": 0,
+            "hits": null,
             "hasOfficialName": true,
-            "reishiGain": 0,
+            "reishiGain": null,
             "reishiCost": null,
             "reiatsuGain": null,
             "reiatsuCost": 50,
@@ -315,19 +269,19 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "noRange", "noDamage", "charge", "recoversReishiOnCharge", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReishi", "costsReiatsu"]
           },
           {
-            "id": "cero-oscuras",
-            "name": "Cero Oscuras",
-            "description": "Ulquiorra consumes a portion of his Reishi in order to fire a more powerful 'Cero', but it consumes more Reishi than his Signature Move counterpart. 'Cero Oscuras' can be chained on the end of 'Cero' to deal devastating ranged damage at the cost of a lot of Reishi.",
+            "id": "awakened-instant-regeneration",
+            "name": "Spiritual Pressure Move 2: Instant Regeneration",
+            "description": "Activates Ulquiorra's Instant Regeneration ability, where Reishi recovers over time after activation, continuing for a set period of time or until you take damage from an attack. Hold the input to boost the amount recovered.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
             "hits": null,
             "hasOfficialName": true,
             "reishiGain": null,
-            "reishiCost": 0,
+            "reishiCost": null,
             "reiatsuGain": null,
             "reiatsuCost": 100,
             "fightingSpiritGain": 0,
@@ -339,10 +293,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "costsReishi", "attackTypeRanged", "shortToMidRange", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "refundsReishi"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -366,9 +320,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Trunk Cleave",
+            "description": "Close in quickly for a cleaving strike. Rushes in quickly to attack a wide area, letting you commence the attack from mid-range. Can transition into Cero after the attack.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -387,10 +341,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -414,7 +368,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -440,34 +394,10 @@
         ],
         "reawakened": [
           {
-            "id": "vampirism",
-            "name": "Unique Mechanic: Vampirism",
-            "description": "Ulquiorra has a unique Archetype that allows him to shed his Reiatsu during his Signature Move, and to recover Reiatsu with his Spiritual Pressure Move 2. It is unknown if Ulquiorra can reduce his Reiatsu below 1 at this point, or if Ulquiorra's Signature Move can be used at 1 Reiatsu.",
+            "id": "reawakening-ressurección-segunda-etapa",
+            "name": "Reawakening: Ressurrección - Segunda Etapa",
+            "description": "Ulquiorra swells even further with black Reiryoku as his wings spread outward, forming a typhoon of swirling nihilsm. After the vortex clears, his new, bat-like form is apparent, clad in black, sleek fur and having lost his Hollow mask.",
             "input": null,
-            "damage": null,
-            "frames": null,
-            "hits": null,
-            "hasOfficialName": true,
-            "reishiGain": null,
-            "reishiCost": null,
-            "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": null,
-            "reversalGain": null,
-            "reversalCost": null,
-            "gaugeGain": null,
-            "gaugeCost": null,
-            "resourceGain": null,
-            "resourceCost": null,
-            "cooldown": "X Seconds",
-            "moveTags": ["uniqueMechanic"]
-          },
-          {
-            "id": "segunda-etapa-reawakening",
-            "name": "Segunda Etapa Reawakening",
-            "description": "Emerging from a storm of nothingness, Ulquiorra showcases his perfected form, the Segunda Etapa release. In this form, he becomes fully bat-like, shedding his Hollow Mask, and is clad in a thick, blackened fur, sprouting sharp nails on his hands and feet, and a long, windy tail at his rear. When Reawakened, all of Ulquiorra's attacks change, and his Power and Speed drastically increase.",
-            "input": "RE",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -488,7 +418,79 @@
             "moveTags": ["reawakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "reawakened-cero-signature",
+            "name": "Signature Move: Cero",
+            "description": "Unleash a small-scale Cero. Consumes your Reishi on activation, but is easy to use and boasts incredible power. You can cancel various attacks into this move.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsReishi"]
+          },
+          {
+            "id": "reawakened-cero-oscuras",
+            "name": "Spiritual Pressure Move 1: Cero Oscuras",
+            "description": "Unleash a Cero Oscuras. Consumes your Reishi on activation, but boasts devastating power. A versatile move with fast activation, letting you activate it under all sorts of conditions.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReishi", "costsReiatsu"]
+          },
+          {
+            "id": "reawakened-instant-regeneration",
+            "name": "Spiritual Pressure Move 2: Instant Regeneration",
+            "description": "Activates Ulquiorra's Instant Regeneration ability, where Reishi recovers over time after activation, continuing for a set period of time or until you take damage from an attack. Hold the input to boost the amount recovered.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 100,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "refundsReishi"]
+          },
+          {
+            "id": "reawakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -512,9 +514,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "reawakened-special-flash-attack",
+            "name": "Special Flash Attack: Shredding Strike",
+            "description": "Close in quickly to rake with your claws. Rushes in quickly to attack a wide area, letting you commence the attack from mid-range. Can transition into Cero after the attack.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -533,10 +535,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "reawakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -560,7 +562,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "reawakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -586,10 +588,34 @@
         ],
         "kikon": [
           {
-            "id": "cero-of-pity-kikon-move",
-            "name": "Cero of Pity",
-            "description": "Whilst Unawakened, Ulquiorra stabs a single time with absolute precision before holding out his hand, firing a single, powerful Cero.",
+            "id": "base-cero-of-pity-kikon-move",
+            "name": "Normal State Kikon Move 1: Cero of Pity",
+            "description": "Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break.",
             "input": "KI",
+            "damage": 3,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          },
+          {
+            "id": "awakened-fulgore-kikon-move",
+            "name": "Awakened Kikon Move 1: Fulgore",
+            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -610,10 +636,10 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "cero-oscuras-kikon-move",
-            "name": "Cero Oscuras",
-            "description": "Whilst Awakened, Ulquiorra stabs his opponent's waist with a javelin a single time before firing a Cero Oscuras straight at his opponent.",
-            "input": "AW -> KI",
+            "id": "awakened-cero-oscuras-kikon-move",
+            "name": "Awakened Kikon Move 2: Cero Oscuras",
+            "description": "Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -634,58 +660,10 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "fulgore-kikon-move",
-            "name": "Fulgore",
-            "description": "Whilst Awakened, Ulquiorra slashes his opponent's waist a single time, before wrapping himself in his jet black wings, spinning into a throwing stance where he looses a javelin of extremely explosive Reiryoku straight at his opponent.",
-            "input": "AW -> KI",
-            "damage": null,
-            "frames": null,
-            "hits": null,
-            "hasOfficialName": true,
-            "reishiGain": null,
-            "reishiCost": null,
-            "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": null,
-            "reversalGain": null,
-            "reversalCost": null,
-            "gaugeGain": null,
-            "gaugeCost": null,
-            "resourceGain": null,
-            "resourceCost": null,
-            "cooldown": "X Seconds",
-            "moveTags": ["kikonMove"]
-          },
-          {
-            "id": "segunda-etapa-latigo-cero-oscuras-kikon-move",
-            "name": "Segunda Etapa: Latigo Cero Oscuras",
-            "description": "Whilst Reawakened, Ulquiorra sends his opponent flying catching them with his whip-like tail, hanging them  above him whilst he fires a point-blank Cero Oscuras through the center of his opponent's chest.",
-            "input": "RE -> KI",
-            "damage": null,
-            "frames": null,
-            "hits": null,
-            "hasOfficialName": true,
-            "reishiGain": null,
-            "reishiCost": null,
-            "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": null,
-            "reversalGain": null,
-            "reversalCost": null,
-            "gaugeGain": null,
-            "gaugeCost": null,
-            "resourceGain": null,
-            "resourceCost": null,
-            "cooldown": "X Seconds",
-            "moveTags": ["kikonMove"]
-          },
-          {
-            "id": "segunda-etapa-lanza-del-relámpago-kikon-move",
-            "name": "Segunda Etapa: Lanza del Relámpago",
-            "description": "Whilst Reawakened, Ulquiorra clasps his hands together to weave a long javelin of immense explosive Reiryoku, gripping it and firing it straight towards his opponent to cause an astoundingly powerful blast.",
-            "input": "RE -> KI",
+            "id": "reawakened-lanza-del-relampago-kikon-move",
+            "name": "Reawakened Kikon Move 1: Lanza del Relampago",
+            "description": "Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break.",
+            "input": "(After) RE, KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -708,7 +686,7 @@
         ],
         "baseCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "base-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -732,7 +710,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "base-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -756,10 +734,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "base-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -780,10 +758,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "base-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -804,7 +782,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "base-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -828,7 +806,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "base-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -852,7 +830,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "base-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -876,10 +854,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "base-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -900,10 +878,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "base-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -924,7 +902,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "base-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -948,10 +926,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "base-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -974,7 +952,7 @@
         ],
         "awakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "awakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -998,7 +976,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "awakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -1022,10 +1000,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "awakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1046,10 +1024,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "awakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1070,7 +1048,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "awakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -1094,7 +1072,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "awakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -1118,7 +1096,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "awakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -1142,10 +1120,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "awakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1166,10 +1144,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "awakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1190,7 +1168,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "awakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -1214,10 +1192,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "awakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1240,7 +1218,7 @@
         ],
         "reawakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "reawakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -1264,7 +1242,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "reawakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -1288,10 +1266,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "reawakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1312,10 +1290,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "reawakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1336,7 +1314,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "reawakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -1360,7 +1338,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "reawakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -1384,7 +1362,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "reawakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -1408,10 +1386,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "reawakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1432,10 +1410,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "reawakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1456,7 +1434,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "reawakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -1480,10 +1458,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "reawakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,

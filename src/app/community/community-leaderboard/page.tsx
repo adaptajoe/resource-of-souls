@@ -5,7 +5,7 @@ import { useMemo, useState } from "react";
 import badgesData from "../../../data/badgesData.json";
 import tournamentData from "../../../data/tournamentData.json";
 import { IBadge } from "@/types/badgeDataTypes";
-import { ITournament } from "@/types/tournamentDataTypes";
+import { ITournament, IRawTournament, ITournamentData, Platform } from "@/types/tournamentDataTypes";
 
 export default function CommunityLeaderboard() {
   const [activeTable, setActiveTable] = useState<string>("All Leagues");
@@ -31,10 +31,12 @@ export default function CommunityLeaderboard() {
     return Object.values(tables).flat();
   }, [tables]);
 
-  const tournamentInfo: ITournament[] = tournamentData.tournaments.map((tournament: any) => ({
+  const tournamentDataTyped: ITournamentData = tournamentData as ITournamentData;
+
+  const tournamentInfo: ITournament[] = tournamentDataTyped.tournaments.map((tournament: IRawTournament) => ({
     ...tournament,
     tournamentDate: new Date(tournament.tournamentDate),
-    platform: tournament.platform.toUpperCase() as "PC" | "PlayStation" | "Xbox",
+    platform: tournament.platform.toUpperCase() as Platform,
   }));
 
   const calculateDaysSince = (date: Date | null | undefined) => {
@@ -399,6 +401,7 @@ export default function CommunityLeaderboard() {
               }`}
             >
               {region}
+              {region === "ANY" && " Region"}
             </button>
           ))}
         </div>
@@ -439,7 +442,7 @@ export default function CommunityLeaderboard() {
                 <p className="text-amber-400 font-bebasFont tracking-wider text-base md:text-xl text-center">{tournament.tournamentStartTime}</p>
               </div>
               <div>
-                <p className="mx-8 w-40 text-xs md:text-base">{tournament.notes ? <span className="text-amber-400">{tournament.notes}</span> : "No notes"}</p>
+                <p className="mx-8 w-40 text-xs">{tournament.notes ? <span className="text-amber-400">{tournament.notes}</span> : "No notes"}</p>
               </div>
             </Link>
           ))}
@@ -553,13 +556,22 @@ export default function CommunityLeaderboard() {
         </div>
         <hr />
         <div className="col-span-1 xl:col-span-2 my-8">
-          <h2 className="text-2xl md:text-3xl font-black pl-4 border-l-8 border-red-600 mb-8">
-            <span className="text-red-600">A</span>ctive Tournaments
-          </h2>
-          <button className="font-bold text-teal-400 flex items-center gap-2 hover:underline" onClick={() => setExpandActiveTournaments((prevState) => !prevState)}>
-            <span>Click to {expandActiveTournaments ? "hide" : "expand"}</span>
-            {expandActiveTournaments ? <span>&uarr;</span> : <span>&darr;</span>}
-          </button>
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-black pl-4 border-l-8 border-red-600 mb-8">
+                <span className="text-red-600">A</span>ctive Tournaments
+              </h2>
+              <button className="font-bold text-teal-400 flex items-center gap-2 mb-4 hover:underline" onClick={() => setExpandActiveTournaments((prevState) => !prevState)}>
+                <span>Click to {expandActiveTournaments ? "hide" : "expand"}</span>
+                {expandActiveTournaments ? <span>&uarr;</span> : <span>&darr;</span>}
+              </button>
+            </div>
+            <div>
+              <Link href="https://forms.gle/xZ5dw1Ly4G2bFa5n9" className="font-bebasFont tracking-wider bg-gray-700 p-4 rounded-xl text-xl hover:bg-red-600 hover:text-black transition-colors">
+                Submit a new Tournament
+              </Link>
+            </div>
+          </div>
           {!expandActiveTournaments ? null : <TournamentTable tournaments={tournamentInfo} />}
         </div>
         <hr />

@@ -240,6 +240,32 @@ export default function Characters() {
                 Ease of Use
                 {sortConfig.type === "easeOfUse" && <span>{sortConfig.ascending ? <span>&uarr;</span> : <span>&darr;</span>}</span>}
               </button>
+
+              <div className="flex flex-row space-x-2">
+                {[
+                  { type: "power", label: "Power" },
+                  { type: "speed", label: "Speed" },
+                  { type: "range", label: "Range" },
+                  { type: "defense", label: "Defense" },
+                  { type: "technique", label: "Technique" },
+                ].map((stat) => (
+                  <button
+                    key={stat.type}
+                    onClick={() =>
+                      setSortConfig((prev) => ({
+                        type: stat.type as SortType["type"],
+                        ascending: prev.type === stat.type ? !prev.ascending : true,
+                      }))
+                    }
+                    className={`px-3 py-1 font-black hover:bg-red-600 hover:text-black rounded ${
+                      sortConfig.type === stat.type ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
+                    } transition-colors`}
+                  >
+                    {stat.label}
+                    {sortConfig.type === stat.type && <span>{sortConfig.ascending ? <span>&darr;</span> : <span>&uarr;</span>}</span>}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className="flex flex-row space-x-2 pr-4 border-0 xl:border-r-2 border-gray-400">
@@ -261,7 +287,7 @@ export default function Characters() {
               ))}
             </div>
 
-            <div className="flex flex-row pr-4 space-x-2 border-0 xl:border-r-2 border-gray-400">
+            <div className="flex flex-row pr-4 space-x-2 border-0">
               {[
                 { value: "all", label: "All" },
                 { value: "male", label: "Male-Only" },
@@ -275,31 +301,6 @@ export default function Characters() {
                   } transition-colors`}
                 >
                   {gender.label}
-                </button>
-              ))}
-            </div>
-            <div className="flex flex-row space-x-2">
-              {[
-                { type: "power", label: "Power" },
-                { type: "speed", label: "Speed" },
-                { type: "range", label: "Range" },
-                { type: "defense", label: "Defense" },
-                { type: "technique", label: "Technique" },
-              ].map((stat) => (
-                <button
-                  key={stat.type}
-                  onClick={() =>
-                    setSortConfig((prev) => ({
-                      type: stat.type as SortType["type"],
-                      ascending: prev.type === stat.type ? !prev.ascending : true,
-                    }))
-                  }
-                  className={`px-3 py-1 font-black hover:bg-red-600 hover:text-black rounded ${
-                    sortConfig.type === stat.type ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
-                  } transition-colors`}
-                >
-                  {stat.label}
-                  {sortConfig.type === stat.type && <span>{sortConfig.ascending ? <span>&darr;</span> : <span>&uarr;</span>}</span>}
                 </button>
               ))}
             </div>

@@ -11,14 +11,14 @@
       "abilities": ["awakening", "shikai"],
       "characteristics": ["male", "lieutenant", "gotei13"]
     },
-    "characterEaseOfUse": 3,
+    "characterEaseOfUse": 2,
     "characterArchetype": ["shortRange", "melee", "zoner", "gimmick", "balanced"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=cuB14RLuijk&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=21",
     "characterEngTrailer": "https://www.youtube.com/watch?v=F3tL_rpw6HQ&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=15",
     "characterNumber": 17,
     "isEcho": false,
-    "tldr": "To be defined.",
-    "characterOutfits": ["1"],
+    "tldr": "The Squad 3 Lieutenant, who carries a hidden sadness. Movements grow slower as this despair intensifies. Has a notable Signature Move that pulls in an opponent after attacking once and enables additional hits. If the Signature Move lands, your opponent will be forced to act without escape. Doesn't do much damage, so you'll need to continually outmaneuver your opponent while dealing damage in order to win.",
+    "characterOutfits": ["1", "2"],
     "abilities": [
       {
         "abilityName": "Wabisuke",
@@ -30,9 +30,9 @@
       {
         "base": [
           {
-            "id": "bakudo-#4-hainawa-&-hado-#11-tsuzuri-raiden",
-            "name": "Bakudo #4: Hainawa & Hado #11: Tsuzuri Raiden",
-            "description": "Izuru shoots a rope of golden elasticated Reiryoku forwards, electrified with the power of 'Hado #11: Tsuzuri Raiden'; if 'Bakudo #4: Hainawa' hits the opponent, it changes properties based on how long Izuru holds the input; without holding the input, the attack simply deals damage, however if Izuru holds the input, the opponent is instead pulled towards Izuru.",
+            "id": "base-bakudo-#4-hainawa",
+            "name": "Signature Move: Bakudo #4 - Hainawa",
+            "description": "Unleash Hainawa in front of you. Changes on hit depending on if the input is held. You can combo into this from various moves.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -51,12 +51,60 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToMidRange", "kidō", "charge", "pullsOpponentWhenCharged", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "jujokenmai",
-            "name": "Jujokenmai",
-            "description": "Beginning with a horizontal slash, Izuru transitions into a second horizontal slash before jumping into a sweeping overhead slash.",
+            "id": "base-snatch",
+            "name": "Signature Move: Snatch",
+            "description": "Transition into this move by holding the input on a hit with Bakudo #4 - Hainawa. Pull on the Hainawa to draw the enemy toward you. Can be canceled with a Special Flash Attack or Step after pulling in the enemy.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "base-hado-#11-tsuzuri-raiden",
+            "name": "Signature Move: Hado #11 - Tsuzuri Raiden",
+            "description": "A variation of Bakudo #4 - Hainawa (Release the input on hit). Send a Tsuzuri Raiden along the Hainawa to damage the enemy.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "base-jujokenmai",
+            "name": "Spiritual Pressure Move 1: Jujokenmai",
+            "description": "Take a stance, then step in and slice your foe. Transitions to a combo attack when it hits the opponent.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -75,12 +123,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "bakudo-#61-rikujokoro",
-            "name": "Bakudo #61: Rikujokoro",
-            "description": "Izuru manifests six golden wedges of Reiryoku around his opponent, slamming them into the opponent's waist, restraining them for a period of time.",
+            "id": "base-bakudo-#61-rikujokoro",
+            "name": "Spiritual Pressure Move 2: Bakudo #61 - Rikujokoro",
+            "description": "Incants Bakudo #61 - Rikujokoro and fires it at the opponent. Unblockable, and temporarily binds the enemy on hit.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -95,14 +143,14 @@
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeRanged", "midRange", "kidō", "tracksOpponent", "restrictsOpponentsMovement", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "base-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -126,9 +174,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "base-special-flash-attack",
+            "name": "Special Flash Attack: Bakudo #39 - Enkosen",
+            "description": "Deploy Enkosen to fend off opponent attacks. Taking an attack while this is deployed triggers a combo counter with your Zanpakuto.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -147,10 +195,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "base-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -174,7 +222,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "base-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -200,33 +248,9 @@
         ],
         "awakened": [
           {
-            "id": "wabisuke-counter",
-            "name": "Unique Mechanic: Wabisuke Counter",
-            "description": "When Izuru Awakens, he gains access to the `Wabisuke Counter`. When hitting opponents, the `Wabisuke Counter` increases. The `Wabisuke Counter` decreases over time. When the `Wabisuke Counter` is above 0, the opponent's animations are slowed by a fixed amount depending on the current amount of the `Wabisuke Counter`. The higher the `Wabisuke Counter`, the more damage the opponent takes.",
-            "input": null,
-            "damage": null,
-            "frames": null,
-            "hits": null,
-            "hasOfficialName": true,
-            "reishiGain": null,
-            "reishiCost": null,
-            "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": null,
-            "reversalGain": null,
-            "reversalCost": null,
-            "gaugeGain": null,
-            "gaugeCost": null,
-            "resourceGain": null,
-            "resourceCost": null,
-            "cooldown": "X Seconds",
-            "moveTags": ["uniqueMechanic"]
-          },
-          {
-            "id": "shikai-wabisuke-awakening",
-            "name": "Shikai: `Wabisuke` Awakening",
-            "description": "Izuru snaps Wabisuke into a contorted form, activating his Shikai - When Awakened, Izuru gains the `Wabisuke Counter`, which slows his opponents' animations by a fixed amount when hit with a Spiritual Pressure Move. The Wabisuke Counter can increase and decreases over a fixed period of time without being hit by a Spiritual Pressure Move. The higher the `Wabisuke Counter`, the slower the opponent becomes, and the more damage they take.",
+            "id": "awakening-bankai-suzumushi-tsuishiki-enma-korogi",
+            "name": "Awakening: Bankai - Suzumushi Tsuishiki, Enma Korogi",
+            "description": "Tosen spawns a circular metal hoop infront of him, as he flips it downwards, and spreads it into five other clones, tossing them around the arena. The rings spew with a vicious darkness, blanketing the area with a black orb - This orb robs Tosen's foes of their senses of sight, hearing, smell and taste, but leaves their sense of touch intact.",
             "input": "AW",
             "damage": null,
             "frames": null,
@@ -245,13 +269,13 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "noRange", "noDamage", "grantsPermanentCounter"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "S1",
+            "id": "exclusive-ability-wabisuke-count",
+            "name": "Exclusive Ability: Wabisuke Count",
+            "description": "Izuru Kira's signature ability. Confers a Wabisuke Count for each slash landed with Wabisuke. Weighed Down triggers when Jujokenmai or Bakudo #61 - Rikujokoro hits.",
+            "input": null,
             "damage": null,
             "frames": null,
             "hits": null,
@@ -269,10 +293,154 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["unknown"]
+            "moveTags": ["exclusiveAbility"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "exclusive-ability-weighed-down",
+            "name": "Exclusive Ability: Weighed Down",
+            "description": "The signature ability of Izuru Kira. Triggers when Jujokenmai or Bakudo #61 - Rikujokoro hits. Temporarily reduces enemy movement speed when activated, and increases the number of Konpaku destroyed by 'Hence...'. A more powerful Weighed Down is triggered in proportion to the Wabisuke Count when this is activated.",
+            "input": null,
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "awakened-bakudo-#4-hainawa",
+            "name": "Signature Move: Bakudo #4 - Hainawa",
+            "description": "Unleash Hainawa in front of you. Changes on hit depending on if the input is held. You can combo into this from various moves.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "awakened-snatch",
+            "name": "Signature Move: Snatch",
+            "description": "Transition into this move by holding the input on a hit with Bakudo #4 - Hainawa. Pull on the Hainawa to draw the enemy toward you. Can be canceled with a Special Flash Attack or Step after pulling in the enemy.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "awakened-hado-#11-tsuzuri-raiden",
+            "name": "Signature Move: Hado #11 - Tsuzuri Raiden",
+            "description": "A variation of Bakudo #4 - Hainawa (Release the input on hit). Send a Tsuzuri Raiden along the Hainawa to damage the enemy.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "awakened-jujokenmai",
+            "name": "Spiritual Pressure Move 1: Jujokenmai",
+            "description": "Take a stance, then step in and slice your foe. Transitions to a combo attack when it hits the opponent.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-bakudo-#61-rikujokoro",
+            "name": "Spiritual Pressure Move 2: Bakudo #61 - Rikujokoro",
+            "description": "Incants Bakudo #61 - Rikujokoro and fires it at the opponent. Unblockable, and temporarily binds the enemy on hit.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 100,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": 100,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -296,9 +464,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Bakudo #39 - Enkosen",
+            "description": "Deploy Enkosen to fend off opponent attacks. Taking an attack while this is deployed triggers a combo counter with your Zanpakuto.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -317,10 +485,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -344,7 +512,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -370,11 +538,11 @@
         ],
         "kikon": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Base Kikon currently not known.",
+            "id": "base-hado-#58-tenran-kikon-move",
+            "name": "Normal State Kikon Move 1: Hado #58 - Tenran",
+            "description": "Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break..",
             "input": "KI",
-            "damage": null,
+            "damage": 3,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -394,35 +562,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
-            "frames": null,
-            "hits": null,
-            "hasOfficialName": true,
-            "reishiGain": null,
-            "reishiCost": null,
-            "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": null,
-            "reversalGain": null,
-            "reversalCost": null,
-            "gaugeGain": null,
-            "gaugeCost": null,
-            "resourceGain": null,
-            "resourceCost": null,
-            "cooldown": "X Seconds",
-            "moveTags": ["kikonMove"]
-          },
-          {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Alternate Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-hence...-kikon-move",
+            "name": "Awakened Kikon Move 1: Hence...",
+            "description": "Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break.. More Konpaku can be destroyed when Weighed Down is active, up to 5 Konpaku depending on the level, and up to 6 Konpaku depending on the level with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 4,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -444,7 +588,7 @@
         ],
         "baseCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "base-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -468,7 +612,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "base-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -492,10 +636,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "base-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -516,10 +660,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "base-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -540,7 +684,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "base-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -564,7 +708,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "base-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -588,7 +732,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "base-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -612,10 +756,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "base-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -636,10 +780,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "base-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -660,7 +804,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "base-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -684,10 +828,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "base-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -710,7 +854,7 @@
         ],
         "awakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "awakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -734,7 +878,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "awakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -758,10 +902,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "awakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -782,10 +926,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "awakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -806,7 +950,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "awakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -830,7 +974,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "awakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -854,7 +998,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "awakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -878,10 +1022,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "awakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -902,10 +1046,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "awakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -926,7 +1070,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "awakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -950,10 +1094,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "awakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,

@@ -7,12 +7,10 @@ import { notFound } from "next/navigation";
 import fs from "fs";
 import path from "path";
 import StarRatingWrapper from "@/components/StarRatingWrapper";
-import YouTubeEmbedWrapper from "@/components/EmbedYoutubeVideoWrapper";
 import RadarChartComponentWrapper from "@/components/RadarChartComponentWrapper";
 import CharacterMovesWrapper from "@/components/CharacterMovesWrapper";
-import CharacterAnimationsWrapper from "@/components/CharacterAnimationsWrapper";
 import CharacterSidebarWrapper from "@/components/CharacterSidebarWrapper";
-import CharacterOutfitsWrapper from "@/components/CharacterOutfitsWrapper";
+import CharacterAssetsWrapper from "@/components/CharacterAssetsWrapper";
 
 export async function generateStaticParams() {
   return Object.keys(characterData).map((slug) => ({
@@ -112,10 +110,6 @@ export default async function CharacterDetails(props: Props) {
               {!character.isEcho ? null : <p className="text-teal-400">&epsilon;</p>}
             </div>
             <div className="flex flex-wrap gap-4 my-4">
-              <Link href="#character-info" className="text-teal-400 hover:underline">
-                Character Info
-              </Link>
-              <span className="text-gray-400">•</span>
               <Link href="#stats" className="text-teal-400 hover:underline">
                 Stats
               </Link>
@@ -124,24 +118,16 @@ export default async function CharacterDetails(props: Props) {
                 TLDR Guide
               </Link>
               <span className="text-gray-400">•</span>
-              <Link href="#trailers" className="text-teal-400 hover:underline">
-                Trailers
+              <Link href="#movelist" className="text-teal-400 hover:underline">
+                Movelist
               </Link>
               <span className="text-gray-400">•</span>
-              <Link href="#animations" className="text-teal-400 hover:underline">
-                Animations
+              <Link href="#assets" className="text-teal-400 hover:underline">
+                Assets
               </Link>
               <span className="text-gray-400">•</span>
               <Link href="#trivia" className="text-teal-400 hover:underline">
                 Trivia
-              </Link>
-              <span className="text-gray-400">•</span>
-              <Link href="#outfits" className="text-teal-400 hover:underline">
-                Outfits
-              </Link>
-              <span className="text-gray-400">•</span>
-              <Link href="#movelist" className="text-teal-400 hover:underline">
-                Movelist
               </Link>
             </div>
             <Image
@@ -282,30 +268,22 @@ export default async function CharacterDetails(props: Props) {
               </div>
             </div>
             <hr className="my-6" />
-            {/* Trailers */}
-            <div id="trailers">
+            {/* Movelist */}
+            <div id="movelist">
               <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
-                <span className="text-red-600">T</span>railers
+                <span className="text-red-600">M</span>ovelist
               </h3>
-              <div className="border-2 bg-black border-gray-400 rounded-xl mt-6 p-4">
-                <YouTubeEmbedWrapper character={character} />
+              <div className="border-2 bg-black border-gray-400 rounded-t-xl mt-6 pt-4">
+                <CharacterMovesWrapper moves={character.moves} characterId={character.id} />
               </div>
             </div>
             <hr className="my-6" />
-            {/* Animations */}
-            <div id="animations">
+            {/* Assets */}
+            <div id="assets">
               <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
-                <span className="text-red-600">A</span>nimations
+                <span className="text-red-600">A</span>ssets
               </h3>
-              <div className="bg-black">
-                {hasAnimations ? (
-                  <CharacterAnimationsWrapper animations={animations} slug={params.slug} />
-                ) : (
-                  <div className="border border-white rounded-xl w-full p-4">
-                    <p className="text-gray-400">No animations available for this character.</p>
-                  </div>
-                )}
-              </div>
+              <CharacterAssetsWrapper character={character} slug={params.slug} animations={animations} hasAnimations={hasAnimations} />
             </div>
             <hr className="my-6" />
             {/* Trivia */}
@@ -320,26 +298,6 @@ export default async function CharacterDetails(props: Props) {
                   </li>
                 ))}
               </ul>
-            </div>
-            <hr className="my-6" />
-            {/* Outfits */}
-            <div id="outfits">
-              <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
-                <span className="text-red-600">O</span>utfits
-              </h3>
-              <div className="mt-4 bg-black">
-                <CharacterOutfitsWrapper character={character} slug={params.slug} />
-              </div>
-            </div>
-            <hr className="my-6" />
-            {/* Movelist */}
-            <div id="movelist">
-              <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
-                <span className="text-red-600">M</span>ovelist
-              </h3>
-              <div className="border-2 bg-black border-gray-400 rounded-xl mt-6 pt-4">
-                <CharacterMovesWrapper moves={character.moves} characterId={character.id} />
-              </div>
             </div>
           </div>
         </div>

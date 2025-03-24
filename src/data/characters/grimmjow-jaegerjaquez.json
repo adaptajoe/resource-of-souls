@@ -17,8 +17,8 @@
     "characterEngTrailer": "https://www.youtube.com/watch?v=dmEM_2Shrjg&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=13",
     "characterNumber": 19,
     "isEcho": false,
-    "tldr": "To be defined.",
-    "characterOutfits": ["1"],
+    "tldr": "The Sexta Espada strives to excel for reasons all his own. Fights harder when at a disadvantage, turning the tide. Charging his personal Impulse Gauge puts him in Annihilation State and lets him overwhelm his foes with high attack power. Annihilation State changes his offensive capabilities, increasing combos and unleashing explosive battle power. The Impulse Gauge is charged when he takes damage or with his Signature Move. It can feel like a waiting game until the Impulse Gauge is fully charged, but then he can turn the tide at the end of battle to seize victory.",
+    "characterOutfits": ["1", "2", "DLC1", "DLC2"],
     "abilities": [
       {
         "abilityName": "Pantera",
@@ -30,9 +30,9 @@
       {
         "base": [
           {
-            "id": "impulse-gauge",
-            "name": "Unique Mechanic: Impulse Gauge & Annihilation State Stance",
-            "description": "Grimmjow has access to the `Impulse Gauge`, which increases as Grimmjow is hit, or uses his Signature Move `Preparación`; when the `Impulse Gauge` is filled to the maximum, Grimmjow enters the `Annihilation State Stance`, which turns the `Impulse Gauge` red, increases Grimmjow's damage output, changing his attack animations and speed. When in the `Annihilation State Stance`, the `Impulse Gauge` drains rapidly automatically.",
+            "id": "exclusive-ability-impulse-gauge",
+            "name": "Exclusive Ability: Impulse Gauge",
+            "description": "An ability exclusive to Grimmjow. This Gauge fills up by using Preparación, which deals Reishi Damage. Fill the gauge to enter Annihilation State.",
             "input": null,
             "damage": null,
             "frames": null,
@@ -51,14 +51,38 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["uniqueMechanic"]
+            "moveTags": ["exclusiveAbility"]
           },
           {
-            "id": "preparación",
-            "name": "Preparación",
-            "description": "Grimmjow taunts the opponent and charges his `Impulse Gauge`; holding the input charges the `Impulse Gauge` for longer; once the `Impulse Gauge` is filled to the maximum, Grimmjow enters the `Annihilation State (A)` for a certain period of time, changing his attacks and increasing his damage.",
-            "input": "SI",
+            "id": "exclusive-ability-annihilation-state",
+            "name": "Exclusive Ability: Annihilation State",
+            "description": "An ability exclusive to Grimmjow. Attacks are powered up and some actions change until the gauge runs out.",
+            "input": null,
             "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "base-preparación",
+            "name": "Signature Move: Preparación",
+            "description": "Build rage to amplify the Impulse Gauge. Holding the input continues to charge the Impulse Gauge.",
+            "input": "SI",
+            "damage": 0,
             "frames": 0,
             "hits": null,
             "hasOfficialName": true,
@@ -70,17 +94,41 @@
             "fightingSpiritCost": null,
             "reversalGain": 0,
             "reversalCost": null,
-            "gaugeGain": 0,
+            "gaugeGain": null,
             "gaugeCost": null,
-            "resourceGain": 1,
+            "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "noDamage", "noRange", "gaugeIncreaseOnCharge", "stanceChange", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "cero",
-            "name": "Cero",
-            "description": "Grimmjow dashes to his opponent to slice his opponent, gripping their face and firing a Cero at point-blank range. When Grimmjow is in the `Annihilation State (A)`, his Cero will deal significantly more damage to an opponents' Guard Gauge.",
+            "id": "base-giland-patada",
+            "name": "Signature Move: Giland Patada",
+            "description": "Preparación changes into this during Annihilation State. Attacks the opponent with a roundhouse kick. Gets a Guard Point until the attack activates, letting you attack while fending off the opponent's attack.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "base-cero",
+            "name": "Spiritual Pressure Move 1: Cero",
+            "description": "Rush forward and rake upward into a Cero blast. Activates quickly and moves you forward somewhat, making it perfect for a combo finisher.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -99,19 +147,19 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "dashesTowardsOpponent", "extraGuardDamageIfInStanceA", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "kill-them,-spare-no-one",
-            "name": "Kill Them, Spare No One",
-            "description": "Grimmjow enters the `Decimation State (B)` for a period of time after activaton, which drastically boosts his damage output in exchange for him losing Reishi with each attack landed.",
+            "id": "base-kill-them,-spare-no-one",
+            "name": "Spiritual Pressure Move 2: Kill Them, Spare No One",
+            "description": "Detonate your rage, temporarily entering a Decimation State, a state with effects above Annihilation State. During Decimation State, moves enhanced by Annihilation State are changed into even stronger versions. Each attack with recoil decreases your Reishi slightly.",
             "input": "S2",
-            "damage": null,
-            "frames": null,
+            "damage": 0,
+            "frames": 0,
             "hits": null,
             "hasOfficialName": true,
             "reishiGain": null,
-            "reishiCost": 0,
+            "reishiCost": null,
             "reiatsuGain": null,
             "reiatsuCost": 100,
             "fightingSpiritGain": 0,
@@ -119,14 +167,14 @@
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "triggersReishiBleed", "noDamage", "noRange", "stanceChange", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "base-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -150,9 +198,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "base-special-flash-attack",
+            "name": "Special Flash Attack: Leap",
+            "description": "Leap straight ahead, rushing into a crushing claw attack. Annihilation State changes this into a devastating attack that also causes damage during the rush.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -171,10 +219,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "base-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -198,7 +246,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "base-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -224,10 +272,10 @@
         ],
         "awakened": [
           {
-            "id": "ressurección-pantera-awakening",
-            "name": "Ressurección: `Pantera` Awakening",
-            "description": "Grimmjow grinds the blade of Pantera before erupting into a violent flash of blue Reiryoku, transforming him into a regal panther-like form with long, flowing hair. Whilst Awakened, all of Grimmjow's stats are increased, and the amount of Reishi he has will increase. Grimmjow's Annhilation State and Decimation States also gain massive boosts.",
-            "input": "AW",
+            "id": "awakening-ressurrección-pantera",
+            "name": "Awakening: Ressurrección - Pantera",
+            "description": "Grimmjow rips at his Zanpakuto before summoning forth a vortex of dust, his roar establishing his right to the throne and shredding the dust cloud away with his voice alone, as he stands, ready to prove his might in his new panther-like form.",
+            "input": null,
             "damage": null,
             "frames": null,
             "hits": null,
@@ -245,14 +293,62 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "boostsStats"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "preparación",
-            "name": "Preparación",
-            "description": "Grimmjow taunts the opponent and charges his `Impulse Gauge`; holding the input charges the `Impulse Gauge` for longer; once the `Impulse Gauge` is filled to the maximum, Grimmjow enters the `Annihilation State (A)` for a certain period of time, changing his attacks and increasing his damage.",
-            "input": "SI",
+            "id": "exclusive-ability-impulse-gauge",
+            "name": "Exclusive Ability: Impulse Gauge",
+            "description": "An ability exclusive to Grimmjow. This Gauge fills up by using Preparación, which deals Reishi Damage. Fill the gauge to enter Annihilation State.",
+            "input": null,
             "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "exclusive-ability-annihilation-state",
+            "name": "Exclusive Ability: Annihilation State",
+            "description": "An ability exclusive to Grimmjow. Attacks are powered up and some actions change until the gauge runs out.",
+            "input": null,
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "awakened-preparación",
+            "name": "Signature Move: Preparación",
+            "description": "Build rage to amplify the Impulse Gauge. Holding the input continues to charge the Impulse Gauge.",
+            "input": "SI",
+            "damage": 0,
             "frames": 0,
             "hits": null,
             "hasOfficialName": true,
@@ -264,17 +360,41 @@
             "fightingSpiritCost": null,
             "reversalGain": 0,
             "reversalCost": null,
-            "gaugeGain": 0,
+            "gaugeGain": null,
             "gaugeCost": null,
-            "resourceGain": 1,
+            "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "noDamage", "noRange", "gaugeIncreaseOnCharge", "stanceChange", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "garra-de-la-pantera",
-            "name": "Garra de la Pantera",
-            "description": "Grimmjow looses a hellish slice towards his opponent, hitting them backwards, firing his elbow-darts at point-blank range if it hits. When Grimmjow is in the `Annihilation State (A)`, his elbow-darts will deal significantly more damage to an opponents' Guard Gauge.",
+            "id": "awakened-giland-patada",
+            "name": "Signature Move: Giland Patada",
+            "description": "Preparación changes into this during Annihilation State. Attacks the opponent with a roundhouse kick. Gets a Guard Point until the attack activates, letting you attack while fending off the opponent's attack.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "awakened-garra-de-la-pantera",
+            "name": "Spiritual Pressure Move 1: Garra de la Pantera",
+            "description": "Rush forward and rake upward into a Garra de la Pantera. Activates quickly and moves you forward somewhat, making it perfect for a combo finisher. Decimation State makes this unblockable at point-blank range.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -293,19 +413,19 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "dashesTowardsOpponent", "extraGuardDamageIfInStanceA", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "kill-them,-spare-no-one",
-            "name": "Kill Them, Spare No One",
-            "description": "Grimmjow enters the `Decimation State (B)` for a period of time after activaton, which drastically boosts his damage output in exchange for him losing Reishi with each attack landed.",
+            "id": "awakened-kill-them,-spare-no-one",
+            "name": "Spiritual Pressure Move 2: Kill Them, Spare No One",
+            "description": "Detonate your rage, temporarily entering a Decimation State, a state with effects above Annihilation State. During Decimation State, moves enhanced by Annihilation State are changed into even stronger versions. Each attack with recoil decreases your Reishi slightly.",
             "input": "S2",
-            "damage": null,
-            "frames": null,
+            "damage": 0,
+            "frames": 0,
             "hits": null,
             "hasOfficialName": true,
             "reishiGain": null,
-            "reishiCost": 0,
+            "reishiCost": null,
             "reiatsuGain": null,
             "reiatsuCost": 100,
             "fightingSpiritGain": 0,
@@ -313,14 +433,14 @@
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "triggersReishiBleed", "noDamage", "noRange", "stanceChange", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -344,9 +464,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Leap",
+            "description": "Leap straight ahead, rushing into a crushing claw attack. Annihilation State changes this into a devastating attack that also causes damage during the rush.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -365,10 +485,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -392,7 +512,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -418,11 +538,11 @@
         ],
         "kikon": [
           {
-            "id": "gran-ray-cero-kikon-move",
-            "name": "Gran Ray Cero",
-            "description": "Whilst Unawakened, Grimmjow tears from Pantera as he charges an extremely powerful Gran Rey Cero, firing it at his foe.",
+            "id": "base-gran-rey-cero-kikon-move",
+            "name": "Normal State Kikon Move 1: Gran Rey Cero",
+            "description": "Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break",
             "input": "KI",
-            "damage": null,
+            "damage": 3,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -442,11 +562,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "pantera-desgarrón-kikon-move",
-            "name": "Pantera: Desgarrón",
-            "description": "Whilst Awakened, Grimmjow summons forth ten gigantic claws of blue Reiryoku, swinging them backwards and unleashing a devastating grid of slices at his foe.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-regal-dignity-kikon-move",
+            "name": "Awakened Kikon Move 1: Regal Dignity",
+            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break",
+            "input": "(After) AW, KI",
+            "damage": 4,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -466,11 +586,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Alternate Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-desgarrón-kikon-move",
+            "name": "Awakened Kikon Move 2: Desgarrón",
+            "description": "Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break",
+            "input": "(After) AW, KI",
+            "damage": 5,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -492,7 +612,7 @@
         ],
         "baseCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "base-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -516,7 +636,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "base-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -540,10 +660,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "base-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -564,10 +684,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "base-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -588,7 +708,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "base-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -612,7 +732,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "base-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -636,7 +756,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "base-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -660,10 +780,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "base-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -684,10 +804,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "base-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -708,7 +828,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "base-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -732,10 +852,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "base-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -758,7 +878,7 @@
         ],
         "awakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "awakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -782,7 +902,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "awakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -806,10 +926,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "awakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -830,10 +950,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "awakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -854,7 +974,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "awakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -878,7 +998,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "awakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -902,7 +1022,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "awakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -926,10 +1046,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "awakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -950,10 +1070,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "awakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -974,7 +1094,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "awakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -998,10 +1118,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "awakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,

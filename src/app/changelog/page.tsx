@@ -14,24 +14,39 @@ const ChangelogEntry = ({ version, date, changes }: { version: string; date: str
 );
 
 export default function Changelog() {
-  const rebirthOfSoulsChangelog = useMemo(
-    () => [
-      {
-        version: "v1.0.1",
-        date: "??/??/????",
-        changes: ["TBC."],
-      },
-      {
-        version: "v1.0.0",
-        date: "21/03/2025",
-        changes: ["BLEACH - Rebirth of Souls released on the Xbox Marketplace.", "BLEACH - Rebirth of Souls released on the PlayStation Store.", "BLEACH - Rebirth of Souls released on Steam."],
-      },
-    ],
-    []
-  );
-
   const resourceOfSoulsChangelog = useMemo(
     () => [
+      {
+        version: "v1.1.1.",
+        date: "20/03/2025",
+        changes: [
+          "Added 100% accurate Movelists for all remaining characters.",
+          "Fixed all instances of Ease of Use being incorrect.",
+          "Added new options to the Movelist component for how inputs are shown, Scrollable Combo Inputs, and added a few community combos.",
+        ],
+      },
+      {
+        version: "v1.1.0.",
+        date: "20/03/2025",
+        changes: [
+          "Added 100% accurate Movelists for the following characters: Yasutora 'Chad' Sado, Ichigo Kurosaki, Ichigo Kurosaki (Bankai), Ichigo Kurosaki (Final Getsugatensho), Byakuya Kuchiki, Tier Halibel, Coyote Stark, Szayelaporro Granz, Ulquiorra Shifar, Grimmjow Jaegerjaquez, Nelliel Tu Odelschwanck, Gin Ichimaru, Sosuke Aizen, Kisuke Urahara, Shigekuni Genryusai Yamamoto, and Uryu Ishida. The remaining characters will be done in the next patch.",
+          "Reworked the Character Details page with new features for asset downloading, viewing outfits, trailers, and animations.",
+          "Added alt. colors for a number of characters. More to come!",
+          "Reworked the Movelist component for better clarity, and to better match the in-game user interface.",
+          "Added updated Tournament data to the Community Leaderboard Page.",
+        ],
+      },
+      {
+        version: "v1.0.15.",
+        date: "15/03/2025",
+        changes: [
+          "Added new assets for the Home and Community Pages",
+          "Added a site-wide background used by Bandai to look nicer.",
+          "Completely reworked the Community Leaderboard page; now with filterable tournaments, entire Badge lists and more!",
+          "Fixed poor footer views on Mobile",
+          "Fixed a ton of wrong Tournament information",
+        ],
+      },
       {
         version: "v1.0.14.",
         date: "12/03/2025",
@@ -268,13 +283,7 @@ export default function Changelog() {
       </h2>
       <div>View BLEACH - Rebirth of Souls and BLEACH - Resource of Souls&apos; respective changelogs.</div>
       <hr />
-      <div className="grid grid-cols-1 md:grid-cols-2">
-        <div>
-          <h2 className="text-2xl font-bold mb-2">Rebirth of Souls</h2>
-          {rebirthOfSoulsChangelog.map((entry, index) => (
-            <ChangelogEntry key={index} version={entry.version} date={entry.date} changes={entry.changes} />
-          ))}
-        </div>
+      <div className="grid grid-cols-1">
         <div>
           <h2 className="text-2xl font-bold mb-2 mt-4 md:mt-0">Resource of Souls</h2>
           {resourceOfSoulsChangelog.map((entry, index) => (

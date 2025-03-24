@@ -13,13 +13,13 @@
       "characteristics": ["male", "karakuraResident", "vizard"]
     },
     "characterEaseOfUse": 5,
-    "characterArchetype": ["midRange", "melee", "ranged", "fast", "reviver", "gauge", "charge", "rushdown", "reawakener"],
+    "characterArchetype": ["shortRange", "midRange", "melee", "ranged", "fast", "reviver", "gauge", "charge", "rushdown", "reawakener"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=d0VEZq9dMcY&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=27",
     "characterEngTrailer": "https://www.youtube.com/watch?v=iJdteynstKg&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=20",
     "characterNumber": 13,
     "isEcho": false,
-    "tldr": "To be defined.",
-    "characterOutfits": ["1"],
+    "tldr": "A Substitue Shinigami who quickly overwhelms foes. Those in Soul Society recognize him as an agent of destiny. Has multiple easy-to-use actions, such as his projectile Signature Move and Spiritual Pressure Move 1 with invincibility. Use Spiritual Pressure Move 2, Getsuga Aura to greatly strengthen every attack for a limited time. Use safe moves to charge Reiatsu and then overpower your opponent when the time is right. Reawakens automatically if defeated when Awakened with fully charged Fighting Spirit.",
+    "characterOutfits": ["1", "2", "3"],
     "abilities": [
       {
         "abilityName": "Tensa Zangetsu",
@@ -31,9 +31,9 @@
       {
         "base": [
           {
-            "id": "getsuga-aura-gauge",
-            "name": "Unique Mechanic: Getsuga Aura Gauge",
-            "description": "After using his Spiritual Pressure Move 2, Ichigo gains the `Getsuga Aura Gauge`, which significantly increases his damage output. The `Getsuga Aura Gauge` decreases when landing hits, and over time. There is no way to fill the `Getsuga Aura Gauge` asides from using Ichigo's Spiritual Pressure Move 2, `Getsuga Aura` again.",
+            "id": "base-getsuga-aura-state",
+            "name": "Exclusive Ability: Getsuga Aura State",
+            "description": "A signature upgrade state for Ichigo Kurosaki (Bankai). Entering Getsuga Aura State adds a Getsuga Aura Gauge and powers up your attacks. The Getsuga Aura Gauge goes down when you attack or receive enemy attacks.",
             "input": null,
             "damage": null,
             "frames": null,
@@ -52,12 +52,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["uniqueMechanic"]
+            "moveTags": ["exclusiveAbility"]
           },
           {
-            "id": "getsuga-tenshō",
-            "name": "Getsuga Tenshō",
-            "description": "Ichigo fires a wave of red and black Reiryoku towards his opponent. Getsuga Tenshō can be charged to increase its' strength.",
+            "id": "base-getsugatensho",
+            "name": "Signature Move: Getsugatensho",
+            "description": "Takes a stance before unleashing a Getsugatensho forward. Hold the input for a more powerful slash wave. Always unleashes a powerful slash wave in Getsuga Aura State.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -72,16 +72,16 @@
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": 0,
+            "gaugeCost": null,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToMidRange", "charge", "gaugeDecreaseOnHit", "gaugeDecreaseOnWhiff", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "full-swing-strike",
-            "name": "Full Swing Strike",
-            "description": "Ichigo leaps upwards and slashes at the opponent. Damage is relatively low, but Ichigo gains Super Armor temporarily, rendering him invulnerable for a short period before his leap.",
+            "id": "base-full-swing-strike",
+            "name": "Spiritual Pressure Move 1: Full Swing Strike",
+            "description": "Strike a low stance before unleashing a brutal rising slash. You're invincible during the startup, letting you trigger this move to fend off attacks.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -96,16 +96,16 @@
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": 0,
+            "gaugeCost": null,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortRange", "superArmor", "gaugeDecreaseOnHit", "gaugeDecreaseOnWhiff", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "getsuga-aura",
-            "name": "Getsuga Aura",
-            "description": "Ichigo instills himself with the power of Getsuga, channeling Getsuga Tenshō through Tensa Zangetsu, augmenting his damage. Getsuga Aura takes the form of a temporary Gauge that decreases as Ichigo lands attacks, and gets hit with attacks. Getsuga Aura can only be restored by reusing Getsuga Aura. There is no way to restore Getsuga Aura Gauge whilst Getsuga Aura is active.",
+            "id": "base-getsuga-aura",
+            "name": "Spiritual Pressure Move 2: Getsuga Aura",
+            "description": "Imbue Tensa Zangetsu with Spiritual Pressure to wreathe your blade in a Getsuga. You enter Getsuga Aura State after using this move, strengthening various attacks.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -119,15 +119,15 @@
             "fightingSpiritCost": null,
             "reversalGain": 0,
             "reversalCost": null,
-            "gaugeGain": 100,
+            "gaugeGain": null,
             "gaugeCost": null,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["resourceGain", "costsReiatsu", "noRange", "noDamage", "grantsTemporaryGauge", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "base-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -151,9 +151,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "base-special-flash-attack",
+            "name": "Special Flash Attack: Rushing Stab",
+            "description": "A thrust while rushing forward. Lets you close in on your foe while attacking. Useful for offense, but puts you at a disadvantage when guarded. Can use additional attacks on hit and allows for a Quick Attack follow-up in Getsuga Aura State.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -172,10 +172,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "base-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -199,7 +199,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "base-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -225,10 +225,10 @@
         ],
         "awakened": [
           {
-            "id": "hollowfication-awakening",
-            "name": "Hollowfication Awakening",
-            "description": "Ichigo steels himself as he rips in a claw-like motion at his face, donning his Hollowfication, screaming alongside a torrent of violent Reiryoku. When Awakened, the amount of Reiatsu Ichigo can hold is increased, and his stats get an overall boost.",
-            "input": "AW",
+            "id": "awakening-hollowfication",
+            "name": "Awakening: Hollowfication",
+            "description": "Ichigo rips at his face, drawing black and red Reiryoku as his Hollowfication is donned.",
+            "input": null,
             "damage": null,
             "frames": null,
             "hits": null,
@@ -249,10 +249,10 @@
             "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "S1",
+            "id": "awakened-getsuga-aura-state",
+            "name": "Exclusive Ability: Getsuga Aura State",
+            "description": "A signature upgrade state for Ichigo Kurosaki (Bankai). Entering Getsuga Aura State adds a Getsuga Aura Gauge and powers up your attacks. The Getsuga Aura Gauge goes down when you attack or receive enemy attacks.",
+            "input": null,
             "damage": null,
             "frames": null,
             "hits": null,
@@ -270,10 +270,82 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["unknown"]
+            "moveTags": ["exclusiveAbility"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "awakened-getsugatensho",
+            "name": "Signature Move: Getsugatensho",
+            "description": "Takes a stance before unleashing a Getsugatensho forward. Hold the input for a more powerful slash wave. Always unleashes a powerful slash wave in Getsuga Aura State.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "awakened-full-swing-strike",
+            "name": "Spiritual Pressure Move 1: Full Swing Strike",
+            "description": "Strike a low stance before unleashing a brutal rising slash. You're invincible during the startup, letting you trigger this move to fend off attacks.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-getsuga-aura",
+            "name": "Spiritual Pressure Move 2: Getsuga Aura",
+            "description": "Imbue Tensa Zangetsu with Spiritual Pressure to wreathe your blade in a Getsuga. You enter Getsuga Aura State after using this move, strengthening various attacks.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 100,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -297,9 +369,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Rushing Stab",
+            "description": "A thrust while rushing forward. Lets you close in on your foe while attacking. Useful for offense, but puts you at a disadvantage when guarded. Can use additional attacks on hit and allows for a Quick Attack follow-up in Getsuga Aura State.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -318,10 +390,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -345,7 +417,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -371,13 +443,15 @@
         ],
         "reawakened": [
           {
-            "id": "full-hollowfication-reawakening",
-            "name": "Full Hollowfication Reawakening",
-            "description": "Ichigo is revived from death a single time, as the Hollow inside takes full control. In this form, Ichigo resembles a Vasto Lorde, draped in bone-white skin with claws on his hands and feet, a Hollow Hole having formed in his chest. His Hollow Mask also changes, becoming more demonic and adorned with long, flowing hair and two grand horns. It is currently not known exactly what this Reawakening does to Ichigo in regards to gameplay.",
-            "input": "RE",
+            "id": "reawakening-hollowfication",
+            "name": "Reawakening: Full Hollowfication",
+            "description": "Ichigo lies dead, suddenly grasping the ground as Reireyoku collates around him, rising once more like a demon unleashed from the bowels of Hell itself. As Ichigo raises his arched back, he stands ferocious, ready to rip and tear his foe to shreds.",
+            "input": null,
             "damage": null,
             "frames": null,
-            "reishiGain": 100,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
             "reishiCost": null,
             "reiatsuGain": null,
             "reiatsuCost": null,
@@ -390,34 +464,82 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["reawakening", "noDamage", "noRange", "revivesUser", "setsFightingSpiritTo0"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "S1",
-            "damage": null,
-            "frames": null,
+            "id": "reawakened-cero",
+            "name": "Signature Move: Cero",
+            "description": "Unleashes a Cero forward. The projectile is extremely fast, making it a powerful way to keep foes at bay at mid-range.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
             "hits": null,
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
             "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
             "fightingSpiritCost": null,
-            "reversalGain": null,
+            "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
             "gaugeCost": null,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["unknown"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "reawakeneed-rising-slash",
+            "name": "Spiritual Pressure Move 1: Rising Slash",
+            "description": "Strike a low stance, charge into a tackle forward and unleash a brutal rising slash. You're invincible during the tackle, letting you trigger this move to fend off attacks.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
+          },
+          {
+            "id": "reawakened-i-will-protect-you",
+            "name": "Spiritual Pressure Move 2: I Will Protect You",
+            "description": "Charge up and viciously grab your foe (Breaker-type). Releases your Spiritual Pressure on hit to land a devastating attack. The grab is unblockable, letting you break the opponent's guard to deal massive damage.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 100,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
+          },
+          {
+            "id": "reawakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -441,9 +563,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "reawakened-special-flash-attack",
+            "name": "Special Flash Attack: Rush Attack",
+            "description": "A thrust while rushing forward. Lets you close in on your foe while attacking. Unleashes a powerful follow-up on hit.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -462,10 +584,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "reawakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -489,7 +611,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "reawakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -515,11 +637,11 @@
         ],
         "kikon": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Base Kikon currently not known.",
+            "id": "base-point-blank-getsugatensho-kikon-move",
+            "name": "Normal State Kikon Move 1: Point-Blank Getsugatensho",
+            "description": "Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break.",
             "input": "KI",
-            "damage": null,
+            "damage": 3,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -539,11 +661,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-point-blank-getsugatensho-kikon-move",
+            "name": "Awakened Kikon Move 1: Point-Blank Getsugatensho",
+            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 4,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -563,11 +685,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Alternate Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-grand-getsugatensho-kikon-move",
+            "name": "Awakened Kikon Move 2: Grand Getsugatensho",
+            "description": "Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 5,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -587,35 +709,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "fully-hollowfied-cero-kikon-move",
-            "name": "Fully Hollowfied Cero",
-            "description": "Whilst Reawakened, Ichigo wrenches his back from an arched position, pointing his head towards his opponent before standing on his foe's head, firing a horrifying point-blank Cero at them.",
-            "input": "RE -> KI",
-            "damage": null,
-            "frames": null,
-            "hits": null,
-            "hasOfficialName": true,
-            "reishiGain": null,
-            "reishiCost": null,
-            "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": null,
-            "reversalGain": null,
-            "reversalCost": null,
-            "gaugeGain": null,
-            "gaugeCost": null,
-            "resourceGain": null,
-            "resourceCost": null,
-            "cooldown": "X Seconds",
-            "moveTags": ["kikonMove"]
-          },
-          {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Alternate Reawakened Kikon currently not known.",
-            "input": "RE -> KI",
-            "damage": null,
+            "id": "reawakened-cero-beam-kikon-move",
+            "name": "Reawakened Kikon Move 1: Cero Beam",
+            "description": "Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break.",
+            "input": "(After) RE, KI",
+            "damage": 5,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -637,7 +735,7 @@
         ],
         "baseCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "base-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -661,7 +759,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "base-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -685,10 +783,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "base-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -709,10 +807,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "base-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -733,7 +831,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "base-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -757,7 +855,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "base-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -781,7 +879,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "base-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -805,10 +903,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "base-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -829,10 +927,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "base-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -853,7 +951,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "base-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -877,10 +975,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "base-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -903,7 +1001,7 @@
         ],
         "awakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "awakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -927,7 +1025,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "awakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -951,10 +1049,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "awakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -975,10 +1073,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "awakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -999,7 +1097,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "awakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -1023,7 +1121,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "awakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -1047,7 +1145,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "awakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -1071,10 +1169,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "awakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1095,10 +1193,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "awakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1119,7 +1217,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "awakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -1143,10 +1241,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "awakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1169,7 +1267,7 @@
         ],
         "reawakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "reawakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -1193,7 +1291,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "reawakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -1217,10 +1315,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "reawakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1241,10 +1339,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "reawakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1265,7 +1363,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "reawakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -1289,7 +1387,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "reawakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -1313,7 +1411,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "reawakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -1337,10 +1435,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "reawakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1361,10 +1459,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "reawakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1385,7 +1483,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "reawakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -1409,10 +1507,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "reawakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,

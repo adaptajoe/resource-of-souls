@@ -154,7 +154,13 @@ export default function Home() {
               BLEACH - Resource of Souls is a passion-project from dedicated long-time BLEACH fans; we&apos;ll <span className="text-red-600">never</span> paywall content, add advertisements, or ask
               for donations, and promise to open-source all of our code <span className="text-teal-400 underline">forever</span>.
             </p>
-            <h2 className="text-2xl xl:text-3xl text-red-400 mt-4">- @jojicus</h2>
+            <div className="flex flex-row items-baseline justify-center">
+              <h2 className="text-2xl xl:text-3xl text-red-400 mt-4">
+                - @jojicus<span className="text-white">,</span>
+              </h2>{" "}
+              <h2 className="text-2xl xl:text-3xl text-fuchsia-400 mt-4 ml-2">@john30688</h2>
+              <h2 className="text-2xl xl:text-3xl text-white ml-2 mt-4">&amp; the rest of the the Resource of Souls Team.</h2>
+            </div>
           </div>
         </div>
       </div>

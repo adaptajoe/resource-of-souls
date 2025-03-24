@@ -9,7 +9,7 @@ const CharacterAnimations = dynamic(() => import("./CharacterAnimations").then((
 });
 
 const LoadingPlaceholder: FC = () => (
-  <div className="border border-white rounded-xl w-full mb-4 pb-4 mt-6 animate-pulse">
+  <div className="rounded-xl w-full mb-4 pb-4 mt-6 animate-pulse">
     <div className="h-10 w-32 bg-teal-400/20 rounded ml-4 mt-4" />
     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 p-4">
       {[...Array(3)].map((_, index) => (

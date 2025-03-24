@@ -17,8 +17,8 @@
     "characterEngTrailer": "https://www.youtube.com/embed/9zfa_244AAc?si=5DyPllwRccbljReS",
     "characterNumber": 32,
     "isEcho": false,
-    "tldr": "To be defined.",
-    "characterOutfits": ["1"],
+    "tldr": "Former Squad 13 Lieutenant with a warm smile. Controls the flow of battle with superior technique. Can battle from afar by taking advantage of his attack reach. His Dashing Quick Attacks have great distance and speed. His Flash Attacks also move in a lot, letting him hit from far away. You can play aggressively since his Special Flash ATtacks (when charged) leave only a small opening even when they're guarded.",
+    "characterOutfits": ["1", "2", "3"],
     "abilities": [
       {
         "abilityName": "Nejibana",
@@ -30,9 +30,33 @@
       {
         "base": [
           {
-            "id": "tumbling-current",
-            "name": "Tumbling Current",
-            "description": "Kaien twirls Nejibana around, constantly spinning it whilst the input is held; upon releasing the input, Kaien stabs Nejibana into the ground releasing a water pulse. After releasing the input for `Tumbling Current`, Kaien is surrounded by a water current for a variable amount of time, depending on the amount of time `Tumbling Current` was charged, passively damaging close opponents.",
+            "id": "exclusive-ability-water-aura-state",
+            "name": "Exclusive Ability: Water Aura State",
+            "description": "State exclusive to Kaien Shiba. Filling the Water Aura Gauge enables you to enter Water Aura State. All attacks are strengthened and the duration of time needed to activate Kansui is reduced. Continues until Water Aura Gauge reaches 0%.",
+            "input": null,
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "base-wakimizu",
+            "name": "Signature Move: Wakimizu",
+            "description": "Spin the spear from a high stance and envelop it in water to attack. Once enveloped in water, stab the tip into the ground for an area attack. Hold the input to increase the length of the water spear. Afterwards the Water Aura Gauge is boosted based on how long it was held.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -51,12 +75,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "attackTypeRanged", "shortRange", "charge", "grantsDamagingAura", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "sakanami",
-            "name": "Sakanami",
-            "description": "Kaien thrusts Nejibana towards his opponent's feet, landing a flowing uppercut afterwards. It is best used to intercept opponents mid-action.",
+            "id": "base-sakanami",
+            "name": "Spiritual Pressure Move 1: Sakanami",
+            "description": "Stab while twisting, then launch into the air with an upward slash. Provides invincibility until complete, so can be performed to neutralize attacks from the opponent.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -75,12 +99,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "sorei-suiha",
-            "name": "Sorei Suiha",
-            "description": "Kaien rushes to his foe, stabbing them and initiating a deadly combo; after this attack hits, Kaien follows up with an aquatic blast, and enters the `Current Aura State Stance` (B) for a certain period of time.",
+            "id": "base-sorei-suiha",
+            "name": "Spiritual Pressure Move 2: Sorei Suiha",
+            "description": "Thrust forward as if sliding on the ground. Hitting the opponent transitions to an attack with a Water Aura. Water Aura State then continues for a long period after attacking.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -95,14 +119,14 @@
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "dashesTowardsOpponent", "stanceChange", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "base-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -126,9 +150,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "base-special-flash-attack",
+            "name": "Special Flash Attack: Kansui",
+            "description": "Brandish your spear and perform a powerful thrust. Hold the input to extend its reach. When fully charged it transforms into an attack that pierces through the opponent. Landing a fully charged attack enables a follow-up Flash Attack.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -147,10 +171,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "base-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -174,7 +198,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "base-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -200,9 +224,9 @@
         ],
         "awakened": [
           {
-            "id": "shikai-nejibana-awakening",
-            "name": "Shikai: `Nejibana` Awakening",
-            "description": "When Unawakened, Kaien twirls Nejibana around in a circle, flowing water from it in a marvellous ring before pointing his spear at his foe, unlocking Nejibana's full potential. Kaien's `Current Aura State Gauge` is increased, allowing him to stay in the `Current Aura State Stance (B)` for longer.",
+            "id": "awakening-shikai-nejibana",
+            "name": "Awakening: Shikai - Nejibana",
+            "description": "Kaien twirls Nejibana around in a circle, flowing water from it in a marvellous ring before pointing his spear at his foe, unlocking Nejibana's full potential.",
             "input": "AW",
             "damage": null,
             "frames": null,
@@ -224,10 +248,10 @@
             "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "S1",
+            "id": "exclusive-ability-water-aura-state",
+            "name": "Exclusive Ability: Water Aura State",
+            "description": "State exclusive to Kaien Shiba. Filling the Water Aura Gauge enables you to enter Water Aura State. All attacks are strengthened and the duration of time needed to activate Kansui is reduced. Continues until Water Aura Gauge reaches 0%.",
+            "input": null,
             "damage": null,
             "frames": null,
             "hits": null,
@@ -245,10 +269,82 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["unknown"]
+            "moveTags": ["exclusiveAbility"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "awakened-wakimizu",
+            "name": "Signature Move: Wakimizu",
+            "description": "Spin the spear from a high stance and envelop it in water to attack. Once enveloped in water, stab the tip into the ground for an area attack. Hold the input to increase the length of the water spear. Afterwards the Water Aura Gauge is boosted based on how long it was held.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "awakened-sakanami",
+            "name": "Spiritual Pressure Move 1: Sakanami",
+            "description": "Stab while twisting, then launch into the air with an upward slash. Provides invincibility until complete, so can be performed to neutralize attacks from the opponent.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-sorei-suiha",
+            "name": "Spiritual Pressure Move 2: Sorei Suiha",
+            "description": "Thrust forward as if sliding on the ground. Hitting the opponent transitions to an attack with a Water Aura. Water Aura State then continues for a long period after attacking.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 100,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": 100,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -272,9 +368,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Kansui",
+            "description": "Brandish your spear and perform a powerful thrust. Hold the input to extend its reach. When fully charged it transforms into an attack that pierces through the opponent. Landing a fully charged attack enables a follow-up Flash Attack.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -293,10 +389,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -320,7 +416,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -346,11 +442,11 @@
         ],
         "kikon": [
           {
-            "id": "hadō-#63-raikōhō-kikon-move",
-            "name": "Hadō #63: Raikōhō",
-            "description": "Whilst Unawakened, Kaien gathers electrical Reiryoku across his left palm before thrusting it forwards, firing a huge electrical blast at his opponent.",
+            "id": "base-hado-#63-raikōhō-kikon-move",
+            "name": "Normal State Kikon Move 1: Hado #63 - Raikōhō",
+            "description": "Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break.",
             "input": "KI",
-            "damage": null,
+            "damage": 3,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -370,11 +466,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "nejibana-mizu-kikon-move",
-            "name": "Nejibana: Mizu",
-            "description": "Whilst Awakened, Kaien twirls Nejibana around him, summoning a vast torrent of water into a condensed orb above his head, lashing it at his foe in an almighty cascade of force.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-hado-#63-raikōhō-kikon-move",
+            "name": "Awakened Kikon Move 1: Hado #63 - Raikōhō",
+            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 4,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -394,11 +490,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Alternate Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-suika-tensho-kikon-move",
+            "name": "Awakened Kikon Move 2: Suika Tensho'",
+            "description": "Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 5,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -420,7 +516,7 @@
         ],
         "baseCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "base-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -444,7 +540,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "base-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -468,10 +564,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "base-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -492,10 +588,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "base-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -516,7 +612,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "base-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -540,7 +636,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "base-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -564,7 +660,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "base-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -588,10 +684,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "base-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -612,10 +708,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "base-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -636,7 +732,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "base-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -660,10 +756,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "base-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -686,7 +782,7 @@
         ],
         "awakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "awakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -710,7 +806,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "awakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -734,10 +830,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "awakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -758,10 +854,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "awakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -782,7 +878,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "awakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -806,7 +902,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "awakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -830,7 +926,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "awakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -854,10 +950,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "awakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -878,10 +974,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "awakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -902,7 +998,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "awakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -926,10 +1022,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "awakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,

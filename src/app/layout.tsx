@@ -82,10 +82,10 @@ export default function RootLayout({
           </div>
         </div>
         <div>{children}</div>
-        <footer className="px-4 md:px-12 py-3 bg-black border-t-2 border-gray-400 grid grid-cols-1 lg:grid-cols-2 text-gray-500 italic text-xs justify-center lg:justify-between">
+        <footer className="px-4 md:px-12 py-3 bg-black border-t-2 border-gray-400 grid grid-cols-1 lg:grid-cols-2 text-gray-500 italic text-[8px] md:text-xs justify-center lg:justify-between">
           <div>
             <Link href="/changelog" className="text-xl text-teal-400 hover:underline">
-              Site Version: v1.0.14.
+              Site Version: v1.1.1.
             </Link>
             <div className="flex flex-row mt-4">
               <Link href="https://github.com/adaptajoe/resource-of-souls" className="bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 mr-4 rounded-xl">
@@ -123,10 +123,14 @@ export default function RootLayout({
               BLEACH - Resource of Souls is developed, designed, managed and updated by Discord user <span className="text-red-400 font-black">@jojicus</span>.
             </p>
             <p>
-              MP4s and other game data collection provided by Discord user <span className="text-fuchsia-400 font-black">@john30688</span>.
+              MP4s and other game data collection provided by Discord user <span className="text-fuchsia-400 font-black">@john30688</span> with assistance from{" "}
+              <span className="text-lime-400 font-black">@xero_cruffy</span>.
             </p>
             <p>
               Support and team management assistance by Discord user <span className="text-amber-400 font-black">@schoolofmyth</span>.
+            </p>
+            <p>
+              Creator &amp; Competitive moderation by Discord user <span className="text-gray-700 font-black">@mrbiggreen94</span>.
             </p>
           </div>
           <div>

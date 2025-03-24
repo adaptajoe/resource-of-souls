@@ -11,14 +11,14 @@
       "abilities": ["awakening", "shikai"],
       "characteristics": ["male", "lieutenant", "gotei13"]
     },
-    "characterEaseOfUse": 4,
+    "characterEaseOfUse": 3,
     "characterArchetype": ["midRange", "hybridRange", "fast", "melee", "ranged", "kidō", "gauge", "ramper"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=w1y8-W4CRQI&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=3",
     "characterEngTrailer": "https://www.youtube.com/watch?v=1hkNH7tlj9E&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=2",
     "characterNumber": 27,
     "isEcho": false,
-    "tldr": "To be defined.",
-    "characterOutfits": ["1"],
+    "tldr": "Fear is the Squad 9 Lieutenant's strength. An all-around talent who excels in Zan Ken So Ki. Can use Special Flash Attacks and Signature Moves to fend off projectiles. His attack power is not the best, but he has excellent, easy-to-use moves that make for reliable performance in battle. A slow starter, the Exclusive Ability 'Fear' shows its true power when used later in battle.",
+    "characterOutfits": ["1", "2"],
     "abilities": [
       {
         "abilityName": "Kazeshini",
@@ -30,9 +30,33 @@
       {
         "base": [
           {
-            "id": "hado-#58-tenran",
-            "name": "Hado #58: Tenran",
-            "description": "Hisagi fires a tornado of Reiryoku infront of him. The range is short, but the attack itself lasts for a considerable amount of time, allowing you to halt approaching opponents. The range, number of hits and damage of 'Hado #58: Tenran' is dependant on the current level of Hisagi's Fear Gauge.",
+            "id": "exclusive-ability-fear",
+            "name": "Exclusive Ability: Fear",
+            "description": "The signature ability of Shuhei Hisagi. You accumulate Fear when Awakenings occur or either fighter's Konpaku is destroyed. The higher the Fear, the more damage he deals to opponents, and some of his actions change.",
+            "input": null,
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "base-hado-#58-tenran",
+            "name": "Signature Move: Hado #58 - Tenran",
+            "description": "Unleash Hado #58 - Tenran. Deals Reishi Damage even if blocked and greatly depletes the opponent's Guard Gauge. The attack area and hit count are boosted at higher Fear Counts.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -42,21 +66,21 @@
             "reishiCost": null,
             "reiatsuGain": null,
             "reiatsuCost": 0,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
             "reversalGain": 0,
             "reversalCost": null,
-            "gaugeGain": 0,
+            "gaugeGain": null,
             "gaugeCost": null,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToMidRange", "kidō", "variableDamage", "variableHits", "gaugeIncreaseOnHit", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "hado-#31-shakkaho,-hado-#33-sokatsui-&-hado-#54-haien",
-            "name": "Hado #31: Shakkaho, Hado #33: Sōkatsui & Hado #54: Haien",
-            "description": "Depending on the current level of Hisagi's `Fear Gauge`, Hisagi fires one of three projectiles; 'Hado #31: Shakkaho' is the weakest of the three, and 'Hado #54: Haien' is the strongest of the three.",
+            "id": "base-hado-#31-shakkaho",
+            "name": "Spiritual Pressure Move 1: Hado #31 - Shakkaho",
+            "description": "Fires a powerful Shakkaho forward. Has superior range and activation, making it viable in many ways, including as a combo finisher.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -70,17 +94,65 @@
             "fightingSpiritCost": null,
             "reversalGain": 0,
             "reversalCost": null,
-            "gaugeGain": 0,
+            "gaugeGain": null,
             "gaugeCost": null,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "kidō", "variableDamage", "variableHits", "gaugeIncreaseOnHit", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "a-warrior's-poise",
-            "name": "A Warrior's Poise",
-            "description": "Hisagi prepares to take an attack, and counters by teleporting behind the opponent, striking them with a simultaneous sword slice and cast of 'Hado #11: Tsuzuri Raiden'. The damage of the counter is dependant on the current `Fear Gauge` level.",
+            "id": "base-hado-#33-sokatsui",
+            "name": "Spiritual Pressure Move 1: Hado #33 - Sokatsui",
+            "description": "Hado #31 - Shakkaho changes into this at Fear Count 7 or higher. Fires a powerful Sokatsui that detonates at the point of impact. Has superior range and activation, making it viable in many ways, including as a combo finisher.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
+          },
+          {
+            "id": "base-hado-#54-haien",
+            "name": "Spiritual Pressure Move 1: Hado #54 - Haien",
+            "description": "Hado #33 - Sokatsui changes into this at Fear Count 13 or higher. Fires a powerful Haien that detonates at the point of impact. Has superior range and activation, making it viable in many ways, including as a combo finisher.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
+          },
+          {
+            "id": "base-a-warrior's-poise",
+            "name": "Spiritual Pressure Move 2: A Warrior's Poise",
+            "description": "Take a stance to fend off attacks. Taking an attack in this stance triggers a powerful combo counter. The attack power is boosted at higher Fear Counts.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -94,27 +166,15 @@
             "fightingSpiritCost": null,
             "reversalGain": 0,
             "reversalCost": null,
-            "gaugeGain": 0,
-            "gaugeCost": null,
+            "gaugeGain": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": [
-              "spiritualPressureMove2",
-              "costsReiatsu",
-              "attackTypeMelee",
-              "shortRange",
-              "counter",
-              "block",
-              "variableDamage",
-              "kidō",
-              "teleportsToOpponentOnHit",
-              "gaugeIncreaseOnHit",
-              "needsStatInfo"
-            ]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "base-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -138,9 +198,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "base-special-flash-attack",
+            "name": "Special Flash Attack: Sliding",
+            "description": "Slide toward the enemy to slash with great force. You're invulnerable to enemy projectiles during this movement, letting you slip past them to attack. But be warned, if the slide hits at point-blank range, the slash will be blocked.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -159,10 +219,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "base-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -186,7 +246,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "base-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -212,9 +272,9 @@
         ],
         "awakened": [
           {
-            "id": "shikai-kazeshini-awakening",
-            "name": "Shikai: `Kazeshini` Awakening",
-            "description": "Hisagi tosses his blade aside, as it warps into a double-ended scythe, spinning in the air connected to a second scythe by a long chain, returning to Hisagi; after Awakening, Hisagi's Flash Attack changes, giving him good Mid Range options, and further increasing the boosts provided by his `Fear Gauge`.",
+            "id": "awakening-shikai-kazeshini",
+            "name": "Awakening: Shikai - Kazeshini",
+            "description": "Hisagi tosses his blade aside, as it warps into a double-ended scythe, spinning in the air connected to a second scythe by a long chain, returning to Hisagi; after Awakening, Hisagi's Flash Attack changes, giving him good mid-range options, and further increasing the boosts provided by 'Exclusive Ability: Fear'.",
             "input": "AW",
             "damage": null,
             "frames": null,
@@ -233,13 +293,13 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "grantsPermanentNewMoves", "evolvesGauge"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "S1",
+            "id": "exclusive-ability-fear",
+            "name": "Exclusive Ability: Fear",
+            "description": "The signature ability of Shuhei Hisagi. You accumulate Fear when Awakenings occur or either fighter's Konpaku is destroyed. The higher the Fear, the more damage he deals to opponents, and some of his actions change.",
+            "input": null,
             "damage": null,
             "frames": null,
             "hits": null,
@@ -257,10 +317,130 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["unknown"]
+            "moveTags": ["exclusiveAbility"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "awakened-hado-#58-tenran",
+            "name": "Signature Move: Hado #58 - Tenran",
+            "description": "Unleash Hado #58 - Tenran. Deals Reishi Damage even if blocked and greatly depletes the opponent's Guard Gauge. The attack area and hit count are boosted at higher Fear Counts.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "awakened-hado-#31-shakkaho",
+            "name": "Spiritual Pressure Move 1: Hado #31 - Shakkaho",
+            "description": "Fires a powerful Shakkaho forward. Has superior range and activation, making it viable in many ways, including as a combo finisher.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-hado-#33-sokatsui",
+            "name": "Spiritual Pressure Move 1: Hado #33 - Sokatsui",
+            "description": "Hado #31 - Shakkaho changes into this at Fear Count 7 or higher. Fires a powerful Sokatsui that detonates at the point of impact. Has superior range and activation, making it viable in many ways, including as a combo finisher.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-hado-#54-haien",
+            "name": "Spiritual Pressure Move 1: Hado #54 - Haien",
+            "description": "Hado #33 - Sokatsui changes into this at Fear Count 13 or higher. Fires a powerful Haien that detonates at the point of impact. Has superior range and activation, making it viable in many ways, including as a combo finisher.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-a-warrior's-poise",
+            "name": "Spiritual Pressure Move 2: A Warrior's Poise",
+            "description": "Take a stance to fend off attacks. Taking an attack in this stance triggers a powerful combo counter. The attack power is boosted at higher Fear Counts.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 100,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": 100,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -284,9 +464,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Sliding",
+            "description": "Slide toward the enemy to slash with great force. You're invulnerable to enemy projectiles during this movement, letting you slip past them to attack. But be warned, if the slide hits at point-blank range, the slash will be blocked.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -305,10 +485,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -332,7 +512,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -358,11 +538,11 @@
         ],
         "kikon": [
           {
-            "id": "explosive-band-followup-slash-kikon-move",
-            "name": "Explosive Band Followup Slash",
-            "description": "When Unawakened, Hisagi launches a set of his Explosive Bands at his opponent, before leaping backwards into the smoke, emerging with a stalwardt one-handed overhead slash.",
+            "id": "base-blade-that-knows-fear-kikon-move",
+            "name": "Normal State Kikon Move 1: Blade That Knows Fear",
+            "description": "Destroys 1 Konpaku. Destroys 2 Konpaku with a Soul Break. Destroys 2 Konpaku at Fear Count 5 or higher. Destroys 3 Konpaku at Fear Count 5 or higher with a Soul Break. Destroys 3 Konpaku at Fear Count 10 or higher. Destroys 4 Konpaku at Fear Count 10 or higher with a Soul Break.",
             "input": "KI",
-            "damage": null,
+            "damage": 3,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -382,35 +562,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
-            "frames": null,
-            "hits": null,
-            "hasOfficialName": true,
-            "reishiGain": null,
-            "reishiCost": null,
-            "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": null,
-            "reversalGain": null,
-            "reversalCost": null,
-            "gaugeGain": null,
-            "gaugeCost": null,
-            "resourceGain": null,
-            "resourceCost": null,
-            "cooldown": "X Seconds",
-            "moveTags": ["kikonMove"]
-          },
-          {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Alternate Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-inherited-techniques-kikon-move",
+            "name": "Awakened Kikon Move 2: Inherited Techniques",
+            "description": "Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break. Destroys 3 Konpaku at Fear Count 10 or higher. Destroys 4 Konpaku at Fear Count 10 or higher with a Soul Break. Destroys 4 Konpaku at Fear Count 15 or higher. Destroys 5 Konpaku at Fear Count 15 or higher with a Soul Break. Destroys 5 Konpaku at Fear Count 20 or higher. Destroys 6 Konpaku at Fear Count 20 or higher with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 5,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -432,7 +588,7 @@
         ],
         "baseCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "base-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -456,7 +612,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "base-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -480,10 +636,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "base-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -504,10 +660,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "base-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -528,7 +684,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "base-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -552,7 +708,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "base-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -576,7 +732,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "base-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -600,10 +756,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "base-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -624,10 +780,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "base-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -648,7 +804,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "base-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -672,10 +828,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "base-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -698,7 +854,7 @@
         ],
         "awakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "awakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -722,7 +878,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "awakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -746,10 +902,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "awakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -770,10 +926,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "awakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -794,7 +950,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "awakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -818,7 +974,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "awakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -842,7 +998,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "awakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -866,10 +1022,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "awakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -890,10 +1046,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "awakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -914,7 +1070,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "awakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -938,10 +1094,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "awakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,

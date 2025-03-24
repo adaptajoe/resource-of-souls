@@ -11,13 +11,13 @@
       "abilities": ["awakening", "shikai"],
       "characteristics": ["female", "unseatedOfficer", "gotei13"]
     },
-    "characterEaseOfUse": 5,
+    "characterEaseOfUse": 4,
     "characterArchetype": ["midRange", "melee", "charge", "kidō", "balanced"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=pq-ECx9dnhg&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=38",
     "characterEngTrailer": "https://www.youtube.com/watch?v=JHod25mzWgY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=34",
     "characterNumber": 2,
     "isEcho": false,
-    "tldr": "To be defined.",
+    "tldr": "A kind-hearted Shinigami whose speech is archaic. She pulls foes into range with her multi-hit moves. Excels at combat from close-to-mid-range and weaving together Signature Moves. Moves are straightforward and easy-to-use but lack strength individually. You'll need to carefully connect combos to rack up damage and achieve victory.",
     "characterOutfits": ["1", "2"],
     "abilities": [
       {
@@ -30,9 +30,9 @@
       {
         "base": [
           {
-            "id": "hado-#31-shakkaho",
-            "name": "Hado #31: Shakkaho",
-            "description": "Fires a trio of blazing orbs of Reiryoku at Rukia's opponent. Can be boosted by charging it.",
+            "id": "base-hado-#31-shakkaho",
+            "name": "Signature Move: Hado #31 - Shakkaho",
+            "description": "Unleashes a powerful Shakkaho forward. The projectile is slow, but the fireball has a huge hitbox, making it good for keeping opponents at bay.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -51,12 +51,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "kidō", "midToLongRange", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "hado-#4-byakurai",
-            "name": "Hado #4: Byakurai",
-            "description": "Fires a laser of electric Reiryoku at Rukia's opponent. It makes Rukia hop backwards, and grants Rukia Super Armor for a brief period.",
+            "id": "base-you're-too-slow!",
+            "name": "Spiritual Pressure Move 1: You're Too Slow!",
+            "description": "Hunker down in a deep stance. Taking an attack in this stance triggers a Shakkaho counter.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -75,12 +75,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "movesBackwards", "attackTypeRanged", "kidō", "shortToLongRange", "grantsTemporarySuperArmor", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "hado-#33-sokatsui",
-            "name": "Hado #33: Sokatsui",
-            "description": "Fires an explosive wave of Reiryoku at Rukia's opponent. It can be chained to attacks, and makes Rukia lunge forwards when cast.",
+            "id": "base-hado-#33-sokatsui",
+            "name": "Spiritual Pressure Move 2: Hado #33 - Sokatsui",
+            "description": "Incant a Sokatsui that explodes right in front of you. Has a short range, but is extremely powerful, making it perfect for a combo finisher.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -95,14 +95,14 @@
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeRanged", "kidō", "shortRange", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -126,9 +126,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Lunge Slash",
+            "description": "Step through a forward slice at the enemy. Moves quickly, letting you close the distance in an instant from mid-range. Because this Flash Attack turns into a combo hit, use as often and aggressively as you can.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -147,10 +147,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -174,7 +174,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -200,9 +200,9 @@
         ],
         "awakened": [
           {
-            "id": "shikai-sode-no-shirayuki-awakening",
-            "name": "Shikai: `Sode no Shirayuki` Awakening",
-            "description": "Rukia releases `Sode no Shirayuki`, strengthening all of her stats by a slight amount, but transforming all of her Spiritual Pressure Moves to better use her Shikai's ice abilities.",
+            "id": "awakening-shikai-sodenoshirayuki",
+            "name": "Awakening: Shikai - Sodenoshirayuki",
+            "description": "Rukia holds her Zanpakuto as she spins it in a circle, mimicking the reflection of the pale white moon; he blade shimmers with permafrost, coating it in a white gleam, as a snow-white tassle flows from the sword's handle.",
             "input": "AW",
             "damage": null,
             "frames": null,
@@ -221,12 +221,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "grantsPermanentNewMoves"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "hado-#31-shakkaho",
-            "name": "Hado #31: Shakkaho",
-            "description": "Fires a trio of blazing orbs of Reiryoku at Rukia's opponent. Can be boosted by charging it.",
+            "id": "awakened-hado-#31-shakkaho",
+            "name": "Signature Move: Hado #31 - Shakkaho",
+            "description": "Fires a Shakkaho forward. Weak, but has long range and can be fired in succession. Hold the input to release a powerful short-range Shakkaho. This stronger Shakkaho can combo into moves like Rush Slash on hit.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -245,12 +245,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "kidō", "midToLongRange", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "sode-no-shirayuki-partial-hakuren",
-            "name": "Sode no Shirayuki: Partial Hakuren",
-            "description": "Rukia taps Sode no Shirayuki to the floor a single time, activating 25% of the release for her second dance, `Sode no Shirayuki: Tsugi no mai, Hakuren`, charging and firing a blisteringly cold beam of ice towards her foe. Functionally, this move is identical to `Hado #4: Byakurai`, granting Rukia temporary Super Armor.",
+            "id": "awakened-somenomai,-tsukishiro",
+            "name": "Spiritual Pressure Move 1: Somenomai, Tsukishiro",
+            "description": "Leap back and unleash Tsukishiro. Warps to the opponent and triggers a huge ice pillar at their feet. You're invincible while leaping back, letting you trigger this move to fend off attacks.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -269,12 +269,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "grantsTemporarySuperArmor", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "sode-no-shirayuki-partial-tsukishiro",
-            "name": "Sode no Shirayuki: Partial Tsukishiro",
-            "description": "Rukia leaps backwards, activating a partial form of her first dance, `Sode no Shirayuki: Some no mai, Tsukishiro`, forming a light ring around an area infront of her and forming a small, thin tower of ice..",
+            "id": "awakened-tsuginomai,-hakuren",
+            "name": "Spiritual Pressure Move 2: Tsuginomai, Hakuren",
+            "description": "Stab Sodenoshirayuki into the ground to unleash Hakuren. While activated, you can stab the ground up to two more times to increase Hakuren's power.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -289,14 +289,14 @@
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeRanged", "shortRange", "movesBackwards", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -320,9 +320,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Rush Slash",
+            "description": "Get in close to unleash two slashes. Can connect into many other attacks on hit. The starting point for Rukia's offense.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -341,10 +341,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -368,7 +368,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -394,11 +394,11 @@
         ],
         "kikon": [
           {
-            "id": "somenomai-tsukishiro-kikon-move",
-            "name": "Somenomai, Tsukishiro",
-            "description": "Whilst either Unawakened or Awakened, Rukia summons forth Sode no Shirayuki, forming a circle with her dance; this circle appears underneath her opponent, before erupting into a pillar of ice that entombs Rukia's foe before shattering.",
-            "input": "KI / AW -> KI",
-            "damage": null,
+            "id": "base-somenomai,-tsukishiro-kikon-move",
+            "name": "Normal State Kikon Move 1: Somenomai, Tsukishiro",
+            "description": "Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break.",
+            "input": "KI",
+            "damage": 3,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -418,11 +418,35 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "hado-#73-soren-sokatsui-kikon-move",
-            "name": "Hado #73: Soren Sokatsui",
-            "description": "Whilst Awakened, Rukia dances into a squatted stance, sheathing Sode no Shirayuki before clasping her hands together, holding them parallel with the palms' base touching one-another, as a rupturing blue flame riots from her hands towards her opponent.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-somenomai,-tsukishiro-kikon-move",
+            "name": "Awakened Kikon Move 1: Somenomai, Tsukishiro",
+            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 4,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          },
+          {
+            "id": "awakened-hado-#73-soren-sokatsui-kikon-move",
+            "name": "Awakened Kikon Move 2: Hado #73 - Soren Sokatsui",
+            "description": "Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 5,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -444,7 +468,7 @@
         ],
         "baseCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "base-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -468,7 +492,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "base-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -492,10 +516,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "base-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -516,10 +540,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "base-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -540,7 +564,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "base-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -564,7 +588,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "base-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -588,7 +612,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "base-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -612,10 +636,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "base-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -636,10 +660,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "base-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -660,7 +684,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "base-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -684,10 +708,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "base-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -710,7 +734,7 @@
         ],
         "awakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "awakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -734,7 +758,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "awakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -758,10 +782,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "awakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -782,10 +806,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "awakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -806,7 +830,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "awakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -830,7 +854,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "awakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -854,7 +878,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "awakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -878,10 +902,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "awakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -902,10 +926,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "awakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -926,7 +950,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "awakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -950,10 +974,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "awakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,

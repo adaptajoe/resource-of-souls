@@ -17,8 +17,8 @@
     "characterEngTrailer": "https://www.youtube.com/watch?v=dziYM2MU_S0",
     "characterNumber": 15,
     "isEcho": false,
-    "tldr": "To be defined.",
-    "characterOutfits": ["1"],
+    "tldr": "The Squad 2 Captain swiftly and fatally pierces foes. Able to overwhelm opponents with her speed. Specializes in knocking her opponents around with overwhelming speed and multiple hits. Excels at linking Signature Moves and can fight a one-way battle of continual preemptive strikes. Doesn't have much Reishi, so it's important to keep attacking without letting your opponent know what you'll do next.",
+    "characterOutfits": ["1", "2", "3"],
     "abilities": [
       {
         "abilityName": "Suzumebachi",
@@ -30,33 +30,9 @@
       {
         "base": [
           {
-            "id": "anken-counter",
-            "name": "Unique Mechanic: Anken Counter",
-            "description": "Due to Soi-Fon's Reloader Archetype, she has access to the `Anken Counter`, which allows her to use her Signature Move, `Anken`. The number of Anken begins at 8, and has a maximum of 8. When the `Anken Counter` hits 0, Soi-Fon's Signature Move changes from `Anken` to `Reload`, which restores her `Anken Counter` to 8. After a certain period of time, Soi-Fon will restore 6 Anken without needing to use `Reload`.",
-            "input": null,
-            "damage": null,
-            "frames": null,
-            "hits": null,
-            "hasOfficialName": true,
-            "reishiGain": null,
-            "reishiCost": null,
-            "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": null,
-            "reversalGain": null,
-            "reversalCost": null,
-            "gaugeGain": null,
-            "gaugeCost": null,
-            "resourceGain": null,
-            "resourceCost": null,
-            "cooldown": "X Seconds",
-            "moveTags": ["uniqueMechanic"]
-          },
-          {
-            "id": "anken",
-            "name": "Anken / Reload",
-            "description": "Soi-Fon fires an Anken dagger towards her opponent, reducing the Anken Stock counter by 1. Once the Anken Stock reaches 0, Soi-Fon must reload.",
+            "id": "base-anken",
+            "name": "Signature Move: Anken",
+            "description": "Quickly launch Anken blades concealed on your legs. Weak, but shoots out quickly, making it good for keeping foes at bay or covering openings. 2 Anken Stock are needed to activate Anken, which changes to Replenish when you're out.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -73,14 +49,38 @@
             "gaugeGain": null,
             "gaugeCost": null,
             "resourceGain": null,
-            "resourceCost": 1,
+            "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "costsResource", "reloadResource", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "kazaguruma-&-nigeki-kessatsu",
-            "name": "Kazaguruma & Nigeki Kessatsu",
-            "description": "Soi-Fon rushes to her oppponent and hits them with a spinning kick. If you hold the input and charge Kazaguruma, it increases the number of hits, and if you charge Kazaguruma to maximum, it transforms into Nigeki Kessatsu. Nigeki Kessatsu has its' own Kikon-like animation, and is hard to dodge. If Soi-Fon lands two hits of Nigeki Kessatsu, Soi-Fon wins the Match instantly. Nigeki Kessatsu can only hit once per Kazaguruma charge.",
+            "id": "base-replenish",
+            "name": "Signature Move: Replenish",
+            "description": "Anken changes to this when at 0 Anken Stock. Replenishes Anken on your legs. A short input replenishes 4 Anken Stock, while a long input replenishes 8 Anken Stock.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "base-kazaguruma",
+            "name": "Spiritual Pressure Move 1: Kazaguruma",
+            "description": "Move right before the enemy to unleash a kick. Hold the input for a powerful multi-hit attack. This state lets you into a Quick Attack or Flash Attack, depening on the level. Holding the input as long as possible changes this to Nigeki Kessatsu.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -99,24 +99,36 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": [
-              "spiritualPressureMove1",
-              "costsReiatsu",
-              "attackTypeMelee",
-              "shortToMidRange",
-              "dashesTowardsOpponent",
-              "variableHits",
-              "variableDamage",
-              "charge",
-              "twoChargeHitKill",
-              "instakill",
-              "needsStatInfo"
-            ]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "bakudo-#30-shitotsusansen",
-            "name": "Bakudo #30: Shitotsusansen",
-            "description": "Fires three golden wedges in a triangle pattern, that restrains the opponent and allows Soi-Fon to follow up with a powerful Kidō-infused Hakuda punch. Holding the input when firing 'Bakudo #30: Shitotsusansen' will restrain the opponent for longer.",
+            "id": "base-nigeki-kessatsu",
+            "name": "Spiritual Pressure Move 1: Nigeki Kessatsu",
+            "description": "Hold the input as long as possible when activating Kazaguruma to change to this. Unlocks your Shikai, Suzumebachi, and attacks the enemy with a backstab. One hit confers a Hōmonka on the enemy. Hitting the enemy with Hōmonka on them again lets you destroy all of their Konpaku.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
+          },
+          {
+            "id": "base-bakudo-#30-shitotsusansen",
+            "name": "Spiritual Pressure Move 2: Bakudo #30 - Shitotsusansen",
+            "description": "Unleash Shitotsusansen forward to bind the enemy. When it hits the opponent, follow up by slamming a powerful Hakuda into the opponent. Hold the input to unleash a powered-up Shitotsusansen. This version is unblockable, and binds the enemy for a long period of time.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -131,14 +143,14 @@
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeRanged", "attackTypeMelee", "shortToMidRange", "kidō", "restrictsOpponentsMovement", "charge", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "base-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -162,9 +174,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "base-special-flash-attack",
+            "name": "Special Flash Attack: Hineri Zenchugeri",
+            "description": "Leap forward to unleash a spinning kick on the opponent. Lets you speed in and attack from far away. Transition into Anken to remove any openings.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -183,10 +195,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "base-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -210,7 +222,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "base-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -236,33 +248,9 @@
         ],
         "awakened": [
           {
-            "id": "anken-counter",
-            "name": "Unique Mechanic: Anken Counter",
-            "description": "Due to Soi-Fon's Reloader Archetype, she has access to the `Anken Counter`, which allows her to use her Signature Move, `Anken`. The number of Anken begins at 8, and has a maximum of 8. When the `Anken Counter` hits 0, Soi-Fon's Signature Move changes from `Anken` to `Reload`, which restores her `Anken Counter` to 8.",
-            "input": null,
-            "damage": null,
-            "frames": null,
-            "hits": null,
-            "hasOfficialName": true,
-            "reishiGain": null,
-            "reishiCost": null,
-            "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": null,
-            "reversalGain": null,
-            "reversalCost": null,
-            "gaugeGain": null,
-            "gaugeCost": null,
-            "resourceGain": null,
-            "resourceCost": null,
-            "cooldown": "X Seconds",
-            "moveTags": ["uniqueMechanic"]
-          },
-          {
-            "id": "incomplete-shunkō-awakening",
-            "name": "Incomplete Shunkō Awakening",
-            "description": "Soi-Fon reaches her arm out, coating it in a wispy purple tornado of Reiryoku, perfectly blending Hakuda and Kidō - When Awakened, Soi-Fon's Power increases, and the amount of Reiatsu she can hold, along with her Dash Speed, is increased.",
+            "id": "awakening-incomplete-shunko",
+            "name": "Awakening: Incomplete Shunko",
+            "description": "Soi-Fon reaches her arm out, coating it in a wispy purple tornado of Reiryoku, perfectly blending Hakuda and Kido - When Awakened, Soi-Fon's Power increases, along with her Dash Speed.",
             "input": "AW",
             "damage": null,
             "frames": null,
@@ -281,13 +269,13 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "increasesReiatsuLimit", "increasesDashSpeed", "boostsStats"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "S1",
+            "id": "exclusive-ability-recoil-state",
+            "name": "Exclusive Ability: Recoil State",
+            "description": "A special state unique to Soi-Fon. Granted when Bankai: Jakuho Raikoben is activated. Kikon Moves destroy 3 Konpaku less than usual in Recoil State.",
+            "input": null,
             "damage": null,
             "frames": null,
             "hits": null,
@@ -305,10 +293,130 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["unknown"]
+            "moveTags": ["exclusiveAbility"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "awakened-anken",
+            "name": "Signature Move: Anken",
+            "description": "Quickly launch Anken blades concealed on your legs. Weak, but shoots out quickly, making it good for keeping foes at bay or covering openings. 2 Anken Stock are needed to activate Anken, which changes to Replenish when you're out.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "awakened-replenish",
+            "name": "Signature Move: Replenish",
+            "description": "Anken changes to this when at 0 Anken Stock. Replenishes Anken on your legs. A short input replenishes 4 Anken Stock, while a long input replenishes 8 Anken Stock.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "awakened-kazaguruma",
+            "name": "Spiritual Pressure Move 1: Kazaguruma",
+            "description": "Move right before the enemy to unleash a kick. Hold the input for a powerful multi-hit attack. This state lets you into a Quick Attack or Flash Attack, depening on the level. Holding the input as long as possible changes this to Nigeki Kessatsu.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-nigeki-kessatsu",
+            "name": "Spiritual Pressure Move 1: Nigeki Kessatsu",
+            "description": "Hold the input as long as possible when activating Kazaguruma to change to this. Unlocks your Shikai, Suzumebachi, and attacks the enemy with a backstab. One hit confers a Hōmonka on the enemy. Hitting the enemy with Hōmonka on them again lets you destroy all of their Konpaku.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-bakudo-#30-shitotsusansen",
+            "name": "Spiritual Pressure Move 2: Bakudo #30 - Shitotsusansen",
+            "description": "Unleash Shitotsusansen forward to bind the enemy. When it hits the opponent, follow up by slamming a powerful Hakuda into the opponent. Hold the input to unleash a powered-up Shitotsusansen. This version is unblockable, and binds the enemy for a long period of time.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 100,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": 100,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -332,9 +440,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Hineri Zenchugeri",
+            "description": "Leap forward to unleash a spinning kick on the opponent. Lets you speed in and attack from far away. Transition into Anken to remove any openings.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -353,10 +461,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -380,7 +488,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -406,11 +514,11 @@
         ],
         "kikon": [
           {
-            "id": "incomplete-shunkō-flying-fist-kikon-move",
-            "name": "Incomplete Shunkō: Flying Fist",
-            "description": "Whislt Unawakened, Soi-fon twirls backwards, manifesting an aspect of her Incomplete Shunkō across one of her arms; grinning, she rides the winds of her Shunkō into a devastating singular punch, spawning a vortex of razor-sharp Reiryoku from her wrists.",
+            "id": "base-kiten-hakuda-kikon-move",
+            "name": "Normal State Kikon Move 1: Kiten Hakuda",
+            "description": "Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break.",
             "input": "KI",
-            "damage": null,
+            "damage": 3,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -430,11 +538,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-incomplete-shunko-kikon-move",
+            "name": "Awakened Kikon Move 1: Incomplete Shunko",
+            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 4,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -454,11 +562,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Alternate Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-bankai-jakuho-raikoben-kikon-move",
+            "name": "Awakened Kikon Move 2: Bankai - Jakuho Raikoben",
+            "description": "Destroys 5 Konpaku the first time this is activated in battle. Destroys 6 Konpaku with a Soul Break the first time this is activated in battle. Destroys 3 Konpaku each following time this is activated in battle. Destroys 4 Konpaku with a Soul Break each following time this is activated in battle -  After activation, you enter Recoil State for a set period of time.",
+            "input": "(After) AW, KI",
+            "damage": 4,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -480,7 +588,7 @@
         ],
         "baseCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "base-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -504,7 +612,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "base-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -528,10 +636,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "base-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -552,10 +660,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "base-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -576,7 +684,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "base-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -600,7 +708,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "base-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -624,7 +732,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "base-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -648,10 +756,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "base-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -672,10 +780,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "base-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -696,7 +804,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "base-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -720,10 +828,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "base-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -746,7 +854,7 @@
         ],
         "awakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "awakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -770,7 +878,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "awakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -794,10 +902,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "awakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -818,10 +926,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "awakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -842,7 +950,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "awakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -866,7 +974,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "awakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -890,7 +998,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "awakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -914,10 +1022,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "awakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -938,10 +1046,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "awakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -962,7 +1070,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "awakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -986,10 +1094,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "awakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1008,6 +1116,30 @@
             "resourceCost": null,
             "cooldown": "X Seconds",
             "moveTags": ["stepQuickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
+          },
+          {
+            "id": "awakened-full-meter-cashout-community-combo",
+            "name": "Community Combo: Full Meter Cashout",
+            "description": "Expend all of Soi-Fon's resources in an oppressive combo that overwhelms her foe. Requires 100 Reverse, 8 Anken, and at least 50 Reiatsu. Will not allow for a launcher at the end. Useful for pushing the opponent into Soul Break or into Now or Never. Created by '@kombat.'.",
+            "input": "Q -> Q -> Q -> SI -> F -> Q -> Q -> SI -> F -> Q -> F -> CR -> HH -> F -> Q -> Q -> SI -> F -> Q -> Q -> SI -> F -> Q -> F -> S2",
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": 100,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": 8,
+            "cooldown": "X Seconds",
+            "moveTags": ["needsStatInfo"]
           }
         ]
       }

@@ -17,8 +17,8 @@
     "characterEngTrailer": "https://www.youtube.com/watch?v=Pglr-98uFBY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=26",
     "characterNumber": 7,
     "isEcho": false,
-    "tldr": "To be defined.",
-    "characterOutfits": ["1", "DLC1"],
+    "tldr": "A mysterious, carefree shop owner. Can switch between offense and defense at any range. Has a balanced array of moves for a variety of situations. Specializes in preventing opponents from using their best moves, slowly wearing them down with long distance attacks that keep the opponent at bay. Overall power is very high but you're often left wide open, so taking care to land hits is key. ",
+    "characterOutfits": ["1", "2", "3", "DLC1"],
     "abilities": [
       {
         "abilityName": "Benihime",
@@ -30,9 +30,9 @@
       {
         "base": [
           {
-            "id": "just-a-plain-old-candy-store-owner",
-            "name": "Just a Plain Old Candy-Store Owner",
-            "description": "Urahara takes a defensive stance, preparing to counter his opponent. If Urahara is hit with an attack in this state, he retaliates with a forwards slice.",
+            "id": "base-too-bad-so-sad",
+            "name": "Signature Move: Too Bad, So Sad",
+            "description": "Wield your blade to fend off opponent attacks. Taking a close-range attack transitions into a slash attack.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -51,12 +51,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "noRangeToShortRange", "counter", "block", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing", "attackTypeMelee", "noRangeToShortRange", "counter", "block", "needsStatInfo"]
           },
           {
-            "id": "kamisori-benihime",
-            "name": "Kamisori Benihime",
-            "description": "Urahara fires a powerful wave of blood towards his opponent after a longer-than-usual animation, moving at a slower-than-usual speed, hitting multiple times. Kamisori Benihime can negate ranged attacks caught in its' path.",
+            "id": "base-kamisori-benihime",
+            "name": "Spiritual Pressure Move 1: Kamisori Benihime",
+            "description": "Releases Benihime to launch a slash. This is followed a moment later by more hits, which follow the first slash and seek out the opponent.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -75,14 +75,14 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortToMidRange", "destroysProjectiles", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "are-you-prepared?",
-            "name": "Are You Prepared?",
-            "description": "Urahara tilts his hat, taking the fight seriously. He becomes buffed for a period of time, increasing his mobility and shortening the animation length of his attacks, mixing up his attack rhythm.",
+            "id": "base-are-you-prepared?",
+            "name": "Spiritual Pressure Move 2: Are You Prepared?",
+            "description": "Go all-out, strengthening yourself for a brief period. Attacks, Steps and Dashes are improved dramatically while the effect is active.",
             "input": "S2",
-            "damage": null,
+            "damage": 0,
             "frames": 0,
             "hits": null,
             "hasOfficialName": true,
@@ -99,10 +99,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "noRange", "boostsStats", "boostsAnimationSpeed", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "base-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -126,9 +126,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "base-special-flash-attack",
+            "name": "Special Flash Attack: Heavy Byakurai",
+            "description": "Unleash a Heavy Byakurai from the tip of your Zanpakuto. Has long range, making this a good move to keep foes at bay.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -147,10 +147,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "base-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -174,7 +174,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "base-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -201,7 +201,7 @@
         "awakened": [
           {
             "id": "shikai-benihime-awakening",
-            "name": "Shikai: `Benihime` Awakening",
+            "name": "Awakening: Shikai - Benihime",
             "description": "Urahara spawns a shield of bloody Reiryoku as he flickers with crimson Reiatsu, before shooting a serious glare and shattering the shield into glass-like fragments, fully releasing Benihime. When Awakened, Urahara regenerates his Reverse Gauge far faster, and also enhances the speed and rate of his Flash Steps and Reverse Actions.",
             "input": "AW",
             "damage": null,
@@ -221,34 +221,82 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "boostsStats", "boostsReverseRegeneration", "boostsFlashSteps", "boostsReverses"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "S1",
-            "damage": null,
-            "frames": null,
+            "id": "awakened-blood-shield",
+            "name": "Signature Move: Blood Shield",
+            "description": "Triggers Blood Shield to recieve an attack. Taking a close-range attack transitions into a counter. Taking a long-range attack whilst 'Are You Prepared?' is active will launch a counter slash.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
             "hits": null,
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
             "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
             "fightingSpiritCost": null,
-            "reversalGain": null,
+            "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
             "gaugeCost": null,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["unknown"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "awakened-kamisori-benihime",
+            "name": "Spiritual Pressure Move 1: Kamisori Benihime",
+            "description": "Releases Benihime to launch a slash. This is followed a moment later by more hits, which follow the first slash and seek out the opponent.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-are-you-prepared?",
+            "name": "Spiritual Pressure Move 2: Are You Prepared?",
+            "description": "Go all-out, strengthening yourself for a brief period. Attacks, Steps and Dashes are improved dramatically while the effect is active.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 100,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -272,9 +320,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Heavy Byakurai",
+            "description": "Unleash a Heavy Byakurai from the tip of your Zanpakuto. Has long range, making this a good move to keep foes at bay.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -293,10 +341,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -320,7 +368,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -346,10 +394,10 @@
         ],
         "kikon": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Base Kikon currently not known.",
-            "input": "S1",
+            "id": "base-hiasobi-benihime-juzutsunagi-kikon-move",
+            "name": "Normal State Kikon Move 1: Hiasobi Benihime - Juzutsunagi",
+            "description": "Kisuke slashes, spewing a net of black and red Reiryoku that weaves in a latticed pattern, and then slams the tip of Benihime into the ground, bubbling explosive oily orbs that detonate in a rupterous inferno. Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break.",
+            "input": "KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -370,10 +418,10 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "hadō-#91-senju-kōten-taihō-kikon-move",
-            "name": "Hadō #91: Senju Kōten Taihō",
-            "description": "Whilst Awakened, Kisuke waves Benihime with the authority of a military commander, directing the magical cannon fire of 'Hado #91: Senju Kōten Taihō' towards his opponent, resulting in a barrage and explosion of magenta star-like blasts.",
-            "input": "AW -> KI",
+            "id": "awakened-hiasobi-benihime-juzutsunagi-kikon-move",
+            "name": "Awakened Kikon Move 1: Hiasobi Benihime - Juzutsunagi",
+            "description": "Kisuke slashes, spewing a net of black and red Reiryoku that weaves in a latticed pattern, and then slams the tip of Benihime into the ground, bubbling explosive oily orbs that detonate in a rupterous inferno. Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -394,10 +442,10 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Alternate Awakened Kikon currently not known.",
-            "input": "AW -> KI",
+            "id": "hado-#91-senjukotentaiho-kikon-move",
+            "name": "Awakened Kikon Move 2: Hado #91 - Senjukotentaiho",
+            "description": "Whilst Awakened, Kisuke waves Benihime with the authority of a military commander, directing the magical cannon fire of 'Hado #91: Senjukotentaiho' towards his opponent, resulting in a barrage and explosion of magenta star-like blasts. Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -420,7 +468,7 @@
         ],
         "baseCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "base-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -444,7 +492,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "base-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -468,10 +516,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "base-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -492,10 +540,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "base-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -516,7 +564,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "base-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -540,7 +588,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "base-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -564,7 +612,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "base-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -588,10 +636,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "base-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -612,10 +660,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "base-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -636,7 +684,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "base-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -660,10 +708,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "base-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -686,7 +734,7 @@
         ],
         "awakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "awakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -710,7 +758,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "awakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -734,10 +782,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "awakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -758,10 +806,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "awakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -782,7 +830,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "awakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -806,7 +854,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "awakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -830,7 +878,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "awakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -854,10 +902,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "awakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -878,10 +926,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "awakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -902,7 +950,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "awakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -926,10 +974,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "awakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,

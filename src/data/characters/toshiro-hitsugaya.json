@@ -4,21 +4,21 @@
     "id": "toshiro-hitsugaya",
     "race": "shinigami",
     "quote": "We are not gods. We're just Shinigami. The moment you started thinking you were a God was the moment you stopped improving.",
-    "description": "The young prodigy Captain of Squad 10, wielding the strongest ice-type Zanpakutō. Despite his age, Tōshirō's tactical brilliance and dedication to duty have earned him respect among the Gotei 13. Tōshiro is a Hybrid Range fighter who utilizes both Melee and 'Tenso Jyurin' Gauge-based abilities. Keeping the offensive on your opponents whilst avoiding being hit by attacks allow him to make the most of his 'Tenso Jyurin' Gauge. With high Power and Range, moderate Defense and Technique, but lower Speed, Tōshiro can dominate the battlefield through his Balanced playstyle and Charge attacks, using careful positioning and resource management to send his foes to an icy grave.",
+    "description": "The young prodigy Captain of Squad 10, wielding the strongest ice-type Zanpakutō. Despite his age, Tōshirō's tactical brilliance and dedication to duty have earned him respect among the Gotei 13. Tōshirō is a Hybrid Range fighter who utilizes both Melee and 'Tenso Jyurin' Gauge-based abilities. Keeping the offensive on your opponents whilst avoiding being hit by attacks allow him to make the most of his 'Tenso Jyurin' Gauge. With high Power and Range, moderate Defense and Technique, but lower Speed, Tōshirō can dominate the battlefield through his Balanced playstyle and Charge attacks, using careful positioning and resource management to send his foes to an icy grave.",
     "tags": {
       "affiliations": ["soulSociety", "shinigami", "squad10"],
       "relationships": ["neutral"],
       "abilities": ["awakening", "shikai", "bankai"],
       "characteristics": ["male", "captain", "gotei13"]
     },
-    "characterEaseOfUse": 4,
+    "characterEaseOfUse": 3,
     "characterArchetype": ["hybridRange", "melee", "gauge", "charge", "balanced"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=0nzHXmd9Pjo&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=30",
     "characterEngTrailer": "https://www.youtube.com/watch?v=gaTngNoe9ek&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=23",
     "characterNumber": 10,
     "isEcho": false,
-    "tldr": "To be defined.",
-    "characterOutfits": ["1", "2", "DLC1"],
+    "tldr": "The Squad 10 Captain is the youngest ever in that role. His leadership is reinforced by a mighty ice Zanpakuto. Can seize the initiative with a variety of moves to keep opponents at bay and shower the enemy with attacks through power-ups. With a number of excellent projectiles, his strength lies in fending off the opponent from mid-range and then lunging in for relentless attacks. His Special Flash Attack is a long-range projectile good for keeping back distant enemies. Successive hits with ice-based attacks increase his personal Tenso Jyurin, Control over Weather Level, which boosts certain moves.",
+    "characterOutfits": ["1", "2", "DLC1", "DLC2"],
     "abilities": [
       {
         "abilityName": "Hyōrinmaru",
@@ -30,9 +30,9 @@
       {
         "base": [
           {
-            "id": "tenso-jyurin",
-            "name": "Unique Mechanic: Tenso Jyurin Gauge",
-            "description": "Tōshiro has access to the `Tenso Jyurin Gauge`, which has three Levels. As Tōshiro lands hits, and lands his Signature Move, Spiritual Pressure 1 Move and Spiritual Pressure 2 Move, the `Tenso Jyurin Gauge` increases. When Tōshiro is hit, the `Tenso Jyurin Gauge` decreases. The `Tenso Jyurin Gauge` also decreases over time. As the `Tenso Jyurin Gauge` increases, Tōshiro's damage output increases.",
+            "id": "exclusive-ability-tenso-jyurin",
+            "name": "Exclusive Ability: Tenso Jyurin",
+            "description": "A gauge exclusive to Toshiro Hitsugaya. The gauge fills when you land ice-based attacks on the opponent. Filling the gauge increases your Tenso Jyurin, Control over Weather Level. At Level 2, this strengthens all moves, and at Level 3 the gauge begins to deplete, but the power boost increases further for a while.",
             "input": null,
             "damage": null,
             "frames": null,
@@ -51,12 +51,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["uniqueMechanic"]
+            "moveTags": ["exclusiveAbility"]
           },
           {
-            "id": "suihyōrin",
-            "name": "Suihyōrin",
-            "description": "Tōshiro weaves a zone of icicles at his opponents' feet. Holding the input increases the attack's range and damage. Increases the `Tenso Jyurin Gauge` when it hits.",
+            "id": "base-hyochu-senga",
+            "name": "Signature Move: Hyochu Senga",
+            "description": "Attack opponents within range with icicles stabbing up from their feet. Hold the input to expand the range in which the icicles appear. The initial range and range expansion speed are boosted at higher Tenso Jyurin, Control over Weather levels.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -70,17 +70,17 @@
             "fightingSpiritCost": null,
             "reversalGain": 0,
             "reversalCost": null,
-            "gaugeGain": 0,
+            "gaugeGain": null,
             "gaugeCost": null,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "charge", "tracksOpponent", "gaugeIncreaseOnHit", "gaugeDecreaseOnWhiff", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "soten-hyogeki",
-            "name": "Soten Hyogeki",
-            "description": "Tōshiro summons an icicle that drops on the opponent regardless of distance. If Soten Hyogeki hits, Tōshiro can exploit his opponent with a follow-up attack. Increases the `Tenso Jyurin Gauge` when it hits.",
+            "id": "base-soten-hyogeki",
+            "name": "Spiritual Pressure Move 1: Soten Hyogeki",
+            "description": "Drop a block of ice down on the opponent. Binds the opponent on hit, allowing follow-ups depending on range.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -94,17 +94,17 @@
             "fightingSpiritCost": null,
             "reversalGain": 0,
             "reversalCost": null,
-            "gaugeGain": 0,
+            "gaugeGain": null,
             "gaugeCost": null,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "tracksOpponent", "gaugeIncreaseOnHit", "gaugeDecreaseOnWhiff", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "hyoryu-renbu",
-            "name": "Hyoryu Renbu",
-            "description": "Hyōrinmaru roars, as Tōshiro forms a large dragon head that trails ice behind it, firing it at the opponent over a long distance, allowing Tōshiro to launch a follow-up attack. Increases the `Tenso Jyurin Gauge` when it hits.",
+            "id": "base-hyoryu-renbu",
+            "name": "Spiritual Pressure Move 2: Hyoryu Renbu",
+            "description": "Generates an ice dragon to launch at the opponent. Huge attack area, and is stronger when it lands at close range. Greatly fills the Tenso Jyurin, Control over Weather Gauge on hit.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -118,15 +118,15 @@
             "fightingSpiritCost": null,
             "reversalGain": 0,
             "reversalCost": null,
-            "gaugeGain": 0,
-            "gaugeCost": null,
+            "gaugeGain": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeRanged", "midToLongRange", "gaugeIncreaseOnHit", "gaugeDecreaseOnWhiff", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "base-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -150,9 +150,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "base-special-flash-attack",
+            "name": "Special Flash Attack: Hyogeki",
+            "description": "Generates a block of ice he unleashes forward. Slow but has a long range. Can be used to keep the enemy at bay, or you can chase the ice to attack the opponent. The ice block gets larger and can hit more times at Tenso Jyurin, Control over Weather Level 3.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -171,10 +171,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "base-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -198,7 +198,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "base-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -224,33 +224,9 @@
         ],
         "awakened": [
           {
-            "id": "tenso-jyurin",
-            "name": "Unique Mechanic: Tenso Jyurin Gauge",
-            "description": "Tōshiro has access to the `Tenso Jyurin Gauge`, which has three Levels. As Tōshiro lands hits, and lands his Signature Move, Spiritual Pressure 1 Move and Spiritual Pressure 2 Move, the `Tenso Jyurin Gauge` increases. When Tōshiro is hit, the `Tenso Jyurin Gauge` decreases. The `Tenso Jyurin Gauge` also decreases over time. As the `Tenso Jyurin Gauge` increases, Tōshiro's damage output increases.",
-            "input": null,
-            "damage": null,
-            "frames": null,
-            "hits": null,
-            "hasOfficialName": true,
-            "reishiGain": null,
-            "reishiCost": null,
-            "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": null,
-            "reversalGain": null,
-            "reversalCost": null,
-            "gaugeGain": null,
-            "gaugeCost": null,
-            "resourceGain": null,
-            "resourceCost": null,
-            "cooldown": "X Seconds",
-            "moveTags": ["uniqueMechanic"]
-          },
-          {
-            "id": "bankai-daiguren-hyōrinmaru-awakening",
-            "name": "Bankai: `Daiguren Hyōrinmaru` Awakening",
-            "description": "Tōshiro raises Hyōrinmaru to the heavens, activating his Bankai and cladding himself in frosted ice wings that descend down his spine into a dragon's tail. When Awakened, Tōshiro's abilities are enhanced, and the limit of his `Tenso Jyurin Gauge` increases considerably.",
+            "id": "awakening-bankai-daiguren-hyōrinmaru",
+            "name": "Awakening: Bankai - Daiguren Hyōrinmaru",
+            "description": "Tōshirō lifts Hyōrinmaru to the heavens, swirling a freezing cloud around him as his blade spews ice, forming grand draconic wings and a long, serpentine tail that sit upon Tōshirō's back - His arm, now adorned with an ice dragon that bites his Zanpakuto, erupts from the cloud with a chilling fury.",
             "input": "AW",
             "damage": null,
             "frames": null,
@@ -269,108 +245,106 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "increasesGaugeLimit"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
+            "id": "exclusive-ability-tenso-jyurin",
+            "name": "Exclusive Ability: Tenso Jyurin",
+            "description": "A gauge exclusive to Toshiro Hitsugaya. The gauge fills when you land ice-based attacks on the opponent. Filling the gauge increases your Tenso Jyurin, Control over Weather Level. At Level 2, this strengthens all moves, and at Level 3 the gauge begins to deplete, but the power boost increases further for a while.",
+            "input": null,
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "awakened-hyochu-senga",
+            "name": "Signature Move: Hyochu Senga",
+            "description": "Attack opponents within range with icicles stabbing up from their feet. Hold the input to expand the range in which the icicles appear. The initial range and range expansion speed are boosted at higher Tenso Jyurin, Control over Weather levels.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "awakened-soten-hyogeki",
+            "name": "Spiritual Pressure Move 1: Soten Hyogeki",
+            "description": "Drop a block of ice down on the opponent. Binds the opponent on hit, allowing follow-ups depending on range.",
             "input": "S1",
-            "damage": null,
-            "frames": null,
+            "damage": 0,
+            "frames": 0,
             "hits": null,
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
             "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
             "fightingSpiritCost": null,
-            "reversalGain": null,
+            "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
             "gaugeCost": null,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["unknown"]
-          }
-        ],
-        "kikon": [
-          {
-            "id": "hyoryu-hato-kikon-move",
-            "name": "Hyoryu Hato",
-            "description": "Whilst Unawakened, Tōshiro leaps into the air, spawning a colossal, spiralling serpent with the head of a dragon, launching it towards his opponent, causing a field of ice crystals to form at the epicentre.",
-            "input": "KI",
-            "damage": null,
-            "frames": null,
-            "hits": null,
-            "hasOfficialName": true,
-            "reishiGain": null,
-            "reishiCost": null,
-            "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": null,
-            "reversalGain": null,
-            "reversalCost": null,
-            "gaugeGain": null,
-            "gaugeCost": null,
-            "resourceGain": null,
-            "resourceCost": null,
-            "cooldown": "X Seconds",
-            "moveTags": ["kikonMove"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "hyoten-hyakkaso-kikon-move",
-            "name": "Hyoten Hyakkaso",
-            "description": "Whislt Awakened, Tōshiro slices his opponent before holding Hyōrinmaru to the heavens, opening the clouds for snowfall. As the snow lands and comes into contact with his opponent, dramatic flowers of ice form, coating the opponent in a bouquet of flowers towering towards the gap in the heavens, before shattering.",
-            "input": "AW -> KI",
-            "damage": null,
-            "frames": null,
+            "id": "awakened-hyoryu-renbu",
+            "name": "Spiritual Pressure Move 2: Hyoryu Renbu",
+            "description": "Generates an ice dragon to launch at the opponent. Huge attack area, and is stronger when it lands at close range. Greatly fills the Tenso Jyurin, Control over Weather Gauge on hit.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
             "hits": null,
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
             "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
+            "reiatsuCost": 100,
+            "fightingSpiritGain": 0,
             "fightingSpiritCost": null,
-            "reversalGain": null,
+            "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["kikonMove"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "ryūsenka-kikon-move",
-            "name": "Ryūsenka",
-            "description": "Whilst Awakened, Tōshiro dashes towards his opponent with a stab prepared for his opponents' chest, launching them before following up with a second, more powerful stab that erupts a crucifix of ice from their body, marking their grave.",
-            "input": "AW -> KI",
-            "damage": null,
-            "frames": null,
-            "hits": null,
-            "hasOfficialName": true,
-            "reishiGain": null,
-            "reishiCost": null,
-            "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": null,
-            "reversalGain": null,
-            "reversalCost": null,
-            "gaugeGain": null,
-            "gaugeCost": null,
-            "resourceGain": null,
-            "resourceCost": null,
-            "cooldown": "X Seconds",
-            "moveTags": ["kikonMove"]
-          },
-          {
-            "id": "basic-flash-attack",
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -394,9 +368,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Hyogeki",
+            "description": "Generates a block of ice he unleashes forward. Slow but has a long range. Can be used to keep the enemy at bay, or you can chase the ice to attack the opponent. The ice block gets larger and can hit more times at Tenso Jyurin, Control over Weather Level 3.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -415,10 +389,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -442,7 +416,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -466,9 +440,83 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           }
         ],
+        "kikon": [
+          {
+            "id": "base-hyoryu-hato-kikon-move",
+            "name": "Normal State Kikon Move 1: Hyoryu Hato",
+            "description": "Destroys 4 Konpaku. Destroys 3 Konpaku with a Soul Break.",
+            "input": "KI",
+            "damage": 3,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          },
+          {
+            "id": "awakened-ryūsenka-kikon-move",
+            "name": "Awakened Kikon Move 1: Ryūsenka",
+            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 4,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          },
+          {
+            "id": "awakened-hyoten-hyakkaso-kikon-move",
+            "name": "Awakened Kikon Move 1: Hyoten Hyakkaso",
+            "description": "Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 5,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["kikonMove"]
+          }
+        ],
         "baseCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "base-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -492,7 +540,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "base-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -516,10 +564,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "base-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -540,10 +588,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "base-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -564,7 +612,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "base-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -588,7 +636,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "base-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -612,7 +660,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "base-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -636,10 +684,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "base-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -660,10 +708,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "base-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -684,7 +732,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "base-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -708,10 +756,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "base-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -734,7 +782,7 @@
         ],
         "awakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "awakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -758,7 +806,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "awakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -782,10 +830,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "awakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -806,10 +854,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "awakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -830,7 +878,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "awakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -854,7 +902,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "awakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -878,7 +926,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "awakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -902,10 +950,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "awakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -926,10 +974,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "awakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -950,7 +998,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "awakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -974,10 +1022,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "awakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,

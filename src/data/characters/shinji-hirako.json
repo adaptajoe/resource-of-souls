@@ -17,8 +17,8 @@
     "characterEngTrailer": "https://www.youtube.com/watch?v=dVgkWouBJGA&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=7",
     "characterNumber": 23,
     "isEcho": false,
-    "tldr": "To be defined.",
-    "characterOutfits": ["1", "2"],
+    "tldr": "Leader of 'The Vizard', a band of outlaws. A cunning strategist who smoothly outwits foes. Can control strategy in close combat and seize the initiative. His Signature Move can be charged by holding the Signature Move input to switch between unguardable attacks and invincibility, requiring you to consider the situation. His Special Flash Attack covers a large distance, and you can hold the input to act first even if it's guarded.",
+    "characterOutfits": ["1", "2", "3", "4"],
     "abilities": [
       {
         "abilityName": "Sakanade",
@@ -30,10 +30,10 @@
       {
         "base": [
           {
-            "id": "such-fun-&-that's-not-it",
-            "name": "Such Fun & That's Not It",
-            "description": "Shinji flips between two Stances, the 'Such Fun Stance (A)', where Sakanade is sealed, and the 'That's Not It Stance (B)', where Sakanade is unsealed. The animations for these two states are different, and swaps from 'Such Fun (A)' to 'That's Not It (B)' on successive uses. During 'Such Fun (A)', Shinji will stride towards the opponent, spinning his Zanpakuto in his hand. When he is hit with an attack in this state, he counters with a powerful slash. If no attack lands in this state, Shinji is left exposed for a significant amount of time. Breakers also will negate the counter of 'Such Fun (A)'. In the 'That's Not It (B)' state, Shinji strides towards the opponent, spinning Sakanade by its' ring, and has the same counter properties of 'Such Fun (A)'; the difference being that 'That's Not It (B)' won't leave Shinji exposed, and will instead automatically teleport him behind the opponent as if 'Such Fun (A)' was successful.",
-            "input": "SI / NORTH (Towards Opponent) -> SI",
+            "id": "base-such-fun",
+            "name": "Signature Move: Such Fun",
+            "description": "Rotate Zanpakuto while walking forward. Can be activated with the listed input during Exclusive Ability: Sakanade Released. Being hit with any attack besides a Breaker-type while walking will unleash a slashing counter. However, if you do not get hit, you'll be left wide open afterwards.",
+            "input": "NORTH + SI",
             "damage": 0,
             "frames": 0,
             "hits": null,
@@ -51,12 +51,36 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "noRangeToShortRange", "stanceChange", "counter", "whiffPenaltyInStanceA", "teleportsToOpponentOnBlock", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "it's-your-turn!",
-            "name": "It's Your Turn!",
-            "description": "Hiyori joins the fight temporarily, attacking the opponent constantly. As soon as Hiyori takes a single hit, she leaves the field.",
+            "id": "base-that's-not-it",
+            "name": "Signature Move: That's Not It",
+            "description": "Move that can be activated during Exclusive Ability: Sakanade Released. Rotate Zanpakuto while walking forward, then slash up into opponent with a Breaker Move. Once complete, moves to the back to perform a follow-up. Hitting the opponent enables a combo with a Flash Attack.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "base-it's-your-turn!",
+            "name": "Spiritual Pressure Move 1: It's Your Turn!",
+            "description": "Sends Hiyori against the opponent. Shinji can move freely while Hiyori attacks. Fails if Hiyori is hit by the target.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -75,12 +99,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "summonsAlly", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "sakanade",
-            "name": "Sakanade",
-            "description": "This move is also classed as a Breaker. Shinji launches a casual slice that then turns into four successive slices if the first one hits. Sakanade is unblockable, and enhances Shinji's damage output by placing him in the `That's Not It Stance (B)`.",
+            "id": "base-sakanade",
+            "name": "Spiritual Pressure Move 2: Sakanade",
+            "description": "A Breaker move that releases Sakanade and slashes the area to the front. Small range but cannot be guarded, and the first hit enables variations with successive attacks. Hitting puts you in Sakanade Released state where all attacks do more damage and Signature Move: 'That's Not It' can be activated.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -95,14 +119,14 @@
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "shortRange", "stanceChange", "breaker", "unblockable", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "base-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -126,9 +150,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "base-special-flash-attack",
+            "name": "Special Flash Attack: Spinning Slash",
+            "description": "Spin while stepping in and make a slash to the front. Has invincibility frames against Breakers while spinning. Hitting the opponent enables a combo with a Quick Attack.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -147,10 +171,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "base-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -174,7 +198,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "base-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -200,9 +224,9 @@
         ],
         "awakened": [
           {
-            "id": "hollowfication-awakening",
-            "name": "Hollowfication Awakening",
-            "description": "Shinji dons his Hollow Mask, enhancing all of his stats, but also greatly increasing the effects of his Signature Move and Spiritual Pressure Moves.",
+            "id": "awakening-hollowfication",
+            "name": "Awakening: Hollowfication",
+            "description": "Shinji rakes at his face, donning his pharaoh-like Hollow mask, greatly augmenting his abilities.",
             "input": "AW",
             "damage": null,
             "frames": null,
@@ -221,10 +245,106 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "boostsStats", "boostsSignatureMove", "boostsSpiritualPressure1Move", "boostsSpiritualPressure2Move"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "awakened-such-fun",
+            "name": "Signature Move: Such Fun",
+            "description": "Rotate Zanpakuto while walking forward. Can be activated with the listed input during Exclusive Ability: Sakanade Released. Being hit with any attack besides a Breaker-type while walking will unleash a slashing counter. However, if you do not get hit, you'll be left wide open afterwards.",
+            "input": "NORTH + SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "awakened-that's-not-it",
+            "name": "Signature Move: That's Not It",
+            "description": "Move that can be activated during Exclusive Ability: Sakanade Released. Rotate Zanpakuto while walking forward, then slash up into opponent with a Breaker Move. Once complete, moves to the back to perform a follow-up. Hitting the opponent enables a combo with a Flash Attack.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "awakened-it's-your-turn!",
+            "name": "Spiritual Pressure Move 1: It's Your Turn!",
+            "description": "Sends Hiyori against the opponent. Shinji can move freely while Hiyori attacks. Fails if Hiyori is hit by the target.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-sakanade",
+            "name": "Spiritual Pressure Move 2: Sakanade",
+            "description": "A Breaker move that releases Sakanade and slashes the area to the front. Small range but cannot be guarded, and the first hit enables variations with successive attacks. Hitting puts you in Sakanade Released state where all attacks do more damage and Signature Move: 'That's Not It' can be activated.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 100,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": 100,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -248,9 +368,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Spinning Slash",
+            "description": "Spin while stepping in and make a slash to the front. Has invincibility frames against Breakers while spinning. Hitting the opponent enables a combo with a Quick Attack.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -269,10 +389,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -296,7 +416,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -322,11 +442,11 @@
         ],
         "kikon": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Base Kikon currently not known.",
+            "id": "base-cero-kikon-move",
+            "name": "Normal State Kikon Move 1: Cero",
+            "description": "Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break.",
             "input": "KI",
-            "damage": null,
+            "damage": 3,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -346,11 +466,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "hollowfied-cero-kikon-move",
-            "name": "Hollowfied Cero",
-            "description": "Whilst Awakened, Shinji dons his Hollow Mask and holds his blade horizontally, charging a powerful Cero and firing it with a superior amount of force.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-cero-kikon-move",
+            "name": "Awakened Kikon Move 1: Cero",
+            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 4,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -370,11 +490,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Alternate Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-collapse,-sakanade-kikon-move",
+            "name": "Awakened Kikon Move 2: Collapse, Sakanade",
+            "description": "Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break. Puts you in a released state where all damage is increased and 'That's Not It' can be used.",
+            "input": "(After) AW, KI",
+            "damage": 5,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -396,7 +516,7 @@
         ],
         "baseCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "base-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -420,7 +540,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "base-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -444,10 +564,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "base-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -468,10 +588,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "base-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -492,7 +612,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "base-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -516,7 +636,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "base-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -540,7 +660,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "base-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -564,10 +684,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "base-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -588,10 +708,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "base-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -612,7 +732,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "base-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -636,10 +756,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "base-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -662,7 +782,7 @@
         ],
         "awakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "awakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -686,7 +806,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "awakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -710,10 +830,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "awakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -734,10 +854,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "awakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -758,7 +878,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "awakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -782,7 +902,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "awakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -806,7 +926,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "awakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -830,10 +950,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "awakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -854,10 +974,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "awakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -878,7 +998,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "awakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -902,10 +1022,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "awakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,

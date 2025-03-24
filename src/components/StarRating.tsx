@@ -32,7 +32,7 @@ const StarRating = memo(function StarRating({ rating, maxRating = 5, label = "Ra
         ))}
       </div>
       <p className="text-xs text-gray-400">
-        ({rating === 1 && `Extremely Challenging`}
+        ({rating === 1 && `Very Challenging`}
         {rating === 2 && `Challenging`}
         {rating === 3 && `Fairly Challenging`}
         {rating === 4 && `Fairly Simple`}

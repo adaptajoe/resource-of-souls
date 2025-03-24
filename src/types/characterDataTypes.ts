@@ -41,10 +41,12 @@ export interface IMoves {
   base: IMove[];
   awakened?: IMove[];
   reawakened?: IMove[];
+  weakened?: IMove[];
   kikon: IMove[];
   baseCombos: IMove[];
   awakenedCombos?: IMove[];
   reawakenedCombos?: IMove[];
+  weakenedCombos?: IMove[];
 }
 
 export interface IMove {

@@ -3,9 +3,8 @@
   "version": "1.0.7.",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "build:characters": "node combineCharacters.js",
+    "dev": "node combineCharacters.js && next dev --turbopack",
+    "build": "node combineCharacters.js && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -13,6 +12,8 @@
     "@phosphor-icons/react": "^2.1.7",
     "@tailwindcss/postcss": "^4.0.7",
     "@tinacms/cli": "^1.9.2",
+    "file-saver": "^2.0.5",
+    "jszip": "^3.10.1",
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/file-saver": "^2.0.7",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

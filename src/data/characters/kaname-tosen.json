@@ -17,8 +17,8 @@
     "characterEngTrailer": "https://www.youtube.com/watch?v=B6LO391TSdY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=17",
     "characterNumber": 14,
     "isEcho": false,
-    "tldr": "To be defined.",
-    "characterOutfits": ["1", "2"],
+    "tldr": "The misanthropic and righteous Squad 9 Captain. His counters are enhanced by sharpened perceptions. Uses hit-and-run actions and once Awakened creates a personal barrier that obstructs the opponent's vision. Suited for predicting opponents' attacks and using Flash Attacks to fall back and then fly forward, or using his Signature Move to ward off attacks and counter. Once Awakened he cannot be seen by opponents, so try using Flash Attacks to strike at unprepared foes, or launch a powerful offensive with Breakers to achieve victory.",
+    "characterOutfits": ["1", "2", "3", "4"],
     "abilities": [
       {
         "abilityName": "Suzumushi",
@@ -30,9 +30,9 @@
       {
         "base": [
           {
-            "id": "transcendence",
-            "name": "Transcendence",
-            "description": "Tōsen braces with Suzumushi horizontally; if Tōsen is hit with an attack, he teleports behind his opponent, slicing them horizontally.",
+            "id": "base-transcendence",
+            "name": "Signature Move: Transcendence",
+            "description": "Wield your blade to fend off attacks. Taking a close-range attack in this stance triggers a backstab counter behind your opponent. The counter part earns a lot of Reiatsu.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -51,12 +51,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "noRangeToMidRange", "block", "counter", "teleportsToOpponentOnBlock", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "suzumushi-nishiki,-benihiko",
-            "name": "Suzumushi Nishiki, Benihiko",
-            "description": "Tōsen jumps backwards and fires a blitz of sharp needles towards his opponent.",
+            "id": "base-suzumushi-nishiki,-benihiko",
+            "name": "Spiritual Pressure Move 1: Suzumushi Nishiki, Benihiko",
+            "description": "Hurl a Benihiko while jumping backward. Fast activation, and the very beginning of the move has invincibility frames, letting you attack while fending off the opponent.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -75,12 +75,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortRange", "movesBackwards", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "sayabane",
-            "name": "Sayabane",
-            "description": "Tōsen rushes towards the opponent and slashes their legs, before immediately executing 'Suzumushi Nishiki, Benihiko' straight after.",
+            "id": "base-sayabane",
+            "name": "Spiritual Pressure Move 2: Sayabane",
+            "description": "Wield your blade in a low stance before rushing the opponent. Hitting the opponent before the rush transitions to a slicing attack. Taking an attack while rushing transitions into a powerful attack hurling a Benihiko.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -95,14 +95,14 @@
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "attackTypeRanged", "midRange", "dashesTowardsOpponent", "movesBackwards", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "base-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -126,13 +126,13 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Tōsen leans forwards, shooting into a dash that results in a swift, four-slice combo.",
+            "id": "base-special-flash-attack",
+            "name": "Special Flash Attack: Issen",
+            "description": "Move backward quickly before stepping in for a flash. The very beginning of the move has invincibility frames, letting you attack while fending off the opponent.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
-            "hits": 7,
+            "hits": 0,
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -147,10 +147,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "base-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -174,13 +174,13 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "base-step-quick-attack",
             "name": "Step Quick Attack",
-            "description": "Tōsen leans forwards, before leaping back, firing a swarm of Benihiko blades.",
+            "description": "Moveset currently not known.",
             "input": "SQ",
             "damage": null,
             "frames": null,
-            "hits": 4,
+            "hits": null,
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -200,9 +200,57 @@
         ],
         "awakened": [
           {
-            "id": "transcendence",
-            "name": "Transcendence",
-            "description": "Tōsen braces with Suzumushi horizontally; if Tōsen is hit with an attack, he teleports behind his opponent, slicing them horizontally.",
+            "id": "awakening-bankai-suzumushi-tsuishiki-enma-korogi",
+            "name": "Awakening: Bankai - Suzumushi Tsuishiki, Enma Korogi",
+            "description": "Tōsen spawns a circular metal hoop infront of him, as he flips it downwards, and spreads it into five other clones, tossing them around the arena. The rings spew with a vicious darkness, blanketing the area with a black orb - This orb robs Tōsen's foes of their senses of sight, hearing, smell and taste, but leaves their sense of touch intact.",
+            "input": "AW",
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": 100,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
+          },
+          {
+            "id": "exclusive-ability-bankai-suzumushi-tsuishiki-enma-korogi",
+            "name": "Exclusive Ability: Bankai - Suzumushi Tsuishiki, Enma Korogi",
+            "description": "A signature Awakened state for Kaname Tōsen. Covers the field in Bankai: Enma Korogi, plunging the opponent into a hellish emptiness. After activation, the opponent is unable to see Tōsen from a certain distance which gradually expands over time, or through combat. The range is reset if Kaname Tōsen successfully lands a Kikon Move. This Exclusive Ability is unable to be performed on an opposing Kaname Tōsen, as he is blind, and instead shows both players.",
+            "input": null,
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "awakened-transcendence",
+            "name": "Signature Move: Transcendence",
+            "description": "Wield your blade to fend off attacks. Taking a close-range attack in this stance triggers a backstab counter behind your opponent. The counter part earns a lot of Reiatsu.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -221,12 +269,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "noRangeToMidRange", "block", "counter", "teleportsToOpponentOnBlock", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "suzumushi-nishiki,-benihiko",
-            "name": "Suzumushi Nishiki, Benihiko",
-            "description": "Tōsen jumps backwards and fires a blitz of sharp needles towards his opponent.",
+            "id": "awakened-suzumushi-nishiki,-benihiko",
+            "name": "Spiritual Pressure Move 1: Suzumushi Nishiki, Benihiko",
+            "description": "Hurl a Benihiko while jumping backward. Fast activation, and the very beginning of the move has invincibility frames, letting you attack while fending off the opponent.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -245,12 +293,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortRange", "movesBackwards", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "sayabane",
-            "name": "Sayabane",
-            "description": "Tōsen rushes towards the opponent and slashes their legs, before immediately executing 'Suzumushi Nishiki, Benihiko' straight after.",
+            "id": "awakened-sayabane",
+            "name": "Spiritual Pressure Move 2: Sayabane",
+            "description": "Wield your blade in a low stance before rushing the opponent. Hitting the opponent before the rush transitions to a slicing attack. Taking an attack while rushing transitions into a powerful attack hurling a Benihiko.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -265,14 +313,14 @@
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "attackTypeRanged", "midRange", "dashesTowardsOpponent", "movesBackwards", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -296,13 +344,13 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Tōsen leans forwards, shooting into a dash that results in a swift, four-slice combo.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Issen",
+            "description": "Move backward quickly before stepping in for a flash. The very beginning of the move has invincibility frames, letting you attack while fending off the opponent.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
-            "hits": 7,
+            "hits": 0,
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -317,10 +365,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -344,13 +392,13 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
-            "description": "Tōsen leans forwards, before leaping back, firing a swarm of Benihiko blades.",
+            "description": "Moveset currently not known.",
             "input": "SQ",
             "damage": null,
             "frames": null,
-            "hits": 4,
+            "hits": null,
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -370,11 +418,11 @@
         ],
         "kikon": [
           {
-            "id": "suzumushi-kikon-move",
-            "name": "Cry, Suzumushi",
-            "description": "Whilst Unawakened, Tōsen releases Suzumushi, ringing out a deafening tone that paralyses his opponent, allowing him to execute a powerful, precise stab.",
+            "id": "base-blade-of-justice-kikon-move",
+            "name": "Normal State Kikon Move 1: Blade of Justice",
+            "description": "Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break.",
             "input": "KI",
-            "damage": null,
+            "damage": 3,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -394,11 +442,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "hado-#54-haien-kikon-move",
-            "name": "Hado #54: Haien",
-            "description": "Whilst Awakened, Tōsen unleashes a powerful purple Reireyoku explosive at his foe, tossing it towards them with vicious judgement.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-in-the-name-of-justice-kikon-move",
+            "name": "Awakened Kikon Move 1: In the Name of Justice",
+            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 4,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -418,11 +466,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Alternate Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-hado-#54-haien-kikon-move",
+            "name": "Awakened Kikon Move 2: Hado #54 - Haien",
+            "description": "Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 5,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -444,7 +492,7 @@
         ],
         "baseCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "base-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -468,7 +516,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "base-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -492,10 +540,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "base-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -516,10 +564,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "base-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -540,7 +588,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "base-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -564,7 +612,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "base-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -588,7 +636,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "base-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -612,10 +660,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "base-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -636,10 +684,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "base-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -660,7 +708,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "base-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -684,10 +732,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "base-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -710,7 +758,7 @@
         ],
         "awakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "awakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -734,7 +782,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "awakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -758,10 +806,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "awakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -782,10 +830,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "awakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -806,7 +854,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "awakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -830,7 +878,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "awakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -854,7 +902,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "awakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -878,10 +926,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "awakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -902,10 +950,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "awakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -926,7 +974,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "awakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -950,10 +998,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "awakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,

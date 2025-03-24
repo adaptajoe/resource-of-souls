@@ -11,14 +11,14 @@
       "abilities": ["awakening", "shikai", "bankai"],
       "characteristics": ["male", "captain", "gotei13"]
     },
-    "characterEaseOfUse": 3,
+    "characterEaseOfUse": 2,
     "characterArchetype": ["hybridRange", "midRange", "balanced", "gauge", "melee", "ranged", "rushdown", "zoner"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=QspGqabpIQU&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=18",
     "characterEngTrailer": "https://www.youtube.com/watch?v=E_H67r2cg7Y&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=12",
     "characterNumber": 20,
     "isEcho": false,
-    "tldr": "To be defined.",
-    "characterOutfits": ["1", "2"],
+    "tldr": "The proud and ever-inquisitive Squad 12 Captain. Poisons foes and dictates their movements. Excels at distrupting opponents' rhythm by launching toxic bubbles with his Signature Move or pulling them in with his Special Flash Attack. Can easily strike enemy openings with Quick Attacks, Flash Attacks and Dashing Quick Attacks. However, his Special Flash Attack leaves him open, so be careful with timing his moves.",
+    "characterOutfits": ["1", "2", "3", "DLC1", "DLC2"],
     "abilities": [
       {
         "abilityName": "Ashisogi Jizō",
@@ -30,9 +30,9 @@
       {
         "base": [
           {
-            "id": "poison-gauge",
-            "name": "Unique Mechanic: Poison Gauge",
-            "description": "Mayuri has access to the `Poison Gauge`; as Mayuri lands hits using his Signature Move, `Toxic Bubbles`, the `Poison Gauge` increases. The higher the `Poison Gauge`, the more damage the opponent takes. The `Poison Gauge` drains automatically after a period of time without hitting `Toxic Bubbles`. When Mayuri Awakens, the `Poison Gauge` builds automatically.",
+            "id": "exclusive-ability-poison",
+            "name": "Exclusive Ability: Poison",
+            "description": "An ability exclusive to Mayuri Kurotsuchi. Charges when certain attacks land on the opponent but reduces over time. Zanpakuto attacks consume a set percentage of the charge and gain added damage based on this amount. Poison does not impact additional damage on Reishi.",
             "input": null,
             "damage": null,
             "frames": null,
@@ -51,12 +51,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["uniqueMechanic"]
+            "moveTags": ["exclusiveAbility"]
           },
           {
-            "id": "toxic-bubbles",
-            "name": "Toxic Bubbles",
-            "description": "Mayuri casts forwards a single orb of Reiryoku laced with toxins, which slowly moves towards his opponent. If the Signature Move button is pressed before the orb makes contact with the opponent, it will prematurely detonate it, spreading a toxic mist over a wide area. Landing this attack increases Mayuri's `Poison Gauge`.",
+            "id": "base-toxic-bubbles",
+            "name": "Signature Move: Toxic Bubbles",
+            "description": "Launch a slow-moving ball of poison. Hit the opponent to add stocks of poison. Pressing the input again after launching causes the ball to explode, spreading poison in the area.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -70,17 +70,17 @@
             "fightingSpiritCost": null,
             "reversalGain": 0,
             "reversalCost": null,
-            "gaugeGain": 0,
+            "gaugeGain": null,
             "gaugeCost": null,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToMidRange", "gaugeIncreaseOnHit", "remoteDetonation", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "flesh-bomb",
-            "name": "Flesh Bomb",
-            "description": "Mayuri whips out a strange bomb from his left hand, wrapping it around his opponent's head before blowing them away with a combined explosion and slash. The range of 'Flesh Bomb' is extremely short, but is unblockable.",
+            "id": "base-flesh-bomb",
+            "name": "Spiritual Pressure Move 1: Flesh Bomb",
+            "description": "A Breaker-type move that attaches a flesh bomb to the opponent. Has a narrow attack range and is slow to activate but cannot be guarded. After the bomb is attached and a certain amount of time passes, or the input is tapped again in the attack's combo cancel window, it will explode.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -99,12 +99,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortRange", "unblockable", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "move,-you-idiot!",
-            "name": "Move, You Idiot!",
-            "description": "Mayuri calls Nemu to the field who charges at the opponent and restrains them before kicking them upwards after a short while. The opponent can still Guard when restrained by Nemu, but if they are hit by Nemu's kick whilst Guarding, they will take a massive amount of damage to their Guard Gauge.",
+            "id": "base-move,-you-idiot!",
+            "name": "Spiritual Pressure Move 2: Move, You Idiot!",
+            "description": "Send Nemu after the opponent. If hit, the opponent is restrained for a certain amount of time and then kicked upward for further attack. If Mayuri hits the opponent while they are restrained, Nemu will withdraw without following up. The lower the opponent's Reishi, the longer they are restrained.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -119,24 +119,14 @@
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": [
-              "spiritualPressureMove2",
-              "costsReiatsu",
-              "attackTypeRanged",
-              "attackTypeMelee",
-              "shortToMidRange",
-              "summonsAlly",
-              "restrictsOpponentsMovement",
-              "extraGuardDamageIfGuarding",
-              "needsStatInfo"
-            ]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "base-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -160,9 +150,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "base-special-flash-attack",
+            "name": "Special Flash Attack: Snake Belly Arm",
+            "description": "Grab the enemy with an extension built into the left arm. Hitting the opponent pulls them into a more advantageous position. Hold the input to cover a longer distance.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -181,10 +171,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "base-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -208,7 +198,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "base-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -234,33 +224,9 @@
         ],
         "awakened": [
           {
-            "id": "poison-gauge",
-            "name": "Unique Mechanic: Poison Gauge",
-            "description": "Mayuri has access to the `Poison Gauge`; as Mayuri lands hits using his Signature Move, `Toxic Bubbles`, the `Poison Gauge` increases. The higher the `Poison Gauge`, the more damage the opponent takes. The `Poison Gauge` drains automatically after a period of time without hitting `Toxic Bubbles`. When Mayuri Awakens, the `Poison Gauge` builds automatically.",
-            "input": null,
-            "damage": null,
-            "frames": null,
-            "hits": null,
-            "hasOfficialName": true,
-            "reishiGain": null,
-            "reishiCost": null,
-            "reiatsuGain": null,
-            "reiatsuCost": null,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": null,
-            "reversalGain": null,
-            "reversalCost": null,
-            "gaugeGain": null,
-            "gaugeCost": null,
-            "resourceGain": null,
-            "resourceCost": null,
-            "cooldown": "X Seconds",
-            "moveTags": ["uniqueMechanic"]
-          },
-          {
-            "id": "bankai-konjiki-ashisogi-jizō-awakening",
-            "name": "Bankai: `Konjiki Ashisogi Jizō` Awakening",
-            "description": "Mayuri grins as Ashisogi Jizō is thrust to the sky, billowing poisonous gases as his Bankai manifests. When Awakened, even if Mayuri does not land a hit, his `Poison Gauge` will still build. The speed of the `Poison Gauge`'s buildup is drastically increased as well.",
+            "id": "awakening-bankai-konjiki-ashisogi-jizo",
+            "name": "Awakening: Bankai - Konjiki Ashisogi Jizo",
+            "description": "Mayuri grips Ashisogi Jizo and thrusts it to the sky, bubbling his blade as it erupts into the form of a colossal maggot adorned with the enlarged face and arms of a golden Jizo.",
             "input": "AW",
             "damage": null,
             "frames": null,
@@ -279,12 +245,60 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange", "changesGaugeMechanics"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "toxic-bubbles",
-            "name": "Toxic Bubbles",
-            "description": "Mayuri casts forwards a single orb of Reiryoku laced with toxins, which slowly moves towards his opponent. If the Signature Move button is pressed before the orb makes contact with the opponent, it will prematurely detonate it, spreading a toxic mist over a wide area. Landing this attack increases Mayuri's `Poison Gauge`.",
+            "id": "exclusive-ability-poison",
+            "name": "Exclusive Ability: Poison",
+            "description": "An ability exclusive to Mayuri Kurotsuchi. Charges when certain attacks land on the opponent but reduces over time. Zanpakuto attacks consume a set percentage of the charge and gain added damage based on this amount. Poison does not impact additional damage on Reishi.",
+            "input": null,
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "exclusive-ability-bankai-konjiki-ashisogi-jizo",
+            "name": "Exclusive Ability: Bankai - Konjiki Ashisogi Jizo",
+            "description": "Personal Awakening Effect for Mayuri Kurotsuchi. Summons Konjiki Ashisogi Jizo, causing poison to accumulate in the opponent. The poison begins to build up faster as time goes on.",
+            "input": null,
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "awakened-toxic-bubbles",
+            "name": "Signature Move: Toxic Bubbles",
+            "description": "Launch a slow-moving ball of poison. Hit the opponent to add stocks of poison. Pressing the input again after launching causes the ball to explode, spreading poison in the area.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -298,17 +312,17 @@
             "fightingSpiritCost": null,
             "reversalGain": 0,
             "reversalCost": null,
-            "gaugeGain": 0,
+            "gaugeGain": null,
             "gaugeCost": null,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeRanged", "shortToMidRange", "gaugeIncreaseOnHit", "remoteDetonation", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "flesh-bomb",
-            "name": "Flesh Bomb",
-            "description": "Mayuri whips out a strange bomb from his left hand, wrapping it around his opponent's head before blowing them away with a combined explosion and slash. The range of 'Flesh Bomb' is extremely short, but is unblockable.",
+            "id": "awakened-flesh-bomb",
+            "name": "Spiritual Pressure Move 1: Flesh Bomb",
+            "description": "A Breaker-type move that attaches a flesh bomb to the opponent. Has a narrow attack range and is slow to activate but cannot be guarded. After the bomb is attached and a certain amount of time passes, or the input is tapped again in the attack's combo cancel window, it will explode.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -327,12 +341,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortRange", "unblockable", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "move,-you-idiot!",
-            "name": "Move, You Idiot!",
-            "description": "Mayuri calls Nemu to the field who charges at the opponent and restrains them before kicking them upwards after a short while. The opponent can still Guard when restrained by Nemu, but if they are hit by Nemu's kick whilst Guarding, they will take a massive amount of damage to their Guard Gauge.",
+            "id": "awakened-move,-you-idiot!",
+            "name": "Spiritual Pressure Move 2: Move, You Idiot!",
+            "description": "Send Nemu after the opponent. If hit, the opponent is restrained for a certain amount of time and then kicked upward for further attack. If Mayuri hits the opponent while they are restrained, Nemu will withdraw without following up. The lower the opponent's Reishi, the longer they are restrained.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -347,24 +361,14 @@
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": [
-              "spiritualPressureMove2",
-              "costsReiatsu",
-              "attackTypeRanged",
-              "attackTypeMelee",
-              "shortToMidRange",
-              "summonsAlly",
-              "restrictsOpponentsMovement",
-              "extraGuardDamageIfGuarding",
-              "needsStatInfo"
-            ]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -388,9 +392,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Snake Belly Arm",
+            "description": "Grab the enemy with an extension built into the left arm. Hitting the opponent pulls them into a more advantageous position. Hold the input to cover a longer distance.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -409,10 +413,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -436,7 +440,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -462,11 +466,11 @@
         ],
         "kikon": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Base Kikon currently not known.",
+            "id": "base-ashisogi-jizo-kikon-move",
+            "name": "Normal State Kikon Move 1: Ashisogi Jizo",
+            "description": "Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break.",
             "input": "KI",
-            "damage": null,
+            "damage": 3,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -486,11 +490,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "superhuman-serum-kikon-move",
-            "name": "Superhuman Serum",
-            "description": "Whilst Awakened, Mayuri injects his foe unknowingly with a `Superhuman Serum` from a blue, glass bottle that heightens their senses to infathomable levels; the opponents' strength, speed and all other physical facets are increased to godly proportions, however their concioussness is left trailing behind as Mayuri paralyses them with Ashisogi Jizō, slowly stabbing them in the heart as the moment of their approaching death lasts for a mental millenia...",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-you're-irritating-me-kikon-move",
+            "name": "Awakened Kikon Move 1: You're Irritating Me",
+            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 4,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -510,11 +514,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Alternate Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-superhuman-potion-kikon-move",
+            "name": "Awakened Kikon Move 2: Superhuman Potion",
+            "description": "Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 5,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -536,7 +540,7 @@
         ],
         "baseCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "base-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -560,7 +564,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "base-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -584,10 +588,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "base-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -608,10 +612,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "base-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -632,7 +636,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "base-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -656,7 +660,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "base-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -680,7 +684,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "base-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -704,10 +708,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "base-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -728,10 +732,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "base-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -752,7 +756,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "base-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -776,10 +780,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "base-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -802,7 +806,7 @@
         ],
         "awakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "awakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -826,7 +830,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "awakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -850,10 +854,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "awakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -874,10 +878,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "awakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -898,7 +902,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "awakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -922,7 +926,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "awakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -946,7 +950,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "awakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -970,10 +974,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "awakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -994,10 +998,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "awakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -1018,7 +1022,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "awakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -1042,10 +1046,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "awakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,

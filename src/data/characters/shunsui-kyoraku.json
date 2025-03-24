@@ -17,8 +17,8 @@
     "characterEngTrailer": "https://www.youtube.com/watch?v=dMAmNAWY7z0&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=5",
     "characterNumber": 25,
     "isEcho": false,
-    "tldr": "To be defined.",
-    "characterOutfits": ["1"],
+    "tldr": "Squad 8 Captain and a refined dual wielder. Disrupts the flow of battle with his unique stance. Made for close combat with moves to easily control offense and defense at close-range. His Special Flash Attack covers a large distance at once, making it easy to close gaps. In addition to being able to seize the initiative in close combat, his personal skill is also useful on both attack and defense. Awakening activates 'Children's Game', which initiates special battle rules that change randomly.",
+    "characterOutfits": ["1", "2", "3", "DLC1"],
     "abilities": [
       {
         "abilityName": "Katen Kyōkotsu",
@@ -30,9 +30,9 @@
       {
         "base": [
           {
-            "id": "mizukiri",
-            "name": "Mizukiri",
-            "description": "Shunsui spins, blades outstretched. By holding the input and charging 'Mizukiri', the duration of 'Mizukiri' increases.",
+            "id": "base-mizukiri",
+            "name": "Signature Move: Mizukiri",
+            "description": "Take a stance and spin to cleave the area around you. Hold the input to maintain the stance and charge up power, increasing the number of hits depending on the level of charge. No flinching while preparing the attack. You can control the spin to some extent during the powered-up version.",
             "input": "SI",
             "damage": 0,
             "frames": 0,
@@ -51,12 +51,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsReiatsu", "attackTypeMelee", "shortRange", "variableHits", "variableDamage", "charge", "needsStatInfo"]
+            "moveTags": ["signatureMove", "costsNothing"]
           },
           {
-            "id": "bushogoma",
-            "name": "Bushogoma",
-            "description": "Fires a vortex of wind-like Reiryoku towards Shunsui's opponent which goes for a fair distance. Shunsui can move immediately after casting 'Bushogoma' and follow it towards his opponent.",
+            "id": "base-bushogoma",
+            "name": "Spiritual Pressure Move 1: Bushogoma",
+            "description": "Covers you in the power of wind, letting you spin to generate a cyclone. The cyclone heads toward the opponent upon release, growing gradually faster. The wind wraps around the opponent on impact, binding them for a short period.",
             "input": "S1",
             "damage": 0,
             "frames": 0,
@@ -66,8 +66,8 @@
             "reishiCost": null,
             "reiatsuGain": null,
             "reiatsuCost": 50,
-            "fightingSpiritGain": null,
-            "fightingSpiritCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
@@ -75,12 +75,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsReiatsu", "attackTypeRanged", "shortToLongRange", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
           },
           {
-            "id": "no-need-to-panic",
-            "name": "No Need To Panic",
-            "description": "Shunsui rushes forwards with his swords drawn, slicing apart his target as he moves.",
+            "id": "base-no-need-to-panic",
+            "name": "Spiritual Pressure Move 2: No Need To Panic",
+            "description": "Move in front of the opponent with Flash Step and cut at them. Transitions into a combo attack on hit. Warps to the opponent, making it useful for a surprise attack from far away.",
             "input": "S2",
             "damage": 0,
             "frames": 0,
@@ -95,14 +95,14 @@
             "reversalGain": 0,
             "reversalCost": null,
             "gaugeGain": null,
-            "gaugeCost": null,
+            "gaugeCost": 100,
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsReiatsu", "attackTypeMelee", "shortToMidRange", "dashesTowardsOpponent", "needsStatInfo"]
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "base-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -126,9 +126,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "base-special-flash-attack",
+            "name": "Special Flash Attack: Leaping Slash",
+            "description": "Leap toward the enemy with crossed blades to cut them. Lets you approach and attack instantly from mid-range.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -147,10 +147,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "base-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -174,7 +174,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "base-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -200,9 +200,9 @@
         ],
         "awakened": [
           {
-            "id": "kodomo-no-asobi-o-genjitsu-ni-suru-awakening",
-            "name": "`Kodomo no Asobi o Genjitsu ni Suru` Awakening",
-            "description": "Shunsui becomes more serious and begins to activate his Shikai's `Children's Games`. When Awakened, Shunsui activates his Gambler abilities and begins one of three Children's Games; the first game is `Tag`, or `Hot Potato`, where one player is set as `It`. Attacking a player who is not `It` will make them `It`. During this game, damage cannot be dealt. After a certain period of time, the player who is `It` takes all of the collected damage that would have been inflicted during the game. For instance, if `A` is `It`, `A` attacks `B`, then `B` attacks `A`, and the game ends, then `A` will take all of the collected damage. The second game is `King of the Hill`, or `Capture the Zone`, where a `Zone` appears on the stage. If no players are in the Zone, they both will take passive damage to their Reishi. If one player is inside the Zone, then the passive damage to them is negated. The last game is `Quickdraw`, or `Duel`, where a `Signal` is given after a random period of time. The player who lands a hit closest to the activation of the `Signal` wins, and is given a significant Power boost until the beginning of the next Children's Game. If a player attacks before the `Signal` is given, then their opponent gains this boost automatically. It is not known what happens on frame-perfect draws in regards to this game.",
+            "id": "awakening-let's-play-a-children's-game",
+            "name": "Awakening: Let's Play a Children's Game",
+            "description": "Rangiku holds Haineko forward as the blade dissolves into ash, billowing from the hilt - This transitions into a cloud of ash, that separates as it spreads around the arena.",
             "input": "AW",
             "damage": null,
             "frames": null,
@@ -224,10 +224,10 @@
             "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Moveset currently not known.",
-            "input": "S1",
+            "id": "exclusive-ability-children's-game",
+            "name": "Exclusive Ability: Children's Game",
+            "description": "An ability exclusive to Shunsui Kyoraku. Children's Game activates for a set period after Awakening. There are three types of games, which activate randomly: Chase the Devil, King of the Hill, or Quick Comparison. Special rules are imposed on the battle during activation.",
+            "input": null,
             "damage": null,
             "frames": null,
             "hits": null,
@@ -245,10 +245,154 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["unknown"]
+            "moveTags": ["exclusiveAbility"]
           },
           {
-            "id": "basic-flash-attack",
+            "id": "exclusive-ability-chase-the-devil",
+            "name": "Exclusive Ability: Chase the Devil",
+            "description": "One player is chosen to be 'it' at random, and an icon appears over their head. Landing an attack on the other player will make them 'it' in turn. Neither character takes Reishi Damage while 'Chase the Devil' is in effect. When the counter on the icon reaches 0, or the damage they would've taken reaches a certain point indicated by the color of the icon, 'it' will explode, taking all of the damage from the period.",
+            "input": null,
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "exclusive-ability-king-of-the-hill",
+            "name": "Exclusive Ability: King of the Hill",
+            "description": "A circular area will surround both characters on activation. Anyone outside this circle while King of the Hill is in effect will gradually take Damage, but will not be reduced to 0% Reishi. The Fighting Spirit gauge also gradually fills while in the area.",
+            "input": null,
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "exclusive-ability-quick-comparison",
+            "name": "Exclusive Ability: Quick Comparison",
+            "description": "There are two signals after this effect begins: 'Get Ready' and 'Begin!'. After 'Begin!' is signaled, the first player to land a hit is declared the winner of the game, gaining 50 Reiatsu. Landing an attack before the 'Begin!' signal will give the victory to the character who is hit.",
+            "input": null,
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility"]
+          },
+          {
+            "id": "awakened-mizukiri",
+            "name": "Signature Move: Mizukiri",
+            "description": "Take a stance and spin to cleave the area around you. Hold the input to maintain the stance and charge up power, increasing the number of hits depending on the level of charge. No flinching while preparing the attack. You can control the spin to some extent during the powered-up version.",
+            "input": "SI",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 0,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["signatureMove", "costsNothing"]
+          },
+          {
+            "id": "awakened-bushogoma",
+            "name": "Spiritual Pressure Move 1: Bushogoma",
+            "description": "Covers you in the power of wind, letting you spin to generate a cyclone. The cyclone heads toward the opponent upon release, growing gradually faster. The wind wraps around the opponent on impact, binding them for a short period.",
+            "input": "S1",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 50,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove1", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-no-need-to-panic",
+            "name": "Spiritual Pressure Move 2: No Need To Panic",
+            "description": "Move in front of the opponent with Flash Step and cut at them. Transitions into a combo attack on hit. Warps to the opponent, making it useful for a surprise attack from far away.",
+            "input": "S2",
+            "damage": 0,
+            "frames": 0,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": 100,
+            "fightingSpiritGain": 0,
+            "fightingSpiritCost": null,
+            "reversalGain": 0,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": 100,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["spiritualPressureMove2", "costsReiatsu"]
+          },
+          {
+            "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
@@ -272,9 +416,9 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack",
-            "name": "Special Flash Attack",
-            "description": "Moveset currently not known.",
+            "id": "awakened-special-flash-attack",
+            "name": "Special Flash Attack: Leaping Slash",
+            "description": "Leap toward the enemy with crossed blades to cut them. Lets you approach and attack instantly from mid-range.",
             "input": "SF",
             "damage": 0,
             "frames": 0,
@@ -293,10 +437,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
@@ -320,7 +464,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack",
+            "id": "awakened-step-quick-attack",
             "name": "Step Quick Attack",
             "description": "Moveset currently not known.",
             "input": "SQ",
@@ -346,11 +490,11 @@
         ],
         "kikon": [
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Base Kikon currently not known.",
+            "id": "base-are-you-ready?-kikon-move",
+            "name": "Normal State Kikon Move 1: Are You Ready?",
+            "description": "Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break.",
             "input": "KI",
-            "damage": null,
+            "damage": 3,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -370,11 +514,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-are-you-ready?-kikon-move",
+            "name": "Awakened Kikon Move 1: Are You Ready?",
+            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 4,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -394,11 +538,11 @@
             "moveTags": ["kikonMove"]
           },
           {
-            "id": "unknown",
-            "name": "Unknown",
-            "description": "Alternate Awakened Kikon currently not known.",
-            "input": "AW -> KI",
-            "damage": null,
+            "id": "awakened-hado-#78-zangerin-kikon-move",
+            "name": "Awakened Kikon Move 2: Hado #78 - Zangerin",
+            "description": "Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break.",
+            "input": "(After) AW, KI",
+            "damage": 5,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -420,7 +564,7 @@
         ],
         "baseCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "base-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -444,7 +588,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "base-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -468,10 +612,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "base-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -492,10 +636,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "base-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -516,7 +660,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "base-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -540,7 +684,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "base-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -564,7 +708,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "base-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -588,10 +732,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "base-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -612,10 +756,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "base-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -636,7 +780,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "base-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -660,10 +804,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "base-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -686,7 +830,7 @@
         ],
         "awakenedCombos": [
           {
-            "id": "basic-quick-attack-combo",
+            "id": "awakened-basic-quick-attack-combo",
             "name": "Basic Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -710,7 +854,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "basic-flash-attack-combo",
+            "id": "awakened-basic-flash-attack-combo",
             "name": "Basic Flash Attack Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F",
@@ -734,10 +878,10 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-combo",
+            "id": "awakened-step-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q",
+            "input": "ANY -> Q -> Q -> Q",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -758,10 +902,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-combo",
+            "id": "awakened-special-flash-attack-combo",
             "name": "Special Flash Attack Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F",
+            "input": "ANY -> F -> F",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -782,7 +926,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-combo",
+            "id": "awakened-quick-attack-combo",
             "name": "Step Quick Attack Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q",
@@ -806,7 +950,7 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "flash-attack-offensive-hohō-combo",
+            "id": "awakened-flash-attack-offensive-hohō-combo",
             "name": "Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "F -> F -> F -> R",
@@ -830,7 +974,7 @@
             "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-offensive-hohō-combo",
+            "id": "awakened-quick-attack-offensive-hohō-combo",
             "name": "Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> R",
@@ -854,10 +998,10 @@
             "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "special-flash-attack-offensive-hohō-combo",
+            "id": "awakened-special-flash-attack-offensive-hohō-combo",
             "name": "Special Flash Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> F -> F -> F -> R",
+            "input": "ANY -> F -> F -> F -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -878,10 +1022,10 @@
             "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-offensive-hohō-combo",
+            "id": "awakened-step-quick-attack-offensive-hohō-combo",
             "name": "Step Quick Attack Offensive Hohō Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> R",
+            "input": "ANY -> Q -> Q -> Q -> Q -> R",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -902,7 +1046,7 @@
             "moveTags": ["stepQuickAttack", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "quick-attack-kikon-combo",
+            "id": "awakened-quick-attack-kikon-combo",
             "name": "Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
             "input": "Q -> Q -> Q -> Q -> KI",
@@ -926,10 +1070,10 @@
             "moveTags": ["quickAttack", "kikonMove", "costsNothing", "needsStatInfo"]
           },
           {
-            "id": "step-quick-attack-kikon-combo",
+            "id": "awakened-step-quick-attack-kikon-combo",
             "name": "Step Quick Attack Kikon Combo",
             "description": "Moveset currently not known.",
-            "input": "NORTH (Any directional input, while) -> Q -> Q -> Q -> Q -> KI",
+            "input": "ANY -> Q -> Q -> Q -> Q -> KI",
             "damage": null,
             "frames": null,
             "hits": null,
@@ -961,7 +1105,7 @@
         "technique": 4
       }
     ],
-    "trivia": ["To be defined."],
+    "trivia": ["King of the Hill was previously named 'Musical Chairs' in early versions, shown by a mislabeling in the launch version of Shunsui's character movelist card in-game."],
     "show": true
   }
 }
