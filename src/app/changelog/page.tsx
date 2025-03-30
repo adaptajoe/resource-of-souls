@@ -17,6 +17,20 @@ export default function Changelog() {
   const resourceOfSoulsChangelog = useMemo(
     () => [
       {
+        version: "v1.1.2.",
+        date: "29/03/2025",
+        changes: [
+          "Added new Badge Owners",
+          "Fixed up Combo data for all characters",
+          "Added hit data and state data for Ichigo Kurosaki and Byakuya Kuchiki",
+          "Added intro / short intro animations to all characters excluding Ichigo Kurosaki (Final Getsugatensho)",
+          "Added the new Fullscreen Animation Frame Breakdown system",
+          "Added some new Badges",
+          "Fixed move icons",
+          "Added default PC Keybind Notation to Movelists",
+        ],
+      },
+      {
         version: "v1.1.1.",
         date: "20/03/2025",
         changes: [

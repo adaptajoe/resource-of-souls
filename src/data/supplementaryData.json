@@ -14,12 +14,26 @@
       "shortDescription": "HP Gauge. Middle bar.",
       "description": "Characters start with their Reishi Gauge filled to 100%, and once they hit a certain threshold (Identified with a larger bar segment), they enter the 'Now or Never State'. When your Reishi Gauge reaches 0%, you lose Konpaku via 'Soul Break'. You start with your Reishi Gauge at 100%. In the animation above, the middle bar is the Reishi Gauge."
     },
+    "soul-crystal": {
+      "id": "soul-crystal",
+      "name": "Soul Crystal",
+      "engName": "",
+      "shortDescription": "Optional mechanic modifier.",
+      "description": "Generally disabled for online play. Soul Crystals are equippable items that augment your character's stats, mechanics, or other such values. There are four types of Soul Crystal - Attack Soul Crystals are the first, which augments values such as damage, Spritual Pressure Move damage, Signature Move damage, and so on. Second are Spiritual Pressure Soul Crystals, which augments values such as Reiatsu consumption, recovery, and so on. Third are Special Soul Crystals, which augments movement, Hohō actions, Reverse actions, and so on. Finally there are Defense Soul Crystals, which augment your defense, Guard, Guard Gauge, and so forth."
+    },
+    "spirit-talisman": {
+      "id": "spirit-talisman",
+      "name": "Spirit Talisman",
+      "engName": "",
+      "shortDescription": "Optional trigger mechanic modifier.",
+      "description": "Generally disabled for online play. Spirit Talismans are consumable items used to trigger beneficial effects after a condition is met, such as having below a certain amount of Reiatsu, Konpaku, and so forth."
+    },
     "now-or-never-state": {
       "id": "now-or-never-state",
       "name": "Now or Never State",
       "engName": "",
-      "shortDescription": "< 30% HP state. Stunned state.",
-      "description": "A state that is entered once your Reishi Gauge reaches a certain threshold (Identified with a larger bar segment). This state makes you stunned for a short moment, leaving you open to Kikon Moves. The 'Now or Never State' is indicated by the Reishi Gauge turning red, along with the Kanji next to the Konpaku turning orange."
+      "shortDescription": "< 30% HP state. Stunned state on big hit.",
+      "description": "Also known as 'Reishi Deficiency State'. A state that is entered once your Reishi Gauge reaches a certain threshold (Identified with a larger bar segment). This state makes you stunned for a short moment if you are launched, leaving you open to Kikon Moves. The 'Now or Never State' is indicated by the Reishi Gauge turning red, along with the Kanji next to the Konpaku turning orange. When in Now or Never, you take less damage. This defense boost is negated by Follow-up Hohō moves, Spiritual Pressure Moves, and Hakugeki."
     },
     "konpaku": {
       "id": "konpaku",
@@ -42,6 +56,34 @@
       "shortDescription": "Bring a band-aid and some popcorn.",
       "description": "A single fight."
     },
+    "strike-back": {
+      "id": "strike-back",
+      "name": "Strike Back",
+      "engName": "",
+      "shortDescription": "Frame-dependant counterhit.",
+      "description": "By hitting your opponent before they can hit you with their input action, you can perform a Strike Back; Strike Back has three levels; Gray being the weakest, followed by Orange and finished with Red - These three levels relate to both the timing of the Strike Back, give damage and stun bonuses dependant on the level of Strike Back, and the base damage of the attack that triggered Strike Back. Higher damage moves landed during Strike Back trigger a higher level of Strike Back, and thus stun the enemy for longer and have more extra damage applied."
+    },
+    "parry": {
+      "id": "parry",
+      "name": "Parry",
+      "engName": "",
+      "shortDescription": "Hit bounce.",
+      "description": "By hitting your opponent's attack at the exact same time (Near frame-perfect), you can negate both your own attack and your oppponent's attack with a Parry. There is no limit to how many Parries can be performed in a row."
+    },
+    "soul-crazy": {
+      "id": "soul-crazy",
+      "name": "Soul Crazy",
+      "engName": "",
+      "shortDescription": "Perfect Match.",
+      "description": "By defeating the opponent without losing any Konpaku, you achieve a Soul Crazy, this game's equivalent to a 'perfect victory'."
+    },
+    "soul-reversal": {
+      "id": "soul-reversal",
+      "name": "Soul Reverse",
+      "engName": "",
+      "shortDescription": "Comeback victory.",
+      "description": "By defeating the opponent whilst being at significantly lower Konpaku than them, you can trigger a Soul Reverse, which is equivalent to a 'comeback victory'. We have no idea why Bandai decided to name this the same as the Soul Reverse Action."
+    },
     "timer": {
       "id": "timer",
       "name": "Timer",
@@ -54,35 +96,35 @@
       "name": "Time Out",
       "engName": "",
       "shortDescription": "Timer hits 0.",
-      "description": "When the Timer hits 0, a Time Out occurs, and the player with the most Konpaku remaining wins. If both players have the same amount of Konpaku, then the player with the most Reishi wins."
+      "description": "When the Timer hits 0, a Time Out occurs, and the player with the most Konpaku remaining wins. If both players have the same amount of Konpaku, then the player with the most Reishi wins. If both players have the same amount of Reishi (100% bar), AND have the same Konpaku, then the character with the highest base Reiatsu value wins. If the two characters have idential base Reiatsu values, or are mirror-matches, then the host of the match is declared the winner."
     },
     "soul-break": {
       "id": "soul-break",
       "name": "Soul Break",
       "engName": "",
-      "shortDescription": "0% HP state. Auto-hit-Kikon. Takes ORANGE Konpaku.",
-      "description": "The state a player enters when their Reishi hits 0%. The opposing character automatically activates and automatically hits their Kikon Move regardless of distance, losing the hit player the orange portion of their Konpaku, leaving the yellow portion. Reducing your opponents' Konpaku through Soul Break as opposed to hitting a Kikon Move is less effective, but easier to pull off."
+      "shortDescription": "0% HP state. Auto-hit-Kikon. Takes ORANGE & YELLOW Konpaku.",
+      "description": "The state a player enters when their Reishi hits 0%. The opposing character automatically activates and automatically hits their Kikon Move regardless of distance, losing the hit player both the orange and the yellow portion of their Konpaku. Generally, landing a Soul Break means your Kikon Moves take 1 additional Konpaku. Reducing your opponents' Konpaku through Soul Break as opposed to hitting a Kikon Move is more effective, but harder to pull off."
     },
     "kikon-move": {
       "id": "kikon-move",
       "name": "Kikon Move",
       "engName": "Destroy Move",
       "shortDescription": "Ultimate.",
-      "description": "A slow ultimate attack that can be performed at any time, but has the most potential when an enemy is in the 'Now or Never State', or when the opponent is in 'Guard Break', as enemies are stunned when they enter this state. When a Kikon Move hits, the hit player loses both the orange and yellow portions of their Konpaku. Reducing your opponents' Konpaku through Kikon Moves as opposed to bringing your foe to 'Soul Break' is more effective, but harder to pull off."
+      "description": "A slow ultimate attack that can be performed at any time, but has the most potential when an enemy is in the 'Now or Never State', or when the opponent is in 'Guard Break', as enemies are stunned when they enter this state. When a Kikon Move hits, the hit player loses the orange portion of their Konpaku. Reducing your opponents' Konpaku through Kikon Moves as opposed to bringing your foe to 'Soul Break' is less effective, but easier to pull off."
     },
     "kikon-channel": {
       "id": "kikon-channel",
       "name": "Kikon Channel",
       "engName": "Destroy Channel",
-      "shortDescription": "Unlocks stronger Kikon Moves; obtained by having 100% Fighting Gauge a second time when Awakened or Reawakened.",
-      "description": "By building the Fighting Spirit Gauge whilst in the Sublimation State when Awakened or Reawakened, players unlock a more powerful variant of their Kikon Move, unlocked when the Fighting Spirit Gauge enters the Sprit Drive State, that takes more Konpaku from their opponent. This process of building the Fighting Spirit Gauge whilst Awakened or Reawakened is called Kikon Channel, and the Kikon Move itself is still referred to as a Kikon Move."
+      "shortDescription": "Building Fighting Spirit after Awakening or Reawakening.",
+      "description": "The process of re-building your Fighting Spirit Gauge after Awakening or Reawakening. Completes by filling the Fighting Spirit Gauge to 100%. Being in Kikon Channel is also known as 'Sublimation'. For characters that can use Reawakening, they can enter Reawakening once Kikon Channel is complete (Presuming their unique triggers, if applicable, are also met). For characters that cannot use Reawakening, after completing Kikon Channel, they enter Spirit Drive state. Likewise, once a character has used Reawakening, once they complete Kikon Channel, they too enter Spirit Drive."
     },
     "hakugeki": {
       "id": "hakugeki",
       "name": "Hakugeki",
       "engName": "",
-      "shortDescription": "Dash to opponent and attempt Kikon Move. Can be blocked or hit out of.",
-      "description": "The name of the movement a player launches into when holding down the input for Hakugeki. Hakugeki transitions into a Kikon Move or Clash if it hits, depending on the circumstances."
+      "shortDescription": "Smack the opponent to launch. When foe is under 30% HP or Guard Break, begins a Kikon Move.",
+      "description": "The name an attack that smacks the opponent back. When hitting an opponent under 30% Reishi - or in Guard Break - with a Hakugeki, if you are in the Simple Control Scheme, you automatically dash to the foe and attempt a Kikon Move. If you are in the Advanced Control Scheme, you don't automatically dash and attempt a Kikon Move, and are required to hold the Hakugeki input to fire into the Kikon Move."
     },
     "clash": {
       "id": "clash",
@@ -131,21 +173,28 @@
       "name": "Soul Reverse",
       "engName": "",
       "shortDescription": "White Reverse. Speed up + slow HP restoration.",
-      "description": "A Reverse Move that is global for every character. Performed by standing still and activating Reverse. Soul Reverse is colored white, and increases your mobility and gives passive Reishi restoration."
+      "description": "A Reverse Move that is global for every character. Performed by standing still and activating Reverse. Soul Reverse is colored white, and increases your mobility and gives passive Reishi restoration. Costs 2 Reverse segments."
     },
     "chain-reverse": {
       "id": "chain-reverse",
       "name": "Chain Reverse",
       "engName": "",
       "shortDescription": "Yellow Reverse. Combo extender.",
-      "description": "A Reverse Move that is global for every character. Performed by attacking the opponent and activating Reverse. Chain Reverse is colored yellow and extends your combos to help you push the offensive."
+      "description": "A Reverse Move that is global for every character. Performed by attacking the opponent and activating Reverse. Chain Reverse is colored yellow and extends your combos to help you push the offensive. Can also cancel out of attack animations. Costs 2 Reverse segments."
     },
     "burst-reverse": {
       "id": "burst-reverse",
       "name": "Burst Reverse",
       "engName": "",
       "shortDescription": "Blue Reverse. Pushback + slow Guard restoration.",
-      "description": "A Reverse Move that is global for every character. Performed by being attacked by the opponent and activating Reverse. Burst Reverse is colored blue, blocks an opponent's attack and pushes them away. It also restores your Guard Gauge."
+      "description": "A Reverse Move that is global for every character. Performed by being attacked by the opponent and activating Reverse. Burst Reverse is colored blue, blocks an opponent's attack and pushes them away. You gain 25 Reiatsu immediately. It also restores your Guard Gauge quickly over time - Approximately 50% faster than usual. Costs 2 Reverse segments."
+    },
+    "exclusive-ability": {
+      "id": "exclusive-ability",
+      "name": "Exclusive Ability",
+      "engName": "",
+      "shortDescription": "Unique character mechanic.",
+      "description": "A unique character mechanic. Some characters have Exclusive Abilities, and some do not. Some gain them through Awakening or Reawakening, and others lose them by Awakening or Reawakening. Check each character to see what their Exclusive Ability does."
     },
     "signature-move": {
       "id": "signature-move",
@@ -166,7 +215,7 @@
       "name": "Reiatsu",
       "engName": "Spiritual Pressure",
       "shortDescription": "Special Move resource. Increases by hitting and being hit.",
-      "description": "A resource that fills the Reiatsu Gauge. Increases by landing attacks and being attacked, and decreases by performing Spiritual Pressure Moves. Spiritual Pressure 1 Moves cost 50 Reiatsu, and Spritual Pressure 2 Moves cost 100 Reiatsu. In the animation above, Reiatsu is the top bar."
+      "description": "A resource that fills the Reiatsu Gauge. Increases by landing attacks and being attacked, and decreases by performing Spiritual Pressure Moves. Spiritual Pressure 1 Moves cost 50 Reiatsu, and Spritual Pressure 2 Moves cost 100 Reiatsu. Some additional moves may cost Reiatsu. In the animation above, Reiatsu is the top bar."
     },
     "reiatsu-gauge": {
       "id": "reiatsu-gauge",
@@ -180,7 +229,7 @@
       "name": "Fighting Spirit Gauge",
       "engName": "",
       "shortDescription": "Transformation Meter. Left-most bar.",
-      "description": "A gauge that fills by attacking, being attacked, and losing Konpaku. When the Fighting Spirit Gauge is fully charged, you can perform Awakenings, and - under certain conditions - Reawakenings. After Awakening, the Fighting Spirit Gauge enters the Sublimation State and is reset to 0%. In the above animation, the Fighting Spirit Gauge is the left-most bar with `P1` attached."
+      "description": "A gauge that fills by attacking, being attacked, guarding, using Hohō, using Reverse, and losing Konpaku. When the Fighting Spirit Gauge is fully charged, you can perform Awakenings, and - under certain conditions - Reawakenings. After Awakening, the Fighting Spirit Gauge enters the Sublimation State and is reset to 0%. In the above animation, the Fighting Spirit Gauge is the left-most bar with `P1` attached."
     },
     "sublimation-state": {
       "id": "sublimation-state",
@@ -194,28 +243,35 @@
       "name": "Spirit Drive State",
       "engName": "",
       "shortDescription": "Level 2 Post-Awakening or Post-Reawakening 100% Fighting Spirit buff-state. Left bar goes on fire.",
-      "description": "The state that the Fighting Spirit Gauge enters after being filled a second time after Awakening. The Fighting Spirit Gauge is now stuck at 100%, and turns sharp red with a flaming effect; in this state, the Fighting Spirit Gauge enhances your abilities and stats."
+      "description": "The state that the Fighting Spirit Gauge enters after being filled a second time after Awakening. The Fighting Spirit Gauge is now stuck at 100%, and turns sharp red with a flaming effect; in this state, the Fighting Spirit Gauge enhances your damage, speed, Reiatsu gain, and defense. Your Kikon Move also changes to its' Awakened Kikon Move 2, dealing more damage to an enemy's Konpaku."
     },
     "awakening": {
       "id": "awakening",
       "name": "Awakening",
       "engName": "",
       "shortDescription": "Transformation. Can give new mechanics, animations, moves, stats, etc.",
-      "description": "A transformation that is achieved by fully filling your Fighting Spirit Gauge. This transformation gives the character new abilities, moves, buffs, animations and mechanics. Each character's Awakening is unique to them. Awakening also increases the number of Konpaku your Kikon Moves claim."
+      "description": "A transformation that is achieved by fully filling your Fighting Spirit Gauge. This transformation gives the character new abilities, moves, buffs, animations and mechanics. Each character's Awakening is unique to them. Awakening also increases the number of Konpaku your Kikon Moves claim. Awakening also grands two-to-three Reverse segments to the Reverse Gauge. Awakening increases your maximum Reishi."
     },
     "reawakening": {
       "id": "reawakening",
       "name": "Reawakening",
       "engName": "",
       "shortDescription": "Second Transformation. Rare, and can give new mechanics, animations, moves, stats, etc.",
-      "description": "A second-level transformation that is achieved by fully filling your Fighting Spirit Gauge a second time after Awakening first, and by fulfilling certain conditions unique to the characters that can use Reawakening. This transformation gives the character more new abilities, moves, buffs, animations and mechanics. Each character's Reawakening is unique to them. Reawakening also further increases the number of Konpaku your Kikon Moves claim."
+      "description": "A second-level transformation that is achieved by fully filling your Fighting Spirit Gauge a second time after Awakening first, and by fulfilling certain conditions unique to the characters that can use Reawakening. This transformation gives the character more new abilities, moves, buffs, animations and mechanics. Each character's Reawakening is unique to them. Reawakening also further increases the number of Konpaku your Kikon Moves claim. Reawakening further increases your maximum Reishi."
+    },
+    "weakening": {
+      "id": "weakening",
+      "name": "Weakening",
+      "engName": "",
+      "shortDescription": "Alternative Second Transformation. Extremely rare, and can give new mechanics, animations, moves, stats, etc.",
+      "description": "A second-level transformation that is achieved by using certain Awakenings and either having their expiry time reached, or by losing Konpaku. Exclusive to Renji Abarai and Sajin Komamura, Weakening reduces their effectiveness in unique ways, locking certain moves and making the character more difficult to play. Their Kikon Moves also have reduced Konpaku damage in this state."
     },
     "4-directional-steps": {
       "id": "4-directional-steps",
       "name": "4-Directional Steps",
       "engName": "",
-      "shortDescription": "Short jump.",
-      "description": "A global move that jumps the character forwards, left, right, or backwards a small distance."
+      "shortDescription": "Short jump. Left & right has short invincibility. Backwards has longer invincibility.",
+      "description": "A global move that jumps the character forwards, left, right, or backwards a small distance. Left and right 4-Directional Steps have a short period of invincibility, with backwards 4-Directional Steps havng a longer period of invincibility."
     },
     "dash": {
       "id": "dash",
@@ -224,19 +280,19 @@
       "shortDescription": "Tracking run.",
       "description": "A global move that rushes the character forwards towards the opponent over any distance. The foe is locked-onto, and a Dash can be cancelled by lifting the input for Dash."
     },
-    "follow-up-hoho": {
-      "id": "follow-up-hoho",
-      "name": "Follow-up Hoho",
+    "follow-up-hohō": {
+      "id": "follow-up-hohō",
+      "name": "Follow-up Hohō",
       "engName": "Follow-up Fast Movement",
       "shortDescription": "Catch-up teleport.",
-      "description": "A global move that can be used by any character that teleports the user to their target; helps to prevent you losing a combo due to launching an opponent away from you."
+      "description": "A global move that can be used by any character that teleports the user to their target; costs 1 Reverse Gauge segment, and helps to prevent you losing a combo due to launching an opponent away from you, or to catch a foe off-guard with a sudden movement."
     },
-    "counter": {
-      "id": "counter",
-      "name": "Counter",
+    "perfect-hohō-counter": {
+      "id": "perfect-hohō-counter",
+      "name": "Perfect Hohō Counter",
       "engName": "",
-      "shortDescription": "Near-frame-perfect use of Follow-up Hoho.",
-      "description": "A global move that can be used by any character that teleports the user behind their target whilst the user is nearly being hit by an opponent's attack; in order to pull off a Counter, you need to use a Follow-up Hoho at a near-precise moment before being hit by an attack. A Counter begins a combo instantly when successful."
+      "shortDescription": "Near-frame-perfect use of Follow-up Hohō.",
+      "description": "Also abbreviated to 'Counter'. A global move that can be used by any character that teleports the user behind their target whilst the user is nearly being hit by an opponent's attack; in order to pull off a Counter, you need to use a Follow-up Hohō at a near-precise moment before being hit by an attack. A Counter begins a Quick Attack combo instantly when successful and forces a single Quick Attack hit to begin with. Landing a Counter also increases your Reiatsu gain speed."
     },
     "tilting": {
       "id": "tilting",
@@ -259,13 +315,6 @@
       "shortDescription": "Heavy Attack.",
       "description": "Heavy attack. A global move that can be used by any character. A traditional slow, but powerful attack."
     },
-    "step-quick-attack": {
-      "id": "step-quick-attack",
-      "name": "Step Quick Attack",
-      "engName": "",
-      "shortDescription": "Alternative Light Attack.",
-      "description": "A variant of a Quick Attack. A global move that can be used by any character, and performed by Tilting. A traditional fast, but weak attack."
-    },
     "special-flash-attack": {
       "id": "special-flash-attack",
       "name": "Special Flash Attack",
@@ -278,7 +327,7 @@
       "name": "Quick Attack Combo",
       "engName": "",
       "shortDescription": "Light Attack Combo.",
-      "description": "A global string of moves that can be used by any character. A traditional fast, but weak combo of three Quick Attacks. Quick Attacks build the Reiatsu Gauge."
+      "description": "A global string of moves that can be used by any character. A traditional fast, but weak combo of three Quick Attacks. Quick Attacks build the Reiatsu Gauge, and are excellent at interrupting Breakers."
     },
     "flash-attack-combo": {
       "id": "flash-attack-combo",
@@ -292,21 +341,21 @@
       "name": "Quick Attack Offensive Flash Step Combo",
       "engName": "",
       "shortDescription": "Teleporting Light Attack Combo that costs Reverse.",
-      "description": "A global string of moves that can be used by any character to close distance. A traditional fast, but weak combo of four Quick Attacks. Quick Attacks build the Reiatsu Gauge."
+      "description": "A global string of moves that can be used by any character to close distance. A traditional fast, but weak combo of four Quick Attacks, followed by an additional three strikes executed by using Hohō after the last hit. Consumes 1 Reverse Gauge segment. Quick Attacks build the Reiatsu Gauge quickly, and are excellent at interrupting Breakers."
     },
     "quick-attack-kikon-combo": {
       "id": "quick-attack-kikon-combo",
       "name": "Quick Attack Kikon Combo",
       "engName": "",
       "shortDescription": "Light Attack Combo into Kikon.",
-      "description": "A global string of moves that can be used by any character to finish off an opponent. A traditional fast, but weak combo of four Quick Attacks, and one Kikon Move. Quick Attacks build the Reiatsu Gauge."
+      "description": "A global string of moves that can be used by any character to finish off an opponent. A traditional fast, but weak combo of four Quick Attacks, and one Hakugeki into a Kikon Move. Quick Attacks build the Reiatsu Gauge."
     },
     "flash-attack-offensive-flash-step-combo": {
       "id": "flash-attack-offensive-flash-step-combo",
       "name": "Flash Attack Offensive Flash Step Combo",
       "engName": "",
       "shortDescription": "Teleporting Heavy Attack Combo that costs Reverse.",
-      "description": "A global string of moves that can be used by any character to close distance. A traditional slow, but powerful combo of three Flash Attacks. Flash Attacks deal a lot of damage and deal high damage to Guard."
+      "description": "A global string of moves that can be used by any character to close distance. A traditional slow, but powerful combo of three Flash Attacks, followed by an additional strike executed by using Hohō after the last hit. Consumes 1 Reverse Gauge segment. Flash Attacks deal a lot of damage and deal high damage to Guard."
     },
     "mixed-attack-combo": {
       "id": "mixed-attack-combo",
@@ -322,19 +371,33 @@
       "shortDescription": "Bonk.",
       "description": "Either a Quick Attack, Step Quick Attack, Flash Attack or Special Flash Attack. Easily overpowers Breakers, but is easily blocked by Guard."
     },
+    "touch-of-death": {
+      "id": "touch-of-death",
+      "name": "Touch of Death",
+      "engName": "",
+      "shortDescription": "Infinite / 100% HP Combo.",
+      "description": "Also abbreviated to TOD. A combo that allows you to either infinitely loop itself with no counter, or a combo that guarantees that you will deal 100% Reishi or higher damage to your opponent. Resource of Souls does NOT showcase Touch of Death combos, and Touch of Death combos are frowned upon in online matches for being 'cheap'."
+    },
     "guard": {
       "id": "guard",
       "name": "Guard",
       "engName": "",
       "shortDescription": "Damage blocker. Consumes Guard Gauge.",
-      "description": "A global move that can be used by any character. A standard guard. Being hit whilst performing a Guard consumes the Guard Gauge. Easily overpowers Attacks, but is easily overpowered by a Breaker."
+      "description": "A global move that can be used by any character. A standard guard. Being hit whilst performing a Guard consumes the Guard Gauge. Blocks damage, although some moves can inflict chip damage. Easily overpowers Attacks, but is easily overpowered by a Breaker."
+    },
+    "chip-damage": {
+      "id": "chip-damage",
+      "name": "Chip Damage",
+      "engName": "",
+      "shortDescription": "Tiny damage dealt through a Guard.",
+      "description": "Some abilities and moves deal Chip Damage, which inflict damage through a Guard. The damage dealt through Guard is a miniscule amount, but this can quickly ramp up, or push the foe into Now or Never State."
     },
     "guard-break": {
       "id": "guard-break",
       "name": "Guard Break",
       "engName": "",
       "shortDescription": "Empty Guard Gauge. Stunned state. Means you can be hit with Kikon above 30% HP.",
-      "description": "The state a player enters when their Guard Gauge hits 0%. It stuns the user, and makes them able to be hit by a Kikon Move at any Reishi percentage. This means if you enter Guard Break at 100% Reishi, you will still lose Konpaku if hit by a Kikon Move."
+      "description": "The state a player enters when their Guard Gauge hits 0%. Turns the enemy's Guard Gague red, and gives the character a flashing red tint. It stuns the user, and makes them able to be hit by a Kikon Move at any Reishi percentage. This means if you enter Guard Break at 100% Reishi, you will still lose Konpaku if hit by a Kikon Move."
     },
     "breaker": {
       "id": "breaker",
@@ -342,6 +405,20 @@
       "engName": "",
       "shortDescription": "A grab or grapple.",
       "description": "A global move that can be used by any character. A specialised attack similar to a grab that is built to break through a Guard. Easily overpowers Guard, but is easily overpowered by an Attack."
+    },
+    "dash-breaker": {
+      "id": "dash-breaker",
+      "name": "Dash Breaker",
+      "engName": "",
+      "shortDescription": "A slow dash into a grab or grapple.",
+      "description": "A global move that can be used by any character. Identical to a Breaker, but contains a slow-moving dash to cover a small amount of distance."
+    },
+    "breaker-parry": {
+      "id": "breaker-parry",
+      "name": "Breaker Parry",
+      "engName": "",
+      "shortDescription": "Negation state from both players using a Breaker at the same time.",
+      "description": "When both players use a Breaker around the same time, a Breaker Parry is executed. Both players' Breakers are negated, and both players are sent backwards an equal distance to set some space between them. Neither player takes damage from the Breakers used for a Breaker Parry."
     }
   },
   "archetypes": {

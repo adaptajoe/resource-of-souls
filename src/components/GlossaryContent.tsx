@@ -88,7 +88,7 @@ export default function GlossaryContent() {
   };
 
   const FilterButtons = () => {
-    const commonFilters = ["Attack", "Breaker", "FightingSpirit", "Flash", "Guard", "Kikon", "Konpaku", "Movement", "Quick", "Reiatsu", "Reishi", "Reverse", "Signature"];
+    const commonFilters = ["Attack", "Breaker", "Fighting", "Flash", "Guard", "Kikon", "Konpaku", "Movement", "Quick", "Reiatsu", "Reishi", "Reverse", "Signature"];
 
     return (
       <div className="w-fit lg:w-full font-bebasFont text-xl flex items-center justify-center mt-4 space-y-4 lg:space-y-0">
@@ -159,8 +159,8 @@ export default function GlossaryContent() {
     }
   }, [searchParams]);
 
-  const filterItems = (text: string) => {
-    if (!searchQuery) return true;
+  const filterItems = (text: string | undefined) => {
+    if (!searchQuery || !text) return !searchQuery; // Return true if no search query, false if text is undefined but there is a query
 
     const searchWords = searchQuery.toLowerCase().split(/\s+/);
     const targetWords = text.toLowerCase().split(/\s+/);
@@ -223,22 +223,12 @@ export default function GlossaryContent() {
   const GameTermCard = ({ title, englishTitle, description, shortDescription, id }: IGameTermCardProps) => {
     const formattedId = formatTermId(id);
     const isHighlighted = formattedId === highlightedId;
-    const [isHovered, setIsHovered] = useState(false);
 
     return (
       <div
         id={formattedId}
         className={`rounded-b-xl bg-black border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-teal-400 ring-2 ring-teal-400 bg-teal-900/10" : "border-gray-400"}`}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
       >
-        <div className="relative w-full border-b-2 border-gray-800">
-          {!isHovered ? (
-            <Image src={`/assets/term-assets/game-terms/${id}.png`} alt={title} width={300} height={300} className="w-full h-fit" style={{ filter: "grayscale(100%)" }} loading="lazy" />
-          ) : (
-            <video src={`/assets/term-assets/game-terms/${id}.mp4`} width={300} height={300} className="w-full h-fit" autoPlay loop muted />
-          )}
-        </div>
         <div className="p-4 flex flex-col">
           <div className="font-bold text-xl flex items-baseline">
             <h2 className="text-xl">{title}</h2>

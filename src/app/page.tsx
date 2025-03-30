@@ -15,7 +15,7 @@ export default function Home() {
         </p>
         <hr className="p-1 my-1 w-full" />
         <p className="border-l-8 border-l-red-600 border-r-8 border-r-teal-400 text-center px-4">
-          Please bear with us as BLEACH - Rebirth of Souls releases; a lot of information may be incorrect or missing.
+          All Characters now have 100% accurate movelists & ease of use ratings! Some aspects like damage, frame and tagging values are still missing, so please bear with us.
         </p>
       </div>
       <div className="border-b-2 border-gray-400">

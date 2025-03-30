@@ -59,7 +59,7 @@ export default function Community() {
           </div>
           <div className="flex justify-self-end pr-6">
             <Image
-              src={`/assets/character-banner/aizen-sosuke-banner.png`}
+              src={`/assets/character-banner/sosuke-aizen-banner.png`}
               height="300"
               width="300"
               alt={""}

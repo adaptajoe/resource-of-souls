@@ -25,30 +25,6 @@
       "notes": null
     },
     {
-      "tournamentName": "Warfare of Souls",
-      "tournamentHostName": "john30688",
-      "tournamentDate": "03/29/2025",
-      "tournamentStartTime": null,
-      "tournamentRegion": "ANY",
-      "tournamentLink": "https://challonge.com/4t9d5lew#",
-      "platform": "PC",
-      "prizePool": null,
-      "assignedBadge": "Bankai Spammer",
-      "notes": null
-    },
-    {
-      "tournamentName": "Warfare of Souls",
-      "tournamentHostName": "john30688",
-      "tournamentDate": "03/28/2025",
-      "tournamentStartTime": null,
-      "tournamentRegion": "ANY",
-      "tournamentLink": "https://challonge.com/1s83r135",
-      "platform": "XBOX",
-      "prizePool": null,
-      "assignedBadge": "Brick Thrower",
-      "notes": null
-    },
-    {
       "tournamentName": "Chains of Fate",
       "tournamentHostName": "Contourxci",
       "tournamentDate": "04/05/2025",
@@ -58,18 +34,6 @@
       "platform": "PLAYSTATION",
       "prizePool": null,
       "assignedBadge": "Karakura-Raizer Spirit",
-      "notes": null
-    },
-    {
-      "tournamentName": "Bleach Rebirth of Souls EU Tournament",
-      "tournamentHostName": "Globku",
-      "tournamentDate": "03/29/2025",
-      "tournamentStartTime": "2:30PM UTC+00:00",
-      "tournamentRegion": "EU",
-      "tournamentLink": "https://www.start.gg/tournament/bleach-rebirth-of-souls-eu-tournament/details",
-      "platform": "PLAYSTATION",
-      "prizePool": "$150 USD",
-      "assignedBadge": "Bread Queen",
       "notes": null
     },
     {
@@ -92,33 +56,9 @@
       "tournamentRegion": "ANY",
       "tournamentLink": "https://www.start.gg/tournament/memories-of-ouls/events/memories-of-ouls-100-pirze/brackets/1915424/2816531",
       "platform": "PC",
-      "prizePool": "$100 USD",
+      "prizePool": null,
       "assignedBadge": "Schrift-bearer: K",
       "notes": "Badge winner may add one name to the 'K' Schrift"
-    },
-    {
-      "tournamentName": "Society Scramble",
-      "tournamentHostName": "Owlflame",
-      "tournamentDate": "03/28/2025",
-      "tournamentStartTime": "12:30PM EDT",
-      "tournamentRegion": "ANY",
-      "tournamentLink": "https://www.start.gg/tournament/society-scramble-weekly/details",
-      "platform": "PC",
-      "prizePool": null,
-      "assignedBadge": "Tres Espada",
-      "notes": "Week 1 of the Society Scramble Tournament - For fun - Special rules and conditions may be added later."
-    },
-    {
-      "tournamentName": "XBOX Only Tournament",
-      "tournamentHostName": "c Karma r",
-      "tournamentDate": "03/23/2025",
-      "tournamentStartTime": "1:00PM UTC+00:00",
-      "tournamentRegion": "NA",
-      "tournamentLink": "https://www.start.gg/tournament/bleach-rebirth-of-souls-xbox-only-tournament/details",
-      "platform": "XBOX",
-      "prizePool": null,
-      "assignedBadge": "Squad 0 - Divine General of the West",
-      "notes": null
     }
   ]
 }

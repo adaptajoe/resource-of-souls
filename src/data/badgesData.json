@@ -66,7 +66,7 @@
     {
       "name": "Bread Queen",
       "pcOwner": null,
-      "psOwner": "Pending...",
+      "psOwner": "@hilliasteur",
       "xboxOwner": null,
       "pcLastChallenged": null,
       "psLastChallenged": null,
@@ -177,7 +177,7 @@
       "name": "Squad 0 - Divine General of the East",
       "pcOwner": null,
       "psOwner": null,
-      "xboxOwner": null,
+      "xboxOwner": "@azrael3829",
       "pcLastChallenged": null,
       "psLastChallenged": null,
       "xboxLastChallenged": null
@@ -501,7 +501,7 @@
     },
     {
       "name": "Tres Espada",
-      "pcOwner": "Pending...",
+      "pcOwner": null,
       "psOwner": null,
       "xboxOwner": null,
       "pcLastChallenged": null,
@@ -837,6 +837,15 @@
   ],
   "specialLeagueBadges": [
     {
+      "name": "Deep Dish Deluxe Duelist",
+      "pcOwner": null,
+      "psOwner": null,
+      "xboxOwner": "@vesi2967",
+      "pcLastChallenged": null,
+      "psLastChallenged": null,
+      "xboxLastChallenged": null
+    },
+    {
       "name": "'A Huge Zanpakuto'",
       "pcOwner": null,
       "psOwner": null,
@@ -849,14 +858,14 @@
       "name": "Brick Thrower",
       "pcOwner": null,
       "psOwner": null,
-      "xboxOwner": "Pending...",
+      "xboxOwner": "@vesi2967",
       "pcLastChallenged": null,
       "psLastChallenged": null,
       "xboxLastChallenged": null
     },
     {
       "name": "Bankai Spammer",
-      "pcOwner": "Pending...",
+      "pcOwner": "@pesky43",
       "psOwner": null,
       "xboxOwner": null,
       "pcLastChallenged": null,

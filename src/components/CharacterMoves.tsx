@@ -2,37 +2,25 @@
 import { useState, useCallback, useMemo, useRef, JSX, useEffect } from "react";
 import { IMoves, IMove } from "@/types/characterDataTypes";
 import React from "react";
-import {
-  ArrowDown,
-  ArrowDownLeft,
-  ArrowDownRight,
-  ArrowLeft,
-  ArrowRight,
-  ArrowUp,
-  ArrowUpLeft,
-  ArrowUpRight,
-  Circle,
-  Plus,
-  Square,
-  Triangle,
-  X,
-  ArrowsOutCardinal,
-} from "@phosphor-icons/react/dist/ssr";
+import { ArrowDown, ArrowDownLeft, ArrowDownRight, ArrowLeft, ArrowRight, ArrowUp, ArrowUpLeft, ArrowUpRight, Circle, Square, Triangle, X, ArrowsOutCardinal } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 
-type NotationType = "term" | "playstation" | "xbox" | "universal";
+type NotationType = "term" | "playstation" | "xbox" | "pc" | "universal";
 interface ICharacterMovesProps {
   moves: IMoves[];
   characterId: string;
 }
 
-interface IInputButtonProps {
-  bgColor?: string;
+interface IUnifiedButtonProps {
+  primaryColor?: string;
   textColor?: string;
   borderColor?: string;
   size?: "sm" | "md" | "lg";
-  children: React.ReactNode;
+  primaryInput?: string;
+  secondaryInput?: string;
   additionalText?: string;
+  children?: React.ReactNode;
+  variant?: "term" | "playstation" | "xbox" | "pc" | "universal" | "directional";
 }
 
 interface ITranslateInputProps {
@@ -49,144 +37,164 @@ interface ITranslations {
   term: ITranslationElement;
   playstation: ITranslationElement;
   xbox: ITranslationElement;
+  pc: ITranslationElement;
   universal: ITranslationElement;
 }
 
-const TermButton = ({ bgColor = "bg-white", textColor = "text-black", borderColor = "border-black", size = "md", children, additionalText }: IInputButtonProps) => {
+const UnifiedButton = ({
+  primaryColor = "bg-white",
+  textColor = "text-black",
+  borderColor = "border-black",
+  size = "md",
+  primaryInput,
+  secondaryInput,
+  additionalText,
+  children,
+  variant = "term",
+}: IUnifiedButtonProps) => {
   const sizeClasses = {
-    sm: "h-6 w-6 text-xs",
-    md: "h-8 w-8 text-sm",
-    lg: "h-10 w-10 text-base",
+    sm: "min-h-6 min-w-6 text-xs",
+    md: "min-h-8 min-w-8 text-sm",
+    lg: "min-h-10 min-w-10 text-base",
   };
 
-  return (
-    <div className="inline-flex items-center">
-      <div className={`${bgColor} ${textColor} rounded-full ${borderColor} border inline-flex items-center justify-center  font-bold w-full px-2 ${sizeClasses[size]}`}>{children}</div>
-      {additionalText && <span className="ml-1 text-xs tracking-wider">{additionalText}</span>}
-    </div>
-  );
-};
-
-const InputButton = ({ bgColor = "bg-white", textColor = "text-black", borderColor = "border-black", size = "md", children, additionalText }: IInputButtonProps) => {
-  const sizeClasses = {
-    sm: "h-6 w-6 text-xs",
-    md: "h-8 w-8 text-sm",
-    lg: "h-10 w-10 text-base",
+  // PlayStation specific colors
+  const psColors: Record<string, string> = {
+    square: "bg-fuchsia-400",
+    triangle: "bg-lime-400",
+    circle: "bg-red-400",
+    x: "bg-blue-400",
   };
 
-  return (
-    <div className="inline-flex items-center">
-      <div className={`${bgColor} ${textColor} rounded-full ${borderColor} border inline-flex items-center justify-center font-bold ${sizeClasses[size]}`}>{children}</div>
-      {additionalText && <span className="ml-1 text-xs tracking-wider">{additionalText}</span>}
-    </div>
-  );
-};
+  // Xbox specific colors
+  const xboxColors: Record<string, string> = {
+    X: "bg-blue-400",
+    Y: "bg-amber-400",
+    B: "bg-red-400",
+    A: "bg-lime-400",
+  };
 
-const PSButton = ({ iconColor, size = "md", additionalText }: { iconColor: string; size?: "sm" | "md" | "lg"; additionalText?: string }) => {
+  // PlayStation icons
+  const getPSIcon = (iconName: string, iconSize: number) => {
+    switch (iconName) {
+      case "square":
+        return <Square size={iconSize} className="text-fuchsia-400" />;
+      case "triangle":
+        return <Triangle size={iconSize} className="text-lime-400" />;
+      case "circle":
+        return <Circle size={iconSize} className="text-red-400" />;
+      case "x":
+        return <X size={iconSize} className="text-blue-400" />;
+      default:
+        return null;
+    }
+  };
+
+  // Xbox icons
+  const getXboxIcon = (iconName: string) => {
+    switch (iconName) {
+      case "A":
+        return <p className={`text-lime-400`}>A</p>;
+      case "B":
+        return <p className="text-red-400">B</p>;
+      case "X":
+        return <p className="text-blue-400">X</p>;
+      case "Y":
+        return <p className="text-amber-400">Y</p>;
+      default:
+        return null;
+    }
+  };
+
+  // Directional arrow icons
+  const getDirectionalArrow = (direction: string, arrowSize: number) => {
+    switch (direction) {
+      case "NORTHEAST":
+        return <ArrowUpRight size={arrowSize} />;
+      case "NORTHWEST":
+        return <ArrowUpLeft size={arrowSize} />;
+      case "SOUTHEAST":
+        return <ArrowDownRight size={arrowSize} />;
+      case "SOUTHWEST":
+        return <ArrowDownLeft size={arrowSize} />;
+      case "NORTH":
+        return <ArrowUp size={arrowSize} />;
+      case "SOUTH":
+        return <ArrowDown size={arrowSize} />;
+      case "EAST":
+        return <ArrowRight size={arrowSize} />;
+      case "WEST":
+        return <ArrowLeft size={arrowSize} />;
+      case "ANY":
+        return <ArrowsOutCardinal size={arrowSize} />;
+      default:
+        return null;
+    }
+  };
+
   const iconSizes = {
     sm: 12,
     md: 15,
     lg: 18,
   };
 
-  return (
-    <div
-      className={`inline-flex items-center rounded-full p-0.5 border border-black ${iconColor === "square" && "bg-fuchsia-400"} ${iconColor === "triangle" && "bg-lime-400"} ${
-        iconColor === "circle" && "bg-red-400"
-      } ${iconColor === "x" && "bg-blue-400"}`}
-    >
-      <div className="bg-black rounded-full p-1.5 border border-black inline-flex items-center justify-center">
-        {iconColor === "square" && <Square size={iconSizes[size]} className="text-fuchsia-400" />}
-        {iconColor === "triangle" && <Triangle size={iconSizes[size]} className="text-lime-400" />}
-        {iconColor === "circle" && <Circle size={iconSizes[size]} className="text-red-400" />}
-        {iconColor === "x" && <X size={iconSizes[size]} className="text-blue-400" />}
-      </div>
-      {additionalText && <span className="ml-1 text-xs tracking-wider">{additionalText}</span>}
-    </div>
-  );
-};
-
-const XboxButton = ({ button, size = "md", additionalText }: { button: string; size?: "sm" | "md" | "lg"; additionalText?: string }) => {
-  const textSizes = {
-    sm: "text-xs",
-    md: "text-sm",
-    lg: "text-base",
-  };
-
-  const buttonColors: Record<string, string> = {
-    X: "text-blue-400",
-    Y: "text-amber-400",
-    B: "text-red-400",
-    A: "text-lime-400",
-  };
-
-  return (
-    <div
-      className={`inline-flex items-center font-black rounded-full p-0.5 border border-black ${button === "X" && "bg-blue-400"} ${button === "Y" && "bg-amber-400"} ${button === "B" && "bg-red-400"} ${
-        button === "A" && "bg-lime-400"
-      }`}
-    >
-      <div className="bg-black rounded-full border border-black inline-flex items-center justify-center">
-        <p className={`${buttonColors[button]} px-2 py-1 ${textSizes[size]}`}>{button}</p>
-      </div>
-      <span></span>
-      {additionalText && <span className="ml-1 font-blacktext-xs tracking-wider">{additionalText}</span>}
-    </div>
-  );
-};
-
-const DirectionalArrow = ({ direction, size = "md" }: { direction: string; size?: "sm" | "md" | "lg" }) => {
   const arrowSizes = {
     sm: 20,
     md: 25,
     lg: 30,
   };
 
-  const getArrow = () => {
-    switch (direction) {
-      case "NORTHEAST":
-        return <ArrowUpRight size={arrowSizes[size]} />;
-      case "NORTHWEST":
-        return <ArrowUpLeft size={arrowSizes[size]} />;
-      case "SOUTHEAST":
-        return <ArrowDownRight size={arrowSizes[size]} />;
-      case "SOUTHWEST":
-        return <ArrowDownLeft size={arrowSizes[size]} />;
-      case "NORTH":
-        return <ArrowUp size={arrowSizes[size]} />;
-      case "SOUTH":
-        return <ArrowDown size={arrowSizes[size]} />;
-      case "EAST":
-        return <ArrowRight size={arrowSizes[size]} />;
-      case "WEST":
-        return <ArrowLeft size={arrowSizes[size]} />;
-      case "ANY":
-        return <ArrowsOutCardinal size={arrowSizes[size]} />;
-      default:
-        return null;
-    }
-  };
-
-  return (
-    <div className={`inline-flex items-center font-black rounded-full border border-white bg-transparent`}>
-      <div className="bg-transparent rounded-full border border-black inline-flex items-center justify-center">
-        <InputButton bgColor="bg-white" textColor="text-black" size={size}>
-          {getArrow()}
-        </InputButton>
+  if (variant === "playstation" && primaryInput && psColors[primaryInput]) {
+    return (
+      <div className={`inline-flex items-center justify-center size-9 w-fit rounded-full p-0.5 border border-black text-black font-black ${psColors[primaryInput]}`}>
+        <div className="bg-black rounded-full size-7 p-1.5 border border-black inline-flex items-center justify-center">{getPSIcon(primaryInput, iconSizes[size])}</div>
+        {additionalText && <span className="mx-2 text-xs">{additionalText}</span>}
       </div>
-    </div>
-  );
-};
+    );
+  }
 
-const CompoundInput = ({ primary, secondary, notation, additionalText }: { primary: string; secondary: string; notation: NotationType; additionalText?: string }) => {
+  if (variant === "xbox" && primaryInput && xboxColors[primaryInput]) {
+    return (
+      <div className={`inline-flex items-center justify-center size-9 w-fit rounded-full p-0.5 border border-black text-black font-black ${xboxColors[primaryInput]}`}>
+        <div className="bg-black rounded-full size-7 p-1.5 border border-black inline-flex items-center justify-center">{getXboxIcon(primaryInput)}</div>
+        {additionalText && <span className="mx-2 text-xs">{additionalText}</span>}
+      </div>
+    );
+  }
+
+  if (variant === "directional" && primaryInput) {
+    return (
+      <div className={`inline-flex items-center justify-center font-black rounded-full border border-white bg-transparent size-9`}>
+        <div className="bg-transparent size-7 rounded-full border border-black inline-flex items-center justify-center">
+          <div className={`${primaryColor} ${textColor} rounded-full ${borderColor} border inline-flex items-center justify-center px-2 font-bold ${sizeClasses[size]}`}>
+            {getDirectionalArrow(primaryInput, arrowSizes[size])}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // For compound inputs (primary + secondary)
+  if (primaryInput && secondaryInput) {
+    return (
+      <div className="inline-flex items-center bg-white rounded-full px-2 py-2 text-black text-xs font-black gap-1">
+        <span>{primaryInput}</span>
+        &#x2b;
+        {variant === "playstation" && <UnifiedButton primaryInput={secondaryInput} variant="playstation" size={size} />}
+        {variant === "xbox" && <UnifiedButton primaryInput={secondaryInput} variant="xbox" size={size} />}
+        {(variant === "universal" || variant === "pc" || variant === "term") && <span>{secondaryInput}</span>}
+        {additionalText && <span className="font-black">{additionalText}</span>}
+      </div>
+    );
+  }
+
+  // Default button style (term or universal)
   return (
-    <div className="inline-flex items-center bg-white my-2 rounded-full px-4 py-2 text-black font-black">
-      <span>{primary}</span>
-      <Plus size={15} className="mx-2" />
-      {notation === "playstation" && <PSButton iconColor={secondary} />}
-      {notation === "xbox" && <XboxButton button={secondary} />}
-      {notation === "universal" && <span>{secondary}</span>}
-      {additionalText && <span className="ml-2 font-black">{additionalText}</span>}
+    <div className="inline-flex items-center">
+      <div className={`${primaryColor} ${textColor} rounded-full ${borderColor} border inline-flex items-center justify-center min-w-10 min-h-10 font-bold w-full px-2 py-2 ${sizeClasses[size]}`}>
+        {children || primaryInput}
+        {additionalText && <span className="ml-1 text-xs">{additionalText}</span>}
+      </div>
     </div>
   );
 };
@@ -195,144 +203,251 @@ const TranslateInput = ({ input, notation, scrollableCombo = false }: ITranslate
   const translations = useMemo<ITranslations>(
     () => ({
       term: {
-        Q: <TermButton bgColor="bg-teal-400">Quick Attack</TermButton>,
-        F: <TermButton bgColor="bg-amber-400">Flash Attack</TermButton>,
-        SF: <TermButton bgColor="bg-amber-400">Special Flash Attack</TermButton>,
-        SQ: <TermButton bgColor="bg-teal-400">Step Quick Attack</TermButton>,
-        SI: <TermButton bgColor="bg-indigo-400">Signature Move</TermButton>,
-        BK: <TermButton bgColor="bg-purple-400">Breaker</TermButton>,
-        R: <TermButton bgColor="bg-white">Reverse</TermButton>,
-        BR: <TermButton bgColor="bg-red-300">Burst Reverse</TermButton>,
-        CR: <TermButton bgColor="bg-orange-300">Chain Reverse</TermButton>,
-        SR: <TermButton bgColor="bg-blue-300">Soul Reverse</TermButton>,
-        H: <TermButton bgColor="bg-pink-400">Hakugeki</TermButton>,
-        KI: <TermButton bgColor="bg-pink-400">Kikon</TermButton>,
-        S1: <TermButton bgColor="bg-white">Spiritual Pressure Move 1</TermButton>,
-        S2: <TermButton bgColor="bg-white">Spiritual Pressure Move 2</TermButton>,
-        AW: <TermButton bgColor="bg-white">Awakening</TermButton>,
-        RE: <TermButton bgColor="bg-white">Reawakening</TermButton>,
-        S: <TermButton bgColor="bg-white">4-Directional Step</TermButton>,
-        D: <TermButton bgColor="bg-white">Dash</TermButton>,
-        HH: <TermButton bgColor="bg-white">Hoho</TermButton>,
-        GD: <TermButton bgColor="bg-green-400">Guard</TermButton>,
-        CO: <TermButton bgColor="bg-white">Perfect Hoho Counter</TermButton>,
-        NORTHEAST: <DirectionalArrow direction="NORTHEAST" />,
-        NORTHWEST: <DirectionalArrow direction="NORTHWEST" />,
-        SOUTHEAST: <DirectionalArrow direction="SOUTHEAST" />,
-        SOUTHWEST: <DirectionalArrow direction="SOUTHWEST" />,
-        NORTH: <DirectionalArrow direction="NORTH" />,
-        SOUTH: <DirectionalArrow direction="SOUTH" />,
-        EAST: <DirectionalArrow direction="EAST" />,
-        WEST: <DirectionalArrow direction="WEST" />,
-        ANY: <DirectionalArrow direction="ANY" />,
+        Q: (
+          <UnifiedButton variant="term" primaryColor="bg-teal-500">
+            Quick Attack
+          </UnifiedButton>
+        ),
+        F: (
+          <UnifiedButton variant="term" primaryColor="bg-cyan-500">
+            Flash Attack
+          </UnifiedButton>
+        ),
+        SF: (
+          <UnifiedButton variant="term" primaryColor="bg-indigo-500">
+            Special Flash Attack
+          </UnifiedButton>
+        ),
+        SI: (
+          <UnifiedButton variant="term" primaryColor="bg-lime-500">
+            Signature Move
+          </UnifiedButton>
+        ),
+        BK: (
+          <UnifiedButton variant="term" primaryColor="bg-pink-500">
+            Breaker
+          </UnifiedButton>
+        ),
+        R: <UnifiedButton variant="term">Reverse</UnifiedButton>,
+        BR: (
+          <UnifiedButton variant="term" primaryColor="bg-blue-500">
+            Burst Reverse
+          </UnifiedButton>
+        ),
+        CR: (
+          <UnifiedButton variant="term" primaryColor="bg-yellow-500">
+            Chain Reverse
+          </UnifiedButton>
+        ),
+        SR: <UnifiedButton variant="term">Soul Reverse</UnifiedButton>,
+        H: (
+          <UnifiedButton variant="term" primaryColor="bg-fuchsia-500">
+            Hakugeki
+          </UnifiedButton>
+        ),
+        KI: (
+          <UnifiedButton variant="term" primaryColor="bg-fuchsia-500">
+            Kikon
+          </UnifiedButton>
+        ),
+        S1: (
+          <UnifiedButton variant="term" primaryColor="bg-red-500">
+            Spiritual Pressure Move 1
+          </UnifiedButton>
+        ),
+        S2: (
+          <UnifiedButton variant="term" primaryColor="bg-red-500">
+            Spiritual Pressure Move 2
+          </UnifiedButton>
+        ),
+        AW: <UnifiedButton variant="term">Awakening</UnifiedButton>,
+        RE: <UnifiedButton variant="term">Reawakening</UnifiedButton>,
+        S: <UnifiedButton variant="term">4-Directional Step</UnifiedButton>,
+        D: <UnifiedButton variant="term">Dash</UnifiedButton>,
+        HH: (
+          <UnifiedButton variant="term" primaryColor="bg-orange-500">
+            Follow-up Hohō
+          </UnifiedButton>
+        ),
+        GD: <UnifiedButton variant="term">Guard</UnifiedButton>,
+        CO: <UnifiedButton variant="term">Counter</UnifiedButton>,
+        NORTHEAST: <UnifiedButton primaryInput="NORTHEAST" variant="directional" />,
+        NORTHWEST: <UnifiedButton primaryInput="NORTHWEST" variant="directional" />,
+        SOUTHEAST: <UnifiedButton primaryInput="SOUTHEAST" variant="directional" />,
+        SOUTHWEST: <UnifiedButton primaryInput="SOUTHWEST" variant="directional" />,
+        NORTH: <UnifiedButton primaryInput="NORTH" variant="directional" />,
+        SOUTH: <UnifiedButton primaryInput="SOUTH" variant="directional" />,
+        EAST: <UnifiedButton primaryInput="EAST" variant="directional" />,
+        WEST: <UnifiedButton primaryInput="WEST" variant="directional" />,
+        ANY: <UnifiedButton primaryInput="ANY" variant="directional" />,
       },
       playstation: {
-        Q: <PSButton iconColor="square" />,
-        F: <PSButton iconColor="triangle" />,
-        SF: <CompoundInput primary="LS" secondary="triangle" notation="playstation" additionalText="(In any direction)" />,
-        SQ: <CompoundInput primary="LS" secondary="square" notation="playstation" additionalText="(In any direction)" />,
-        SI: <PSButton iconColor="circle" />,
-        BK: <InputButton bgColor="bg-gray-400">R1</InputButton>,
-        R: <CompoundInput primary="L2" secondary="square" notation="playstation" />,
-        BR: <CompoundInput primary="L2" secondary="square" notation="playstation" additionalText="(Whilst being hit)" />,
-        CR: <CompoundInput primary="L2" secondary="square" notation="playstation" additionalText="(Whilst attacking)" />,
-        SR: <CompoundInput primary="L2" secondary="square" notation="playstation" additionalText="(When not being hit / attacking)" />,
-        H: <InputButton bgColor="bg-gray-400">R2 (Hold)</InputButton>,
-        KI: <InputButton bgColor="bg-gray-400">R2</InputButton>,
-        S1: <CompoundInput primary="L2" secondary="triangle" notation="playstation" />,
-        S2: <CompoundInput primary="L2" secondary="circle" notation="playstation" />,
-        AW: <CompoundInput primary="L3" secondary="R3" notation="universal" />,
-        RE: <CompoundInput primary="L3" secondary="R3" notation="universal" />,
-        S: <PSButton iconColor="x" />,
-        D: <PSButton iconColor="x" additionalText="(Hold)" />,
-        HH: <CompoundInput primary="L2" secondary="x" notation="playstation" />,
-        GD: <InputButton bgColor="bg-gray-400">L1</InputButton>,
-        CO: <CompoundInput primary="L2" secondary="x" notation="playstation" additionalText="(With perfect timing)" />,
-        NORTHEAST: <DirectionalArrow direction="NORTHEAST" />,
-        NORTHWEST: <DirectionalArrow direction="NORTHWEST" />,
-        SOUTHEAST: <DirectionalArrow direction="SOUTHEAST" />,
-        SOUTHWEST: <DirectionalArrow direction="SOUTHWEST" />,
-        NORTH: <DirectionalArrow direction="NORTH" />,
-        SOUTH: <DirectionalArrow direction="SOUTH" />,
-        EAST: <DirectionalArrow direction="EAST" />,
-        WEST: <DirectionalArrow direction="WEST" />,
-        ANY: <DirectionalArrow direction="ANY" />,
+        Q: <UnifiedButton primaryInput="square" variant="playstation" />,
+        F: <UnifiedButton primaryInput="triangle" variant="playstation" />,
+        SF: <UnifiedButton primaryInput="LS" secondaryInput="triangle" variant="playstation" additionalText="(In any direction)" />,
+        SI: <UnifiedButton primaryInput="circle" variant="playstation" />,
+        BK: (
+          <UnifiedButton primaryColor="bg-gray-400" variant="term">
+            R1
+          </UnifiedButton>
+        ),
+        R: <UnifiedButton primaryInput="L2" secondaryInput="square" variant="playstation" />,
+        BR: <UnifiedButton primaryInput="L2" secondaryInput="square" variant="playstation" additionalText="(Whilst being hit)" />,
+        CR: <UnifiedButton primaryInput="L2" secondaryInput="square" variant="playstation" additionalText="(Whilst attacking)" />,
+        SR: <UnifiedButton primaryInput="L2" secondaryInput="square" variant="playstation" additionalText="(When not being hit / attacking)" />,
+        H: (
+          <UnifiedButton primaryColor="bg-gray-400" additionalText="(Hold)" variant="term">
+            R2
+          </UnifiedButton>
+        ),
+        KI: (
+          <UnifiedButton primaryColor="bg-gray-400" variant="term">
+            R2
+          </UnifiedButton>
+        ),
+        S1: <UnifiedButton primaryInput="L2" secondaryInput="triangle" variant="playstation" />,
+        S2: <UnifiedButton primaryInput="L2" secondaryInput="circle" variant="playstation" />,
+        AW: <UnifiedButton primaryInput="L3" secondaryInput="R3" variant="universal" />,
+        RE: <UnifiedButton primaryInput="L3" secondaryInput="R3" variant="universal" />,
+        S: <UnifiedButton primaryInput="x" variant="playstation" />,
+        D: <UnifiedButton primaryInput="x" variant="playstation" additionalText="(Hold)" />,
+        HH: <UnifiedButton primaryInput="L2" secondaryInput="x" variant="playstation" />,
+        GD: (
+          <UnifiedButton primaryColor="bg-gray-400" variant="term">
+            L1
+          </UnifiedButton>
+        ),
+        CO: <UnifiedButton primaryInput="L2" secondaryInput="x" variant="playstation" additionalText="(With perfect timing)" />,
+        NORTHEAST: <UnifiedButton primaryInput="NORTHEAST" variant="directional" />,
+        NORTHWEST: <UnifiedButton primaryInput="NORTHWEST" variant="directional" />,
+        SOUTHEAST: <UnifiedButton primaryInput="SOUTHEAST" variant="directional" />,
+        SOUTHWEST: <UnifiedButton primaryInput="SOUTHWEST" variant="directional" />,
+        NORTH: <UnifiedButton primaryInput="NORTH" variant="directional" />,
+        SOUTH: <UnifiedButton primaryInput="SOUTH" variant="directional" />,
+        EAST: <UnifiedButton primaryInput="EAST" variant="directional" />,
+        WEST: <UnifiedButton primaryInput="WEST" variant="directional" />,
+        ANY: <UnifiedButton primaryInput="ANY" variant="directional" />,
       },
       xbox: {
-        Q: <XboxButton button="X" />,
-        F: <XboxButton button="Y" />,
-        SF: <CompoundInput primary="LS" secondary="Y" notation="xbox" additionalText="(In any direction)" />,
-        SQ: <CompoundInput primary="LS" secondary="X" notation="xbox" additionalText="(In any direction)" />,
-        SI: <XboxButton button="B" />,
-        BK: <InputButton bgColor="bg-gray-400">RB</InputButton>,
-        R: <CompoundInput primary="LT" secondary="X" notation="xbox" />,
-        BR: <CompoundInput primary="LT" secondary="X" notation="xbox" additionalText="(Whilst being hit)" />,
-        CR: <CompoundInput primary="LT" secondary="X" notation="xbox" additionalText="(Whilst attacking)" />,
-        SR: <CompoundInput primary="LT" secondary="X" notation="xbox" additionalText="(When not being hit / attacking)" />,
-        H: <InputButton bgColor="bg-gray-400">RT (Hold)</InputButton>,
-        KI: <InputButton bgColor="bg-gray-400">RT</InputButton>,
-        S1: <CompoundInput primary="LT" secondary="Y" notation="xbox" />,
-        S2: <CompoundInput primary="LT" secondary="B" notation="xbox" />,
-        AW: <CompoundInput primary="LS" secondary="RS" notation="universal" />,
-        RE: <CompoundInput primary="LS" secondary="RS" notation="universal" />,
-        S: <XboxButton button="A" />,
-        D: <XboxButton button="A" additionalText="(Hold)" />,
-        HH: <CompoundInput primary="LT" secondary="A" notation="xbox" />,
-        GD: <InputButton bgColor="bg-gray-400">LB</InputButton>,
-        CO: <CompoundInput primary="LT" secondary="A" notation="xbox" additionalText="(With perfect timing)" />,
-        NORTHEAST: <DirectionalArrow direction="NORTHEAST" />,
-        NORTHWEST: <DirectionalArrow direction="NORTHWEST" />,
-        SOUTHEAST: <DirectionalArrow direction="SOUTHEAST" />,
-        SOUTHWEST: <DirectionalArrow direction="SOUTHWEST" />,
-        NORTH: <DirectionalArrow direction="NORTH" />,
-        SOUTH: <DirectionalArrow direction="SOUTH" />,
-        EAST: <DirectionalArrow direction="EAST" />,
-        WEST: <DirectionalArrow direction="WEST" />,
-        ANY: <DirectionalArrow direction="ANY" />,
+        Q: <UnifiedButton primaryInput="X" variant="xbox" />,
+        F: <UnifiedButton primaryInput="Y" variant="xbox" />,
+        SF: <UnifiedButton primaryInput="LS" secondaryInput="Y" variant="xbox" additionalText="(In any direction)" />,
+        SI: <UnifiedButton primaryInput="B" variant="xbox" />,
+        BK: (
+          <UnifiedButton primaryColor="bg-gray-400" variant="term">
+            RB
+          </UnifiedButton>
+        ),
+        R: <UnifiedButton primaryInput="LT" secondaryInput="X" variant="xbox" />,
+        BR: <UnifiedButton primaryInput="LT" secondaryInput="X" variant="xbox" additionalText="(Whilst being hit)" />,
+        CR: <UnifiedButton primaryInput="LT" secondaryInput="X" variant="xbox" additionalText="(Whilst attacking)" />,
+        SR: <UnifiedButton primaryInput="LT" secondaryInput="X" variant="xbox" additionalText="(When not being hit / attacking)" />,
+        H: (
+          <UnifiedButton primaryColor="bg-gray-400" variant="term">
+            RT (Hold)
+          </UnifiedButton>
+        ),
+        KI: (
+          <UnifiedButton primaryColor="bg-gray-400" variant="term">
+            RT
+          </UnifiedButton>
+        ),
+        S1: <UnifiedButton primaryInput="LT" secondaryInput="Y" variant="xbox" />,
+        S2: <UnifiedButton primaryInput="LT" secondaryInput="B" variant="xbox" />,
+        AW: <UnifiedButton primaryInput="LS" secondaryInput="RS" variant="universal" />,
+        RE: <UnifiedButton primaryInput="LS" secondaryInput="RS" variant="universal" />,
+        S: <UnifiedButton primaryInput="A" variant="xbox" />,
+        D: <UnifiedButton primaryInput="A" variant="xbox" additionalText="(Hold)" />,
+        HH: <UnifiedButton primaryInput="LT" secondaryInput="A" variant="xbox" />,
+        GD: (
+          <UnifiedButton primaryColor="bg-gray-400" variant="term">
+            LB
+          </UnifiedButton>
+        ),
+        CO: <UnifiedButton primaryInput="LT" secondaryInput="A" variant="xbox" additionalText="(With perfect timing)" />,
+        NORTHEAST: <UnifiedButton primaryInput="NORTHEAST" variant="directional" />,
+        NORTHWEST: <UnifiedButton primaryInput="NORTHWEST" variant="directional" />,
+        SOUTHEAST: <UnifiedButton primaryInput="SOUTHEAST" variant="directional" />,
+        SOUTHWEST: <UnifiedButton primaryInput="SOUTHWEST" variant="directional" />,
+        NORTH: <UnifiedButton primaryInput="NORTH" variant="directional" />,
+        SOUTH: <UnifiedButton primaryInput="SOUTH" variant="directional" />,
+        EAST: <UnifiedButton primaryInput="EAST" variant="directional" />,
+        WEST: <UnifiedButton primaryInput="WEST" variant="directional" />,
+        ANY: <UnifiedButton primaryInput="ANY" variant="directional" />,
+      },
+      pc: {
+        Q: <UnifiedButton variant="term">Left Mouse Click</UnifiedButton>,
+        F: <UnifiedButton variant="term">Right Mouse Click</UnifiedButton>,
+        SF: <UnifiedButton additionalText="(Or any other movement)" variant="term" primaryInput="W/A/S/D" secondaryInput="Right Mouse Click" />,
+        SI: <UnifiedButton variant="term">Middle Mouse Click</UnifiedButton>,
+        BK: <UnifiedButton variant="term">Q</UnifiedButton>,
+        R: <UnifiedButton primaryInput="Tab" secondaryInput="Left Mouse Click" variant="universal" />,
+        BR: <UnifiedButton primaryInput="Tab" secondaryInput="Left Mouse Click" variant="universal" additionalText="(When not SR / CR)" />,
+        CR: <UnifiedButton primaryInput="Tab" secondaryInput="Left Mouse Click" variant="universal" additionalText="(Whilst attacking)" />,
+        SR: <UnifiedButton primaryInput="Tab" secondaryInput="Left Mouse Click" variant="universal" additionalText="(Whilst being hit)" />,
+        H: <UnifiedButton variant="term">R (Hold)</UnifiedButton>,
+        KI: <UnifiedButton variant="term">R</UnifiedButton>,
+        S1: <UnifiedButton primaryInput="Tab" secondaryInput="Right Mouse Click" variant="universal" />,
+        S2: <UnifiedButton primaryInput="Tab" secondaryInput="Middle Mouse Click" variant="universal" />,
+        AW: <UnifiedButton primaryInput="LShift" secondaryInput="B" variant="universal" />,
+        RE: <UnifiedButton primaryInput="LShift" secondaryInput="B" variant="universal" />,
+        S: <UnifiedButton variant="term">X</UnifiedButton>,
+        D: (
+          <UnifiedButton additionalText="(Hold)" variant="term">
+            X
+          </UnifiedButton>
+        ),
+        HH: <UnifiedButton primaryInput="Tab" secondaryInput="X" variant="universal" />,
+        GD: <UnifiedButton variant="term">E</UnifiedButton>,
+        CO: <UnifiedButton primaryInput="Tab" secondaryInput="X" variant="universal" additionalText="(With perfect timing)" />,
+        NORTHEAST: <UnifiedButton variant="term" primaryInput="W" secondaryInput="D" />,
+        NORTHWEST: <UnifiedButton variant="term" primaryInput="W" secondaryInput="A" />,
+        SOUTHEAST: <UnifiedButton variant="term" primaryInput="S" secondaryInput="D" />,
+        SOUTHWEST: <UnifiedButton variant="term" primaryInput="S" secondaryInput="A" />,
+        NORTH: <UnifiedButton variant="term">W</UnifiedButton>,
+        SOUTH: <UnifiedButton variant="term">S</UnifiedButton>,
+        EAST: <UnifiedButton variant="term">D</UnifiedButton>,
+        WEST: <UnifiedButton variant="term">A</UnifiedButton>,
+        ANY: <UnifiedButton variant="term">W/A/S/D</UnifiedButton>,
       },
       universal: {
-        Q: <InputButton bgColor="bg-white">A</InputButton>,
-        F: <InputButton bgColor="bg-white">B</InputButton>,
+        Q: <UnifiedButton variant="term">A</UnifiedButton>,
+        F: <UnifiedButton variant="term">B</UnifiedButton>,
         SF: (
-          <InputButton bgColor="bg-white" additionalText="(Or any other movement)">
+          <UnifiedButton additionalText="(Or any other movement)" variant="term">
             B1
-          </InputButton>
+          </UnifiedButton>
         ),
-        SQ: (
-          <InputButton bgColor="bg-white" additionalText="(Or any other movement)">
-            A1
-          </InputButton>
-        ),
-        SI: <InputButton bgColor="bg-white">D</InputButton>,
-        BK: <InputButton bgColor="bg-white">E</InputButton>,
-        R: <CompoundInput primary="F" secondary="A" notation="universal" />,
-        BR: <CompoundInput primary="F" secondary="D" notation="universal" additionalText="(When not SR / CR)" />,
-        CR: <CompoundInput primary="F" secondary="D" notation="universal" additionalText="(Whilst attacking)" />,
-        SR: <CompoundInput primary="F" secondary="D" notation="universal" additionalText="(Whilst being hit)" />,
-        H: <InputButton bgColor="bg-white">H (Hold)</InputButton>,
-        KI: <InputButton bgColor="bg-white">H</InputButton>,
-        S1: <CompoundInput primary="F" secondary="B" notation="universal" />,
-        S2: <CompoundInput primary="F" secondary="D" notation="universal" />,
-        AW: <CompoundInput primary="J" secondary="I" notation="universal" />,
-        RE: <CompoundInput primary="J" secondary="I" notation="universal" />,
-        S: <InputButton bgColor="bg-white">C</InputButton>,
+        SI: <UnifiedButton variant="term">D</UnifiedButton>,
+        BK: <UnifiedButton variant="term">E</UnifiedButton>,
+        R: <UnifiedButton primaryInput="F" secondaryInput="A" variant="universal" />,
+        BR: <UnifiedButton primaryInput="F" secondaryInput="D" variant="universal" additionalText="(When not SR / CR)" />,
+        CR: <UnifiedButton primaryInput="F" secondaryInput="D" variant="universal" additionalText="(Whilst attacking)" />,
+        SR: <UnifiedButton primaryInput="F" secondaryInput="D" variant="universal" additionalText="(Whilst being hit)" />,
+        H: <UnifiedButton variant="term">H (Hold)</UnifiedButton>,
+        KI: <UnifiedButton variant="term">H</UnifiedButton>,
+        S1: <UnifiedButton primaryInput="F" secondaryInput="B" variant="universal" />,
+        S2: <UnifiedButton primaryInput="F" secondaryInput="D" variant="universal" />,
+        AW: <UnifiedButton primaryInput="J" secondaryInput="I" variant="universal" />,
+        RE: <UnifiedButton primaryInput="J" secondaryInput="I" variant="universal" />,
+        S: <UnifiedButton variant="term">C</UnifiedButton>,
         D: (
-          <InputButton bgColor="bg-white" additionalText="(Hold)">
+          <UnifiedButton additionalText="(Hold)" variant="term">
             C
-          </InputButton>
+          </UnifiedButton>
         ),
-        HH: <CompoundInput primary="F" secondary="A" notation="universal" />,
-        GD: <InputButton bgColor="bg-white">G</InputButton>,
-        CO: <CompoundInput primary="F" secondary="A" notation="universal" additionalText="(With perfect timing)" />,
-        NORTHEAST: <InputButton bgColor="bg-white">2</InputButton>,
-        NORTHWEST: <InputButton bgColor="bg-white">8</InputButton>,
-        SOUTHEAST: <InputButton bgColor="bg-white">4</InputButton>,
-        SOUTHWEST: <InputButton bgColor="bg-white">6</InputButton>,
-        NORTH: <InputButton bgColor="bg-white">1</InputButton>,
-        SOUTH: <InputButton bgColor="bg-white">5</InputButton>,
-        EAST: <InputButton bgColor="bg-white">3</InputButton>,
-        WEST: <InputButton bgColor="bg-white">7</InputButton>,
-        ANY: <InputButton bgColor="bg-white">9</InputButton>,
+        HH: <UnifiedButton primaryInput="F" secondaryInput="A" variant="universal" />,
+        GD: <UnifiedButton variant="term">G</UnifiedButton>,
+        CO: <UnifiedButton primaryInput="F" secondaryInput="A" variant="universal" additionalText="(With perfect timing)" />,
+        NORTHEAST: <UnifiedButton variant="term">2</UnifiedButton>,
+        NORTHWEST: <UnifiedButton variant="term">8</UnifiedButton>,
+        SOUTHEAST: <UnifiedButton variant="term">4</UnifiedButton>,
+        SOUTHWEST: <UnifiedButton variant="term">6</UnifiedButton>,
+        NORTH: <UnifiedButton variant="term">1</UnifiedButton>,
+        SOUTH: <UnifiedButton variant="term">5</UnifiedButton>,
+        EAST: <UnifiedButton variant="term">3</UnifiedButton>,
+        WEST: <UnifiedButton variant="term">7</UnifiedButton>,
+        ANY: <UnifiedButton variant="term">9</UnifiedButton>,
       },
     }),
     []
@@ -646,7 +761,6 @@ const CharacterMoves = ({ moves, characterId }: ICharacterMovesProps) => {
     return [
       { key: "Q", label: "Quick Attack" },
       { key: "F", label: "Flash Attack" },
-      { key: "SQ", label: "Step Quick Attack" },
       { key: "SF", label: "Special Flash Attack" },
       { key: "SI", label: "Signature Move" },
       { key: "BK", label: "Breaker" },
@@ -662,7 +776,7 @@ const CharacterMoves = ({ moves, characterId }: ICharacterMovesProps) => {
       { key: "RE", label: "Reawakening" },
       { key: "S", label: "4-Directional Step" },
       { key: "D", label: "Dash" },
-      { key: "HH", label: "Follow-up Hoho" },
+      { key: "HH", label: "Follow-up Hohō" },
       { key: "GD", label: "Guard" },
       { key: "CO", label: "Counter" },
       { key: "NORTHEAST", label: "Up-Right" },
@@ -678,14 +792,12 @@ const CharacterMoves = ({ moves, characterId }: ICharacterMovesProps) => {
   }, [notation]);
 
   const renderMovelistKey = () => (
-    <div className="w-auto flex flex-wrap flex-row mt-4">
-      <div className="w-full gap-2 ml-4 text-gray-400">
-        {translatedKeys.map(({ key, label }) => (
-          <div key={key}>
-            <TranslateInput input={key} notation={notation} /> {label}
-          </div>
-        ))}
-      </div>
+    <div className="w-auto border-b-2 border-gray-400 grid grid-cols-4 text-center p-2 pt-4 pb-6">
+      {translatedKeys.map(({ key, label }) => (
+        <div key={key} className="border border-gray-400 h-full p-2 py-4 flex justify-center items-center flex-col rounded-xl">
+          <TranslateInput input={key} notation={notation} /> {label}
+        </div>
+      ))}
     </div>
   );
 
@@ -700,6 +812,7 @@ const CharacterMoves = ({ moves, characterId }: ICharacterMovesProps) => {
                 <option value="term">Term Notation</option>
                 <option value="playstation">PlayStation Notation</option>
                 <option value="xbox">Xbox Notation</option>
+                <option value="pc">PC Default Notation</option>
                 <option value="universal">Universal Notation</option>
               </select>
             </label>
@@ -716,7 +829,7 @@ const CharacterMoves = ({ moves, characterId }: ICharacterMovesProps) => {
             Click to {movesetKeyIsOpen ? "hide Movelist Key" : "show Movelist Key"}
             {movesetKeyIsOpen ? <span>&uarr;</span> : <span>&darr;</span>}
           </button>
-          {movesetKeyIsOpen && renderMovelistKey()}
+          <div>{movesetKeyIsOpen && renderMovelistKey()}</div>
         </div>
       </div>
 
