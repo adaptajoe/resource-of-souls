@@ -56,7 +56,7 @@
           {
             "id": "exclusive-ability-vendaval",
             "name": "Exclusive Ability: Vendaval",
-            "description": "An ability exclusive to Nelliel. Perform a Step action after certain actions like Flash Attacks and Flash Attack Follow-Ups. This lets you prevent openings after attacks and consumes Chase Stock in the process.",
+            "description": "An ability exclusive to Nelliel. Perform a Step action after certain actions like Flash Attacks and Flash Attack Follow-Ups. This lets you prevent openings after attacks and consumes Chase Stock in the process. The maximum level of Chase Stock is 4.",
             "input": null,
             "damage": null,
             "frames": null,
@@ -322,7 +322,7 @@
           {
             "id": "exclusive-ability-chase-stock",
             "name": "Exclusive Ability: Chase Stock",
-            "description": "An ability exclusive to Nelliel. A gauge that fills with Cadena. Consume some of this gauge after certain moves to use follow-up attacks or additional actions.",
+            "description": "An ability exclusive to Nelliel. A gauge that fills with Cadena. Consume some of this gauge after certain moves to use follow-up attacks or additional actions. The maximum level of Chase Stock is 4.",
             "input": null,
             "damage": null,
             "frames": null,

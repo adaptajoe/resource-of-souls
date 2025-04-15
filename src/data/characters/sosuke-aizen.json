@@ -1,6 +1,6 @@
 {
   "sosuke-aizen": {
-    "name": "Sōsuke Aizen",
+    "name": "Sosuke Aizen",
     "id": "sosuke-aizen",
     "race": "shinigami",
     "quote": "From the very start, no one has stood upon the heavens. Not you, not I, nor even gods. However, that intolerable vacuum has come to an end. Henceforth...I shall stand upon the heavens.",
@@ -12,7 +12,7 @@
       "characteristics": ["male", "captain", "gotei13", "traitor"]
     },
     "characterEaseOfUse": 1,
-    "characterArchetype": ["shortRange", "melee", "gimmick", "balanced", "reviver", "gauge", "ramper", "reawakener"],
+    "characterArchetype": ["shortRange", "melee", "gimmick", "balanced", "reviver", "gauge", "ramper", "reawakener", "kido"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=4qGGFhG-rIE&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=16",
     "characterEngTrailer": "https://www.youtube.com/watch?v=fZeTPMNf0bQ&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=10",
     "characterNumber": 21,
@@ -30,7 +30,7 @@
       {
         "base": [
           {
-            "id": "base-inexhaustible-spiritual-power",
+            "id": "exclusive-ability-inexhaustible-spiritual-power",
             "name": "Exclusive Ability: Inexhaustible Spiritual Power",
             "description": "An ability exclusive to Sosuke Aizen. The Reiatsu Gauge is replaced with a special version. Spiritual Power increases automatically, filling up to 5 stocks. The number of Stocked Spiritual Power changes some attack properties. Stopping in place speeds up Spiritual Power accumulation, with actions like attacks resetting the speed.",
             "input": null,
@@ -51,10 +51,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["exclusiveAbility"]
+            "moveTags": ["exclusiveAbility", "addsGauge", "addsCount", "0IsMinimumCount", "5IsMaximumCount", "0IsMinimumGauge", "100IsMaximumGauge"]
           },
           {
-            "id": "base-hōgyoku-fusion-second-phase",
+            "id": "exclusive-ability-hōgyoku-fusion-second-phase",
             "name": "Exclusive Ability: Hōgyoku Fusion - Second Phase",
             "description": "An ability exclusive to Sosuke Aizen. Fighting Spirit increases over time from the start of battle, activating this when it maxes out. Fighting Spirit is reduced to 0%, but Sosuke Aizen changes form, and this move is replaced with a special version. Inexhaustible Spiritual Power is negated during Hōgyoku Fusion - Second Phase.",
             "input": null,
@@ -75,10 +75,34 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["exclusiveAbility"]
+            "moveTags": ["exclusiveAbility", "pseudoAwakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "base-shatter,-kyōka-suigetsu",
+            "id": "exclusive-ability-restricted-spiritual-power",
+            "name": "Exclusive Ability: Restricted Spiritual Power",
+            "description": "An ability exclusive to Sosuke Aizen. The Reiatsu Gauge is replaced with a special version. When in Sosuke Aizen has triggered 'Exclusive Ability: Hōgyoku Fusion - Second Phase', his 'Exclusive Ability: Inexhaustible Spiritual Power' changes to this automatically. Whilst 'Exclusive Ability - Restricted Spiritual Power' is active, Aizen cannot spend any of his Stocked Spiritual Power charges, locking him out of his Spiritual Pressure Move 2. Aizen automatically loses this Exclusive Ability when Awakening.",
+            "input": null,
+            "damage": null,
+            "frames": null,
+            "hits": null,
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["exclusiveAbility", "locksGauge", "locksCount", "locksSpiritualPressureMove2"]
+          },
+          {
+            "id": "exclusive-ability-shatter-kyōka-suigetsu",
             "name": "Exclusive Ability: Shatter, Kyōka Suigetsu",
             "description": "Sosuke Aizen's exclusive ability. Can only be activated in Normal State. Press the Awakening input when certain characters are performing Kikon Moves to consume two Reverse Gauge bars and negate Konpaku destruction once per battle. This Exclusive Ability is unable to be performed on Ichigo Kurosaki, Ichigo Kurosaki (Bankai), Ichigo Kurosaki (Final Getsugatensho), Uryu Ishida, Yasutora 'Chad' Sado, and Kaname Tōsen as they have never seen Aizen's Kyōka Suigetsu release.",
             "input": null,
@@ -99,16 +123,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["exclusiveAbility"]
+            "moveTags": ["exclusiveAbility", "negates1KikonMove", "affectsOnlyCertainCharacters"]
           },
           {
             "id": "base-powerful-spiritual-pressure",
             "name": "Signature Move: Powerful Spiritual Pressure",
-            "description": "Stand calmly with your left hand raised. Maintains this pose whilst the input is pressed, preventing flinching and reducing damage when attacked. Unleashes a shockwave forward when the input is released, or enough time passes. Taking an attack while in this stance makes you unleash a powerful shockwave, after which Spiritual Power instantly starts filling up at max speed.",
+            "description": "Stand calmly with your left hand raised. Maintains this pose whilst the input is pressed, preventing flinching and reducing damage when attacked. Unleashes a shockwave forward when the input is released, or enough time passes. Taking an attack while in this stance makes you unleash a powerful shockwave, after which Spiritual Power instantly starts filling up at max speed. The values below are split between not countering damage, and after countering damage.",
             "input": "SI",
-            "damage": 0,
+            "damage": "400 / 1150",
             "frames": 0,
-            "hits": null,
+            "hits": "1 / 3",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -123,16 +147,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsNothing"]
+            "moveTags": ["signatureMove", "costsNothing", "shortRange", "attackTypeRanged", "variableDamage", "variableHits"]
           },
           {
             "id": "base-a-process-of-evolution",
             "name": "Signature Move: A Process of Evolution",
-            "description": "Powerful Spiritual Pressure changes into this during Hōgyoku Fusion - Second Phase. Stand calmly with your left hand raised. Maintains this pose whilst the input is pressed, preventing flinching and reducing damage when attacked. Unleashes a shockwave forward when the input is released, or enough time passes. Taking an attack while in this stance makes you unleash a powerful shockwave, after which you gain a lot of Fighting Spirit.",
+            "description": "Powerful Spiritual Pressure changes into this during Hōgyoku Fusion - Second Phase. Stand calmly with your left hand raised. Maintains this pose whilst the input is pressed, preventing flinching and reducing damage when attacked. Unleashes a shockwave forward when the input is released, or enough time passes. Taking an attack while in this stance makes you unleash a powerful shockwave, after which you gain a lot of Fighting Spirit. The values below are split between not countering damage, and after countering damage.",
             "input": "SI",
-            "damage": 0,
+            "damage": "400 / 1150",
             "frames": 0,
-            "hits": null,
+            "hits": "1 / 3",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -147,7 +171,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsNothing"]
+            "moveTags": ["signatureMove", "costsNothing", "shortRange", "attackTypeRanged", "variableDamage", "variableHits"]
           },
           {
             "id": "base-el-escudo",
@@ -156,7 +180,7 @@
             "input": "S1",
             "damage": 0,
             "frames": 0,
-            "hits": null,
+            "hits": 0,
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -171,16 +195,25 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsStockedSpiritualPower"]
+            "moveTags": [
+              "spiritualPressureMove1",
+              "costsNothing",
+              "noRange",
+              "noDamage",
+              "addsTemporaryInvulnerability",
+              "addsTemporaryKnockbackNegation",
+              "addsGuardGaugeBleed",
+              "endsWhenGuardGaugeHits0"
+            ]
           },
           {
             "id": "base-hado-#90-kurohitsugi",
             "name": "Spiritual Pressure Move 2: Hado #90 - Kurohitsugi",
-            "description": "An immensely powerful Kurohitsugi attack. Can activate at Stocked Spiritual Power 1 or higher, consuming all stocks on activation. Starts with a forward sweep with Breaker properties. Unblockable, though it lacks range. The following Kurohitsugi increases when more Stocked Spiritual Power is consumed.",
+            "description": "An immensely powerful Kurohitsugi attack. Can activate at Stocked Spiritual Power 1 or higher, consuming all stocks on activation. Starts with a forward sweep with Breaker properties. Unblockable, though it lacks range. The following Kurohitsugi increases when more Stocked Spiritual Power is consumed. The values below are split between each Stocked Spiritual Power amount.",
             "input": "S2",
-            "damage": 0,
+            "damage": "2600 (1 & 2) / 2800 (3) / 3200 (4) / 4500 (5)",
             "frames": 0,
-            "hits": null,
+            "hits": "2 (1 & 2) / 4 (3) / 5 (4) / 6 (5)",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -195,16 +228,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsAllStockedSpiritualPower", "variableDamage"]
+            "moveTags": ["spiritualPressureMove2", "attackTypeMelee", "shortRange", "costsAllStockedSpiritualPower", "variableDamage", "variableHits", "unblockable", "breaker", "kido"]
           },
           {
             "id": "base-basic-flash-attack",
             "name": "Basic Flash Attack",
-            "description": "Moveset currently not known.",
+            "description": "An effortless slash worthy for only the weakest of peons.",
             "input": "F",
-            "damage": null,
+            "damage": "350",
             "frames": null,
-            "hits": null,
+            "hits": "1",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -219,16 +252,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
+            "moveTags": ["flashAttack", "costsNothing", "shortRange", "attackTypeMelee"]
           },
           {
             "id": "base-special-flash-attack-assault",
             "name": "Special Flash Attack: Assault",
             "description": "Approach and slash at the opponent. Sends the opponent flying on hit, letting you make some distance between you.",
             "input": "SF",
-            "damage": 0,
+            "damage": "600",
             "frames": 0,
-            "hits": 0,
+            "hits": "1",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -243,16 +276,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "dashesToOpponent"]
           },
           {
             "id": "base-special-flash-attack-hado-#54-haien",
             "name": "Special Flash Attack: Hado #54 - Haien",
             "description": "Changes Assault at Stocked Spiritual Power 2 or higher. Unleashes a Haien forward. Boasts a fine balance of speed and power.",
             "input": "SF",
-            "damage": 0,
+            "damage": "900",
             "frames": 0,
-            "hits": 0,
+            "hits": "1",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -267,16 +300,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "attackTypeRanged", "costsNothing", "kido", "shortToMidRange"]
           },
           {
             "id": "base-special-flash-attack-hado-#91-senjukotentaiho",
             "name": "Special Flash Attack: Hado #91 - Senjukotentaiho",
             "description": "Can activate at Stocked Spiritual Power 4 or higher. Unleashes a Senjukotentaiho forward. Hold the input to switch between this and Hado #54 - Haien. Slow to activate, but extremely powerful.",
             "input": "SF",
-            "damage": 0,
+            "damage": "2373",
             "frames": 0,
-            "hits": 0,
+            "hits": "7",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -291,16 +324,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "attackTypeRanged", "shortToLongRange", "holdInputToActivate", "kido"]
           },
           {
             "id": "base-special-flash-attack-kegeki",
             "name": "Special Flash Attack: Kegeki",
             "description": "Special Flash Attack changes to this during Hōgyoku Fusion - Second Phase. Approach the opponent and launch a kick. Gives you the advantage in moving after the attack.",
             "input": "SF",
-            "damage": 0,
+            "damage": "450",
             "frames": 0,
-            "hits": 0,
+            "hits": "1",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -315,16 +348,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "attackTypeMelee", "dashesToOpponent", "shortRange", "costsNothing"]
           },
           {
             "id": "base-basic-quick-attack",
             "name": "Basic Quick Attack",
-            "description": "Moveset currently not known.",
+            "description": "Cull the weak with a downwards slash.",
             "input": "Q",
-            "damage": null,
+            "damage": "475",
             "frames": null,
-            "hits": null,
+            "hits": "1",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -339,7 +372,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
+            "moveTags": ["quickAttack", "costsNothing", "shortRange", "attackTypeMelee"]
           }
         ],
         "awakened": [
@@ -365,10 +398,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["exclusiveAbility"]
+            "moveTags": ["awakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "awakened-inexhaustible-spiritual-power",
+            "id": "exclusive-ability-inexhaustible-spiritual-power",
             "name": "Exclusive Ability: Inexhaustible Spiritual Power",
             "description": "An ability exclusive to Sosuke Aizen. The Reiatsu Gauge is replaced with a special version. Spiritual Power increases automatically, filling up to 5 stocks. The number of Stocked Spiritual Power changes some attack properties. Stopping in place speeds up Spiritual Power accumulation, with actions like attacks resetting the speed.",
             "input": null,
@@ -389,10 +422,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["exclusiveAbility"]
+            "moveTags": ["exclusiveAbility", "addsGauge", "addsCount", "0IsMinimumCount", "5IsMaximumCount", "0IsMinimumGauge", "100IsMaximumGauge"]
           },
           {
-            "id": "awakened-complete-hōgyoku-fusion",
+            "id": "reawakening-birth-of-the-new-god",
             "name": "Exclusive Ability: Complete Hōgyoku Fusion",
             "description": "A signature Reawakened state for Sosuke Aizen. Activates at 0 Konpaku if you have enough Fighting Spirit for Reawakening.",
             "input": null,
@@ -413,16 +446,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["exclusiveAbility"]
+            "moveTags": ["reawakening", "setsFightingSpiritTo0", "noDamage", "noRange", "activatesAt0Konpaku"]
           },
           {
             "id": "awakened-powerful-spiritual-pressure",
             "name": "Signature Move: Powerful Spiritual Pressure",
-            "description": "Stand calmly with your left hand raised. Maintains this pose whilst the input is pressed, preventing flinching and reducing damage when attacked. Unleashes a shockwave forward when the input is released, or enough time passes. Taking an attack while in this stance makes you unleash a powerful shockwave, after which Spiritual Power instantly starts filling up at max speed.",
+            "description": "Stand calmly with your left hand raised. Maintains this pose whilst the input is pressed, preventing flinching and reducing damage when attacked. Unleashes a shockwave forward when the input is released, or enough time passes. Taking an attack while in this stance makes you unleash a powerful shockwave, after which Spiritual Power instantly starts filling up at max speed. The values below are split between not countering damage, and after countering damage.",
             "input": "SI",
-            "damage": 0,
+            "damage": "492 / 1230",
             "frames": 0,
-            "hits": null,
+            "hits": "1 / 3",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -437,31 +470,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsNothing"]
-          },
-          {
-            "id": "awakened-a-process-of-evolution",
-            "name": "Signature Move: A Process of Evolution",
-            "description": "Powerful Spiritual Pressure changes into this during Hōgyoku Fusion - Second Phase. Stand calmly with your left hand raised. Maintains this pose whilst the input is pressed, preventing flinching and reducing damage when attacked. Unleashes a shockwave forward when the input is released, or enough time passes. Taking an attack while in this stance makes you unleash a powerful shockwave, after which you gain a lot of Fighting Spirit.",
-            "input": "SI",
-            "damage": 0,
-            "frames": 0,
-            "hits": null,
-            "hasOfficialName": true,
-            "reishiGain": null,
-            "reishiCost": null,
-            "reiatsuGain": null,
-            "reiatsuCost": 0,
-            "fightingSpiritGain": 0,
-            "fightingSpiritCost": null,
-            "reversalGain": 0,
-            "reversalCost": null,
-            "gaugeGain": null,
-            "gaugeCost": null,
-            "resourceGain": null,
-            "resourceCost": null,
-            "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsNothing"]
+            "moveTags": ["signatureMove", "costsNothing", "shortRange", "attackTypeRanged", "variableDamage", "variableHits"]
           },
           {
             "id": "awakened-el-escudo",
@@ -485,16 +494,25 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsStockedSpiritualPower"]
+            "moveTags": [
+              "spiritualPressureMove1",
+              "costsNothing",
+              "noRange",
+              "noDamage",
+              "addsTemporaryInvulnerability",
+              "addsTemporaryKnockbackNegation",
+              "addsGuardGaugeBleed",
+              "endsWhenGuardGaugeHits0"
+            ]
           },
           {
             "id": "awakened-hado-#90-kurohitsugi",
             "name": "Spiritual Pressure Move 2: Hado #90 - Kurohitsugi",
-            "description": "An immensely powerful Kurohitsugi attack. Can activate at Stocked Spiritual Power 1 or higher, consuming all stocks on activation. Starts with a forward sweep with Breaker properties. Unblockable, though it lacks range. The following Kurohitsugi increases when more Stocked Spiritual Power is consumed.",
+            "description": "An immensely powerful Kurohitsugi attack. Can activate at Stocked Spiritual Power 1 or higher, consuming all stocks on activation. Starts with a forward sweep with Breaker properties. Unblockable, though it lacks range. The following Kurohitsugi increases when more Stocked Spiritual Power is consumed. The values below are split between each Stocked Spiritual Power amount.",
             "input": "S2",
-            "damage": 0,
+            "damage": "3198 (1 & 2) / 4182 (3) / 4402 (4) / 5843 (5)",
             "frames": 0,
-            "hits": null,
+            "hits": "2 (1 & 2) / 4 (3) / 5 (4) / 6 (5)",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -509,16 +527,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsAllStockedSpiritualPower", "variableDamage"]
+            "moveTags": ["spiritualPressureMove2", "attackTypeMelee", "shortRange", "costsAllStockedSpiritualPower", "variableDamage", "variableHits", "unblockable", "breaker", "kido"]
           },
           {
             "id": "awakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
-            "damage": null,
+            "damage": "584",
             "frames": null,
-            "hits": null,
+            "hits": "1",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -533,16 +551,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
+            "moveTags": ["flashAttack", "costsNothing", "shortRange", "attackTypeMelee"]
           },
           {
-            "id": "awakened-base-special-flash-attack-assault",
+            "id": "awakened-special-flash-attack-assault",
             "name": "Special Flash Attack: Assault",
             "description": "Approach and slash at the opponent. Sends the opponent flying on hit, letting you make some distance between you.",
             "input": "SF",
-            "damage": 0,
+            "damage": "738",
             "frames": 0,
-            "hits": 0,
+            "hits": "1",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -557,16 +575,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "costsNothing", "attackTypeMelee", "shortRange", "dashesToOpponent"]
           },
           {
             "id": "awakened-special-flash-attack-hado-#54-haien",
             "name": "Special Flash Attack: Hado #54 - Haien",
             "description": "Changes Assault at Stocked Spiritual Power 2 or higher. Unleashes a Haien forward. Boasts a fine balance of speed and power.",
             "input": "SF",
-            "damage": 0,
+            "damage": "1107",
             "frames": 0,
-            "hits": 0,
+            "hits": "1",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -581,16 +599,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "attackTypeRanged", "costsNothing", "kido", "shortToMidRange"]
           },
           {
             "id": "awakened-special-flash-attack-hado-#91-senjukotentaiho",
             "name": "Special Flash Attack: Hado #91 - Senjukotentaiho",
             "description": "Can activate at Stocked Spiritual Power 4 or higher. Unleashes a Senjukotentaiho forward. Hold the input to switch between this and Hado #54 - Haien. Slow to activate, but extremely powerful.",
             "input": "SF",
-            "damage": 0,
+            "damage": "3126",
             "frames": 0,
-            "hits": 0,
+            "hits": "7",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -605,40 +623,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "attackTypeRanged", "shortToLongRange", "holdInputToActivate", "kido"]
           },
           {
-            "id": "awakened-special-flash-attack-kegeki",
-            "name": "Special Flash Attack: Kegeki",
-            "description": "Special Flash Attack changes to this during Hōgyoku Fusion - Second Phase. Approach the opponent and launch a kick. Gives you the advantage in moving after the attack.",
-            "input": "SF",
-            "damage": 0,
-            "frames": 0,
-            "hits": 0,
-            "hasOfficialName": true,
-            "reishiGain": null,
-            "reishiCost": null,
-            "reiatsuGain": 0,
-            "reiatsuCost": null,
-            "fightingSpiritGain": 0,
-            "fightingSpiritCost": null,
-            "reversalGain": 0,
-            "reversalCost": null,
-            "gaugeGain": null,
-            "gaugeCost": null,
-            "resourceGain": null,
-            "resourceCost": null,
-            "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
-          },
-          {
-            "id": "awakened-quick-attack",
+            "id": "awakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
-            "damage": null,
+            "damage": "431",
             "frames": null,
-            "hits": null,
+            "hits": "1",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -653,7 +647,7 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
+            "moveTags": ["quickAttack", "costsNothing", "shortRange", "attackTypeMelee"]
           }
         ],
         "reawakened": [
@@ -679,10 +673,10 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["exclusiveAbility"]
+            "moveTags": ["reawakening", "setsFightingSpiritTo0", "noDamage", "noRange"]
           },
           {
-            "id": "reawakened-interdimensional-spiritual-power",
+            "id": "exclusive-ability-interdimensional-spiritual-power",
             "name": "Exclusive Ability: Interdimensional Spiritual Power",
             "description": "Spiritual Power is always maxed out, and does not go down.",
             "input": null,
@@ -708,11 +702,11 @@
           {
             "id": "reawakened-origins-of-spiritual-pressure",
             "name": "Signature Move: Origins of Spiritual Pressure",
-            "description": "Fend off opponent attacks with the glow from the Hōgyoku. Take an attack at just the right time and counter by slamming a ball of Spiritual Power into the opponent.",
+            "description": "Fend off opponent attacks with the glow from the Hōgyoku. Take an attack at just the right time and counter by swiping a torrent of Reiryoku at the opponent.",
             "input": "SI",
-            "damage": 0,
+            "damage": "2760",
             "frames": 0,
-            "hits": null,
+            "hits": "13",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -727,16 +721,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["signatureMove", "costsNothing"]
+            "moveTags": ["signatureMove", "block", "counter", "costsNothing", "attackTypeRanged", "shortRange"]
           },
           {
             "id": "reawakened-power-transcending-shinigami-and-hollow",
             "name": "Spiritual Pressure Move 1: Power Transcending Shinigami and Hollow",
             "description": "Release Spiritual Power, then sweep your blade while rushing forward. Fast activation makes this attack perfect for a combo finisher or an assault.",
             "input": "S1",
-            "damage": 0,
+            "damage": "3652",
             "frames": 0,
-            "hits": null,
+            "hits": "7",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -751,16 +745,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove1", "costsStockedSpiritualPower"]
+            "moveTags": ["spiritualPressureMove1", "attackTypeMelee", "dashesToOpponent", "shortToMidRange", "costsNothing"]
           },
           {
             "id": "reawakened-hado-#90-kurohitsugi",
             "name": "Spiritual Pressure Move 2: Hado #90 - Kurohitsugi",
             "description": "A forward sweep with Breaker properties. Unblockable, though it lacks range. When it hits, unleashes a Kurohitsugi with devastating power.",
             "input": "S2",
-            "damage": 0,
+            "damage": "6624",
             "frames": 0,
-            "hits": null,
+            "hits": "6",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -775,16 +769,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["spiritualPressureMove2", "costsAllStockedSpiritualPower", "variableDamage"]
+            "moveTags": ["spiritualPressureMove2", "attackTypeMelee", "shortRange", "costsAllStockedSpiritualPower", "variableDamage", "variableHits", "unblockable", "breaker", "kido"]
           },
           {
             "id": "reawakened-basic-flash-attack",
             "name": "Basic Flash Attack",
             "description": "Moveset currently not known.",
             "input": "F",
-            "damage": null,
+            "damage": "690",
             "frames": null,
-            "hits": null,
+            "hits": "1",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -799,16 +793,16 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["flashAttack", "costsNothing", "needsStatInfo"]
+            "moveTags": ["flashAttack", "attackTypeRanged", "costsNothing", "shortToLongRange"]
           },
           {
             "id": "reawakened-special-flash-attack-sword-pressure",
             "name": "Special Flash Attack: Sword Pressure",
             "description": "Lightly swing your blade to release sword pressure. Has a wide attack range and excellent activation, making it perfect for keeping foes at bay from mid-range.",
             "input": "SF",
-            "damage": 0,
+            "damage": "1380",
             "frames": 0,
-            "hits": 0,
+            "hits": "1",
             "hasOfficialName": true,
             "reishiGain": null,
             "reishiCost": null,
@@ -823,14 +817,40 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["specialFlashAttack", "costsNothing", "needsStatInfo"]
+            "moveTags": ["specialFlashAttack", "attackTypeRanged", "costsNothing", "shortToLongRange"]
           },
           {
-            "id": "reawakened-quick-attack",
+            "id": "reawakened-basic-quick-attack",
             "name": "Basic Quick Attack",
             "description": "Moveset currently not known.",
             "input": "Q",
-            "damage": null,
+            "damage": "552",
+            "frames": null,
+            "hits": "1",
+            "hasOfficialName": true,
+            "reishiGain": null,
+            "reishiCost": null,
+            "reiatsuGain": null,
+            "reiatsuCost": null,
+            "fightingSpiritGain": null,
+            "fightingSpiritCost": null,
+            "reversalGain": null,
+            "reversalCost": null,
+            "gaugeGain": null,
+            "gaugeCost": null,
+            "resourceGain": null,
+            "resourceCost": null,
+            "cooldown": "X Seconds",
+            "moveTags": ["quickAttack", "costsNothing", "shortRange", "attackTypeMelee"]
+          }
+        ],
+        "kikon": [
+          {
+            "id": "base-standing-at-the-top-kikon-move",
+            "name": "Normal State Kikon Move 1: Standing at the Top",
+            "description": "Aizen raises his blade slowly, swelling and ebbing with purple Reiryoku as his ego grows, dominating over his opponent; with an effortless slice, he splits apart the very space between his foe and his blade, ravaging his opponent with a glittering, purple cleave. Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break.",
+            "input": "KI",
+            "damage": 3,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,
@@ -847,14 +867,12 @@
             "resourceGain": null,
             "resourceCost": null,
             "cooldown": "X Seconds",
-            "moveTags": ["quickAttack", "costsNothing", "needsStatInfo"]
-          }
-        ],
-        "kikon": [
+            "moveTags": ["kikonMove"]
+          },
           {
-            "id": "base-standing-at-the-top-kikon-move",
-            "name": "Normal State Kikon Move 1: Standing at the Top",
-            "description": "Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break..",
+            "id": "base-standing-at-the-top-alt-kikon-move",
+            "name": "Normal State Kikon Move 2: Standing at the Top (Chrysalis)",
+            "description": "Aizen raises his blade slowly, swelling and ebbing with purple Reiryoku as his ego grows, dominating over his opponent; with an effortless slice, he splits apart the very space between his foe and his blade, ravaging his opponent with a glittering, purple cleave. Destroys 2 Konpaku. Destroys 3 Konpaku with a Soul Break.",
             "input": "KI",
             "damage": 3,
             "frames": null,
@@ -878,7 +896,7 @@
           {
             "id": "awakened-at-the-edge-of-all-reason-kikon-move",
             "name": "Awakened Kikon Move 1: At the Edge of All Reason",
-            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break.",
+            "description": "Aizen walks calmly, his god-like Reiryoku weighing down on his foe as if gravity itself was their opponent. As the pressure builds, Aizen mocks his foe, he slices their abdomen with an incomprehensible cut. Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break.",
             "input": "(After) AW, KI",
             "damage": 4,
             "frames": null,
@@ -902,7 +920,7 @@
           {
             "id": "awakened-at-the-edge-of-all-reason-alt-kikon-move",
             "name": "Awakened Kikon Move 2: At the Edge of All Reason",
-            "description": "Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break..",
+            "description": "Aizen walks calmly, his god-like Reiryoku weighing down on his foe as if gravity itself was their opponent. As the pressure builds, Aizen mocks his foe, he slices their abdomen with an incomprehensible cut. Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break.",
             "input": "(After) AW, KI",
             "damage": 5,
             "frames": null,
@@ -926,7 +944,7 @@
           {
             "id": "reawakened-full-incantation-hado-#90-kurohitsugi-kikon-move",
             "name": "Reawakened Kikon Move 1: Full Incantation Hado #90 - Kurohitsugi",
-            "description": "Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break..",
+            "description": "Seeping model of Monshō. Insolent vessel of lunacy. Seethe. Deny. Paralyze. Flicker and disturb sleep. Crawling princess of iron. Constantly disintegrating doll of mud. Unite. Repel. Come back down to Earth and know your own powerlessness. Aizen recants this immensely powerful incantation to loose Hado #90 - Kurohitsugi upon his target, which takes the form of a colossal tower of blackened purple Reiryoku, seemingly formed with the building blocks of the universe itself. Its' interior, warping space and time to utterly eradicate Aizen's sworn enemy. Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break.",
             "input": "(After) RE, KI",
             "damage": 5,
             "frames": null,

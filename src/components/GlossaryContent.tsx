@@ -79,7 +79,7 @@ export default function GlossaryContent() {
       <button
         onClick={onClick}
         className={`px-3 m-1 w-auto py-1 font-black hover:bg-red-600 hover:text-black text-base tracking-wide rounded ${
-          isActive ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
+          isActive ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-white"
         } transition-colors`}
       >
         {label}
@@ -88,7 +88,7 @@ export default function GlossaryContent() {
   };
 
   const FilterButtons = () => {
-    const commonFilters = ["Attack", "Breaker", "Fighting", "Flash", "Guard", "Kikon", "Konpaku", "Movement", "Quick", "Reiatsu", "Reishi", "Reverse", "Signature"];
+    const commonFilters = ["Attack", "Breaker", "Fighting", "Flash", "Quick", "Kikon", "Konpaku", "Movement", "Guard", "Reiatsu", "Reishi", "Reverse", "Signature"];
 
     return (
       <div className="w-fit lg:w-full font-bebasFont text-xl flex items-center justify-center mt-4 space-y-4 lg:space-y-0">
@@ -173,15 +173,17 @@ export default function GlossaryContent() {
   };
 
   const filteredArchetypes = useMemo(() => {
-    return Object.values(supplementaryData.archetypes).filter((archetype) => {
-      return filterItems(archetype.name) || filterItems(archetype.description);
-    });
+    return Object.values(supplementaryData.archetypes)
+      .filter((archetype) => {
+        return filterItems(archetype.name) || filterItems(archetype.description);
+      })
+      .sort((a, b) => a.name.localeCompare(b.name));
   }, [searchQuery]);
 
   const filteredGameTerms = useMemo(() => {
-    return Object.values(supplementaryData.gameTerms).filter(
-      (term) => filterItems(term.name) || filterItems(term.description) || filterItems(term.shortDescription) || (term.engName && filterItems(term.engName))
-    );
+    return Object.values(supplementaryData.gameTerms)
+      .filter((term) => filterItems(term.name) || filterItems(term.description) || filterItems(term.shortDescription) || (term.engName && filterItems(term.engName)))
+      .sort((a, b) => a.name.localeCompare(b.name));
   }, [searchQuery]);
 
   const ArchetypeCard = ({ title, description, id, shortDescription }: IArchetypeCardProps) => {
@@ -190,23 +192,26 @@ export default function GlossaryContent() {
     const isHighlighted = formattedId === highlightedId;
 
     return (
-      <div id={formattedId} className={`rounded-xl bg-black border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-red-600 ring-2 ring-red-600 bg-red-900/10" : "border-gray-400"}`}>
-        <div className="relative w-full border-b-2 border-gray-800">
+      <div
+        id={formattedId}
+        className={`rounded-xl bg-white dark:bg-black border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-red-600 ring-2 ring-red-600 bg-red-900/10" : "border-gray-400"}`}
+      >
+        <div className="relative w-full border-b-2 border-white dark:border-gray-800">
           <Image width="300" height="150" alt="" id={id} src={`/assets/term-assets/archetypes/${id}.png`} className="rounded-t-xl w-full h-[150px] object-cover" />
         </div>
         <div className="p-4">
-          <h2 className="font-bold text-xl mb-2">{title}</h2>
-          <p className="text-gray-400 italic pb-2 text-xs">{description}</p>
-          <hr className="my-4" />
-          <strong>TLDR:</strong> <p className="text-gray-400 italic text-xs mt-2">{shortDescription}</p>
+          <h2 className="font-bold text-xl mb-2 first-letter:text-red-600 border-l-4 border-red-600 pl-2">{title}</h2>
+          <p className="text-gray-600 dark:text-gray-400 italic pb-2 text-xs">{description}</p>
+          <hr className="my-4 border-black dark:border-white" />
+          <strong>TLDR:</strong> <p className="text-gray-600 dark:text-gray-400 italic text-xs mt-2">{shortDescription}</p>
           {characters.length > 0 && (
-            <div className="mt-4 w-full border-t border-gray-400">
+            <div className="mt-4 w-full border-t border-black dark:border-white">
               <div className="text-sm font-semibold pt-2">Characters:</div>
               <div className="flex flex-wrap gap-2 pt-2">
                 {characters.map((character, index) => (
                   <Link
                     key={index}
-                    className="text-xs bg-black border border-gray-600 hover:border-red-600 text-gray-400 px-2 py-1 hover:bg-red-900 hover:text-white transition-all rounded-xl"
+                    className="text-xs bg-white dark:bg-black border border-gray-600 hover:border-red-600 text-gray-600 dark:text-gray-400 px-2 py-1 hover:bg-red-900 hover:text-white transition-all rounded-xl"
                     href={`/characters/${character.slug}`}
                   >
                     {character.name}
@@ -227,30 +232,32 @@ export default function GlossaryContent() {
     return (
       <div
         id={formattedId}
-        className={`rounded-b-xl bg-black border transition-all duration-300 scroll-mt-24 ${isHighlighted ? "border-teal-400 ring-2 ring-teal-400 bg-teal-900/10" : "border-gray-400"}`}
+        className={`rounded-b-xl text-black dark:text-white bg-white dark:bg-black border transition-all duration-300 scroll-mt-24 ${
+          isHighlighted ? "border-teal-400 ring-2 ring-teal-400 bg-teal-900/10" : "border-gray-400"
+        }`}
       >
         <div className="p-4 flex flex-col">
           <div className="font-bold text-xl flex items-baseline">
-            <h2 className="text-xl">{title}</h2>
-            {englishTitle && <p className="text-xs text-gray-400 ml-2 italic">(ENG: {englishTitle})</p>}
+            <h2 className="text-xl first-letter:text-red-600 border-l-4 border-red-600 pl-2">{title}</h2>
+            {englishTitle && <p className="text-xs text-gray-600 dark:text-gray-400 ml-2 italic">(ENG: {englishTitle})</p>}
           </div>
           <hr className="my-4" />
-          <p className="text-gray-400 italic text-xs">{description}</p>
+          <p className="text-gray-600 dark:text-gray-400 italic text-xs">{description}</p>
           <hr className="my-4" />
-          <strong>TLDR:</strong> <p className="text-gray-400 italic text-xs mt-2">{shortDescription}</p>
+          <strong>TLDR:</strong> <p className="text-gray-600 dark:text-gray-400 italic text-xs mt-2">{shortDescription}</p>
         </div>
       </div>
     );
   };
 
   return (
-    <div className="p-4 lg:p-16  space-y-4 text-white">
+    <div className="p-4 lg:p-16  space-y-4 text-black dark:text-white">
       <div className="flex flex-row space-x-2">
-        <Link href="/" className="text-teal-400 hover:underline">
+        <Link href="/" className="text-teal-600 dark:text-teal-400 hover:underline">
           Home
         </Link>
         <p>/</p>
-        <Link href="/glossary" className="text-teal-400 hover:underline">
+        <Link href="/glossary" className="text-teal-600 dark:text-teal-400 hover:underline">
           Glossary
         </Link>
         <p>/</p>
@@ -263,7 +270,7 @@ export default function GlossaryContent() {
         Additionally, to help players and commentators to understand what a character does at a glance, we&apos;ve developed the Archetype System; a method of tagging characters with common gameplay
         mechanics like &quot;fast&quot; or &quot;melee&quot; in order to give a one-glance summary of everything a character entails.
       </p>
-      <hr className="my-6" />
+      <hr className="my-6 border-black dark:border-white" />
       <input
         type="text"
         placeholder="Search Archetypes and Game Terms..."
@@ -273,12 +280,12 @@ export default function GlossaryContent() {
           setGameTermsIsOpen(true);
           setSearchQuery(e.target.value);
         }}
-        className="w-full p-2 bg-gray-700 border-2 border-gray-400 rounded-xl text-white"
+        className="w-full p-2 bg-white dark:bg-gray-700 border-2 border-gray-400 rounded-xl text-black dark:text-white"
       />
       <FilterButtons />
-      <hr className="my-6" />
+      <hr className="my-6 border-black dark:border-white" />
       <div>
-        <h2 className="text-2xl font-bold text-white">Archetypes</h2>
+        <h2 className="text-2xl font-bold text-black dark:text-white">Archetypes</h2>
         <div className="px-4 space-y-4">
           {!searchQuery && (
             <>
@@ -286,11 +293,11 @@ export default function GlossaryContent() {
                 An Archetype - or role, if you prefer - is a label we assign to characters to make them easily identifiable and accessible to new players, to help them understand what a character does
                 without delving into the weeds of minutia.
               </p>
-              <p className="text-gray-400 italic">At present, there are {Object.keys(supplementaryData.archetypes).length} Archetypes to learn about.</p>
+              <p className="text-gray-600 dark:text-gray-400 italic">At present, there are {Object.keys(supplementaryData.archetypes).length} Archetypes to learn about.</p>
             </>
           )}
           {(!searchQuery || filteredArchetypes.length > 0) && (
-            <button className="font-bold text-teal-400 flex items-center gap-2 hover:underline" onClick={() => setArchetypesIsOpen((prevState) => !prevState)}>
+            <button className="font-bold text-teal-600 dark:text-teal-400 flex items-center gap-2 hover:underline" onClick={() => setArchetypesIsOpen((prevState) => !prevState)}>
               <span>Click to {archetypesIsOpen ? "hide" : "expand"}</span>
               {archetypesIsOpen ? <span>&uarr;</span> : <span>&darr;</span>}
             </button>
@@ -305,9 +312,9 @@ export default function GlossaryContent() {
           {searchQuery && filteredArchetypes.length === 0 && <p className="text-gray-400 italic mt-2">No matching Archetypes found.</p>}
         </div>
       </div>
-      <hr className="my-6" />
+      <hr className="my-6 border-black dark:border-white" />
       <div>
-        <h2 className="text-2xl font-bold text-white">Game Terms</h2>
+        <h2 className="text-2xl font-bold text-black dark:text-white">Game Terms</h2>
         <div className="px-4 space-y-4">
           {!searchQuery && (
             <>
@@ -320,24 +327,31 @@ export default function GlossaryContent() {
                 <li>Konpaku are your Stocks.</li>
                 <li>Kikon Moves are your Ultimates.</li>
                 <li>Clashes are failed Kikon Moves, triggered when over 30% Reishi (HP) and guarding.</li>
-                <li>The Fighting Spirit Gauge is your Transformation Gauge and Buff Gauge, filled by landing hits, getting hit and hitting Kikon Moves (Ultimates).</li>
+                <li>
+                  The Fighting Spirit Gauge is your Transformation Gauge and Buff Gauge, filled by landing hits, getting hit and hitting Kikon Moves (Ultimates). It is filled with Fighting Spirit
+                  (FS).
+                </li>
                 <li>Awakenings are a First Transformation that costs Fighting Spirit.</li>
                 <li>Reawakenings are a Second Transformation that also costs Fighting Spirit.</li>
-                <li>Counters are teleporting Counters.</li>
+                <li>Perfect Hohō Counter are teleporting near-frame-perfect dodges.</li>
+                <li>Counters are character-specific fakeouts. They often have a visual indicator and can be beaten by Breakers.</li>
                 <li>Follow-up Hohō is a teleporting combo extender.</li>
-                <li>The Reiatsu Gauge is your Special Bar.</li>
+                <li>The Reiatsu Gauge is your Special Bar. It is filled with Reiatsu (SP).</li>
                 <li>Quick Attacks are Light Attacks that build the Reiatsu Gauge (Special Bar).</li>
-                <li>Flash Attacks are Heavy Attacks that damages Guards.</li>
-                <li>Breakers are Grabs that break Guards.</li>
+                <li>Hakugeki is a smack-back attack that can transition to a Kikon Move if held down.</li>
+                <li>Signature Moves are free special moves.</li>
+                <li>Spiritual Pressure Moves are two additional special moves. The first costs 50 Reiatsu, the second costs 100 Reiatsu.</li>
+                <li>Flash Attacks are Heavy Attacks that does big damage to Guards.</li>
+                <li>Breakers are Grabs that break Guards and cancel Counters.</li>
                 <li>Guards are... Well, Guards. They&apos;re broken by Breakers and Flash Attacks.</li>
-                <li>The Guard Gauge is a resource showing how much more you can Guard.</li>
+                <li>The Guard Gauge is a resource showing how much more you can Guard. Two guesses what it&apos;s filled with..?</li>
               </ul>
-              <p className="text-gray-400 italic">At present, there are {Object.keys(supplementaryData.gameTerms).length} Game Terms to learn about.</p>
+              <p className="text-gray-600 dark:text-gray-400 italic">At present, there are {Object.keys(supplementaryData.gameTerms).length} Game Terms to learn about.</p>
             </>
           )}
           {(!searchQuery || filteredGameTerms.length > 0) && (
             <>
-              <button className="font-bold text-teal-400 flex items-center gap-2 hover:underline" onClick={() => setGameTermsIsOpen((prevState) => !prevState)}>
+              <button className="font-bold text-teal-600 dark:text-teal-400 flex items-center gap-2 hover:underline" onClick={() => setGameTermsIsOpen((prevState) => !prevState)}>
                 <span>Click to {gameTermsIsOpen ? "hide" : "expand"}</span>
                 {gameTermsIsOpen ? <span>&uarr;</span> : <span>&darr;</span>}
               </button>

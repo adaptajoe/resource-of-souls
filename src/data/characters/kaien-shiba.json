@@ -12,7 +12,7 @@
       "characteristics": ["male", "gotei13", "lieutenant"]
     },
     "characterEaseOfUse": 5,
-    "characterArchetype": ["melee", "rushdown", "gauge", "stance", "shortRange", "midRange", "hybridRange", "kidō", "charge"],
+    "characterArchetype": ["melee", "rushdown", "gauge", "stance", "shortRange", "midRange", "hybridRange", "kido", "charge"],
     "characterJpTrailer": "https://www.youtube.com/embed/xAucR6XkRUg?si=w7b_RPCw2s9rkhGf",
     "characterEngTrailer": "https://www.youtube.com/embed/9zfa_244AAc?si=5DyPllwRccbljReS",
     "characterNumber": 32,

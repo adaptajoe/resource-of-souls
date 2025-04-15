@@ -636,9 +636,9 @@
           {
             "id": "awakened-stomach-kikon-move",
             "name": "Awakened Kikon Move 1: Stomach (Estómago)",
-            "description": "Destroys 3 Konpaku. Destroys 4 Konpaku with a Soul Break.",
+            "description": "Destroys 4 Konpaku. Destroys 5 Konpaku with a Soul Break.",
             "input": "(After) AW, KI",
-            "damage": 4,
+            "damage": 5,
             "frames": null,
             "hits": null,
             "hasOfficialName": true,

@@ -2,10 +2,10 @@ import Link from "next/link";
 import { useMemo } from "react";
 
 const ChangelogEntry = ({ version, date, changes }: { version: string; date: string; changes: string[] }) => (
-  <div className="flex flex-col border-t-2 border-gray-400">
-    <strong className="text-lg pt-2">{version}</strong>
-    <p className="text-gray-400 text-sm italic ml-4">{date}</p>
-    <ul className="list-disc ml-8 my-2 text-xs">
+  <div className="flex flex-col border-t border-black dark:border-gray-400">
+    <strong className="text-lg pt-2 text-black dark:text-white">{version}</strong>
+    <p className="text-black dark:text-gray-400 text-sm italic ml-4">{date}</p>
+    <ul className="list-disc ml-8 my-2 text-xs text-gray-500 dark:text-gray-400">
       {changes.map((change, index) => (
         <li key={index}>{change}</li>
       ))}
@@ -17,17 +17,43 @@ export default function Changelog() {
   const resourceOfSoulsChangelog = useMemo(
     () => [
       {
+        version: "v1.1.5.",
+        date: "13/04/2025",
+        changes: [
+          "Implemented Light Mode across the entire site - Resource of Souls is not responsible for any retina damage caused by over-use.",
+          "Sorted out a few Badge Owners.",
+          "Added damage data to Shinji Hirako.",
+          "Added new content to the Stages and Mission Mode pages.",
+        ],
+      },
+      {
+        version: "v1.1.4.",
+        date: "03/04/2025",
+        changes: [
+          "Added unique UI assets specific to characters that have them.",
+          "Added associated Movelist entries expanding on these assets, and their exact purpose and conditions.",
+          "Added animations for Sosuke Aizen.",
+          "Edited the fullscreen video player and how videos are handled on character pages.",
+          "Updated the persistent header on the Home Page.",
+        ],
+      },
+      {
+        version: "v1.1.3.",
+        date: "31/03/2025",
+        changes: ["Added new Badge Owners.", "Added most move animations for Ulquiorra Shifar.", "Added missing Creator credits."],
+      },
+      {
         version: "v1.1.2.",
         date: "29/03/2025",
         changes: [
-          "Added new Badge Owners",
-          "Fixed up Combo data for all characters",
-          "Added hit data and state data for Ichigo Kurosaki and Byakuya Kuchiki",
-          "Added intro / short intro animations to all characters excluding Ichigo Kurosaki (Final Getsugatensho)",
+          "Added new Badge Owners.",
+          "Fixed up Combo data for all characters.",
+          "Added hit data and state data for Ichigo Kurosaki and Byakuya Kuchiki.",
+          "Added intro / short intro animations to all characters excluding Ichigo Kurosaki (Final Getsugatensho).",
           "Added the new Fullscreen Animation Frame Breakdown system",
-          "Added some new Badges",
-          "Fixed move icons",
-          "Added default PC Keybind Notation to Movelists",
+          "Added some new Badges.",
+          "Fixed move icons.",
+          "Added default PC Keybind Notation to Movelists.",
         ],
       },
       {
@@ -57,8 +83,8 @@ export default function Changelog() {
           "Added new assets for the Home and Community Pages",
           "Added a site-wide background used by Bandai to look nicer.",
           "Completely reworked the Community Leaderboard page; now with filterable tournaments, entire Badge lists and more!",
-          "Fixed poor footer views on Mobile",
-          "Fixed a ton of wrong Tournament information",
+          "Fixed poor footer views on Mobile.",
+          "Fixed a ton of wrong Tournament information.",
         ],
       },
       {
@@ -101,7 +127,7 @@ export default function Changelog() {
           "Fixed some incorrect controls in the Movelist.",
           "Added official assets for Kaien Shiba.",
           "Edited some Game Term descriptions for better accuracy.",
-          "Added Official English Terms for some moves for Ichigo Kurosaki (Shikai), Yoruichi Shihoin, Toshiro Hitsugaya, Rukia Kuchiki, Gin Ichimaru and Ulquiorra Shifar",
+          "Added Official English Terms for some moves for Ichigo Kurosaki (Shikai), Yoruichi Shihoin, Toshiro Hitsugaya, Rukia Kuchiki, Gin Ichimaru and Ulquiorra Shifar.",
         ],
       },
       {
@@ -142,7 +168,7 @@ export default function Changelog() {
         date: "28/02/2025",
         changes: [
           "Added the official art for `Coyote Starrk` to his Character Page.",
-          "Began preliminary work on the new ELO-based Ranked Leaderboard",
+          "Began preliminary work on the new ELO-based Ranked Leaderboard.",
           "Added a different icon for `shortRange`, `midRange` and `longRange` based off of the new `Training Stage`; we plan on defining `shortRange` as one white grid square, `midRange` as two white grid squares, and `longRange` as anything covering three or more white grid squares.",
         ],
       },
@@ -150,11 +176,11 @@ export default function Changelog() {
         version: "v1.0.7.",
         date: "27/02/2025",
         changes: [
-          "Added the Alternate Character system to the Character Roster",
+          "Added the Alternate Character system to the Character Roster.",
           "Added `White` as an Alternate Character.",
           "Removed the `GitHub`, `Discord` and `Reddit` links from the main navigation.",
           "Added these links - and more - to the Footer. These are `GitHub`, `Discord`, `Reddit`, `Japanese Site`, `English Site`, `Steam Store Page`, `Xbox Marketplace Page` and `PlayStation Store Page`.",
-          "Updated the Community Ranked Leaderboard",
+          "Updated the Community Ranked Leaderboard.",
           "Reworked the `Creators Page` to accomodate more Creators by using a Tab system.",
           "Added presumptive data for `Aaroniero Aaruruerie` and `Kaien Shiba`.",
           "Fixed a long-standing bug that made it so that Moves with a special character (ō, ū, é, á, etc) could not find their animations, even if they existed.",
@@ -281,13 +307,13 @@ export default function Changelog() {
   );
 
   return (
-    <div className="p-4 lg:p-16 space-y-4 text-white">
+    <div className="p-4 lg:p-16 space-y-4 text-black dark:text-white">
       <div className="flex flex-row space-x-2">
-        <Link href="/" className="text-teal-400 hover:underline">
+        <Link href="/" className="text-teal-600 dark:text-teal-400 hover:underline">
           Home
         </Link>
         <p>/</p>
-        <Link href="/changelog" className="text-teal-400 hover:underline">
+        <Link href="/changelog" className="text-teal-600 dark:text-teal-400 hover:underline">
           Changelog
         </Link>
         <p>/</p>
@@ -295,10 +321,10 @@ export default function Changelog() {
       <h2 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
         <span className="text-red-600">C</span>hangelog
       </h2>
-      <div>View BLEACH - Rebirth of Souls and BLEACH - Resource of Souls&apos; respective changelogs.</div>
-      <hr />
+      <div>View BLEACH - Resource of Souls&apos; changelog. For BLEACH - Rebirth of Souls&apos; changelog, please refer to official Bandai Namco &amp; Tamsoft press releases.</div>
+      <hr className="border-black dark:border-white" />
       <div className="grid grid-cols-1">
-        <div>
+        <div className="bg-white dark:bg-black p-4 rounded-xl">
           <h2 className="text-2xl font-bold mb-2 mt-4 md:mt-0">Resource of Souls</h2>
           {resourceOfSoulsChangelog.map((entry, index) => (
             <ChangelogEntry key={index} version={entry.version} date={entry.date} changes={entry.changes} />

@@ -2,7 +2,7 @@
   "worldOfLivingLeagueBadges": [
     {
       "name": "K.O.N. (King of New York)",
-      "pcOwner": "Pending...",
+      "pcOwner": "@nhmf",
       "psOwner": null,
       "xboxOwner": null,
       "pcLastChallenged": null,
@@ -21,7 +21,7 @@
     {
       "name": "Karakura-Raizer Spirit",
       "pcOwner": null,
-      "psOwner": "Pending...",
+      "psOwner": null,
       "xboxOwner": null,
       "pcLastChallenged": null,
       "psLastChallenged": null,
@@ -75,7 +75,7 @@
     {
       "name": "Xcution Member #001",
       "pcOwner": null,
-      "psOwner": null,
+      "psOwner": "@mlb112",
       "xboxOwner": null,
       "pcLastChallenged": null,
       "psLastChallenged": null,
@@ -186,7 +186,7 @@
       "name": "Squad 0 - Divine General of the West",
       "pcOwner": null,
       "psOwner": null,
-      "xboxOwner": "Pending...",
+      "xboxOwner": null,
       "pcLastChallenged": null,
       "psLastChallenged": null,
       "xboxLastChallenged": null
@@ -265,7 +265,7 @@
     },
     {
       "name": "Squad 4 Captain",
-      "pcOwner": null,
+      "pcOwner": "@lost_young",
       "psOwner": null,
       "xboxOwner": null,
       "pcLastChallenged": null,
@@ -338,7 +338,7 @@
     {
       "name": "Squad 8 Captain",
       "pcOwner": null,
-      "psOwner": "Pending...",
+      "psOwner": "@metsurjken",
       "xboxOwner": null,
       "pcLastChallenged": null,
       "psLastChallenged": null,
@@ -365,7 +365,7 @@
     {
       "name": "Squad 9 Lieutenant",
       "pcOwner": null,
-      "psOwner": null,
+      "psOwner": "@voxelizing",
       "xboxOwner": null,
       "pcLastChallenged": null,
       "psLastChallenged": null,
@@ -448,7 +448,7 @@
     {
       "name": "Queen of Hueco Mundo",
       "pcOwner": null,
-      "psOwner": "Pending...",
+      "psOwner": null,
       "xboxOwner": null,
       "pcLastChallenged": null,
       "psLastChallenged": null,
@@ -528,7 +528,7 @@
     },
     {
       "name": "Sexta Espada",
-      "pcOwner": null,
+      "pcOwner": "@john30688",
       "psOwner": null,
       "xboxOwner": null,
       "pcLastChallenged": null,
@@ -555,7 +555,7 @@
     },
     {
       "name": "Noveno Espada",
-      "pcOwner": null,
+      "pcOwner": "@pesky43",
       "psOwner": null,
       "xboxOwner": null,
       "pcLastChallenged": null,
@@ -577,7 +577,7 @@
       "name": "Quincy King",
       "pcOwner": null,
       "psOwner": null,
-      "xboxOwner": null,
+      "xboxOwner": "@_lukeypookie_",
       "pcLastChallenged": null,
       "psLastChallenged": null,
       "xboxLastChallenged": null
@@ -691,8 +691,8 @@
       "xboxLastChallenged": null
     },
     {
-      "name": "Schrift-bearer: K",
-      "pcOwner": "Pending...",
+      "name": "Schrift-bearer: K - The Kurotenshi - The ??? - The ???",
+      "pcOwner": "@blooddemon321",
       "psOwner": null,
       "xboxOwner": null,
       "pcLastChallenged": null,
@@ -1055,7 +1055,7 @@
       "xboxLastChallenged": null
     },
     {
-      "name": "Number 1 Aizen Sosuke Player",
+      "name": "Number 1 Sosuke Aizen Player",
       "pcOwner": null,
       "psOwner": null,
       "xboxOwner": null,
@@ -1127,7 +1127,7 @@
       "xboxLastChallenged": null
     },
     {
-      "name": "Number 1 Nnoitra Gilga Player",
+      "name": "Number 1 Nnoitora Gilga Player",
       "pcOwner": null,
       "psOwner": null,
       "xboxOwner": null,
@@ -1136,7 +1136,7 @@
       "xboxLastChallenged": null
     },
     {
-      "name": "Number 1 Tier Harribel Player",
+      "name": "Number 1 Tier Halibel Player",
       "pcOwner": null,
       "psOwner": null,
       "xboxOwner": null,
@@ -1145,7 +1145,7 @@
       "xboxLastChallenged": null
     },
     {
-      "name": "Number 1 Coyote Starrk Player",
+      "name": "Number 1 Coyote Stark Player",
       "pcOwner": null,
       "psOwner": null,
       "xboxOwner": null,
@@ -1155,6 +1155,15 @@
     },
     {
       "name": "Number 1 Kaien Shiba Player",
+      "pcOwner": null,
+      "psOwner": null,
+      "xboxOwner": null,
+      "pcLastChallenged": null,
+      "psLastChallenged": null,
+      "xboxLastChallenged": null
+    },
+    {
+      "name": "Number 1 Ichigo Kurosaki (Final Getsugatensho) Player",
       "pcOwner": null,
       "psOwner": null,
       "xboxOwner": null,

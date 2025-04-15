@@ -4,7 +4,7 @@
     "id": "rukia-kuchiki",
     "race": "shinigami",
     "quote": "I know the loneliness of being a prisoner. I know the joy you feel when your friends come to rescue you and the fear of them being injured and defeated.",
-    "description": "An unseated Shinigami belonging to Squad 13; under the tutelage of Jushiro Ukitake and Kaien Shiba, she established herself as a permanent member of her Squad. One day, a fateful encounter with a certain orange-haired boy changes her life forever... Rukia is a Balanced character that excels in both Short Range Melee combat and Charge-compatible Kidō-based attacks. Her versatile moveset allows her to adapt to various situations while maintaining consistent pressure. With balanced stats across Power, Speed, Range, and Technique - but slightly lower Defense - Rukia is well-rounded but must be careful not to take too many direct hits.",
+    "description": "An unseated Shinigami belonging to Squad 13; under the tutelage of Jushiro Ukitake and Kaien Shiba, she established herself as a permanent member of her Squad. One day, a fateful encounter with a certain orange-haired boy changes her life forever... Rukia is a Balanced character that excels in both Short Range Melee combat and Charge-compatible Kido-based attacks. Her versatile moveset allows her to adapt to various situations while maintaining consistent pressure. With balanced stats across Power, Speed, Range, and Technique - but slightly lower Defense - Rukia is well-rounded but must be careful not to take too many direct hits.",
     "tags": {
       "affiliations": ["soulSociety", "shinigami", "squad13"],
       "relationships": ["friend"],
@@ -12,7 +12,7 @@
       "characteristics": ["female", "unseatedOfficer", "gotei13"]
     },
     "characterEaseOfUse": 4,
-    "characterArchetype": ["midRange", "melee", "charge", "kidō", "balanced"],
+    "characterArchetype": ["midRange", "melee", "charge", "kido", "balanced"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=pq-ECx9dnhg&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=38",
     "characterEngTrailer": "https://www.youtube.com/watch?v=JHod25mzWgY&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=34",
     "characterNumber": 2,

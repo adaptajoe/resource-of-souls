@@ -272,7 +272,7 @@
         ],
         "awakened": [
           {
-            "id": "exclusive-ability-aura-gauge",
+            "id": "exclusive-ability-awakened-aura-gauge",
             "name": "Exclusive Ability: Aura Gauge",
             "description": "Personal ability of Halibel. Landing a hit on the opponent fills the Aura Gauge, and when it's more than half full you enter a strengthened state. In this state, the power and number of hits for each move are increased. Reduced over time for a greater amount the more Reiatsu you have.",
             "input": null,

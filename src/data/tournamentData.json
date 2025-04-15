@@ -15,7 +15,7 @@
     {
       "tournamentName": "Warfare of Souls",
       "tournamentHostName": "john30688",
-      "tournamentDate": "03/29/2025",
+      "tournamentDate": "12/31/2025",
       "tournamentStartTime": null,
       "tournamentRegion": "ANY",
       "tournamentLink": "https://challonge.com/6kqo6q99",
@@ -35,30 +35,6 @@
       "prizePool": null,
       "assignedBadge": "Karakura-Raizer Spirit",
       "notes": null
-    },
-    {
-      "tournamentName": "Bleach Rebirth of Souls NA Tournament",
-      "tournamentHostName": "Quyon",
-      "tournamentDate": "03/29/2025",
-      "tournamentStartTime": "2:30PM UTC+00:00",
-      "tournamentRegion": "NA",
-      "tournamentLink": "https://www.start.gg/tournament/bleach-rebirth-of-souls-na-tournament/details",
-      "platform": "PLAYSTATION",
-      "prizePool": "$150 USD",
-      "assignedBadge": "Squad 8 Captain",
-      "notes": null
-    },
-    {
-      "tournamentName": "Memories of $ouls",
-      "tournamentHostName": "KaneGz",
-      "tournamentDate": "03/29/2025",
-      "tournamentStartTime": "12:30PM PST",
-      "tournamentRegion": "ANY",
-      "tournamentLink": "https://www.start.gg/tournament/memories-of-ouls/events/memories-of-ouls-100-pirze/brackets/1915424/2816531",
-      "platform": "PC",
-      "prizePool": null,
-      "assignedBadge": "Schrift-bearer: K",
-      "notes": "Badge winner may add one name to the 'K' Schrift"
     }
   ]
 }

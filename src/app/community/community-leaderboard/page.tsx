@@ -188,7 +188,7 @@ export default function CommunityLeaderboard() {
     };
 
     return (
-      <div className="flex flex-col gap-4 mb-8">
+      <div className="gap-4 mb-8 grid grid-cols-2">
         {topCompetitors.map(([owner, badges]) => {
           const styles = getRankStyles(badges.length);
           const stars = generateRandomStars(20);
@@ -233,7 +233,7 @@ export default function CommunityLeaderboard() {
 
   const LeagueChampions = () => {
     return (
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 text-white gap-4">
         {Object.entries(tables).map(([leagueName, badges]) => {
           const ownerCounts = getLeagueOwnerBadgeCounts(badges);
 
@@ -345,7 +345,7 @@ export default function CommunityLeaderboard() {
     const uniqueRegions = Array.from(new Set(tournaments.map((tournament) => tournament.tournamentRegion).filter(Boolean)));
 
     return (
-      <div className="bg-black">
+      <div className="bg-white dark:bg-black">
         <p>Simply click a Tournament card below to go to that Tournament&apos;s sign-up page.</p>
         <p className="mt-4">
           Currently, there are <span className="font-bebasFont text-xl text-red-600">{tournaments.length}</span> Tournaments planned.
@@ -355,7 +355,7 @@ export default function CommunityLeaderboard() {
           <button
             onClick={() => handleFilterChange("ALL")}
             className={`mr-2 px-3 py-1 rounded flex transition-colors items-center font-black gap-1 ${
-              filter === "ALL" ? "bg-teal-400 text-black" : "bg-gray-800 text-gray-300 hover:bg-red-600 hover:text-black"
+              filter === "ALL" ? "bg-teal-400 text-black" : "bg-gray-800 text-white hover:bg-red-600 hover:text-black"
             }`}
           >
             All
@@ -363,7 +363,7 @@ export default function CommunityLeaderboard() {
           <button
             onClick={() => handleFilterChange("PC")}
             className={`mr-2 px-3 py-1 rounded flex transition-colors items-center font-black gap-1 ${
-              filter === "PC" ? "bg-teal-400 text-black" : "bg-gray-800 text-gray-300 hover:bg-red-600 hover:text-black"
+              filter === "PC" ? "bg-teal-400 text-black" : "bg-gray-800 text-white hover:bg-red-600 hover:text-black"
             }`}
           >
             PC
@@ -371,7 +371,7 @@ export default function CommunityLeaderboard() {
           <button
             onClick={() => handleFilterChange("PLAYSTATION")}
             className={`mr-2 px-3 py-1 rounded flex transition-colors items-center font-black gap-1 ${
-              filter === "PLAYSTATION" ? "bg-teal-400 text-black" : "bg-gray-800 text-gray-300 hover:bg-red-600 hover:text-black"
+              filter === "PLAYSTATION" ? "bg-teal-400 text-black" : "bg-gray-800 text-white hover:bg-red-600 hover:text-black"
             }`}
           >
             PlayStation
@@ -379,7 +379,7 @@ export default function CommunityLeaderboard() {
           <button
             onClick={() => handleFilterChange("XBOX")}
             className={`mr-2 px-3 py-1 rounded flex transition-colors items-center font-black gap-1 ${
-              filter === "XBOX" ? "bg-teal-400 text-black" : "bg-gray-800 text-gray-300 hover:bg-red-600 hover:text-black"
+              filter === "XBOX" ? "bg-teal-400 text-black" : "bg-gray-800 text-white hover:bg-red-600 hover:text-black"
             }`}
           >
             Xbox
@@ -387,7 +387,7 @@ export default function CommunityLeaderboard() {
           <button
             onClick={() => handleFilterChange("PRIZE_POOL")}
             className={`mr-2 px-3 py-1 rounded flex transition-colors items-center font-black gap-1 ${
-              filter === "PRIZE_POOL" ? "bg-teal-400 text-black" : "bg-gray-800 text-gray-300 hover:bg-red-600 hover:text-black"
+              filter === "PRIZE_POOL" ? "bg-teal-400 text-black" : "bg-gray-800 text-white hover:bg-red-600 hover:text-black"
             }`}
           >
             Prize Pool
@@ -397,7 +397,7 @@ export default function CommunityLeaderboard() {
               key={region}
               onClick={() => handleFilterChange(region!)}
               className={`mr-2 px-3 py-1 rounded flex transition-colors items-center font-black gap-1 ${
-                filter === region ? "bg-teal-400 text-black" : "bg-gray-800 text-gray-300 hover:bg-red-600 hover:text-black"
+                filter === region ? "bg-teal-400 text-black" : "bg-gray-800 text-white hover:bg-red-600 hover:text-black"
               }`}
             >
               {region}
@@ -412,7 +412,7 @@ export default function CommunityLeaderboard() {
           {filteredTournaments.map((tournament, index) => (
             <Link
               key={index}
-              className="hover:bg-gray-800 transition-colors flex flex-row w-full border-2 border-gray-400 hover:border-red-600 rounded-xl p-1 my-4 items-center cursor-pointer text-gray-400 overflow-x-scroll"
+              className="hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors flex flex-row w-full border-2 border-gray-400 hover:border-red-600 rounded-xl p-1 my-4 items-center cursor-pointer text-gray-400 overflow-x-scroll"
               href={tournament.tournamentLink}
             >
               <div className="size-12 min-w-12 text-center p-1 ml-4 bg-black border-2 border-gray-400 rounded-full">
@@ -421,28 +421,30 @@ export default function CommunityLeaderboard() {
                 {tournament.platform === "XBOX" && <Image height={50} width={50} src="/assets/site-assets/xbox.png" alt="Xbox" />}
               </div>
               <div className="mx-8 flex flex-col items-start w-fit min-w-40 md:w-96">
-                <p className="text-amber-400 font-bebasFont tracking-wider text-base md:text-xl">{tournament.tournamentName}</p>
-                <p className="text-xs md:text-base">
-                  Hosted by: <span className="text-teal-400">@{tournament.tournamentHostName}</span>
+                <p className="text-black dark:text-white font-bebasFont tracking-wider text-base md:text-xl">{tournament.tournamentName}</p>
+                <p className="text-xs italic text-gray-600 dark:text-gray-400">
+                  Hosted by: <span className="text-teal-600 dark:text-teal-400">@{tournament.tournamentHostName}</span>
                 </p>
               </div>
-              <p className="mx-8 w-fit  md:w-24 text-xs md:text-base text-center">
-                Region: {tournament.tournamentRegion ? <span className="text-amber-400">{tournament.tournamentRegion}</span> : "??"}
+              <p className="mx-8 w-fit text-gray-600 dark:text-gray-400 md:w-24 text-xs text-center">
+                Region: {tournament.tournamentRegion ? <span className="font-black text-teal-600 dark:text-teal-400">{tournament.tournamentRegion}</span> : "??"}
               </p>
-              <p className="mx-8 w-fit md:w-24 text-xs md:text-base text-center">{tournament.prizePool ? <span className="text-amber-400">{tournament.prizePool}</span> : "No Cash Prize"}</p>
-              <div className="mx-8 w-fit md:w-40 text-center flex flex-col items-center min-w-64">
-                <p className="text-xs md:text-sm">Badge to Earn:</p>
-                <p className="text-amber-400 font-bebasFont tracking-wider text-base md:text-xl text-center">{tournament.assignedBadge}</p>
+              <p className="mx-8 w-fit text-gray-600 dark:text-gray-400 md:w-24 text-xs text-center">
+                {tournament.prizePool ? <span className="text-amber-400">{tournament.prizePool}</span> : "No Cash Prize"}
+              </p>
+              <div className="mx-8 w-fit md:w-40 text-center flex flex-col items-center min-w-64 text-gray-600 dark:text-gray-400">
+                <p className="text-xs">Badge to Earn:</p>
+                <p className="text-red-600 font-bebasFont tracking-wider text-base md:text-xl text-center">{tournament.assignedBadge}</p>
               </div>
-              <div className="mx-8 w-fit md:w-40 min-w-64 text-center flex flex-col items-center">
-                <p className=" text-xs md:text-sm">Tournament Date:</p>
-                <p className="text-amber-400 font-bebasFont tracking-wider text-base md:text-xl text-center">
+              <div className="mx-8 w-fit md:w-40 min-w-64 text-center flex flex-col items-center text-gray-600 dark:text-gray-400">
+                <p className=" text-xs">Tournament Date:</p>
+                <p className="text-red-600 font-bebasFont tracking-wider text-base md:text-xl text-center">
                   {tournament.tournamentDate !== null ? tournament.tournamentDate.toDateString() : "No date yet"}
                 </p>
-                <p className="text-amber-400 font-bebasFont tracking-wider text-base md:text-xl text-center">{tournament.tournamentStartTime}</p>
+                <p className="text-red-600 font-bebasFont tracking-wider text-base md:text-xl text-center">{tournament.tournamentStartTime}</p>
               </div>
               <div>
-                <p className="mx-8 w-40 text-xs">{tournament.notes ? <span className="text-amber-400">{tournament.notes}</span> : "No notes"}</p>
+                <p className="mx-8 w-40 text-xs text-gray-600 dark:text-gray-400">{tournament.notes ? <span className="text-red-600">{tournament.notes}</span> : "No notes"}</p>
               </div>
             </Link>
           ))}
@@ -452,10 +454,10 @@ export default function CommunityLeaderboard() {
   };
 
   const BadgeTable = ({ badges }: { badges: IBadge[] }) => (
-    <div className="bg-black font-bebasFont text-sm md:text-xl tracking-wider">
+    <div className="bg-white dark:bg-black font-bebasFont text-sm md:text-xl tracking-wider">
       <table className="w-full">
         <thead>
-          <tr className="bg-black text-teal-400">
+          <tr className="bg-white dark:bg-black text-teal-400">
             <th className="border p-2 text-left">Badge</th>
             <th className="border p-2 text-left text-purple-600">PC Owner</th>
             <th className="border p-2 text-left text-purple-600">Last Challenged (PC)</th>
@@ -467,8 +469,8 @@ export default function CommunityLeaderboard() {
         </thead>
         <tbody>
           {badges.map((badge, index) => (
-            <tr key={index} className="italic hover:bg-gray-700 transition-colors">
-              <td className="border p-2 text-amber-400">{badge.name}</td>
+            <tr key={index} className="italic hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+              <td className="border p-2 text-red-600">{badge.name}</td>
               <td className={`border p-2 ${badge.pcOwner === null ? "text-gray-600" : "text-white"}`}>{badge.pcOwner || "Unawarded"}</td>
               <td className={`border p-2 ${badge.pcLastChallenged === null ? "text-gray-600" : "text-white"}`}>{calculateDaysSince(badge.pcLastChallenged)}</td>
               <td className={`border p-2 ${badge.psOwner === null ? "text-gray-600" : "text-white"}`}>{badge.psOwner || "Unawarded"}</td>
@@ -484,18 +486,18 @@ export default function CommunityLeaderboard() {
 
   // Main return statement
   return (
-    <div className="p-4 lg:p-16 space-y-4 text-white">
+    <div className="p-4 lg:p-16 space-y-4 text-black dark:text-white">
       <div className="flex flex-row space-x-2">
         <Link href="/" passHref>
-          <p className="text-teal-400 hover:underline">Home</p>
+          <p className="text-teal-600 dark:text-teal-400  hover:underline">Home</p>
         </Link>
         <p>/</p>
         <Link href="/community" passHref>
-          <p className="text-teal-400 hover:underline">Community</p>
+          <p className="text-teal-600 dark:text-teal-400  hover:underline">Community</p>
         </Link>
         <p>/</p>
         <Link href="/community-leaderboard" passHref>
-          <p className="text-teal-400 hover:underline">Community Leaderboard</p>
+          <p className="text-teal-600 dark:text-teal-400 hover:underline">Community Leaderboard</p>
         </Link>
         <p>/</p>
       </div>
@@ -513,10 +515,10 @@ export default function CommunityLeaderboard() {
                 </p>
               </div>
               <div>
-                <h2 className="text-2xl md:text-3xl font-black border-l-8 border-teal-400 pl-4 mb-4 mt-4 md:mt-0">
-                  <span className="text-teal-400">R</span>ules
+                <h2 className="text-2xl md:text-3xl font-black border-l-8 border-teal-600 dark:border-teal-400 pl-4 mb-4 mt-4 md:mt-0">
+                  <span className="text-teal-600 dark:text-teal-400 ">R</span>ules
                 </h2>
-                <button className="font-bold text-teal-400 flex items-center gap-2 hover:underline" onClick={() => setExpandRules((prevState) => !prevState)}>
+                <button className="font-bold text-teal-600 dark:text-teal-400 flex items-center gap-2 hover:underline" onClick={() => setExpandRules((prevState) => !prevState)}>
                   <span>Click to {expandRules ? "hide" : "expand"}</span>
                   {expandRules ? <span>&uarr;</span> : <span>&darr;</span>}
                 </button>
@@ -532,7 +534,7 @@ export default function CommunityLeaderboard() {
                       &quot;Awarded Badges&quot; can be Dueled for in our Discord; to do this, join our Discord, and propose a Duel to the Discord username listed as the Badge Owner. After a Duel is
                       proposed, it becomes Unawarded temporarily. Duels are a set of three matches, and the player who wins two out of three matches wins the Badge.
                     </li>
-                    <li className="text-amber-400">We are currently figuring out the rules surrounding redueling and duel rejection limitations.</li>
+                    <li className="text-teal-600 dark:text-teal-400">We are currently figuring out the rules surrounding redueling and duel rejection limitations.</li>
                     <li>
                       To heighten the stakes, Badge Owners can wager multiple Badges. To do this, mention that you wish to Wager in the Duel request. The number of Badges wagered must be equal between
                       opponents (For instance, Player X wagers 2 Badges; this means if Player Y accepts, they must also wager 2 Badges and no more or less).
@@ -554,27 +556,30 @@ export default function CommunityLeaderboard() {
             </div>
           </div>
         </div>
-        <hr />
+        <hr className="my-6 border-black dark:border-white" />
         <div className="col-span-1 xl:col-span-2 my-8">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div>
               <h2 className="text-2xl md:text-3xl font-black pl-4 border-l-8 border-red-600 mb-8">
                 <span className="text-red-600">A</span>ctive Tournaments
               </h2>
-              <button className="font-bold text-teal-400 flex items-center gap-2 mb-4 hover:underline" onClick={() => setExpandActiveTournaments((prevState) => !prevState)}>
+              <button className="font-bold text-teal-600 dark:text-teal-400 flex items-center gap-2 mb-4 hover:underline" onClick={() => setExpandActiveTournaments((prevState) => !prevState)}>
                 <span>Click to {expandActiveTournaments ? "hide" : "expand"}</span>
                 {expandActiveTournaments ? <span>&uarr;</span> : <span>&darr;</span>}
               </button>
             </div>
             <div>
-              <Link href="https://forms.gle/xZ5dw1Ly4G2bFa5n9" className="font-bebasFont tracking-wider bg-gray-700 p-4 rounded-xl text-xl hover:bg-red-600 hover:text-black transition-colors">
+              <Link
+                href="https://forms.gle/xZ5dw1Ly4G2bFa5n9"
+                className="font-bebasFont tracking-wider bg-gray-700 p-4 rounded-xl text-xl hover:bg-red-600 hover:text-black text-white transition-colors"
+              >
                 Submit a new Tournament
               </Link>
             </div>
           </div>
           {!expandActiveTournaments ? null : <TournamentTable tournaments={tournamentInfo} />}
         </div>
-        <hr />
+        <hr className="my-6 border-black dark:border-white" />
         <div className="grid grid-cols-1 md:grid-cols-2 space-x-0 md:space-x-8 mt-8">
           <div>
             <h2 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4 mb-8">
@@ -583,18 +588,18 @@ export default function CommunityLeaderboard() {
             <BadgeChampions />
           </div>
           <div>
-            <h2 className="text-2xl md:text-3xl font-black border-l-8 border-teal-400 pl-4 mb-8">
-              <span className="text-teal-400">L</span>eague Champions
+            <h2 className="text-2xl md:text-3xl font-black border-l-8 border-teal-600 dark:border-teal-400 pl-4 mb-8">
+              <span className="text-teal-600 dark:text-teal-400">L</span>eague Champions
             </h2>
             <LeagueChampions />
           </div>
         </div>
-        <hr className="my-6" />
+        <hr className="my-6 border-black dark:border-white" />
         <div className="col-span-1">
-          <h2 className="text-2xl md:text-3xl font-black border-l-8 border-teal-400 pl-4 mb-6">
-            <span className="text-teal-400">B</span>adges
+          <h2 className="text-2xl md:text-3xl font-black border-l-8 border-teal-600 dark:border-teal-400 pl-4 mb-6">
+            <span className="text-teal-600 dark:text-teal-400">B</span>adges
           </h2>
-          <button className="font-bold text-teal-400 flex items-center gap-2 hover:underline" onClick={() => setExpandBadgeTable((prevState) => !prevState)}>
+          <button className="font-bold text-teal-600 dark:text-teal-400 flex items-center gap-2 hover:underline" onClick={() => setExpandBadgeTable((prevState) => !prevState)}>
             <span>Click to {expandBadgeTable ? "hide" : "expand"}</span>
             {expandBadgeTable ? <span>&uarr;</span> : <span>&darr;</span>}
           </button>
@@ -604,8 +609,8 @@ export default function CommunityLeaderboard() {
                 <button
                   onClick={() => setActiveTable("All Leagues")}
                   disabled={activeTable === "All Leagues"}
-                  className={`px-4 text-xl font-bebasFont font-black py-2 rounded-lg transition-colors ${
-                    activeTable === "All Leagues" ? "bg-teal-400 text-black cursor-not-allowed" : "bg-gray-800 hover:bg-red-600"
+                  className={`px-4 text-xl text-white font-bebasFont font-black py-2 rounded-lg transition-colors ${
+                    activeTable === "All Leagues" ? "bg-teal-600 text-black cursor-not-allowed" : "bg-gray-700 text-black hover:bg-red-600 hover:text-black"
                   }`}
                 >
                   All Leagues
@@ -616,7 +621,7 @@ export default function CommunityLeaderboard() {
                     onClick={() => setActiveTable(tableName)}
                     disabled={activeTable === tableName}
                     className={`px-4 text-xl font-bebasFont font-black py-2 rounded-lg transition-colors ${
-                      activeTable === tableName ? "bg-teal-400 text-black cursor-not-allowed" : "bg-gray-800 hover:bg-red-600"
+                      activeTable === tableName ? "bg-teal-600 text-white cursor-not-allowed" : "bg-gray-800 text-white hover:bg-red-600 hover:text-black"
                     }`}
                   >
                     {tableName}

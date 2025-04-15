@@ -85,6 +85,21 @@ export default function CharacterAssetsWrapper({ character, slug, animations, ha
         files: [`${slug}-dlc-outfit-3.png`],
       },
       {
+        name: "Character Fullbody DLC Outfit 4",
+        path: `character-fullbody/${slug}`,
+        files: [`${slug}-dlc-outfit-4.png`],
+      },
+      {
+        name: "Character Fullbody Render",
+        path: `character-fullbody/${slug}`,
+        files: [`${slug}-asset-outfit-1.png`],
+      },
+      {
+        name: "Character Unused Fullbody Render",
+        path: `character-fullbody/${slug}`,
+        files: [`${slug}-unused-outfit-1.png`],
+      },
+      {
         name: "Character Hero (Desktop Wallpaper)",
         path: "character-hero",
         files: [`${slug}-hero.png`],
@@ -233,24 +248,38 @@ export default function CharacterAssetsWrapper({ character, slug, animations, ha
   };
 
   return (
-    <div className="border-2 bg-black border-gray-400 rounded-xl mt-6 p-4">
+    <div className="border-2 bg-white dark:bg-black border-gray-400 rounded-xl mt-6 p-4">
       <div className="flex border-b border-gray-600 mb-4 overflow-x-auto">
         <button
-          className={`px-4 py-2 font-medium ${activeTab === "animations" ? "text-teal-400 border-b-2 border-teal-400" : "text-gray-400 hover:text-white"}`}
+          className={`px-4 py-2 font-medium ${
+            activeTab === "animations" ? "text-teal-600 dark:text-teal-400 border-b-2 border-teal-400" : "text-black dark:text-gray-400  hover:text-red-600 transition-colors"
+          }`}
           onClick={() => setActiveTab("animations")}
         >
           Animations
         </button>
-        <button className={`px-4 py-2 font-medium ${activeTab === "outfits" ? "text-teal-400 border-b-2 border-teal-400" : "text-gray-400 hover:text-white"}`} onClick={() => setActiveTab("outfits")}>
+        <button
+          className={`px-4 py-2 font-medium ${
+            activeTab === "outfits" ? "text-teal-400 border-b-2 border-teal-600 dark:border-teal-400" : "text-gray-600 dark:text-gray-400 hover:text-red-600 transition-colors"
+          }`}
+          onClick={() => setActiveTab("outfits")}
+        >
           Outfits
         </button>
         <button
-          className={`px-4 py-2 font-medium ${activeTab === "trailers" ? "text-teal-400 border-b-2 border-teal-400" : "text-gray-400 hover:text-white"}`}
+          className={`px-4 py-2 font-medium ${
+            activeTab === "trailers" ? "text-teal-400 border-b-2 border-teal-600 dark:border-teal-400" : "text-gray-600 dark:text-gray-400 hover:text-red-600 transition-colors"
+          }`}
           onClick={() => setActiveTab("trailers")}
         >
           Trailers
         </button>
-        <button className={`px-4 py-2 font-medium ${activeTab === "imagery" ? "text-teal-400 border-b-2 border-teal-400" : "text-gray-400 hover:text-white"}`} onClick={() => setActiveTab("imagery")}>
+        <button
+          className={`px-4 py-2 font-medium ${
+            activeTab === "imagery" ? "text-teal-400 border-b-2 border-teal-600 dark:border-teal-400" : "text-gray-600 dark:text-gray-400 hover:text-red-600 transition-colors"
+          }`}
+          onClick={() => setActiveTab("imagery")}
+        >
           Imagery
         </button>
       </div>
@@ -261,7 +290,7 @@ export default function CharacterAssetsWrapper({ character, slug, animations, ha
             <CharacterAnimationsWrapper animations={animations} slug={slug} />
           ) : (
             <div className="w-full p-4">
-              <p className="text-gray-400">No animations available for this character.</p>
+              <p className="text-gray-600 dark:text-gray-400">No animations available for this character.</p>
             </div>
           ))}
 
@@ -273,12 +302,16 @@ export default function CharacterAssetsWrapper({ character, slug, animations, ha
           <div className="space-y-6">
             <div className="flex flex-wrap justify-between items-center gap-3">
               <div className="space-x-2">
-                <button onClick={selectAllAssets} className="bg-gray-700 hover:bg-red-600 hover:text-black p-2 rounded-xl transition-colors font-bebasFont text-xl" disabled={loadedAssets.size === 0}>
+                <button
+                  onClick={selectAllAssets}
+                  className="bg-gray-700 hover:bg-red-600 text-white hover:text-black p-2 rounded-xl transition-colors font-bebasFont text-xl"
+                  disabled={loadedAssets.size === 0}
+                >
                   Select All Assets ({loadedAssets.size})
                 </button>
                 <button
                   onClick={deselectAllAssets}
-                  className="bg-gray-700 hover:bg-red-600 hover:text-black p-2 rounded-xl transition-colors font-bebasFont text-xl disabled:bg-gray-900 disabled:hover:text-white disabled:cursor-not-allowed"
+                  className="bg-gray-700 hover:bg-red-600 hover:text-black p-2 rounded-xl text-white transition-colors font-bebasFont text-xl disabled:bg-gray-400 disabled:hover:text-white disabled:cursor-not-allowed"
                   disabled={selectedAssets.size === 0}
                 >
                   Deselect All Assets
@@ -302,7 +335,7 @@ export default function CharacterAssetsWrapper({ character, slug, animations, ha
                   onClick={downloadSelectedAssets}
                   disabled={selectedAssets.size === 0 || isLoading}
                   className={`px-4 py-2 rounded-md text-white ${
-                    selectedAssets.size === 0 || isLoading ? "bg-gray-900 cursor-not-allowed" : "bg-gray-700 hover:bg-red-600 hover:text-black"
+                    selectedAssets.size === 0 || isLoading ? "bg-gray-400 cursor-not-allowed" : "bg-gray-700 hover:bg-red-600 hover:text-black"
                   } transition-colors font-bebasFont text-xl`}
                 >
                   {isLoading ? "Preparing Download..." : `Download Selected Assets (${selectedAssets.size})`}
@@ -331,7 +364,7 @@ export default function CharacterAssetsWrapper({ character, slug, animations, ha
                       </div>
                       <div className="flex items-center">
                         <input type="checkbox" checked={selectedAssets.has(assetPath)} onChange={() => toggleAsset(assetPath)} className="mr-2 h-4 w-4 accent-teal-500" />
-                        <span className="text-sm text-gray-300 truncate">{category.name}</span>
+                        <span className="text-sm text-gray-600 dark:text-gray-300 truncate">{category.name}</span>
                       </div>
                     </div>
                   );

@@ -4,7 +4,7 @@
     "id": "rangiku-matsumoto",
     "race": "shinigami",
     "quote": "Don't apologize. You had your reasons, I'm sure. I don't really care about what they were. I just wish you would've had a little more faith in me.",
-    "description": "Lieutenant of Squad 10, serving under Captain Hitsugaya. Despite her carefree attitude and love of alcohol, Rangiku is a capable officer who hides deep emotional scars beneath her cheerful exterior. Rangiku is a Hybrid Range fighter who combines Melee combat with Ranged attacks and Kidō. Her Zoner playstyle allows her to control space and keep opponents where she wants them with her unique ash-based vortex abilities. With high Speed and Range, moderate Power, but lower Defense and Technique, Rangiku excels at maintaining distance while harassing opponents with her versatile moveset.",
+    "description": "Lieutenant of Squad 10, serving under Captain Hitsugaya. Despite her carefree attitude and love of alcohol, Rangiku is a capable officer who hides deep emotional scars beneath her cheerful exterior. Rangiku is a Hybrid Range fighter who combines Melee combat with Ranged attacks and Kido. Her Zoner playstyle allows her to control space and keep opponents where she wants them with her unique ash-based vortex abilities. With high Speed and Range, moderate Power, but lower Defense and Technique, Rangiku excels at maintaining distance while harassing opponents with her versatile moveset.",
     "tags": {
       "affiliations": ["soulSociety", "shinigami", "squad10"],
       "relationships": ["neutral"],
@@ -12,7 +12,7 @@
       "characteristics": ["female", "lieutenant", "gotei13"]
     },
     "characterEaseOfUse": 2,
-    "characterArchetype": ["hybridRange", "midRange", "melee", "fast", "ranged", "kidō", "zoner"],
+    "characterArchetype": ["hybridRange", "midRange", "melee", "fast", "ranged", "kido", "zoner"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=hq63eNoSvi4&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=31",
     "characterEngTrailer": "https://www.youtube.com/watch?v=LDQIPXcVgYU&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=24",
     "characterNumber": 9,

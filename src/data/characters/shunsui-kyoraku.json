@@ -12,7 +12,7 @@
       "characteristics": ["male", "captain", "gotei13"]
     },
     "characterEaseOfUse": 3,
-    "characterArchetype": ["midRange", "melee", "balanced", "ranged", "gimmick", "charge", "gambler"],
+    "characterArchetype": ["midRange", "melee", "balanced", "ranged", "gimmick", "charge", "gambler", "kido"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=PCnLPmAac-o&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=6",
     "characterEngTrailer": "https://www.youtube.com/watch?v=dMAmNAWY7z0&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=5",
     "characterNumber": 25,

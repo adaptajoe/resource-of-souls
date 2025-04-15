@@ -100,7 +100,7 @@ const GameTermTooltip = memo(function GameTermTooltip({ term, display, className
       <Link
         href={`/glossary#${term.id}`}
         className="
-          text-teal-400 hover:underline cursor-pointer
+          text-teal-600 dark:text-teal-400 hover:underline cursor-pointer
           focus:outline-none focus:ring-2 focus:ring-teal-400 rounded
           transition-colors duration-200
         "

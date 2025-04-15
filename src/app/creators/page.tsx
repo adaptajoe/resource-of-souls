@@ -12,6 +12,11 @@ type Creator = {
 
 const creators: Creator[] = [
   {
+    name: "ShonenGameZ",
+    description: `The Best of Three Worlds, A Japanese Gaming Paradise! ShonenGamez provides anime game walkthroughs, guides, combo videos, and much more! They also have the latest gaming news and translated scans on their website! You can find all the links on their YouTube profile!`,
+    videoSrc: "https://www.youtube.com/embed/qgeVVGvLmGM?si=Qt4bvu2MSAz9DlXL",
+  },
+  {
     name: "WeebsGuild",
     description: `Introducing the Weebs Guild channel! The home of the popular Bleach Boys podcast, their channel and Discord server is home to many loyal BLEACH fans and they aim to create a fun
     and enduring BLEACH - Rebirth of Souls community. With planned tournaments, special game modes, and more! If you're looking for a place filled with BLEACH fans, this is it. Every
@@ -59,13 +64,13 @@ export default function Creators() {
   const [selectedCreator, setSelectedCreator] = useState<Creator>(creators[0]);
 
   return (
-    <div className="p-4 lg:p-16 space-y-4 text-white">
+    <div className="p-4 lg:p-16 space-y-4 text-black dark:text-white">
       <div className="flex flex-row space-x-2">
-        <Link href="/" className="text-teal-400 hover:underline">
+        <Link href="/" className="text-teal-600 dark:text-teal-400 hover:underline">
           Home
         </Link>
         <p>/</p>
-        <Link href="/creators" className="text-teal-400 hover:underline">
+        <Link href="/creators" className="text-teal-600 dark:text-teal-400 hover:underline">
           Creators
         </Link>
         <p>/</p>
@@ -76,10 +81,10 @@ export default function Creators() {
       <p>
         Find high-quality BLEACH - Rebirth of Souls content creators and other affiliated<span className="text-red-600">*</span> programs and sites here!
       </p>
-      <p className="text-sm italic text-gray-400 mb-6">
+      <p className="text-sm italic text-gray-600 dark:text-gray-400 mb-6">
         (<span className="text-red-600">*</span>Affiliated content creators, programs and sites are not paid for affiliation, nor have they paid to be listed.)
       </p>
-      <hr className="my-6" />
+      <hr className="my-6 border-black dark:border-white" />
 
       <div className="flex flex-col sm:flex-row overflow-x-scroll mb-6">
         {creators.map((creator) => (
@@ -87,21 +92,21 @@ export default function Creators() {
             key={creator.name}
             onClick={() => setSelectedCreator(creator)}
             className={`px-4 py-2 m-1 rounded font-bebasFont hover:bg-red-600 hover:text-black transition-colors text-xl ${
-              selectedCreator.name === creator.name ? "bg-teal-400 text-black" : "bg-gray-700 text-gray-300"
+              selectedCreator.name === creator.name ? "bg-teal-400 text-black" : "bg-gray-700 text-white"
             }`}
           >
             {creator.name}
           </button>
         ))}
       </div>
-      <hr className="my-6" />
+      <hr className="my-6 border-black dark:border-white" />
       <div className="grid grid-cols-1 lg:grid-cols-2 space-y-4 lg-space-y-0">
         <div className="mr-0 lg:mx-4">
           <h3 className="text-3xl">
             <span className="text-red-600">{selectedCreator.name[0]}</span>
             {selectedCreator.name.slice(1)}
           </h3>
-          <p className="italic text-gray-400">&quot;{selectedCreator.description}&quot;</p>
+          <p className="italic text-gray-600 dark:text-gray-400">&quot;{selectedCreator.description}&quot;</p>
         </div>
         {selectedCreator.videoSrc ? (
           <iframe

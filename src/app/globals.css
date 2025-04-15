@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Outfit:wght@100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,6 +12,11 @@
   --foreground: #171717;
 }
 
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #000000;
@@ -23,11 +27,32 @@
 body {
   color: var(--foreground);
   background: var(--background);
+  font-family: "Geist", Arial, Helvetica, sans-serif;
+  position: relative;
+  isolation: isolate; /* Creates a new stacking context */
+}
+
+/* Create a pseudo-element for the background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url("../../public/assets/site-assets/bleach-rebirth-of-souls-bg.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
-  font-family: "Geist", Arial, Helvetica, sans-serif;
+  z-index: -1;
+  @apply dark:invert-0;
+  @apply [&(.dark)]:invert;
+}
+
+/* Your content wrapper - apply this class to your main content container */
+.content-wrapper {
+  position: relative;
+  z-index: 1;
 }
 
 pre,

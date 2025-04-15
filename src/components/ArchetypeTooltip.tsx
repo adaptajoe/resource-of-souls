@@ -32,7 +32,7 @@ export default function ArchetypeTooltip({ archetype, display, shortDescription,
   );
 
   const baseClasses = "text-xs px-2 py-1 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2";
-  const variantClasses = highlighted ? "bg-red-900 border-red-600 border text-white" : "bg-black border-gray-400 border text-gray-400";
+  const variantClasses = highlighted ? "bg-red-900 border-red-600 border text-white" : "bg-white dark:bg-black border-black dark:border-gray-400 border text-black dark:text-gray-400";
   const hoverClasses = "hover:bg-red-900 hover:border-red-600 hover:text-white";
 
   return (

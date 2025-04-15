@@ -134,8 +134,11 @@ export default function AnimatedVideo({ src, alt, filename }: IAnimatedVideoProp
   };
 
   const handleFullscreenToggle = useCallback(() => {
+    // Don't allow fullscreen for animations with 0 frames
+    if (totalFrames === 0) return;
+
     setIsFullscreen((prev) => !prev);
-  }, []);
+  }, [totalFrames]);
 
   const handleFullscreenClick = useCallback((event: React.MouseEvent) => {
     if (event.target === event.currentTarget) {
@@ -341,6 +344,7 @@ export default function AnimatedVideo({ src, alt, filename }: IAnimatedVideoProp
 
   const renderVideoControls = () => (
     <div className="bg-black bg-opacity-70 p-2 transition-opacity duration-200 border-t-2 border-t-gray-400 rounded-b-xl">
+      <p className="text-xl text-center text-gray-400 italic">&quot;{formatFilename(filename)}&quot;</p>
       {/* Timeline */}
       <div className="p-2 pb-0">
         <div ref={timelineRef} className="relative h-8 bg-gray-700 mb-2 cursor-pointer" onClick={handleTimelineClick}>
@@ -460,25 +464,33 @@ export default function AnimatedVideo({ src, alt, filename }: IAnimatedVideoProp
   return (
     <>
       <div
-        className="relative aspect-video group mx-2 cursor-pointer"
+        className={`relative flex flex-col items-center aspect-video group mx-2 ${totalFrames > 0 ? "cursor-pointer" : "cursor-default"}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onClick={handleFullscreenToggle}
-        tabIndex={0}
-        role="button"
-        aria-label={`Play ${formatFilename(filename)} animation`}
+        tabIndex={totalFrames > 0 ? 0 : -1}
+        role={totalFrames > 0 ? "button" : "presentation"}
+        aria-label={totalFrames > 0 ? `Play ${formatFilename(filename)} animation` : `${formatFilename(filename)} (no animation available)`}
       >
-        <div className="relative w-full h-full">
+        <div className={`relative ${totalFrames === 0 ? "w-20 h-auto" : "w-full h-auto"}`}>
           <Image
             src={staticImageSrc}
             alt={alt}
             width={300}
             height={300}
             className={`w-full h-full object-cover transition-opacity duration-200 ${isHovered && !videoError ? "opacity-0" : "opacity-100"}`}
-            style={{ filter: "grayscale(100%)" }}
+            style={{ filter: totalFrames > 0 ? "grayscale(100%)" : "none" }}
             loading="lazy"
             sizes="(max-width: 768px) 100vw, 300px"
           />
+
+          {totalFrames > 0 && !isHovered && !videoError && (
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="bg-black bg-opacity-30 rounded-full p-4">
+                <Play size={40} weight="fill" className="text-white opacity-80" />
+              </div>
+            </div>
+          )}
 
           {!videoError && (
             <video
@@ -499,7 +511,7 @@ export default function AnimatedVideo({ src, alt, filename }: IAnimatedVideoProp
           )}
         </div>
 
-        <p className={`text-sm text-center font-black italic py-2 border-b border-gray-400 transition-colors ${isHovered && !videoError ? "text-red-600" : "text-gray-400"}`}>
+        <p className={`text-sm text-center font-black w-full italic py-2 border-b border-gray-400 transition-colors ${isHovered && !videoError ? "text-red-600" : "text-gray-400"}`}>
           {formatFilename(filename)}
         </p>
       </div>
@@ -508,7 +520,7 @@ export default function AnimatedVideo({ src, alt, filename }: IAnimatedVideoProp
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90" onClick={handleFullscreenClick}>
           <div className="relative max-w-full max-h-full p-4">
             <div className="relative border-2 rounded-b-xl border-gray-400">
-              <video ref={videoRef} src={src} className="max-w-[1200px] w-full max-h-full" loop muted autoPlay={isPlaying} onLoadedData={handleVideoLoaded} onTimeUpdate={handleTimeUpdate} />
+              <video ref={videoRef} src={src} className="max-w-[1300px] w-full max-h-full" loop muted autoPlay={isPlaying} onLoadedData={handleVideoLoaded} onTimeUpdate={handleTimeUpdate} />
               {renderVideoControls()}
             </div>
             <button className="absolute top-2 -right-8 text-white text-2xl" onClick={handleFullscreenToggle} aria-label="Close fullscreen">

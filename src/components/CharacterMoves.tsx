@@ -4,6 +4,7 @@ import { IMoves, IMove } from "@/types/characterDataTypes";
 import React from "react";
 import { ArrowDown, ArrowDownLeft, ArrowDownRight, ArrowLeft, ArrowRight, ArrowUp, ArrowUpLeft, ArrowUpRight, Circle, Square, Triangle, X, ArrowsOutCardinal } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
+import Link from "next/link";
 
 type NotationType = "term" | "playstation" | "xbox" | "pc" | "universal";
 interface ICharacterMovesProps {
@@ -584,7 +585,7 @@ const TranslateInput = ({ input, notation, scrollableCombo = false }: ITranslate
           path.setAttribute("d", `M ${startX},${startY} L ${endX},${endY}`);
 
           // Style the arrow
-          path.setAttribute("stroke", "#2dd4bf"); // teal-400
+          path.setAttribute("stroke", "#00897B"); // teal-600
           path.setAttribute("stroke-width", "3");
           path.setAttribute("fill", "none");
 
@@ -806,9 +807,9 @@ const CharacterMoves = ({ moves, characterId }: ICharacterMovesProps) => {
       <div>
         <div className="flex flex-col flex-wrap items-left w-full p-2 pt-0 mb-4">
           <div className="grid grid-cols-2 items-center">
-            <label className="col-span-2 md:col-span-1 font-bold text-teal-400 flex items-center gap-2 ml-2">
+            <label className="col-span-2 md:col-span-1 font-bold text-teal-600 dark:text-teal-400 flex items-center gap-2 ml-2">
               Notation Style:
-              <select value={notation} onChange={handleNotationChange} className="ml-2 p-1 bg-gray-800 w-full sm:w-fit text-white rounded">
+              <select value={notation} onChange={handleNotationChange} className="ml-2 p-1 border-2 border-gray-400 rounded-xl bg-white dark:bg-gray-800 w-full sm:w-fit text-black dark:text-white">
                 <option value="term">Term Notation</option>
                 <option value="playstation">PlayStation Notation</option>
                 <option value="xbox">Xbox Notation</option>
@@ -818,17 +819,31 @@ const CharacterMoves = ({ moves, characterId }: ICharacterMovesProps) => {
             </label>
             <div className="col-span-2 md:col-span-1 justify-self-end mr-4 mt-4 md:mt-0">
               <div className="flex items-center">
-                <span className="text-sm text-gray-300 truncate">Scrollable Combo Inputs</span>
-                <input type="checkbox" checked={scrollableCombo} onChange={() => setScrollableCombo((prev) => !prev)} className="ml-2 h-4 w-4 accent-teal-500" />
+                <span className="text-sm text-gray-600 dark:text-gray-300 truncate">Scrollable Combo Inputs</span>
+                <input type="checkbox" checked={scrollableCombo} onChange={() => setScrollableCombo((prev) => !prev)} className="ml-2 h-4 w-4 accent-red-600" />
               </div>
             </div>
           </div>
 
-          <hr className="my-4 w-full" />
-          <button className="font-bold text-teal-400 flex items-center gap-2 ml-2 mt-2" onClick={() => setMovesetKeyIsOpen((prevState) => !prevState)}>
-            Click to {movesetKeyIsOpen ? "hide Movelist Key" : "show Movelist Key"}
-            {movesetKeyIsOpen ? <span>&uarr;</span> : <span>&darr;</span>}
-          </button>
+          <hr className="my-4 border-black dark:border-white w-full" />
+
+          <div className="grid grid-cols-2">
+            <div className="col-span-1">
+              <button className="font-bold text-teal-600 dark:text-teal-400 flex items-center gap-2 ml-2 mt-2" onClick={() => setMovesetKeyIsOpen((prevState) => !prevState)}>
+                Click to {movesetKeyIsOpen ? "hide Movelist Key" : "show Movelist Key"}
+                {movesetKeyIsOpen ? <span>&uarr;</span> : <span>&darr;</span>}
+              </button>
+            </div>
+            <div className="col-span-1 text-right mr-4">
+              <p className="text-gray-600 dark:text-gray-400 italic text-xs">
+                Massive credits to{" "}
+                <Link href="https://www.shonengamez.com/" className="text-teal-600 dark:text-teal-400 hover:text-red-600 hover:underline transition-all">
+                  @ShonenGameZ
+                </Link>{" "}
+                for supplying every movelist..!
+              </p>
+            </div>
+          </div>
           <div>{movesetKeyIsOpen && renderMovelistKey()}</div>
         </div>
       </div>
@@ -952,33 +967,48 @@ const MoveDisplay = ({ move, characterId, notation, scrollableCombo }: IMoveDisp
   const [videoError, setVideoError] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [shouldRenderVideo, setShouldRenderVideo] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     if (isExpanded && move.input && move.input.includes("->")) {
-      // Dispatch a custom event to trigger redrawing
       window.dispatchEvent(new CustomEvent("redrawArrows"));
     }
   }, [isExpanded, move.input]);
 
+  // Only start loading video when move is expanded
+  useEffect(() => {
+    if (isExpanded && !shouldRenderVideo) {
+      setShouldRenderVideo(true);
+    }
+  }, [isExpanded, shouldRenderVideo]);
+
+  // Handle video playback when hovered or when video loads while hovered
+  useEffect(() => {
+    const playVideo = async () => {
+      if (videoRef.current && isHovered && isVideoLoaded) {
+        try {
+          videoRef.current.currentTime = 0;
+          await videoRef.current.play();
+        } catch (error) {
+          setVideoError(true);
+          console.error("Video playback failed:", error);
+        }
+      } else if (videoRef.current && !isHovered) {
+        videoRef.current.pause();
+        videoRef.current.currentTime = 0;
+      }
+    };
+
+    playVideo();
+  }, [isHovered, isVideoLoaded]);
+
   const handleMouseEnter = useCallback(() => {
     setIsHovered(true);
-    if (videoRef.current && isVideoLoaded) {
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          setVideoError(true);
-        });
-      }
-    }
-  }, [isVideoLoaded]);
+  }, []);
 
   const handleMouseLeave = useCallback(() => {
     setIsHovered(false);
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
   }, []);
 
   const handleVideoLoaded = useCallback(() => {
@@ -989,7 +1019,7 @@ const MoveDisplay = ({ move, characterId, notation, scrollableCombo }: IMoveDisp
 
   return (
     <div
-      className="border-b border-gray-400 bg-black hover:bg-gray-900 transition-colors last:mb-0 cursor-pointer"
+      className="border-b border-gray-400 bg-white dark:bg-black hover:bg-gray-200 dark:hover:bg-gray-900 transition-colors last:mb-0 cursor-pointer"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={() => setIsExpanded(!isExpanded)}
@@ -1002,7 +1032,7 @@ const MoveDisplay = ({ move, characterId, notation, scrollableCombo }: IMoveDisp
           <div className="flex items-center">
             <span className={`transform ${isExpanded ? "rotate-180" : ""} mr-2`}>▼</span>
             <p
-              className={`font-bebasFont text-base tracking-wider py-2 mr-2 ${move.name !== "Unknown" && move.hasOfficialName ? "text-white" : undefined} ${
+              className={`font-bebasFont text-base tracking-wider py-2 mr-2 ${move.name !== "Unknown" && move.hasOfficialName ? "text-black dark:text-white" : undefined} ${
                 move.name === "Unknown" && "text-red-600"
               } ${!move.hasOfficialName && "text-amber-400"}`}
             >
@@ -1023,9 +1053,10 @@ const MoveDisplay = ({ move, characterId, notation, scrollableCombo }: IMoveDisp
       <div className={`transition-all duration-300 ${isExpanded ? "block" : "hidden"}`}>
         {/* Middle */}
         <div className="grid grid-cols-1 md:grid-cols-2 border-b border-gray-400">
-          <div className="border-r border-gray-400 p-8 px-4 text-gray-400 italic text-sm">
+          <div className="border-r border-gray-400 p-8 px-4 text-black dark:text-gray-400 italic text-sm">
             <p>&quot;{move.description}&quot;</p>
           </div>
+
           <div className="p-4">
             <div className="flex flex-col h-full relative items-center justify-center">
               <Image
@@ -1033,24 +1064,22 @@ const MoveDisplay = ({ move, characterId, notation, scrollableCombo }: IMoveDisp
                 alt={`${move.name} first frame`}
                 width={300}
                 height={300}
-                className={`w-fit border-2 border-gray-400 block ${isHovered && !videoError ? "grayscale" : ""}`}
+                className={`w-fit border-2 border-transparent block ${!isHovered && !videoError ? "grayscale" : ""}`}
                 onError={(e) => {
                   e.currentTarget.src = "/assets/character-animations/placeholder.png";
                 }}
               />
 
-              {!videoError && (
+              {!videoError && shouldRenderVideo && isExpanded && (
                 <video
                   ref={videoRef}
                   width={300}
                   height={300}
-                  className={`absolute top-0 left-0 border-2 border-gray-400 w-full h-full object-cover transition-opacity duration-200 ${
-                    isHovered && isVideoLoaded ? "opacity-100 border-red-600" : "opacity-0"
-                  }`}
-                  muted
+                  className={`absolute top-0 left-0 border-2 border-transparent w-full h-full object-cover transition-opacity duration-200 ${isHovered ? "opacity-100 border-red-600" : "opacity-0"}`}
                   loop
+                  muted
                   playsInline
-                  preload="metadata"
+                  preload="auto"
                   onLoadedData={handleVideoLoaded}
                   onError={() => setVideoError(true)}
                 >
@@ -1082,36 +1111,80 @@ const MoveDisplay = ({ move, characterId, notation, scrollableCombo }: IMoveDisp
                 move.cooldown !== "X Seconds";
 
               if (!hasAnyStats) {
-                return <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">No Move Stats</strong>;
+                return <strong className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 m-1">No Move Stats</strong>;
               }
 
               return (
                 <>
-                  {move.reishiGain !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Reishi Gain: {move.reishiGain}</strong>}
-                  {move.reishiCost !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Reishi Cost: {move.reishiCost}</strong>}
-                  {move.reiatsuGain !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Reiatsu Gain: {move.reiatsuGain}</strong>}
-                  {move.reiatsuCost !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Reiatsu Cost: {move.reiatsuCost}</strong>}
+                  {move.reishiGain !== null && (
+                    <strong className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 m-1">
+                      Reishi Gain: {move.reishiGain}
+                    </strong>
+                  )}
+                  {move.reishiCost !== null && (
+                    <strong className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 m-1">
+                      Reishi Cost: {move.reishiCost}
+                    </strong>
+                  )}
+                  {move.reiatsuGain !== null && (
+                    <strong className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 m-1">
+                      Reiatsu Gain: {move.reiatsuGain}
+                    </strong>
+                  )}
+                  {move.reiatsuCost !== null && (
+                    <strong className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 m-1">
+                      Reiatsu Cost: {move.reiatsuCost}
+                    </strong>
+                  )}
                   {move.fightingSpiritGain !== null && (
-                    <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Fighting Spirit Gain: {move.fightingSpiritGain}%</strong>
+                    <strong className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 m-1">
+                      Fighting Spirit Gain: {move.fightingSpiritGain}%
+                    </strong>
                   )}
                   {move.fightingSpiritCost !== null && (
-                    <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Fighting Spirit Cost: {move.fightingSpiritCost}%</strong>
+                    <strong className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 m-1">
+                      Fighting Spirit Cost: {move.fightingSpiritCost}%
+                    </strong>
                   )}
-                  {move.reversalGain !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Reversal Gain: {move.reversalGain}%</strong>}
-                  {move.reversalCost !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Reversal Cost: {move.reversalCost}%</strong>}
-                  {move.resourceGain !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Resource Gain: {move.resourceGain}</strong>}
-                  {move.resourceCost !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Resource Cost: {move.resourceCost}</strong>}
-                  {move.damage !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Damage: {move.damage}</strong>}
-                  {move.hits !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Hits: {move.hits}</strong>}
-                  {move.frames !== null && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Frames: {move.frames}</strong>}
-                  {move.cooldown !== "X Seconds" && <strong className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 m-1">Cooldown: {move.cooldown}</strong>}
+                  {move.reversalGain !== null && (
+                    <strong className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 m-1">
+                      Reversal Gain: {move.reversalGain}%
+                    </strong>
+                  )}
+                  {move.reversalCost !== null && (
+                    <strong className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 m-1">
+                      Reversal Cost: {move.reversalCost}%
+                    </strong>
+                  )}
+                  {move.resourceGain !== null && (
+                    <strong className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 m-1">
+                      Resource Gain: {move.resourceGain}
+                    </strong>
+                  )}
+                  {move.resourceCost !== null && (
+                    <strong className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 m-1">
+                      Resource Cost: {move.resourceCost}
+                    </strong>
+                  )}
+                  {move.damage !== null && (
+                    <strong className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 m-1">Damage: {move.damage}</strong>
+                  )}
+                  {move.hits !== null && (
+                    <strong className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 m-1">Hits: {move.hits}</strong>
+                  )}
+                  {move.frames !== null && (
+                    <strong className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 m-1">Frames: {move.frames}</strong>
+                  )}
+                  {move.cooldown !== "X Seconds" && (
+                    <strong className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 m-1">Cooldown: {move.cooldown}</strong>
+                  )}
                 </>
               );
             })()}
           </div>
-          <div className="flex text-xs flex-row flex-wrap border-l h-fit border-gray-400 p-2">
+          <div className="flex text-xs flex-row flex-wrap h-fit justify-end p-2">
             {move.moveTags.map((tag, index) => (
-              <strong key={index} className="bg-black border-gray-400 border text-gray-400 m-1 px-2 py-1">
+              <strong key={index} className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 m-1">
                 {formatMoveTag(tag)}
               </strong>
             ))}

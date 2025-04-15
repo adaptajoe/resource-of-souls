@@ -85,17 +85,17 @@ export default async function CharacterDetails(props: Props) {
     <div>
       <div className="grid grid-cols-1 xl:grid-cols-3">
         <div className="col-span-1 xl:col-span-2 mb-6">
-          <div className="p-4 lg:p-16  space-y-4 text-white mr-4">
+          <div className="p-4 lg:p-16 space-y-4 text-black dark:text-white mr-4">
             <div className="flex flex-row space-x-2">
-              <Link href="/" className="text-teal-400 hover:underline">
+              <Link href="/" className="text-teal-600 dark:text-teal-400 hover:underline">
                 Home
               </Link>
               <p>/</p>
-              <Link href="/characters" className="text-teal-400 hover:underline">
+              <Link href="/characters" className="text-teal-600 dark:text-teal-400 hover:underline">
                 Character Roster
               </Link>
               <p>/</p>
-              <Link href={`/characters/${character.id}`} className="text-teal-400 hover:underline">
+              <Link href={`/characters/${character.id}`} className="text-teal-600 dark:text-teal-400 hover:underline">
                 {character.name}
               </Link>
             </div>
@@ -107,26 +107,26 @@ export default async function CharacterDetails(props: Props) {
             ))}
             <div className="text-gray-400 xl:hidden">
               Character #{character.characterNumber}
-              {!character.isEcho ? null : <p className="text-teal-400">&epsilon;</p>}
+              {!character.isEcho ? null : <p className="text-teal-600 dark:text-teal-400">&epsilon;</p>}
             </div>
             <div className="flex flex-wrap gap-4 my-4">
-              <Link href="#stats" className="text-teal-400 hover:underline">
+              <Link href="#stats" className="text-teal-600 dark:text-teal-400 hover:underline">
                 Stats
               </Link>
-              <span className="text-gray-400">•</span>
-              <Link href="#tldr" className="text-teal-400 hover:underline">
+              <span className="text-gray-600 dark:text-gray-400">•</span>
+              <Link href="#tldr" className="text-teal-600 dark:text-teal-400 hover:underline">
                 TLDR Guide
               </Link>
-              <span className="text-gray-400">•</span>
-              <Link href="#movelist" className="text-teal-400 hover:underline">
+              <span className="text-gray-600 dark:text-gray-400">•</span>
+              <Link href="#movelist" className="text-teal-600 dark:text-teal-400 hover:underline">
                 Movelist
               </Link>
-              <span className="text-gray-400">•</span>
-              <Link href="#assets" className="text-teal-400 hover:underline">
+              <span className="text-gray-600 dark:text-gray-400">•</span>
+              <Link href="#assets" className="text-teal-600 dark:text-teal-400 hover:underline">
                 Assets
               </Link>
-              <span className="text-gray-400">•</span>
-              <Link href="#trivia" className="text-teal-400 hover:underline">
+              <span className="text-gray-600 dark:text-gray-400">•</span>
+              <Link href="#trivia" className="text-teal-600 dark:text-teal-400 hover:underline">
                 Trivia
               </Link>
             </div>
@@ -213,7 +213,7 @@ export default async function CharacterDetails(props: Props) {
           </div>
 
           {/* Continue Page View */}
-          <div className="text-white px-4 lg:px-16 mr-4">
+          <div className="text-black dark:text-white px-4 lg:px-16 mr-4">
             {/* Character Info */}
             <div id="character-info">
               <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
@@ -222,14 +222,14 @@ export default async function CharacterDetails(props: Props) {
               <h4 className="italic text-xl text-gray-400 my-8 mr-8 border-l-4 border-l-gray-400 pl-4 py-6">&quot;{character.quote}&quot;</h4>
               <div>{parseGameTerms(character.description)}</div>
             </div>
-            <hr className="my-6" />
+            <hr className="my-6 border-black dark:border-white" />
             <div className="grid grid-cols-1 md:grid-cols-2 space-x-4">
               {/* Stats */}
               <div id="stats">
                 <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
                   <span className="text-red-600">S</span>tats
                 </h3>
-                <div className="border-2 bg-black border-gray-400 rounded-xl mt-6">
+                <div className="border-2 bg-white dark:bg-black border-gray-400 rounded-xl mt-6 text-white">
                   <RadarChartComponentWrapper stats={character.stats[0]} characterName={character.name} character={character} />
                   <div className="w-full font-bebasFont flex flex-row text-center items-end text-sm tracking-widest">
                     <div className="w-1/6 py-2 bg-red-700 flex flex-col border border-l-0 border-b-0 border-white rounded-bl-xl">
@@ -264,20 +264,20 @@ export default async function CharacterDetails(props: Props) {
                 <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
                   <span className="text-red-600">T</span>LDR Guide
                 </h3>
-                <div className="p-4 border-2 bg-black border-gray-400 rounded-xl mt-6">{character.tldr}</div>
+                <div className="p-4 border-2 bg-white dark:bg-black border-gray-400 rounded-xl mt-6">{character.tldr}</div>
               </div>
             </div>
-            <hr className="my-6" />
+            <hr className="my-6 border-black dark:border-white" />
             {/* Movelist */}
             <div id="movelist">
               <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
                 <span className="text-red-600">M</span>ovelist
               </h3>
-              <div className="border-2 bg-black border-gray-400 rounded-t-xl mt-6 pt-4">
+              <div className="border-2 bg-white dark:bg-black border-gray-400 rounded-t-xl mt-6 pt-4">
                 <CharacterMovesWrapper moves={character.moves} characterId={character.id} />
               </div>
             </div>
-            <hr className="my-6" />
+            <hr className="my-6 border-black dark:border-white" />
             {/* Assets */}
             <div id="assets">
               <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
@@ -285,13 +285,13 @@ export default async function CharacterDetails(props: Props) {
               </h3>
               <CharacterAssetsWrapper character={character} slug={params.slug} animations={animations} hasAnimations={hasAnimations} />
             </div>
-            <hr className="my-6" />
+            <hr className="my-6 border-black dark:border-white" />
             {/* Trivia */}
             <div id="trivia">
               <h3 className="text-2xl md:text-3xl font-black border-l-8 border-red-600 pl-4">
                 <span className="text-red-600">T</span>rivia
               </h3>
-              <ul className="mt-6 bg-black list-disc border-2 border-gray-400 rounded-xl p-4 space-y-4w">
+              <ul className="mt-6 bg-white dark:bg-black list-disc border-2 border-gray-400 rounded-xl p-4 space-y-4w">
                 {character.trivia.map((triviaItem, index) => (
                   <li key={index} className="ml-6">
                     {triviaItem}

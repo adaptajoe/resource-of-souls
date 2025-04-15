@@ -4,7 +4,7 @@
     "id": "yoruichi-shihoin",
     "race": "shinigami",
     "quote": "Were you afraid? That's your problem. You're focusing too much on what's to come.",
-    "description": "Former Captain of Squad 2 and ex-commander of the Stealth Force, Yoruichi is known as the 'Flash Goddess' for her unmatched speed. Despite her noble heritage, she chose exile to help her childhood friend, Kisuke Urahara. Yoruichi is a Short Range fighter specializing in Fast Melee combat and Kidō techniques. Her Rushdown playstyle makes her a relentless and swift attacker who can quickly overwhelm opponents with her light but rapid strikes. Boasting extreme Speed and high Technique, with decent Range, but lower Power and Defense, Yoruichi excels at poking tactics and creating offensive pressure through dominating combos that leave little room to breathe or escape.",
+    "description": "Former Captain of Squad 2 and ex-commander of the Stealth Force, Yoruichi is known as the 'Flash Goddess' for her unmatched speed. Despite her noble heritage, she chose exile to help her childhood friend, Kisuke Urahara. Yoruichi is a Short Range fighter specializing in Fast Melee combat and Kido techniques. Her Rushdown playstyle makes her a relentless and swift attacker who can quickly overwhelm opponents with her light but rapid strikes. Boasting extreme Speed and high Technique, with decent Range, but lower Power and Defense, Yoruichi excels at poking tactics and creating offensive pressure through dominating combos that leave little room to breathe or escape.",
     "tags": {
       "affiliations": ["worldOfTheLiving", "soulSociety", "shinigami", "squad2"],
       "relationships": ["friend"],
@@ -12,7 +12,7 @@
       "characteristics": ["female", "captain", "exile", "gotei13"]
     },
     "characterEaseOfUse": 5,
-    "characterArchetype": ["shortRange", "melee", "charge", "kidō", "fast", "rushdown"],
+    "characterArchetype": ["shortRange", "melee", "charge", "kido", "fast", "rushdown"],
     "characterJpTrailer": "https://www.youtube.com/watch?v=gMd_2nwWnik&list=PL0DnZpV_rwVuQRnK-6fcC5W9Gl7musweM&index=35",
     "characterEngTrailer": "https://www.youtube.com/watch?v=MUKNiK5g-RM&list=PLToji_CQFzSQe_ipI12A8xF5A9L0OGHip&index=28",
     "characterNumber": 5,

@@ -5,12 +5,12 @@ export interface IRawTournament {
   tournamentHostName: string;
   tournamentRegion?: string | null;
   tournamentDate: string;
-  tournamentStartTime?: string;
+  tournamentStartTime?: string | null;
   tournamentLink: string;
-  platform: string;
+  platform: Platform;
   prizePool?: string | null;
   assignedBadge?: string;
-  notes?: string;
+  notes?: string | null;
 }
 
 // Tournament data structure
@@ -23,10 +23,10 @@ export interface ITournament {
   tournamentHostName: string;
   tournamentRegion?: string | null;
   tournamentDate: Date;
-  tournamentStartTime?: string;
+  tournamentStartTime?: string | null;
   tournamentLink: string;
   platform: Platform;
   prizePool?: string | null;
   assignedBadge?: string;
-  notes?: string;
+  notes?: string | null;
 }

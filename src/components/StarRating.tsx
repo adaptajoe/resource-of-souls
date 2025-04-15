@@ -9,7 +9,7 @@ interface IStarRatingProps {
 const Star = memo(function Star({ filled, index, total }: { filled: boolean; index: number; total: number }) {
   return (
     <svg
-      className={`w-4 h-4 ${filled ? "text-white" : "text-gray-500"}`}
+      className={`w-4 h-4 ${filled ? "text-red-600" : "text-gray-500"}`}
       aria-hidden="false"
       aria-label={`${index + 1} of ${total} stars`}
       xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@ const StarRating = memo(function StarRating({ rating, maxRating = 5, label = "Ra
           <Star key={index} filled={index < validRating} index={index} total={maxRating} />
         ))}
       </div>
-      <p className="text-xs text-gray-400">
+      <p className="text-xs font-bold text-gray-400">
         ({rating === 1 && `Very Challenging`}
         {rating === 2 && `Challenging`}
         {rating === 3 && `Fairly Challenging`}

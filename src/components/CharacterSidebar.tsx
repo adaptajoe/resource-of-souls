@@ -84,23 +84,23 @@ const CharacterSidebar: FC<ICharacterSidebarProps> = ({ character, slug }) => {
   }, []);
 
   return (
-    <div className="container flex-col items-center w-fit md:w-[500px] border border-r-0 border-t-0 border-white justify-start h-fit rounded-bl-xl hidden lg:flex">
+    <div className="container flex-col items-center w-fit md:w-[500px] border border-r-0 border-t-0 border-black dark:border-white justify-start h-fit rounded-bl-xl hidden lg:flex">
       <div className="flex flex-row w-full">
-        <div className="py-4 border-b border-b-white text-center bg-black w-full">
-          <h2 className="text-3xl">{character.name}</h2>
-          <div className="italic text-gray-400 flex flex-row items-center justify-center">
+        <div className="py-4 border-b border-b-black dark:border-b-white text-center bg-white dark:bg-black w-full">
+          <h2 className="text-3xl text-black dark:text-white">{character.name}</h2>
+          <div className="italic text-gray-600 dark:text-gray-400 flex flex-row items-center justify-center">
             Character #{character.characterNumber}
-            {!character.isEcho ? null : <p className="text-teal-400 ml-1">&epsilon;</p>}
+            {!character.isEcho ? null : <p className="text-teal-600 dark:text-teal-400 ml-1">&epsilon;</p>}
           </div>
         </div>
       </div>
       <div className="flex flex-row w-full">
-        <div className="py-1 text-sm border-b border-b-white bg-black text-center w-full justify-around flex flex-row px-4">
+        <div className="py-1 text-sm border-b border-b-black dark:border-b-white bg-white dark:bg-black text-center w-full justify-around flex flex-row px-4">
           {availableOutfits.base.map((outfitNum) => (
             <button
               key={`base-${outfitNum}`}
               onClick={() => handleOutfitChange("base", outfitNum)}
-              className={`hover:underline transition-colors ${currentOutfit === `base-outfit-${outfitNum}` ? "text-red-600 hover:no-underline" : "text-teal-400"}`}
+              className={`hover:underline transition-colors ${currentOutfit === `base-outfit-${outfitNum}` ? "text-red-600 hover:no-underline" : "text-teal-600 dark:text-teal-400"}`}
             >
               <strong>Outfit {outfitNum}</strong>
             </button>
@@ -109,7 +109,7 @@ const CharacterSidebar: FC<ICharacterSidebarProps> = ({ character, slug }) => {
             <button
               key={`dlc-${outfitNum}`}
               onClick={() => handleOutfitChange("dlc", outfitNum)}
-              className={`hover:underline transition-colors ${currentOutfit === `dlc-outfit-${outfitNum}` ? "text-red-600 hover:no-underline" : "text-teal-400"}`}
+              className={`hover:underline transition-colors ${currentOutfit === `dlc-outfit-${outfitNum}` ? "text-red-600 hover:no-underline" : "text-teal-600 dark:text-teal-400"}`}
             >
               <strong>DLC {outfitNum}</strong>
             </button>
@@ -135,80 +135,80 @@ const CharacterSidebar: FC<ICharacterSidebarProps> = ({ character, slug }) => {
           />
         )}
       </div>
-      <div className="border-white border border-r-0 border-l-0 border-b-0 w-full">
-        <div className="border-b border-white w-full flex flex-row text-center text-sm">
-          <div className="w-1/6 bg-red-700 flex flex-col border-r border-white">
+      <div className="border-black dark:border-white border border-r-0 border-l-0 border-b-0 w-full">
+        <div className="border-b border-black dark:border-white w-full flex flex-row text-center text-sm">
+          <div className="w-1/6 bg-red-700 flex flex-col border-r border-black dark:border-white">
             <strong>P{character.stats[0].power}</strong>
           </div>
-          <div className="w-1/6 bg-yellow-700 flex flex-col border-r border-white">
+          <div className="w-1/6 bg-yellow-700 flex flex-col border-r border-black dark:border-white">
             <strong>S{character.stats[0].speed}</strong>
           </div>
-          <div className="w-1/6 bg-purple-700 flex flex-col border-r border-white">
+          <div className="w-1/6 bg-purple-700 flex flex-col border-r border-black dark:border-white">
             <strong>R{character.stats[0].range}</strong>
           </div>
-          <div className="w-1/6 bg-green-700 flex flex-col border-r border-white">
+          <div className="w-1/6 bg-green-700 flex flex-col border-r border-black dark:border-white">
             <strong>D{character.stats[0].defense}</strong>
           </div>
-          <div className="w-1/6 bg-blue-700 flex flex-col border-r border-white">
+          <div className="w-1/6 bg-blue-700 flex flex-col border-r border-black dark:border-white">
             <strong>T{character.stats[0].technique}</strong>
           </div>
           <div className="w-1/6 bg-black flex flex-col">
             <strong>{totalStats}</strong>
           </div>
         </div>
-        <div className="flex bg-black flex-row">
-          <div className="flex flex-col w-auto items-center text-center px-4 border-b border-r border-white py-2">
-            <h2 className="text-xl">Ease of Use</h2>
+        <div className="flex bg-white dark:bg-black flex-row">
+          <div className="flex flex-col w-auto items-center text-center px-4 border-b border-r border-black dark:border-white py-2">
+            <h2 className="text-xl text-black dark:text-white">Ease of Use</h2>
             <div className="my-auto">
               <StarRating rating={character.characterEaseOfUse} />
             </div>
           </div>
-          <div className="flex flex-col items-center text-center w-3/4 border-b border-white p-2">
-            <h2 className="text-xl">Archetypes</h2>
+          <div className="flex flex-col items-center text-center w-3/4 border-b border-black dark:border-white p-2">
+            <h2 className="text-xl text-black dark:text-white">Archetypes</h2>
             <div className="flex flex-wrap justify-center my-1 mb-2">
               {character.characterArchetype.map((archetype) => (
-                <strong key={archetype} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1 ml-2">
+                <strong key={archetype} className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 my-1 ml-2">
                   {formatTagName(archetype)}
                 </strong>
               ))}
             </div>
           </div>
         </div>
-        <div className="flex bg-black flex-row flex-wrap items-left w-full border-b border-white p-2 pb-4">
-          <h2 className="w-full text-left mb-2 ml-2 text-xl">Affiliations</h2>
+        <div className="flex bg-white dark:bg-black flex-row flex-wrap items-left w-full border-b border-black dark:border-white p-2 pb-4">
+          <h2 className="w-full text-left mb-2 ml-2 text-xl text-black dark:text-white">Affiliations</h2>
           <div className="w-auto flex flex-wrap flex-row">
             {character.tags.affiliations.map((affiliation) => (
-              <strong key={affiliation} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1 ml-2">
+              <strong key={affiliation} className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 my-1 ml-2">
                 {formatTagName(affiliation)}
               </strong>
             ))}
           </div>
         </div>
-        <div className="flex bg-black flex-col flex-wrap items-left w-full border-b border-white p-2 pb-4">
-          <h2 className="w-fit text-center mb-2 ml-2 text-xl">Relationships</h2>
+        <div className="flex bg-white dark:bg-black flex-col flex-wrap items-left w-full border-b border-black dark:border-white p-2 pb-4">
+          <h2 className="w-fit text-center mb-2 ml-2 text-xl text-black dark:text-white">Relationships</h2>
           <div className="w-auto flex flex-wrap flex-row">
             {character.tags.relationships.map((relationship) => (
-              <strong key={relationship} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1 ml-2">
+              <strong key={relationship} className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 my-1 ml-2">
                 {formatTagName(relationship)}
               </strong>
             ))}
           </div>
         </div>
-        <div className="flex bg-black flex-col flex-wrap items-left w-full border-b border-white p-2 pb-4">
-          <h2 className="w-fit text-center mb-2 ml-2 text-xl">Abilities</h2>
+        <div className="flex bg-white dark:bg-black flex-col flex-wrap items-left w-full border-b border-black dark:border-white p-2 pb-4">
+          <h2 className="w-fit text-center mb-2 ml-2 text-xl text-black dark:text-white">Abilities</h2>
           <div className="w-auto flex flex-wrap flex-row">
             {character.tags.abilities.map((ability) => (
-              <strong key={ability} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1 ml-2">
+              <strong key={ability} className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 my-1 ml-2">
                 {formatTagName(ability)}
               </strong>
             ))}
           </div>
         </div>
-        <div className="flex bg-black flex-col flex-wrap items-left w-full p-2 mb-2">
-          <h2 className="w-fit text-center mb-2 ml-2 text-xl">Characteristics</h2>
+        <div className="flex bg-white dark:bg-black flex-col flex-wrap items-left w-full p-2 rounded-bl-xl">
+          <h2 className="w-fit text-center mb-2 ml-2 text-xl text-black dark:text-white">Characteristics</h2>
           <div className="w-auto flex flex-wrap flex-row">
             {character.tags.characteristics.map((characteristic) => (
-              <strong key={characteristic} className="text-xs bg-black border-gray-400 border text-gray-400 px-2 py-1 my-1 ml-2">
+              <strong key={characteristic} className="text-xs bg-white dark:bg-black border-gray-600 dark:border-gray-400 border text-gray-600 dark:text-gray-400 px-2 py-1 my-1 ml-2">
                 {formatTagName(characteristic)}
               </strong>
             ))}

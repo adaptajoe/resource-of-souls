@@ -27,7 +27,7 @@ const NavLink = memo(({ href, text, onClick }: { href: string; text: string; onC
 NavLink.displayName = "NavLink";
 
 const MenuButton = memo(({ isOpen, onClick }: { isOpen: boolean; onClick: () => void }) => (
-  <button onClick={onClick} className="static z-50 p-2 text-white text-6xl hover:text-red-600 transition-colors" aria-label="Toggle Menu">
+  <button onClick={onClick} className="static z-50 p-2 text-black dark:text-white text-6xl hover:text-red-600 transition-colors" aria-label="Toggle Menu">
     {isOpen ? <span className="text-5xl fixed hover:text-red-600 transition-colors z-50 top-6 right-6">&#88;</span> : <span>&equiv;</span>}
   </button>
 ));

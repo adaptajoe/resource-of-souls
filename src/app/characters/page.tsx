@@ -145,14 +145,14 @@ export default function Characters() {
   };
 
   return (
-    <div className="text-white">
-      <div className="p-4 xl:p-16 space-y-4 text-white">
+    <div className="text-black dark:text-white">
+      <div className="p-4 xl:p-16 space-y-4 text-black dark:text-white">
         <div className="flex flex-row space-x-2">
-          <Link href="/" className="text-teal-400 hover:underline">
+          <Link href="/" className="text-teal-600 dark:text-teal-400 hover:underline">
             Home
           </Link>
           <p>/</p>
-          <Link href="/characters" className="text-teal-400 hover:underline">
+          <Link href="/characters" className="text-teal-600 dark:text-teal-400 hover:underline">
             Character Roster
           </Link>
           <p>/</p>
@@ -164,14 +164,14 @@ export default function Characters() {
           The world of BLEACH is vast and diverse - Find your new main based on looks, affiliation, Archetype, stats or more! There&apos;s a character for every kind of player, from hyper-technical to
           simple and effective.
         </p>
-        <hr className="my-6" />
-        <div className="bg-black">
+        <hr className="my-6 border-black dark:border-white" />
+        <div className="bg-white dark:bg-black">
           <input
             type="text"
             placeholder="Search by Name or Archetype..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full p-2 border border-gray-400 rounded bg-transparent text-white"
+            className="w-full p-2 border border-black dark:border-gray-400 rounded bg-transparent text-black dark:text-white"
           />
         </div>
         <div>
@@ -204,7 +204,7 @@ export default function Characters() {
                   }))
                 }
                 className={`px-3 py-1 rounded flex transition-colorss items-center font-black gap-1 hover:bg-red-600 hover:text-black ${
-                  sortConfig.type === "number" ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
+                  sortConfig.type === "number" ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-white"
                 }`}
               >
                 Release Order
@@ -219,7 +219,7 @@ export default function Characters() {
                   }))
                 }
                 className={`px-3 py-1 font-black rounded flex transition-colors items-center gap-1 hover:bg-red-600 hover:text-black ${
-                  sortConfig.type === "alphabetical" ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
+                  sortConfig.type === "alphabetical" ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-white"
                 }`}
               >
                 A-Z
@@ -234,7 +234,7 @@ export default function Characters() {
                   }))
                 }
                 className={`px-3 py-1 font-black rounded flex transition-colors items-center gap-1 hover:bg-red-600 hover:text-black ${
-                  sortConfig.type === "easeOfUse" ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
+                  sortConfig.type === "easeOfUse" ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-white"
                 }`}
               >
                 Ease of Use
@@ -258,7 +258,7 @@ export default function Characters() {
                       }))
                     }
                     className={`px-3 py-1 font-black hover:bg-red-600 hover:text-black rounded ${
-                      sortConfig.type === stat.type ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
+                      sortConfig.type === stat.type ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-white"
                     } transition-colors`}
                   >
                     {stat.label}
@@ -279,7 +279,7 @@ export default function Characters() {
                   key={aff.value}
                   onClick={() => setAffiliationFilter(aff.value as AffiliationType)}
                   className={`px-3 py-1 transition-colors font-black hover:bg-red-600 hover:text-black rounded ${
-                    affiliationFilter === aff.value ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
+                    affiliationFilter === aff.value ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-white"
                   }`}
                 >
                   {aff.label}
@@ -297,7 +297,7 @@ export default function Characters() {
                   key={gender.value}
                   onClick={() => setGenderFilter(gender.value as "all" | "male" | "female")}
                   className={`px-3 py-1 font-black hover:bg-red-600 hover:text-black rounded ${
-                    genderFilter === gender.value ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-gray-300"
+                    genderFilter === gender.value ? "bg-teal-400 text-black hover:bg-teal-600" : "bg-gray-800 text-white"
                   } transition-colors`}
                 >
                   {gender.label}
@@ -306,7 +306,7 @@ export default function Characters() {
             </div>
           </div>
 
-          <div className="text-sm text-gray-400 pt-4">
+          <div className="text-sm text-black dark:text-gray-400 pt-4">
             {filteredAndSortedCharacters.length} {filteredAndSortedCharacters.length === 1 ? "character" : "characters"} found
             {searchTerm && " matching search"}
             {affiliationFilter !== "all" && genderFilter !== "all" ? (
@@ -318,20 +318,20 @@ export default function Characters() {
               </>
             )}
           </div>
-          <hr className="my-6" />
+          <hr className="my-6 border-black dark:border-white" />
           {filteredAndSortedCharacters.length === 0 ? (
             <div className="text-center py-8 text-gray-400">No characters found matching your criteria</div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
               {filteredAndSortedCharacters.map(([slug, character]) => (
-                <div key={slug} className="border hover:border-red-600 transition-colors rounded-lg bg-black">
+                <div key={slug} className="border-2 border-gray-600 dark:border-gray-400 hover:border-red-600 transition-colors rounded-lg bg-white dark:bg-black">
                   <Link href={`/characters/${slug}`} className="block">
                     <Image
                       src={imageSources[slug] || `/assets/character-banner/${slug}-banner.png`}
                       height="300"
                       width="300"
                       alt={character.name}
-                      className="max-h-[300px] w-fit object-cover rounded-t-lg object-top-center"
+                      className="max-h-[300px] w-fit object-cover rounded-t-md object-top-center"
                       style={{
                         objectFit: "cover",
                         objectPosition: "50% 40%",
@@ -340,17 +340,17 @@ export default function Characters() {
                       onError={() => handleImageError(slug)}
                       loading="lazy"
                     />
-                    <div className="p-4 pt-2 border-t-2 border-gray-800">
+                    <div className="p-4 pt-2 border-t-2 border-black dark:border-gray-800">
                       <h2 className="font-bold text-xl flex flex-row items-center py-2">
                         #{character.characterNumber}
                         {!character.isEcho ? null : <p className="text-teal-400">&epsilon;</p>}: {character.name}
                       </h2>
-                      <hr className="my-2" />
+                      <hr className="my-2 border-black dark:border-gray-400" />
                       <div className="my-auto flex flex-row items-center justify-between py-2">
-                        <p className="text-gray-400">Ease of Use:</p>
+                        <strong className="text-gray-400">Ease of Use:</strong>
                         <StarRatingWrapper rating={character.characterEaseOfUse} character={character} />
                       </div>
-                      <hr className="my-2" />
+                      <hr className="my-2 border-black dark:border-gray-400" />
                       <div className="text-xl grid grid-cols-5 text-center space-x-2 font-bebasFont">
                         <div className="text-red-700 rounded p-1">P{character.stats[0].power}</div>
                         <div className="text-yellow-700 rounded p-1">S{character.stats[0].speed}</div>
@@ -358,12 +358,12 @@ export default function Characters() {
                         <div className="text-green-700 rounded p-1">D{character.stats[0].defense}</div>
                         <div className="text-blue-700 rounded p-1">T{character.stats[0].technique}</div>
                       </div>
-                      <hr className="my-2" />
+                      <hr className="my-2 border-black dark:border-gray-400" />
                       <p className="text-gray-400 text-sm my-2 pt-4 italic">&quot;{character.quote}&quot;</p>
                     </div>
                   </Link>
                   <div className="px-4 pb-4">
-                    <div className="flex flex-wrap gap-2 border-t pt-2 border-gray-400">
+                    <div className="flex flex-wrap gap-2 border-t pt-2 border-black dark:border-gray-400">
                       {character.characterArchetype.map((archetype, index) => (
                         <ArchetypeCard key={index} archetype={archetype} highlighted={shouldHighlightArchetype(archetype)} />
                       ))}

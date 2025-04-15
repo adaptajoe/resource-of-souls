@@ -61,7 +61,9 @@ const CharacterOutfits: FC<ICharacterOutfitsProps> = ({ character, slug }) => {
             <button
               key={`base-${outfitNum}`}
               onClick={() => handleOutfitChange("base", outfitNum)}
-              className={`bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl ${currentOutfit === `base-outfit-${outfitNum}` ? "bg-teal-400 text-black" : null}`}
+              className={`bg-gray-700 text-white hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl ${
+                currentOutfit === `base-outfit-${outfitNum}` ? "bg-teal-600 text-black" : null
+              }`}
             >
               <strong>Outfit {outfitNum}</strong>
             </button>
@@ -70,7 +72,9 @@ const CharacterOutfits: FC<ICharacterOutfitsProps> = ({ character, slug }) => {
             <button
               key={`dlc-${outfitNum}`}
               onClick={() => handleOutfitChange("dlc", outfitNum)}
-              className={`bg-gray-700 hover:bg-red-600 hover:text-black transition-colors p-4 py-3 rounded-xl ${currentOutfit === `dlc-outfit-${outfitNum}` ? "bg-teal-400 text-black" : null}`}
+              className={`bg-gray-700 hover:bg-red-600 text-white hover:text-black transition-colors p-4 py-3 rounded-xl ${
+                currentOutfit === `dlc-outfit-${outfitNum}` ? "bg-teal-400 text-black" : null
+              }`}
             >
               <strong>DLC {outfitNum}</strong>
             </button>
